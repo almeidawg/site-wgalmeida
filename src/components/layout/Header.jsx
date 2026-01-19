@@ -106,7 +106,7 @@ const Header = () => {
                 <img
                   className="h-12 w-auto object-contain"
                   alt="Logo Grupo WG Almeida"
-                  src="https://horizons-cdn.hostinger.com/ecd6def3-e7f7-499d-a5da-01e5a1244126/0747e40fd2207f6e57c1ba9ed62854ad.png"
+                  src="/images/logo.png"
                   width="183"
                   height="48"
                 />
