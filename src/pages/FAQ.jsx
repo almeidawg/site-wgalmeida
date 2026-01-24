@@ -47,6 +47,20 @@ export default function FAQPage() {
     }
   ];
 
+  // Schema FAQPage para rich snippets
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <>
       <Helmet>
@@ -59,6 +73,11 @@ export default function FAQPage() {
         <meta property="og:title" content="Perguntas Frequentes - FAQ | Grupo WG Almeida" />
         <meta property="og:description" content="Respostas claras sobre Turn Key Premium, processos, prazos, garantias e serviços do Grupo WG Almeida." />
         <meta property="og:url" content="https://wgalmeida.com.br/faq" />
+
+        {/* Schema.org JSON-LD para FAQPage */}
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       <div className="faq-page">

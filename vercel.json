@@ -1,5 +1,12 @@
 {
   "version": 2,
+  "redirects": [
+    {
+      "source": "/:path((?:[^/]+/)*[^/]+)/",
+      "destination": "/:path",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

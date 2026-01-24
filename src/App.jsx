@@ -35,9 +35,30 @@ const CidadeJardim = lazy(() => import('@/pages/regions/CidadeJardim'));
 const Morumbi = lazy(() => import('@/pages/regions/Morumbi'));
 const VilaMariana = lazy(() => import('@/pages/regions/VilaMariana'));
 const Mooca = lazy(() => import('@/pages/regions/Mooca'));
+const AltoDePinheiros = lazy(() => import('@/pages/regions/AltoDePinheiros'));
+const Moema = lazy(() => import('@/pages/regions/Moema'));
+const CampoBelo = lazy(() => import('@/pages/regions/CampoBelo'));
+const Higienopolis = lazy(() => import('@/pages/regions/Higienopolis'));
+const Pinheiros = lazy(() => import('@/pages/regions/Pinheiros'));
+const Perdizes = lazy(() => import('@/pages/regions/Perdizes'));
+const Paraiso = lazy(() => import('@/pages/regions/Paraiso'));
+const Aclimacao = lazy(() => import('@/pages/regions/Aclimacao'));
 const SoliciteProposta = lazy(() => import('@/pages/SoliciteProposta'));
 const Blog = lazy(() => import('@/pages/Blog'));
 const FAQ = lazy(() => import('@/pages/FAQ'));
+
+// Landing Pages Estratégicas (SEO)
+const ConstrutoraAltoPadraoSP = lazy(() => import('@/pages/ConstrutoraAltoPadraoSP'));
+const ReformaApartamentoSP = lazy(() => import('@/pages/ReformaApartamentoSP'));
+const ArquiteturaCorporativa = lazy(() => import('@/pages/ArquiteturaCorporativa'));
+const ObraTurnKey = lazy(() => import('@/pages/ObraTurnKey'));
+
+// Landing Pages Serviço + Bairro (SEO Local)
+const ReformaApartamentoItaim = lazy(() => import('@/pages/ReformaApartamentoItaim'));
+const ReformaApartamentoJardins = lazy(() => import('@/pages/ReformaApartamentoJardins'));
+const ConstrutoraB rooklin = lazy(() => import('@/pages/ConstrutoraB rooklin'));
+const MarcenariaSobMedidaMorumbi = lazy(() => import('@/pages/MarcenariaSobMedidaMorumbi'));
+const ArquiteturaInterioresVilaNovaConceicao = lazy(() => import('@/pages/ArquiteturaInterioresVilaNovaConceicao'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen w-full flex justify-center items-center bg-white">
@@ -74,6 +95,19 @@ function App() {
             <Route path="/blog/:slug" element={<Blog />} />
             <Route path="/faq" element={<FAQ />} />
 
+            {/* Landing Pages Estratégicas (SEO) */}
+            <Route path="/construtora-alto-padrao-sp" element={<ConstrutoraAltoPadraoSP />} />
+            <Route path="/reforma-apartamento-sp" element={<ReformaApartamentoSP />} />
+            <Route path="/arquitetura-corporativa" element={<ArquiteturaCorporativa />} />
+            <Route path="/obra-turn-key" element={<ObraTurnKey />} />
+
+            {/* Landing Pages Serviço + Bairro (SEO Local) */}
+            <Route path="/reforma-apartamento-itaim" element={<ReformaApartamentoItaim />} />
+            <Route path="/reforma-apartamento-jardins" element={<ReformaApartamentoJardins />} />
+            <Route path="/construtora-brooklin" element={<ConstrutoraB rooklin />} />
+            <Route path="/marcenaria-sob-medida-morumbi" element={<MarcenariaSobMedidaMorumbi />} />
+            <Route path="/arquitetura-interiores-vila-nova-conceicao" element={<ArquiteturaInterioresVilaNovaConceicao />} />
+
             {/* Region Pages (SEO) */}
             <Route path="/brooklin" element={<Brooklin />} />
             <Route path="/vila-nova-conceicao" element={<VilaNovaConceicao />} />
@@ -83,6 +117,14 @@ function App() {
             <Route path="/morumbi" element={<Morumbi />} />
             <Route path="/vila-mariana" element={<VilaMariana />} />
             <Route path="/mooca" element={<Mooca />} />
+            <Route path="/alto-de-pinheiros" element={<AltoDePinheiros />} />
+            <Route path="/moema" element={<Moema />} />
+            <Route path="/campo-belo" element={<CampoBelo />} />
+            <Route path="/higienopolis" element={<Higienopolis />} />
+            <Route path="/pinheiros" element={<Pinheiros />} />
+            <Route path="/perdizes" element={<Perdizes />} />
+            <Route path="/paraiso" element={<Paraiso />} />
+            <Route path="/aclimacao" element={<Aclimacao />} />
 
             {/* Auth Pages */}
             <Route path="/login" element={<Login />} />
