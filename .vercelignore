@@ -13,6 +13,7 @@ npm-debug.log*
 .env.development.local
 .env.test.local
 .env.production.local
+nul
 *.md
 !README.md
 tools
@@ -30,17 +31,15 @@ ESTRUTURA-MIDIA.md
 GOOGLE-REVIEWS-UPDATE.md
 INSTRUCOES-DEPLOY.md
 INSTRUCOES-DEPLOY-VERCEL.md
-public/images/projects
-public/images/imagens
-public/images/blog
-public/images/banners
-public/images/gallery
-public/images/webp
-public/videos
-dist/images/projects
-dist/images/imagens
-dist/images/blog
-dist/images/banners
-dist/images/gallery
-dist/images/webp
-dist/videos
+dist/
+
+# Videos grandes (excede limite 100MB da Vercel)
+public/videos/videosobrenos.mp4
+public/videos/hero/*.mp4
+public/images/projects/**/*.mp4
+
+# Videos na pasta dist (copiados do public durante build)
+dist/videos/videosobrenos.mp4
+dist/videos/hero/*.mp4
+dist/images/projects/**/*.mp4
+**/*.mp4
