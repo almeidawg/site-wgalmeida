@@ -56,7 +56,7 @@ const ObraTurnKey = lazy(() => import('@/pages/ObraTurnKey'));
 // Landing Pages Serviço + Bairro (SEO Local)
 const ReformaApartamentoItaim = lazy(() => import('@/pages/ReformaApartamentoItaim'));
 const ReformaApartamentoJardins = lazy(() => import('@/pages/ReformaApartamentoJardins'));
-const ConstrutoraB rooklin = lazy(() => import('@/pages/ConstrutoraB rooklin'));
+const ConstrutoraBrooklin = lazy(() => import('@/pages/ConstrutoraBrooklin'));
 const MarcenariaSobMedidaMorumbi = lazy(() => import('@/pages/MarcenariaSobMedidaMorumbi'));
 const ArquiteturaInterioresVilaNovaConceicao = lazy(() => import('@/pages/ArquiteturaInterioresVilaNovaConceicao'));
 
@@ -104,7 +104,7 @@ function App() {
             {/* Landing Pages Serviço + Bairro (SEO Local) */}
             <Route path="/reforma-apartamento-itaim" element={<ReformaApartamentoItaim />} />
             <Route path="/reforma-apartamento-jardins" element={<ReformaApartamentoJardins />} />
-            <Route path="/construtora-brooklin" element={<ConstrutoraB rooklin />} />
+            <Route path="/construtora-brooklin" element={<ConstrutoraBrooklin />} />
             <Route path="/marcenaria-sob-medida-morumbi" element={<MarcenariaSobMedidaMorumbi />} />
             <Route path="/arquitetura-interiores-vila-nova-conceicao" element={<ArquiteturaInterioresVilaNovaConceicao />} />
 

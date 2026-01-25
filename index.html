@@ -1,13 +1,31 @@
 <!doctype html>
 <html lang="pt-BR">
 	<head>
-		<!-- Google Tag Manager - Lazy Loaded para performance -->
+		<!-- Analytics - Lazy Loaded para performance -->
 		<script>
-		// Lazy load GTM e Pinterest apos interacao do usuario ou 3s de idle
+		// Lazy load Google Analytics, GTM e Pinterest apos interacao do usuario ou 3s de idle
 		// Reduz TBT (Total Blocking Time) significativamente
 		(function() {
+			var gaLoaded = false;
 			var gtmLoaded = false;
 			var pinterestLoaded = false;
+
+			function loadGoogleAnalytics() {
+				if (gaLoaded) return;
+				gaLoaded = true;
+
+				// Google Analytics (gtag.js)
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				window.gtag = gtag;
+				gtag('js', new Date());
+				gtag('config', 'G-FEP5WMV0S8');
+
+				var ga = document.createElement('script');
+				ga.async = true;
+				ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-FEP5WMV0S8';
+				document.head.appendChild(ga);
+			}
 
 			function loadGTM() {
 				if (gtmLoaded) return;
@@ -44,6 +62,7 @@
 			}
 
 			function loadAllTrackers() {
+				loadGoogleAnalytics();
 				loadGTM();
 				loadPinterest();
 			}
@@ -64,7 +83,7 @@
 			}
 		})();
 		</script>
-		<!-- End Lazy Loaded Analytics -->
+		<!-- End Lazy Loaded Analytics (Google Analytics + GTM + Pinterest) -->
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
