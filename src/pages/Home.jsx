@@ -117,7 +117,11 @@ const Home = () => {
       />
 
       {/* ========== APRESENTAÇÃO CINEMATOGRÁFICA ========== */}
-      {showIntro && <PremiumCinematicIntro onComplete={handleIntroComplete} />}
+      {showIntro && (
+        <Suspense fallback={null}>
+          <PremiumCinematicIntro onComplete={handleIntroComplete} />
+        </Suspense>
+      )}
 
       {/* ========== HERO SECTION COM VÍDEO ========== */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden -mt-20 bg-wg-black">
@@ -249,7 +253,7 @@ const Home = () => {
               <Link to="/estilos/minimalismo" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="/images/estilos/minimalismo.webp"
+                    src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=600&q=80"
                     alt="Estilo Minimalismo"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -278,7 +282,7 @@ const Home = () => {
               <Link to="/estilos/moderno" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="/images/estilos/moderno.webp"
+                    src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80"
                     alt="Estilo Moderno"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -307,7 +311,7 @@ const Home = () => {
               <Link to="/estilos/industrial" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="/images/estilos/industrial.webp"
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80"
                     alt="Estilo Industrial"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -336,7 +340,7 @@ const Home = () => {
               <Link to="/estilos/contemporaneo" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="/images/estilos/contemporaneo.webp"
+                    src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80"
                     alt="Estilo Contemporâneo"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -365,7 +369,7 @@ const Home = () => {
               <Link to="/estilos/japandi" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="/images/estilos/japandi.webp"
+                    src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&q=80"
                     alt="Estilo Japandi"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
