@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -19,7 +19,8 @@ import {
   MessagesSquare,
   FolderOpen,
   Palette,
-  Sparkles
+  Sparkles,
+  BookOpen
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AnimatedStrokes from '@/components/AnimatedStrokes';
@@ -27,7 +28,8 @@ import GoogleReviewsBadge from '@/components/GoogleReviewsBadge';
 // import LizAssistant from '@/components/LizAssistant'; // DESATIVADO TEMPORARIAMENTE - Manter apenas WhatsApp
 import ProjectGallery from '@/components/ProjectGallery';
 import HeroVideo from '@/components/HeroVideo';
-import PremiumCinematicIntro from '@/components/PremiumCinematicIntro';
+// Lazy load PremiumCinematicIntro para reduzir TBT (Total Blocking Time)
+const PremiumCinematicIntro = lazy(() => import('@/components/PremiumCinematicIntro'));
 import HomeColorTransformer from '@/components/home/HomeColorTransformer';
 import { useEstatisticasWG, formatarNumeroGrande } from '@/hooks/useEstatisticasWG';
 import { Trans, useTranslation } from 'react-i18next';
@@ -219,6 +221,185 @@ const Home = () => {
             <motion.div className="w-1.5 h-1.5 bg-white rounded-full" />
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* ========== CARDS DE ESTILOS EM DESTAQUE ========== */}
+      <section className="py-12 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-2xl md:text-3xl font-inter font-light text-wg-black mb-2 tracking-tight">
+              Estilos em Destaque
+            </h2>
+            <p className="text-wg-gray font-light">Encontre o estilo que combina com você</p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {/* Minimalismo */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+            >
+              <Link to="/estilos/minimalismo" className="group block">
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img
+                    src="/images/estilos/minimalismo.webp"
+                    alt="Estilo Minimalismo"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="flex gap-1 mb-2">
+                      {['#FFFFFF', '#000000', '#808080'].map((color, idx) => (
+                        <div key={idx} className="w-4 h-4 rounded-full border border-white/50" style={{ backgroundColor: color }} />
+                      ))}
+                    </div>
+                    <h3 className="text-white font-semibold text-lg">Minimalismo</h3>
+                    <p className="text-white/70 text-xs line-clamp-2">Menos é mais. Linhas retas e elegância.</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Moderno */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Link to="/estilos/moderno" className="group block">
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img
+                    src="/images/estilos/moderno.webp"
+                    alt="Estilo Moderno"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="flex gap-1 mb-2">
+                      {['#2C3E50', '#ECF0F1', '#3498DB'].map((color, idx) => (
+                        <div key={idx} className="w-4 h-4 rounded-full border border-white/50" style={{ backgroundColor: color }} />
+                      ))}
+                    </div>
+                    <h3 className="text-white font-semibold text-lg">Moderno</h3>
+                    <p className="text-white/70 text-xs line-clamp-2">Design contemporâneo e tecnologia.</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Industrial */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Link to="/estilos/industrial" className="group block">
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img
+                    src="/images/estilos/industrial.webp"
+                    alt="Estilo Industrial"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="flex gap-1 mb-2">
+                      {['#2C2C2C', '#B87333', '#708090'].map((color, idx) => (
+                        <div key={idx} className="w-4 h-4 rounded-full border border-white/50" style={{ backgroundColor: color }} />
+                      ))}
+                    </div>
+                    <h3 className="text-white font-semibold text-lg">Industrial</h3>
+                    <p className="text-white/70 text-xs line-clamp-2">Estética urbana e estruturas expostas.</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Contemporâneo */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <Link to="/estilos/contemporaneo" className="group block">
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img
+                    src="/images/estilos/contemporaneo.webp"
+                    alt="Estilo Contemporâneo"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="flex gap-1 mb-2">
+                      {['#2F4F4F', '#FFFFFF', '#DAA520'].map((color, idx) => (
+                        <div key={idx} className="w-4 h-4 rounded-full border border-white/50" style={{ backgroundColor: color }} />
+                      ))}
+                    </div>
+                    <h3 className="text-white font-semibold text-lg">Contemporâneo</h3>
+                    <p className="text-white/70 text-xs line-clamp-2">Flexível, eclético e sempre atual.</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Japandi */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <Link to="/estilos/japandi" className="group block">
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img
+                    src="/images/estilos/japandi.webp"
+                    alt="Estilo Japandi"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="flex gap-1 mb-2">
+                      {['#F5F5DC', '#2F4F4F', '#D4C5B9'].map((color, idx) => (
+                        <div key={idx} className="w-4 h-4 rounded-full border border-white/50" style={{ backgroundColor: color }} />
+                      ))}
+                    </div>
+                    <h3 className="text-white font-semibold text-lg">Japandi</h3>
+                    <p className="text-white/70 text-xs line-clamp-2">Fusão zen japonesa e escandinava.</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mt-8"
+          >
+            <Link
+              to="/revista-estilos"
+              className="inline-flex items-center gap-2 text-wg-orange hover:text-wg-orange/80 font-medium transition-colors"
+            >
+              Ver todos os 30 estilos
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        </div>
       </section>
 
       {/* ========== BLOCO INSTITUCIONAL - QUEM SOMOS ========== */}
@@ -417,10 +598,6 @@ const Home = () => {
                 <div className="flex items-center gap-2 text-white/80">
                   <CheckCircle2 className="w-5 h-5 text-wg-orange" />
                   <span className="text-sm">12 estilos de decoração</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/80">
-                  <CheckCircle2 className="w-5 h-5 text-wg-orange" />
-                  <span className="text-sm">IA Cloudinary</span>
                 </div>
               </div>
 
