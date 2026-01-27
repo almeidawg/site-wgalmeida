@@ -26,7 +26,7 @@ import {
   Copy,
   Check
 } from 'lucide-react';
-import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
+// import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import matter from 'gray-matter';
@@ -239,24 +239,30 @@ const Blog = () => {
   const effectiveRawPosts = Object.keys(rawPosts).length ? rawPosts : rawPostsByLocale['pt-BR'];
   const artigos = Object.entries(effectiveRawPosts)
     .map(([path, raw]) => {
-      const { data, content } = matter(raw);
-      const fallbackSlug = path.split('/').pop()?.replace('.md', '');
-      const slugValue = data.slug || fallbackSlug;
+      try {
+        const { data, content } = matter(raw);
+        const fallbackSlug = path.split('/').pop()?.replace('.md', '');
+        const slugValue = data.slug || fallbackSlug;
 
-      return {
-        title: data.title || t('blogPage.fallback.title'),
-        slug: slugValue,
-        excerpt: data.excerpt || '',
-        image: data.image || '/images/banners/SOBRE.webp',
-        category: data.category || 'arquitetura',
-        author: data.author || t('blogPage.fallback.author'),
-        date: data.date || '2025-12-01',
-        featured: Boolean(data.featured),
-        tags: Array.isArray(data.tags) ? data.tags : [],
-        content,
-        tempoLeitura: estimateReadingTime(content),
-      };
+        return {
+          title: data.title || t('blogPage.fallback.title'),
+          slug: slugValue,
+          excerpt: data.excerpt || '',
+          image: data.image || '/images/banners/SOBRE.webp',
+          category: data.category || 'arquitetura',
+          author: data.author || t('blogPage.fallback.author'),
+          date: data.date || '2025-12-01',
+          featured: Boolean(data.featured),
+          tags: Array.isArray(data.tags) ? data.tags : [],
+          content,
+          tempoLeitura: estimateReadingTime(content),
+        };
+      } catch (err) {
+        console.error('Error parsing blog post:', path, err);
+        return null;
+      }
     })
+    .filter(Boolean)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
   const categorias = [
     { id: 'todos', label: t('blogPage.categories.all'), icon: BookOpen, bgColor: 'bg-wg-orange' },
@@ -346,14 +352,11 @@ const Blog = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <ResponsiveWebpImage
+            <img
               src={artigoAtual.image}
               alt={artigoAtual.title}
               className="w-full h-full object-cover"
               loading="eager"
-              decoding="async"
-              fetchPriority="high"
-              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-wg-black via-wg-black/60 to-transparent" />
           </motion.div>
@@ -476,14 +479,11 @@ const Blog = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <ResponsiveWebpImage
+          <img
             src={artigoRecente?.image}
             alt={artigoRecente?.title}
             className="w-full h-full object-cover"
             loading="eager"
-            decoding="async"
-            fetchPriority="high"
-            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-wg-black via-wg-black/60 to-transparent" />
         </motion.div>
@@ -629,13 +629,11 @@ const Blog = () => {
                 <Link to={`/blog/${artigo.slug}`} className="block">
                   {/* Imagem */}
                   <div className="relative overflow-hidden h-48">
-                    <ResponsiveWebpImage
+                    <img
                       src={artigo.image}
                       alt={artigo.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
-                      decoding="async"
-                      sizes="(max-width: 1024px) 100vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -695,44 +693,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="section-padding bg-gradient-to-br from-wg-black to-wg-black/90 text-white">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto text-center"
-          >
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-wg-orange" />
-              <BookOpen className="w-8 h-8 text-wg-orange" />
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-wg-orange" />
-            </div>
-
-            <h2 className="text-3xl md:text-4xl font-inter font-light mb-4">
-              {t('blogPage.newsletter.title')}
-            </h2>
-            <p className="text-white/70 mb-8">
-              {t('blogPage.newsletter.subtitle')}
-            </p>
-
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder={t('blogPage.newsletter.placeholder')}
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-wg-orange"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-wg-orange text-white rounded-lg font-medium hover:bg-wg-orange/90 transition-colors whitespace-nowrap"
-              >
-                {t('blogPage.newsletter.button')}
-              </button>
-            </form>
-          </motion.div>
-        </div>
-      </section>
     </>
   );
 };
