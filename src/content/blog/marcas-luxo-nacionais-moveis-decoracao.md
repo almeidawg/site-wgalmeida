@@ -4,7 +4,7 @@ slug: "marcas-luxo-nacionais-moveis-decoracao"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/marcas-luxo-nacionais-moveis-decoracao.webp"
 excerpt: "Conheça as principais marcas de luxo brasileiras de móveis, decoração e acabamentos que elevam projetos de alto padrão."
 tags:
   - "marcas de luxo"

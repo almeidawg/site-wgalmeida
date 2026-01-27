@@ -6,7 +6,7 @@ date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
 tags: ["barcelona", "espanha", "gaudí", "modernisme", "sagrada família", "art nouveau catalão", "unesco"]
-image: "/images/blog/arquitetura-barcelona.webp"
+image: "/images/blog/arquitetura-barcelona-espanha.webp"
 featured: true
 ---
 

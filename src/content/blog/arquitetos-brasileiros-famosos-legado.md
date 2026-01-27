@@ -4,7 +4,7 @@ slug: "arquitetos-brasileiros-famosos-legado"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "arquitetura"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/arquitetos-brasileiros-famosos-legado.webp"
 excerpt: "Conheça os arquitetos brasileiros que deixaram marca indelével na história da arquitetura mundial, de Oscar Niemeyer a Paulo Mendes da Rocha."
 tags:
   - "arquitetos brasileiros"

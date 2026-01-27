@@ -6,7 +6,7 @@ date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
 tags: ["haarlem", "holanda", "arquitetura medieval", "gótico", "hofjes", "holanda autêntica", "patrimônio"]
-image: "/images/blog/arquitetura-haarlem.webp"
+image: "/images/blog/arquitetura-haarlem-holanda.webp"
 featured: true
 ---
 

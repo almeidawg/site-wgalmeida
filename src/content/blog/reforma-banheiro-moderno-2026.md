@@ -4,7 +4,7 @@ slug: "reforma-banheiro-moderno-2026"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "reforma"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/reforma-banheiro-moderno-2026.webp"
 excerpt: "Como planejar a reforma do banheiro com estilo spa, tecnologia e sustentabilidade."
 tags:
   - "banheiro"

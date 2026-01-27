@@ -4,7 +4,7 @@ slug: "automacao-residencial-2026-guia"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "tecnologia"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/automacao-residencial-2026-guia.webp"
 excerpt: "Tudo sobre casa inteligente: da automação básica aos sistemas avançados, custos, benefícios e como planejar."
 tags:
   - "automação residencial"

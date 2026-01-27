@@ -4,7 +4,7 @@ slug: "closet-planejado-organizacao-otimizacao"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/closet-planejado-organizacao-otimizacao.webp"
 excerpt: "Tudo sobre closets planejados: dimensões ideais, organização inteligente, custos e como maximizar cada centímetro."
 tags:
   - "closet"

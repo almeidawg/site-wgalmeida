@@ -4,7 +4,7 @@ slug: "marcenaria-sob-medida-tendencias-2026"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "marcenaria"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/marcenaria-sob-medida-tendencias-2026.webp"
 excerpt: "Descubra as principais tendências em marcenaria planejada para 2026: sustentabilidade, personalização profunda, multifuncionalidade e tecnologia integrada."
 tags:
   - "marcenaria"

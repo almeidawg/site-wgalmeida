@@ -4,7 +4,7 @@ slug: "importancia-contratar-arquiteto"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "arquitetura"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/importancia-contratar-arquiteto.webp"
 excerpt: "Descubra por que contratar um arquiteto é investimento essencial que economiza dinheiro, tempo e garante resultado profissional."
 tags:
   - "arquiteto"

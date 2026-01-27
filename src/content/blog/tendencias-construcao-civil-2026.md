@@ -4,7 +4,7 @@ slug: "tendencias-construcao-civil-2026"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "construção civil"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/tendencias-construcao-civil-2026.webp"
 excerpt: "Descubra as principais tendências que vão transformar a construção civil em 2026, desde industrialização até sustentabilidade e tecnologias digitais."
 tags:
   - "tendências"

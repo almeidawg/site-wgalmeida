@@ -4,7 +4,7 @@ slug: "erros-comuns-reforma-como-evitar"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "reforma"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/erros-comuns-reforma-como-evitar.webp"
 excerpt: "Descubra os erros que mais custam caro em reformas e aprenda como evitá-los com planejamento e orientação profissional."
 tags:
   - "erros em reforma"

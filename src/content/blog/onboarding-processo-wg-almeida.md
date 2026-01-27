@@ -4,7 +4,7 @@ slug: "onboarding-processo-wg-almeida"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "processo"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/onboarding-processo-wg-almeida.webp"
 excerpt: "Entenda passo a passo como funciona o processo de onboarding e desenvolvimento do seu projeto no Grupo WG Almeida."
 tags:
   - "onboarding"

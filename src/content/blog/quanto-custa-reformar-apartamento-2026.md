@@ -2,7 +2,7 @@
 title: "Quanto Custa Reformar um Apartamento em 2026? Guia Completo de Precos"
 slug: "quanto-custa-reformar-apartamento-2026"
 excerpt: "Descubra valores reais, custos por m2, e exemplos praticos de reforma de apartamento em Sao Paulo. Guia atualizado 2026 com tabela de precos detalhada."
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/quanto-custa-reformar-apartamento-2026.webp"
 category: "engenharia"
 author: "Grupo WG Almeida"
 date: "2026-01-26"

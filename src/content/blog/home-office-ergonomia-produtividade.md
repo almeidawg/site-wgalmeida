@@ -4,7 +4,7 @@ slug: "home-office-ergonomia-produtividade"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/home-office-ergonomia-produtividade.webp"
 excerpt: "Crie um home office ergonômico e produtivo: layout ideal, móveis adequados, iluminação, acústica e organização."
 tags:
   - "home office"

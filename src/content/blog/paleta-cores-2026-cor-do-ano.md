@@ -4,7 +4,7 @@ slug: "paleta-cores-2026-cor-do-ano"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/paleta-cores-2026-cor-do-ano.webp"
 excerpt: "Descubra as cores que vão dominar 2026: Pantone, Suvinil, Coral e as paletas de cores essenciais para projetos de arquitetura e decoração."
 tags:
   - "cores 2026"

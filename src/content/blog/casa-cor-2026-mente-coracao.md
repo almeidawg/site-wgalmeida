@@ -4,7 +4,7 @@ slug: "casa-cor-2026-mente-coracao"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "arquitetura"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/casa-cor-2026-mente-coracao.webp"
 excerpt: "Descubra o tema 'Mente e Coração' da Casa Cor SP 2026 e as tendências de arquitetura e design que vão inspirar os projetos do ano."
 tags:
   - "Casa Cor"

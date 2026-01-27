@@ -4,7 +4,7 @@ slug: "reforma-cozinha-planejada-guia-completo"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "reforma"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/reforma-cozinha-planejada-guia-completo.webp"
 excerpt: "Tudo o que você precisa saber para reformar sua cozinha: custos, prazos, materiais e dicas práticas."
 tags:
   - "cozinha"

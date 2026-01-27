@@ -6,7 +6,7 @@ date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
 tags: ["bruges", "bélgica", "medieval", "gótico", "canais", "unesco", "arquitetura flamenga"]
-image: "/images/blog/arquitetura-bruges.webp"
+image: "/images/blog/arquitetura-bruges-belgica.webp"
 featured: true
 ---
 

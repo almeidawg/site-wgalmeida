@@ -4,7 +4,7 @@ slug: "iluminacao-residencial-guia-completo"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/iluminacao-residencial-guia-completo.webp"
 excerpt: "Aprenda tudo sobre iluminação residencial: tipos de luz, temperatura de cor, onde usar cada luminária e como criar atmosferas perfeitas."
 tags:
   - "iluminação"

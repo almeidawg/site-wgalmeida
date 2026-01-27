@@ -6,7 +6,7 @@ date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
 tags: ["lisboa", "portugal", "azulejos", "arquitetura pombalina", "manuelino", "unesco", "terremoto 1755"]
-image: "/images/blog/arquitetura-lisboa.webp"
+image: "/images/blog/arquitetura-lisboa-portugal.webp"
 featured: true
 ---
 

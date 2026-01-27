@@ -4,7 +4,7 @@ slug: "evf-estudo-viabilidade-financeira"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "planejamento"
-image: "/images/banners/SOBRE.webp"
+image: "/images/blog/evf-estudo-viabilidade-financeira.webp"
 excerpt: "Entenda como o EVF garante que seu projeto arquitetônico seja financeiramente viável antes mesmo de iniciar a obra."
 tags:
   - "EVF"

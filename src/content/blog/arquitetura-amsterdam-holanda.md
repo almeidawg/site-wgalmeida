@@ -6,7 +6,7 @@ date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
 tags: ["amsterdam", "holanda", "arquitetura holandesa", "canais", "gables", "era de ouro", "design europeu"]
-image: "/images/blog/arquitetura-amsterdam.webp"
+image: "/images/blog/arquitetura-amsterdam-holanda.webp"
 featured: true
 ---
 

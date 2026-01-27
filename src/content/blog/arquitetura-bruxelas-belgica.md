@@ -6,7 +6,7 @@ date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
 tags: ["bruxelas", "bélgica", "art nouveau", "grand place", "arquitetura europeia", "victor horta", "atomium"]
-image: "/images/blog/arquitetura-bruxelas.webp"
+image: "/images/blog/arquitetura-bruxelas-belgica.webp"
 featured: true
 ---
 

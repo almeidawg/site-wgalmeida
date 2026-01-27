@@ -6,7 +6,7 @@ date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
 tags: ["paris", "frança", "haussmann", "arquitetura francesa", "torre eiffel", "beaux-arts", "art nouveau"]
-image: "/images/blog/arquitetura-paris.webp"
+image: "/images/blog/arquitetura-paris-franca.webp"
 featured: true
 ---
 
