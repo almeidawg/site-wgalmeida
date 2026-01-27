@@ -16,6 +16,7 @@ npm-debug.log*
 nul
 *.md
 !README.md
+!src/content/**/*.md
 tools
 scripts
 database
@@ -31,7 +32,6 @@ ESTRUTURA-MIDIA.md
 GOOGLE-REVIEWS-UPDATE.md
 INSTRUCOES-DEPLOY.md
 INSTRUCOES-DEPLOY-VERCEL.md
-dist/
 
 # Videos grandes (excede limite 100MB da Vercel)
 public/videos/videosobrenos.mp4
