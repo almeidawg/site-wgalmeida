@@ -4,7 +4,7 @@ slug: "profissionais-capacitados-obra"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "construção"
-image: "/images/blog/profissionais-capacitados.webp"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Conheça os profissionais essenciais para o sucesso da sua obra e por que a qualificação da equipe faz toda a diferença no resultado final."
 tags:
   - "profissionais"

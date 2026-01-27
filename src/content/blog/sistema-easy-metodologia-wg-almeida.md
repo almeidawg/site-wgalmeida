@@ -4,7 +4,7 @@ slug: "sistema-easy-metodologia-wg-almeida"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "metodologia"
-image: "/images/blog/sistema-easy.webp"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Conheça o Sistema Easy, metodologia exclusiva do Grupo WG Almeida que torna projetos arquitetônicos simples, transparentes e previsíveis."
 tags:
   - "Sistema Easy"

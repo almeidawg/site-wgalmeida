@@ -118,7 +118,7 @@ const Header = () => {
                  <Link
                     key={item.label}
                     to={item.path}
-                    className={`text-wg-gray hover:text-wg-orange transition-colors font-poppins font-medium ${
+                    className={`text-wg-gray hover:text-wg-orange transition-colors font-poppins font-normal ${
                       location.pathname === item.path ? 'text-wg-orange' : ''
                     }`}
                   >
@@ -128,7 +128,7 @@ const Header = () => {
 
               {/* Mega Menu Trigger */}
               <div className="relative" onMouseEnter={() => setUnitsMenuOpen(true)} onMouseLeave={() => setUnitsMenuOpen(false)}>
-                <button className="flex items-center space-x-1 text-wg-gray hover:text-wg-orange transition-colors font-poppins font-medium">
+                <button className="flex items-center space-x-1 text-wg-gray hover:text-wg-orange transition-colors font-poppins font-normal">
                   <span>{t('header.unitsLabel')}</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -165,7 +165,7 @@ const Header = () => {
                  <Link
                     key={item.label}
                     to={item.path}
-                    className={`text-wg-gray hover:text-wg-orange transition-colors font-poppins font-medium ${
+                    className={`text-wg-gray hover:text-wg-orange transition-colors font-poppins font-normal ${
                       location.pathname === item.path ? 'text-wg-orange' : ''
                     }`}
                   >

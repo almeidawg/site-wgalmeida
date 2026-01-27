@@ -4,7 +4,7 @@ slug: "tendencias-decoracao-interiores-2026"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "decoração"
-image: "/images/blog/tendencias-decoracao-2026.jpg"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Conheça as tendências que vão transformar os espaços em 2026: design sensorial, sustentabilidade, cores terrosas e muito mais."
 tags:
   - "decoração"

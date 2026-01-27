@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
     <loc>https://wgalmeida.com.br/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,21 +11,21 @@
   <!-- Servicos Principais -->
   <url>
     <loc>https://wgalmeida.com.br/arquitetura</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/engenharia</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/marcenaria</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -33,376 +33,271 @@
   <!-- Paginas Institucionais -->
   <url>
     <loc>https://wgalmeida.com.br/sobre</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/a-marca</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/blog</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/projetos</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/processo</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/depoimentos</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/contato</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/solicite-proposta</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://wgalmeida.com.br/store</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
+    <loc>https://wgalmeida.com.br/faq</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Bairros Premium de Sao Paulo - SEO Local -->
   <url>
     <loc>https://wgalmeida.com.br/jardins</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/vila-nova-conceicao</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/itaim</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/brooklin</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/morumbi</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/cidade-jardim</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/alto-de-pinheiros</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/moema</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/campo-belo</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/higienopolis</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/pinheiros</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/perdizes</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/paraiso</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/aclimacao</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/vila-mariana</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Landing Pages Estratégicas - SEO Alto Valor -->
+  <url>
+    <loc>https://wgalmeida.com.br/mooca</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Landing Pages Estrategicas - SEO Alto Valor -->
   <url>
     <loc>https://wgalmeida.com.br/construtora-alto-padrao-sp</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/reforma-apartamento-sp</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/arquitetura-corporativa</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/obra-turn-key</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Landing Pages Serviço + Bairro - SEO Local Hiperlocal -->
+  <!-- Landing Pages Servico + Bairro - SEO Local Hiperlocal -->
   <url>
     <loc>https://wgalmeida.com.br/reforma-apartamento-itaim</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/reforma-apartamento-jardins</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/construtora-brooklin</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/marcenaria-sob-medida-morumbi</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/arquitetura-interiores-vila-nova-conceicao</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Blog Posts - Conteúdo SEO -->
+  <!-- Blog Posts - Conteudo SEO -->
   <url>
     <loc>https://wgalmeida.com.br/blog/o-que-e-turn-key</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/blog/arquitetura-alto-padrao</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/blog/marcenaria-sob-medida</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
     <loc>https://wgalmeida.com.br/blog/etapas-reforma-completa</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/briefing-projeto-dos-sonhos</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/moodboard-mapa-visual</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/guia-estilos-decoracao</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/guia-estilos-ambientes-residenciais</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/etapas-prazos-projeto-arquitetonico</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/projeto-executivo-o-que-e</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/documentacao-obra-condominio</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/memorial-executivo-obra</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/normas-tecnicas-representacao</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/especificacoes-tecnicas-diferenca</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/cronograma-obra-acompanhamento</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/iluminacao-tecnica-rasgo-de-luz</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/bancada-cozinha-ergonomia</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/ralo-linear-areas-molhadas</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/informe-obra-condominio</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://wgalmeida.com.br/blog/termo-responsabilidade-nbr16280</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 </urlset>

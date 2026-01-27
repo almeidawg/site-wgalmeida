@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
+import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 
 export default function FAQPage() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -81,9 +83,42 @@ export default function FAQPage() {
       </Helmet>
 
       <div className="faq-page">
-        <section className="faq-hero">
-          <h1>Perguntas Frequentes</h1>
-          <p>Respostas claras sobre nosso processo, serviços e diferencial</p>
+        {/* Hero Banner */}
+        <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+          <motion.div
+            className="absolute inset-0 z-0"
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+          >
+            <ResponsiveWebpImage
+              className="w-full h-full object-cover"
+              alt="FAQ - Perguntas Frequentes WG Almeida"
+              src="/images/banners/FALECONOSCO.webp"
+              width="1920"
+              height="1080"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-wg-blue/40 via-wg-blue/60 to-wg-black/80"></div>
+          </motion.div>
+
+          <div className="relative z-10 container-custom text-center text-white px-4 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 text-white">
+                Perguntas Frequentes
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+                Respostas claras sobre nosso processo, serviços e diferencial
+              </p>
+            </motion.div>
+          </div>
         </section>
 
         <section className="faq-content">

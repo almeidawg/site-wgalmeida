@@ -4,7 +4,7 @@ slug: "arquitetura-sustentavel-certificacoes"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "sustentabilidade"
-image: "/images/blog/certificacoes-verdes.jpg"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Guia completo sobre certificações de construção sustentável: LEED, AQUA-HQE, Selo Casa Azul, custos, benefícios e como obter."
 tags:
   - "certificação verde"

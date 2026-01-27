@@ -4,7 +4,7 @@ slug: "steel-frame-vs-alvenaria-qual-escolher"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "construção civil"
-image: "/images/blog/steel-frame-vs-alvenaria.jpg"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Comparação completa entre Steel Frame e alvenaria tradicional: custos, prazos, vantagens e qual escolher para seu projeto."
 tags:
   - "steel frame"

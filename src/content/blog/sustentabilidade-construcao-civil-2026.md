@@ -4,7 +4,7 @@ slug: "sustentabilidade-construcao-civil-2026"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "sustentabilidade"
-image: "/images/blog/sustentabilidade-construcao.jpg"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Descubra como tornar sua obra mais sustentável com materiais ecológicos, eficiência energética e certificações verdes."
 tags:
   - "sustentabilidade"

@@ -5,6 +5,11 @@
       "source": "/:path((?:[^/]+/)*[^/]+)/",
       "destination": "/:path",
       "permanent": true
+    },
+    {
+      "source": "/solicite-sua-proposta",
+      "destination": "/solicite-proposta",
+      "permanent": true
     }
   ],
   "rewrites": [

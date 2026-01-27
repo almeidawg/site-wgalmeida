@@ -4,7 +4,7 @@ slug: "bim-construcao-civil-como-funciona"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "tecnologia"
-image: "/images/blog/bim-construcao-civil.jpg"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Entenda como o BIM (Building Information Modeling) revoluciona projetos de construção, reduz custos e elimina erros."
 tags:
   - "BIM"

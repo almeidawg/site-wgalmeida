@@ -4,7 +4,7 @@ slug: "quanto-tempo-dura-reforma-apartamento"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "reforma"
-image: "/images/blog/prazo-reforma-apartamento.jpg"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Entenda quanto tempo leva cada etapa de uma reforma de apartamento e como evitar atrasos desnecessários."
 tags:
   - "prazo reforma"

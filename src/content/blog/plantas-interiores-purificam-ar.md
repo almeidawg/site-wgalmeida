@@ -4,7 +4,7 @@ slug: "plantas-interiores-purificam-ar"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
-image: "/images/blog/plantas-purificam-ar.jpg"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Descubra as melhores plantas para ter em casa segundo estudo da NASA: purificam ar, fáceis de cuidar, onde colocar e como manter."
 tags:
   - "plantas"

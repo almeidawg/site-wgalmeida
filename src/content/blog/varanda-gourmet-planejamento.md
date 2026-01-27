@@ -4,7 +4,7 @@ slug: "varanda-gourmet-planejamento"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
-image: "/images/blog/varanda-gourmet.jpg"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Crie a varanda gourmet perfeita: layout, churrasqueira, bancada, cobertura, móveis e custos completos."
 tags:
   - "varanda gourmet"

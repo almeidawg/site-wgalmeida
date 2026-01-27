@@ -4,7 +4,7 @@ slug: "reforma-banheiro-pequeno-otimizacao"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "reforma"
-image: "/images/blog/banheiro-pequeno.jpg"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Transforme seu banheiro pequeno com soluções inteligentes: layout, cores, revestimentos, louças e truques que ampliam visualmente."
 tags:
   - "banheiro pequeno"

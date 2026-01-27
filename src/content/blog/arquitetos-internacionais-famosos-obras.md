@@ -4,7 +4,7 @@ slug: "arquitetos-internacionais-famosos-obras"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "arquitetura"
-image: "/images/blog/arquitetos-internacionais.webp"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Conheça os arquitetos internacionais mais influentes da história, de Le Corbusier a Zaha Hadid, e suas obras que mudaram o mundo."
 tags:
   - "arquitetos internacionais"

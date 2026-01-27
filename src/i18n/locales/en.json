@@ -1,0 +1,1926 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "brand": "The Brand",
+    "architecture": "Architecture",
+    "engineering": "Engineering",
+    "carpentry": "Bespoke Joinery",
+    "projects": "Projects",
+    "process": "Process",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "store": "Store",
+    "blog": "Blog",
+    "requestQuote": "Request Quote",
+    "login": "Sign In",
+    "myAccount": "My Account"
+  },
+  "header": {
+    "unitsLabel": "Divisions",
+    "units": {
+      "architecture": "Sophisticated design and complete projects.",
+      "engineering": "High-end planning and management.",
+      "carpentry": "Bespoke joinery with premium finishing."
+    },
+    "cartAria": "Open shopping cart",
+    "wgEasy": "WG Easy",
+    "wgEasyAccess": "Access WG Easy",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "languageLabel": "Language:",
+    "ctaSpecialist": "Talk to a Specialist"
+  },
+  "hero": {
+    "title": "Transforming Dreams into Premium Spaces",
+    "subtitle": "14 years of excellence in Architecture, Engineering and Custom Furniture integrated in a single ecosystem",
+    "cta": "Request Quote",
+    "ctaSecondary": "View Projects"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Get to know Grupo WG Almeida",
+    "description": "For 14 years transforming dreams into reality with high-end architecture, engineering and custom furniture projects in São Paulo.",
+    "years": "Years of Experience",
+    "projects": "Delivered Projects",
+    "clients": "Satisfied Clients",
+    "awards": "Awards & Recognition"
+  },
+  "nucleos": {
+    "title": "Our Divisions",
+    "subtitle": "Integrated solutions for your project",
+    "architecture": {
+      "title": "Architecture",
+      "description": "High-end residential and commercial projects with exclusive design and functionality"
+    },
+    "engineering": {
+      "title": "Engineering",
+      "description": "Turn Key construction management - from project to key delivery"
+    },
+    "carpentry": {
+      "title": "Bespoke Joinery",
+      "description": "Bespoke joinery with premium finishing and personalized design"
+    }
+  },
+  "process": {
+    "title": "Our Process",
+    "subtitle": "How we work",
+    "step1": {
+      "title": "Briefing",
+      "description": "We understand your needs and desires"
+    },
+    "step2": {
+      "title": "Design",
+      "description": "We develop the architectural project"
+    },
+    "step3": {
+      "title": "Execution",
+      "description": "We carry out the construction with excellence"
+    },
+    "step4": {
+      "title": "Delivery",
+      "description": "We deliver your dream come true"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are ready to serve you",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Error sending message. Please try again."
+  },
+  "footer": {
+    "description": "We transform stories into spaces that unite technique, design, and purpose.",
+    "navigation": "Navigation",
+    "units": "Divisions",
+    "contact": "Contact",
+    "whatsapp": "WhatsApp",
+    "address": "Sao Paulo, SP - Brooklin",
+    "wgEasyAccess": "Access WG Easy System",
+    "rights": "All rights reserved",
+    "followInstagram": "Follow us on Instagram",
+    "followFacebook": "Like our Facebook page",
+    "followLinkedin": "Connect with us on LinkedIn",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "blog": {
+    "title": "Blog & Magazine",
+    "subtitle": "Inspiration, trends and knowledge in architecture and design",
+    "readMore": "Read more",
+    "categories": {
+      "all": "All",
+      "architecture": "Architecture",
+      "engineering": "Engineering",
+      "carpentry": "Bespoke Joinery",
+      "design": "Design",
+      "technology": "Technology",
+      "trends": "Trends",
+      "tips": "Tips"
+    }
+  },
+  "cta": {
+    "getQuote": "Get a Quote",
+    "learnMore": "Learn More",
+    "viewProjects": "View Projects",
+    "contactUs": "Contact Us",
+    "scheduleVisit": "Schedule Visit"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "seeAll": "See all",
+    "search": "Search"
+  },
+  "seo": {
+    "home": {
+      "title": "High-End Architecture, Engineering, and Custom Furniture in Sao Paulo",
+      "description": "An integrated ecosystem of high-end architecture, engineering, and custom furniture. Premium turn key system in Sao Paulo: Brooklin, Itaim, Jardins, Vila Nova Conceicao. 14 years of excellence.",
+      "keywords": "high-end architecture sao paulo, turn key engineering, custom furniture, premium construction brooklin, apartment renovation itaim, architect jardins, premium builder sp"
+    },
+    "about": {
+      "title": "About Us - History and Values",
+      "description": "Learn the history, mission, vision, and values of Grupo WG Almeida. 14 years integrating high-end architecture, engineering, and custom furniture in Sao Paulo.",
+      "keywords": "about wg almeida, company history, architecture company values, mission vision construction sao paulo"
+    },
+    "process": {
+      "title": "Turn Key Process - From Concept to Delivery",
+      "description": "Discover our integrated Turn Key process: from concept to key delivery. 6 stages with excellence in architecture, engineering, and custom furniture.",
+      "keywords": "turn key process, construction stages, architectural project workflow, construction schedule, construction management"
+    },
+    "architecture": {
+      "title": "High-End Architecture Sao Paulo",
+      "description": "Complete high-end architectural projects in Sao Paulo. Interior design, technical coordination, and approvals. Brooklin, Jardins, Itaim, Vila Nova Conceicao.",
+      "keywords": "high-end architecture sao paulo, architectural project, interior design, architect brooklin, architect jardins, luxury apartment renovation"
+    },
+    "engineering": {
+      "title": "Turn Key Engineering Sao Paulo",
+      "description": "Complete Turn Key engineering solutions in Sao Paulo. Planning, construction management, and high-end installations. Key delivery.",
+      "keywords": "turn key engineering sao paulo, construction management, high-end builder, apartment renovation, residential construction, key delivery"
+    },
+    "carpentry": {
+      "title": "Bespoke Joinery in Sao Paulo",
+      "description": "High-end bespoke joinery in Sao Paulo. Planned furniture, technical installation, and artisanal production with noble woods. 8-year warranty.",
+      "keywords": "bespoke joinery sao paulo, high-end planned furniture, carpenter brooklin, custom furniture jardins, luxury joinery, bespoke furniture"
+    },
+    "testimonials": {
+      "title": "Testimonials - Client Reviews",
+      "description": "See real client reviews on Google. 14 years building dreams with excellence in architecture, engineering, and Bespoke Joinery. 5.0 rating on Google.",
+      "keywords": "WG Almeida reviews, architecture client testimonials, engineering reviews Sao Paulo, google review builder"
+    },
+    "contact": {
+      "title": "Contact - Get in Touch",
+      "description": "Contact Grupo WG Almeida. Service in Sao Paulo: Brooklin, Jardins, Itaim, Vila Nova Conceicao. WhatsApp: (11) 98465-0002.",
+      "keywords": "contact wg almeida, architect phone sao paulo, whatsapp builder, architecture quote"
+    },
+    "projects": {
+      "title": "Projects - Architecture and Engineering Portfolio",
+      "description": "Explore our portfolio of high-end residential and corporate projects in Sao Paulo. More than 400 projects delivered with integrated architecture, engineering, and Bespoke Joinery.",
+      "keywords": "architecture projects sao paulo, builder portfolio, high-end works, luxury apartment renovation, residential projects"
+    },
+    "blog": {
+      "title": "Blog & Magazine - Architecture and Design",
+      "description": "Inspiration, trends, and knowledge in architecture, engineering, and interior design. Articles, tips, and news from Grupo WG Almeida in Sao Paulo.",
+      "keywords": "architecture blog, interior design trends, renovation tips, engineering articles, construction news"
+    },
+    "store": {
+      "title": "Store",
+      "description": "Explore exclusive products in the Grupo WG Almeida store. Decorative items, lighting, and curated pieces."
+    },
+    "success": {
+      "title": "Purchase Successful!",
+      "description": "Your purchase was completed successfully. Thank you for choosing the Grupo WG Almeida store."
+    },
+    "login": {
+      "title": "Login - Grupo WG Almeida",
+      "description": "Access your account at Grupo WG Almeida."
+    },
+    "register": {
+      "title": "Register - Grupo WG Almeida",
+      "description": "Create your account at Grupo WG Almeida."
+    },
+    "account": {
+      "title": "My Account - Grupo WG Almeida",
+      "description": "Manage your account and track your projects at Grupo WG Almeida."
+    },
+    "proposal": {
+      "title": "Request Your Proposal - Grupo WG Almeida",
+      "description": "Request your personalized proposal for high-end architecture, engineering and Bespoke Joinery."
+    }
+  },
+  "home": {
+    "impactPhrases": [
+      "Technique in every line. Luxury in every silence.",
+      "From concept to delivery, without noise.",
+      "One team. One passion. One standard.",
+      "Every detail has intention."
+    ],
+    "hero": {
+      "subtitle": "A complete ecosystem to build with excellence.",
+      "subheadline": "We plan, execute, and deliver high-end spaces — from concept to the last detail, under one standard of management.",
+      "ctaPrimary": "Meet Grupo WG Almeida",
+      "ctaSecondary": "See how we work"
+    },
+    "about": {
+      "kicker": "{{years}} years building excellence",
+      "title": "Grupo WG Almeida is an ecosystem of integrated solutions in high-end architecture, engineering, and custom furniture.",
+      "paragraphs": [
+        "We act end-to-end — from concept to delivery — with method, technical rigor, and aesthetic sensibility. We unite planning, execution, and finishing under one standard of quality, management, and responsibility.",
+        "Beyond designing and building, we deliver <strong>control, predictability, and peace of mind</strong> for those who value excellence."
+      ]
+    },
+    "stats": {
+      "inProgress": "Projects<br />in progress",
+      "clients": "Clients<br />served",
+      "coverings": "Square meters of finishes<br />installed",
+      "hours": "Hours designing<br />and building stories"
+    },
+    "turnKey": {
+      "kicker": "Premium Turn Key System",
+      "title": "One team, one passion, one standard!",
+      "points": [
+        "One single team",
+        "One single passion",
+        "One single standard"
+      ],
+      "paragraph": "We plan, execute, and finish each project with a global vision, technical control, and curated finishes — eliminating noise, rework, and improvisation.",
+      "quote": "\"Planning well means respecting the client's time, investment, and dream.\""
+    },
+    "units": {
+      "kicker": "Our Divisions",
+      "title": "Specialization + Integration",
+      "subtitle": "Three disciplines under the same standard of quality, management, and responsibility.",
+      "architecture": {
+        "title": "Architecture",
+        "description": "Complete architectural projects, authorial interiors, technical coordination, and coordination of all disciplines.",
+        "highlight": "Architecture designed to be built — with beauty, logic, and feasibility."
+      },
+      "engineering": {
+        "title": "Engineering",
+        "description": "Residential and corporate construction with a turn key system. Planning, schedule, cost control, and supplier management.",
+        "highlight": "Precision, method, and responsibility from start to finish."
+      },
+      "carpentry": {
+        "title": "Bespoke Joinery",
+        "description": "High-end bespoke furniture developed in perfect integration with the project and construction.",
+        "highlight": "Bespoke Joinery as an extension of architecture — not a complement."
+      }
+    },
+    "turnKeyBadge": {
+      "label": "Division of",
+      "unit": "Engineering",
+      "tag": "Premium Turn Key System"
+    },
+    "turnKeyBlock": {
+      "kicker": "Turn Key Construction Management",
+      "title": "From project to delivery,<br /><span>without noise.</span>",
+      "paragraph": "We take full responsibility for executing your project — planning, schedule, cost control, supplier management, and technical teams. You follow everything in real time, with peace of mind.",
+      "benefits": [
+        "Controlled schedule",
+        "Predictable costs",
+        "Integrated management",
+        "Guaranteed quality"
+      ],
+      "quote": "\"Precision, method, and responsibility from start to finish.\"",
+      "cta": "Discover the Engineering Division",
+      "imageAlt": "Engineering Division - Turn Key Construction Management"
+    },
+    "methodology": {
+      "kicker": "Our Methodology",
+      "title": "How We Work",
+      "subtitle": "Each stage is conducted with clarity, method, and responsibility.",
+      "steps": [
+        { "title": "Deep understanding", "desc": "Detailed briefing of client and space" },
+        { "title": "Executive design", "desc": "Detailed and complete technical design" },
+        { "title": "Planning", "desc": "Financial, technical, and schedule" },
+        { "title": "Integrated execution", "desc": "Construction led with rigorous management" },
+        { "title": "Premium Bespoke Joinery", "desc": "Finishes and custom furniture" },
+        { "title": "Assisted delivery", "desc": "Post-work and follow-up" }
+      ],
+      "quote": "\"Here, excellence is not a promise. It is a process.\""
+    },
+    "dashboard": {
+      "kicker": "WG Easy Dashboard",
+      "title": "Live control of the work, from design to finishing.",
+      "paragraph": "A single panel to follow approvals, schedule, and communication without noise. Everything in real time, with full transparency for the client.",
+      "features": [
+        "Project stages",
+        "Construction schedule",
+        "Daily records",
+        "Centralized communication",
+        "Decisions and documents"
+      ],
+      "cards": [
+        { "label": "Real time", "value": "Alerts, stages, and approvals in one panel." },
+        { "label": "Organization", "value": "Documents and decisions centralized with history." }
+      ],
+      "systemUrl": "sistema.wgalmeida.com.br",
+      "panel": {
+        "phase": { "label": "Phase", "value": "Execution" },
+        "deadline": { "label": "Deadline", "value": "On time" },
+        "control": { "label": "Control", "value": "Active" },
+        "items": [
+          { "label": "Executive Design", "status": "Completed" },
+          { "label": "Execution Phase", "status": "In progress" },
+          { "label": "Bespoke Joinery", "status": "Waiting" }
+        ],
+        "status": {
+          "label": "Overall status",
+          "value": "Execution under control",
+          "helper": "SLA, approvals, and photos synchronized."
+        }
+      }
+    },
+    "closing": {
+      "title": "Grupo WG Almeida.<br /><span>Where ideas take shape, processes gain control</span><br /><span>and spaces gain soul.</span>",
+      "ctaPrimary": "Start your Project",
+      "ctaSecondary": "View Portfolio"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "kicker": "Grupo WG Almeida",
+      "title": "Our History",
+      "subtitle": "Technique, tradition, and innovation in every project",
+      "imageAlt": "Grupo WG Almeida office with team working"
+    },
+    "stats": {
+      "years": "Years of Experience",
+      "projects": "Delivered Projects",
+      "units": "Integrated Divisions",
+      "method": "Agile Methodology"
+    },
+    "story": {
+      "title": "WHO WE ARE",
+      "paragraphs": [
+        "Grupo WG Almeida was born from the vision of integrating three fundamental pillars of high-end construction: architecture, engineering, and custom furniture. With years of experience, we consolidated our position as a reference in projects that unite flawless technique and sophisticated design.",
+        "Our trajectory is marked by a constant pursuit of excellence, attention to detail, and an unwavering commitment to client satisfaction. Each project is treated as unique, receiving full dedication from our multidisciplinary team.",
+        "We believe true quality lies in the perfect integration of all project stages, from the initial concept to the final delivery. That is why we offer complete turn key solutions, ensuring full control over deadlines, costs, and quality."
+      ]
+    },
+    "values": {
+      "mission": {
+        "title": "Mission",
+        "description": "Transform spaces through the perfect integration of architecture, engineering, and custom furniture, delivering high-end projects with technical and aesthetic excellence."
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To be a national reference in integrated high-end projects, recognized for quality, innovation, and commitment to client satisfaction."
+      },
+      "values": {
+        "title": "Values",
+        "description": "Technical excellence, commitment to deadlines, transparency, constant innovation, and respect for the client and the environment."
+      },
+      "purpose": {
+        "title": "Purpose",
+        "description": "To create environments that unite technique, design, and purpose, transforming stories into spaces that inspire and endure."
+      }
+    },
+    "ceo": {
+      "imageAlt": "William Almeida - Founder & CEO of Grupo WG Almeida",
+      "role": "Founder & CEO",
+      "name": "William Almeida",
+      "paragraphs": [
+        "Before it became a group, system, or method, there was a common challenge for growing companies: <span>decisions without clear data</span>, people-dependent processes, inconsistent pricing, and low scalability.",
+        "The answer was never improvised. <span>It was structure.</span>",
+        "William Almeida, Founder and CEO, built his trajectory by acting directly in operations, assuming responsibilities, and turning complexity into functional systems. The transition to system development was a strategic decision to guarantee control, predictability, and sustainable growth.",
+        "In this context, <span>WG Easy</span> emerged — an internal system developed to solve real problems in pricing, proposals, contracts, planning, and execution, applied daily in real operations.",
+        "Grupo WG Almeida consolidates itself as a structure that unites <span>executive vision</span>, <span>systems thinking</span>, and <span>practical execution</span> — focused on the creation, organization, and optimization of businesses."
+      ],
+      "signature": "WG Almeida"
+    },
+    "differential": {
+      "kicker": "What makes us unique",
+      "title": "Our Differentiator",
+      "paragraph": "The complete integration between architecture, engineering, and Bespoke Joinery allows us to offer unique and personalized solutions. Our multidisciplinary team works in synergy from the first line to key delivery, ensuring every detail reflects the vision and values of our clients.",
+      "quote": "The WG Almeida voice is firm, elegant, and human."
+    }
+  },
+  "processPage": {
+    "hero": {
+      "title": "OUR PROCESS",
+      "subtitle": "From concept to delivery, with total integration",
+      "imageAlt": "WG Almeida work process"
+    },
+    "stepsTitle": "PROJECT STAGES",
+    "stepsSubtitle": "A proven methodology that guarantees excellence in every phase",
+    "steps": [
+      {
+        "title": "Concept",
+        "description": "Initial meeting to understand client needs, desires, and vision. Definition of briefing and project guidelines."
+      },
+      {
+        "title": "Design",
+        "description": "Development of preliminary studies, pre-design, and executive design with all disciplines integrated."
+      },
+      {
+        "title": "Approval",
+        "description": "Management of approvals with competent authorities and preparation of complete technical documentation."
+      },
+      {
+        "title": "Planning",
+        "description": "Definition of schedule, detailed budget, and selection of qualified suppliers and partners."
+      },
+      {
+        "title": "Execution",
+        "description": "Complete construction management with daily technical follow-up, quality control, and periodic reports."
+      },
+      {
+        "title": "Delivery",
+        "description": "Finalization with technical inspection, as-built documentation, and post-delivery support to guarantee satisfaction."
+      }
+    ],
+    "onboarding": {
+      "kicker": "WG Almeida Exclusivity",
+      "title": "Architectural Onboarding",
+      "subtitle": "We developed an exclusive methodology to start each project with total clarity and alignment. Architectural onboarding is the first step to ensure your vision is understood in every detail.",
+      "items": [
+        {
+          "title": "Deep Briefing",
+          "desc": "Complete immersion in your lifestyle, needs, and desires. We understand not only what you want, but why you want it."
+        },
+        {
+          "title": "Visual Analysis",
+          "desc": "We collect visual references, study your personal collection, and create an exclusive moodboard to guide the project."
+        },
+        {
+          "title": "Technical Documentation",
+          "desc": "Detailed survey of the property, structural analysis, mapping of installations, and identification of opportunities."
+        },
+        {
+          "title": "Realistic Schedule",
+          "desc": "Definition of feasible deadlines, delivery milestones, and decision points for you to follow each phase."
+        },
+        {
+          "title": "3D Presentation",
+          "desc": "Immersive visualization of the project before execution. You see exactly how the final result will look."
+        },
+        {
+          "title": "Dedicated Channel",
+          "desc": "Access to the WG client area for real-time tracking, direct communication, and organized documentation."
+        }
+      ]
+    },
+    "engineering": {
+      "kicker": "Engineering Division",
+      "title": "Turn Key Construction Management",
+      "subtitle": "Our engineering is not just execution — it is complete management. From planning to delivery, we control each variable to guarantee schedule, cost, and quality.",
+      "items": [
+        "Executive planning with detailed schedule",
+        "Qualified supplier and purchasing management",
+        "Cost control with weekly reports",
+        "Daily technical follow-up on site",
+        "Coordination of all disciplines",
+        "As-built documentation and owner manual"
+      ],
+      "stats": [
+        "Projects delivered on time",
+        "Projects with controlled budget",
+        "Years of experience",
+        "Agile Methodology"
+      ]
+    },
+    "integration": {
+      "title": "Total Integration",
+      "paragraph": "The great advantage of Grupo WG Almeida is the complete integration between architecture, engineering, and Bespoke Joinery. This ensures that all stages of the project are perfectly coordinated, eliminating rework, reducing timelines, and ensuring final quality.",
+      "quote": "\"From design to delivery, with precision, aesthetics, and high performance.\""
+    }
+  },
+  "architecturePage": {
+    "hero": {
+      "kicker": "Architecture Division",
+      "title": "Architecture",
+      "subtitle": "Sophisticated design that blends functionality and aesthetics",
+      "badge": "Complete Projects",
+      "imageAlt": "High-end architectural project"
+    },
+    "servicesKicker": "What we offer",
+    "servicesTitle": "Our Services",
+    "servicesSubtitle": "Complete architectural solutions for residential and corporate projects",
+    "services": [
+      {
+        "title": "Complete Project",
+        "description": "Full development of residential and corporate architectural projects, from concept to execution."
+      },
+      {
+        "title": "Interiors",
+        "description": "Sophisticated interior design focused on functionality, aesthetics, and comfort."
+      },
+      {
+        "title": "Approvals",
+        "description": "Full approval management with competent authorities and project regularization."
+      },
+      {
+        "title": "Coordination",
+        "description": "Technical coordination between all project disciplines, ensuring perfect integration."
+      }
+    ],
+    "commitment": {
+      "kicker": "Our commitment",
+      "title": "Excellence in Every Detail",
+      "paragraphs": [
+        "Our architecture team combines creativity, technique, and experience to create unique spaces that reflect each client's personality and needs.",
+        "We work with the most modern design and rendering tools, enabling clients to visualize every detail before execution.",
+        "Integration with our engineering and Bespoke Joinery divisions ensures the project is executed exactly as planned, without surprises."
+      ],
+      "badge": "\"Architecture designed to be built.\"",
+      "imageAlt": "WG Almeida architectural project - Vila Nova Conceicao"
+    },
+    "cta": "Talk to an architect",
+    "schema": {
+      "name": "High-End Architecture",
+      "description": "Complete high-end architectural projects in Sao Paulo. Sophisticated interior design and technical coordination."
+    }
+  },
+  "engineeringPage": {
+    "hero": {
+      "kicker": "Engineering Division",
+      "title": "Engineering",
+      "subtitle": "Technical precision and efficient management in every project",
+      "badge": "Turn Key System",
+      "imageAlt": "High-end engineering work in progress"
+    },
+    "servicesKicker": "What we offer",
+    "servicesTitle": "Our Services",
+    "servicesSubtitle": "Complete engineering solutions for high-end projects",
+    "services": [
+      {
+        "title": "Turn Key",
+        "description": "Complete project delivery, from foundation to finishes, with full schedule and quality management."
+      },
+      {
+        "title": "Planning and Management",
+        "description": "Technical and administrative construction management, ensuring efficiency and cost control."
+      },
+      {
+        "title": "Installations",
+        "description": "Design and execution of electrical, plumbing, HVAC, and building automation systems."
+      },
+      {
+        "title": "Quality",
+        "description": "Rigorous quality control at every stage, with certifications and technical reports."
+      }
+    ],
+    "commitment": {
+      "kicker": "Our commitment",
+      "title": "Engineering Excellence",
+      "paragraphs": [
+        "Our engineering team is made up of highly qualified professionals with extensive experience in high-end and technically complex projects.",
+        "We use modern project management methodologies, ensuring total control over deadlines, costs, and quality at every stage.",
+        "The Turn Key system gives clients complete peace of mind, knowing every detail is carefully managed by our team."
+      ],
+      "imageAlt": "Engineering team working on a technical project",
+      "badge": "Years of experience"
+    },
+    "cta": "Talk to an engineer",
+    "schema": {
+      "name": "Turn Key Engineering",
+      "description": "Complete Turn Key engineering solutions. Project delivery from foundation to finishes with full management."
+    }
+  },
+  "Bespoke JoineryPage": {
+    "hero": {
+      "kicker": "Bespoke Joinery Division",
+      "title": "Bespoke Joinery",
+      "subtitle": "Art and technique in every piece created",
+      "badge": "WG Atelier",
+      "imageAlt": "High-end bespoke joinery with custom furniture"
+    },
+    "servicesKicker": "What we offer",
+    "servicesTitle": "Our Services",
+    "servicesSubtitle": "Exclusive and personalized furniture with premium finishing",
+    "services": [
+      {
+        "title": "Custom Furniture",
+        "description": "Creation of exclusive, personalized furniture designed specifically for each environment."
+      },
+      {
+        "title": "Technical Installation",
+        "description": "Professional installation with impeccable finishing and attention to the smallest details."
+      },
+      {
+        "title": "WG Atelier",
+        "description": "Artisanal production of unique pieces with noble woods and premium finishes."
+      },
+      {
+        "title": "Integrated Projects",
+        "description": "Development of Bespoke Joinery integrated with architectural and interior design projects."
+      }
+    ],
+    "commitment": {
+      "kicker": "Our commitment",
+      "title": "Craftsmanship and Precision",
+      "paragraphs": [
+        "Our joinery combines traditional artisan techniques with cutting-edge technology, creating unique pieces that are true functional works of art.",
+        "We work exclusively with selected noble woods, ensuring durability, beauty, and sustainability in every project.",
+        "Integration with our architecture and engineering divisions allows perfectly harmonized solutions, from planning to final installation."
+      ],
+      "badge": "\"Joinery as an extension of architecture.\"",
+      "imageAlt": "WG Almeida joinery - Custom furniture Brooklin"
+    },
+    "cta": "Talk to a specialist",
+    "schema": {
+      "name": "Bespoke Joinery",
+      "description": "High-end bespoke furniture. Artisanal production with noble woods and premium finishes."
+    }
+  },
+  "testimonialsPage": {
+    "hero": {
+      "kicker": "Our Clients",
+      "title": "Testimonials",
+      "subtitle": "Our clients' satisfaction is our greatest achievement",
+      "imageAlt": "Satisfied WG Almeida clients"
+    },
+    "google": {
+      "kicker": "Verified Reviews",
+      "title": "See what our clients say",
+      "subtitle": "All our reviews are real and verified by Google. We invite you to discover the experience of those who have already completed projects with us.",
+      "note": "Access our Google reviews and see the real experience of our clients.",
+      "ctaMaps": "View on Google Maps",
+      "ctaReview": "Leave a Review"
+    },
+    "stats": [
+      "Years of experience",
+      "Projects delivered",
+      "Satisfied clients"
+    ],
+    "partners": {
+      "kicker": "Excellence Partnerships",
+      "title": "Our Partners",
+      "subtitle": "We work with the best brands and suppliers in the market"
+    },
+    "cta": {
+      "title": "Ready to be part of this story?",
+      "subtitle": "Get in touch and discover how we can transform your project into reality.",
+      "whatsapp": "Chat on WhatsApp",
+      "message": "Send Message",
+      "whatsappMessage": "Hello! I saw the site and would like to learn more about WG Almeida services."
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "kicker": "Get in Touch",
+      "title": "Contact Us",
+      "subtitle": "We are ready to transform your project into reality",
+      "imageAlt": "Contact Grupo WG Almeida"
+    },
+    "info": {
+      "kicker": "Let's talk",
+      "title": "Contact Us",
+      "subtitle": "Fill out the form or use one of our service channels. Our team is ready to assist you.",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "addressLabel": "Address",
+      "addressValue": "Sao Paulo, SP - Brooklin",
+      "hoursLabel": "Hours",
+      "hoursValue": "Mon - Fri: 9am to 6pm",
+      "whatsappCta": "Chat on WhatsApp"
+    },
+    "form": {
+      "name": "Name *",
+      "email": "Email *",
+      "phone": "Phone",
+      "phonePlaceholder": "(11) 99999-9999",
+      "subject": "Subject",
+      "message": "Message *",
+      "sending": "Sending...",
+      "submit": "Send Message"
+    },
+    "toast": {
+      "errorTitle": "Error sending message!",
+      "errorDescription": "Something went wrong. Please try again later.",
+      "successTitle": "Message sent!",
+      "successDescription": "We will contact you soon. Thank you!"
+    }
+  },
+  "projectsPage": {
+    "hero": {
+      "kicker": "Our Portfolio",
+      "title": "Projects That Transform",
+      "subtitle": "Each project starts from a point, takes shape in the lines, and transforms stories into a way of living.",
+      "imageAlt": "WG Almeida projects"
+    },
+    "filters": [
+      { "id": "all", "label": "All" },
+      { "id": "residential", "label": "Residential" },
+      { "id": "corporate", "label": "Corporate" }
+    ],
+    "meta": {
+      "area": "Area",
+      "duration": "Duration"
+    },
+    "cta": {
+      "title": "Ready to transform your space?",
+      "subtitle": "Get in touch and discover how we can turn your ideas into reality.",
+      "button": "Start Project"
+    },
+    "projects": [
+      {
+        "id": 1,
+        "title": "Casa Home Resort Acapulco",
+        "category": "residential",
+        "tags": ["Architecture", "Engineering", "Bespoke Joinery"],
+        "area": "650m²",
+        "duration": "24 months",
+        "location": "Acapulco, Guaruja - SP",
+        "description": "Complete residential project in a high-end seaside condominium. Full integration of architecture, engineering, and Bespoke Joinery to create a private resort with ocean views.",
+        "images": [
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (2).webp", "label": "Main Facade" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (3).webp", "label": "Integrated Living" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (4).webp", "label": "Gourmet Area" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (5).webp", "label": "Pool with Deck" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (6).webp", "label": "Master Suite" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (7).webp", "label": "Panoramic Balcony" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (8).webp", "label": "TV Room" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (9).webp", "label": "Gourmet Kitchen" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (10).webp", "label": "Master Bathroom" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (11).webp", "label": "Leisure Area" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (14).webp", "label": "Night View" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (15).webp", "label": "Bespoke Joinery Details" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (16).webp", "label": "Landscaping" }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Corporate Alphaville",
+        "category": "corporate",
+        "tags": ["Architecture", "Engineering", "Bespoke Joinery"],
+        "area": "1,200m²",
+        "duration": "18 months",
+        "location": "Alphaville, Barueri - SP",
+        "description": "Integrated corporate project with modern architecture, advanced engineering, and premium Bespoke Joinery. Spaces designed for productivity and employee well-being.",
+        "images": [
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (1).webp", "label": "Corporate Facade" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (2).webp", "label": "Executive Reception" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (3).webp", "label": "Open Space" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (4).webp", "label": "Meeting Room" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (5).webp", "label": "Board Room" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (6).webp", "label": "Gourmet Pantry" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (7).webp", "label": "Break Area" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (8).webp", "label": "Entrance Hall" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (9).webp", "label": "Project Details" }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Porta do Sol Condominium",
+        "category": "residential",
+        "tags": ["Architecture", "Engineering"],
+        "area": "420m²",
+        "duration": "16 months",
+        "location": "Mairinque - SP",
+        "description": "Residential project in a gated community with contemporary architecture and high-end structural engineering. Perfect integration with the local nature.",
+        "images": [
+          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (11).webp", "label": "Front View" },
+          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (12).webp", "label": "Social Area" },
+          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (13).webp", "label": "Garden" },
+          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (14).webp", "label": "Pool" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (10).webp", "label": "Structure" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (11).webp", "label": "Foundation" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (12).webp", "label": "Execution" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (13).webp", "label": "Finishing" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (14).webp", "label": "Structural Details" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (15).webp", "label": "Final View" }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Residential Transformation",
+        "category": "residential",
+        "tags": ["Renovation", "Before and After", "Turn Key"],
+        "area": "280m²",
+        "duration": "12 months",
+        "location": "Sao Paulo - SP",
+        "description": "Complete residential transformation with full renovation. A turn key project that shows the power of renewal: from before to after, a new story.",
+        "images": [
+          { "src": "/images/imagens/01 Depois 01.webp", "label": "Final Result 1" },
+          { "src": "/images/imagens/02 Depois 02 .webp", "label": "Final Result 2" },
+          { "src": "/images/imagens/03 Depois .webp", "label": "Final Result 3" },
+          { "src": "/images/imagens/04 Depois.webp", "label": "Final Result 4" }
+        ],
+        "beforeAfter": [
+          { "before": "/images/imagens/01 Antes 01.webp", "after": "/images/imagens/01 Depois 01.webp", "label": "Environment 1" },
+          { "before": "/images/imagens/02 Antes 02.webp", "after": "/images/imagens/02 Depois 02 .webp", "label": "Environment 2" },
+          { "before": "/images/imagens/03 Antes.webp", "after": "/images/imagens/03 Depois .webp", "label": "Environment 3" },
+          { "before": "/images/imagens/04 Antes.webp", "after": "/images/imagens/04 Depois.webp", "label": "Environment 4" }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Itaim Project",
+        "category": "residential",
+        "tags": ["Engineering", "High-End"],
+        "area": "350m²",
+        "duration": "14 months",
+        "location": "Itaim Bibi, Sao Paulo - SP",
+        "description": "Engineering project in one of Sao Paulo's most exclusive regions. Execution with technical rigor and first-class finishes.",
+        "images": [
+          { "src": "/images/imagens/BANNERITTAIM-ENGENHARIA.webp", "label": "Project Banner" },
+          { "src": "/images/imagens/3.webp", "label": "Interior Detail" },
+          { "src": "/images/imagens/7.webp", "label": "Social Area" },
+          { "src": "/images/imagens/8.webp", "label": "Finishes" },
+          { "src": "/images/imagens/9.webp", "label": "Overall View" }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Premium Residence",
+        "category": "residential",
+        "tags": ["Architecture", "Bespoke Joinery"],
+        "area": "480m²",
+        "duration": "20 months",
+        "location": "Sao Paulo - SP",
+        "description": "High-end residence with exclusive Bespoke Joinery and contemporary architecture. Every space is designed to provide comfort and sophistication.",
+        "images": [
+          { "src": "/images/imagens/10.webp", "label": "Living Room" },
+          { "src": "/images/imagens/11.webp", "label": "Dining Room" },
+          { "src": "/images/imagens/12.webp", "label": "Home Theater" }
+        ]
+      }
+    ]
+  },
+  "brandPage": {
+    "hero": {
+      "kicker": "Our Identity",
+      "title": "The Brand <span>WG Almeida</span>",
+      "quote": "\"Tradition that inspires trust. Innovation that transforms results.\"",
+      "subtitle": "Our commitment is to unite engineering, architecture, and Bespoke Joinery with technical excellence, purpose, and respect, delivering works that delight and spaces that inspire."
+    },
+    "purpose": {
+      "kicker": "Our Purpose",
+      "title": "Transform spaces into experiences that delight and inspire",
+      "paragraphs": [
+        "We build more than works: we create <strong>soulful environments</strong> that reflect the lifestyle, essence, and dreams of each client.",
+        "We unite <strong>high-end architecture, engineering, and Bespoke Joinery</strong> with purpose, technique, and sensibility so that every project is unique, functional, and memorable."
+      ]
+    },
+    "mission": {
+      "title": "Our Mission",
+      "paragraphs": [
+        "To delight people and the world by <strong>designing, renovating, and building high-performance spaces</strong> — from architectural design to full execution.",
+        "To be recognized by clients and partners as an <strong>ethical, transparent, and honest</strong> company committed to organization, cleanliness, deadlines, quality, and responsibility at every stage."
+      ],
+      "quote": "\"You will not be the first to arrive or the last to leave the job site — the client will. And they must find their home as they wish: <strong>without a construction look</strong>.\""
+    },
+    "vision": {
+      "title": "Our Vision",
+      "paragraphs": [
+        "To exceed expectations through <strong>technological innovation, sustainability, and operational excellence</strong>, offering personalized solutions integrated in the <em>turn key</em> system.",
+        "To be a reference in <strong>residential and corporate construction</strong>, ensuring healthy profitability through trust, satisfaction, and loyalty of served clients."
+      ],
+      "tags": ["Innovation", "Sustainability", "Turn Key"]
+    },
+    "valuesSection": {
+      "title": "Our Values",
+      "subtitle": "The pillars that sustain our brand and guide every decision, every project, every delivery."
+    },
+    "values": [
+      {
+        "title": "Pursuit of Perfection",
+        "description": "Requires humility, determination, and patience in every detail."
+      },
+      {
+        "title": "Dedication",
+        "description": "Going beyond job duties with genuine enthusiasm."
+      },
+      {
+        "title": "Agile Management",
+        "description": "Simple, flexible, agile, and integrated across all processes."
+      },
+      {
+        "title": "Cooperation",
+        "description": "Transparency, fairness, and genuine interest in serving and understanding."
+      },
+      {
+        "title": "Growth",
+        "description": "Work as an opportunity for personal and collective development."
+      },
+      {
+        "title": "Ethics",
+        "description": "Simplicity, respect, and integrity in all actions."
+      },
+      {
+        "title": "Learning",
+        "description": "Mistakes are acknowledged and transformed into continuous improvement."
+      },
+      {
+        "title": "Excellence",
+        "description": "Professional fulfillment as fuel for new challenges."
+      }
+    ],
+    "colorsSection": {
+      "title": "Color Palette",
+      "subtitle": "Each color was chosen to represent a unique aspect of our brand, creating a rich and meaningful visual identity."
+    },
+    "colors": [
+      {
+        "name": "WG Orange",
+        "hex": "#F25C26",
+        "rgb": "RGB(242, 92, 38)",
+        "meaning": "Energy, creativity, and passion for architecture",
+        "usage": "Primary color, CTAs, highlights"
+      },
+      {
+        "name": "WG Green",
+        "hex": "#5E9B94",
+        "rgb": "RGB(94, 155, 148)",
+        "meaning": "Balance, sustainability, and harmony",
+        "usage": "Architecture, natural elements"
+      },
+      {
+        "name": "WG Blue",
+        "hex": "#2B4580",
+        "rgb": "RGB(43, 69, 128)",
+        "meaning": "Trust, solidity, and professionalism",
+        "usage": "Engineering, technical elements"
+      },
+      {
+        "name": "WG Brown",
+        "hex": "#8B5E3C",
+        "rgb": "RGB(139, 94, 60)",
+        "meaning": "Tradition, noble materials, and craftsmanship",
+        "usage": "Bespoke Joinery, premium elements"
+      }
+    ],
+    "typography": {
+      "title": "Typography",
+      "subtitle": "The combination of typefaces was chosen to balance elegance and legibility, reflecting the brand's sophistication and professionalism.",
+      "titleLabel": "Headlines",
+      "titleDesc": "Elegant and classic, it conveys sophistication.",
+      "bodyLabel": "Body Text",
+      "bodyDesc": "Modern and clean, it offers excellent legibility.",
+      "sampleTitle": "We transform dreams into spaces that inspire",
+      "sampleText": "Each project is an opportunity to create something unique that reflects the personality and desires of those who will inhabit it."
+    },
+    "nuclei": {
+      "title": "Three Divisions, One Vision",
+      "subtitle": "Our brand integrates three areas of expertise in a complete solution — from design to execution, from dream to reality.",
+      "items": [
+        {
+          "name": "Architecture",
+          "color": "#5E9B94",
+          "description": "Sophisticated design and projects that translate dreams into reality."
+        },
+        {
+          "name": "Engineering",
+          "color": "#2B4580",
+          "description": "Planning and execution with technical excellence."
+        },
+        {
+          "name": "Bespoke Joinery",
+          "color": "#8B5E3C",
+          "description": "Custom furniture with premium finishing."
+        }
+      ]
+    },
+    "turnKey": {
+      "badge": "Turn Key",
+      "title": "Global Contracting",
+      "subtitle": "An execution model where we commit to build or renovate completely, from the beginning to the end of the work.",
+      "steps": [
+        { "num": "01", "title": "Initial Stages", "desc": "Documentation, permits, demarcation" },
+        { "num": "02", "title": "Mobilization", "desc": "Structuring the construction site" },
+        { "num": "03", "title": "Cleaning", "desc": "Regularizations and site preparation" },
+        { "num": "04", "title": "Layout", "desc": "Setting out and foundation demarcation" },
+        { "num": "05", "title": "Foundation", "desc": "Piles, blocks, and base structure" },
+        { "num": "06", "title": "Structures", "desc": "Columns, beams, slabs, and roof" },
+        { "num": "07", "title": "Masonry", "desc": "Walls and enclosures" },
+        { "num": "08", "title": "Installations", "desc": "Electrical, plumbing, air conditioning" },
+        { "num": "09", "title": "Finishes", "desc": "Floors, cladding, painting" },
+        { "num": "10", "title": "Bespoke Joinery", "desc": "Custom furniture" },
+        { "num": "11", "title": "Fixtures and Metals", "desc": "Equipment installation" },
+        { "num": "12", "title": "Delivery", "desc": "Your home ready to live in" }
+      ]
+    },
+    "cta": {
+      "title": "Shall we create something incredible together?",
+      "subtitle": "Tradition that inspires trust. Innovation that transforms results. Let us transform your dream into reality.",
+      "primary": "Talk to a Specialist",
+      "secondary": "View Projects"
+    }
+  },
+  "regions": {
+    "defaults": {
+      "keywords": "architecture {{region}}, engineering {{region}}, Bespoke Joinery {{region}}, high-end works {{region}}, apartment renovation {{region}}",
+      "coverage": "Our presence in {{region}}",
+      "servicesTitle": "High-end integrated solutions",
+      "highlightsTitle": "Why choose WG Almeida in {{region}}?",
+      "quote": "\"{{region}} demands a high level of detail, finishing, and discretion — and that is exactly where Grupo WG Almeida operates.\"",
+      "ctaTitle": "Ready to start your project in {{region}}?",
+      "ctaDescription": "Get in touch and discover how we can transform your space with excellence.",
+      "ctaPrimary": "Talk to a Specialist",
+      "ctaSecondary": "View Projects",
+      "services": [
+        {
+          "title": "Architecture",
+          "items": ["Residential projects", "Authorial interiors", "Complete renovations"]
+        },
+        {
+          "title": "Engineering",
+          "items": ["Turn key works", "Project management", "Technical supervision"]
+        },
+        {
+          "title": "Bespoke Joinery",
+          "items": ["Custom furniture", "Premium finishes", "Total integration"]
+        }
+      ]
+    },
+    "brooklin": {
+      "name": "Brooklin",
+      "title": "High-End Architecture and Works in Brooklin",
+      "metaDescription": "High-end architecture, engineering, and Bespoke Joinery in Brooklin, Sao Paulo. Complete projects, turn key renovations, and custom furniture. Integrated WG Almeida system.",
+      "heroImage": "/images/regions/brooklin.jpg",
+      "intro": [
+        "Grupo WG Almeida operates in Brooklin with complete architecture, engineering, and custom Bespoke Joinery projects, serving one of the most strategic and valued neighborhoods in Sao Paulo.",
+        "Our presence in Brooklin focuses on mid and high-end apartments, contemporary houses, and complete turn key renovations.",
+        "We plan each project with attention to building infrastructure, technical standards, urban logistics, and especially the client's lifestyle.",
+        "Here, architecture is not isolated aesthetics. It is intelligent planning allied to precise execution."
+      ],
+      "highlights": [
+        "Deep knowledge of condo norms and regulations in the region",
+        "Work logistics adapted to Brooklin's urban infrastructure",
+        "Qualified suppliers and partners near the neighborhood",
+        "Projects that value the connection to Avenida Berrini and the corporate district",
+        "Finishes that reflect residents' high standards",
+        "Quiet and organized worksite management"
+      ],
+      "cta": {
+        "quote": "In Brooklin, architecture is not isolated aesthetics. It is intelligent planning allied to precise execution.",
+        "title": "Your Brooklin project deserves excellence",
+        "description": "Talk to our specialists and discover how we can transform your space in Brooklin."
+      }
+    },
+    "itaim": {
+      "name": "Itaim Bibi",
+      "title": "High-End Engineering and Renovations in Itaim",
+      "metaDescription": "High-end engineering, architecture, and Bespoke Joinery in Itaim Bibi, Sao Paulo. Complete renovations, residential apartments, and corporate spaces. WG Almeida turn key system.",
+      "heroImage": "/images/regions/itaim.jpg",
+      "intro": [
+        "In Itaim Bibi, we primarily work on residential apartments, offices, and corporate spaces, as well as complete renovations with schedule and control.",
+        "The WG Almeida turn key system ensures architecture, engineering, and Bespoke Joinery move together, avoiding interferences, delays, and rework — common in dense regions like Itaim.",
+        "Our regional expertise enables organized, quiet, and predictable works that respect condo rules and residents' routines.",
+        "Result: on-time deliveries, impeccable quality, and no surprises."
+      ],
+      "highlights": [
+        "Work management adapted to Itaim's urban density",
+        "Experience with renovations in commercial and residential buildings",
+        "Optimized logistics for loading and unloading on busy streets",
+        "Team prepared for works in specific hours",
+        "Finishes aligned with the neighborhood standard",
+        "Transparent communication with managers and administrators"
+      ],
+      "cta": {
+        "quote": "Organized, quiet, and predictable works. This is how we work in Itaim.",
+        "title": "Transform your space in Itaim with those who know the region",
+        "description": "High-end projects and works tailored to Itaim Bibi's specifics."
+      }
+    },
+    "jardins": {
+      "name": "Jardins",
+      "title": "Authorial Architecture and Works in Jardins",
+      "metaDescription": "High-end architecture, sophisticated interiors, and premium Bespoke Joinery in Jardins, Sao Paulo. Excellent houses and apartments. WG Almeida turn key system.",
+      "heroImage": "/images/regions/jardins.jpg",
+      "intro": [
+        "Jardins represents tradition, sophistication, and high-level architecture. Our work in the neighborhood respects this history, combining contemporary technique and refined finishing.",
+        "We work with high-end houses and apartments, sophisticated interiors, and Bespoke Joinery as an architectural element.",
+        "Each project starts from a point, takes shape in the lines, and transforms stories into a way of living.",
+        "In Jardins, we deliver not just spaces — we deliver legacy."
+      ],
+      "highlights": [
+        "Respect for the region's historic and contemporary architecture",
+        "Projects that value the privileged location",
+        "Noble materials and top-quality finishes",
+        "Harmonious integration between indoor and outdoor areas",
+        "Bespoke Joinery as a differentiating architectural element",
+        "Team specialized in renovations of historic houses and apartments"
+      ],
+      "cta": {
+        "quote": "In Jardins, we deliver not just spaces — we deliver legacy.",
+        "title": "Your Jardins project with WG Almeida expertise",
+        "description": "Tradition and contemporaneity united in excellent projects."
+      }
+    },
+    "cidade-jardim": {
+      "name": "Cidade Jardim",
+      "title": "Exclusive Projects and Works in Cidade Jardim",
+      "metaDescription": "Exclusive architecture, large-scale works, and excellent Bespoke Joinery in Cidade Jardim, Sao Paulo. Complete turn key projects. Grupo WG Almeida.",
+      "heroImage": "/images/regions/cidade-jardim.jpg",
+      "intro": [
+        "Cidade Jardim requires discretion, planning, and a high technical level. Grupo WG Almeida focuses on complete projects, large-scale works, and excellent Bespoke Joinery.",
+        "Here, the differentiator is method: deep technical planning, rigorous management, and execution without improvisation.",
+        "Large works require even larger processes. Our experience in high-end developments ensures absolute control from end to end.",
+        "In Cidade Jardim, every detail is designed to exceed expectations."
+      ],
+      "highlights": [
+        "Experience in large-scale and high-complexity projects",
+        "Management of multiple suppliers with a unified standard",
+        "Detailed planning for long-duration works",
+        "Discretion and confidentiality in exclusive projects",
+        "First-line imported materials and finishes",
+        "Specialized technical monitoring in all phases"
+      ],
+      "cta": {
+        "quote": "Large works require even larger processes.",
+        "title": "Exclusive projects in Cidade Jardim deserve WG Almeida",
+        "description": "Discretion, method, and excellence in high-end projects."
+      }
+    },
+    "morumbi": {
+      "name": "Morumbi",
+      "title": "Architecture, Engineering, and Bespoke Joinery in Morumbi",
+      "metaDescription": "High-end architecture, turn key engineering, and custom Bespoke Joinery in Morumbi, Sao Paulo. Complete renovations and residential works. Grupo WG Almeida.",
+      "heroImage": "/images/regions/morumbi.jpg",
+      "intro": [
+        "In Morumbi, our work ranges from complete renovations to high-end residential construction on lots, condos, and apartments.",
+        "We work with projects that require technical compatibility, structural planning, and well-defined work logistics.",
+        "The WG turn key system provides absolute control end to end, integrating architecture, engineering, and Bespoke Joinery in a single management flow.",
+        "In Morumbi, we transform spaces with the same excellence applied to all premium regions of Sao Paulo."
+      ],
+      "highlights": [
+        "Experience in houses and apartments with large areas",
+        "Projects adapted to the region's condo characteristics",
+        "Worksite logistics for lots and new construction",
+        "Integrated management of all project stages",
+        "Custom Bespoke Joinery for large spaces",
+        "Premium finishes aligned with neighborhood standards"
+      ],
+      "cta": {
+        "quote": "The WG turn key system ensures absolute control from end to end.",
+        "title": "Your Morumbi project with WG Almeida excellence",
+        "description": "Integrated architecture, engineering, and Bespoke Joinery for extraordinary results."
+      }
+    },
+    "vila-nova-conceicao": {
+      "name": "Vila Nova Conceicao",
+      "title": "Premium Architecture and Execution in Vila Nova Conceicao",
+      "metaDescription": "Authorial architectural projects, high-end works, and custom Bespoke Joinery in Vila Nova Conceicao, Sao Paulo. WG Almeida turn key system.",
+      "heroImage": "/images/regions/vila-nova-conceicao.jpg",
+      "intro": [
+        "Vila Nova Conceicao demands a high level of detail, finishing, and discretion — and that is exactly where Grupo WG Almeida operates.",
+        "We deliver authorial architectural projects, high-end works with rigorous control, and custom Bespoke Joinery integrated with the project.",
+        "Each stage is conducted with planning, clear schedule, and curated materials compatible with the neighborhood standard.",
+        "Luxury, for us, is coherence between design, construction, and delivery."
+      ],
+      "highlights": [
+        "Experience with the main buildings and condos in the region",
+        "Discretion and respect for premium condominium rules",
+        "Curated materials and top-tier finishes",
+        "Proximity to Ibirapuera Park and view valuation",
+        "Worksite team trained for high-end environments",
+        "Personal monitoring in all stages"
+      ],
+      "cta": {
+        "quote": "Luxury, for us, is coherence between design, construction, and delivery.",
+        "title": "Your Vila Nova Conceicao project in specialized hands",
+        "description": "The excellence Vila Nova Conceicao demands, with WG Almeida expertise."
+      }
+    }
+  },
+  "blogPage": {
+    "fallback": {
+      "title": "WG Almeida Article",
+      "author": "Grupo WG Almeida",
+      "category": "Blog"
+    },
+    "categories": {
+      "all": "All",
+      "architecture": "Architecture",
+      "engineering": "Engineering",
+      "carpentry": "Bespoke Joinery",
+      "design": "Design",
+      "technology": "Technology",
+      "trends": "Trends",
+      "tips": "Tips"
+    },
+    "notFound": {
+      "title": "Article not found",
+      "subtitle": "The content may have been moved or is not yet published.",
+      "cta": "Back to Blog"
+    },
+    "readingTime": "{{minutes}} min read",
+    "readingTimeShort": "{{minutes}} min",
+    "backToBlog": "Back to Blog",
+    "hero": {
+      "featured": "Featured Article",
+      "cta": "Read Full Article"
+    },
+    "section": {
+      "latest": "Latest Articles",
+      "title": "Get Inspired and Learn"
+    },
+    "readMore": "Read more",
+    "relatedProducts": {
+      "title": "Related Products",
+      "view": "View",
+      "viewAll": "View All Products"
+    },
+    "newsletter": {
+      "title": "Get Inspiration in Your Inbox",
+      "subtitle": "Subscribe to our newsletter and receive the latest trends, tips, and news about architecture, engineering, and design.",
+      "placeholder": "Your best email",
+      "button": "Subscribe"
+    }
+  },
+  "storePage": {
+    "hero": {
+      "kicker": "Exclusive Store",
+      "title": "Our Store",
+      "subtitle": "Selected products with WG Almeida quality",
+      "badge": "Premium Decorative Items",
+      "imageAlt": "Premium lighting and decorative items"
+    },
+    "catalog": {
+      "kicker": "Catalog",
+      "title": "Selected Products",
+      "subtitle": "Lighting, decorative pieces, and exclusive items to transform your spaces",
+      "tags": {
+        "architecture": "Architecture",
+        "engineering": "Engineering",
+        "carpentry": "Bespoke Joinery"
+      }
+    },
+    "loading": "Loading products...",
+    "errors": {
+      "loadFailed": "Failed to load products",
+      "loadError": "Error loading products: {{error}}"
+    },
+    "empty": {
+      "title": "No products available at the moment.",
+      "subtitle": "Check back soon for new arrivals!"
+    },
+    "productFallback": {
+      "subtitle": "Check out this amazing product!",
+      "add": "Add"
+    },
+    "cart": {
+      "title": "Shopping Cart",
+      "empty": "Your cart is empty.",
+      "emptyTitle": "Your cart is empty",
+      "emptyDescription": "Add products to your cart before checkout.",
+      "addedTitle": "Added to Cart!",
+      "addedDescription": "{{title}} was added to your cart.",
+      "errorTitle": "Error adding to cart",
+      "checkoutErrorTitle": "Checkout Error",
+      "checkoutErrorDescription": "There was a problem starting checkout. Please try again.",
+      "remove": "Remove",
+      "total": "Total",
+      "checkout": "Checkout"
+    },
+    "productDetail": {
+      "addedTitle": "Added to Cart!",
+      "addedDescription": "{{quantity}} x {{title}} ({{variant}}) added.",
+      "errorTitle": "Oops! Something went wrong.",
+      "loadFailed": "Failed to load the product",
+      "loadError": "Error loading the product: {{error}}",
+      "backToStore": "Back to store",
+      "prevImage": "Previous image",
+      "nextImage": "Next image",
+      "goToImage": "Go to image {{index}}",
+      "options": "Options",
+      "addToCart": "Add to Cart",
+      "inStock": "{{count}} in stock!",
+      "lowStock": "Insufficient stock. Only {{count}} left.",
+      "unavailable": "Unavailable at the moment"
+    }
+  },
+  "successPage": {
+    "title": "THANK YOU FOR YOUR PURCHASE!",
+    "subtitle": "Your order was received successfully and is already being processed. You will receive an email with your purchase details soon.",
+    "cta": "Continue Shopping"
+  },
+  "loginPage": {
+    "logoAlt": "Grupo WG Almeida logo",
+    "heading": "Client Area",
+    "subtitle": "Access your account to continue.",
+    "emailPlaceholder": "Your email",
+    "passwordPlaceholder": "Your password",
+    "submitting": "Signing in...",
+    "submit": "Sign in",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create one now",
+    "toasts": {
+      "adminSuccessTitle": "Admin login successful!",
+      "adminSuccessDescription": "Redirecting to the panel...",
+      "successTitle": "Login successful!",
+      "successDescription": "Welcome back!",
+      "unexpectedErrorTitle": "Unexpected error",
+      "unexpectedErrorDescription": "We couldn't verify the user's profile."
+    }
+  },
+  "registerPage": {
+    "logoAlt": "Grupo WG Almeida logo",
+    "heading": "Create Account",
+    "subtitle": "Join our client community.",
+    "namePlaceholder": "Your full name",
+    "emailPlaceholder": "Your email",
+    "passwordPlaceholder": "Create a password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "submitting": "Creating...",
+    "submit": "Create Account",
+    "hasAccount": "Already have an account?",
+    "loginLink": "Sign in",
+    "toasts": {
+      "passwordMismatch": "Passwords do not match!",
+      "successTitle": "Registration completed successfully!",
+      "successDescription": "Please check your email to confirm your account and then sign in."
+    }
+  },
+  "accountPage": {
+    "toasts": {
+      "loggedOut": "You signed out of your account.",
+      "notReadyTitle": "Under Construction",
+      "notReadyDescription": "This feature will be available soon."
+    },
+    "defaultName": "Client",
+    "notAvailable": "N/A",
+    "status": {
+      "active": "Active",
+      "inProgress": "In progress",
+      "pending": "Pending",
+      "completed": "Completed",
+      "finished": "Finished"
+    },
+    "loading": "Loading your information...",
+    "hero": {
+      "kicker": "Client Area",
+      "greeting": "Hello, {{name}}!",
+      "subtitle": "Welcome to your exclusive area",
+      "wgEasy": "Access WG Easy",
+      "customerPortal": "Customer Portal"
+    },
+    "quickAccess": {
+      "title": "Quick Access",
+      "access": "Open"
+    },
+    "cards": {
+      "contracts": {
+        "title": "My Contracts",
+        "descriptionWithCount": "{{count}} active contract(s)",
+        "descriptionEmpty": "No contracts yet"
+      },
+      "requestQuote": {
+        "title": "Request Proposal",
+        "description": "Ask for a personalized estimate"
+      },
+      "files": {
+        "title": "My Files",
+        "description": "Access documents and projects"
+      },
+      "contact": {
+        "title": "Talk to Us",
+        "description": "Get in touch with the team"
+      }
+    },
+    "contracts": {
+      "title": "My <span>Contracts</span>",
+      "viewAll": "View all",
+      "inProgress": "Project in progress",
+      "value": "Value:",
+      "start": "Start:",
+      "contractLabel": "Contract #{{number}}"
+    },
+    "accountInfo": {
+      "title": "My Account",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "edit": "Edit information",
+      "logout": "Sign out"
+    },
+    "nucleos": {
+      "sectionTitle": "Our Units",
+      "sectionTitleActive": "Your Contracted Units",
+      "hired": "Contracted",
+      "learnMore": "Learn more",
+      "architecture": {
+        "label": "Architecture",
+        "description": "Residential and commercial projects"
+      },
+      "engineering": {
+        "label": "Engineering",
+        "description": "Complete builds and renovations"
+      },
+      "carpentry": {
+        "label": "Bespoke Joinery",
+        "description": "Custom furniture"
+      }
+    },
+    "cta": {
+      "titleExisting": "Want to expand your project?",
+      "titleNew": "Have a project in mind?",
+      "subtitle": "Request a personalized proposal",
+      "button": "Request Proposal"
+    },
+    "support": {
+      "title": "Need <span>Help</span>?",
+      "subtitle": "We are ready to assist you",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "form": "Form",
+      "portal": "Full Portal"
+    }
+  },
+  "adminPage": {
+    "title": "AI Center - WG Almeida",
+    "subtitle": "Smart tools for site optimization",
+    "tabs": {
+      "seo": "SEO Analysis",
+      "content": "Content Generator",
+      "consultant": "Strategic Consultant"
+    },
+    "contentTypes": {
+      "page": "Website Page",
+      "blog": "Blog Article",
+      "description": "Service Description",
+      "cta": "Calls to Action",
+      "social": "Social Posts"
+    },
+    "quickQuestions": [
+      "How can we improve Google rankings?",
+      "Which content should we create for the blog?",
+      "How can we stand out from competitors?",
+      "Strategy to capture more leads"
+    ],
+    "seo": {
+      "title": "SEO Analyzer",
+      "subtitle": "Analyze pages and receive optimization recommendations",
+      "placeholder": "Ex: Home, Architecture, Brooklin, About...",
+      "analyze": "Analyze",
+      "error": "Error analyzing: {{message}}"
+    },
+    "content": {
+      "title": "Content Generator",
+      "subtitle": "Create optimized copy for different formats",
+      "typeLabel": "Content Type",
+      "topicLabel": "Topic",
+      "topicPlaceholder": "Ex: Apartment renovation in Itaim",
+      "generate": "Generate Content",
+      "error": "Error generating: {{message}}"
+    },
+    "consultant": {
+      "title": "Strategic Consultant",
+      "subtitle": "Ask about positioning, market and strategy",
+      "placeholder": "Ask about strategy, marketing, SEO or positioning...",
+      "submit": "Consult",
+      "error": "Error: {{message}}"
+    },
+    "footer": "Powered by Claude AI | Real-time data"
+  },
+  "wgEasyModal": {
+    "subtitle": "Team Area",
+    "description": "Access the project management and works tracking system.",
+    "error": "Error accessing the system. Try again.",
+    "emailPlaceholder": "Your corporate email",
+    "loading": "Accessing...",
+    "submit": "Access WG Easy",
+    "directAccess": "Or access directly at easy.wgalmeida.com.br"
+  },
+  "projectGallery": {
+    "kicker": "Our Projects",
+    "previous": "Previous photos",
+    "next": "Next photos",
+    "goToPage": "Go to page {{page}}",
+    "viewInstagram": "See more on Instagram",
+    "close": "Close",
+    "previousPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "titles": {
+      "apartmentBrooklin": "Brooklin Apartment",
+      "corporateAlphaville": "Alphaville Corporate",
+      "vilaNovaConceicao": "Vila Nova Conceição",
+      "guarujaHome": "Guarujá House",
+      "portaDoSol": "Porta do Sol Condo"
+    },
+    "categories": {
+      "integratedLiving": "Integrated Living",
+      "livingRoom": "Living Room",
+      "kitchen": "Kitchen",
+      "suite": "Suite",
+      "reception": "Reception",
+      "meetingRoom": "Meeting Room",
+      "office": "Office",
+      "workspace": "Work Area",
+      "living": "Living",
+      "diningRoom": "Dining Room",
+      "gourmetKitchen": "Gourmet Kitchen",
+      "masterSuite": "Master Suite",
+      "facade": "Facade",
+      "outdoorArea": "Outdoor Area",
+      "pool": "Pool",
+      "commonArea": "Common Area",
+      "leisure": "Leisure",
+      "landscaping": "Landscaping"
+    }
+  },
+  "projectCarousel": {
+    "kicker": "Featured projects",
+    "title": "Living portfolio of Grupo WG Almeida",
+    "previous": "Previous project",
+    "next": "Next project",
+    "details": "Details",
+    "goTo": "Go to {{title}}",
+    "projects": {
+      "acapulco": {
+        "title": "Acapulco Resort House",
+        "subtitle": "Guarujá • Residential",
+        "description": "Turnkey project that transforms stories into space with sensory architecture, premium Bespoke Joinery finishes, and curated delivery.",
+        "stat": "450 m² • 18 months"
+      },
+      "alameda": {
+        "title": "Alameda Apartment",
+        "subtitle": "Alphaville • Residential",
+        "description": "Contemporary interiors with integrated spaces and custom Bespoke Joinery for a sophisticated living area.",
+        "stat": "320 m² • 14 months"
+      },
+      "lesChamps": {
+        "title": "Les Champs Penthouse",
+        "subtitle": "Osasco • Residential",
+        "description": "Duplex penthouse with premium interior design, gourmet terrace, and high-end finishes.",
+        "stat": "280 m² • 12 months"
+      },
+      "lumenit": {
+        "title": "Lumenit Corporate",
+        "subtitle": "Alphaville • Commercial",
+        "description": "Corporate space with functional design, strategic lighting, and executive Bespoke Joinery.",
+        "stat": "180 m² • 8 months"
+      },
+      "grandPanamby": {
+        "title": "Grand Panamby Apartment",
+        "subtitle": "São Paulo • Residential",
+        "description": "Full renovation with interior architecture and engineering solutions to optimize spaces.",
+        "stat": "250 m² • 10 months"
+      },
+      "square": {
+        "title": "Square Apartment",
+        "subtitle": "Santo Amaro • Residential",
+        "description": "Modern design with integrated social areas and planned Bespoke Joinery.",
+        "stat": "150 m² • 8 months"
+      },
+      "gaivota": {
+        "title": "Gaivota House",
+        "subtitle": "Moema • Residential",
+        "description": "Urban residence with contemporary architectural design and integrated landscaping.",
+        "stat": "380 m² • 16 months"
+      },
+      "portaDoSol": {
+        "title": "Porta do Sol House",
+        "subtitle": "Mairinque • Residential",
+        "description": "Country house with sustainable architecture and integration with nature.",
+        "stat": "420 m² • 14 months"
+      },
+      "paulistano": {
+        "title": "Paulistano Condominium",
+        "subtitle": "Monte Kemel • Residential",
+        "description": "Unit renovation with interior design and custom Bespoke Joinery.",
+        "stat": "200 m² • 10 months"
+      },
+      "cureDent": {
+        "title": "Cure Dent Clinic",
+        "subtitle": "Cotia • Commercial",
+        "description": "Dental clinic with functional design, ergonomics, and high-performance finishes.",
+        "stat": "120 m² • 6 months"
+      },
+      "surubiju": {
+        "title": "Surubiju Warehouse",
+        "subtitle": "Alphaville Industrial • Commercial",
+        "description": "Industrial project with engineering solutions for logistics and efficient operation.",
+        "stat": "800 m² • 12 months"
+      }
+    }
+  },
+  "photoGallery": {
+    "kicker": "Our Portfolio",
+    "title": "Project Gallery",
+    "subtitle": "Each project starts at a point, takes shape in the line and turns stories into a way of living.",
+    "projects": {
+      "brooklin": {
+        "title": "Brooklin Residence",
+        "category": "Architecture & Interiors",
+        "images": {
+          "livingRoom": "Living Room",
+          "gourmetKitchen": "Gourmet Kitchen",
+          "leisureArea": "Leisure Area"
+        }
+      },
+      "itaim": {
+        "title": "Itaim Apartment",
+        "category": "Full Renovation",
+        "images": {
+          "integratedLiving": "Integrated Living",
+          "masterSuite": "Master Suite",
+          "homeOffice": "Home Office"
+        }
+      },
+      "jardins": {
+        "title": "Jardins House",
+        "category": "Premium Bespoke Joinery",
+        "images": {
+          "walkInCloset": "Walk-in Closet",
+          "library": "Library",
+          "gourmetCounter": "Gourmet Counter"
+        }
+      },
+      "vilaNova": {
+        "title": "Vila Nova Penthouse",
+        "category": "Engineering & Architecture",
+        "images": {
+          "terrace": "Panoramic Terrace",
+          "pool": "Pool",
+          "outdoorLounge": "Outdoor Lounge"
+        }
+      }
+    }
+  },
+  "instagramGallery": {
+    "kicker": "Follow us on Instagram",
+    "previous": "Previous photos",
+    "next": "Next photos",
+    "postAlt": "Instagram post {{id}}",
+    "viewOnInstagram": "View on Instagram",
+    "goToPage": "Go to page {{page}}",
+    "viewMore": "See more on Instagram",
+    "close": "Close",
+    "previousPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "openOnInstagram": "Open on Instagram"
+  },
+  "seoAiInsights": {
+    "kicker": "AI for SEO",
+    "title": "Artificial intelligence pointing to the next step in search",
+    "subtitle": "Continuous recommendations based on performance data and Google Business Profile context to keep the organic presence aligned with the premium style of Grupo WG Almeida.",
+    "footer": "These insights are generated by an AI pipeline that combines performance data, customer feedback and Google Business Profile references. Use as a guide to prioritize content updates, backlinks and UX."
+  },
+  "googleReviews": {
+    "description": "High-end Architecture, Engineering and Bespoke Joinery in São Paulo",
+    "count": "• 50+ reviews",
+    "countWithValue": "• {{count}} reviews",
+    "viewAll": "View all reviews on Google",
+    "reviews": [
+      {
+        "id": 1,
+        "name": "Mariana S.",
+        "rating": 5,
+        "date": "2 weeks ago",
+        "text": "Full renovation with great care and attention to detail. The result exceeded expectations.",
+        "avatar": "M"
+      },
+      {
+        "id": 2,
+        "name": "Carlos Eduardo R.",
+        "rating": 5,
+        "date": "1 month ago",
+        "text": "Impeccable architecture and Bespoke Joinery project. On-time delivery and a very professional team.",
+        "avatar": "C"
+      },
+      {
+        "id": 3,
+        "name": "Ana Paula M.",
+        "rating": 5,
+        "date": "1 month ago",
+        "text": "Commercial space transformed. Engineering and Bespoke Joinery flawless. 10/10!",
+        "avatar": "A"
+      }
+    ]
+  },
+  "lizAssistant": {
+    "errors": {
+      "sendFailed": "Sorry, something went wrong. Please try again.",
+      "microphone": "Unable to access the microphone. Check permissions.",
+      "transcription": "Unable to transcribe the audio",
+      "audioProcessing": "Sorry, I couldn't understand. Can you repeat?"
+    },
+    "greeting": "Hi! This is Liz, WG Almeida's virtual assistant. How can I help you today?",
+    "ctaTitle": "Talk to Liz",
+    "ctaSubtitle": "Smart WG assistance",
+    "calling": "On call • {{duration}}",
+    "role": "WG Almeida Assistant",
+    "startCall": "Start call",
+    "endCall": "End call",
+    "callStatus": {
+      "processing": "Processing...",
+      "speaking": "Liz is speaking...",
+      "listening": "Listening...",
+      "tapToSpeak": "Tap to speak",
+      "tapToStop": "Tap to stop"
+    },
+    "emptyState": {
+      "title": "Hi! I'm Liz, WG Almeida's assistant.",
+      "subtitle": "How can I help you today?"
+    },
+    "inputPlaceholder": "Type your message...",
+    "stopRecording": "Stop recording",
+    "startRecording": "Record voice message"
+  },
+  "claudeAssistant": {
+    "greeting": "Hello! I'm the Grupo WG Almeida virtual assistant. How can I help you today? I can talk about our high-end architecture, engineering, and Bespoke Joinery services.",
+    "errorMessage": "Sorry, there was a problem processing your message. Please contact us directly by phone or through the contact form.",
+    "quickQuestions": [
+      "Which services do you offer?",
+      "How does the turn key system work?",
+      "Which regions do you serve?"
+    ],
+    "open": "Open assistant",
+    "title": "WG Almeida Assistant",
+    "poweredBy": "Powered by Claude AI",
+    "close": "Close",
+    "quickLabel": "Frequently asked questions:",
+    "placeholder": "Type your message..."
+  },
+  "premiumIntro": {
+    "whatsappMessage": "Hello! I saw WG Almeida's website and want to bring my project to life!",
+    "whatsappAria": "Open WhatsApp to contact",
+    "tagline": "Architecture • Engineering • Bespoke Joinery",
+    "cta": {
+      "subtitle": "Talk to our team now",
+      "button": "Chat on WhatsApp"
+    },
+    "skip": "Skip",
+    "stages": {
+      "whoWeAre": {
+        "kicker": "Who We Are",
+        "line1": "For 14 years building",
+        "line2": "stories with excellence."
+      },
+      "ecosystem": {
+        "line1": "A complete ecosystem",
+        "line2": "of integrated solutions."
+      },
+      "whatWeDo": {
+        "kicker": "What We Do",
+        "line1": "From concept to delivery.",
+        "line2": "From design to the last detail."
+      },
+      "units": {
+        "kicker": "Our Units",
+        "line1": "Three disciplines.",
+        "line2": "One single standard."
+      },
+      "architecture": {
+        "title": "Architecture",
+        "subtitle": "Authorial and functional projects"
+      },
+      "engineering": {
+        "title": "Engineering",
+        "subtitle": "Execution with precision and method"
+      },
+      "carpentry": {
+        "title": "Bespoke Joinery",
+        "subtitle": "High-end custom furniture"
+      },
+      "howWeWork": {
+        "kicker": "How We Work",
+        "line1": "Turn Key Premium System.",
+        "line2": "Planning, execution, and delivery under a single management."
+      },
+      "wgEasy": {
+        "kicker": "Technology & Transparency",
+        "subtitle": "Track your project in real time.",
+        "features": ["Schedule", "Photos", "Documents", "Communication"]
+      },
+      "impact": {
+        "line1": "One team. One passion.",
+        "line2": "One standard."
+      },
+      "finalCta": {
+        "line1": "Before a space exists,",
+        "line2": "there is a <span>STORY</span>",
+        "line3": "waiting to be designed."
+      }
+    }
+  },
+  "proposal": {
+    "yes": "Yes",
+    "no": "No",
+    "storyPhases": [
+      { "lines": ["Every project is born", "from a point."], "duration": 3500 },
+      { "lines": ["Every project starts at a point,", "that takes shape in the line and transforms", "stories into a way of living."], "duration": 4500 },
+      { "lines": ["From the starting point", "to the last detail,"], "subtitle": "we turn stories into spaces to live.", "duration": 4000 },
+      { "lines": ["But it is in the line", "that life begins to happen."], "duration": 3500 },
+      { "lines": ["Designing is listening to stories."], "subtitle": "Building is transforming them into space.", "duration": 4000 },
+      { "lines": ["Architecture", "Engineering", "Bespoke Joinery"], "type": "services", "duration": 3000 }
+    ],
+    "services": {
+      "carpentry": "Bespoke Joinery",
+      "glass": "Glasswork",
+      "stone": "Stonework",
+      "paint": "Painting",
+      "lighting": "Lighting",
+      "furniture": "Furniture",
+      "plaster": "Plaster/Drywall",
+      "electrical": "Electrical"
+    },
+    "servicesSelected": "{{count}} service(s) selected",
+    "validation": {
+      "name": "Enter your name",
+      "email": "Enter your email",
+      "phone": "Enter your phone number",
+      "errorTitle": "Error"
+    },
+    "summary": {
+      "notProvided": "Not provided",
+      "notSpecified": "Not specified",
+      "noServices": "None selected",
+      "projectName": "Project: {{value}}",
+      "area": "Area: {{value}}",
+      "hasFloorplan": "Has floor plan: {{value}}",
+      "hasArchitecture": "Has architectural project: {{value}}",
+      "renovationScope": "Renovate all areas: {{value}}",
+      "services": "Services: {{value}}"
+    },
+    "screens": {
+      "property": {
+        "title": "About the Property",
+        "subtitle": "Let's get to know your space",
+        "nameLabel": "What is the name of the development?",
+        "namePlaceholder": "Ex: Aurora Building, Vila Nova House...",
+        "areaLabel": "Approximate area (m²)",
+        "areaPlaceholder": "Ex: 120"
+      },
+      "floorplan": {
+        "title": "Floor Plan or Project",
+        "subtitle": "Do you have the floor plan or project?",
+        "uploadPrompt": "Click to attach a file",
+        "uploadFormats": "PDF, JPG or DWG",
+        "noPlanTitle": "No problem!",
+        "noPlanDescription": "We can request the plan from the builder or condo. Our team will handle everything for you."
+      },
+      "architecture": {
+        "title": "Architectural Project",
+        "subtitle": "Do you already have an architectural project?",
+        "noProjectTitle": "Great opportunity!",
+        "noProjectDescription": "Our architecture team can develop the ideal project for you. From concept to execution, we handle every detail."
+      },
+      "scope": {
+        "title": "Renovation Scope",
+        "subtitle": "Do you plan to renovate all areas?",
+        "all": "Yes, all",
+        "some": "Some",
+        "detailsLabel": "Which areas do you want to renovate?",
+        "detailsPlaceholder": "Ex: Living room, kitchen and social bathroom..."
+      },
+      "services": {
+        "title": "Services",
+        "subtitle": "Select the desired services"
+      },
+      "contact": {
+        "title": "Almost there!",
+        "subtitle": "Contact details",
+        "nameLabel": "Your name",
+        "namePlaceholder": "Full name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "you@email.com",
+        "phoneLabel": "WhatsApp",
+        "phonePlaceholder": "(11) 99999-9999"
+      }
+    },
+    "confirmation": {
+      "title": "Confirm your request",
+      "projectName": "Project:",
+      "area": "Area:",
+      "services": "Services:",
+      "contact": "Contact:",
+      "responseTitle": "Response guaranteed within 48h",
+      "responseDescription": "Our team will contact you to understand every detail of your project and present the best tailored solution."
+    },
+    "storytelling": {
+      "tapToInteract": "Tap to interact",
+      "startNow": "Start now"
+    },
+    "navigation": {
+      "back": "Back",
+      "next": "Continue",
+      "submit": "Send",
+      "sending": "Sending...",
+      "progress": "{{current}} of {{total}}"
+    },
+    "success": {
+      "title": "Request <span>Sent!</span>",
+      "description": "Thank you for your interest! Our team will contact you within <strong>48 hours</strong> to start your project.",
+      "instagram": "Follow on Instagram",
+      "website": "Visit our site",
+      "backToStart": "Back to start"
+    }
+  },
+  "heroVideo": {
+    "ariaLabel": "Presentation video of Grupo WG Almeida showing high-end architecture, engineering and Bespoke Joinery projects",
+    "trackLabel": "Description in Portuguese"
+  },
+  "cta": {
+    "message": "Let's turn your ideas into reality."
+  },
+  "welcomeMessage": "Hello! I'm Horizons, your AI coding companion. I'm here to help you build amazing web applications!"
+}
+

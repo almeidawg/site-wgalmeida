@@ -4,7 +4,7 @@ slug: "marcas-luxo-internacionais-moveis-design"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
-image: "/images/blog/marcas-luxo-internacionais.webp"
+image: "/images/banners/SOBRE.webp"
 excerpt: "Conheça as marcas internacionais de móveis e decoração mais exclusivas do mundo, de B&B Italia a Poliform."
 tags:
   - "marcas internacionais"

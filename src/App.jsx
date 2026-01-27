@@ -46,6 +46,10 @@ const Aclimacao = lazy(() => import('@/pages/regions/Aclimacao'));
 const SoliciteProposta = lazy(() => import('@/pages/SoliciteProposta'));
 const Blog = lazy(() => import('@/pages/Blog'));
 const FAQ = lazy(() => import('@/pages/FAQ'));
+const Moodboard = lazy(() => import('@/pages/Moodboard'));
+const RoomVisualizer = lazy(() => import('@/pages/RoomVisualizer'));
+const RevistaEstilos = lazy(() => import('@/pages/RevistaEstilos'));
+const EstiloDetail = lazy(() => import('@/pages/EstiloDetail'));
 
 // Landing Pages Estratégicas (SEO)
 const ConstrutoraAltoPadraoSP = lazy(() => import('@/pages/ConstrutoraAltoPadraoSP'));
@@ -94,6 +98,13 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<Blog />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/revista-estilos" element={<RevistaEstilos />} />
+            <Route path="/estilos/:slug" element={<EstiloDetail />} />
+
+            {/* Moodboard & Room Visualizer */}
+            <Route path="/moodboard" element={<Moodboard />} />
+            <Route path="/room-visualizer" element={<RoomVisualizer />} />
+            <Route path="/visualizador-ambientes" element={<RoomVisualizer />} />
 
             {/* Landing Pages Estratégicas (SEO) */}
             <Route path="/construtora-alto-padrao-sp" element={<ConstrutoraAltoPadraoSP />} />
