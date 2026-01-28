@@ -1,0 +1,91 @@
+# Robots.txt - Grupo WG Almeida
+# https://wgalmeida.com.br
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://wgalmeida.com.br/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin
+Disallow: /account
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+
+# Bloquear templates Elementor (duplicatas)
+Disallow: /elementor-hf/
+Disallow: /elementor-hf/rodape/
+Disallow: /elementor-hf/cabecalho/
+
+# Bloquear pagina /inicio (duplicata da home)
+Disallow: /inicio/
+Disallow: /inicio
+
+# Paginas removidas (nao existem mais)
+Disallow: /modelo2/
+Disallow: /modelo2
+
+# Bloquear coverage e arquivos de teste
+Disallow: /coverage/
+Disallow: /coverage
+
+# Allow search engines to crawl all public pages
+Allow: /
+Allow: /sobre
+Allow: /arquitetura
+Allow: /engenharia
+Allow: /marcenaria
+Allow: /projetos
+Allow: /processo
+Allow: /depoimentos
+Allow: /contato
+Allow: /store
+Allow: /solicite-proposta
+Allow: /blog
+Allow: /faq
+Allow: /a-marca
+
+# Bairros Premium de Sao Paulo - SEO Local
+Allow: /brooklin
+Allow: /vila-nova-conceicao
+Allow: /itaim
+Allow: /jardins
+Allow: /cidade-jardim
+Allow: /morumbi
+Allow: /alto-de-pinheiros
+Allow: /moema
+Allow: /campo-belo
+Allow: /higienopolis
+Allow: /pinheiros
+Allow: /perdizes
+Allow: /paraiso
+Allow: /aclimacao
+Allow: /vila-mariana
+Allow: /mooca
+
+# Landing Pages SEO
+Allow: /construtora-alto-padrao-sp
+Allow: /reforma-apartamento-sp
+Allow: /arquitetura-corporativa
+Allow: /obra-turn-key
+Allow: /reforma-apartamento-itaim
+Allow: /reforma-apartamento-jardins
+Allow: /construtora-brooklin
+Allow: /marcenaria-sob-medida-morumbi
+Allow: /arquitetura-interiores-vila-nova-conceicao
+
+# Crawl delay (be nice to our server)
+Crawl-delay: 1
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
