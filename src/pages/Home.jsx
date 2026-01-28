@@ -124,11 +124,11 @@ const Home = () => {
       )}
 
       {/* ========== HERO SECTION COM VÍDEO ========== */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden -mt-20 bg-wg-black">
+      <section className="relative min-h-[92vh] md:h-screen flex items-center justify-center overflow-hidden mt-0 md:-mt-20 bg-wg-black pt-20 pb-14 sm:pt-24 md:pt-0">
         <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/70 via-wg-black/50 to-wg-black/70 z-10"></div>
 
-        <div className="relative z-20 container-custom text-center text-white px-4">
+        <div className="relative z-20 container-custom max-w-4xl mx-auto text-center text-white px-6 sm:px-8">
           {/* H1 Principal - Responsivo para mobile */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -253,7 +253,11 @@ const Home = () => {
               <Link to="/estilos/minimalismo" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=600&q=80"
+                    src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=480&h=600&q=65&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=360&h=450&q=60&fm=webp 360w, https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=480&h=600&q=65&fm=webp 480w, https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=640&h=800&q=65&fm=webp 640w"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 20vw"
+                    width="480"
+                    height="600"
                     alt="Estilo Minimalismo"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -282,7 +286,11 @@ const Home = () => {
               <Link to="/estilos/moderno" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80"
+                    src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=480&h=600&q=65&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=360&h=450&q=60&fm=webp 360w, https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=480&h=600&q=65&fm=webp 480w, https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=640&h=800&q=65&fm=webp 640w"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 20vw"
+                    width="480"
+                    height="600"
                     alt="Estilo Moderno"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -311,7 +319,11 @@ const Home = () => {
               <Link to="/estilos/industrial" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80"
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=480&h=600&q=65&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=360&h=450&q=60&fm=webp 360w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=480&h=600&q=65&fm=webp 480w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=640&h=800&q=65&fm=webp 640w"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 20vw"
+                    width="480"
+                    height="600"
                     alt="Estilo Industrial"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -340,7 +352,11 @@ const Home = () => {
               <Link to="/estilos/contemporaneo" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80"
+                    src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=480&h=600&q=65&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=360&h=450&q=60&fm=webp 360w, https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=480&h=600&q=65&fm=webp 480w, https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=640&h=800&q=65&fm=webp 640w"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 20vw"
+                    width="480"
+                    height="600"
                     alt="Estilo Contemporâneo"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -369,7 +385,11 @@ const Home = () => {
               <Link to="/estilos/japandi" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&q=80"
+                    src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=480&h=600&q=65&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=360&h=450&q=60&fm=webp 360w, https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=480&h=600&q=65&fm=webp 480w, https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=640&h=800&q=65&fm=webp 640w"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 20vw"
+                    width="480"
+                    height="600"
                     alt="Estilo Japandi"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -1045,5 +1065,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
