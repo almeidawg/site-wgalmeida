@@ -29,9 +29,9 @@ const ShareButtons = ({ title, url }) => {
   const [copied, setCopied] = useState(false);
 
   const shareOnWhatsApp = () => {
-    const text = encodeURIComponent(title);
-    const shareUrl = encodeURIComponent(url);
-    window.open(`https://api.whatsapp.com/send?text=${text}%20${shareUrl}`, '_blank');
+    // Encode a única vez a mensagem completa para evitar caracteres % na prévia do WhatsApp
+    const encodedMessage = encodeURIComponent(`${title} ${url}`);
+    window.open(`https://api.whatsapp.com/send?text=${encodedMessage}`, '_blank');
   };
 
   const shareOnFacebook = () => {
