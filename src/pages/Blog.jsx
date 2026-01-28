@@ -29,7 +29,7 @@ import {
 // import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import matter from 'gray-matter';
+import { parseFrontmatter } from '@/utils/frontmatter';
 import { useTranslation } from 'react-i18next';
 import { getProducts } from '@/api/EcommerceApi';
 
@@ -240,7 +240,7 @@ const Blog = () => {
   const artigos = Object.entries(effectiveRawPosts)
     .map(([path, raw]) => {
       try {
-        const { data, content } = matter(raw);
+        const { data, content } = parseFrontmatter(raw);
         const fallbackSlug = path.split('/').pop()?.replace('.md', '');
         const slugValue = data.slug || fallbackSlug;
 

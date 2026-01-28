@@ -527,14 +527,16 @@ const ColorTransformer = ({ externalColors = [] }) => {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
 
-      // Carregar imagem transformada
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
+      // Carregar imagem transformada via fetch para evitar CORS
+      const imgResponse = await fetch(transformedUrl);
+      const imgBlob = await imgResponse.blob();
+      const imgBitmapUrl = URL.createObjectURL(imgBlob);
 
+      const img = new Image();
       await new Promise((resolve, reject) => {
         img.onload = resolve;
         img.onerror = reject;
-        img.src = transformedUrl;
+        img.src = imgBitmapUrl;
       });
 
       // Definir tamanho do canvas
@@ -543,11 +545,10 @@ const ColorTransformer = ({ externalColors = [] }) => {
 
       // Desenhar imagem transformada
       ctx.drawImage(img, 0, 0);
+      URL.revokeObjectURL(imgBitmapUrl);
 
       // Carregar logo
       const logo = new Image();
-      logo.crossOrigin = 'anonymous';
-
       await new Promise((resolve, reject) => {
         logo.onload = resolve;
         logo.onerror = reject;
@@ -585,7 +586,18 @@ const ColorTransformer = ({ externalColors = [] }) => {
 
     } catch (err) {
       console.error('Erro ao baixar imagem:', err);
-      setError('Erro ao preparar imagem para download. Tente novamente.');
+      // Fallback: baixar diretamente sem watermark
+      try {
+        const a = document.createElement('a');
+        a.href = transformedUrl;
+        a.download = 'ambiente-transformado.jpg';
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      } catch {
+        setError('Erro ao baixar. Clique com botão direito na imagem e escolha "Salvar imagem".');
+      }
       setIsDownloading(false);
     }
   };

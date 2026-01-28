@@ -13,7 +13,7 @@ import {
   Eye,
   BookOpen
 } from 'lucide-react';
-import matter from 'gray-matter';
+import { parseFrontmatter } from '@/utils/frontmatter';
 
 // Import all style markdown files
 const estilosFiles = import.meta.glob('/src/content/estilos/*.md', { as: 'raw', eager: true });
@@ -124,7 +124,7 @@ const RevistaEstilos = () => {
   useEffect(() => {
     const loadEstilos = () => {
       const estilosData = Object.entries(estilosFiles).map(([path, raw]) => {
-        const { data, content } = matter(raw);
+        const { data, content } = parseFrontmatter(raw);
         const slug = path.split('/').pop().replace('.md', '');
 
         return {

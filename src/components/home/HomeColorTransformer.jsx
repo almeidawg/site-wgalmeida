@@ -32,8 +32,14 @@ const COLOR_PALETTES = [
   },
 ];
 
-// Imagens de demonstração
+// Imagens de demonstração - Poltrona primeiro
 const DEMO_IMAGES = [
+  {
+    id: 'poltrona',
+    name: 'Poltrona',
+    externalUrl: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800',
+    thumbnail: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200&h=150&fit=crop',
+  },
   {
     id: 'sala',
     name: 'Sala',
@@ -45,12 +51,6 @@ const DEMO_IMAGES = [
     name: 'Quarto',
     externalUrl: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800',
     thumbnail: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=200&h=150&fit=crop',
-  },
-  {
-    id: 'escritorio',
-    name: 'Escritório',
-    externalUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800',
-    thumbnail: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=150&fit=crop',
   },
 ];
 

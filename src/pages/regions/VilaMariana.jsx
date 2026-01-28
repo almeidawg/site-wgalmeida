@@ -8,7 +8,7 @@ const VilaMariana = () => {
       region="Vila Mariana"
       title="Reforma Turn Key Premium em Vila Mariana"
       metaDescription="Especialistas em reforma de apartamentos e projetos residenciais na Vila Mariana. Arquitetura integrada, engenharia e marcenaria premium. Sistema Turn Key completo."
-      heroImage="/images/regions/vila-mariana.jpg"
+      heroImage="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1920&q=80"
       intro={[
         "A Vila Mariana é um dos bairros mais tradicionais e valorizados de São Paulo, conhecido por sua infraestrutura completa e qualidade de vida. O Grupo WG Almeida atua há mais de 14 anos transformando apartamentos e residências nesta região em espaços premium e funcionais.",
         "Com o sistema Turn Key Premium, oferecemos solução completa — arquitetura, engenharia e marcenaria integradas — garantindo qualidade superior e prazos previsíveis para seus projetos na Vila Mariana."

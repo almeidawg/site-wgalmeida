@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, ShoppingCart as ShoppingCartIcon, User, LogOut, Ruler, Building2, Hammer, Sparkles, Users, ExternalLink, Monitor } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+// Removido Framer Motion para reduzir bundle e melhorar TBT
 import { Button } from '@/components/ui/button';
 import ShoppingCart from '@/components/ShoppingCart';
 import { useCart } from '@/hooks/useCart';
@@ -132,14 +132,14 @@ const Header = () => {
                   <span>{t('header.unitsLabel')}</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
-                <AnimatePresence>
+                
                   {isUnitsMenuOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-screen max-w-3xl"
+                    <div
+                      
+                      
+                      
+                      
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-screen max-w-3xl animate-fadeIn"
                     >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden grid grid-cols-3 gap-4 p-6 border border-gray-100">
                         {unitsItems.map((subItem) => (
@@ -156,9 +156,9 @@ const Header = () => {
                           </Link>
                         ))}
                       </div>
-                    </motion.div>
+                    </div>
                   )}
-                </AnimatePresence>
+                
               </div>
 
               {navItems.slice(3).map((item) => (
@@ -217,13 +217,13 @@ const Header = () => {
           </div>
         </div>
 
-        <AnimatePresence>
+        
           {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-t"
+            <div
+              
+              
+              
+              className="lg:hidden bg-white border-t animate-slideDown"
             >
               <nav className="container-custom py-4 space-y-2">
                 {[...navItems.slice(0,3), {label: 'Unidades', dropdown: unitsItems}, ...navItems.slice(3)].map((item, index) => (
@@ -287,9 +287,9 @@ const Header = () => {
                   </Link>
                 </div>
               </nav>
-            </motion.div>
+            </div>
           )}
-        </AnimatePresence>
+        
       </header>
       <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
     </>

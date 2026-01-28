@@ -47,6 +47,7 @@ const SoliciteProposta = lazy(() => import('@/pages/SoliciteProposta'));
 const Blog = lazy(() => import('@/pages/Blog'));
 const FAQ = lazy(() => import('@/pages/FAQ'));
 const Moodboard = lazy(() => import('@/pages/Moodboard'));
+const MoodboardGenerator = lazy(() => import('@/pages/MoodboardGenerator'));
 const RoomVisualizer = lazy(() => import('@/pages/RoomVisualizer'));
 const RevistaEstilos = lazy(() => import('@/pages/RevistaEstilos'));
 const EstiloDetail = lazy(() => import('@/pages/EstiloDetail'));
@@ -103,6 +104,8 @@ function App() {
 
             {/* Moodboard & Room Visualizer */}
             <Route path="/moodboard" element={<Moodboard />} />
+            <Route path="/gerador-moodboard" element={<MoodboardGenerator />} />
+            <Route path="/moodboard-generator" element={<MoodboardGenerator />} />
             <Route path="/room-visualizer" element={<RoomVisualizer />} />
             <Route path="/visualizador-ambientes" element={<RoomVisualizer />} />
 

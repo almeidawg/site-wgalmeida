@@ -1,0 +1,27 @@
+{
+  "name": "vitest-setup",
+  "type": "module",
+  "description": "Configuração para testes unitários com Vitest + React Testing Library",
+  "devDependencies": {
+    "vitest": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "@testing-library/react": "^14.1.0",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/user-event": "^14.5.1",
+    "@vitest/coverage-v8": "^1.0.0",
+    "jsdom": "^23.0.1"
+  },
+  "scripts": {
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "test:run": "vitest run"
+  },
+  "instructions": {
+    "step1": "npm install vitest @vitest/ui @testing-library/react @testing-library/jest-dom @testing-library/user-event @vitest/coverage-v8 jsdom --save-dev",
+    "step2": "Criar arquivo vitest.config.js na raiz do projeto",
+    "step3": "Criar arquivo setup.js para configurar testing library",
+    "step4": "Começar a escrever testes em __tests__ ou .test.js/.test.jsx",
+    "example_test": "import { describe, it, expect } from 'vitest';\nimport { render, screen } from '@testing-library/react';\nimport Button from '@/components/Button';\n\ndescribe('Button Component', () => {\n  it('renders button with text', () => {\n    render(<Button>Click me</Button>);\n    expect(screen.getByText('Click me')).toBeInTheDocument();\n  });\n});"
+  }
+}

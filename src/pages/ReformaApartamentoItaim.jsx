@@ -126,7 +126,7 @@ const ReformaApartamentoItaim = () => {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: 'url(/images/hero-architecture.jpg)' }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=80)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 

@@ -42,7 +42,7 @@ const MoodboardContent = () => {
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Selecione cores e estilos para criar a visão perfeita do seu espaço.
-              Visualize suas cores aplicadas em ambientes reais com nossa tecnologia de IA.
+              Visualize suas cores aplicadas em ambientes reais.
             </p>
           </motion.div>
         </div>

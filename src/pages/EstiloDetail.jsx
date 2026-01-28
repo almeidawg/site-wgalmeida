@@ -6,7 +6,7 @@ import SEO from '@/components/SEO';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import matter from 'gray-matter';
+import { parseFrontmatter } from '@/utils/frontmatter';
 import {
   ArrowLeft,
   ArrowRight,
@@ -129,7 +129,7 @@ const EstiloDetail = () => {
     const loadEstilo = () => {
       // Load all styles
       const estilosData = Object.entries(estilosFiles).map(([path, raw]) => {
-        const { data, content } = matter(raw);
+        const { data, content } = parseFrontmatter(raw);
         const fileSlug = path.split('/').pop().replace('.md', '');
 
         return {
