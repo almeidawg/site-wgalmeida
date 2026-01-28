@@ -1,6 +1,7 @@
 import React from "react";
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import { act } from "react";
 import { LazyImage, ResponsiveImage, useWebpSupport, preloadImage } from "@/utils/ImageOptimization";
 
 // Mock IntersectionObserver como classe
@@ -18,6 +19,8 @@ class MockIntersectionObserver {
 
 beforeEach(() => {
   window.IntersectionObserver = MockIntersectionObserver;
+  // Mock para evitar erro do jsdom ao chamar toDataURL
+  HTMLCanvasElement.prototype.toDataURL = vi.fn(() => "data:image/webp;base64,00");
 });
 
 afterEach(() => {
@@ -54,7 +57,9 @@ describe("LazyImage Component", () => {
     render(<LazyImage src="/test.jpg" alt="Test" onLoad={handleLoad} />);
 
     const img = screen.getByAltText("Test");
-    img.dispatchEvent(new Event("load"));
+    await act(async () => {
+      img.dispatchEvent(new Event("load"));
+    });
 
     expect(handleLoad).toHaveBeenCalled();
   });
