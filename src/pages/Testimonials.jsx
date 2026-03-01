@@ -25,12 +25,12 @@ const Testimonials = () => {
 
   // Parceiros reais
   const partners = [
-    { name: 'Portobello', logo: '/images/partners/portobello.png' },
-    { name: 'Deca', logo: '/images/partners/deca.png' },
-    { name: 'Roca', logo: '/images/partners/roca.png' },
-    { name: 'Eucatex', logo: '/images/partners/eucatex.png' },
-    { name: 'Duratex', logo: '/images/partners/duratex.png' },
-    { name: 'Tigre', logo: '/images/partners/tigre.png' },
+    { name: 'Portobello' },
+    { name: 'Deca' },
+    { name: 'Roca' },
+    { name: 'Eucatex' },
+    { name: 'Duratex' },
+    { name: 'Tigre' },
   ];
 
   return (

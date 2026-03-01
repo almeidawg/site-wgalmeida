@@ -62,7 +62,7 @@ const RegionTemplate = ({
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden hero-under-header">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${resolvedHeroImage || '/images/hero-region.jpg'})` }}
+          style={{ backgroundImage: `url(${resolvedHeroImage || '/images/hero-region.webp'})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black/80" />
 

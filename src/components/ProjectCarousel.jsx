@@ -8,7 +8,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.acapulco.subtitle',
     descriptionKey: 'projectCarousel.projects.acapulco.description',
     statKey: 'projectCarousel.projects.acapulco.stat',
-    image: '/images/projects/casa-resort-acapulco/01_11---Photo.jpg',
+    image: '/images/projects/casa-resort-acapulco/01_11---Photo.webp',
     folder: 'casa-resort-acapulco',
   },
   {
@@ -16,7 +16,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.alameda.subtitle',
     descriptionKey: 'projectCarousel.projects.alameda.description',
     statKey: 'projectCarousel.projects.alameda.stat',
-    image: '/images/projects/apartamento-alameda-alphaville/10areaservio_01_27206612818_o.jpg',
+    image: '/images/projects/apartamento-alameda-alphaville/10areaservio_01_27206612818_o.webp',
     folder: 'apartamento-alameda-alphaville',
   },
   {
@@ -24,7 +24,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.lesChamps.subtitle',
     descriptionKey: 'projectCarousel.projects.lesChamps.description',
     statKey: 'projectCarousel.projects.lesChamps.stat',
-    image: '/images/projects/cobertura-les-champs-osasco/2022-03-11 13.30.30.jpg',
+    image: '/images/projects/cobertura-les-champs-osasco/2022-03-11 13.30.30.webp',
     folder: 'cobertura-les-champs-osasco',
   },
   {
@@ -32,7 +32,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.lumenit.subtitle',
     descriptionKey: 'projectCarousel.projects.lumenit.description',
     statKey: 'projectCarousel.projects.lumenit.stat',
-    image: '/images/projects/lumenit-corporativo/lumenit_27476900773_o.jpg',
+    image: '/images/projects/lumenit-corporativo/lumenit_27476900773_o.webp',
     folder: 'lumenit-corporativo',
   },
   {
@@ -40,7 +40,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.grandPanamby.subtitle',
     descriptionKey: 'projectCarousel.projects.grandPanamby.description',
     statKey: 'projectCarousel.projects.grandPanamby.stat',
-    image: '/images/projects/apartamento-grand-panamby/2021-05-24 12.02.11.jpg',
+    image: '/images/projects/apartamento-grand-panamby/2021-05-24 12.02.11.webp',
     folder: 'apartamento-grand-panamby',
   },
   {
@@ -48,7 +48,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.square.subtitle',
     descriptionKey: 'projectCarousel.projects.square.description',
     statKey: 'projectCarousel.projects.square.stat',
-    image: '/images/projects/apartamento-square-santo-amaro/Humanizada.png',
+    image: '/images/projects/apartamento-square-santo-amaro/Humanizada.webp',
     folder: 'apartamento-square-santo-amaro',
   },
   {
@@ -56,7 +56,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.gaivota.subtitle',
     descriptionKey: 'projectCarousel.projects.gaivota.description',
     statKey: 'projectCarousel.projects.gaivota.stat',
-    image: '/images/projects/casa-gaivota-moema/1.jpg',
+    image: '/images/projects/casa-gaivota-moema/1.webp',
     folder: 'casa-gaivota-moema',
   },
   {
@@ -64,7 +64,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.portaDoSol.subtitle',
     descriptionKey: 'projectCarousel.projects.portaDoSol.description',
     statKey: 'projectCarousel.projects.portaDoSol.stat',
-    image: '/images/projects/casa-porta-do-sol-mairinque/2021-12-10 12.53.24.jpg',
+    image: '/images/projects/casa-porta-do-sol-mairinque/2021-12-10 12.53.24.webp',
     folder: 'casa-porta-do-sol-mairinque',
   },
   {
@@ -80,7 +80,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.cureDent.subtitle',
     descriptionKey: 'projectCarousel.projects.cureDent.description',
     statKey: 'projectCarousel.projects.cureDent.stat',
-    image: '/images/projects/consultorio-cure-dent-cotia/2020-10-06 13.39.14.jpg',
+    image: '/images/projects/consultorio-cure-dent-cotia/2020-10-06 13.39.14.webp',
     folder: 'consultorio-cure-dent-cotia',
   },
   {
@@ -88,7 +88,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.surubiju.subtitle',
     descriptionKey: 'projectCarousel.projects.surubiju.description',
     statKey: 'projectCarousel.projects.surubiju.stat',
-    image: '/images/projects/galpao-surubiju-alphaville/1.jpg',
+    image: '/images/projects/galpao-surubiju-alphaville/1.webp',
     folder: 'galpao-surubiju-alphaville',
   },
 ];
