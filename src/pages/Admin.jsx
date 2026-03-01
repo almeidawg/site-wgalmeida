@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion } from '@/lib/motion-lite';
 import {
   Search, FileText, TrendingUp, Send, Loader2, Copy, Check,
@@ -298,8 +298,8 @@ const Admin = () => {
   const [responseLoading, setResponseLoading] = useState(null);
 
   // Publicador Social
-  const [socialTopic, setSocialTopic] = useState('');
-  const [socialNotes, setSocialNotes] = useState('');
+  const socialTopicRef = useRef(null);
+  const socialNotesRef = useRef(null);
   const [socialLoading, setSocialLoading] = useState(false);
   const [socialContent, setSocialContent] = useState({
     instagram: '', pinterest_title: '', pinterest_desc: '',
@@ -307,18 +307,18 @@ const Admin = () => {
   });
 
   // SEO
-  const [seoUrl, setSeoUrl] = useState('');
+  const seoUrlRef = useRef(null);
   const [seoAnalysis, setSeoAnalysis] = useState('');
   const [seoLoading, setSeoLoading] = useState(false);
 
   // Gerador de Conteúdo
   const [contentType, setContentType] = useState('pagina');
-  const [contentTopic, setContentTopic] = useState('');
+  const contentTopicRef = useRef(null);
   const [generatedContent, setGeneratedContent] = useState('');
   const [contentLoading, setContentLoading] = useState(false);
 
   // Consultor
-  const [question, setQuestion] = useState('');
+  const questionRef = useRef(null);
   const [consultantResponse, setConsultantResponse] = useState('');
   const [consultantLoading, setConsultantLoading] = useState(false);
 
@@ -394,7 +394,9 @@ REGRAS:
 
   // ─── Publicador Social ─────────────────────────────────────────────────────
   const generateSocial = async () => {
-    if (!socialTopic.trim()) return;
+    const socialTopic = socialTopicRef.current?.value?.trim() || '';
+    const socialNotes = socialNotesRef.current?.value?.trim() || '';
+    if (!socialTopic) return;
     setSocialLoading(true);
     setSocialContent({ instagram: '', pinterest_title: '', pinterest_desc: '', google: '', linkedin: '', houzz: '', homify: '' });
     try {
@@ -437,7 +439,8 @@ Responda EXATAMENTE neste formato (cada seção começa com ### e vai até a pr�
 
   // ─── SEO ──────────────────────────────────────────────────────────────────
   const analyzeSEO = async () => {
-    if (!seoUrl.trim()) return;
+    const seoUrl = seoUrlRef.current?.value?.trim() || '';
+    if (!seoUrl) return;
     setSeoLoading(true);
     setSeoAnalysis('');
     try {
@@ -484,7 +487,8 @@ Formate de forma clara e acionável.`;
   };
 
   const generateContent = async () => {
-    if (!contentTopic.trim()) return;
+    const contentTopic = contentTopicRef.current?.value?.trim() || '';
+    if (!contentTopic) return;
     setContentLoading(true);
     setGeneratedContent('');
     try {
@@ -519,7 +523,8 @@ ${deliverable}`;
 
   // ─── Consultor Estratégico ─────────────────────────────────────────────────
   const askConsultant = async () => {
-    if (!question.trim()) return;
+    const question = questionRef.current?.value?.trim() || '';
+    if (!question) return;
     setConsultantLoading(true);
     setConsultantResponse('');
     try {
@@ -790,9 +795,9 @@ Responda como consultor experiente:
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Tema / Assunto *</label>
                     <input
+                      ref={socialTopicRef}
                       type="text"
-                      value={socialTopic}
-                      onChange={(e) => setSocialTopic(e.target.value)}
+                      defaultValue=""
                       placeholder="Ex: Apartamento 180m² concluído no Itaim Bibi"
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
                     />
@@ -800,9 +805,9 @@ Responda como consultor experiente:
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Detalhes (opcional)</label>
                     <input
+                      ref={socialNotesRef}
                       type="text"
-                      value={socialNotes}
-                      onChange={(e) => setSocialNotes(e.target.value)}
+                      defaultValue=""
                       placeholder="Ex: Estilo contemporâneo, mármore branco, 3 suítes"
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
                     />
@@ -811,7 +816,7 @@ Responda como consultor experiente:
 
                 <button
                   onClick={generateSocial}
-                  disabled={socialLoading || !socialTopic.trim()}
+                  disabled={socialLoading}
                   className="w-full py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 font-medium"
                 >
                   {socialLoading
@@ -927,16 +932,16 @@ Responda como consultor experiente:
                 </div>
                 <div className="flex gap-3">
                   <input
+                    ref={seoUrlRef}
                     type="text"
-                    value={seoUrl}
-                    onChange={(e) => setSeoUrl(e.target.value)}
+                    defaultValue=""
                     onKeyDown={(e) => e.key === 'Enter' && analyzeSEO()}
                     placeholder={t('adminPage.seo.placeholder')}
                     className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
                   />
                   <button
                     onClick={analyzeSEO}
-                    disabled={seoLoading || !seoUrl.trim()}
+                    disabled={seoLoading}
                     className="px-6 py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center gap-2"
                   >
                     {seoLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
@@ -989,9 +994,9 @@ Responda como consultor experiente:
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">{t('adminPage.content.topicLabel')}</label>
                     <input
+                      ref={contentTopicRef}
                       type="text"
-                      value={contentTopic}
-                      onChange={(e) => setContentTopic(e.target.value)}
+                      defaultValue=""
                       placeholder={t('adminPage.content.topicPlaceholder')}
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
                     />
@@ -999,7 +1004,7 @@ Responda como consultor experiente:
                 </div>
                 <button
                   onClick={generateContent}
-                  disabled={contentLoading || !contentTopic.trim()}
+                  disabled={contentLoading}
                   className="w-full py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {contentLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <RefreshCw className="w-4 h-4" />}
@@ -1037,7 +1042,7 @@ Responda como consultor experiente:
                   {(Array.isArray(quickQuestions) ? quickQuestions : []).map((q, i) => (
                     <button
                       key={i}
-                      onClick={() => setQuestion(q)}
+                      onClick={() => { if (questionRef.current) questionRef.current.value = q; }}
                       className="text-xs text-left px-3 py-2 bg-gray-100 hover:bg-wg-orange/10 rounded-lg transition-colors text-gray-600 hover:text-wg-orange"
                     >
                       {q}
@@ -1045,15 +1050,15 @@ Responda como consultor experiente:
                   ))}
                 </div>
                 <textarea
-                  value={question}
-                  onChange={(e) => setQuestion(e.target.value)}
+                  ref={questionRef}
+                  defaultValue=""
                   placeholder={t('adminPage.consultant.placeholder')}
                   rows={3}
                   className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30 resize-none"
                 />
                 <button
                   onClick={askConsultant}
-                  disabled={consultantLoading || !question.trim()}
+                  disabled={consultantLoading}
                   className="w-full py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {consultantLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
@@ -1131,8 +1136,8 @@ Responda como consultor experiente:
                                 <div className="relative">
                                   <input
                                     type={isPassword && !isVisible ? 'password' : 'text'}
-                                    value={saved[field.key] || ''}
-                                    onChange={(e) => updatePlatformSetting(platformId, field.key, e.target.value)}
+                                    defaultValue={saved[field.key] || ''}
+                                    onBlur={(e) => updatePlatformSetting(platformId, field.key, e.target.value)}
                                     placeholder={field.placeholder}
                                     className={`w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-wg-orange/30 ${isPassword ? 'pr-9' : ''}`}
                                   />

@@ -36,11 +36,13 @@ function createMotionComponent(tag) {
   );
 }
 
+const _cache = {};
 export const motion = new Proxy(
   {},
   {
     get(_target, tag) {
-      return createMotionComponent(tag);
+      if (!_cache[tag]) _cache[tag] = createMotionComponent(tag);
+      return _cache[tag];
     },
   }
 );
