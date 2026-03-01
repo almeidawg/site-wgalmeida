@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 
 /**
  * Componente de traços animados com as cores WG
@@ -121,9 +121,9 @@ const AnimatedStrokes = ({
             <motion.line
               key={i}
               x1={`${(100 / count) * i}%`}
-              y1="0%"
+              y1="100%"
               x2={`${(100 / count) * (i + 1)}%`}
-              y2="100%"
+              y2="0%"
               stroke={wgColors[i % wgColors.length]}
               strokeWidth={strokeWidth}
               initial="initial"

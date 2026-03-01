@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
+import { notificarNovaProposta } from '@/lib/emailService';
+import SEO from '@/components/SEO';
 import {
   ChevronRight,
   ChevronLeft,
@@ -213,6 +214,7 @@ const SoliciteProposta = () => {
   const [gridLines, setGridLines] = useState([]);
   const [currentPhase, setCurrentPhase] = useState(0);
   const [storyComplete, setStoryComplete] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({});
 
   // Form data
   const [formData, setFormData] = useState({
@@ -328,6 +330,19 @@ const SoliciteProposta = () => {
     }, 800);
   }, []);
 
+  // Validar email com regex
+  const isValidEmail = (email) => /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+
+  // Limpar erro de um campo ao digitar
+  const clearFieldError = (field) => {
+    setFieldErrors(prev => {
+      if (!prev[field]) return prev;
+      const next = { ...prev };
+      delete next[field];
+      return next;
+    });
+  };
+
   // Formatar telefone (apenas números brasileiros)
   const formatPhone = (value) => {
     // Remove tudo que não é número
@@ -348,7 +363,11 @@ const SoliciteProposta = () => {
     let formattedValue = value;
     if (field === 'telefone') {
       formattedValue = formatPhone(value);
+    } else if (field === 'metragem') {
+      // Apenas números e ponto decimal
+      formattedValue = value.replace(/[^0-9.,]/g, '');
     }
+    clearFieldError(field);
     setFormData(prev => ({ ...prev, [field]: formattedValue }));
     handleTyping();
   };
@@ -377,8 +396,27 @@ const SoliciteProposta = () => {
     handleTyping();
   };
 
+  // Validar tela atual antes de avançar
+  const validateCurrentScreen = () => {
+    const errors = {};
+
+    if (currentScreen === 7) {
+      if (!formData.nome.trim()) errors.nome = t('proposal.validation.name');
+      if (!formData.email.trim()) {
+        errors.email = t('proposal.validation.email');
+      } else if (!isValidEmail(formData.email)) {
+        errors.email = t('proposal.validation.emailFormat', 'Insira um e-mail válido (ex: nome@email.com)');
+      }
+      if (!formData.telefone.trim()) errors.telefone = t('proposal.validation.phone');
+    }
+
+    setFieldErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   // Próxima tela
   const nextScreen = () => {
+    if (!validateCurrentScreen()) return;
     setCurrentScreen(prev => Math.min(prev + 1, 8));
   };
 
@@ -393,6 +431,7 @@ const SoliciteProposta = () => {
     try {
       if (!formData.nome.trim()) throw new Error(t('proposal.validation.name'));
       if (!formData.email.trim()) throw new Error(t('proposal.validation.email'));
+      if (!isValidEmail(formData.email)) throw new Error(t('proposal.validation.emailFormat', 'Insira um e-mail válido (ex: nome@email.com)'));
       if (!formData.telefone.trim()) throw new Error(t('proposal.validation.phone'));
 
       // Montar descrição completa do projeto
@@ -430,7 +469,7 @@ const SoliciteProposta = () => {
       // Definir origem: se tiver código de vendedor, indicar
       const origemProposta = vendedorCodigo ? `site-vendedor:${vendedorCodigo}` : 'site';
 
-      const { error } = await supabase.from('propostas_solicitadas').insert([{
+      const dadosProposta = {
         nome: formData.nome,
         email: formData.email,
         telefone: formData.telefone,
@@ -439,9 +478,16 @@ const SoliciteProposta = () => {
         descricao_projeto: descricaoCompleta,
         origem: origemProposta,
         status: 'nova',
-      }]);
+      };
+
+      // Salvar no Supabase
+      const { error } = await supabase.from('propostas_solicitadas').insert([dadosProposta]);
 
       if (error) throw error;
+
+      // Enviar notificação por email para william@wgalmeida.com.br
+      await notificarNovaProposta(dadosProposta);
+
       setSuccess(true);
     } catch (err) {
       toast({ variant: 'destructive', title: t('proposal.validation.errorTitle'), description: err.message });
@@ -454,9 +500,7 @@ const SoliciteProposta = () => {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      if (currentScreen === 7) {
-        nextScreen();
-      } else if (currentScreen < 8) {
+      if (currentScreen < 8) {
         nextScreen();
       }
     }
@@ -519,6 +563,7 @@ const SoliciteProposta = () => {
                 <label className="text-white/70 text-xs md:text-sm mb-1 md:mb-2 block">{t('proposal.screens.property.areaLabel')}</label>
                 <input
                   type="text"
+                  inputMode="decimal"
                   value={formData.metragem}
                   onChange={(e) => handleChange('metragem', e.target.value)}
                   onKeyDown={handleKeyDown}
@@ -932,11 +977,12 @@ const SoliciteProposta = () => {
                   className="w-full px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-white text-base md:text-lg placeholder-white/30 outline-none transition-all"
                   style={{
                     background: 'rgba(0,0,0,0.3)',
-                    border: `2px solid rgba(255,255,255,0.15)`,
+                    border: `2px solid ${fieldErrors.nome ? '#ef4444' : 'rgba(255,255,255,0.15)'}`,
                   }}
-                  onFocus={(e) => e.target.style.borderColor = WG_COLORS.verde}
-                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.15)'}
+                  onFocus={(e) => e.target.style.borderColor = fieldErrors.nome ? '#ef4444' : WG_COLORS.verde}
+                  onBlur={(e) => e.target.style.borderColor = fieldErrors.nome ? '#ef4444' : 'rgba(255,255,255,0.15)'}
                 />
+                {fieldErrors.nome && <p className="text-red-400 text-xs mt-1">{fieldErrors.nome}</p>}
               </div>
 
               <div>
@@ -952,11 +998,18 @@ const SoliciteProposta = () => {
                   className="w-full px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-white text-base md:text-lg placeholder-white/30 outline-none transition-all"
                   style={{
                     background: 'rgba(0,0,0,0.3)',
-                    border: `2px solid rgba(255,255,255,0.15)`,
+                    border: `2px solid ${fieldErrors.email ? '#ef4444' : 'rgba(255,255,255,0.15)'}`,
                   }}
-                  onFocus={(e) => e.target.style.borderColor = WG_COLORS.verde}
-                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.15)'}
+                  onFocus={(e) => e.target.style.borderColor = fieldErrors.email ? '#ef4444' : WG_COLORS.verde}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = fieldErrors.email ? '#ef4444' : 'rgba(255,255,255,0.15)';
+                    // Validar email ao sair do campo
+                    if (formData.email && !isValidEmail(formData.email)) {
+                      setFieldErrors(prev => ({ ...prev, email: t('proposal.validation.emailFormat', 'Insira um e-mail válido (ex: nome@email.com)') }));
+                    }
+                  }}
                 />
+                {fieldErrors.email && <p className="text-red-400 text-xs mt-1">{fieldErrors.email}</p>}
               </div>
 
               <div>
@@ -973,11 +1026,12 @@ const SoliciteProposta = () => {
                   className="w-full px-4 py-3 md:px-5 md:py-4 rounded-lg md:rounded-xl text-white text-base md:text-lg placeholder-white/30 outline-none transition-all"
                   style={{
                     background: 'rgba(0,0,0,0.3)',
-                    border: `2px solid rgba(255,255,255,0.15)`,
+                    border: `2px solid ${fieldErrors.telefone ? '#ef4444' : 'rgba(255,255,255,0.15)'}`,
                   }}
-                  onFocus={(e) => e.target.style.borderColor = WG_COLORS.verde}
-                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.15)'}
+                  onFocus={(e) => e.target.style.borderColor = fieldErrors.telefone ? '#ef4444' : WG_COLORS.verde}
+                  onBlur={(e) => e.target.style.borderColor = fieldErrors.telefone ? '#ef4444' : 'rgba(255,255,255,0.15)'}
                 />
+                {fieldErrors.telefone && <p className="text-red-400 text-xs mt-1">{fieldErrors.telefone}</p>}
               </div>
             </div>
           </motion.div>
@@ -1057,32 +1111,45 @@ const SoliciteProposta = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{t('seo.proposal.title')}</title>
-        <meta name="description" content={t('seo.proposal.description')} />
-      </Helmet>
+      <SEO
+        pathname="/solicite-proposta"
+        title={t('seo.proposal.title')}
+        description={t('seo.proposal.description')}
+        keywords="solicitar proposta arquitetura, orcamento reforma sp, proposta turn key, contratar arquiteto sao paulo"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Proposta Turn Key Premium | Grupo WG Almeida",
+          description: "Solicite proposta integrada de arquitetura, engenharia e marcenaria em São Paulo.",
+          url: "https://wgalmeida.com.br/solicite-proposta",
+          provider: {
+            "@type": "Organization",
+            name: "Grupo WG Almeida",
+            url: "https://wgalmeida.com.br",
+            telephone: "+55-11-98465-0002",
+            email: "contato@wgalmeida.com.br",
+          },
+          areaServed: { "@type": "City", name: "São Paulo" },
+          serviceType: "Arquitetura, Engenharia e Marcenaria",
+        }}
+      />
 
       <div
         ref={containerRef}
-        className="fixed inset-0 w-full h-full overflow-hidden -mt-20"
+        className="fixed inset-0 w-full h-full overflow-hidden"
         onClick={handleInteraction}
         onTouchStart={handleInteraction}
       >
         {/* Vídeo de fundo */}
         <div className="absolute inset-0 z-0">
-          <iframe
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            style={{
-              width: '177.78vh',
-              height: '100vh',
-              minWidth: '100%',
-              minHeight: '56.25vw',
-            }}
+          <video
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             src={cloudinaryVideoUrl}
-            title="WG Almeida Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
           />
           <div
             className="absolute inset-0"
@@ -1246,6 +1313,7 @@ const SoliciteProposta = () => {
               exit={{ y: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
               className="absolute inset-0 z-30 flex items-center justify-center p-2 md:p-4"
+              style={{ paddingTop: 'var(--header-height)' }}
               onClick={(e) => e.stopPropagation()}
             >
               <motion.div

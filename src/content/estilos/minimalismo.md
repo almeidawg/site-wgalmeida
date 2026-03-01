@@ -1,7 +1,7 @@
 ---
-title: "Minimalismo"
+title: "Estilo Minimalista: Como Decorar com Elegância, Função e Menos Excesso"
 slug: "minimalismo"
-excerpt: "Menos é mais. Linhas retas, poucos elementos e paleta neutra para ambientes funcionais e elegantes."
+excerpt: "Veja como criar ambientes minimalistas com linhas limpas, paleta neutra e organização inteligente para mais conforto e sofisticação."
 image: "/images/estilos/minimalismo.webp"
 quote: "Menos é mais."
 author: "Ludwig Mies van der Rohe"
@@ -14,7 +14,7 @@ colors: ["#FFFFFF", "#000000", "#808080", "#F5F5F5"]
 
 ## De Onde Surgiu o Minimalismo?
 
-O minimalismo vem do inglês **Minimal Art**, fazendo referência aos movimentos artísticos dos anos 1950 e início de 1960. O Minimal Art veio como uma reação aos movimentos Pop Art e Expressionismo Abstrato, que ocorreram em uma época pós Guerra Fria, onde se iniciava um cenário de prosperidade e, desse modo, uma onda de produção e consumo em massa.
+O minimalismo vem do inglês **Minimal Art**, movimento dos anos 1950 e início de 1960 que reagiu ao excesso visual da época. Na decoração, ele virou escolha estratégica para quem quer ambientes mais leves, organizados e funcionais, sem abrir mão de elegância.
 
 O movimento pregava a **expulsão de elementos excessivos**, onde os excessos serviam unicamente para distrair do principal. Com o passar do tempo, o minimalismo se expandiu para a arquitetura e design de interiores, tornando-se não apenas uma expressão artística, mas um **estilo de vida**.
 

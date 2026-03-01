@@ -1,11 +1,11 @@
 ---
-title: "Plantas de Interior que Purificam o Ar: Guia Completo NASA"
+title: "20 Plantas para Interiores que Purificam o Ar e Valorizam o Ambiente"
 slug: "plantas-interiores-purificam-ar"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
 image: "/images/blog/plantas-interiores-purificam-ar.webp"
-excerpt: "Descubra as melhores plantas para ter em casa segundo estudo da NASA: purificam ar, fáceis de cuidar, onde colocar e como manter."
+excerpt: "Lista pratica com 20 plantas para interiores de baixa manutencao, beneficios para qualidade do ar e dicas por ambiente."
 tags:
   - "plantas"
   - "purificação ar"
@@ -13,7 +13,9 @@ tags:
   - "decoração"
 featured: false
 ---
-# Plantas de Interior que Purificam o Ar
+# 20 Plantas de Interior que Purificam o Ar e Valorizam a Decoracao
+
+Se voce busca plantas para interiores que melhorem conforto e estetica, este guia mostra 20 especies com baixa manutencao e boa adaptacao para sala, quarto e escritorio. O objetivo e escolher melhor e usar cada planta no lugar certo.
 
 ## Estudo NASA
 
@@ -537,3 +539,10 @@ Plantas de interior:
 **Retorno:** Ar puro + bem-estar + beleza
 
 **Comece com:** 3-5 plantas fáceis e vá aumentando!
+
+## Leitura recomendada
+
+- [Tendencias de decoracao 2026](/blog/tendencias-decoracao-interiores-2026)
+- [Paleta de cores 2026 e cor do ano](/blog/paleta-cores-2026-cor-do-ano)
+- [Marcenaria sob medida: tendencias 2026](/blog/marcenaria-sob-medida-tendencias-2026)
+

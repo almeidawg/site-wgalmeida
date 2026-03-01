@@ -1,7 +1,7 @@
 ---
-title: "Farmhouse"
+title: "Estilo Farmhouse: Guia de Decoração de Fazenda Americana Moderna"
 slug: "farmhouse"
-excerpt: "Charme da fazenda americana com branco e madeira natural, funcionalidade prática e atmosfera acolhedora de casa de campo."
+excerpt: "Aprenda a decorar no estilo Farmhouse com branco, madeira natural e soluções práticas para ambientes acolhedores."
 image: "/images/estilos/farmhouse.webp"
 quote: "A casa de fazenda é onde a família se reúne e as memórias são feitas."
 author: "Joanna Gaines"
@@ -14,7 +14,7 @@ colors: ["#FFFFFF", "#8B7355", "#E8E8E8", "#2F4F4F"]
 
 ## O Estilo Farmhouse
 
-O estilo **Farmhouse** (fazenda americana) traz o charme das casas rurais dos Estados Unidos, especialmente das fazendas do sul e meio-oeste americano. É um estilo que combina **funcionalidade prática** com **aconchego familiar**, criando espaços que parecem ter abrigado gerações de histórias.
+O estilo **Farmhouse** (fazenda americana) traz o charme das casas rurais dos Estados Unidos com uma leitura atual. A combinação de funcionalidade prática e aconchego familiar cria ambientes simples, bonitos e duráveis.
 
 Popularizado por designers como **Joanna Gaines** (Fixer Upper/Magnolia), o Farmhouse moderno mistura elementos rústicos tradicionais com toques contemporâneos, resultando em ambientes **clean, confortáveis e atemporais**.
 

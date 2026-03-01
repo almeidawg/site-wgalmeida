@@ -140,7 +140,10 @@ const ProjectCarousel = () => {
             <img
               src={activeProject.image}
               alt={t(activeProject.titleKey)}
+              width={800}
+              height={420}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition duration-700 ease-out hover:scale-[1.05]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-wg-apple-accent/80 to-transparent" />

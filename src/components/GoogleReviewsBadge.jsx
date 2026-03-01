@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { motion } from '@/lib/motion-lite';
 import { Star, ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-
-// Link direto para avaliações do Google Meu Negócio
-const GOOGLE_REVIEW_URL = 'https://www.google.com/search?q=Grupo+WG+Almeida+%7C+Arquitetura+%7C+Engenharia+%7C+Marcenaria&hl=pt-BR#mpd=~11469428191926167595/customers/reviews';
-
-// Link para deixar avaliação
-const GOOGLE_WRITE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=ChIJYxYvQVZYzpQRi3iH8kGvVhE';
+import { GOOGLE_REVIEW_URL } from '@/constants/googleReviews';
+import useGoogleReviews from '@/hooks/useGoogleReviews';
 
 // Componente de Card de Avaliação - Versão Compacta
 const ReviewCard = ({ review, index }) => {
@@ -26,7 +22,7 @@ const ReviewCard = ({ review, index }) => {
           <span className="text-sm font-bold text-wg-orange">{review.avatar}</span>
         </div>
         <div className="flex-1">
-          <h4 className="font-medium text-wg-black text-sm">{review.name}</h4>
+          <p className="font-medium text-wg-black text-sm">{review.name}</p>
           <div className="flex items-center gap-2">
             <div className="flex gap-0.5">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -45,64 +41,8 @@ const ReviewCard = ({ review, index }) => {
 };
 
 const GoogleReviewsBadge = () => {
-  const { t, i18n } = useTranslation();
-  const [remoteReviews, setRemoteReviews] = useState(null);
-  const [summary, setSummary] = useState(null);
-  const fallbackReviews = t('googleReviews.reviews', { returnObjects: true });
-  const reviews = remoteReviews ?? fallbackReviews;
-  const averageRating = typeof summary?.averageRating === 'number' ? summary.averageRating : 5.0;
-  const reviewCount = summary?.reviewCount;
-  const countLabel = reviewCount
-    ? t('googleReviews.countWithValue', { count: reviewCount })
-    : t('googleReviews.count');
-
-  useEffect(() => {
-    const reviewsUrl = import.meta.env.VITE_GOOGLE_REVIEWS_URL;
-    if (!reviewsUrl) return;
-
-    let isMounted = true;
-    const formatDate = (value) => {
-      if (!value) return '';
-      const parsed = new Date(value);
-      if (Number.isNaN(parsed.getTime())) return value;
-      return parsed.toLocaleDateString(i18n.language || 'pt-BR', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      });
-    };
-
-    fetch(reviewsUrl)
-      .then((response) => response.ok ? response.json() : null)
-      .then((data) => {
-        if (!data || !isMounted || !Array.isArray(data.reviews)) return;
-        const normalized = data.reviews.map((review) => ({
-          id: review.id,
-          name: review.name || 'Cliente WG',
-          rating: review.rating || 0,
-          date: formatDate(review.date),
-          text: review.text || '',
-          avatar: review.avatar || (review.name ? review.name.trim().slice(0, 1).toUpperCase() : 'W'),
-        }));
-        setRemoteReviews(normalized);
-        const normalizedAverage = typeof data.averageRating === 'number'
-          ? data.averageRating
-          : normalized.length
-            ? normalized.reduce((sum, review) => sum + (review.rating || 0), 0) / normalized.length
-            : 0;
-        setSummary({
-          averageRating: Number(normalizedAverage.toFixed(2)),
-          reviewCount: data.reviewCount || normalized.length,
-        });
-      })
-      .catch(() => {
-        if (!isMounted) return;
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, [i18n.language]);
+  const { t } = useTranslation();
+  const { reviews, averageRating, reviewCount, countLabel } = useGoogleReviews();
 
   const structuredData = {
     '@context': 'https://schema.org',

@@ -44,10 +44,10 @@ A moodboard is the instrument that turns words into image. It aligns expectation
 
 ## How we build it at WG Almeida
 
-1. Briefing and lifestyle analysis  
-2. Curation of reliable references  
-3. Selection of real materials and textures  
-4. Panel assembly and client presentation  
+1. Briefing and lifestyle analysis
+2. Curation of reliable references
+3. Selection of real materials and textures
+4. Panel assembly and client presentation
 
 ---
 
@@ -142,3 +142,4 @@ If you are looking for a custom project with full follow-up and premium finish, 
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 11 98465-0002
+

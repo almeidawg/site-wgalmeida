@@ -1,7 +1,7 @@
 ---
-title: "Provençal"
+title: "Estilo Provençal: Decoração Francesa Romântica com Charme Campestre"
 slug: "provencal"
-excerpt: "Charme do interior da França com lavanda e amarelos suaves, móveis pátina e romantismo que traz Provence para casa."
+excerpt: "Veja como aplicar o estilo Provençal com tons suaves, móveis patinados e referências do interior da França."
 image: "/images/estilos/provencal.webp"
 quote: "A Provence é onde a luz dança com a lavanda e o tempo desacelera."
 author: "Peter Mayle"
@@ -14,7 +14,7 @@ colors: ["#E6E6FA", "#F0E68C", "#FFFFFF", "#9370DB"]
 
 ## O Estilo Provençal
 
-O estilo **Provençal** é a essência do **interior da França**, especialmente da região de **Provence** no sul do país. É sobre **romantismo**, **charme campestre**, **lavanda**, **amarelos suaves** e a **arte de viver bem** (savoir-vivre) que caracteriza a cultura francesa.
+O estilo **Provençal** traduz o charme do interior da França, especialmente da região de Provence. Ele combina romantismo, paleta suave e atmosfera campestre para criar ambientes delicados e acolhedores.
 
 Inspirado pelos campos de lavanda, vinhedos, oliveiras e pequenas vilas francesas, o Provençal é **delicado mas não frágil**, **romântico mas não excessivo**, **vintage mas não antiquado**.
 

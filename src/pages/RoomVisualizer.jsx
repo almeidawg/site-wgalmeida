@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Navigate } from 'react-router-dom';
 import { Wand2, Lock, ArrowLeft, Sparkles } from 'lucide-react';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
@@ -162,8 +162,10 @@ const RoomVisualizerContent = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Visualizador de Ambientes IA | WG Almeida"
+        pathname="/room-visualizer"
+        title="Visualizador de Ambientes com IA | WG Almeida"
         description="Use inteligência artificial para visualizar seu ambiente com as cores e estilos do seu moodboard. Veja como ficará antes de executar!"
+        keywords="visualizador ambientes ia, decoracao inteligencia artificial, antes depois reforma, visualizacao 3d decoracao"
       />
 
       {/* Hero Section */}

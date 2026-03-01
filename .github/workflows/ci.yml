@@ -43,7 +43,7 @@ jobs:
           name: codecov-umbrella
 
       - name: Build production
-        run: npm run build
+        run: npm run seo:validate:fresh
 
       - name: Run npm audit
         run: npm audit --audit-level=moderate

@@ -1,7 +1,7 @@
 ---
-title: "Japandi"
+title: "Japandi: Guia de Decoração com Minimalismo Japonês e Conforto Escandinavo"
 slug: "japandi"
-excerpt: "Fusão perfeita entre minimalismo japonês e funcionalidade escandinava para ambientes zen e acolhedores."
+excerpt: "Conheça o estilo Japandi, que une minimalismo japonês e funcionalidade escandinava para ambientes acolhedores e equilibrados."
 image: "/images/estilos/japandi.webp"
 quote: "A simplicidade é a sofisticação máxima."
 author: "Leonardo da Vinci"
@@ -14,7 +14,7 @@ colors: ["#F5F5DC", "#2F4F4F", "#D4C5B9", "#1A1A1A"]
 
 ## O Que é Japandi?
 
-**Japandi** é a fusão harmoniosa entre o design **Japonês** (Japan) e **Escandinavo** (Scandi). É um estilo híbrido que combina o minimalismo zen japonês com o aconchego hygge escandinavo.
+**Japandi** e a fusao harmoniosa entre o design **japones** e **escandinavo**. E um estilo hibrido que combina minimalismo zen com aconchego hygge para criar espacos serenos e funcionais.
 
 ### Origem:
 Surgiu naturalmente nos anos 2010-2020 quando designers perceberam as semelhanças filosóficas entre os dois estilos.

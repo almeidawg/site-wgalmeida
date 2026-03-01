@@ -1,11 +1,11 @@
 ---
-title: "Arquitetura Sustentável: Certificações LEED, AQUA e Casa Azul no Brasil"
+title: "Arquitetura Sustentavel: Certificacoes LEED, AQUA e Casa Azul no Brasil"
 slug: "arquitetura-sustentavel-certificacoes"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "sustentabilidade"
 image: "/images/blog/arquitetura-sustentavel-certificacoes.webp"
-excerpt: "Guia completo sobre certificações de construção sustentável: LEED, AQUA-HQE, Selo Casa Azul, custos, benefícios e como obter."
+excerpt: "Guia direto sobre certificacoes sustentaveis na construcao: LEED, AQUA-HQE e Casa Azul, com custos e beneficios."
 tags:
   - "certificação verde"
   - "LEED"
@@ -13,7 +13,7 @@ tags:
   - "sustentabilidade"
 featured: false
 ---
-# Arquitetura Sustentável: Certificações no Brasil
+# Arquitetura Sustentavel: Certificacoes no Brasil
 
 ## O Que São Certificações Verdes?
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Download, Share2, Link, Mail, Copy, Check, FileImage, FileText } from 'lucide-react';
 
 const MoodboardExport = ({ colors, styles, onExport, moodboardId }) => {

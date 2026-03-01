@@ -4,32 +4,55 @@ const HeroVideo = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [videoFailed, setVideoFailed] = useState(false);
+  const [allowVideo, setAllowVideo] = useState(true);
   const videoRef = useRef(null);
+
+  const bindMediaQueryChange = (mediaQuery, handler) => {
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', handler);
+      return () => mediaQuery.removeEventListener('change', handler);
+    }
+    mediaQuery.addListener(handler);
+    return () => mediaQuery.removeListener(handler);
+  };
 
   // Usar matchMedia para evitar Forced Reflow (melhora TBT)
   useEffect(() => {
     // matchMedia nao causa layout thrashing como innerWidth/innerHeight
     const mobileQuery = window.matchMedia('(max-width: 767px)');
     const portraitQuery = window.matchMedia('(orientation: portrait)');
+    const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const checkMobile = () => {
       setIsMobile(mobileQuery.matches || portraitQuery.matches);
     };
 
-    checkMobile();
+    const checkMotionAndConnection = () => {
+      const saveData = Boolean(navigator.connection?.saveData);
+      const effectiveType = navigator.connection?.effectiveType || "";
+      const slowConnection = ["slow-2g", "2g", "3g"].includes(effectiveType);
+      setAllowVideo(!reduceMotionQuery.matches && !saveData && !slowConnection);
+    };
 
-    // Usar addEventListener ao inves de addListener (deprecated)
-    mobileQuery.addEventListener('change', checkMobile);
-    portraitQuery.addEventListener('change', checkMobile);
+    checkMobile();
+    checkMotionAndConnection();
+
+    const unbindMobile = bindMediaQueryChange(mobileQuery, checkMobile);
+    const unbindPortrait = bindMediaQueryChange(portraitQuery, checkMobile);
+    const unbindMotion = bindMediaQueryChange(reduceMotionQuery, checkMotionAndConnection);
 
     return () => {
-      mobileQuery.removeEventListener('change', checkMobile);
-      portraitQuery.removeEventListener('change', checkMobile);
+      unbindMobile();
+      unbindPortrait();
+      unbindMotion();
     };
   }, []);
 
   // Carregar video apos 2s ou interacao do usuario (melhora LCP)
   useEffect(() => {
+    if (!allowVideo || isMobile) return;
+
     const loadVideo = () => setShouldLoadVideo(true);
     
     const timer = setTimeout(loadVideo, 2000);
@@ -41,24 +64,23 @@ const HeroVideo = () => {
       clearTimeout(timer);
       events.forEach(e => window.removeEventListener(e, loadVideo));
     };
-  }, []);
+  }, [allowVideo, isMobile]);
 
-  // Cloudinary com otimizacoes de qualidade e formato
-  const videoUrl = isMobile 
-    ? 'https://res.cloudinary.com/dkkj9mpqv/video/upload/q_auto,f_auto/wgalmeida/hero-vertical.mp4'
-    : 'https://res.cloudinary.com/dkkj9mpqv/video/upload/q_auto,f_auto/wgalmeida/hero-horizontal.mp4';
+  const videoUrl = isMobile
+    ? '/videos/hero/VERTICAL_compressed.mp4'
+    : '/videos/hero/HORIZONTAL_compressed.mp4';
 
   return (
     <div className="absolute inset-0 z-0 w-full h-full overflow-hidden bg-wg-black">
       <img
-        src="/images/hero-poster.webp"
-        srcSet="/images/hero-poster-640.webp 640w, /images/hero-poster-960.webp 960w, /images/hero-poster-1280.webp 1280w, /images/hero-poster.webp 1920w"
+        src="/images/hero-poster-1280.webp"
+        srcSet="/images/hero-poster-640.webp 640w, /images/hero-poster-960-opt.webp 960w, /images/hero-poster-1280.webp 1280w"
         sizes="100vw"
         alt=""
         aria-hidden="true"
         className={'absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ' + (isLoaded ? 'opacity-0' : 'opacity-100')}
-        width="1920"
-        height="1080"
+        width="1280"
+        height="720"
         loading="eager"
         decoding="async"
         fetchPriority="high"
@@ -66,7 +88,7 @@ const HeroVideo = () => {
 
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-      {shouldLoadVideo && (
+      {allowVideo && shouldLoadVideo && !videoFailed && (
         <video
           ref={videoRef}
           className={'absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ' + (isLoaded ? 'opacity-100' : 'opacity-0')}
@@ -76,12 +98,29 @@ const HeroVideo = () => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
+          poster="/images/hero-poster-960-opt.webp"
           onCanPlay={() => setIsLoaded(true)}
-        />
+          onError={() => {
+            setVideoFailed(true);
+            setIsLoaded(false);
+          }}
+          aria-hidden="true"
+        >
+          <track kind="captions" src="/videos/hero/descricao.vtt" srcLang="pt-BR" label="Português" />
+        </video>
       )}
     </div>
   );
 };
 
 export default HeroVideo;
+
+
+
+
+
+
+
+
+

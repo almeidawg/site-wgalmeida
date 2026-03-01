@@ -7,7 +7,7 @@ import time
 FTP_HOST = "147.93.64.151"
 FTP_USER = "u968231423.wgalmeida.com.br"
 FTP_PASS = "WGEasy2026!"
-DIST_PATH = r"E:\SITE_WGALMEIDA\site\dist"
+DIST_PATH = r"E:\01_SITE_WGALMEIDA\site\dist"
 REMOTE_BASE = "/public_html"
 
 def connect_ftp():

@@ -54,19 +54,80 @@
   ForceType text/css
 </FilesMatch>
 
-# Habilitar compressao GZIP
+# =====================================================
+# SERVE PRE-COMPRESSED BROTLI/GZIP FILES
+# Vite build gera .br e .gz junto aos originais — servir
+# diretamente evita CPU de compressao on-the-fly e entrega
+# Brotli mesmo em servidores sem mod_brotli (ex: Hostinger)
+# =====================================================
+
+# MIME types corretos para arquivos pre-comprimidos
+<FilesMatch "\.js\.br$">
+  ForceType application/javascript
+</FilesMatch>
+<FilesMatch "\.js\.gz$">
+  ForceType application/javascript
+</FilesMatch>
+<FilesMatch "\.css\.br$">
+  ForceType text/css
+</FilesMatch>
+<FilesMatch "\.css\.gz$">
+  ForceType text/css
+</FilesMatch>
+<FilesMatch "\.html\.br$">
+  ForceType text/html
+</FilesMatch>
+<FilesMatch "\.html\.gz$">
+  ForceType text/html
+</FilesMatch>
+<FilesMatch "\.xml\.br$">
+  ForceType application/xml
+</FilesMatch>
+<FilesMatch "\.xml\.gz$">
+  ForceType application/xml
+</FilesMatch>
+<FilesMatch "\.json\.br$">
+  ForceType application/json
+</FilesMatch>
+<FilesMatch "\.json\.gz$">
+  ForceType application/json
+</FilesMatch>
+
+# Headers de Content-Encoding para arquivos pre-comprimidos
+<IfModule mod_headers.c>
+  <FilesMatch "\.br$">
+    Header set Content-Encoding br
+  </FilesMatch>
+  <FilesMatch "\.gz$">
+    Header set Content-Encoding gzip
+  </FilesMatch>
+</IfModule>
+
+# Rewrite para servir versoes pre-comprimidas automaticamente
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Nao reescrever requests que ja sao para .br ou .gz
+  RewriteRule \.br$ - [L]
+  RewriteRule \.gz$ - [L]
+
+  # Brotli primeiro (menor, melhor compressao)
+  RewriteCond %{HTTP:Accept-Encoding} br
+  RewriteCond %{REQUEST_FILENAME}.br -f
+  RewriteRule ^(.+)\.(js|css|html|xml|json)$ $1.$2.br [E=no-gzip:1,L]
+
+  # Gzip como fallback
+  RewriteCond %{HTTP:Accept-Encoding} gzip
+  RewriteCond %{REQUEST_FILENAME}.gz -f
+  RewriteRule ^(.+)\.(js|css|html|xml|json)$ $1.$2.gz [E=no-gzip:1,L]
+</IfModule>
+
+# Compressao on-the-fly como ultimo fallback (para arquivos sem .br/.gz)
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
   AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
   AddOutputFilterByType DEFLATE application/json application/xml application/xhtml+xml
-  AddOutputFilterByType DEFLATE image/svg+xml font/woff font/woff2
-</IfModule>
-
-# Habilitar compressao Brotli (se disponivel)
-<IfModule mod_brotli.c>
-  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css
-  AddOutputFilterByType BROTLI_COMPRESS text/javascript application/javascript
-  AddOutputFilterByType BROTLI_COMPRESS application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
 # =====================================================
@@ -145,7 +206,7 @@
   # Content-Security-Policy - Politica de seguranca de conteudo
   # Atualizado 2025-01-15: Adicionado Pinterest ao frame-src
   # IMPORTANTE: CSP deve permitir todos os recursos necessarios
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://s.pinimg.com https://ct.pinterest.com https://fonts.googleapis.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https: http:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.supabase.co https://www.google-analytics.com https://www.googletagmanager.com https://ct.pinterest.com https://s.pinimg.com https://api.pinterest.com wss://*.supabase.co; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://ct.pinterest.com https://www.facebook.com; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self' https://ct.pinterest.com; frame-ancestors 'self'; worker-src 'self' blob:;"
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://s.pinimg.com https://ct.pinterest.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https: http:; font-src 'self' data:; connect-src 'self' https://*.supabase.co https://www.google-analytics.com https://www.googletagmanager.com https://ct.pinterest.com https://s.pinimg.com https://api.pinterest.com wss://*.supabase.co; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://ct.pinterest.com https://www.facebook.com; media-src 'self' blob: data: https://res.cloudinary.com; object-src 'none'; base-uri 'self'; form-action 'self' https://ct.pinterest.com; frame-ancestors 'self'; worker-src 'self' blob:;"
 </IfModule>
 
 # =====================================================
@@ -181,7 +242,7 @@
 
   # NUNCA reescrever arquivos estaticos (mesmo se nao existirem)
   # Isso evita servir index.html com MIME type errado
-  RewriteCond %{REQUEST_URI} \.(js|mjs|jsx|css|map|json|webmanifest)$ [NC,OR]
+  RewriteCond %{REQUEST_URI} \.(js|mjs|jsx|css|map|json|webmanifest|br|gz)$ [NC,OR]
   RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|webp|avif|svg|ico)$ [NC,OR]
   RewriteCond %{REQUEST_URI} \.(mp4|webm|ogg|mp3|wav)$ [NC,OR]
   RewriteCond %{REQUEST_URI} \.(woff|woff2|ttf|otf|eot)$ [NC,OR]
@@ -220,9 +281,10 @@ FileETag MTime Size
 # EARLY HINTS (HTTP/2+ 103 para recursos criticos)
 # =====================================================
 <IfModule mod_http2.c>
-  # Preload da fonte critica
-  Header add Link "</fonts/Inter-Regular.woff2>; rel=preload; as=font; crossorigin" env=!preload_done
-  SetEnvIf Request_URI "^/$" preload_done
+  # Preload da fonte critica (Early Hints)
+  <FilesMatch "index\.html$">
+    Header add Link "</fonts/inter-400.woff2>; rel=preload; as=font; type=font/woff2; crossorigin"
+  </FilesMatch>
 </IfModule>
 
 # =====================================================
@@ -244,9 +306,9 @@ FileETag MTime Size
   Header unset X-Powered-By
   Header unset Server
 
-  # Preload de recursos criticos (hint ao navegador)
+  # Preconnect para CDN de videos hero (Cloudinary)
   <FilesMatch "index\.html$">
-    Header add Link "</assets/vendor-react-*.js>; rel=modulepreload; as=script"
+    Header add Link "<https://res.cloudinary.com>; rel=preconnect; crossorigin"
   </FilesMatch>
 </IfModule>
 

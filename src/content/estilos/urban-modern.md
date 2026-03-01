@@ -1,7 +1,7 @@
 ---
-title: "Urban Modern"
+title: "Urban Modern: Estilo Contemporâneo para Apartamentos Sofisticados"
 slug: "urban-modern"
-excerpt: "Sofisticação urbana minimalista com tecnologia integrada, materiais premium e design clean que define o morar contemporâneo."
+excerpt: "Veja como aplicar o Urban Modern com design clean, tecnologia integrada e materiais premium para ambientes urbanos."
 image: "/images/estilos/urban-modern.webp"
 quote: "Menos, mas melhor."
 author: "Dieter Rams"
@@ -14,7 +14,7 @@ colors: ["#2F4F4F", "#FFFFFF", "#C0C0C0", "#000000"]
 
 ## O Estilo Urban Modern
 
-O **Urban Modern** é a sofisticação do **morar urbano contemporâneo** - apartamentos em arranha-céus, lofts convertidos, penthouses metropolitanos. É **minimalismo funcional** com **materiais premium**, **tecnologia integrada** e **design impecável**.
+O **Urban Modern** é uma leitura sofisticada do morar urbano contemporâneo. O estilo combina minimalismo funcional, materiais premium e tecnologia integrada para transformar apartamentos em espaços elegantes e eficientes.
 
 É o estilo de quem vive na cidade, valoriza **qualidade sobre quantidade** e quer um espaço **clean, sofisticado e extremamente funcional**.
 

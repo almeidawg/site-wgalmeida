@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SEO, { schemas } from '@/components/SEO';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Link, useParams } from 'react-router-dom';
 import {
   Calendar,
@@ -42,6 +42,96 @@ const rawPostsByLocale = {
 const estimateReadingTime = (text) => {
   const words = text.split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(words / 200));
+};
+
+const slugifyHeading = (text) => text
+  .toString()
+  .toLowerCase()
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/[^a-z0-9\s-]/g, '')
+  .trim()
+  .replace(/\s+/g, '-');
+
+const extractHeadingText = (children) => {
+  if (!children) return '';
+  if (typeof children === 'string') return children;
+  if (Array.isArray(children)) {
+    return children.map((child) => {
+      if (typeof child === 'string') return child;
+      if (child?.props?.children) return extractHeadingText(child.props.children);
+      return '';
+    }).join('');
+  }
+  if (children?.props?.children) return extractHeadingText(children.props.children);
+  return '';
+};
+
+const extractTocHeadings = (markdown) => {
+  const lines = markdown.split('\n');
+  return lines
+    .filter((line) => line.startsWith('## '))
+    .map((line) => line.replace(/^##\s+/, '').trim())
+    .filter(Boolean)
+    .map((text) => ({ text, id: slugifyHeading(text) }));
+};
+
+const stripDuplicateTocSection = (markdown) => markdown
+  .replace(
+    /(^|\n)##\s*(?:Neste artigo|In this article|En este articulo|En este artículo)\s*\n+(?:(?:[-*+]\s+.+|[0-9]+\.\s+.+)\n)+/i,
+    '$1'
+  )
+  .trim();
+
+const splitMarkdownByH2 = (markdown) => {
+  const lines = markdown.split('\n');
+  const introLines = [];
+  const sections = [];
+  let currentSection = null;
+
+  lines.forEach((line) => {
+    if (/^##\s+/.test(line)) {
+      if (currentSection) {
+        sections.push({
+          ...currentSection,
+          markdown: currentSection.markdown.trim()
+        });
+      }
+      const heading = line.replace(/^##\s+/, '').trim();
+      currentSection = {
+        id: slugifyHeading(heading),
+        markdown: `${line}\n`
+      };
+      return;
+    }
+
+    if (currentSection) {
+      currentSection.markdown += `${line}\n`;
+    } else {
+      introLines.push(line);
+    }
+  });
+
+  if (currentSection) {
+    sections.push({
+      ...currentSection,
+      markdown: currentSection.markdown.trim()
+    });
+  }
+
+  return {
+    intro: introLines.join('\n').trim(),
+    sections
+  };
+};
+
+const editorialScale = {
+  kicker: 'text-[11px] font-semibold uppercase tracking-[0.18em]',
+  title: 'text-[22px] leading-tight text-wg-black',
+  body: 'text-[15px] leading-[1.65] text-[#4C4C4C]',
+  bodyHero: 'text-[17px] md:text-[18px] leading-[1.65]',
+  cardTitle: 'text-[20px] leading-[1.3] md:text-[22px]',
+  cardExcerpt: 'text-[15px] leading-[1.6]'
 };
 
 // Componente de Compartilhamento Social
@@ -247,11 +337,13 @@ const Blog = () => {
         return {
           title: data.title || t('blogPage.fallback.title'),
           slug: slugValue,
+          subtitle: data.subtitle || '',
           excerpt: data.excerpt || '',
           image: data.image || '/images/banners/SOBRE.webp',
           category: data.category || 'arquitetura',
           author: data.author || t('blogPage.fallback.author'),
           date: data.date || '2025-12-01',
+          heroPosition: data.heroPosition || '50% 50%',
           featured: Boolean(data.featured),
           tags: Array.isArray(data.tags) ? data.tags : [],
           content,
@@ -276,6 +368,7 @@ const Blog = () => {
   ];
   const [categoriaAtiva, setCategoriaAtiva] = useState('todos');
   const { slug } = useParams();
+  const [activeHeadingId, setActiveHeadingId] = useState('');
 
   const artigosFiltrados = categoriaAtiva === 'todos'
     ? artigos
@@ -295,6 +388,30 @@ const Blog = () => {
 
   const artigoRecente = artigos[getDailyFeaturedIndex()] || artigos[0];
   const artigoAtual = slug ? artigos.find(a => a.slug === slug) : null;
+
+  useEffect(() => {
+    if (!slug) return;
+    const headingEls = Array.from(document.querySelectorAll('.wg-prose h2[id]'));
+    if (!headingEls.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible.length) {
+          setActiveHeadingId(visible[0].target.id);
+        }
+      },
+      {
+        rootMargin: '-30% 0px -55% 0px',
+        threshold: [0.2, 0.45, 0.7]
+      }
+    );
+
+    headingEls.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [slug, artigoAtual?.slug]);
 
   const formatDate = (dateStr) => {
     const localeMap = { 'pt-BR': 'pt-BR', en: 'en-US', es: 'es-ES' };
@@ -325,12 +442,85 @@ const Blog = () => {
       );
     }
 
-    const contentBody = artigoAtual.content.replace(/^# .*?\\n+/, '').trim();
+    const rawBody = artigoAtual.content.replace(/^# .*?\\n+/, '').trim();
+    const contentBody = stripDuplicateTocSection(rawBody);
     const articleUrl = `https://wgalmeida.com.br/blog/${artigoAtual.slug}`;
+    const tocHeadings = extractTocHeadings(contentBody);
+    const sectionedContent = splitMarkdownByH2(contentBody);
+
+    // hreflang alternates — verifica se o slug existe em outros idiomas
+    const hreflangAlternates = [];
+    const BASE = 'https://wgalmeida.com.br';
+    const allLocales = { 'pt-BR': rawPostsByLocale['pt-BR'], en: rawPostsByLocale.en, es: rawPostsByLocale.es };
+    for (const [locale, posts] of Object.entries(allLocales)) {
+      const slugExists = Object.keys(posts || {}).some(p => p.endsWith(`/${artigoAtual.slug}.md`));
+      if (slugExists) {
+        const hrefLang = locale === 'pt-BR' ? 'pt-BR' : locale;
+        hreflangAlternates.push({ hrefLang, href: `${BASE}/blog/${artigoAtual.slug}` });
+      }
+    }
+    const readerGuideLabel = t('blogPage.readerGuide.title', 'Leitura Guiada');
+    const tocTitleLabel = t('blogPage.readerGuide.tocTitle', 'Neste artigo');
+    const readingLabel = t('blogPage.readerGuide.reading', 'lendo');
+    const categoryMeta = {
+      arquitetura: { dotColor: 'bg-wg-green', bgColor: 'bg-wg-green' },
+      engenharia: { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
+      marcenaria: { dotColor: 'bg-wg-brown', bgColor: 'bg-wg-brown' },
+      insights: { dotColor: 'bg-wg-orange', bgColor: 'bg-wg-orange' },
+      design: { dotColor: 'bg-wg-orange', bgColor: 'bg-wg-orange' },
+      tecnologia: { dotColor: 'bg-wg-orange', bgColor: 'bg-wg-orange' },
+      tendencias: { dotColor: 'bg-wg-orange', bgColor: 'bg-wg-orange' },
+      dicas: { dotColor: 'bg-wg-orange', bgColor: 'bg-wg-orange' }
+    };
+    const currentCategory = categorias.find(c => c.id === artigoAtual.category);
+    const currentCategoryMeta = categoryMeta[artigoAtual.category] || { dotColor: 'bg-wg-orange', bgColor: 'bg-wg-orange' };
+    const markdownComponents = {
+      h2: ({ children, ...props }) => {
+        const headingText = extractHeadingText(children);
+        return (
+          <h2 id={slugifyHeading(headingText)} {...props}>
+            {children}
+          </h2>
+        );
+      },
+      h3: ({ children, ...props }) => {
+        const headingText = extractHeadingText(children);
+        return (
+          <h3 id={slugifyHeading(headingText)} {...props}>
+            {children}
+          </h3>
+        );
+      },
+      blockquote: ({ children, ...props }) => {
+        const text = extractHeadingText(children).trim();
+        if (text.startsWith('DESTAQUE:') || text.startsWith('🎯 DESTAQUE:')) {
+          return (
+            <div
+              className="my-8 rounded-lg border-l-4 border-wg-orange bg-wg-orange/10 p-5 text-[15px] leading-[1.65] text-[#2E2E2E]"
+              {...props}
+            >
+              {children}
+            </div>
+          );
+        }
+        if (text.startsWith('DICA:') || text.startsWith('💡 DICA:') || text.startsWith('CHECKLIST:') || text.startsWith('✅ CHECKLIST:')) {
+          return (
+            <div
+              className="my-8 rounded-lg border-l-4 border-wg-blue bg-wg-blue/10 p-5 text-[15px] leading-[1.65] text-[#2E2E2E]"
+              {...props}
+            >
+              {children}
+            </div>
+          );
+        }
+        return <blockquote {...props}>{children}</blockquote>;
+      }
+    };
 
     return (
       <>
         <SEO
+          pathname={`/blog/${artigoAtual.slug}`}
           title={artigoAtual.title}
           description={artigoAtual.excerpt}
           url={articleUrl}
@@ -343,9 +533,10 @@ const Blog = () => {
             artigoAtual.date,
             `https://wgalmeida.com.br${artigoAtual.image}`
           )}
+          alternates={hreflangAlternates}
         />
 
-        <section className="relative min-h-[50vh] flex items-end overflow-hidden bg-wg-black">
+        <section className="hero-under-header relative min-h-[50vh] flex items-end overflow-hidden bg-wg-black">
           <motion.div
             className="absolute inset-0"
             initial={{ scale: 1.05 }}
@@ -356,6 +547,7 @@ const Blog = () => {
               src={artigoAtual.image}
               alt={artigoAtual.title}
               className="w-full h-full object-cover"
+              style={{ objectPosition: artigoAtual.heroPosition }}
               loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-wg-black via-wg-black/60 to-transparent" />
@@ -363,8 +555,9 @@ const Blog = () => {
 
           <div className="relative z-10 container-custom pb-16 pt-32">
             <div className="max-w-3xl">
-              <span className={`inline-flex items-center gap-2 px-4 py-2 ${categorias.find(c => c.id === artigoAtual.category)?.bgColor || 'bg-wg-orange'} text-white rounded-full text-sm font-medium uppercase tracking-wider mb-6`}>
-                {categorias.find(c => c.id === artigoAtual.category)?.label || t('blogPage.fallback.category')}
+              <span className={`inline-flex items-center gap-2 px-4 py-2 ${currentCategoryMeta.bgColor} text-white rounded-full text-sm font-medium uppercase tracking-wider mb-6`}>
+                <span className={`inline-block w-2 h-2 rounded-full bg-white/90`} />
+                <span>{currentCategory?.label || t('blogPage.fallback.category')}</span>
               </span>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-white mb-6 leading-tight">
@@ -391,30 +584,152 @@ const Blog = () => {
 
         <section className="section-padding bg-white">
           <div className="container-custom max-w-3xl">
+            <motion.aside
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+              className="-mt-8 mb-7 overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-[#F8F8F8] shadow-sm md:-mt-12 md:mb-8"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-[220px_1fr]">
+                <div className="relative h-44 md:h-full">
+                  <img
+                    src={artigoAtual.image}
+                    alt={artigoAtual.title}
+                    className="h-full w-full object-cover"
+                    style={{ objectPosition: artigoAtual.heroPosition }}
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/25 to-transparent md:bg-gradient-to-t" />
+                </div>
+                <div className="p-6 md:p-7">
+                  <p className={`mb-2 text-wg-gray ${editorialScale.kicker}`}>
+                    {readerGuideLabel}
+                  </p>
+                  <h2 className={`mb-3 ${editorialScale.title}`}>
+                    {artigoAtual.subtitle || artigoAtual.excerpt}
+                  </h2>
+                  <p className={`mb-5 ${editorialScale.body}`}>
+                    {artigoAtual.excerpt}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-3">
+                    {tocHeadings.slice(0, 3).map((item) => (
+                      <a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-3 py-1.5 text-xs text-[#2E2E2E] transition-colors hover:border-wg-orange hover:text-wg-orange"
+                      >
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-wg-orange" />
+                        {item.text}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.aside>
+
+            {tocHeadings.length >= 3 && (
+              <nav className="mb-8 rounded-2xl border border-gray-200 bg-[#FAFAFA] p-5">
+                <h2 className="mb-4 text-base font-semibold text-wg-black">{tocTitleLabel}</h2>
+                <ul className="space-y-2">
+                  {tocHeadings.map((item) => (
+                    <li key={item.id}>
+                      <a
+                        href={`#${item.id}`}
+                        className={`group flex items-center justify-between rounded-xl border bg-white px-3.5 py-2.5 text-[13px] transition-all ${
+                          activeHeadingId === item.id
+                            ? 'border-wg-orange shadow-[0_0_0_1px_rgba(242,92,38,0.15)]'
+                            : 'border-gray-200 hover:border-wg-orange/80 hover:shadow-sm'
+                        }`}
+                      >
+                        <span className={`inline-block h-1.5 w-1.5 rounded-full transition-colors ${
+                          activeHeadingId === item.id ? 'bg-wg-orange' : 'bg-gray-400 group-hover:bg-wg-orange'
+                        }`} />
+                        <span className={`ml-3 flex-1 text-left ${
+                          activeHeadingId === item.id ? 'text-[#2E2E2E]' : 'text-wg-gray group-hover:text-[#2E2E2E]'
+                        }`}>
+                          {item.text}
+                        </span>
+                        <span className={`ml-2 text-[10px] font-medium uppercase tracking-[0.12em] ${
+                          activeHeadingId === item.id ? 'text-wg-orange' : 'text-gray-400 group-hover:text-wg-orange/80'
+                        }`}>
+                          {readingLabel}
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+
             {/* Article Content - Padrao WG Easy 2026 */}
-            <div className="wg-prose max-w-none
-              [&>h1]:text-[32px] [&>h1]:font-light [&>h1]:tracking-tight [&>h1]:text-[#1A1A1A] [&>h1]:mb-8 [&>h1]:mt-0
-              [&>h2]:text-[20px] [&>h2]:font-light [&>h2]:tracking-tight [&>h2]:text-[#1A1A1A] [&>h2]:mb-6 [&>h2]:mt-16 [&>h2]:pt-8 [&>h2]:border-t [&>h2]:border-[#E5E5E5]
-              [&>h3]:text-[16px] [&>h3]:font-medium [&>h3]:text-[#2E2E2E] [&>h3]:mb-4 [&>h3]:mt-10
-              [&>p]:text-[15px] [&>p]:text-[#4C4C4C] [&>p]:leading-[1.8] [&>p]:mb-6
-              [&_strong]:text-[#1A1A1A] [&_strong]:font-medium
-              [&_a]:text-[#F25C26] [&_a]:no-underline [&_a:hover]:underline [&_a]:font-medium
-              [&>ul]:my-6 [&>ul]:space-y-3 [&>ul]:pl-0 [&>ul]:list-none
-              [&>ul>li]:text-[15px] [&>ul>li]:text-[#4C4C4C] [&>ul>li]:leading-[1.8] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[6px] [&>ul>li]:before:w-4 [&>ul>li]:before:h-4 [&>ul>li]:before:bg-[url('/images/wg-bullet.svg')] [&>ul>li]:before:bg-contain [&>ul>li]:before:bg-no-repeat [&>ul>li]:before:bg-center
-              [&>blockquote]:border-l-4 [&>blockquote]:border-[#F25C26] [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[#4C4C4C] [&>blockquote]:bg-[#F9F9F9] [&>blockquote]:py-4 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-lg [&>blockquote]:my-8
-              [&>table]:w-full [&>table]:my-10 [&>table]:rounded-xl [&>table]:overflow-hidden [&>table]:shadow-md [&>table]:border [&>table]:border-[#E5E5E5]
-              [&>table>thead]:bg-[#F5F5F5]
-              [&>table>thead>tr>th]:px-5 [&>table>thead>tr>th]:py-4 [&>table>thead>tr>th]:text-left [&>table>thead>tr>th]:text-[12px] [&>table>thead>tr>th]:font-medium [&>table>thead>tr>th]:uppercase [&>table>thead>tr>th]:tracking-wide [&>table>thead>tr>th]:text-[#2E2E2E] [&>table>thead>tr>th]:border-b [&>table>thead>tr>th]:border-[#E5E5E5]
-              [&>table>tbody>tr>td]:px-5 [&>table>tbody>tr>td]:py-4 [&>table>tbody>tr>td]:text-[14px] [&>table>tbody>tr>td]:text-[#4C4C4C] [&>table>tbody>tr>td]:border-b [&>table>tbody>tr>td]:border-[#E5E5E5]
-              [&>table>tbody>tr]:transition-colors [&>table>tbody>tr:hover]:bg-[#F9F9F9]
-              [&>table>tbody>tr:last-child>td]:border-b-0
-              [&_code]:bg-[#F5F5F5] [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-[13px] [&_code]:text-[#F25C26]
-              [&>pre]:bg-[#1A1A1A] [&>pre]:text-white [&>pre]:p-6 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:my-8
-              [&>img]:rounded-lg [&>img]:shadow-md [&>img]:my-8
-              [&>hr]:border-[#E5E5E5] [&>hr]:my-12">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {contentBody}
-              </ReactMarkdown>
+            {sectionedContent.intro && (
+              <div className="wg-prose mb-7 max-w-none
+                [&>h1]:text-[32px] [&>h1]:font-light [&>h1]:tracking-tight [&>h1]:text-[#1A1A1A] [&>h1]:mb-8 [&>h1]:mt-0
+                [&>h3]:text-[18px] [&>h3]:font-medium [&>h3]:text-[#1F2937] [&>h3]:mb-4 [&>h3]:mt-10
+                [&>p]:text-[16px] [&>p]:text-[#334155] [&>p]:leading-[1.58] [&>p]:mb-5
+                [&_strong]:text-[#1A1A1A] [&_strong]:font-medium
+                [&_a]:text-[#F25C26] [&_a]:no-underline [&_a:hover]:underline [&_a]:font-medium
+                [&>ul]:my-6 [&>ul]:space-y-3 [&>ul]:pl-0 [&>ul]:list-none
+                [&>ul>li]:text-[15px] [&>ul>li]:text-[#334155] [&>ul>li]:leading-[1.48] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[8px] [&>ul>li]:before:w-2 [&>ul>li]:before:h-2 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-wg-orange
+                [&>ol]:my-6 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
+                [&>ol>li]:text-[15px] [&>ol>li]:text-[#334155] [&>ol>li]:leading-[1.48]
+                [&>ol>li::marker]:text-[#64748B]">
+                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                  {sectionedContent.intro}
+                </ReactMarkdown>
+              </div>
+            )}
+
+            <div className="space-y-5">
+              {sectionedContent.sections.length > 0 ? sectionedContent.sections.map((section, index) => (
+                <motion.article
+                  key={section.id || index}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: index * 0.03 }}
+                  className={`rounded-2xl border bg-white p-5 transition-all md:p-7 ${
+                    activeHeadingId === section.id
+                      ? 'border-wg-orange shadow-[0_0_0_1px_rgba(242,92,38,0.15)]'
+                      : 'border-gray-200 hover:border-wg-orange/80 hover:shadow-md'
+                  }`}
+                >
+                  <div className="wg-prose max-w-none
+                    [&>h2]:text-[24px] [&>h2]:font-light [&>h2]:tracking-tight [&>h2]:text-[#111827] [&>h2]:mb-5 [&>h2]:mt-0
+                    [&>h3]:text-[18px] [&>h3]:font-medium [&>h3]:text-[#1F2937] [&>h3]:mb-4 [&>h3]:mt-8
+                    [&>p]:text-[16px] [&>p]:text-[#334155] [&>p]:leading-[1.58] [&>p]:mb-5
+                    [&_strong]:text-[#1A1A1A] [&_strong]:font-medium
+                    [&_a]:text-[#F25C26] [&_a]:no-underline [&_a:hover]:underline [&_a]:font-medium
+                    [&>ul]:my-5 [&>ul]:space-y-2 [&>ul]:pl-0 [&>ul]:list-none
+                    [&>ul>li]:text-[15px] [&>ul>li]:text-[#334155] [&>ul>li]:leading-[1.48] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[8px] [&>ul>li]:before:w-2 [&>ul>li]:before:h-2 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-wg-orange
+                    [&>ol]:my-5 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
+                    [&>ol>li]:text-[15px] [&>ol>li]:text-[#334155] [&>ol>li]:leading-[1.48]
+                    [&>ol>li::marker]:text-[#64748B]
+                    [&>blockquote]:border-l-4 [&>blockquote]:border-[#F25C26] [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[#4C4C4C] [&>blockquote]:bg-[#F9F9F9] [&>blockquote]:py-4 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-lg [&>blockquote]:my-8
+                    [&>table]:w-full [&>table]:my-8 [&>table]:rounded-xl [&>table]:overflow-hidden [&>table]:shadow-md [&>table]:border [&>table]:border-[#E5E5E5]
+                    [&>table>thead]:bg-[#F5F5F5]
+                    [&>table>thead>tr>th]:px-5 [&>table>thead>tr>th]:py-4 [&>table>thead>tr>th]:text-left [&>table>thead>tr>th]:text-[12px] [&>table>thead>tr>th]:font-medium [&>table>thead>tr>th]:uppercase [&>table>thead>tr>th]:tracking-wide [&>table>thead>tr>th]:text-[#2E2E2E] [&>table>thead>tr>th]:border-b [&>table>thead>tr>th]:border-[#E5E5E5]
+                    [&>table>tbody>tr>td]:px-5 [&>table>tbody>tr>td]:py-4 [&>table>tbody>tr>td]:text-[14px] [&>table>tbody>tr>td]:text-[#4C4C4C] [&>table>tbody>tr>td]:border-b [&>table>tbody>tr>td]:border-[#E5E5E5]
+                    [&>table>tbody>tr]:transition-colors [&>table>tbody>tr:hover]:bg-[#F9F9F9]
+                    [&>table>tbody>tr:last-child>td]:border-b-0
+                    [&_code]:bg-[#F5F5F5] [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-[13px] [&_code]:text-[#F25C26]
+                    [&>pre]:bg-[#1A1A1A] [&>pre]:text-white [&>pre]:p-6 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:my-8
+                    [&>img]:rounded-lg [&>img]:shadow-md [&>img]:my-8
+                    [&>hr]:border-[#E5E5E5] [&>hr]:my-10">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                      {section.markdown}
+                    </ReactMarkdown>
+                  </div>
+                </motion.article>
+              )) : (
+                <div className="wg-prose max-w-none
+                  [&>p]:text-[16px] [&>p]:text-[#4C4C4C] [&>p]:leading-[1.65] [&>p]:mb-5">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                    {contentBody}
+                  </ReactMarkdown>
+                </div>
+              )}
             </div>
 
             {/* Tags Section */}
@@ -471,7 +786,7 @@ const Blog = () => {
       />
 
       {/* Hero Revista Style */}
-      <section className="relative min-h-[50vh] flex items-end overflow-hidden bg-wg-black">
+      <section className="relative min-h-[50vh] flex items-end overflow-hidden bg-wg-black hero-under-header">
         {/* Imagem de Fundo */}
         <motion.div
           className="absolute inset-0"
@@ -519,7 +834,7 @@ const Blog = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl text-white/80 mb-8 leading-relaxed"
+              className={`${editorialScale.bodyHero} text-white/80 mb-8 max-w-3xl`}
             >
               {artigoRecente?.excerpt}
             </motion.p>
@@ -662,12 +977,12 @@ const Blog = () => {
                     </div>
 
                     {/* Título */}
-                    <h3 className="font-inter font-semibold text-wg-black mb-3 group-hover:text-wg-orange transition-colors text-lg">
+                    <h3 className={`font-inter font-semibold text-wg-black mb-3 group-hover:text-wg-orange transition-colors ${index === 0 && categoriaAtiva === 'todos' ? editorialScale.cardTitle : 'text-lg leading-[1.35]'}`}>
                       {artigo.title}
                     </h3>
 
                     {/* Resumo */}
-                    <p className="text-wg-gray text-sm leading-relaxed mb-4 line-clamp-2">
+                    <p className={`text-wg-gray mb-4 line-clamp-2 ${index === 0 && categoriaAtiva === 'todos' ? editorialScale.cardExcerpt : 'text-sm leading-relaxed'}`}>
                       {artigo.excerpt}
                     </p>
 

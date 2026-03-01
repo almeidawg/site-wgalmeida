@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { Camera, Upload, X, RotateCw, ZoomIn, Loader2, AlertCircle } from 'lucide-react';
 
 const PhotoUploader = ({ photo, onPhotoChange, isProcessing = false }) => {

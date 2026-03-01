@@ -34,13 +34,13 @@ O briefing e a etapa que define o sucesso do projeto. E quando traduzimos estilo
 
 ## As dimensoes que orientam o projeto
 
-1. **Perfil dos moradores** e dinamica familiar  
-2. **Rotina e estilo de vida** (trabalho, lazer, recepcao)  
-3. **Preferencias esteticas** e referencias visuais  
-4. **Necessidades funcionais** e storage  
-5. **Tecnologia e automacao** desejadas  
-6. **Orcamento e prioridades** reais  
-7. **Cronograma e prazos** esperados  
+1. **Perfil dos moradores** e dinamica familiar
+2. **Rotina e estilo de vida** (trabalho, lazer, recepcao)
+3. **Preferencias esteticas** e referencias visuais
+4. **Necessidades funcionais** e storage
+5. **Tecnologia e automacao** desejadas
+6. **Orcamento e prioridades** reais
+7. **Cronograma e prazos** esperados
 
 ---
 
@@ -54,10 +54,10 @@ O briefing e a etapa que define o sucesso do projeto. E quando traduzimos estilo
 
 ## O que acontece depois
 
-1. Analise tecnica das informacoes  
-2. Moodboard e direcao estetica  
-3. Estudo de layout  
-4. Apresentacao do conceito  
+1. Analise tecnica das informacoes
+2. Moodboard e direcao estetica
+3. Estudo de layout
+4. Apresentacao do conceito
 
 ---
 
@@ -136,3 +136,4 @@ Se voce busca um projeto sob medida, com acompanhamento completo e acabamento pr
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 11 98465-0002
+

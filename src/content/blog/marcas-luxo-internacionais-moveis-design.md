@@ -1,11 +1,11 @@
 ---
-title: "Marcas de Luxo Internacionais: As Griffes que Definem o Design Mundial"
+title: "Marcas de Luxo Internacionais: 10 Griffes que Definem o Design de Alto Padrao"
 slug: "marcas-luxo-internacionais-moveis-design"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
 image: "/images/blog/marcas-luxo-internacionais-moveis-design.webp"
-excerpt: "Conheça as marcas internacionais de móveis e decoração mais exclusivas do mundo, de B&B Italia a Poliform."
+excerpt: "Conheca marcas de luxo internacionais de moveis e decoracao, de B&B Italia a Poliform, e veja como aplicar em projetos sofisticados."
 tags:
   - "marcas internacionais"
   - "design de luxo"
@@ -14,7 +14,7 @@ tags:
   - "griffes"
 featured: true
 ---
-# Marcas de Luxo Internacionais: As Griffes que Definem o Design Mundial
+# Marcas de Luxo Internacionais: As Griffes que Definem o Alto Padrao
 
 *Por Grupo WG Almeida | Design & Especificações*
 
@@ -22,7 +22,7 @@ featured: true
 
 ## Introdução
 
-As marcas internacionais de luxo representam o ápice do design, artesanato e exclusividade no mundo do mobiliário e decoração.
+As marcas internacionais de luxo representam o apice do design, artesanato e exclusividade no mundo do mobiliario e decoracao.
 
 Este guia apresenta as griffes mais prestigiadas do mercado global, suas características e por que são referências mundiais.
 

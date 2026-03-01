@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { ArrowRight } from 'lucide-react';
 import { MoodboardProvider, useMoodboard } from '@/contexts/MoodboardContext';
 import {
@@ -25,8 +25,10 @@ const MoodboardContent = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Moodboard | Crie sua Visão de Design - WG Almeida"
+        pathname="/moodboard"
+        title="Moodboard | Crie sua Visão de Design de Interiores | WG Almeida"
         description="Crie seu moodboard de design de interiores. Selecione cores, estilos e referências para visualizar sua visão de decoração."
+        keywords="moodboard decoracao, design de interiores, paleta de cores, estilos decoracao, criar moodboard"
       />
 
       {/* Hero Section */}

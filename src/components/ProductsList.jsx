@@ -1,11 +1,10 @@
 import React, { useCallback, useMemo, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, Loader2, Package } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { useToast } from '@/components/ui/use-toast';
-import { getProducts, getProductQuantities } from '@/api/EcommerceApi';
 import { useTranslation } from 'react-i18next';
 
 const placeholderImage = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRTJFMzhA⊂Lz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjY2FjZWNlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Sem Imagem</textPgo8L3N2Zz4K";
@@ -64,11 +63,14 @@ const ProductCard = ({ product, index }) => {
           <div className={`absolute top-0 left-0 right-0 h-1 bg-${cardColor} transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-10`} />
 
           {/* Imagem */}
-          <div className="relative h-64 overflow-hidden">
+          <div className="relative h-[13.6rem] overflow-hidden">
             <img
               src={product.image || placeholderImage}
               alt={product.title}
+              width={400}
+              height={400}
               loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
 
@@ -143,6 +145,8 @@ const ProductsList = () => {
         setLoading(true);
         setError(null);
 
+        const { getProducts, getProductQuantities } = await import("@/api/EcommerceApi");
+
         const productsResponse = await getProducts();
 
         if (productsResponse.products.length === 0) {
@@ -209,7 +213,7 @@ const ProductsList = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
       {products.map((product, index) => (
         <ProductCard key={product.id} product={product} index={index} />
       ))}
@@ -218,3 +222,7 @@ const ProductsList = () => {
 };
 
 export default ProductsList;
+
+
+
+

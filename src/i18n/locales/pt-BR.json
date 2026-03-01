@@ -239,7 +239,7 @@
       "kicker": "Há {{years}} anos construindo excelência",
       "title": "O Grupo WG Almeida é um ecossistema de soluções integradas em arquitetura, engenharia e marcenaria de alto padrão.",
       "paragraphs": [
-        "Atuamos de forma completa — do conceito à entrega — com método, rigor técnico e sensibilidade estética. Unimos planejamento, execução e acabamento sob um único padrão de qualidade, gestão e responsabilidade.",
+        "Desenvolvemos o projeto arquitetônico em conjunto com o planejamento da reforma e totalmente alinhado à marcenaria, de ponta a ponta. Do conceito à entrega, integramos técnica, gestão e execução em um único fluxo para garantir qualidade, previsibilidade e coerência em cada detalhe.",
         "Mais do que projetar e construir, entregamos <strong>controle, previsibilidade e tranquilidade</strong> para quem valoriza excelência."
       ]
     },
@@ -1041,8 +1041,8 @@
     },
     "brooklin": {
       "name": "Brooklin",
-      "title": "Reforma de Apartamento e Construtora no Brooklin SP",
-      "metaDescription": "Reforma de apartamento, construtora e arquitetura no Brooklin. Projetos turn key completos com engenharia e marcenaria. Orçamento transparente.",
+      "title": "Arquitetura e Reforma de Apartamento no Brooklin | WG Almeida",
+      "metaDescription": "Projetos de arquitetura e reforma de apartamento no Brooklin com sistema turn key: planejamento, obra e marcenaria integrada. Solicite orcamento.",
       "heroImage": "/images/regions/brooklin.jpg",
       "intro": [
         "O Grupo WG Almeida atua no Brooklin com projetos completos de arquitetura, engenharia e marcenaria sob medida, atendendo um dos bairros mais estratégicos e valorizados de São Paulo.",
@@ -1116,8 +1116,8 @@
     },
     "cidade-jardim": {
       "name": "Cidade Jardim",
-      "title": "Arquitetura Exclusiva e Construtora Cidade Jardim SP",
-      "metaDescription": "Arquitetura exclusiva, construtora e obras de grande porte na Cidade Jardim. Projetos premium turn key. Discrição e excelência garantidas.",
+      "title": "Arquitetura Exclusiva na Cidade Jardim | Construtora WG Almeida",
+      "metaDescription": "Arquitetura exclusiva e obras de alto padrao na Cidade Jardim com gestao turn key, planejamento tecnico e execucao premium com discricao total.",
       "heroImage": "/images/regions/cidade-jardim.jpg",
       "intro": [
         "A Cidade Jardim exige discrição, planejamento e alto nível técnico. O Grupo WG Almeida atua com foco em projetos completos, obras de grande porte e marcenaria de excelência.",
@@ -1141,8 +1141,8 @@
     },
     "morumbi": {
       "name": "Morumbi",
-      "title": "Construtora e Reforma Alto Padrão no Morumbi SP",
-      "metaDescription": "Construtora, arquitetura e reforma no Morumbi. Casas e apartamentos de alto padrão. Sistema Turn Key integrado. Engenharia e marcenaria sob medida.",
+      "title": "Construtora e Reforma de Alto Padrao no Morumbi | WG Almeida",
+      "metaDescription": "Construtora no Morumbi para casas e apartamentos de alto padrao com arquitetura, engenharia e marcenaria sob medida. Entrega turn key completa.",
       "heroImage": "/images/regions/morumbi.jpg",
       "intro": [
         "No Morumbi, nossa atuação contempla desde reformas completas até obras residenciais de alto padrão em terrenos, condomínios e apartamentos.",
@@ -1191,8 +1191,8 @@
     },
     "altoDePinheiros": {
       "name": "Alto de Pinheiros",
-      "title": "Reforma e Arquitetura Alto Padrão Alto de Pinheiros SP",
-      "metaDescription": "Reforma de casas, arquitetura e construtora no Alto de Pinheiros. Projetos residenciais premium com marcenaria sob medida. Turn key completo.",
+      "title": "Reforma e Arquitetura no Alto de Pinheiros | WG Almeida",
+      "metaDescription": "Reforma de casas e apartamentos no Alto de Pinheiros com arquitetura, engenharia e marcenaria sob medida. Projeto e obra no sistema turn key.",
       "heroImage": "/images/regions/alto-de-pinheiros.jpg",
       "intro": [
         "O Alto de Pinheiros combina tranquilidade residencial com sofisticação urbana. Nossa atuação no bairro reflete esse equilíbrio, com projetos que valorizam espaços amplos, integração com áreas verdes e arquitetura contemporânea.",
@@ -1216,8 +1216,8 @@
     },
     "moema": {
       "name": "Moema",
-      "title": "Reforma Apartamento Moema | Construtora Alto Padrão SP",
-      "metaDescription": "Reforma de apartamento e construtora em Moema. Projetos turn key de 80m² a 250m². Arquitetura, engenharia e marcenaria integradas. Orçamento grátis.",
+      "title": "Reforma de Apartamento em Moema | Arquitetura Turn Key",
+      "metaDescription": "Reforma de apartamento em Moema com arquitetura, engenharia e marcenaria integradas. Projetos turn key de alto padrao com cronograma previsivel.",
       "heroImage": "/images/regions/moema.jpg",
       "intro": [
         "Moema é sinônimo de qualidade de vida, infraestrutura completa e padrão elevado. Nossa atuação no bairro foca em reformas de apartamentos, projetos de interiores e marcenaria integrada.",
@@ -1241,8 +1241,8 @@
     },
     "campoBelo": {
       "name": "Campo Belo",
-      "title": "Reforma Apartamento Campo Belo | Arquitetura e Construtora",
-      "metaDescription": "Reforma de apartamento, arquitetura e construtora no Campo Belo. Projetos funcionais com praticidade e qualidade. Sistema turn key transparente.",
+      "title": "Reforma de Apartamento no Campo Belo | WG Almeida",
+      "metaDescription": "Arquitetura e reforma de apartamento no Campo Belo com gestao turn key, acabamento premium e obra com prazos claros. Fale com nossa equipe.",
       "heroImage": "/images/regions/campo-belo.jpg",
       "intro": [
         "O Campo Belo é um bairro residencial consolidado, com forte presença de famílias e profissionais que valorizam qualidade e praticidade. Nossa atuação aqui foca em reformas inteligentes e projetos funcionais.",
@@ -1266,8 +1266,8 @@
     },
     "higienopolis": {
       "name": "Higienópolis",
-      "title": "Reforma Apartamento Higienópolis | Arquitetura Histórica SP",
-      "metaDescription": "Reforma de apartamento e arquitetura em Higienópolis. Respeito ao patrimônio histórico com modernidade. Projetos que preservam e renovam.",
+      "title": "Reforma de Apartamento em Higienopolis | Arquitetura WG Almeida",
+      "metaDescription": "Reforma de apartamento em Higienopolis com preservacao arquitetonica, atualizacao tecnica e acabamento premium. Projeto completo com gestao de obra.",
       "heroImage": "/images/regions/higienopolis.jpg",
       "intro": [
         "Higienópolis é um dos bairros mais tradicionais e charmosos de São Paulo, com arquitetura histórica, arborização e atmosfera cultural única. Nossa atuação respeita essa identidade, aliando tradição e contemporaneidade.",
@@ -1291,8 +1291,8 @@
     },
     "pinheiros": {
       "name": "Pinheiros",
-      "title": "Reforma Apartamento Pinheiros | Arquitetura Contemporânea SP",
-      "metaDescription": "Reforma de apartamento e arquitetura contemporânea em Pinheiros. Projetos residenciais e comerciais. Design moderno e funcionalidade.",
+      "title": "Reforma de Apartamento em Pinheiros | Arquitetura Contemporanea",
+      "metaDescription": "Arquitetura contemporanea e reforma de apartamento em Pinheiros para projetos residenciais e comerciais com foco em funcionalidade e acabamento.",
       "heroImage": "/images/regions/pinheiros.jpg",
       "intro": [
         "Pinheiros é um bairro vibrante, que combina vida cultural, gastronomia e diversidade arquitetônica. Nossa atuação aqui reflete essa energia, com projetos contemporâneos, funcionais e criativos.",
@@ -1316,8 +1316,8 @@
     },
     "perdizes": {
       "name": "Perdizes",
-      "title": "Reforma Apartamento Perdizes | Construtora Residencial SP",
-      "metaDescription": "Reforma de apartamento e construtora em Perdizes. Projetos residenciais funcionais para famílias. Conforto, qualidade e cronograma garantidos.",
+      "title": "Reforma de Apartamento em Perdizes | Arquitetura Residencial",
+      "metaDescription": "Reforma de apartamento em Perdizes com foco em conforto, funcionalidade e valorizacao do imovel. Arquitetura, engenharia e marcenaria integradas.",
       "heroImage": "/images/regions/perdizes.jpg",
       "intro": [
         "Perdizes é um bairro residencial tradicional, com forte presença de famílias e profissionais liberais. Nossa atuação aqui foca em reformas funcionais, projetos de interiores e marcenaria integrada.",
@@ -1341,8 +1341,8 @@
     },
     "paraiso": {
       "name": "Paraíso",
-      "title": "Reforma Apartamento Paraíso SP | Arquitetura Moderna",
-      "metaDescription": "Reforma de apartamento e arquitetura no Paraíso. Localização estratégica com projetos modernos. Apartamentos compactos e amplos. Turn key completo.",
+      "title": "Reforma de Apartamento no Paraiso | Arquitetura Moderna SP",
+      "metaDescription": "Reforma de apartamento no Paraiso com arquitetura moderna, engenharia integrada e obra turn key para imoveis compactos e de alto padrao.",
       "heroImage": "/images/regions/paraiso.jpg",
       "intro": [
         "O Paraíso é um bairro estratégico, com excelente infraestrutura, transporte e conexão com toda a cidade. Nossa atuação aqui foca em reformas de apartamentos e projetos de interiores modernos.",
@@ -1366,8 +1366,8 @@
     },
     "aclimacao": {
       "name": "Aclimação",
-      "title": "Reforma Residencial Aclimação | Construtora Tradicional SP",
-      "metaDescription": "Reforma residencial e arquitetura na Aclimação. Bairro tradicional com projetos que unem modernidade e conforto familiar. Qualidade garantida.",
+      "title": "Reforma Residencial na Aclimacao | Arquitetura e Obra Integrada",
+      "metaDescription": "Reforma residencial na Aclimacao com arquitetura, engenharia e marcenaria integradas para modernizar ambientes com conforto e previsibilidade de prazo.",
       "heroImage": "/images/regions/aclimacao.jpg",
       "intro": [
         "A Aclimação é um bairro residencial tradicional, conhecido pelo parque homônimo e atmosfera familiar. Nossa atuação aqui foca em reformas residenciais, projetos funcionais e marcenaria integrada.",
@@ -1423,6 +1423,11 @@
       "title": "Inspire-se e Aprenda"
     },
     "readMore": "Ler mais",
+    "readerGuide": {
+      "title": "Leitura Guiada",
+      "tocTitle": "Neste artigo",
+      "reading": "lendo"
+    },
     "relatedProducts": {
       "title": "Produtos Relacionados",
       "view": "Ver",

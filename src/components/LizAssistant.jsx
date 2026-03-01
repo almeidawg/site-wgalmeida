@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { Mic, MicOff, X, Phone, PhoneOff, MessageCircle, Send, Loader2 } from 'lucide-react';
 import { createThread, sendMessageToLiz, synthesizeSpeech, transcribeAudio } from '@/lib/openaiClient';
 import { useTranslation } from 'react-i18next';

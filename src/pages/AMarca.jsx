@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import SEO from '@/components/SEO';
+import { motion } from '@/lib/motion-lite';
 import { Link } from 'react-router-dom';
 import {
   Palette, Type, Target, Heart, Lightbulb, Users, Ruler, Building2, Hammer,
@@ -23,8 +24,13 @@ const AMarca = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        pathname="/a-marca"
+        keywords="marca wg almeida, identidade arquitetura, posicionamento premium, arquitetura alto padrao sp"
+      />
+
       {/* Hero Banner com Imagem */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -42,7 +48,7 @@ const AMarca = () => {
             fetchPriority="high"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-wg-orange/40 via-wg-orange/60 to-wg-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-wg-black/35 via-wg-black/60 to-wg-black/80"></div>
         </motion.div>
 
         <div className="relative z-10 container-custom text-center text-white px-4">

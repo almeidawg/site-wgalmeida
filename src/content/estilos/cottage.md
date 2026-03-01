@@ -1,7 +1,7 @@
 ---
-title: "Cottage"
+title: "Estilo Cottage: Guia de Decoração Romântica para Casa de Campo"
 slug: "cottage"
-excerpt: "Aconchego da casa de campo inglesa com florais tradicionais, chintz e charme rural que convida ao relaxamento total."
+excerpt: "Descubra como decorar no estilo Cottage com florais, móveis acolhedores e charme campestre inspirado no interior inglês."
 image: "/images/estilos/cottage.webp"
 quote: "Não há lugar como o lar, especialmente quando é um cottage aconchegante."
 author: "Provérbio Inglês"
@@ -14,7 +14,7 @@ colors: ["#F5DEB3", "#8FBC8F", "#FFB6C1", "#FAEBD7"]
 
 ## O Estilo Cottage
 
-O estilo **Cottage** é o **aconchego absoluto** das pequenas casas de campo inglesas. É sobre **florais tradicionais**, **chintz**, **lareira acesa**, **chá da tarde** e a sensação de estar em um **conto de fadas britânico**.
+O estilo **Cottage** representa o aconchego das pequenas casas de campo inglesas. Com florais, tecidos suaves e atmosfera afetiva, ele é ideal para criar ambientes calorosos, românticos e cheios de personalidade.
 
 Inspirado pelas cottages históricas da zona rural inglesa, este estilo celebra o **conforto**, a **tradição** e a **vida simples no campo**.
 

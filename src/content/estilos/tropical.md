@@ -1,7 +1,7 @@
 ---
-title: "Tropical"
+title: "Estilo Tropical: Como Decorar com Plantas, Cores e Materiais Naturais"
 slug: "tropical"
-excerpt: "Celebração da natureza brasileira com plantas exuberantes, cores vibrantes e materiais naturais que trazem o verde para dentro de casa."
+excerpt: "Descubra como criar ambientes tropicais com folhagens, paleta vibrante e textura natural para uma casa cheia de vida."
 image: "/images/estilos/tropical.webp"
 quote: "Moro num país tropical, abençoado por Deus, e bonito por natureza."
 author: "Jorge Ben Jor"
@@ -14,7 +14,7 @@ colors: ["#228B22", "#FFD700", "#FF6347", "#40E0D0"]
 
 ## O Estilo Tropical
 
-O estilo tropical é a **celebração da natureza exuberante do Brasil** e de países com clima quente. É um estilo que traz para dentro de casa a sensação de estar em meio à natureza, com muitas plantas, cores vibrantes e materiais naturais.
+O estilo tropical celebra a natureza exuberante do Brasil e de regiões de clima quente. A proposta traz para dentro de casa mais verde, ventilação visual e uma paleta vibrante, com foco em bem-estar e leveza.
 
 Inspirado nas florestas tropicais, praias paradisíacas e na rica biodiversidade brasileira, o estilo tropical cria ambientes **alegres, acolhedores e cheios de vida**.
 

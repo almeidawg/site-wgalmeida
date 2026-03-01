@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { useTranslation, Trans } from 'react-i18next';
 
 /**
@@ -11,7 +11,7 @@ import { useTranslation, Trans } from 'react-i18next';
  * Duração: ~28 segundos
  */
 
-const WG_LOGO = "/images/logo.png";
+const WG_LOGO = "/images/logo-192.webp";
 
 // Cores da marca WG
 const WG_COLORS = {
@@ -795,6 +795,7 @@ const PortfolioFlash = ({ show }) => (
             <img
               src={img}
               alt=""
+              aria-hidden="true"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/40" />
@@ -867,7 +868,10 @@ const PremiumCinematicIntro = ({ onComplete }) => {
     // Verificar se já completou
     return Date.now() - startTimeRef.current >= TOTAL_DURATION;
   });
-  const [isMobile, setIsMobile] = useState(false);
+  // Inicializa isMobile sincronamente para evitar flip de src no primeiro render
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth < 768
+  );
   const [elapsed, setElapsed] = useState(() => Date.now() - startTimeRef.current);
   const videoRef = useRef(null);
   const intervalRef = useRef(null);
@@ -875,7 +879,6 @@ const PremiumCinematicIntro = ({ onComplete }) => {
   // Detectar mobile
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
@@ -972,14 +975,19 @@ const PremiumCinematicIntro = ({ onComplete }) => {
           ref={videoRef}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-70 w-full h-full object-cover"
           src={isMobile
-            ? "https://res.cloudinary.com/dkkj9mpqv/video/upload/wgalmeida/hero-vertical.mp4"
-            : "https://res.cloudinary.com/dkkj9mpqv/video/upload/wgalmeida/hero-horizontal.mp4"
+            ? "/videos/hero/VERTICAL_compressed.mp4"
+            : "/videos/hero/HORIZONTAL_compressed.mp4"
           }
           autoPlay
           muted
           loop
           playsInline
-        />
+          preload="auto"
+          poster="/images/hero-poster-640.webp"
+          aria-hidden="true"
+        >
+          <track kind="captions" src="/videos/hero/descricao.vtt" srcLang="pt-BR" label="Português" default />
+        </video>
 
         {/* Overlay gradiente - mais leve */}
         <div
@@ -1518,7 +1526,7 @@ const PremiumCinematicIntro = ({ onComplete }) => {
         animate={{ opacity: currentStage > 0 ? 0.5 : 0 }}
         className="absolute top-8 left-8"
       >
-        <img src={WG_LOGO} alt="WG" className="h-8 w-auto" />
+        <img src={WG_LOGO} alt="WG" className="h-8 w-8 object-contain" width="568" height="568" decoding="async" />
       </motion.div>
     </div>
   );

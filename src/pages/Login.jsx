@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
-import { Button } from '@/components/ui/button';
+import SEO from '@/components/SEO';
 import { useToast } from '@/components/ui/use-toast';
-import { Loader2, Mail, Lock } from 'lucide-react';
+import { Loader2, Mail, Lock, ShieldCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Login = () => {
@@ -34,7 +33,7 @@ const Login = () => {
 
     if (error) {
       setLoading(false);
-      return; // Toast is handled in the context
+      return;
     }
 
     if (profile) {
@@ -43,8 +42,7 @@ const Login = () => {
           title: t('loginPage.toasts.adminSuccessTitle'),
           description: t('loginPage.toasts.adminSuccessDescription'),
         });
-        // Redirect to external admin panel
-        window.location.href = 'https://easy.wgalmeida.com.br';
+        navigate('/admin', { replace: true });
       } else {
         toast({
           title: t('loginPage.toasts.successTitle'),
@@ -53,7 +51,6 @@ const Login = () => {
         navigate(from, { replace: true });
       }
     } else {
-      // This case should ideally not be reached if signIn is robust
       toast({
         variant: 'destructive',
         title: t('loginPage.toasts.unexpectedErrorTitle'),
@@ -65,73 +62,119 @@ const Login = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{t('seo.login.title')}</title>
-        <meta name="description" content={t('seo.login.description')} />
-      </Helmet>
-      <div className="section-padding bg-wg-gray-light min-h-[80vh] flex items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="w-full max-w-md p-8 space-y-8 bg-white rounded-2xl shadow-lg"
-        >
-          <div className="text-center">
-             <div className="flex justify-center mb-6">
-                <img
-                  className="h-16 w-auto object-contain"
-                  alt={t('loginPage.logoAlt')}
-                  src="/images/logo.png"
-                />
-            </div>
-            <h1 className="text-3xl font-oswald font-bold text-wg-black">{t('loginPage.heading')}</h1>
-            <p className="mt-2 text-wg-gray">{t('loginPage.subtitle')}</p>
-          </div>
-          <form className="mt-8 space-y-6" onSubmit={handleLogin}>
-            <div className="rounded-md shadow-sm -space-y-px">
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="appearance-none rounded-md relative block w-full pl-10 pr-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-wg-orange focus:border-wg-orange focus:z-10 sm:text-sm"
-                  placeholder={t('loginPage.emailPlaceholder')}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="relative mt-4">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  className="appearance-none rounded-md relative block w-full pl-10 pr-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-wg-orange focus:border-wg-orange focus:z-10 sm:text-sm"
-                  placeholder={t('loginPage.passwordPlaceholder')}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-            </div>
+      <SEO
+        pathname="/login"
+        title={t('seo.login.title')}
+        description={t('seo.login.description')}
+        noindex
+      />
 
-            <div>
-              <Button type="submit" className="w-full btn-primary" disabled={loading}>
-                {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                {loading ? t('loginPage.submitting') : t('loginPage.submit')}
-              </Button>
+      {/* Fundo escuro premium */}
+      <div className="min-h-screen bg-wg-black flex flex-col items-center justify-center px-4 relative overflow-hidden">
+
+        {/* Faixa laranja no topo */}
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-wg-orange" />
+
+        {/* Textura sutil — grade discreta */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: 'repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 48px), repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 48px)',
+          }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          className="relative w-full max-w-sm"
+        >
+          {/* Logo */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/images/logo-96.webp"
+              alt={t('loginPage.logoAlt')}
+              width="72"
+              height="72"
+              decoding="async"
+              className="h-[72px] w-[72px] object-contain"
+            />
+          </div>
+
+          {/* Título */}
+          <div className="text-center mb-8">
+            <h1 className="font-oswald text-[2.25rem] font-bold text-white tracking-[0.15em] uppercase leading-none">
+              Área Interna
+            </h1>
+            <div className="mt-3 flex items-center justify-center gap-3">
+              <span className="block h-px w-10 bg-wg-orange/60" />
+              <span className="text-[10px] font-spartan font-semibold tracking-[0.22em] uppercase text-gray-400">
+                Grupo WG Almeida
+              </span>
+              <span className="block h-px w-10 bg-wg-orange/60" />
             </div>
-          </form>
-          <p className="mt-6 text-center text-sm text-wg-gray">
-            {t('loginPage.noAccount')}{' '}
-            <Link to="/register" className="font-medium text-wg-orange hover:text-wg-orange/80">
-              {t('loginPage.createAccount')}
-            </Link>
-          </p>
+          </div>
+
+          {/* Card do formulário */}
+          <div className="bg-white rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,0.5)] overflow-hidden">
+
+            {/* Barra de acento no topo do card */}
+            <div className="h-1 bg-gradient-to-r from-wg-orange to-wg-orange-dark" />
+
+            <div className="px-8 py-8">
+              <form onSubmit={handleLogin} autoComplete="off" className="space-y-4">
+
+                {/* E-mail */}
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <input
+                    id="wg-email-field"
+                    name="wg-email"
+                    type="email"
+                    autoComplete="off"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="E-mail"
+                    className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-wg-orange/40 focus:border-wg-orange transition-colors"
+                  />
+                </div>
+
+                {/* Senha */}
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <input
+                    id="wg-password-field"
+                    name="wg-password"
+                    type="password"
+                    autoComplete="off"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Senha"
+                    className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-wg-orange/40 focus:border-wg-orange transition-colors"
+                  />
+                </div>
+
+                {/* Botão entrar */}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-3 mt-2 bg-wg-orange hover:bg-wg-orange-dark text-white font-oswald font-semibold text-sm tracking-[0.1em] uppercase rounded-xl transition-colors duration-200 disabled:opacity-60 flex items-center justify-center gap-2"
+                >
+                  {loading
+                    ? <><Loader2 className="h-4 w-4 animate-spin" /> Verificando...</>
+                    : 'Entrar'}
+                </button>
+              </form>
+            </div>
+          </div>
+
+          {/* Rodapé */}
+          <div className="mt-6 flex items-center justify-center gap-1.5 text-[11px] text-gray-600">
+            <ShieldCheck className="h-3.5 w-3.5 text-gray-500" />
+            <span>Acesso restrito a colaboradores autorizados</span>
+          </div>
         </motion.div>
       </div>
     </>

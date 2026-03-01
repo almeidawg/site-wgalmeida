@@ -1,7 +1,7 @@
 ---
-title: "Hampton"
+title: "Estilo Hampton: Decoração Praiana Sofisticada Inspirada nos Hamptons"
 slug: "hampton"
-excerpt: "Elegância praiana da elite americana com branco imaculado, azul marinho e sofisticação relaxada dos Hamptons de Nova York."
+excerpt: "Aprenda a aplicar o estilo Hampton com branco, azul-marinho e materiais naturais para uma casa elegante e leve."
 image: "/images/estilos/hampton.webp"
 quote: "Os Hamptons são onde a sofisticação encontra a praia."
 author: "Aerin Lauder"
@@ -14,7 +14,7 @@ colors: ["#FFFFFF", "#000080", "#F5F5DC", "#1E90FF"]
 
 ## O Estilo Hampton
 
-O estilo **Hampton** (ou **Hamptons**) é sinônimo de **elegância praiana sofisticada** da elite americana. Inspirado nas casas de veraneio dos Hamptons - uma série de vilas na ponta leste de Long Island, Nova York - este estilo combina o **relaxamento costeiro** com **refinamento absoluto**.
+O estilo **Hampton** (ou **Hamptons**) representa a elegância praiana sofisticada da costa leste americana. Inspirado nas casas de veraneio de Long Island, ele combina atmosfera costeira com acabamento refinado e atemporal.
 
 É o estilo das casas de fim de semana das famílias mais abastadas de Nova York, onde celebridades, empresários e socialites passam o verão. Pense em **branco imaculado**, **azul marinho**, **madeiras naturais** e **linho impecável** - tudo com um **ar descontraído mas extremamente chic**.
 

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import { useNavigate, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
 import { supabase } from '@/lib/customSupabaseClient';
+import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import {
   LogOut,
@@ -273,10 +273,12 @@ const Account = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{t('seo.account.title')}</title>
-        <meta name="description" content={t('seo.account.description')} />
-      </Helmet>
+      <SEO
+        pathname="/account"
+        title={t('seo.account.title')}
+        description={t('seo.account.description')}
+        noindex
+      />
 
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         {/* Header Premium com Gradiente */}

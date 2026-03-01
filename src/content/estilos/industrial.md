@@ -1,7 +1,7 @@
 ---
-title: "Industrial"
+title: "Estilo Industrial: Guia de Decoração com Tijolo Aparente e Design Urbano"
 slug: "industrial"
-excerpt: "Estética urbana e crua com tijolos à vista, estruturas metálicas e visual de loft que celebra o não-convencional."
+excerpt: "Aprenda a aplicar o estilo industrial com tijolo aparente, metal e visual de loft para criar ambientes urbanos e funcionais."
 image: "/images/estilos/industrial.webp"
 quote: "A beleza está na honestidade dos materiais e na força das estruturas expostas."
 author: "Grupo WG Almeida"
@@ -14,7 +14,7 @@ colors: ["#2C2C2C", "#B87333", "#708090", "#D3D3D3"]
 
 ## O Estilo Industrial
 
-O estilo industrial surgiu da **transformação de antigos galpões, fábricas e armazéns** em espaços residenciais nos anos 1950-60, principalmente em cidades como Nova York e Londres. O que começou como uma solução habitacional econômica tornou-se um **estilo de design icônico** que celebra a estética bruta e urbana.
+O estilo industrial surgiu da **transformacao de antigos galpoes, fabricas e armazens** em moradias nos anos 1950-60. O que era uma solucao habitacional virou um **estilo iconico** que valoriza estetica bruta, urbana e funcional.
 
 O industrial é sobre **expor o que normalmente seria escondido**: tubulações, vigas metálicas, tijolos à vista, concreto aparente. É um estilo que encontra beleza no cru, no honesto e no funcional.
 

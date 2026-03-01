@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react';
 import SEO from '@/components/SEO';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Target, Eye, Award, Users, Clock, CheckCircle, Building, Play, Pause, Quote } from 'lucide-react';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { Trans, useTranslation } from 'react-i18next';
+import { SCHEMAS } from '@/data/schemaConfig';
 
 // Animações elegantes
 const fadeInUp = {
@@ -58,15 +59,10 @@ const About = () => {
 
   return (
     <>
-      <SEO
-        title={t('seo.about.title')}
-        description={t('seo.about.description')}
-        keywords={t('seo.about.keywords')}
-        url="https://wgalmeida.com.br/sobre"
-      />
+      <SEO pathname="/sobre" schema={SCHEMAS.breadcrumbAbout} />
 
       {/* Hero com parallax sutil */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -220,6 +216,7 @@ const About = () => {
                 poster="/images/banners/SOBRE.webp"
               >
                 <source src="/videos/videosobrenos.mp4" type="video/mp4" />
+                <track kind="captions" src="/videos/hero/descricao.vtt" srcLang="pt-BR" label="Português" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-wg-black/30 to-transparent pointer-events-none" />
             </motion.div>

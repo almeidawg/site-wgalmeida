@@ -1,7 +1,7 @@
 ---
-title: "Art Déco"
+title: "Art Déco: Como Levar Glamour e Geometria para a Decoração"
 slug: "art-deco"
-excerpt: "Luxo e geometria dos anos 20-30 com dourados brilhantes, espelhos e linhas elegantes que celebram o glamour."
+excerpt: "Guia prático do estilo Art Déco com referências dos anos 20-30, metais dourados, espelhos e formas geométricas marcantes."
 image: "/images/estilos/art-deco.webp"
 quote: "A elegância é a única beleza que nunca envelhece."
 author: "Audrey Hepburn"
@@ -14,7 +14,7 @@ colors: ["#000000", "#D4AF37", "#FFFFFF", "#1A1A2E"]
 
 ## De Onde Surgiu o Estilo Art Déco?
 
-O **Art Déco** (abreviação do francês *Arts Décoratifs*) surgiu na França na década de 1920 e atingiu seu auge nos anos 1930. O estilo nasceu após a Primeira Guerra Mundial, em um período de otimismo, prosperidade e celebração da modernidade.
+O **Art Déco** (abreviação do francês *Arts Décoratifs*) surgiu na França nos anos 1920 e atingiu seu auge nos anos 1930. O estilo combina luxo, geometria e modernidade, sendo ideal para projetos que querem impacto visual com sofisticação.
 
 O marco oficial foi a **Exposition Internationale des Arts Décoratifs et Industriels Modernes** em Paris, 1925, onde o estilo foi apresentado ao mundo.
 

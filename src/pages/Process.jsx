@@ -1,8 +1,9 @@
 import React from 'react';
 import SEO from '@/components/SEO';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Lightbulb, PenTool, Hammer, CheckCircle, Users, FileText, Monitor, Camera, MessagesSquare, FolderOpen, Calendar, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { SCHEMAS } from '@/data/schemaConfig';
 
 const Process = () => {
   const { t } = useTranslation();
@@ -42,14 +43,9 @@ const Process = () => {
 
   return (
     <>
-      <SEO
-        title={t('seo.process.title')}
-        description={t('seo.process.description')}
-        keywords={t('seo.process.keywords')}
-        url="https://wgalmeida.com.br/processo"
-      />
+      <SEO pathname="/processo" schema={SCHEMAS.breadcrumbProcess} />
 
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
         <div className="absolute inset-0 z-0">
           <img
             className="w-full h-full object-cover"

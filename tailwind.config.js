@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['class'],
   content: [
     './pages/**/*.{js,jsx}',
     './components/**/*.{js,jsx}',
@@ -52,6 +51,7 @@ module.exports = {
         },
         wg: {
           orange: '#F25C26',
+          'orange-dark': '#BA4C1B',
           green: '#5E9B94',
           blue: '#2B4580',
           brown: '#8B5E3C',
@@ -61,10 +61,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        oswald: ['Oswald', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        oswald: ['Oswald', 'Oswald Fallback', 'sans-serif'],
+        poppins: ['Poppins', 'Poppins Fallback', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
-        playfair: ['Playfair Display', 'serif'],
+        playfair: ['Playfair Display', 'Playfair Fallback', 'serif'],
         spartan: ['League Spartan', 'sans-serif'],
       },
       borderRadius: {

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SEO from '@/components/SEO';
 import { useTranslation } from 'react-i18next';
 
 const Success = () => {
@@ -11,10 +11,12 @@ const Success = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{t('seo.success.title')} - Grupo WG Almeida</title>
-        <meta name="description" content={t('seo.success.description')} />
-      </Helmet>
+      <SEO
+        pathname="/success"
+        title={`${t('seo.success.title')} - Grupo WG Almeida`}
+        description={t('seo.success.description')}
+        noindex
+      />
 
       <div className="section-padding flex items-center justify-center bg-wg-gray-light">
         <div className="container-custom text-center">

@@ -1,11 +1,11 @@
 ---
-title: "Reforma de Cozinha Planejada: Guia Completo 2026"
+title: "Reforma de Cozinha Planejada 2026: Quanto Custa, Etapas e Como Evitar Erros"
 slug: "reforma-cozinha-planejada-guia-completo"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "reforma"
 image: "/images/blog/reforma-cozinha-planejada-guia-completo.webp"
-excerpt: "Tudo o que você precisa saber para reformar sua cozinha: custos, prazos, materiais e dicas práticas."
+excerpt: "Veja custos atualizados de reforma de cozinha planejada, cronograma por etapa e checklist para evitar atraso e gasto extra."
 tags:
   - "cozinha"
   - "reforma"
@@ -13,9 +13,9 @@ tags:
   - "custos"
 featured: false
 ---
-# Reforma de Cozinha Planejada: Guia Completo 2026
+# Reforma de Cozinha Planejada em 2026: Custos Reais, Cronograma e Materiais
 
-A cozinha é um dos ambientes mais importantes da casa. Uma reforma bem planejada pode transformar completamente esse espaço e valorizar seu imóvel.
+Vai reformar a cozinha e quer evitar estouro de prazo e orcamento? Este guia mostra investimento por faixa, etapas da obra e erros mais comuns para decidir com clareza antes de contratar.
 
 ## Por Que Reformar a Cozinha?
 
@@ -177,3 +177,10 @@ Reforma completa: **6 a 12 semanas**
 ✅ Acompanhamento diário
 
 **Solicite seu orçamento gratuito!**
+
+## Leitura recomendada
+
+- [Quanto tempo dura uma reforma de apartamento](/blog/quanto-tempo-dura-reforma-apartamento)
+- [Reforma de banheiro pequeno: como otimizar](/blog/reforma-banheiro-pequeno-otimizacao)
+- [EVF: estudo de viabilidade financeira na obra](/blog/evf-estudo-viabilidade-financeira)
+

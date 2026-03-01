@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { Upload, X, Image as ImageIcon, Link as LinkIcon, Loader2 } from 'lucide-react';
 
 const ImageUploader = ({ onImagesAdd, maxImages = 6, currentCount = 0 }) => {

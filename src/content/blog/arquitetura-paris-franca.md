@@ -1,7 +1,7 @@
 ---
-title: "Arquitetura de Paris: Boulevards Haussmannianos e a Cidade Luz"
+title: "Arquitetura de Paris: Guia dos Estilos, Boulevards Haussmannianos e Icones"
 slug: "arquitetura-paris-franca"
-excerpt: "Descubra Paris - dos boulevards haussmannianos à Torre Eiffel, da Notre-Dame gótica ao moderno Louvre. A capital mundial da arquitetura onde cada rua é um cenário de cinema e cada edifício um monumento."
+excerpt: "Descubra a arquitetura de Paris dos boulevards haussmannianos a Torre Eiffel, com estilos e licoes para projetos contemporaneos."
 date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
@@ -10,11 +10,11 @@ image: "/images/blog/arquitetura-paris-franca.webp"
 featured: true
 ---
 
-# Arquitetura de Paris: Boulevards Haussmannianos e a Cidade Luz
+# Arquitetura de Paris: Estilos, Boulevards Haussmannianos e Icones
 
 ## A Capital Mundial da Arquitetura
 
-**Paris** é a **"Cidade Luz"** - não apenas pelas luminárias que iluminam seus monumentos à noite, mas porque foi o **farol cultural** que iluminou o mundo nos últimos 200 anos. É a cidade dos **boulevards haussmannianos**, da **Torre Eiffel**, da **Notre-Dame**, do **Louvre** - ícones arquitetônicos que definiram épocas inteiras.
+**Paris** e a **"Cidade Luz"** e um dos maiores referenciais urbanos dos ultimos 200 anos. E a cidade dos **boulevards haussmannianos**, da **Torre Eiffel**, da **Notre-Dame** e do **Louvre**, com obras que definiram epocas inteiras da arquitetura.
 
 Paris é onde a **arquitetura conta a história da civilização ocidental** - do **gótico medieval** (Notre-Dame, século XII) ao **neoclássico** (Arc de Triomphe, século XIX), do **Art Nouveau** (metrô Guimard, 1900) ao **high-tech** contemporâneo (Centre Pompidou, 1977).
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { useTranslation } from 'react-i18next';
 import SEO from '@/components/SEO';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
@@ -201,8 +201,28 @@ const EstiloDetail = () => {
         title={`${estilo.title} - Guia Completo de Estilo | WG Almeida`}
         description={estilo.excerpt}
         url={articleUrl}
-        type="article"
         image={`https://wgalmeida.com.br${estilo.image}`}
+        keywords={`${estilo.title.toLowerCase()}, estilo decoracao, design interiores, decoracao ${estilo.title.toLowerCase()}, ambientes ${estilo.title.toLowerCase()}`}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: `${estilo.title} - Guia Completo de Estilo`,
+          description: estilo.excerpt,
+          url: articleUrl,
+          image: `https://wgalmeida.com.br${estilo.image}`,
+          author: {
+            "@type": "Organization",
+            name: "Grupo WG Almeida",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Grupo WG Almeida",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://wgalmeida.com.br/images/logo-96.webp",
+            },
+          },
+        }}
       />
 
       {/* Hero Banner */}

@@ -1,7 +1,7 @@
 ---
-title: "Maximalista"
+title: "Estilo Maximalista: Guia para Decorar com Cores, Arte e Personalidade"
 slug: "maximalista"
-excerpt: "Mais é mais! Cores vibrantes, padrões ousados, mix de texturas e coleções que celebram a abundância e a expressão pessoal sem limites."
+excerpt: "Descubra como aplicar o estilo maximalista com cores vibrantes, mix de estampas e composição equilibrada cheia de identidade."
 image: "/images/estilos/maximalista.webp"
 quote: "Mais é mais. Menos é chato."
 author: "Iris Apfel"
@@ -14,7 +14,7 @@ colors: ["#8B008B", "#FF6347", "#FFD700", "#228B22"]
 
 ## O Estilo Maximalista
 
-O maximalismo é a **celebração da abundância**, das cores vibrantes, dos padrões ousados e da expressão pessoal sem limites. É o oposto do minimalismo - aqui, **mais é definitivamente mais**!
+O maximalismo celebra a abundância com intenção: cores vibrantes, padrões ousados e camadas visuais que expressam personalidade. É a escolha ideal para quem quer ambientes criativos sem abrir mão de coerência estética.
 
 Inspirado por ícones como **Iris Apfel** (estilista americana conhecida por seu estilo extravagante), **Dorothy Draper** (designer de interiores pioneira) e movimentos artísticos como o **Barroco** e o **Art Nouveau**, o maximalismo é sobre **coragem decorativa** e **alegria visual**.
 

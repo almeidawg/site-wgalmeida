@@ -1,7 +1,7 @@
 ---
-title: "Rústico"
+title: "Estilo Rústico: Como Decorar com Madeira, Pedra e Aconchego Natural"
 slug: "rustico"
-excerpt: "Charme do campo com madeira de demolição, pedras naturais e atmosfera acolhedora que celebra o artesanal e o autêntico."
+excerpt: "Descubra como aplicar o estilo rústico com materiais naturais, textura artesanal e clima acolhedor em cada ambiente da casa."
 image: "/images/estilos/rustico.webp"
 quote: "Não é digno de saborear o mel, aquele que se afasta da colmeia com medo das picadas das abelhas."
 author: "William Shakespeare"
@@ -14,7 +14,7 @@ colors: ["#8B4513", "#D2691E", "#DEB887", "#654321"]
 
 ## O Estilo Rústico
 
-O estilo rústico celebra a **beleza do imperfeito**, do natural e do artesanal. É um estilo que valoriza materiais brutos, texturas orgânicas e a história que cada peça carrega. Remete ao **campo, às fazendas e à vida simples**, trazendo aconchego e autenticidade para dentro de casa.
+O estilo rústico celebra a **beleza do imperfeito**, do natural e do artesanal. Ele valoriza materiais brutos, texturas orgânicas e peças com história, trazendo para casa o clima acolhedor do **campo e da vida simples**.
 
 Inspirado nas casas de campo europeias, fazendas americanas e fazendas brasileiras, o rústico é sobre **conexão com a natureza** e com nossas raízes.
 

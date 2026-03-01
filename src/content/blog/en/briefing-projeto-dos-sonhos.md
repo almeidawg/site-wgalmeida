@@ -34,13 +34,13 @@ The briefing is the step that defines the success of the project. It is when we 
 
 ## The dimensions that guide the project
 
-1. **Resident profile** and family dynamics  
-2. **Routine and lifestyle** (work, leisure, hosting)  
-3. **Aesthetic preferences** and visual references  
-4. **Functional needs** and storage  
-5. **Technology and automation** desired  
-6. **Budget and priorities** that are realistic  
-7. **Schedule and deadlines** expected  
+1. **Resident profile** and family dynamics
+2. **Routine and lifestyle** (work, leisure, hosting)
+3. **Aesthetic preferences** and visual references
+4. **Functional needs** and storage
+5. **Technology and automation** desired
+6. **Budget and priorities** that are realistic
+7. **Schedule and deadlines** expected
 
 ---
 
@@ -54,10 +54,10 @@ The briefing is the step that defines the success of the project. It is when we 
 
 ## What happens next
 
-1. Technical analysis of the information  
-2. Moodboard and aesthetic direction  
-3. Layout study  
-4. Concept presentation  
+1. Technical analysis of the information
+2. Moodboard and aesthetic direction
+3. Layout study
+4. Concept presentation
 
 ---
 
@@ -136,3 +136,4 @@ If you are looking for a custom project with full follow-up and premium finish, 
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 11 98465-0002
+

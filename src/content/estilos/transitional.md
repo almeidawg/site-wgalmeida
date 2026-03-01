@@ -1,7 +1,7 @@
 ---
-title: "Transitional"
+title: "Estilo Transitional: Equilíbrio Entre Clássico e Contemporâneo"
 slug: "transitional"
-excerpt: "Ponte perfeita entre clássico e contemporâneo com equilíbrio sofisticado que une tradição e modernidade sem esforço."
+excerpt: "Entenda o estilo Transitional e combine referências clássicas e modernas para interiores elegantes e versáteis."
 image: "/images/estilos/transitional.webp"
 quote: "O transitional é a arte de equilibrar o melhor de dois mundos."
 author: "Nate Berkus"
@@ -14,7 +14,7 @@ colors: ["#F5F5DC", "#8B7D6B", "#FFFFFF", "#4A4A4A"]
 
 ## O Estilo Transitional
 
-O estilo **Transitional** é a **ponte perfeita** entre o clássico tradicional e o moderno contemporâneo. É para quem ama a **elegância atemporal** do clássico mas também aprecia as **linhas limpas** do moderno - e não quer escolher entre os dois.
+O estilo **Transitional** une o clássico tradicional ao moderno contemporâneo de forma equilibrada. É ideal para quem busca uma estética atemporal, elegante e confortável, sem extremos visuais.
 
 Este é talvez o estilo de design de interiores **mais popular** atualmente, especialmente nos Estados Unidos, porque oferece o melhor dos dois mundos: **conforto e sofisticação**, **tradição e inovação**, **formal e relaxado**.
 

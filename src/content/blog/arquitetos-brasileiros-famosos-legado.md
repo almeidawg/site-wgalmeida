@@ -1,11 +1,11 @@
 ---
-title: "Arquitetos Brasileiros Famosos: O Legado que Transformou a Arquitetura Mundial"
+title: "Arquitetos Brasileiros Famosos: 12 Nomes, Obras e Licoes para Projetos Atuais"
 slug: "arquitetos-brasileiros-famosos-legado"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "arquitetura"
 image: "/images/blog/arquitetos-brasileiros-famosos-legado.webp"
-excerpt: "Conheça os arquitetos brasileiros que deixaram marca indelével na história da arquitetura mundial, de Oscar Niemeyer a Paulo Mendes da Rocha."
+excerpt: "Conheca 12 arquitetos brasileiros famosos, suas obras iconicas e licoes praticas para aplicar em projetos residenciais e corporativos."
 tags:
   - "arquitetos brasileiros"
   - "Oscar Niemeyer"
@@ -13,7 +13,7 @@ tags:
   - "história da arquitetura"
 featured: true
 ---
-# Arquitetos Brasileiros Famosos: O Legado que Transformou a Arquitetura Mundial
+# Arquitetos Brasileiros Famosos: 12 Referencias e Licoes Praticas
 
 *Por Grupo WG Almeida | Arquitetura & História*
 
@@ -21,7 +21,7 @@ featured: true
 
 ## Introdução
 
-A arquitetura brasileira conquistou o mundo com sua ousadia, inovação e identidade única. Nossos arquitetos não apenas criaram edifícios icônicos, mas redefiniram o que é possível fazer com concreto, curvas e luz.
+Os arquitetos brasileiros famosos ajudaram a definir uma linguagem autoral reconhecida no mundo todo. Nesta selecao, voce conhece obras-chave de cada nome e como aplicar esses principios em projetos contemporaneos.
 
 ---
 
@@ -374,3 +374,10 @@ Quer um projeto que combine a ousadia dos grandes arquitetos brasileiros com fun
 - [6 arquitetos brasileiros mais famosos e as suas principais obras](https://www.megacurioso.com.br/ciencia/118851-6-arquitetos-brasileiros-mais-famosos-e-as-suas-principais-obras.htm)
 
 **Tags**: arquitetos brasileiros, Oscar Niemeyer, Paulo Mendes da Rocha, Lina Bo Bardi, história arquitetura, modernismo brasileiro
+
+## Leitura recomendada
+
+- [Arquitetos internacionais famosos e obras iconicas](/blog/arquitetos-internacionais-famosos-obras)
+- [Tendencias de decoracao 2026](/blog/tendencias-decoracao-interiores-2026)
+- [Tendencias da construcao civil 2026](/blog/tendencias-construcao-civil-2026)
+

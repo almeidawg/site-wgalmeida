@@ -1,11 +1,11 @@
 ---
-title: "Automação Residencial em 2026: Guia Completo de Smart Home"
+title: "Automacao Residencial em 2026: Quanto Custa e Como Montar uma Smart Home"
 slug: "automacao-residencial-2026-guia"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "tecnologia"
 image: "/images/blog/automacao-residencial-2026-guia.webp"
-excerpt: "Tudo sobre casa inteligente: da automação básica aos sistemas avançados, custos, benefícios e como planejar."
+excerpt: "Guia pratico de automacao residencial em 2026 com faixas de custo, niveis de sistema e como planejar sem erro."
 tags:
   - "automação residencial"
   - "smart home"
@@ -13,9 +13,9 @@ tags:
   - "tecnologia"
 featured: false
 ---
-# Automação Residencial em 2026: Guia Completo de Smart Home
+# Automacao Residencial em 2026: Guia Pratico de Custo e Planejamento
 
-Em 2026, automação residencial deixou de ser luxo para se tornar padrão em projetos de médio e alto padrão.
+Em 2026, automacao residencial deixou de ser luxo para se tornar um diferencial real em projetos residenciais. Neste guia, voce entende custos por nivel e como planejar a smart home com mais seguranca.
 
 ## O Que É Automação Residencial?
 

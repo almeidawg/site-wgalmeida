@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Image, Palette, Type, Trash2, Move } from 'lucide-react';
 
 const MoodboardCanvas = ({ colors, styles, customImages = [], onRemoveImage }) => {

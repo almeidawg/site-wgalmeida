@@ -26,13 +26,13 @@ A full renovation demands correct sequencing, technical planning, and quality co
 
 ## Overview of stages
 
-1. Planning  
-2. Demolition and removals  
-3. Infrastructure  
-4. Partitions and subfloor  
-5. Finishes  
-6. Finalization  
-7. Handover  
+1. Planning
+2. Demolition and removals
+3. Infrastructure
+4. Partitions and subfloor
+5. Finishes
+6. Finalization
+7. Handover
 
 ---
 
@@ -305,3 +305,4 @@ If you are looking for a custom project with full follow-up and premium finish, 
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 11 98465-0002
+

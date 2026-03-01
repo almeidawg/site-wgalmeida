@@ -26,13 +26,13 @@ Reforma completa exige secuencia correcta, planificacion tecnica y control de ca
 
 ## Panorama de etapas
 
-1. Planificacion  
-2. Demolicion y remociones  
-3. Infraestructura  
-4. Cerramientos y contrapiso  
-5. Acabados  
-6. Finalizacion  
-7. Entrega  
+1. Planificacion
+2. Demolicion y remociones
+3. Infraestructura
+4. Cerramientos y contrapiso
+5. Acabados
+6. Finalizacion
+7. Entrega
 
 ---
 
@@ -305,3 +305,4 @@ Si buscas un proyecto a medida, con acompanamiento completo y acabado premium, h
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 11 98465-0002
+

@@ -1,11 +1,11 @@
 ---
-title: "Home Office: Guia de Ergonomia e Produtividade para Trabalho em Casa"
+title: "Home Office: Guia de Ergonomia e Produtividade para Trabalhar Melhor em Casa"
 slug: "home-office-ergonomia-produtividade"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
 image: "/images/blog/home-office-ergonomia-produtividade.webp"
-excerpt: "Crie um home office ergonômico e produtivo: layout ideal, móveis adequados, iluminação, acústica e organização."
+excerpt: "Aprenda a montar home office ergonomico com layout, moveis, iluminacao e organizacao para aumentar produtividade."
 tags:
   - "home office"
   - "ergonomia"
@@ -13,7 +13,7 @@ tags:
   - "produtividade"
 featured: false
 ---
-# Home Office: Guia de Ergonomia e Produtividade
+# Home Office: Guia de Ergonomia e Produtividade em Casa
 
 ## Planejamento do Espaço
 

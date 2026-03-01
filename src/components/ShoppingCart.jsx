@@ -1,10 +1,10 @@
 import React, { useCallback, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { ShoppingCart as ShoppingCartIcon, X } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { Button } from '@/components/ui/button';
-import { initializeCheckout } from '@/api/EcommerceApi';
+// EcommerceApi loaded on demand to keep @supabase out of the critical path
 import { useToast } from '@/components/ui/use-toast';
 import { useTranslation } from 'react-i18next';
 
@@ -35,6 +35,7 @@ const ShoppingCart = ({ isCartOpen, setIsCartOpen }) => {
       const successUrl = `${window.location.origin}/success`;
       const cancelUrl = window.location.href;
 
+      const { initializeCheckout } = await import('@/api/EcommerceApi');
       const { url } = await initializeCheckout({ items, successUrl, cancelUrl });
 
       clearCart();

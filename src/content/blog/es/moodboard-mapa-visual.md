@@ -44,10 +44,10 @@ El moodboard es el instrumento que transforma palabras en imagen. Alinea expecta
 
 ## Como lo creamos en WG Almeida
 
-1. Analisis del briefing y del estilo de vida  
-2. Curaduria de referencias confiables  
-3. Seleccion de materiales y texturas reales  
-4. Montaje del panel y presentacion al cliente  
+1. Analisis del briefing y del estilo de vida
+2. Curaduria de referencias confiables
+3. Seleccion de materiales y texturas reales
+4. Montaje del panel y presentacion al cliente
 
 ---
 
@@ -142,3 +142,4 @@ Si buscas un proyecto a medida, con acompanamiento completo y acabado premium, h
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 11 98465-0002
+

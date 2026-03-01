@@ -1,0 +1,30 @@
+{
+  "averageRating": 5.0,
+  "reviewCount": 50,
+  "reviews": [
+    {
+      "id": "mariana-s",
+      "name": "Mariana S.",
+      "rating": 5,
+      "date": "2 weeks ago",
+      "text": "Full renovation with great care and attention to detail. The result exceeded expectations.",
+      "avatar": "M"
+    },
+    {
+      "id": "carlos-eduardo-r",
+      "name": "Carlos Eduardo R.",
+      "rating": 5,
+      "date": "1 month ago",
+      "text": "Impeccable architecture and Bespoke Joinery project. On-time delivery and a very professional team.",
+      "avatar": "C"
+    },
+    {
+      "id": "ana-paula-m",
+      "name": "Ana Paula M.",
+      "rating": 5,
+      "date": "1 month ago",
+      "text": "Commercial space transformed. Engineering and Bespoke Joinery flawless. 10/10!",
+      "avatar": "A"
+    }
+  ]
+}

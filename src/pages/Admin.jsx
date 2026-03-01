@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useCallback } from 'react';
+import { motion } from '@/lib/motion-lite';
 import {
   Search, FileText, TrendingUp, Send, Loader2, Copy, Check,
-  BarChart3, Target, Lightbulb, Globe, RefreshCw
+  BarChart3, Target, Lightbulb, Globe, RefreshCw, Star,
+  Share2, ExternalLink, Layers, MessageSquare, Zap, Settings, Eye, EyeOff, Save,
 } from 'lucide-react';
 import { sendClaudePrompt } from '@/lib/claudeClient';
+import SEO from '@/components/SEO';
 import { useTranslation } from 'react-i18next';
 
-// Contexto da empresa para a IA
+// ─── Contexto da empresa ──────────────────────────────────────────────────────
 const WG_CONTEXT = `
 CONTEXTO DA EMPRESA - GRUPO WG ALMEIDA:
 
@@ -40,49 +42,407 @@ PALAVRAS-CHAVE PRINCIPAIS:
 - projeto turn key
 - arquiteto brooklin / itaim / jardins
 
-CONCORRENTES:
-- Escritórios de arquitetura boutique
-- Construtoras de alto padrão
-- Marcenarias premium
+SITE: wgalmeida.com.br
 `;
 
+// ─── Configuração das plataformas ─────────────────────────────────────────────
+const PLATFORM_CONFIG = {
+  instagram: {
+    name: 'Instagram',
+    abbr: 'IG',
+    bg: 'bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400',
+    tc: 'text-white',
+    url: 'https://business.facebook.com/',
+    maxChars: 2200,
+    tip: 'Até 2200 chars · 25–30 hashtags · emojis liberados',
+  },
+  pinterest: {
+    name: 'Pinterest',
+    abbr: 'P',
+    bg: 'bg-red-600',
+    tc: 'text-white',
+    url: 'https://www.pinterest.com/pin-creation-tool/',
+    maxChars: 500,
+    tip: 'Palavras-chave visuais · título + desc até 500 chars',
+  },
+  google: {
+    name: 'Google Meu Negócio',
+    abbr: 'G',
+    bg: 'bg-white border-2 border-gray-200',
+    tc: 'text-blue-500',
+    url: 'https://business.google.com/',
+    maxChars: 1500,
+    tip: 'Sem hashtags · inclua wgalmeida.com.br · profissional',
+  },
+  linkedin: {
+    name: 'LinkedIn',
+    abbr: 'in',
+    bg: 'bg-[#0077B5]',
+    tc: 'text-white',
+    url: 'https://www.linkedin.com/feed/?shareActive=true',
+    maxChars: 3000,
+    tip: 'Tom B2B · liderança · 1–3 hashtags',
+  },
+  houzz: {
+    name: 'Houzz',
+    abbr: 'Hz',
+    bg: 'bg-[#4DBC15]',
+    tc: 'text-white',
+    url: 'https://pro.houzz.com/',
+    maxChars: 1000,
+    tip: 'Vocabulário técnico de arquitetura e design',
+  },
+  homify: {
+    name: 'Homify',
+    abbr: 'Hf',
+    bg: 'bg-[#00BBCC]',
+    tc: 'text-white',
+    url: 'https://www.homify.com.br/',
+    maxChars: 800,
+    tip: 'Estilo portfólio · destaque materiais premium',
+  },
+};
+
+// ─── Campos de configuração por plataforma ───────────────────────────────────
+const PLATFORM_FIELDS = {
+  instagram: [
+    { key: 'handle',            label: 'Handle / @usuário',          placeholder: '@wgalmeida',                                     type: 'text'     },
+    { key: 'profileUrl',        label: 'URL do Perfil',               placeholder: 'https://www.instagram.com/wgalmeida',             type: 'url'      },
+    { key: 'businessAccountId', label: 'Business Account ID',         placeholder: 'Ex: 17841400459223767',                          type: 'text'     },
+    { key: 'accessToken',       label: 'Access Token (Meta Graph API)',placeholder: 'EAAxxxxx... (Meta for Developers)',               type: 'password' },
+  ],
+  pinterest: [
+    { key: 'handle',      label: 'Handle / @usuário',   placeholder: '@wgalmeida',                                         type: 'text'     },
+    { key: 'profileUrl',  label: 'URL do Perfil',        placeholder: 'https://br.pinterest.com/wgalmeida',                 type: 'url'      },
+    { key: 'adAccountId', label: 'Ad Account ID',        placeholder: 'Ex: 549769837820',                                   type: 'text'     },
+    { key: 'accessToken', label: 'Access Token',         placeholder: 'Token de acesso Pinterest API',                      type: 'password' },
+  ],
+  google: [
+    { key: 'locationId',  label: 'Location ID (GMB)',    placeholder: 'locations/1234567890',                               type: 'text'     },
+    { key: 'placeId',     label: 'Place ID (Reviews)',   placeholder: 'ChIJxxxxxxxxxxxxxxxxxx',                             type: 'text'     },
+    { key: 'profileUrl',  label: 'URL Google Meu Negócio',placeholder: 'https://business.google.com/u/0/...',              type: 'url'      },
+    { key: 'apiKey',      label: 'Places API Key',       placeholder: 'AIzaxxxxxxxxxxxxxxxx',                               type: 'password' },
+  ],
+  linkedin: [
+    { key: 'handle',      label: 'Handle da Empresa',    placeholder: 'wg-almeida',                                         type: 'text'     },
+    { key: 'profileUrl',  label: 'URL da Página',         placeholder: 'https://www.linkedin.com/company/wg-almeida',       type: 'url'      },
+    { key: 'pageId',      label: 'Company Page ID',       placeholder: 'Ex: 98765432',                                      type: 'text'     },
+    { key: 'accessToken', label: 'Access Token (OAuth 2.0)',placeholder: 'Token de acesso LinkedIn API',                    type: 'password' },
+  ],
+  houzz: [
+    { key: 'handle',     label: 'Nome no Houzz',         placeholder: 'wg-almeida',                                         type: 'text'     },
+    { key: 'profileUrl', label: 'URL do Perfil Pro',      placeholder: 'https://www.houzz.com/pro/wgalmeida',               type: 'url'      },
+    { key: 'profileId',  label: 'Profile ID (Houzz Pro)', placeholder: 'ID do perfil profissional',                         type: 'text'     },
+  ],
+  homify: [
+    { key: 'handle',     label: 'Nome no Homify',         placeholder: 'wg-almeida',                                        type: 'text'     },
+    { key: 'profileUrl', label: 'URL do Perfil',           placeholder: 'https://www.homify.com.br/professionals/...',      type: 'url'      },
+  ],
+};
+
+// ─── Parser da resposta social do Claude ─────────────────────────────────────
+function parseSocialContent(raw) {
+  const result = {
+    instagram: '', pinterest_title: '', pinterest_desc: '',
+    google: '', linkedin: '', houzz: '', homify: '',
+  };
+  const markerMap = {
+    '### INSTAGRAM': 'instagram',
+    '### PINTEREST_TITLE': 'pinterest_title',
+    '### PINTEREST_DESC': 'pinterest_desc',
+    '### GOOGLE_MEU_NEGOCIO': 'google',
+    '### LINKEDIN': 'linkedin',
+    '### HOUZZ': 'houzz',
+    '### HOMIFY': 'homify',
+  };
+  const buffers = {
+    instagram: [], pinterest_title: [], pinterest_desc: [],
+    google: [], linkedin: [], houzz: [], homify: [],
+  };
+  let currentKey = null;
+  for (const line of raw.split('\n')) {
+    const key = markerMap[line.trim()];
+    if (key !== undefined) {
+      currentKey = key;
+    } else if (currentKey) {
+      buffers[currentKey].push(line);
+    }
+  }
+  for (const [key, buf] of Object.entries(buffers)) {
+    result[key] = buf.join('\n').trim();
+  }
+  return result;
+}
+
+// ─── Sub-componente: StarRating ───────────────────────────────────────────────
+const StarRating = ({ rating, size = 'sm' }) => (
+  <div className="flex gap-0.5">
+    {[1, 2, 3, 4, 5].map((i) => (
+      <Star
+        key={i}
+        className={`${size === 'sm' ? 'w-3.5 h-3.5' : 'w-5 h-5'} ${
+          i <= Math.round(rating)
+            ? 'fill-yellow-400 text-yellow-400'
+            : 'fill-gray-200 text-gray-200'
+        }`}
+      />
+    ))}
+  </div>
+);
+
+// ─── Sub-componente: PlatformCard ─────────────────────────────────────────────
+const PlatformCard = ({ platformId, content, onContentChange, copiedId, onCopy, settings }) => {
+  const p = PLATFORM_CONFIG[platformId];
+  const over = content.length > p.maxChars;
+  const publishUrl = settings?.profileUrl || p.url;
+  const handle = settings?.handle;
+  return (
+    <div className="border border-gray-200 rounded-xl overflow-hidden">
+      <div className="flex items-center gap-3 p-3 bg-gray-50 border-b border-gray-100">
+        <div className={`w-9 h-9 ${p.bg} rounded-lg flex items-center justify-center text-sm font-bold ${p.tc}`}>
+          {p.abbr}
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2">
+            <span className="font-medium text-sm">{p.name}</span>
+            {handle && (
+              <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">
+                {handle}
+              </span>
+            )}
+          </div>
+          <p className="text-xs text-gray-500 truncate">{p.tip}</p>
+        </div>
+        <a
+          href={publishUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 text-xs text-gray-500 hover:text-wg-orange transition-colors whitespace-nowrap"
+        >
+          Publicar <ExternalLink className="w-3 h-3" />
+        </a>
+      </div>
+      <div className="p-3">
+        <textarea
+          rows={5}
+          value={content}
+          onChange={(e) => onContentChange(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-wg-orange/30 resize-y"
+        />
+        <div className="flex items-center justify-between mt-1.5">
+          <span className={`text-xs ${over ? 'text-red-500 font-medium' : 'text-gray-400'}`}>
+            {content.length.toLocaleString('pt-BR')}/{p.maxChars.toLocaleString('pt-BR')}
+            {over ? ' — excede o limite' : ''}
+          </span>
+          <button
+            onClick={() => onCopy(content, platformId)}
+            className="text-xs flex items-center gap-1 px-2 py-1 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded transition-colors"
+          >
+            {copiedId === platformId
+              ? <><Check className="w-3.5 h-3.5 text-green-500" /> Copiado!</>
+              : <><Copy className="w-3.5 h-3.5" /> Copiar</>}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ─── Defaults das plataformas (dados públicos já configurados) ────────────────
+const DEFAULT_PLATFORM_SETTINGS = {
+  instagram: {
+    handle: '@grupowgalmeida',
+    profileUrl: 'https://www.instagram.com/grupowgalmeida',
+    businessAccountId: '',
+    accessToken: '',
+  },
+  pinterest: {
+    handle: '@wgalmeida',
+    profileUrl: 'https://br.pinterest.com/wgalmeida',
+    adAccountId: '549769837820',
+    accessToken: '',
+  },
+  google: {
+    locationId: '',
+    placeId: 'ChIJA6dposNQzpQRNOLWlYgmF7c',
+    profileUrl: 'https://business.google.com/',
+    apiKey: 'AIzaSyA8xFxv3eKrnek30EVLg2ZSwrCcl8CL0hc',
+  },
+  linkedin: {
+    handle: 'wgalmeida',
+    profileUrl: 'https://www.linkedin.com/company/wgalmeida',
+    pageId: '',
+    accessToken: '',
+  },
+  houzz: {
+    handle: 'wgalmeida',
+    profileUrl: 'https://www.houzz.com/user/wgalmeida',
+    profileId: '',
+  },
+  homify: {
+    handle: 'grupo-wg-almeida',
+    profileUrl: 'https://www.homify.com.br/profissionais/232168/grupo-wg-almeida-arquitetura-engenharia-e-marcenaria-de-alto-padrao',
+  },
+};
+
+// ─── Componente principal ─────────────────────────────────────────────────────
 const Admin = () => {
   const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState('seo');
-  const [isLoading, setIsLoading] = useState(false);
-  const [copied, setCopied] = useState(false);
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [copiedId, setCopiedId] = useState(null);
 
-  // SEO Analyzer State
+  // Dashboard / Reviews
+  const [reviews, setReviews] = useState(null);
+  const [reviewsLoading, setReviewsLoading] = useState(false);
+  const [reviewResponses, setReviewResponses] = useState({});
+  const [responseLoading, setResponseLoading] = useState(null);
+
+  // Publicador Social
+  const [socialTopic, setSocialTopic] = useState('');
+  const [socialNotes, setSocialNotes] = useState('');
+  const [socialLoading, setSocialLoading] = useState(false);
+  const [socialContent, setSocialContent] = useState({
+    instagram: '', pinterest_title: '', pinterest_desc: '',
+    google: '', linkedin: '', houzz: '', homify: '',
+  });
+
+  // SEO
   const [seoUrl, setSeoUrl] = useState('');
   const [seoAnalysis, setSeoAnalysis] = useState('');
+  const [seoLoading, setSeoLoading] = useState(false);
 
-  // Content Generator State
+  // Gerador de Conteúdo
   const [contentType, setContentType] = useState('pagina');
   const [contentTopic, setContentTopic] = useState('');
   const [generatedContent, setGeneratedContent] = useState('');
+  const [contentLoading, setContentLoading] = useState(false);
 
-  // Strategic Consultant State
+  // Consultor
   const [question, setQuestion] = useState('');
   const [consultantResponse, setConsultantResponse] = useState('');
+  const [consultantLoading, setConsultantLoading] = useState(false);
 
-  const handleCopy = (text) => {
+  // Configurações de plataformas — defaults pré-preenchidos + override do localStorage
+  const [platformSettings, setPlatformSettings] = useState(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem('wg_admin_platforms') || '{}');
+      const merged = {};
+      for (const [id, defaults] of Object.entries(DEFAULT_PLATFORM_SETTINGS)) {
+        merged[id] = { ...defaults, ...(saved[id] || {}) };
+      }
+      return merged;
+    } catch {
+      return DEFAULT_PLATFORM_SETTINGS;
+    }
+  });
+  const [settingsSaved, setSettingsSaved] = useState(false);
+  const [visibleTokens, setVisibleTokens] = useState({});
+
+  // ─── Helpers ───────────────────────────────────────────────────────────────
+  const handleCopy = useCallback((text, id = 'default') => {
     navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId((prev) => (prev === id ? null : prev)), 2000);
+  }, []);
+
+  // ─── Avaliações Google ─────────────────────────────────────────────────────
+  const fetchReviews = useCallback(async () => {
+    setReviewsLoading(true);
+    try {
+      const res = await fetch('/api/google-reviews');
+      if (!res.ok) throw new Error('Falha ao buscar avaliações');
+      setReviews(await res.json());
+    } catch (err) {
+      console.error('Reviews fetch error:', err);
+    } finally {
+      setReviewsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (activeTab === 'dashboard' && reviews === null) {
+      fetchReviews();
+    }
+  }, [activeTab, reviews, fetchReviews]);
+
+  const generateReviewResponse = async (review, index) => {
+    setResponseLoading(index);
+    try {
+      const firstName = review.name?.split(' ')[0] || 'Cliente';
+      const prompt = `${WG_CONTEXT}
+Você é o responsável pelo relacionamento com clientes da WG Almeida.
+Gere uma resposta profissional e calorosa para esta avaliação do Google:
+
+AVALIAÇÃO de "${review.name}" (${review.rating}/5 estrelas):
+"${review.text}"
+
+REGRAS:
+- Máx 150 palavras
+- Comece com: "Olá, ${firstName}!"
+- Agradeça sinceramente e mencione algo específico do feedback quando possível
+- Convide para novos projetos ou indicações
+- Tom: profissional, acolhedor, premium
+- Assine: Equipe WG Almeida`;
+      const resp = await sendClaudePrompt(prompt, 0.7);
+      setReviewResponses((prev) => ({ ...prev, [index]: resp }));
+    } catch (err) {
+      setReviewResponses((prev) => ({ ...prev, [index]: `Erro: ${err.message}` }));
+    } finally {
+      setResponseLoading(null);
+    }
   };
 
-  // SEO Analysis
-  const analyzeSEO = async () => {
-    if (!seoUrl.trim()) return;
-    setIsLoading(true);
-    setSeoAnalysis('');
-
+  // ─── Publicador Social ─────────────────────────────────────────────────────
+  const generateSocial = async () => {
+    if (!socialTopic.trim()) return;
+    setSocialLoading(true);
+    setSocialContent({ instagram: '', pinterest_title: '', pinterest_desc: '', google: '', linkedin: '', houzz: '', homify: '' });
     try {
       const prompt = `${WG_CONTEXT}
+Você é o gerente de marketing digital da WG Almeida.
+Crie conteúdo para as 6 plataformas abaixo com base no tema fornecido.
 
+TEMA: ${socialTopic}${socialNotes ? `\nDETALHES: ${socialNotes}` : ''}
+
+Responda EXATAMENTE neste formato (cada seção começa com ### e vai até a próxima):
+
+### INSTAGRAM
+[Legenda completa com emojis, hashtags ao final. Até 2200 chars. Use 25–30 hashtags relevantes.]
+
+### PINTEREST_TITLE
+[Título do Pin. Máx 100 chars. Descritivo e com palavras-chave.]
+
+### PINTEREST_DESC
+[Descrição do Pin. Máx 500 chars. Rica em palavras-chave visuais e de busca.]
+
+### GOOGLE_MEU_NEGOCIO
+[Post para Google Meu Negócio. Máx 1500 chars. Sem hashtags. Tom profissional. Inclua: wgalmeida.com.br]
+
+### LINKEDIN
+[Post profissional. Máx 1500 chars. Tom B2B e de liderança. Máx 3 hashtags.]
+
+### HOUZZ
+[Descrição de projeto/portfólio. Máx 1000 chars. Vocabulário técnico de arquitetura e design de interiores.]
+
+### HOMIFY
+[Texto estilo portfólio. Máx 800 chars. Destaque materiais, estilo e diferenciais da WG Almeida.]`;
+      const raw = await sendClaudePrompt(prompt, 0.8);
+      setSocialContent(parseSocialContent(raw));
+    } catch (err) {
+      console.error('Social generation error:', err);
+    } finally {
+      setSocialLoading(false);
+    }
+  };
+
+  // ─── SEO ──────────────────────────────────────────────────────────────────
+  const analyzeSEO = async () => {
+    if (!seoUrl.trim()) return;
+    setSeoLoading(true);
+    setSeoAnalysis('');
+    try {
+      const prompt = `${WG_CONTEXT}
 TAREFA: Analise a página/seção "${seoUrl}" do site da WG Almeida e forneça recomendações de SEO.
-
-Por favor, analise e sugira melhorias para:
 
 1. **META TAGS RECOMENDADAS**
    - Title tag otimizado (máx 60 caracteres)
@@ -92,11 +452,9 @@ Por favor, analise e sugira melhorias para:
 2. **ESTRUTURA DE CONTEÚDO**
    - Heading hierarchy (H1, H2, H3)
    - Densidade de palavras-chave ideal
-   - Estrutura de parágrafos
 
 3. **OPORTUNIDADES DE PALAVRAS-CHAVE**
    - Keywords de cauda longa para ranquear
-   - Termos relacionados a incluir
    - Perguntas frequentes do público
 
 4. **MELHORIAS TÉCNICAS**
@@ -105,122 +463,18 @@ Por favor, analise e sugira melhorias para:
    - CTAs otimizados
 
 5. **SCORE ESTIMADO E PRIORIDADES**
-   - O que fazer primeiro
-   - Impacto esperado
+   - O que fazer primeiro e impacto esperado
 
 Formate de forma clara e acionável.`;
-
-      const response = await sendClaudePrompt(prompt, 0.7);
-      setSeoAnalysis(response);
-    } catch (error) {
-      setSeoAnalysis(t('adminPage.seo.error', { message: error.message }));
+      setSeoAnalysis(await sendClaudePrompt(prompt, 0.7));
+    } catch (err) {
+      setSeoAnalysis(t('adminPage.seo.error', { message: err.message }));
     } finally {
-      setIsLoading(false);
+      setSeoLoading(false);
     }
   };
 
-  // Content Generation
-  const generateContent = async () => {
-    if (!contentTopic.trim()) return;
-    setIsLoading(true);
-    setGeneratedContent('');
-
-    try {
-      const prompt = `${WG_CONTEXT}
-
-TAREFA: Crie conteúdo otimizado para SEO.
-
-TIPO: ${contentTypeLabels[contentType]}
-TEMA: ${contentTopic}
-
-DIRETRIZES:
-- Use o tom de voz da WG Almeida (profissional, confiante, luxo silencioso)
-- Inclua palavras-chave naturalmente
-- Foque em benefícios, não apenas features
-- Seja persuasivo mas não apelativo
-- Mantenha o padrão premium da marca
-
-ENTREGUE:
-${contentType === 'pagina' ? `
-1. Título H1 impactante
-2. Subtítulo H2
-3. 3-4 parágrafos de conteúdo
-4. 3 bullet points de benefícios
-5. CTA final` : ''}
-${contentType === 'blog' ? `
-1. Título otimizado para SEO
-2. Introdução engajadora (2 parágrafos)
-3. 3-5 subtítulos H2 com conteúdo
-4. Conclusão com CTA
-5. Meta description sugerida` : ''}
-${contentType === 'descricao' ? `
-1. Título do serviço
-2. Descrição curta (2 linhas)
-3. Descrição completa (3 parágrafos)
-4. 5 diferenciais em bullet points
-5. CTA` : ''}
-${contentType === 'cta' ? `
-1. 5 opções de headline principal
-2. 5 opções de subtítulo
-3. 5 opções de texto do botão
-4. Sugestão de urgência/escassez ética` : ''}
-${contentType === 'social' ? `
-1. 3 versões para Instagram
-2. 2 versões para LinkedIn
-3. Hashtags relevantes
-4. Sugestão de imagem/criativo` : ''}`;
-
-      const response = await sendClaudePrompt(prompt, 0.8);
-      setGeneratedContent(response);
-    } catch (error) {
-      setGeneratedContent(t('adminPage.content.error', { message: error.message }));
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  // Strategic Consultant
-  const askConsultant = async () => {
-    if (!question.trim()) return;
-    setIsLoading(true);
-    setConsultantResponse('');
-
-    try {
-      const prompt = `${WG_CONTEXT}
-
-Você é um consultor estratégico de marketing digital especializado em empresas de arquitetura e construção de alto padrão.
-
-PERGUNTA DO CLIENTE (WG Almeida):
-${question}
-
-Responda como um consultor experiente:
-- Seja direto e prático
-- Dê exemplos específicos quando possível
-- Considere o mercado de São Paulo
-- Foque em ações que geram resultado
-- Mencione tendências relevantes do setor
-- Sugira métricas para acompanhar
-
-Se a pergunta for sobre concorrência, analise o posicionamento.
-Se for sobre conteúdo, sugira temas e formatos.
-Se for sobre SEO, dê recomendações técnicas.
-Se for sobre estratégia, apresente um plano de ação.`;
-
-      const response = await sendClaudePrompt(prompt, 0.7);
-      setConsultantResponse(response);
-    } catch (error) {
-      setConsultantResponse(t('adminPage.consultant.error', { message: error.message }));
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const tabs = [
-    { id: 'seo', label: t('adminPage.tabs.seo'), icon: Search },
-    { id: 'content', label: t('adminPage.tabs.content'), icon: FileText },
-    { id: 'consultant', label: t('adminPage.tabs.consultant'), icon: TrendingUp },
-  ];
-
+  // ─── Gerador de Conteúdo ───────────────────────────────────────────────────
   const contentTypeLabels = {
     pagina: t('adminPage.contentTypes.page'),
     blog: t('adminPage.contentTypes.blog'),
@@ -229,223 +483,712 @@ Se for sobre estratégia, apresente um plano de ação.`;
     social: t('adminPage.contentTypes.social'),
   };
 
+  const generateContent = async () => {
+    if (!contentTopic.trim()) return;
+    setContentLoading(true);
+    setGeneratedContent('');
+    try {
+      const deliverable = {
+        pagina: '1. Título H1\n2. Subtítulo H2\n3. 3-4 parágrafos\n4. 3 bullet points de benefícios\n5. CTA final',
+        blog: '1. Título SEO\n2. Introdução (2 parágrafos)\n3. 3-5 subtítulos H2 com conteúdo\n4. Conclusão com CTA\n5. Meta description',
+        descricao: '1. Título do serviço\n2. Descrição curta (2 linhas)\n3. Descrição completa (3 parágrafos)\n4. 5 diferenciais\n5. CTA',
+        cta: '1. 5 opções de headline\n2. 5 opções de subtítulo\n3. 5 opções de botão\n4. Sugestão de urgência ética',
+        social: '1. 3 versões Instagram\n2. 2 versões LinkedIn\n3. Hashtags relevantes\n4. Sugestão de criativo',
+      }[contentType] || '';
+
+      const prompt = `${WG_CONTEXT}
+TAREFA: Crie conteúdo otimizado para SEO.
+TIPO: ${contentTypeLabels[contentType]}
+TEMA: ${contentTopic}
+
+DIRETRIZES:
+- Tom da WG Almeida: profissional, confiante, luxo silencioso
+- Inclua palavras-chave naturalmente
+- Foque em benefícios, não apenas features
+- Padrão premium da marca
+
+ENTREGUE:
+${deliverable}`;
+      setGeneratedContent(await sendClaudePrompt(prompt, 0.8));
+    } catch (err) {
+      setGeneratedContent(t('adminPage.content.error', { message: err.message }));
+    } finally {
+      setContentLoading(false);
+    }
+  };
+
+  // ─── Consultor Estratégico ─────────────────────────────────────────────────
+  const askConsultant = async () => {
+    if (!question.trim()) return;
+    setConsultantLoading(true);
+    setConsultantResponse('');
+    try {
+      const prompt = `${WG_CONTEXT}
+Você é um consultor estratégico de marketing digital especializado em arquitetura e construção de alto padrão.
+
+PERGUNTA (WG Almeida):
+${question}
+
+Responda como consultor experiente:
+- Direto e prático, com exemplos específicos
+- Considere o mercado de São Paulo
+- Foque em ações que geram resultado
+- Sugira métricas para acompanhar`;
+      setConsultantResponse(await sendClaudePrompt(prompt, 0.7));
+    } catch (err) {
+      setConsultantResponse(t('adminPage.consultant.error', { message: err.message }));
+    } finally {
+      setConsultantLoading(false);
+    }
+  };
+
+  // ─── Salvar configurações ──────────────────────────────────────────────────
+  const savePlatformSettings = () => {
+    localStorage.setItem('wg_admin_platforms', JSON.stringify(platformSettings));
+    setSettingsSaved(true);
+    setTimeout(() => setSettingsSaved(false), 2500);
+  };
+
+  const updatePlatformSetting = (platformId, field, value) => {
+    setPlatformSettings((prev) => ({
+      ...prev,
+      [platformId]: { ...prev[platformId], [field]: value },
+    }));
+  };
+
+  const toggleTokenVisibility = (key) => {
+    setVisibleTokens((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  // ─── Tabs ─────────────────────────────────────────────────────────────────
+  const tabs = [
+    { id: 'dashboard', label: 'Dashboard', icon: Layers },
+    { id: 'social', label: 'Publicador Social', icon: Share2 },
+    { id: 'seo', label: t('adminPage.tabs.seo'), icon: Search },
+    { id: 'content', label: t('adminPage.tabs.content'), icon: FileText },
+    { id: 'consultant', label: t('adminPage.tabs.consultant'), icon: TrendingUp },
+    { id: 'configuracoes', label: 'Configurações', icon: Settings },
+  ];
+
   const quickQuestions = t('adminPage.quickQuestions', { returnObjects: true });
 
+  // ─── Render ───────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container-custom">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-wg-orange rounded-lg flex items-center justify-center">
-              <Lightbulb className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-semibold text-wg-black">{t('adminPage.title')}</h1>
-              <p className="text-sm text-gray-500">{t('adminPage.subtitle')}</p>
+    <>
+      <SEO pathname="/admin" title="Admin WG Almeida" description="Painel administrativo interno" noindex />
+      <div className="min-h-screen bg-gray-50 py-8">
+        <div className="container-custom">
+
+          {/* Header */}
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 bg-wg-orange rounded-lg flex items-center justify-center">
+                <Lightbulb className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-semibold text-wg-black">{t('adminPage.title')}</h1>
+                <p className="text-sm text-gray-500">{t('adminPage.subtitle')}</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Tabs */}
-        <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-                activeTab === tab.id
-                  ? 'bg-wg-orange text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              <tab.icon className="w-4 h-4" />
-              {tab.label}
-            </button>
-          ))}
-        </div>
+          {/* Tabs */}
+          <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
+                  activeTab === tab.id
+                    ? 'bg-wg-orange text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                }`}
+              >
+                <tab.icon className="w-4 h-4" />
+                {tab.label}
+              </button>
+            ))}
+          </div>
 
-        {/* Content */}
-        <motion.div
-          key={activeTab}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
-        >
-          {/* SEO Analyzer */}
-          {activeTab === 'seo' && (
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
-                <BarChart3 className="w-6 h-6 text-wg-orange" />
-                <div>
-                  <h2 className="text-lg font-semibold">{t('adminPage.seo.title')}</h2>
-                  <p className="text-sm text-gray-500">{t('adminPage.seo.subtitle')}</p>
-                </div>
-              </div>
+          {/* Painel de conteúdo */}
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
+          >
 
-              <div className="flex gap-3">
-                <input
-                  type="text"
-                  value={seoUrl}
-                  onChange={(e) => setSeoUrl(e.target.value)}
-                  placeholder={t('adminPage.seo.placeholder')}
-                  className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
-                />
-                <button
-                  onClick={analyzeSEO}
-                  disabled={isLoading || !seoUrl.trim()}
-                  className="px-6 py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center gap-2"
-                >
-                  {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
-                  {t('adminPage.seo.analyze')}
-                </button>
-              </div>
+            {/* ══ DASHBOARD ══════════════════════════════════════════════════ */}
+            {activeTab === 'dashboard' && (
+              <div className="space-y-6">
 
-              {seoAnalysis && (
-                <div className="relative">
+                {/* Header avaliações */}
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+                  <Star className="w-6 h-6 text-wg-orange" />
+                  <div>
+                    <h2 className="text-lg font-semibold">Avaliações Google</h2>
+                    <p className="text-sm text-gray-500">Avaliações em tempo real + respostas com IA</p>
+                  </div>
                   <button
-                    onClick={() => handleCopy(seoAnalysis)}
-                    className="absolute top-3 right-3 p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                    onClick={fetchReviews}
+                    className="ml-auto p-2 text-gray-400 hover:text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
+                    title="Atualizar"
                   >
-                    {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4 text-gray-400" />}
+                    <RefreshCw className={`w-4 h-4 ${reviewsLoading ? 'animate-spin' : ''}`} />
                   </button>
-                  <div className="bg-gray-50 rounded-xl p-6 prose prose-sm max-w-none whitespace-pre-wrap">
-                    {seoAnalysis}
+                </div>
+
+                {reviewsLoading && (
+                  <div className="flex items-center justify-center py-8 text-gray-400">
+                    <Loader2 className="w-5 h-5 animate-spin mr-2" /> Carregando avaliações...
+                  </div>
+                )}
+
+                {/* Resumo de rating */}
+                {reviews && !reviewsLoading && (
+                  <div className="flex items-center gap-4 p-4 bg-yellow-50 rounded-xl border border-yellow-100">
+                    <div className="text-4xl font-bold text-yellow-500">
+                      {Number(reviews.averageRating).toFixed(1)}
+                    </div>
+                    <div>
+                      <StarRating rating={reviews.averageRating} size="lg" />
+                      <p className="text-sm text-gray-500 mt-1">{reviews.reviewCount} avaliações verificadas</p>
+                    </div>
+                    {reviews.sourceUrl && (
+                      <a
+                        href={reviews.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ml-auto text-sm text-blue-600 hover:underline flex items-center gap-1"
+                      >
+                        Ver no Google <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
+                )}
+
+                {/* Lista de avaliações */}
+                {reviews?.reviews?.length > 0 && !reviewsLoading && (
+                  <div className="space-y-4">
+                    {reviews.reviews.map((review, i) => (
+                      <div key={review.id || i} className="border border-gray-100 rounded-xl p-4 space-y-3">
+                        <div className="flex items-start gap-3">
+                          <div className="w-9 h-9 rounded-full bg-wg-orange text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
+                            {review.avatar || review.name?.[0] || 'C'}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-medium text-sm">{review.name}</p>
+                            <div className="flex items-center gap-2 mt-0.5">
+                              <StarRating rating={review.rating} />
+                              {review.date && <span className="text-xs text-gray-400">{review.date}</span>}
+                            </div>
+                          </div>
+                        </div>
+                        {review.text && (
+                          <p className="text-sm text-gray-600 leading-relaxed">{review.text}</p>
+                        )}
+
+                        {/* Resposta gerada por IA */}
+                        {reviewResponses[i] && (
+                          <div className="bg-blue-50 border border-blue-100 rounded-lg p-3 relative">
+                            <div className="flex items-center gap-1 mb-1.5">
+                              <MessageSquare className="w-3.5 h-3.5 text-blue-600" />
+                              <span className="text-xs font-medium text-blue-600">Resposta sugerida pela IA</span>
+                            </div>
+                            <p className="text-xs text-gray-700 leading-relaxed pr-8">{reviewResponses[i]}</p>
+                            <button
+                              onClick={() => handleCopy(reviewResponses[i], `review-${i}`)}
+                              className="absolute top-2.5 right-2.5 p-1.5 hover:bg-blue-100 rounded"
+                            >
+                              {copiedId === `review-${i}`
+                                ? <Check className="w-3.5 h-3.5 text-green-500" />
+                                : <Copy className="w-3.5 h-3.5 text-gray-400" />}
+                            </button>
+                          </div>
+                        )}
+
+                        <button
+                          onClick={() => generateReviewResponse(review, i)}
+                          disabled={responseLoading === i}
+                          className="text-xs px-3 py-1.5 bg-wg-orange/10 text-wg-orange rounded-lg hover:bg-wg-orange/20 transition-colors disabled:opacity-50 flex items-center gap-1.5"
+                        >
+                          {responseLoading === i
+                            ? <Loader2 className="w-3 h-3 animate-spin" />
+                            : <MessageSquare className="w-3 h-3" />}
+                          {reviewResponses[i] ? 'Regenerar resposta' : 'Gerar resposta com IA'}
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Quick links — plataformas */}
+                <div className="pt-4 border-t border-gray-100">
+                  <h3 className="text-sm font-semibold text-gray-700 mb-3">Acesso rápido às plataformas</h3>
+                  <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                    {Object.entries(PLATFORM_CONFIG).map(([id, p]) => (
+                      <a
+                        key={id}
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-col items-center gap-1.5 p-3 rounded-xl border border-gray-100 hover:border-wg-orange/40 hover:bg-wg-orange/5 transition-all group"
+                      >
+                        <div className={`w-10 h-10 ${p.bg} rounded-xl flex items-center justify-center text-sm font-bold ${p.tc}`}>
+                          {p.abbr}
+                        </div>
+                        <span className="text-xs text-gray-500 group-hover:text-gray-700 text-center leading-tight">
+                          {p.name.split(' ').slice(0, 2).join(' ')}
+                        </span>
+                      </a>
+                    ))}
                   </div>
                 </div>
-              )}
-            </div>
-          )}
 
-          {/* Content Generator */}
-          {activeTab === 'content' && (
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
-                <FileText className="w-6 h-6 text-wg-orange" />
-                <div>
-                  <h2 className="text-lg font-semibold">{t('adminPage.content.title')}</h2>
-                  <p className="text-sm text-gray-500">{t('adminPage.content.subtitle')}</p>
+                {/* Quick links — ferramentas */}
+                <div className="pt-4 border-t border-gray-100">
+                  <h3 className="text-sm font-semibold text-gray-700 mb-3">Ferramentas & Links do site</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { label: 'Site Principal', url: 'https://wgalmeida.com.br' },
+                      { label: 'Projetos', url: 'https://wgalmeida.com.br/projetos' },
+                      { label: 'Blog', url: 'https://wgalmeida.com.br/blog' },
+                      { label: 'Solicite Proposta', url: 'https://wgalmeida.com.br/solicite-proposta' },
+                      { label: 'Google Analytics', url: 'https://analytics.google.com' },
+                      { label: 'Search Console', url: 'https://search.google.com/search-console' },
+                      { label: 'Google Meu Negócio', url: 'https://business.google.com' },
+                    ].map(({ label, url }) => (
+                      <a
+                        key={url}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs px-3 py-1.5 bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800 rounded-lg flex items-center gap-1.5 transition-colors"
+                      >
+                        {label} <ExternalLink className="w-3 h-3" />
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
+            )}
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">{t('adminPage.content.typeLabel')}</label>
-                  <select
-                    value={contentType}
-                    onChange={(e) => setContentType(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
-                  >
-                    <option value="pagina">{t('adminPage.contentTypes.page')}</option>
-                    <option value="blog">{t('adminPage.contentTypes.blog')}</option>
-                    <option value="descricao">{t('adminPage.contentTypes.description')}</option>
-                    <option value="cta">{t('adminPage.contentTypes.cta')}</option>
-                    <option value="social">{t('adminPage.contentTypes.social')}</option>
-                  </select>
+            {/* ══ PUBLICADOR SOCIAL ═══════════════════════════════════════════ */}
+            {activeTab === 'social' && (
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+                  <Share2 className="w-6 h-6 text-wg-orange" />
+                  <div>
+                    <h2 className="text-lg font-semibold">Publicador Social</h2>
+                    <p className="text-sm text-gray-500">
+                      Gere conteúdo otimizado para 6 plataformas de uma vez
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">{t('adminPage.content.topicLabel')}</label>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Tema / Assunto *</label>
+                    <input
+                      type="text"
+                      value={socialTopic}
+                      onChange={(e) => setSocialTopic(e.target.value)}
+                      placeholder="Ex: Apartamento 180m² concluído no Itaim Bibi"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Detalhes (opcional)</label>
+                    <input
+                      type="text"
+                      value={socialNotes}
+                      onChange={(e) => setSocialNotes(e.target.value)}
+                      placeholder="Ex: Estilo contemporâneo, mármore branco, 3 suítes"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  onClick={generateSocial}
+                  disabled={socialLoading || !socialTopic.trim()}
+                  className="w-full py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 font-medium"
+                >
+                  {socialLoading
+                    ? <><Loader2 className="w-4 h-4 animate-spin" /> Gerando para todas as plataformas...</>
+                    : <><Zap className="w-4 h-4" /> Gerar para todas as plataformas</>}
+                </button>
+
+                {/* Conteúdo gerado por plataforma */}
+                {!socialLoading && (socialContent.instagram || socialContent.google) && (
+                  <div className="space-y-4 pt-2">
+                    <p className="text-sm font-medium text-gray-600">
+                      Conteúdo gerado — edite e copie para cada plataforma:
+                    </p>
+
+                    {/* Instagram */}
+                    <PlatformCard
+                      platformId="instagram"
+                      content={socialContent.instagram}
+                      onContentChange={(v) => setSocialContent((p) => ({ ...p, instagram: v }))}
+                      copiedId={copiedId}
+                      onCopy={handleCopy}
+                      settings={platformSettings.instagram}
+                    />
+
+                    {/* Pinterest (título + descrição separados) */}
+                    <div className="border border-gray-200 rounded-xl overflow-hidden">
+                      <div className="flex items-center gap-3 p-3 bg-gray-50 border-b border-gray-100">
+                        <div className="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">P</div>
+                        <div className="flex-1">
+                          <span className="font-medium text-sm">Pinterest</span>
+                          <p className="text-xs text-gray-500">{PLATFORM_CONFIG.pinterest.tip}</p>
+                        </div>
+                        <a
+                          href={PLATFORM_CONFIG.pinterest.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-xs text-gray-500 hover:text-wg-orange transition-colors"
+                        >
+                          Publicar <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                      <div className="p-3 space-y-3">
+                        <div>
+                          <label className="text-xs text-gray-500 mb-1 block">
+                            Título ({socialContent.pinterest_title.length}/100)
+                          </label>
+                          <div className="relative">
+                            <input
+                              value={socialContent.pinterest_title}
+                              onChange={(e) => setSocialContent((p) => ({ ...p, pinterest_title: e.target.value }))}
+                              className="w-full pr-10 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
+                            />
+                            <button
+                              onClick={() => handleCopy(socialContent.pinterest_title, 'p_title')}
+                              className="absolute right-2 top-1/2 -translate-y-1/2 p-1"
+                            >
+                              {copiedId === 'p_title'
+                                ? <Check className="w-3.5 h-3.5 text-green-500" />
+                                : <Copy className="w-3.5 h-3.5 text-gray-400" />}
+                            </button>
+                          </div>
+                        </div>
+                        <div>
+                          <label className="text-xs text-gray-500 mb-1 block">
+                            Descrição ({socialContent.pinterest_desc.length}/{PLATFORM_CONFIG.pinterest.maxChars})
+                          </label>
+                          <div className="relative">
+                            <textarea
+                              rows={4}
+                              value={socialContent.pinterest_desc}
+                              onChange={(e) => setSocialContent((p) => ({ ...p, pinterest_desc: e.target.value }))}
+                              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-wg-orange/30 resize-y"
+                            />
+                            <button
+                              onClick={() => handleCopy(socialContent.pinterest_desc, 'p_desc')}
+                              className="absolute top-2 right-2 p-1"
+                            >
+                              {copiedId === 'p_desc'
+                                ? <Check className="w-3.5 h-3.5 text-green-500" />
+                                : <Copy className="w-3.5 h-3.5 text-gray-400" />}
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Google, LinkedIn, Houzz, Homify */}
+                    {['google', 'linkedin', 'houzz', 'homify'].map((pid) => (
+                      <PlatformCard
+                        key={pid}
+                        platformId={pid}
+                        content={socialContent[pid]}
+                        onContentChange={(v) => setSocialContent((p) => ({ ...p, [pid]: v }))}
+                        copiedId={copiedId}
+                        onCopy={handleCopy}
+                        settings={platformSettings[pid]}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* ══ ANÁLISE SEO ══════════════════════════════════════════════════ */}
+            {activeTab === 'seo' && (
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+                  <BarChart3 className="w-6 h-6 text-wg-orange" />
+                  <div>
+                    <h2 className="text-lg font-semibold">{t('adminPage.seo.title')}</h2>
+                    <p className="text-sm text-gray-500">{t('adminPage.seo.subtitle')}</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
                   <input
                     type="text"
-                    value={contentTopic}
-                    onChange={(e) => setContentTopic(e.target.value)}
-                    placeholder={t('adminPage.content.topicPlaceholder')}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
+                    value={seoUrl}
+                    onChange={(e) => setSeoUrl(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && analyzeSEO()}
+                    placeholder={t('adminPage.seo.placeholder')}
+                    className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
                   />
-                </div>
-              </div>
-
-              <button
-                onClick={generateContent}
-                disabled={isLoading || !contentTopic.trim()}
-                className="w-full py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
-              >
-                {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <RefreshCw className="w-4 h-4" />}
-                {t('adminPage.content.generate')}
-              </button>
-
-              {generatedContent && (
-                <div className="relative">
                   <button
-                    onClick={() => handleCopy(generatedContent)}
-                    className="absolute top-3 right-3 p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                    onClick={analyzeSEO}
+                    disabled={seoLoading || !seoUrl.trim()}
+                    className="px-6 py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center gap-2"
                   >
-                    {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4 text-gray-400" />}
+                    {seoLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
+                    {t('adminPage.seo.analyze')}
                   </button>
-                  <div className="bg-gray-50 rounded-xl p-6 prose prose-sm max-w-none whitespace-pre-wrap">
-                    {generatedContent}
+                </div>
+                {seoAnalysis && (
+                  <div className="relative">
+                    <button
+                      onClick={() => handleCopy(seoAnalysis, 'seo')}
+                      className="absolute top-3 right-3 p-2 hover:bg-gray-100 rounded-lg"
+                    >
+                      {copiedId === 'seo'
+                        ? <Check className="w-4 h-4 text-green-500" />
+                        : <Copy className="w-4 h-4 text-gray-400" />}
+                    </button>
+                    <div className="bg-gray-50 rounded-xl p-6 prose prose-sm max-w-none whitespace-pre-wrap">
+                      {seoAnalysis}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* ══ GERADOR DE CONTEÚDO ══════════════════════════════════════════ */}
+            {activeTab === 'content' && (
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+                  <FileText className="w-6 h-6 text-wg-orange" />
+                  <div>
+                    <h2 className="text-lg font-semibold">{t('adminPage.content.title')}</h2>
+                    <p className="text-sm text-gray-500">{t('adminPage.content.subtitle')}</p>
                   </div>
                 </div>
-              )}
-            </div>
-          )}
-
-          {/* Strategic Consultant */}
-          {activeTab === 'consultant' && (
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
-                <Target className="w-6 h-6 text-wg-orange" />
-                <div>
-                  <h2 className="text-lg font-semibold">{t('adminPage.consultant.title')}</h2>
-                  <p className="text-sm text-gray-500">{t('adminPage.consultant.subtitle')}</p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{t('adminPage.content.typeLabel')}</label>
+                    <select
+                      value={contentType}
+                      onChange={(e) => setContentType(e.target.value)}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
+                    >
+                      <option value="pagina">{t('adminPage.contentTypes.page')}</option>
+                      <option value="blog">{t('adminPage.contentTypes.blog')}</option>
+                      <option value="descricao">{t('adminPage.contentTypes.description')}</option>
+                      <option value="cta">{t('adminPage.contentTypes.cta')}</option>
+                      <option value="social">{t('adminPage.contentTypes.social')}</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{t('adminPage.content.topicLabel')}</label>
+                    <input
+                      type="text"
+                      value={contentTopic}
+                      onChange={(e) => setContentTopic(e.target.value)}
+                      placeholder={t('adminPage.content.topicPlaceholder')}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
+                    />
+                  </div>
                 </div>
+                <button
+                  onClick={generateContent}
+                  disabled={contentLoading || !contentTopic.trim()}
+                  className="w-full py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {contentLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <RefreshCw className="w-4 h-4" />}
+                  {t('adminPage.content.generate')}
+                </button>
+                {generatedContent && (
+                  <div className="relative">
+                    <button
+                      onClick={() => handleCopy(generatedContent, 'content')}
+                      className="absolute top-3 right-3 p-2 hover:bg-gray-100 rounded-lg"
+                    >
+                      {copiedId === 'content'
+                        ? <Check className="w-4 h-4 text-green-500" />
+                        : <Copy className="w-4 h-4 text-gray-400" />}
+                    </button>
+                    <div className="bg-gray-50 rounded-xl p-6 prose prose-sm max-w-none whitespace-pre-wrap">
+                      {generatedContent}
+                    </div>
+                  </div>
+                )}
               </div>
+            )}
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
-                {(Array.isArray(quickQuestions) ? quickQuestions : []).map((q, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setQuestion(q)}
-                    className="text-xs text-left px-3 py-2 bg-gray-100 hover:bg-wg-orange/10 rounded-lg transition-colors text-gray-600 hover:text-wg-orange"
-                  >
-                    {q}
-                  </button>
-                ))}
-              </div>
-
-              <div className="flex gap-3">
+            {/* ══ CONSULTOR ESTRATÉGICO ════════════════════════════════════════ */}
+            {activeTab === 'consultant' && (
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+                  <Target className="w-6 h-6 text-wg-orange" />
+                  <div>
+                    <h2 className="text-lg font-semibold">{t('adminPage.consultant.title')}</h2>
+                    <p className="text-sm text-gray-500">{t('adminPage.consultant.subtitle')}</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                  {(Array.isArray(quickQuestions) ? quickQuestions : []).map((q, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setQuestion(q)}
+                      className="text-xs text-left px-3 py-2 bg-gray-100 hover:bg-wg-orange/10 rounded-lg transition-colors text-gray-600 hover:text-wg-orange"
+                    >
+                      {q}
+                    </button>
+                  ))}
+                </div>
                 <textarea
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
                   placeholder={t('adminPage.consultant.placeholder')}
                   rows={3}
-                  className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30 resize-none"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30 resize-none"
                 />
+                <button
+                  onClick={askConsultant}
+                  disabled={consultantLoading || !question.trim()}
+                  className="w-full py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {consultantLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+                  {t('adminPage.consultant.submit')}
+                </button>
+                {consultantResponse && (
+                  <div className="relative">
+                    <button
+                      onClick={() => handleCopy(consultantResponse, 'consultant')}
+                      className="absolute top-3 right-3 p-2 hover:bg-gray-100 rounded-lg"
+                    >
+                      {copiedId === 'consultant'
+                        ? <Check className="w-4 h-4 text-green-500" />
+                        : <Copy className="w-4 h-4 text-gray-400" />}
+                    </button>
+                    <div className="bg-gray-50 rounded-xl p-6 prose prose-sm max-w-none whitespace-pre-wrap">
+                      {consultantResponse}
+                    </div>
+                  </div>
+                )}
               </div>
+            )}
 
-              <button
-                onClick={askConsultant}
-                disabled={isLoading || !question.trim()}
-                className="w-full py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
-              >
-                {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
-                {t('adminPage.consultant.submit')}
-              </button>
-
-              {consultantResponse && (
-                <div className="relative">
-                  <button
-                    onClick={() => handleCopy(consultantResponse)}
-                    className="absolute top-3 right-3 p-2 hover:bg-gray-100 rounded-lg transition-colors"
-                  >
-                    {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4 text-gray-400" />}
-                  </button>
-                  <div className="bg-gray-50 rounded-xl p-6 prose prose-sm max-w-none whitespace-pre-wrap">
-                    {consultantResponse}
+            {/* ══ CONFIGURAÇÕES ═══════════════════════════════════════════════ */}
+            {activeTab === 'configuracoes' && (
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+                  <Settings className="w-6 h-6 text-wg-orange" />
+                  <div>
+                    <h2 className="text-lg font-semibold">Configurações de Plataformas</h2>
+                    <p className="text-sm text-gray-500">
+                      Vincule suas contas para que os botões "Publicar" abram o perfil correto.
+                      Os dados são salvos localmente neste navegador.
+                    </p>
                   </div>
                 </div>
-              )}
-            </div>
-          )}
-        </motion.div>
 
-        {/* Footer Info */}
-        <div className="mt-6 text-center text-sm text-gray-400">
-          <Globe className="w-4 h-4 inline mr-1" />
-          {t('adminPage.footer')}
+                {/* Cards por plataforma */}
+                <div className="space-y-5">
+                  {Object.entries(PLATFORM_FIELDS).map(([platformId, fields]) => {
+                    const p = PLATFORM_CONFIG[platformId];
+                    const saved = platformSettings[platformId] || {};
+                    const hasAnyValue = fields.some((f) => saved[f.key]);
+                    return (
+                      <div key={platformId} className="border border-gray-200 rounded-xl overflow-hidden">
+                        {/* Cabeçalho da plataforma */}
+                        <div className="flex items-center gap-3 p-4 bg-gray-50 border-b border-gray-100">
+                          <div className={`w-9 h-9 ${p.bg} rounded-lg flex items-center justify-center text-sm font-bold ${p.tc}`}>
+                            {p.abbr}
+                          </div>
+                          <div className="flex-1">
+                            <span className="font-medium">{p.name}</span>
+                            {hasAnyValue && (
+                              <span className="ml-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">
+                                Configurado
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Campos */}
+                        <div className="p-4 grid sm:grid-cols-2 gap-3">
+                          {fields.map((field) => {
+                            const tokenKey = `${platformId}_${field.key}`;
+                            const isPassword = field.type === 'password';
+                            const isVisible = visibleTokens[tokenKey];
+                            return (
+                              <div key={field.key}>
+                                <label className="block text-xs font-medium text-gray-600 mb-1">
+                                  {field.label}
+                                  {isPassword && (
+                                    <span className="ml-1 text-gray-400 font-normal">(criptografado localmente)</span>
+                                  )}
+                                </label>
+                                <div className="relative">
+                                  <input
+                                    type={isPassword && !isVisible ? 'password' : 'text'}
+                                    value={saved[field.key] || ''}
+                                    onChange={(e) => updatePlatformSetting(platformId, field.key, e.target.value)}
+                                    placeholder={field.placeholder}
+                                    className={`w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-wg-orange/30 ${isPassword ? 'pr-9' : ''}`}
+                                  />
+                                  {isPassword && (
+                                    <button
+                                      type="button"
+                                      onClick={() => toggleTokenVisibility(tokenKey)}
+                                      className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600"
+                                    >
+                                      {isVisible
+                                        ? <EyeOff className="w-3.5 h-3.5" />
+                                        : <Eye className="w-3.5 h-3.5" />}
+                                    </button>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Aviso de segurança */}
+                <div className="flex gap-2 p-3 bg-amber-50 border border-amber-100 rounded-xl text-xs text-amber-700">
+                  <span>⚠️</span>
+                  <span>
+                    Os dados são salvos apenas no <strong>localStorage deste navegador</strong> e nunca enviados para
+                    servidores externos. Access Tokens com permissão de escrita devem ser tratados como senhas.
+                    Para publicação automatizada, configure as chaves como variáveis de ambiente no Vercel.
+                  </span>
+                </div>
+
+                {/* Botão salvar */}
+                <button
+                  onClick={savePlatformSettings}
+                  className="w-full py-3 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors flex items-center justify-center gap-2 font-medium"
+                >
+                  {settingsSaved
+                    ? <><Check className="w-4 h-4" /> Configurações salvas!</>
+                    : <><Save className="w-4 h-4" /> Salvar configurações</>}
+                </button>
+              </div>
+            )}
+
+          </motion.div>
+
+          {/* Footer */}
+          <div className="mt-6 text-center text-sm text-gray-400">
+            <Globe className="w-4 h-4 inline mr-1" />
+            {t('adminPage.footer')}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

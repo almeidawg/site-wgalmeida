@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { ArrowRight, Building2, Hammer, Ruler, MapPin, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
@@ -18,9 +18,18 @@ const RegionTemplate = ({
   highlights,
   cta
 }) => {
+  const toSlug = (value = '') =>
+    value
+      .toString()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/\s+/g, '-');
+
   const { t } = useTranslation();
   const regionContent = regionKey ? t(`regions.${regionKey}`, { returnObjects: true }) : null;
   const regionName = regionContent?.name || region;
+  const regionSlug = regionKey || toSlug(regionName);
   const resolvedTitle = title || regionContent?.title;
   const resolvedMetaDescription = metaDescription || regionContent?.metaDescription;
   const resolvedHeroImage = heroImage || regionContent?.heroImage;
@@ -41,7 +50,7 @@ const RegionTemplate = ({
         <title>{resolvedTitle} | Grupo WG Almeida</title>
         <meta name="description" content={resolvedMetaDescription} />
         <meta name="keywords" content={t('regions.defaults.keywords', { region: regionName })} />
-        <link rel="canonical" href={`https://wgalmeida.com.br/${regionName?.toLowerCase().replace(/\s+/g, '-')}`} />
+        <link rel="canonical" href={`https://wgalmeida.com.br/${regionSlug}`} />
 
         {/* Schema.org JSON-LD para LocalBusiness */}
         <script type="application/ld+json">
@@ -50,7 +59,7 @@ const RegionTemplate = ({
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden -mt-20">
+      <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden hero-under-header">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${resolvedHeroImage || '/images/hero-region.jpg'})` }}

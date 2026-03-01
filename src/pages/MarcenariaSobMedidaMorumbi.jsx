@@ -1,6 +1,6 @@
 import React from 'react';
 import SEO, { schemas } from '@/components/SEO';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -79,7 +79,7 @@ const MarcenariaSobMedidaMorumbi = () => {
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": "LocalBusiness",
     "name": "Marcenaria Sob Medida Morumbi | Grupo WG Almeida",
     "description": "Marcenaria sob medida de alto padrão no Morumbi. Closets, cozinhas, estantes e ambientes integrados. Design autoral com materiais premium. Orçamento personalizado.",
     "url": pageUrl,
@@ -95,11 +95,6 @@ const MarcenariaSobMedidaMorumbi = () => {
         "@type": "City",
         "name": "São Paulo"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "47"
     }
   };
 
@@ -365,3 +360,9 @@ const MarcenariaSobMedidaMorumbi = () => {
 };
 
 export default MarcenariaSobMedidaMorumbi;
+
+
+
+
+
+

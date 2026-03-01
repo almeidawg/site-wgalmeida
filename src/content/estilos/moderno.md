@@ -1,7 +1,7 @@
 ---
-title: "Moderno"
+title: "Estilo Moderno: Guia de Decoração com Linhas Limpas e Tecnologia Integrada"
 slug: "moderno"
-excerpt: "Design contemporâneo com linhas limpas, funcionalidade inteligente e tecnologia integrada para espaços do século XXI."
+excerpt: "Entenda o estilo moderno na decoração com linhas limpas, funcionalidade e tecnologia para ambientes contemporâneos."
 image: "/images/estilos/moderno.webp"
 quote: "A chave do sucesso nos negócios é perceber aonde o mundo se dirige e chegar ali primeiro."
 author: "Bill Gates"
@@ -14,7 +14,7 @@ colors: ["#2C3E50", "#ECF0F1", "#3498DB", "#95A5A6"]
 
 ## O Estilo Moderno Contemporâneo
 
-O estilo moderno é a expressão do **design contemporâneo**, focado em funcionalidade, tecnologia e simplicidade sofisticada. Diferente do minimalismo extremo, o moderno equilibra forma e função com **elegância e praticidade**.
+O estilo moderno e a expressao do **design contemporaneo**, com foco em funcionalidade, tecnologia e simplicidade sofisticada. Diferente do minimalismo extremo, ele equilibra forma e funcao com elegancia e praticidade.
 
 Surgido no século XXI, o estilo moderno incorpora **avanços tecnológicos**, materiais inovadores e soluções inteligentes para criar espaços que atendem às necessidades da vida atual.
 
@@ -166,9 +166,7 @@ O banheiro moderno é um **spa particular tecnológico**.
 - Superfícies lisas e brilhantes
 - Laca (branca, preta, colorida)
 - Aço escovado
-- Vidro espelhado ou fum
-
-ê
+- Vidro espelhado ou fumê
 - LED integrado
 
 ## Paleta de Cores Moderna

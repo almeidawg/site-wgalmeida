@@ -1,7 +1,7 @@
 ---
-title: "Mid-Century Modern"
+title: "Mid-Century Modern: Guia do Estilo Retrô Sofisticado dos Anos 50"
 slug: "mid-century"
-excerpt: "Design icônico dos anos 50-70 com linhas orgânicas, pés palito e a perfeita união entre forma e função."
+excerpt: "Entenda o estilo Mid-Century Modern e aprenda a usar móveis icônicos, linhas limpas e cores retrô em ambientes atuais."
 image: "/images/estilos/mid-century.webp"
 quote: "Reconheça a necessidade e encontre a forma."
 author: "Charles Eames"
@@ -14,7 +14,7 @@ colors: ["#D4AF37", "#2C5F2D", "#FF6B35", "#F5E6D3"]
 
 ## De Onde Surgiu o Mid-Century Modern?
 
-**Mid-Century Modern** refere-se ao movimento de design que floresceu aproximadamente de **1945 a 1969** - o meio do século XX. Surgiu no período pós-Segunda Guerra Mundial, uma era de otimismo, inovação tecnológica e redesenvolvimento.
+**Mid-Century Modern** refere-se ao movimento de design que floresceu entre **1945 e 1969**, no pós-guerra. A estética une otimismo, inovação e funcionalidade, sendo ideal para quem busca um retrô elegante com aplicação contemporânea.
 
 O estilo nasceu principalmente nos **Estados Unidos** e **Escandinávia**, com designers icônicos que revolucionaram o design de móveis e interiores.
 

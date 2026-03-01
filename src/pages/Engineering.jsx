@@ -1,9 +1,10 @@
 import React from 'react';
-import SEO, { schemas } from '@/components/SEO';
-import { motion } from 'framer-motion';
+import SEO from '@/components/SEO';
+import { motion } from '@/lib/motion-lite';
 import { Wrench, ClipboardCheck, Zap, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { SCHEMAS } from '@/data/schemaConfig';
 
 // Animações elegantes
 const fadeInUp = {
@@ -42,19 +43,12 @@ const Engineering = () => {
   return (
     <>
       <SEO
-        title={t('seo.engineering.title')}
-        description={t('seo.engineering.description')}
-        keywords={t('seo.engineering.keywords')}
-        url="https://wgalmeida.com.br/engenharia"
-        schema={schemas.service(
-          t('engineeringPage.schema.name'),
-          t('engineeringPage.schema.description'),
-          'https://wgalmeida.com.br/engenharia'
-        )}
+        pathname="/engenharia"
+        schema={[SCHEMAS.serviceEngineering, SCHEMAS.breadcrumbEngineering]}
       />
 
       {/* Hero elegante com cor da unidade */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -65,7 +59,7 @@ const Engineering = () => {
             className="w-full h-full object-cover"
             alt={t('engineeringPage.hero.imageAlt')}
             src="/images/banners/ENGENHARIA.webp"
-            srcSet="/images/banners/ENGENHARIA-640.webp 640w, /images/banners/ENGENHARIA-960.webp 960w, /images/banners/ENGENHARIA-1280.webp 1280w, /images/banners/ENGENHARIA.webp 1920w"
+            srcSet="/images/banners/ENGENHARIA-640.webp 640w, /images/banners/ENGENHARIA-960-opt.webp 960w, /images/banners/ENGENHARIA-1280.webp 1280w, /images/banners/ENGENHARIA.webp 1920w"
             sizes="100vw"
             width="1920"
             height="1080"

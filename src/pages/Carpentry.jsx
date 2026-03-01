@@ -1,10 +1,11 @@
 import React from 'react';
-import SEO, { schemas } from '@/components/SEO';
-import { motion } from 'framer-motion';
+import SEO from '@/components/SEO';
+import { motion } from '@/lib/motion-lite';
 import { Hammer, Package, Sparkles, Ruler, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
+import { SCHEMAS } from '@/data/schemaConfig';
 
 // Animações elegantes
 const fadeInUp = {
@@ -43,19 +44,12 @@ const Carpentry = () => {
   return (
     <>
       <SEO
-        title={t('seo.carpentry.title')}
-        description={t('seo.carpentry.description')}
-        keywords={t('seo.carpentry.keywords')}
-        url="https://wgalmeida.com.br/marcenaria"
-        schema={schemas.service(
-          t('carpentryPage.schema.name'),
-          t('carpentryPage.schema.description'),
-          'https://wgalmeida.com.br/marcenaria'
-        )}
+        pathname="/marcenaria"
+        schema={[SCHEMAS.serviceWoodworking, SCHEMAS.breadcrumbWoodworking]}
       />
 
       {/* Hero elegante com cor da unidade */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}

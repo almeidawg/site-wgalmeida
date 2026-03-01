@@ -1,6 +1,6 @@
 import React from 'react';
 import SEO, { schemas } from '@/components/SEO';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,

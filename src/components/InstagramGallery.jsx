@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { ArrowLeft, ArrowRight, X, Instagram, ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -166,7 +166,10 @@ const InstagramGallery = () => {
                     src={getInstagramImageUrl(post)}
                     alt={t('instagramGallery.postAlt', { id: post.id })}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    width={400}
+                    height={400}
                     loading="lazy"
+                    decoding="async"
                     onError={() => handleImageError(post.id)}
                   />
                 ) : (
@@ -304,6 +307,10 @@ const InstagramGallery = () => {
                     src={getInstagramImageUrl(selectedPost)}
                     alt={t('instagramGallery.postAlt', { id: selectedPost.id })}
                     className="w-full h-full object-contain"
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    decoding="async"
                     onError={() => handleImageError(selectedPost.id)}
                   />
                 ) : (

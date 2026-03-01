@@ -82,6 +82,7 @@ export function OptimizedImage({
         }}
         onLoad={handleLoad}
         loading={loading === "lazy" ? "lazy" : "eager"}
+        decoding="async"
         width={width}
         height={height}
       />
@@ -127,6 +128,7 @@ export function LazyImage({ src, alt, className = "", width, height, onLoad }) {
         if (onLoad) onLoad();
       }}
       loading="lazy"
+      decoding="async"
     />
   );
 }

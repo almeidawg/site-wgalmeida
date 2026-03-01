@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar EmailJS - WG Almeida</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        .status-box {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        .status-box.info {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            color: #0c5460;
+        }
+        .status-box.success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            color: #155724;
+        }
+        .status-box.error {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            color: #721c24;
+        }
+        .status-box.warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+        }
+        button {
+            background: #F25C26;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        button:hover {
+            background: #d94a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(242, 92, 38, 0.3);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .btn-secondary {
+            background: #5E9B94;
+        }
+        .btn-secondary:hover {
+            background: #4a7c76;
+        }
+        #results {
+            margin-top: 30px;
+        }
+        .result-item {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-family: monospace;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #F25C26;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .instructions {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid #F25C26;
+        }
+        .instructions h3 {
+            color: #F25C26;
+            margin-bottom: 15px;
+        }
+        .instructions ol {
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .config-info {
+            background: #2e2e2e;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .config-info div {
+            margin: 8px 0;
+        }
+        .config-info strong {
+            color: #F25C26;
+        }
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Configurador Automático EmailJS</h1>
+        <p class="subtitle">WG Almeida - Sistema de Notificações por Email</p>
+
+        <div class="config-info">
+            <div><strong>📧 Email Destino:</strong> william@wgalmeida.com.br</div>
+            <div><strong>🔑 Service ID:</strong> service_6pculfm</div>
+            <div><strong>🔑 Public Key:</strong> BheGSXFZ0J0McwvzU</div>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 O que este configurador faz:</h3>
+            <ol>
+                <li><strong>Testa</strong> se os templates já existem no EmailJS</li>
+                <li><strong>Envia emails de teste</strong> para william@wgalmeida.com.br</li>
+                <li><strong>Mostra instruções</strong> caso os templates precisem ser criados</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <button onclick="testarTemplates()">🧪 Testar Templates</button>
+            <button onclick="enviarEmailTeste('contato')" class="btn-secondary">📧 Testar Email Contato</button>
+            <button onclick="enviarEmailTeste('proposta')" class="btn-secondary">📧 Testar Email Proposta</button>
+        </div>
+
+        <div id="results"></div>
+
+        <div id="instructions-section" style="display:none;">
+            <div class="instructions">
+                <h3>⚠️ Templates não encontrados! Siga estas instruções:</h3>
+                <ol>
+                    <li>Acesse: <a href="https://dashboard.emailjs.com/admin/templates" target="_blank"><strong>https://dashboard.emailjs.com/admin/templates</strong></a></li>
+                    <li>Clique em <span class="highlight">"Create New Template"</span></li>
+                    <li>Para cada template abaixo, preencha os campos e cole o HTML:
+                        <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                            <h4 style="color: #F25C26;">TEMPLATE 1: Formulário de Contato</h4>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li>• <strong>Template ID:</strong> <code>template_contato</code></li>
+                                <li>• <strong>To Email:</strong> <code>{{to_email}}</code></li>
+                                <li>• <strong>Subject:</strong> <code>🔔 Novo Contato do Site - {{subject}}</code></li>
+                                <li>• <strong>Body:</strong> Abra o arquivo <code>template-contato.html</code> e copie todo o conteúdo</li>
+                            </ul>
+                        </div>
+                        <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                            <h4 style="color: #5E9B94;">TEMPLATE 2: Formulário de Proposta</h4>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li>• <strong>Template ID:</strong> <code>template_proposta</code></li>
+                                <li>• <strong>To Email:</strong> <code>{{to_email}}</code></li>
+                                <li>• <strong>Subject:</strong> <code>🏠 Nova Proposta - {{user_name}}</code></li>
+                                <li>• <strong>Body:</strong> Abra o arquivo <code>template-proposta.html</code> e copie todo o conteúdo</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>Clique em <span class="highlight">"Save"</span> para cada template</li>
+                    <li>Volte a esta página e clique em <span class="highlight">"🧪 Testar Templates"</span> novamente</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar EmailJS
+        emailjs.init('BheGSXFZ0J0McwvzU');
+
+        const SERVICE_ID = 'service_6pculfm';
+
+        function showResult(message, type = 'info') {
+            const resultsDiv = document.getElementById('results');
+            const resultItem = document.createElement('div');
+            resultItem.className = `status-box ${type}`;
+            resultItem.innerHTML = message;
+            resultsDiv.appendChild(resultItem);
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+            document.getElementById('instructions-section').style.display = 'none';
+        }
+
+        async function testarTemplates() {
+            clearResults();
+            showResult('🔍 Testando templates do EmailJS...', 'info');
+
+            // Testar template de contato
+            const template1 = await testarTemplate('template_contato', 'Formulário de Contato');
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            // Testar template de proposta
+            const template2 = await testarTemplate('template_proposta', 'Formulário de Proposta');
+
+            if (template1 && template2) {
+                showResult('✅ <strong>SUCESSO!</strong> Todos os templates estão configurados corretamente!<br>Os emails serão enviados automaticamente para <strong>william@wgalmeida.com.br</strong>', 'success');
+            } else {
+                document.getElementById('instructions-section').style.display = 'block';
+            }
+        }
+
+        async function testarTemplate(templateId, templateName) {
+            const params = templateId === 'template_contato' ? {
+                to_email: 'william@wgalmeida.com.br',
+                user_name: 'Teste Automático',
+                user_email: 'teste@wgalmeida.com.br',
+                user_phone: '(11) 99999-9999',
+                subject: 'Teste de Configuração',
+                message: 'Este é um email de teste para verificar se o template está configurado corretamente.',
+                date: new Date().toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'short' })
+            } : {
+                to_email: 'william@wgalmeida.com.br',
+                user_name: 'Cliente Teste',
+                user_email: 'cliente@teste.com',
+                user_phone: '(11) 99999-9999',
+                project_type: 'Apartamento de Teste',
+                project_area: '100m²',
+                project_description: 'Este é um projeto de teste para verificar se o template de proposta está configurado corretamente.',
+                origin: 'teste-automatico-browser',
+                date: new Date().toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'short' })
+            };
+
+            try {
+                await emailjs.send(SERVICE_ID, templateId, params);
+                showResult(`✅ <strong>${templateName}:</strong> Template existe e está funcionando! Email de teste enviado.`, 'success');
+                return true;
+            } catch (error) {
+                showResult(`❌ <strong>${templateName}:</strong> Template não existe ou está mal configurado.<br><small>Erro: ${error.text || error.message}</small>`, 'error');
+                return false;
+            }
+        }
+
+        async function enviarEmailTeste(tipo) {
+            clearResults();
+            showResult(`📧 Enviando email de teste para ${tipo}...`, 'info');
+
+            const templateId = tipo === 'contato' ? 'template_contato' : 'template_proposta';
+            const templateName = tipo === 'contato' ? 'Formulário de Contato' : 'Formulário de Proposta';
+
+            const params = tipo === 'contato' ? {
+                to_email: 'william@wgalmeida.com.br',
+                user_name: 'João da Silva (Teste)',
+                user_email: 'joao.teste@email.com',
+                user_phone: '(11) 98765-4321',
+                subject: 'Orçamento para Projeto Residencial',
+                message: 'Olá! Gostaria de solicitar um orçamento para reforma completa de um apartamento de 80m². O projeto inclui marcenaria, pintura e iluminação. Aguardo retorno. Obrigado!',
+                date: new Date().toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'short' })
+            } : {
+                to_email: 'william@wgalmeida.com.br',
+                user_name: 'Maria Santos (Teste)',
+                user_email: 'maria.teste@email.com',
+                user_phone: '(11) 91234-5678',
+                project_type: 'Apartamento - 3 dormitórios',
+                project_area: '120m²',
+                project_description: 'Nome do Empreendimento: Edifício Teste | Área: 120m² | Possui Planta: Sim | Possui Projeto Arquitetônico: Não | Escopo: Todos os ambientes | Serviços: Marcenaria, Pintura, Iluminação, Vidraçaria',
+                origin: 'site-teste-manual',
+                date: new Date().toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'short' })
+            };
+
+            try {
+                await emailjs.send(SERVICE_ID, templateId, params);
+                showResult(`✅ <strong>Email enviado com sucesso!</strong><br>Verifique a caixa de entrada de <strong>william@wgalmeida.com.br</strong>`, 'success');
+            } catch (error) {
+                showResult(`❌ <strong>Erro ao enviar email:</strong><br>${error.text || error.message}<br><br>O template <strong>${templateId}</strong> pode não estar configurado no EmailJS.`, 'error');
+                document.getElementById('instructions-section').style.display = 'block';
+            }
+        }
+
+        // Testar automaticamente ao carregar
+        window.onload = () => {
+            setTimeout(() => {
+                showResult('👋 Bem-vindo! Clique em "🧪 Testar Templates" para verificar a configuração.', 'info');
+            }, 500);
+        };
+    </script>
+</body>
+</html>

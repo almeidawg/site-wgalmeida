@@ -5,10 +5,21 @@
   "private": true,
   "scripts": {
     "dev": "vite --host :: --port 3000",
-    "build": "vite build",
-    "build:local": "vite build --outDir dist-local --emptyOutDir false --clearScreen false",
+    "build": "npm run seo:og && vite build && npm run perf:images && npm run seo:routes",
+    "build:local": "npm run seo:og && vite build --outDir dist-local --emptyOutDir false --clearScreen false && npm run seo:routes:local",
+    "analyze": "ANALYZE=true vite build",
+    "seo:og": "node ./build-seo-og.mjs",
+    "seo:routes:local": "node ./build-seo-routes.mjs dist-local",
+    "seo:routes": "node ./build-seo-routes.mjs dist",
+    "seo:audit": "node ./tools/seo-audit.mjs",
+    "seo:validate:dist": "node ./tools/seo-validate-dist.mjs dist",
+    "seo:validate": "npm run seo:audit && npm run seo:validate:dist",
+    "seo:validate:fresh": "npm run seo:audit && npm run build && npm run seo:validate:dist",
     "preview": "vite preview --host :: --port 3000",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "perf:seo": "powershell -ExecutionPolicy Bypass -File ./test-seo.ps1",
+    "perf:assets": "node ./tools/perf-assets-report.mjs",
+    "perf:images": "node -e \"console.log('[perf:images] skipped (no-op).')\"",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
@@ -54,6 +65,10 @@
     "web-vitals": "^5.1.0"
   },
   "devDependencies": {
+    "@babel/generator": "^7.29.1",
+    "@babel/parser": "^7.29.0",
+    "@babel/traverse": "^7.29.0",
+    "@babel/types": "^7.29.0",
     "@eslint/js": "^9.39.1",
     "@prerenderer/renderer-puppeteer": "^1.2.4",
     "@testing-library/dom": "^10.4.1",
@@ -74,10 +89,13 @@
     "jsdom": "^27.4.0",
     "postcss": "^8.4.31",
     "react-snap": "^1.23.0",
+    "rollup-plugin-visualizer": "^6.0.5",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.3.5",
     "typescript-eslint": "^8.49.0",
     "vite": "^4.4.5",
+    "vite-plugin-compression2": "^2.4.0",
     "vitest": "^4.0.16"
-  }
+  },
+  "packageManager": "yarn@4.12.0+sha512.f45ab632439a67f8bc759bf32ead036a1f413287b9042726b7cc4818b7b49e14e9423ba49b18f9e06ea4941c1ad062385b1d8760a8d5091a1a31e5f6219afca8"
 }

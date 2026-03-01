@@ -44,10 +44,10 @@ Moodboard e o instrumento que transforma palavras em imagem. Ele alinha expectat
 
 ## Como criamos na WG Almeida
 
-1. Analise do briefing e do estilo de vida  
-2. Curadoria de referencias confiaveis  
-3. Selecao de materiais e texturas reais  
-4. Montagem do painel e apresentacao ao cliente  
+1. Analise do briefing e do estilo de vida
+2. Curadoria de referencias confiaveis
+3. Selecao de materiais e texturas reais
+4. Montagem do painel e apresentacao ao cliente
 
 ---
 
@@ -142,3 +142,4 @@ Se voce busca um projeto sob medida, com acompanhamento completo e acabamento pr
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 11 98465-0002
+

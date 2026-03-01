@@ -2,38 +2,60 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { Buffer } from 'buffer';
 import App from '@/App';
 import '@/index.css';
 import '@/i18n'; // Internacionalizacao
 import { Toaster } from '@/components/ui/toaster';
-import { AuthProvider } from '@/contexts/SupabaseAuthContext';
 import { CartProvider } from '@/hooks/useCart';
 
-// Polyfill para Buffer (necessário para gray-matter no browser)
-window.Buffer = Buffer;
+class AppErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, message: '' };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, message: error?.message || 'Erro inesperado' };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('App crashed:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, fontFamily: 'Inter, sans-serif' }}>
+          <div style={{ maxWidth: 680 }}>
+            <h1 style={{ marginBottom: 12, fontSize: 24 }}>Falha ao carregar a aplicação</h1>
+            <p style={{ marginBottom: 12, color: '#4C4C4C' }}>Atualize a página com Ctrl+F5. Se persistir, me envie essa mensagem:</p>
+            <pre style={{ whiteSpace: 'pre-wrap', background: '#f3f3f3', padding: 12, borderRadius: 8 }}>{this.state.message}</pre>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
 
 // Web Vitals - Monitoramento de Performance
 const reportWebVitals = (onPerfEntry) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
-    import('web-vitals').then(({ onCLS, onFID, onFCP, onLCP, onTTFB, onINP }) => {
-      onCLS(onPerfEntry);
-      onFID(onPerfEntry);
-      onFCP(onPerfEntry);
-      onLCP(onPerfEntry);
-      onTTFB(onPerfEntry);
-      onINP(onPerfEntry);
+    import('web-vitals').then((metrics) => {
+      ['onCLS', 'onFCP', 'onLCP', 'onTTFB', 'onINP', 'onFID'].forEach((fnName) => {
+        if (typeof metrics?.[fnName] === 'function') {
+          metrics[fnName](onPerfEntry);
+        }
+      });
     });
   }
 };
 
-// Reportar metricas em producao (pode integrar com analytics)
-if (import.meta.env.PROD) {
+// Reportar metricas apenas em desenvolvimento
+if (import.meta.env.DEV) {
   reportWebVitals((metric) => {
-    // Log apenas em desenvolvimento ou enviar para analytics
-    if (import.meta.env.DEV) {
-      console.log(`[Web Vitals] ${metric.name}: ${metric.value.toFixed(2)}`);
-    }
+    console.log(`[Web Vitals] ${metric.name}: ${metric.value.toFixed(2)}`);
   });
 }
 
@@ -63,21 +85,26 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
 const rootElement = document.getElementById('root');
 
 const app = (
-  <HelmetProvider>
-    <BrowserRouter>
-      <AuthProvider>
-        <CartProvider>
-          <App />
-          <Toaster />
-        </CartProvider>
-      </AuthProvider>
-    </BrowserRouter>
-  </HelmetProvider>
+  <AppErrorBoundary>
+    <HelmetProvider>
+      <BrowserRouter>
+          <CartProvider>
+            <App />
+            <Toaster />
+          </CartProvider>
+      </BrowserRouter>
+    </HelmetProvider>
+  </AppErrorBoundary>
 );
 
-// Suporte para react-snap (pre-rendering)
+// Renderizacao SPA consistente (evita mismatch com fallback SEO estatico no HTML)
 if (rootElement.hasChildNodes()) {
-  ReactDOM.hydrateRoot(rootElement, app);
-} else {
-  ReactDOM.createRoot(rootElement).render(app);
+  rootElement.innerHTML = '';
 }
+ReactDOM.createRoot(rootElement).render(app);
+
+
+
+
+
+

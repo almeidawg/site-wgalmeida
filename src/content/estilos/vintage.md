@@ -1,7 +1,7 @@
 ---
-title: "Vintage"
+title: "Estilo Vintage: Como Decorar com Peças Antigas e Personalidade"
 slug: "vintage"
-excerpt: "Peças originais das décadas de 60, 70, 80 e 90 que contam histórias e trazem nostalgia com charme e personalidade."
+excerpt: "Descubra como aplicar o estilo vintage com móveis originais, restauração e composição nostálgica para ambientes únicos."
 image: "/images/estilos/vintage.webp"
 quote: "O vintage conecta o presente com as lembranças do passado."
 author: "Grupo WG Almeida"
@@ -14,7 +14,7 @@ colors: ["#8B4513", "#D2691E", "#F5DEB3", "#556B2F"]
 
 ## Toda a História do Estilo Vintage
 
-**Vintage** é um termo bastante conhecido que significa "colheita de uma vinha". Há alguns anos, esse termo passou a ser adotado pelo mundo da moda, da arquitetura e do design como forma de designar **peças antigas de qualidade**.
+**Vintage** é um termo adotado no design para definir peças antigas originais e de qualidade. Na decoração, ele valoriza memória, autenticidade e reaproveitamento inteligente, criando ambientes com história e identidade.
 
 Essa onda retrógrada representa uma **volta ao passado** e busca por peças de época, caracterizadas principalmente pelas décadas de **60, 70, 80 e 90**.
 

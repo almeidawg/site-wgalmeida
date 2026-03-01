@@ -2,6 +2,17 @@
   "version": 2,
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.wgalmeida.com.br"
+        }
+      ],
+      "destination": "https://wgalmeida.com.br/$1",
+      "permanent": true
+    },
+    {
       "source": "/:path((?:[^/]+/)*[^/]+)/",
       "destination": "/:path",
       "permanent": true
@@ -10,9 +21,196 @@
       "source": "/solicite-sua-proposta",
       "destination": "/solicite-proposta",
       "permanent": true
+    },
+    {
+      "source": "/product/b92476ff-e03d-4100-8313-6859dee90564",
+      "destination": "/product/a7bef3ac-2865-4405-94f0-782b51537077",
+      "permanent": true
+    },
+    {
+      "source": "/product/3f842fe6-7f86-41a5-87c8-e6fd3ee65566",
+      "destination": "/product/14da2f95-0f9a-4b71-8cfc-a5a086f01110",
+      "permanent": true
+    },
+    {
+      "source": "/product/5c05b118-b029-4937-bf12-d0581cf27b0c",
+      "destination": "/product/14da2f95-0f9a-4b71-8cfc-a5a086f01110",
+      "permanent": true
+    },
+    {
+      "source": "/product/486ccb58-ff41-436e-a643-377874cecc76",
+      "destination": "/product/14da2f95-0f9a-4b71-8cfc-a5a086f01110",
+      "permanent": true
+    },
+    {
+      "source": "/product/d1142e5f-6e71-4470-9dcc-1501ef37e9d1",
+      "destination": "/product/14da2f95-0f9a-4b71-8cfc-a5a086f01110",
+      "permanent": true
+    },
+    {
+      "source": "/product/61b751c4-f1b4-44e1-83df-9aeffc20d5b8",
+      "destination": "/product/14da2f95-0f9a-4b71-8cfc-a5a086f01110",
+      "permanent": true
+    },
+    {
+      "source": "/product/6b16c60f-fece-432b-854d-10aee7c99897",
+      "destination": "/product/0df68220-6a2c-4267-92b7-3f47d40a32f1",
+      "permanent": true
+    },
+    {
+      "source": "/product/082064f5-4a5e-462c-86e4-d0db4db18ddd",
+      "destination": "/product/0e836e2b-8154-48a8-a26d-de4c1945220e",
+      "permanent": true
+    },
+    {
+      "source": "/product/cd3e6547-2559-429d-b125-2dc80715b9b5",
+      "destination": "/product/14da2f95-0f9a-4b71-8cfc-a5a086f01110",
+      "permanent": true
+    },
+    {
+      "source": "/product/44839c51-b684-4c4c-8334-e3857f995436",
+      "destination": "/product/14da2f95-0f9a-4b71-8cfc-a5a086f01110",
+      "permanent": true
+    },
+    {
+      "source": "/product/84eb5b5d-f7b3-49d5-8bdd-8d2717f89b20",
+      "destination": "/product/14da2f95-0f9a-4b71-8cfc-a5a086f01110",
+      "permanent": true
+    },
+    {
+      "source": "/product/da53abe0-07ec-4f11-a6f4-0c78582a09e7",
+      "destination": "/product/0e836e2b-8154-48a8-a26d-de4c1945220e",
+      "permanent": true
+    },
+    {
+      "source": "/product/20fbf241-617e-4206-8d2f-0db73cfbf5a8",
+      "destination": "/product/0e836e2b-8154-48a8-a26d-de4c1945220e",
+      "permanent": true
+    },
+    {
+      "source": "/product/9d0a4cc9-26d7-4acc-a318-045c33f2adb9",
+      "destination": "/product/prod_01K9MVCEJ3EX9XDKKP91P5PGEY",
+      "permanent": true
+    },
+    {
+      "source": "/product/c6c55706-0b62-4cab-b2db-4f1f6b7a3811",
+      "destination": "/product/prod_01K9MVCEJ3EX9XDKKP91P5PGEY",
+      "permanent": true
+    },
+    {
+      "source": "/product/398ad533-1ced-4713-9316-9abe17eff220",
+      "destination": "/product/14da2f95-0f9a-4b71-8cfc-a5a086f01110",
+      "permanent": true
+    },
+    {
+      "source": "/product/d4a27eb7-25bd-4b89-9075-f83772cc5290",
+      "destination": "/product/prod_01K9MVCEJ3EX9XDKKP91P5PGEY",
+      "permanent": true
+    },
+    {
+      "source": "/product/10cf0ab0-d500-47c6-96a4-315fb6c065e4",
+      "destination": "/product/0e836e2b-8154-48a8-a26d-de4c1945220e",
+      "permanent": true
+    },
+    {
+      "source": "/product/592b7f7d-1611-4ed0-a7ef-88c4be83ab4c",
+      "destination": "/product/0e836e2b-8154-48a8-a26d-de4c1945220e",
+      "permanent": true
+    },
+    {
+      "source": "/product/5c0b4c1b-be3e-4bfa-b1f5-86ad8eb28302",
+      "destination": "/product/14da2f95-0f9a-4b71-8cfc-a5a086f01110",
+      "permanent": true
+    },
+    {
+      "source": "/product/cc4f545e-ff8f-4f31-8845-52caa9f05325",
+      "destination": "/product/0e836e2b-8154-48a8-a26d-de4c1945220e",
+      "permanent": true
+    },
+    {
+      "source": "/product/4b9e8101-b3fc-4a44-804c-1ad1f780f50e",
+      "destination": "/product/0e836e2b-8154-48a8-a26d-de4c1945220e",
+      "permanent": true
+    },
+    {
+      "source": "/product/69b21e6b-2166-4c68-bf85-41da5347e5ce",
+      "destination": "/product/0df68220-6a2c-4267-92b7-3f47d40a32f1",
+      "permanent": true
+    },
+    {
+      "source": "/product/23b46cd2-245a-4aa3-b9e4-c6b14abb8f30",
+      "destination": "/product/0df68220-6a2c-4267-92b7-3f47d40a32f1",
+      "permanent": true
+    },
+    {
+      "source": "/product/d9121f50-c7c3-4aa6-a2cf-52698ee38805",
+      "destination": "/store",
+      "permanent": true
+    },
+    {
+      "source": "/gerador-moodboard",
+      "destination": "/moodboard-generator",
+      "permanent": true
+    },
+    {
+      "source": "/visualizador-ambientes",
+      "destination": "/room-visualizer",
+      "permanent": true
+    },
+    {
+      "source": "/construtora",
+      "destination": "/construtora-alto-padrao-sp",
+      "permanent": true
+    },
+    {
+      "source": "/corporativo",
+      "destination": "/arquitetura-corporativa",
+      "permanent": true
+    },
+    {
+      "source": "/modelo1",
+      "destination": "/projetos",
+      "permanent": true
+    },
+    {
+      "source": "/modelo2",
+      "destination": "/projetos",
+      "permanent": true
     }
   ],
   "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/sobre",
+      "destination": "/sobre/index.html"
+    },
+    {
+      "source": "/processo",
+      "destination": "/processo/index.html"
+    },
+    {
+      "source": "/projetos",
+      "destination": "/projetos/index.html"
+    },
+    {
+      "source": "/store",
+      "destination": "/store/index.html"
+    },
+    {
+      "source": "/arquitetura",
+      "destination": "/arquitetura/index.html"
+    },
+    {
+      "source": "/engenharia",
+      "destination": "/engenharia/index.html"
+    },
+    {
+      "source": "/marcenaria",
+      "destination": "/marcenaria/index.html"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"

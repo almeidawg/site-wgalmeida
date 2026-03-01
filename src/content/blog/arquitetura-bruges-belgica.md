@@ -1,7 +1,7 @@
 ---
-title: "Arquitetura de Bruges: A Veneza do Norte Congelada no Tempo Medieval"
+title: "Arquitetura de Bruges: A Veneza do Norte e Seu Centro Medieval Preservado"
 slug: "arquitetura-bruges-belgica"
-excerpt: "Descubra Bruges - a cidade medieval mais preservada da Europa. Canais, torres góticas, casas de degraus e 800 anos de arquitetura flamenga intacta. Patrimônio Mundial da UNESCO."
+excerpt: "Explore a arquitetura de Bruges com canais, torres goticas e casas flamengas preservadas, em um dos centros medievais mais intactos da Europa."
 date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
@@ -10,11 +10,11 @@ image: "/images/blog/arquitetura-bruges-belgica.webp"
 featured: true
 ---
 
-# Arquitetura de Bruges: A Veneza do Norte Congelada no Tempo Medieval
+# Arquitetura de Bruges: A Veneza do Norte e Seu Patrimonio Medieval
 
 ## A Cidade que Parou no Tempo
 
-**Bruges** (Brugge em holandês) é uma **cápsula do tempo medieval** perfeitamente preservada. Enquanto outras cidades europeias se modernizaram, Bruges **parou no século XV** - seus canais, torres góticas, casas de tijolos com frontões de degraus e ruas de paralelepípedos permanecem **exatamente como eram há 600 anos**.
+**Bruges** (Brugge em holandes) e uma das cidades medievais mais preservadas da Europa. Seus canais, torres goticas, casas de tijolos com frontoes em degraus e ruas de paralelepipedos mantem uma leitura historica rara no continente.
 
 É **Patrimônio Mundial da UNESCO** (2000), apelidada de **"Veneza do Norte"** pelos canais que cortam a cidade, e considerada a **cidade medieval mais bem preservada da Europa**.
 

@@ -1,11 +1,11 @@
 ---
-title: "Varanda Gourmet: Guia Completo de Planejamento e Decoração"
+title: "Varanda Gourmet: Planejamento, Layout e Custos para Executar sem Erro"
 slug: "varanda-gourmet-planejamento"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "design"
 image: "/images/blog/varanda-gourmet-planejamento.webp"
-excerpt: "Crie a varanda gourmet perfeita: layout, churrasqueira, bancada, cobertura, móveis e custos completos."
+excerpt: "Guia pratico para varanda gourmet com layout, churrasqueira, bancada, cobertura e custos para planejar com mais seguranca."
 tags:
   - "varanda gourmet"
   - "área externa"
@@ -13,7 +13,7 @@ tags:
   - "lazer"
 featured: false
 ---
-# Varanda Gourmet: Guia Completo
+# Varanda Gourmet: Guia Completo de Planejamento e Custos
 
 ## Planejamento
 

@@ -1,7 +1,7 @@
 ---
-title: "Arquitetura de Haarlem: Jóia Medieval da Holanda e os Hofjes Secretos"
+title: "Arquitetura de Haarlem: Joia Medieval da Holanda e os Hofjes Secretos"
 slug: "arquitetura-haarlem-holanda"
-excerpt: "Explore Haarlem, a cidade que inspirou Nova York - arquitetura medieval gótica, hofjes escondidos e o charme holandês autêntico a 15 minutos de Amsterdam."
+excerpt: "Explore a arquitetura de Haarlem com igrejas goticas, hofjes e centro historico preservado a 15 minutos de Amsterdam."
 date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
@@ -10,11 +10,11 @@ image: "/images/blog/arquitetura-haarlem-holanda.webp"
 featured: true
 ---
 
-# Arquitetura de Haarlem: Jóia Medieval da Holanda e os Hofjes Secretos
+# Arquitetura de Haarlem: Joia Medieval da Holanda e os Hofjes Secretos
 
 ## A Cidade que Deu Nome a Nova York
 
-**Haarlem** é a capital da província da Holanda do Norte e uma das cidades medievais mais **preservadas e charmosas** da Holanda. Fundada no século X, é 100 anos mais antiga que Amsterdam e possui uma arquitetura que **viajou no tempo intacta**.
+**Haarlem** e a capital da provincia da Holanda do Norte e uma das cidades medievais mais preservadas da Holanda. Fundada no seculo X, e mais antiga que Amsterdam e mantem um conjunto urbano historico raro.
 
 **Curiosidade:** Quando os holandeses fundaram Nova Amsterdam (atual Nova York) em 1624, o bairro do Harlem foi nomeado em homenagem a esta cidade!
 

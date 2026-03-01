@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Palette, Import, Check, Plus, RefreshCw } from 'lucide-react';
 
 const MoodboardImporter = ({

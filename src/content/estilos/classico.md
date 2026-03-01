@@ -1,7 +1,7 @@
 ---
-title: "Clássico"
+title: "Estilo Clássico: Guia de Decoração Sofisticada e Atemporal"
 slug: "classico"
-excerpt: "Elegância atemporal com molduras trabalhadas, metais nobres e referências à arquitetura greco-romana."
+excerpt: "Descubra como usar o estilo clássico com molduras, materiais nobres e proporções elegantes para criar interiores imponentes."
 image: "/images/estilos/classico.webp"
 quote: "Não estou ficando velho, estou virando um clássico."
 author: "Gustavo Mayer"
@@ -14,7 +14,7 @@ colors: ["#8B7355", "#D4AF37", "#FFFFFF", "#2C1810"]
 
 ## De Onde Surgiu o Estilo Clássico?
 
-O estilo clássico tem suas raízes na **arquitetura greco-romana**, tendo sido revisitado pelo Movimento Neoclássico. Segundo John Summerson, historiador britânico, o clássico em termos de arquitetura é "aquele cujos elementos derivam direta ou indiretamente do vocabulário arquitetural do mundo clássico".
+O estilo clássico tem raízes na **arquitetura greco-romana** e foi revisitado pelo Movimento Neoclássico. Na decoração atual, ele segue valorizado por quem busca imponência, detalhes artesanais e uma estética elegante que atravessa gerações.
 
 Podemos rotular o clássico como o **mais antigo e tradicional** dos estilos, trazendo à nossa mente tudo que representa a Grécia e a Roma antigas. Atualmente, o termo "clássico" remete a algo que serve como **modelo ou que tem valor reconhecido**, e é exatamente por isso que esse estilo sempre ganha força.
 

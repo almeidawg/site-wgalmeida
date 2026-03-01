@@ -30,7 +30,7 @@
   "categories": ["business", "lifestyle"],
   "screenshots": [
     {
-      "src": "/images/og-image.jpg",
+      "src": "/og-home-1200x630.jpg",
       "sizes": "1200x630",
       "type": "image/jpeg",
       "form_factor": "wide"

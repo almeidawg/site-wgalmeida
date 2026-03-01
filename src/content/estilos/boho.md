@@ -1,7 +1,7 @@
 ---
-title: "Boho"
+title: "Estilo Boho: Guia de Decoração com Conforto, Texturas e Personalidade"
 slug: "boho"
-excerpt: "Conforto, liberdade e personalidade com mix de texturas, cores terrosas e influências étnicas para ambientes únicos e acolhedores."
+excerpt: "Veja como aplicar o estilo Boho com texturas, tons terrosos e referências étnicas para ambientes acolhedores e autorais."
 image: "/images/estilos/boho.webp"
 quote: "A beleza do Boho está no olhar para o desarrumado e encontrar elegância."
 author: "Grupo WG Almeida"
@@ -14,7 +14,7 @@ colors: ["#8B4513", "#D2B48C", "#556B2F", "#CD853F"]
 
 ## De Onde Surgiu o Estilo Boho?
 
-**Bohemians** é uma contracultura surgida na França após a Revolução Francesa. Na época, muitos artistas e escritores viviam na pobreza e muitos assumiam um estilo de vida mais barato que o usual, caracterizado por peças de vestuário usadas e desgastadas.
+**Bohemians** e uma contracultura surgida na Franca apos a Revolucao Francesa. O estilo de vida livre e artistico inspirou uma estetica que hoje traduz conforto, mistura de referencias e identidade pessoal na decoracao.
 
 Devido ao estilo de vida despreocupado e à forma de se vestir dos artistas, a sociedade passou a comparar os Bohemians com **ciganos ou Gypsy's**, termo europeu para o povo Romani, um grupo étnico com origens indígenas que havia migrado para o norte.
 

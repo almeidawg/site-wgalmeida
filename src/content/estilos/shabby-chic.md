@@ -1,7 +1,7 @@
 ---
-title: "Shabby Chic"
+title: "Shabby Chic: Como Decorar com Romantismo Vintage e Charme Delicado"
 slug: "shabby-chic"
-excerpt: "Romântico vintage desgastado com branco envelhecido, flores delicadas e charme despretensioso que celebra imperfeições."
+excerpt: "Aprenda a criar ambientes Shabby Chic com móveis patinados, tons claros e detalhes românticos que valorizam o vintage."
 image: "/images/estilos/shabby-chic.webp"
 quote: "É sobre criar beleza através das imperfeições."
 author: "Rachel Ashwell"
@@ -14,7 +14,7 @@ colors: ["#FFFFFF", "#F5F5DC", "#E6C7C2", "#D4A5A5"]
 
 ## O Estilo Shabby Chic
 
-O estilo **Shabby Chic** é **romantismo vintage** com um toque de **elegância desgastada**. É sobre móveis brancos envelhecidos, tecidos florais delicados, rendas e a beleza encontrada nas **imperfeições** - arranhões, descascados e pátina que contam histórias.
+O estilo **Shabby Chic** combina romantismo vintage com elegância suave. Móveis patinados, tecidos florais e tons claros criam ambientes acolhedores que valorizam o charme do tempo e das imperfeições.
 
 Criado pela designer britânica **Rachel Ashwell** nos anos 1980 na Califórnia, o Shabby Chic transformou móveis velhos e desgastados em **objetos de desejo**, provando que o "gasto" pode ser mais bonito que o novo.
 

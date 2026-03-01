@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import SEO from '@/components/SEO';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Phone, Mail, MapPin, Send, MessageCircle, Loader2, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { supabase } from '@/lib/customSupabaseClient';
+import { notificarNovoContato } from '@/lib/emailService';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
 
@@ -38,34 +39,52 @@ const Contact = () => {
     return limitedNumbers.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
   };
 
+  const isValidEmail = (email) => /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    const { error } = await supabase.from('contacts').insert([
-      {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        subject: formData.subject,
-        message: formData.message,
-      },
-    ]);
+    try {
+      if (!isValidEmail(formData.email)) {
+        throw new Error('Insira um e-mail válido (ex: nome@email.com)');
+      }
 
-    setLoading(false);
+      // Salvar no Supabase
+      const { error } = await supabase.from('contacts').insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+      ]);
 
-    if (error) {
-      toast({
-        variant: 'destructive',
-        title: t('contactPage.toast.errorTitle'),
-        description: t('contactPage.toast.errorDescription'),
-      });
-    } else {
+      if (error) throw error;
+
+      // Enviar notificação por email para william@wgalmeida.com.br
+      await notificarNovoContato(
+        formData.name,
+        formData.email,
+        formData.phone,
+        formData.subject,
+        formData.message
+      );
+
       toast({
         title: t('contactPage.toast.successTitle'),
         description: t('contactPage.toast.successDescription'),
       });
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    } catch (error) {
+      toast({
+        variant: 'destructive',
+        title: t('contactPage.toast.errorTitle'),
+        description: t('contactPage.toast.errorDescription'),
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -76,14 +95,33 @@ const Contact = () => {
   return (
     <>
       <SEO
+        pathname="/contato"
         title={t('seo.contact.title')}
         description={t('seo.contact.description')}
         keywords={t('seo.contact.keywords')}
-        url="https://wgalmeida.com.br/contato"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contato | Grupo WG Almeida",
+          url: "https://wgalmeida.com.br/contato",
+          mainEntity: {
+            "@type": "Organization",
+            name: "Grupo WG Almeida",
+            telephone: "+55-11-98465-0002",
+            email: "contato@wgalmeida.com.br",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+55-11-98465-0002",
+              contactType: "customer service",
+              availableLanguage: "Portuguese",
+              areaServed: "BR",
+            },
+          },
+        }}
       />
 
       {/* Hero elegante */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -197,7 +235,14 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-inter font-semibold text-wg-black">{t('contactPage.info.phoneLabel')}</p>
-                    <a href="tel:+5511991792291" className="text-wg-gray hover:text-wg-orange transition-colors">+55 11 99179-2291</a>
+                    <a
+                      href="https://wa.me/5511984650002"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-wg-gray hover:text-wg-orange transition-colors"
+                    >
+                      +55 11 98465-0002
+                    </a>
                   </div>
                 </motion.div>
 

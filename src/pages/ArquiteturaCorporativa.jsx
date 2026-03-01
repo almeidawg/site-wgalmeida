@@ -1,6 +1,6 @@
 import React from 'react';
 import SEO, { schemas } from '@/components/SEO';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -131,7 +131,7 @@ const ArquiteturaCorporativa = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black hero-under-header">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{ backgroundImage: 'url(/images/hero-architecture.jpg)' }}

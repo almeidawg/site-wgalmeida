@@ -1,7 +1,7 @@
 ---
-title: "Arquitetura de Lisboa: Azulejos, 7 Colinas e o Renascer Pombalino"
+title: "Arquitetura de Lisboa: Azulejos, Sete Colinas e o Legado Pombalino"
 slug: "arquitetura-lisboa-portugal"
-excerpt: "Descubra Lisboa - cidade dos azulejos azuis e brancos, das sete colinas com miradouros encantadores e da arquitetura pombalina que ressurgiu das cinzas do grande terremoto de 1755. Patrimônio, fado e luz atlântica."
+excerpt: "Conheca a arquitetura de Lisboa com azulejos, bairros historicos e o planejamento pombalino que reconstruiu a cidade apos 1755."
 date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
@@ -10,11 +10,11 @@ image: "/images/blog/arquitetura-lisboa-portugal.webp"
 featured: true
 ---
 
-# Arquitetura de Lisboa: Azulejos, 7 Colinas e o Renascer Pombalino
+# Arquitetura de Lisboa: Azulejos, Sete Colinas e o Renascer Pombalino
 
 ## A Cidade que Renasceu das Cinzas
 
-**Lisboa** é uma cidade de **contrastes extraordinários** - bairros medievais mouros nas colinas convivem com a ordem neoclássica da Baixa Pombalina. **Azulejos** azuis e brancos cobrem fachadas inteiras, contando histórias em cerâmica. **Sete colinas** oferecem miradouros (mirantes) com vistas de tirar o fôlego sobre o **Rio Tejo** e telhados cor de terracota.
+**Lisboa** e uma cidade de contrastes urbanos: bairros medievais nas colinas convivem com a ordem da Baixa Pombalina. Azulejos, miradouros e a relacao com o Tejo formam uma identidade arquitetonica unica em Portugal.
 
 A arquitetura de Lisboa foi moldada por um **evento catastrófico**: o **Terremoto de 1755** (magnitude 8.5-9.0) destruiu 85% da cidade e matou 60.000 pessoas. Da tragédia nasceu uma **reconstrução visionária** - a **Baixa Pombalina**, primeiro bairro do mundo planejado com **estrutura anti-sísmica**.
 

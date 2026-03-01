@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { ArrowLeft, ArrowRight, X, ZoomIn, Instagram } from "lucide-react";
 import { LazyImage, OptimizedImage } from "./OptimizedImage";
 import { useTranslation } from 'react-i18next';
@@ -260,6 +260,8 @@ const ProjectGallery = () => {
                   src={image.src}
                   alt={`${t(image.titleKey)} - ${t(image.categoryKey)}`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={400}
+                  height={400}
                 />
 
                 {/* Overlay no hover */}
@@ -398,6 +400,10 @@ const ProjectGallery = () => {
                 src={selectedImage.src}
                 alt={`${t(selectedImage.titleKey)} - ${t(selectedImage.categoryKey)}`}
                 className="w-full h-full object-contain rounded-lg"
+                width={1280}
+                height={720}
+                loading="lazy"
+                decoding="async"
               />
 
               {/* Info */}

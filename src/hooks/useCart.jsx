@@ -1,5 +1,20 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
-import { formatCurrency } from '@/api/EcommerceApi';
+
+const formatCurrency = (priceInCents, currencyInfo = { code: 'BRL', symbol: 'R$', template: 'R$ $1' }) => {
+  if (priceInCents === null || priceInCents === undefined) {
+    return '';
+  }
+
+  const { code, symbol, template } = currencyInfo || {};
+  const currencyDisplay = symbol || code || 'R$';
+  const amount = (priceInCents / 100).toFixed(2);
+
+  if (template) {
+    return template.replace('$1', amount);
+  }
+
+  return `${currencyDisplay}${amount}`;
+};
 
 const CartContext = createContext();
 

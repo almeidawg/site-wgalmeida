@@ -1,7 +1,7 @@
 ---
-title: "Art Nouveau"
+title: "Art Nouveau: Guia de Decoração com Curvas Orgânicas e Elegância Floral"
 slug: "art-nouveau"
-excerpt: "Curvas orgânicas da natureza com formas fluidas, vidros coloridos e ornamentos botânicos que celebram a arte total."
+excerpt: "Descubra o estilo Art Nouveau com curvas orgânicas, vitrais e ornamentos florais para projetos sofisticados e autorais."
 image: "/images/estilos/art-nouveau.webp"
 quote: "Não há linhas retas na natureza."
 author: "Antoni Gaudí"
@@ -14,7 +14,7 @@ colors: ["#2F4F2F", "#FFD700", "#8B4513", "#98FB98"]
 
 ## O Estilo Art Nouveau
 
-O **Art Nouveau** (Arte Nova) foi um movimento artístico revolucionário do final do século 19 que celebrava as **formas orgânicas da natureza** através de **curvas fluidas**, **ornamentos florais** e a integração total das artes. É sobre trazer a natureza para dentro - não de forma realista, mas **estilizada e decorativa**.
+O **Art Nouveau** (Arte Nova) foi um movimento artistico do fim do seculo 19 que valorizava as **formas organicas da natureza** com **curvas fluidas**, **ornamentos florais** e integracao total das artes. E uma referencia forte para quem busca decoracao autoral e elegante.
 
 Influenciado por artistas como **Antoni Gaudí**, **Alphonse Mucha**, **Louis Comfort Tiffany** e **René Lalique**, o Art Nouveau transformou arquitetura e design em **obras de arte vivas**.
 

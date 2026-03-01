@@ -6,6 +6,7 @@ node_modules
 .claude-dev-helper
 coverage
 .vite
+dist
 *.log
 npm-debug.log*
 .DS_Store
@@ -18,6 +19,12 @@ nul
 !README.md
 !src/content/**/*.md
 tools
+!tools/
+!tools/**
+!tools/generate-og-images.mjs
+!tools/generate-route-html.mjs
+!tools/perf-assets-report.mjs
+!tools/recompress-critical-images.mjs
 scripts
 database
 .eslintrc.cjs

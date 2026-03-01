@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Check, Heart } from 'lucide-react';
 
 const StyleCard = ({

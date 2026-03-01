@@ -1,11 +1,11 @@
 ---
-title: "Casa Cor 2026: Mente e Coração - A Maior Mostra de Arquitetura do Brasil"
+title: "Casa Cor 2026: Tema Mente e Coracao e Tendencias da Mostra de Arquitetura"
 slug: "casa-cor-2026-mente-coracao"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "arquitetura"
 image: "/images/blog/casa-cor-2026-mente-coracao.webp"
-excerpt: "Descubra o tema 'Mente e Coração' da Casa Cor SP 2026 e as tendências de arquitetura e design que vão inspirar os projetos do ano."
+excerpt: "Entenda o tema Mente e Coracao da Casa Cor 2026 e as principais tendencias de arquitetura e design para aplicar em projetos."
 tags:
   - "Casa Cor"
   - "mostra"
@@ -14,7 +14,7 @@ tags:
   - "tendências"
 featured: true
 ---
-# Casa Cor 2026: Mente e Coração - A Maior Mostra de Arquitetura do Brasil
+# Casa Cor 2026: Mente e Coracao e as Tendencias da Mostra
 
 *Por Grupo WG Almeida | Arquitetura & Design*
 
@@ -22,7 +22,7 @@ featured: true
 
 ## A Casa Cor em 2026
 
-A **CASACOR São Paulo 2026** acontece de **2 de junho a 9 de agosto**, marcando a **39ª edição** da maior e mais importante mostra de arquitetura, paisagismo, arte e design de interiores da América Latina.
+A **CASACOR Sao Paulo 2026** acontece de **2 de junho a 9 de agosto**, marcando a **39a edicao** da maior mostra de arquitetura, paisagismo, arte e design de interiores da America Latina.
 
 Pelo segundo ano consecutivo, a mostra será realizada no **Parque da Água Branca**, com apoio do Governo do Estado de São Paulo.
 

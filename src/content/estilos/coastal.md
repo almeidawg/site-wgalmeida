@@ -1,7 +1,7 @@
 ---
-title: "Coastal"
+title: "Estilo Coastal: Decoração de Praia com Elegância Leve e Atemporal"
 slug: "coastal"
-excerpt: "Brisa do mar com azul e branco, madeiras claras e atmosfera relaxante que traz a praia para dentro de casa."
+excerpt: "Aprenda a aplicar o estilo Coastal com paleta azul e branca, fibras naturais e atmosfera de casa de praia sofisticada."
 image: "/images/estilos/coastal.webp"
 quote: "O oceano cura tudo."
 author: "Provérbio Popular"
@@ -14,7 +14,7 @@ colors: ["#FFFFFF", "#4682B4", "#F5F5DC", "#87CEEB"]
 
 ## O Estilo Coastal
 
-O estilo **Coastal** ou **Náutico** traz a leveza e tranquilidade do litoral para dentro de casa. É sobre capturar a essência de dias ensolarados na praia, brisa marinha e o som das ondas.
+O estilo **Coastal** ou **Náutico** traduz a leveza do litoral para dentro de casa. A proposta combina paleta clara, materiais naturais e sensação de descanso, ideal para quem quer um ambiente elegante com clima de praia.
 
 ## Variações
 

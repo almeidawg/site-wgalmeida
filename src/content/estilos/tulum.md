@@ -1,7 +1,7 @@
 ---
-title: "Tulum"
+title: "Estilo Tulum: Decoração Resort com Luxo Rústico e Natureza"
 slug: "tulum"
-excerpt: "Luxo rústico tropical com cimento polido, tetos de palha e integração total com natureza que define o estilo dos resorts mexicanos."
+excerpt: "Veja como aplicar o estilo Tulum com cimento, palha, texturas naturais e atmosfera de resort sofisticado."
 image: "/images/estilos/tulum.webp"
 quote: "Onde o luxo encontra a natureza em sua forma mais pura."
 author: "Azulik Tulum"
@@ -14,7 +14,7 @@ colors: ["#F5F5DC", "#8B7355", "#FFFFFF", "#D2B48C"]
 
 ## O Estilo Tulum
 
-O estilo **Tulum** captura a essência dos **resorts de luxo da Riviera Maya** no México, especialmente da região de Tulum. É a perfeita fusão de **luxo sofisticado** com **rusticidade natural** - onde **cimento polido** encontra **tetos de palha**, **minimalismo** convive com **exuberância tropical**, e a **integração com a natureza** é absoluta.
+O estilo **Tulum** traduz a essência dos resorts de luxo da Riviera Maya em uma linguagem de interior. A proposta combina luxo discreto, rusticidade natural e integração com a paisagem para criar ambientes relaxantes e sofisticados.
 
 Popularizado por resorts icônicos como **Azulik**, **Nomade**, **Habitas**, **Casa Malca** e **Be Tulum**, este estilo define o conceito de **barefoot luxury** (luxo descalço) - sofisticação sem formalidade, conforto sem ostentação.
 

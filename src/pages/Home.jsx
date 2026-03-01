@@ -1,7 +1,7 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import {
   ArrowRight,
   Building2,
@@ -19,38 +19,87 @@ import {
   MessagesSquare,
   FolderOpen,
   Palette,
-  Sparkles,
-  BookOpen
+  Sparkles
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AnimatedStrokes from '@/components/AnimatedStrokes';
-import GoogleReviewsBadge from '@/components/GoogleReviewsBadge';
-// import LizAssistant from '@/components/LizAssistant'; // DESATIVADO TEMPORARIAMENTE - Manter apenas WhatsApp
-import ProjectGallery from '@/components/ProjectGallery';
+
 import HeroVideo from '@/components/HeroVideo';
 // Lazy load PremiumCinematicIntro para reduzir TBT (Total Blocking Time)
 const PremiumCinematicIntro = lazy(() => import('@/components/PremiumCinematicIntro'));
-import HomeColorTransformer from '@/components/home/HomeColorTransformer';
-import { useEstatisticasWG, formatarNumeroGrande } from '@/hooks/useEstatisticasWG';
+const ProjectGallery = lazy(() => import('@/components/ProjectGallery'));
+const HomeColorTransformer = lazy(() => import('@/components/home/HomeColorTransformer'));
+const GoogleReviewsBadge = lazy(() => import('@/components/GoogleReviewsBadge'));
+import { useEstatisticasWG } from '@/hooks/useEstatisticasWG';
 import { Trans, useTranslation } from 'react-i18next';
+import { SCHEMAS } from '@/data/schemaConfig';
+
+const editorialScale = {
+  kicker: 'text-[11px] font-semibold uppercase tracking-[0.18em]',
+  title: 'text-[22px] leading-tight text-wg-black md:text-[28px]',
+  body: 'text-[15px] leading-[1.75] text-[#4C4C4C]'
+};
+
+const logosNucleos = [
+  { src: '/Logos/logo-arquitetura-84.webp', alt: 'Logo Arquitetura' },
+  { src: '/Logos/logo-engenharia-84.webp', alt: 'Logo Engenharia' },
+  { src: '/Logos/logo-marcenaria-84.webp', alt: 'Logo Marcenaria' }
+];
 
 const Home = () => {
   const { t } = useTranslation();
   const impactPhrases = t('home.impactPhrases', { returnObjects: true });
 
-  // Verificar se já viu a intro nesta sessão
-  const [showIntro, setShowIntro] = useState(() => {
-    return !sessionStorage.getItem('wg-intro-seen');
-  });
+  // Intro inicia desativada para não competir com renderização crítica do hero.
+  const [showIntro, setShowIntro] = useState(false);
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const statsSectionRef = useRef(null);
+  const [statsVisible, setStatsVisible] = useState(false);
+  const projectGalleryRef = useRef(null);
+  const [projectGalleryVisible, setProjectGalleryVisible] = useState(false);
+  const reviewsRef = useRef(null);
+  const [reviewsVisible, setReviewsVisible] = useState(false);
+  const [statsAnimated, setStatsAnimated] = useState(false);
+  const [displayStats, setDisplayStats] = useState({
+    projetosAndamento: 0,
+    clientesAtendidos: 0,
+    metrosRevestimentos: 0,
+    horasProjetando: 0
+  });
 
   // Hook para estatísticas dinâmicas do sistema
-  const estatisticas = useEstatisticasWG();
+  const estatisticas = useEstatisticasWG({ enabled: statsVisible });
 
   const handleIntroComplete = () => {
     setShowIntro(false);
     sessionStorage.setItem('wg-intro-seen', 'true');
   };
+
+  useEffect(() => {
+    if (sessionStorage.getItem('wg-intro-seen')) return;
+
+    // Bloqueia apenas motion reduzido e saveData — remove restrição de RAM e mobile
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasSaveData = Boolean(navigator.connection?.saveData);
+
+    if (prefersReducedMotion || hasSaveData) return;
+
+    let timeoutId;
+    const enableIntro = () => {
+      timeoutId = window.setTimeout(() => setShowIntro(true), 800);
+    };
+
+    if (typeof window.requestIdleCallback === 'function') {
+      const idleId = window.requestIdleCallback(enableIntro, { timeout: 1500 });
+      return () => {
+        window.cancelIdleCallback(idleId);
+        window.clearTimeout(timeoutId);
+      };
+    }
+
+    enableIntro();
+    return () => window.clearTimeout(timeoutId);
+  }, []);
 
   // Rotação automática das frases
   useEffect(() => {
@@ -59,6 +108,113 @@ const Home = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, [impactPhrases.length]);
+
+  useEffect(() => {
+    if (!statsSectionRef.current || statsVisible) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setStatsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(statsSectionRef.current);
+    return () => observer.disconnect();
+  }, [statsVisible]);
+
+  useEffect(() => {
+    if (!projectGalleryRef.current || projectGalleryVisible) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setProjectGalleryVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '320px 0px', threshold: 0.01 }
+    );
+
+    observer.observe(projectGalleryRef.current);
+    return () => observer.disconnect();
+  }, [projectGalleryVisible]);
+
+  useEffect(() => {
+    if (!reviewsRef.current || reviewsVisible) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setReviewsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '320px 0px', threshold: 0.01 }
+    );
+
+    observer.observe(reviewsRef.current);
+    return () => observer.disconnect();
+  }, [reviewsVisible]);
+
+  useEffect(() => {
+    if (!statsVisible || estatisticas.loading) return;
+
+    const targetStats = {
+      projetosAndamento: estatisticas.projetosAndamento,
+      clientesAtendidos: estatisticas.clientesAtendidos,
+      metrosRevestimentos: estatisticas.metrosRevestimentos >= 1000
+        ? Math.floor(estatisticas.metrosRevestimentos / 1000)
+        : estatisticas.metrosRevestimentos,
+      horasProjetando: estatisticas.horasProjetando >= 1000
+        ? Math.floor(estatisticas.horasProjetando / 1000)
+        : estatisticas.horasProjetando
+    };
+
+    if (statsAnimated) {
+      setDisplayStats(targetStats);
+      return;
+    }
+
+    let animationFrame;
+    let startTime;
+    const duration = 1400;
+
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+      setDisplayStats({
+        projetosAndamento: Math.round(targetStats.projetosAndamento * easedProgress),
+        clientesAtendidos: Math.round(targetStats.clientesAtendidos * easedProgress),
+        metrosRevestimentos: Math.round(targetStats.metrosRevestimentos * easedProgress),
+        horasProjetando: Math.round(targetStats.horasProjetando * easedProgress)
+      });
+
+      if (progress < 1) {
+        animationFrame = window.requestAnimationFrame(animate);
+      } else {
+        setStatsAnimated(true);
+      }
+    };
+
+    animationFrame = window.requestAnimationFrame(animate);
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [
+    statsVisible,
+    statsAnimated,
+    estatisticas.loading,
+    estatisticas.projetosAndamento,
+    estatisticas.clientesAtendidos,
+    estatisticas.metrosRevestimentos,
+    estatisticas.horasProjetando
+  ]);
 
   // Unidades (antes "Serviços")
   const nucleos = [
@@ -110,10 +266,8 @@ const Home = () => {
   return (
     <>
       <SEO
-        title={t('seo.home.title')}
-        description={t('seo.home.description')}
-        keywords={t('seo.home.keywords')}
-        url="https://wgalmeida.com.br"
+        pathname="/"
+        schema={[SCHEMAS.organization, SCHEMAS.localBusiness, SCHEMAS.breadcrumbHome]}
       />
 
       {/* ========== APRESENTAÇÃO CINEMATOGRÁFICA ========== */}
@@ -124,7 +278,7 @@ const Home = () => {
       )}
 
       {/* ========== HERO SECTION COM VÍDEO ========== */}
-      <section className="relative min-h-[92vh] md:h-screen flex items-center justify-center overflow-hidden mt-0 md:-mt-20 bg-wg-black pt-20 pb-14 sm:pt-24 md:pt-0">
+      <section className="relative min-h-[calc(100vh-var(--header-height))] md:h-[calc(100vh-var(--header-height))] flex items-center justify-center overflow-hidden bg-wg-black pb-16 sm:pb-20 hero-under-header">
         <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/70 via-wg-black/50 to-wg-black/70 z-10"></div>
 
@@ -134,7 +288,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: showIntro ? 0 : 1, y: showIntro ? 40 : 0 }}
             transition={{ duration: 1, delay: showIntro ? 0 : 0.3, ease: "easeOut" }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-inter font-light mb-6 leading-tight tracking-tight"
+            className="wg-heading-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 leading-tight"
           >
             {/* Mobile: quebra em 3 linhas / Desktop: uma linha */}
             <span className="block sm:inline">{t('nav.architecture')}</span>
@@ -185,7 +339,6 @@ const Home = () => {
               </motion.p>
             </AnimatePresence>
           </motion.div>
-
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -194,41 +347,22 @@ const Home = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link to="/sobre">
-              <Button className="btn-apple text-base md:text-lg px-8 py-4">
+              <Button className="wg-btn-pill-primary">
                 {t('home.hero.ctaPrimary')}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
             <Link to="/processo">
-              <Button
-                variant="ghost"
-                className="text-base md:text-lg px-8 py-4 border border-white/40 text-white bg-white/5 hover:bg-white/15 backdrop-blur-sm transition-all rounded-2xl"
-              >
+              <Button className="h-auto px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white/5 text-white border border-white/40 hover:bg-white/15 hover:text-white">
                 {t('home.hero.ctaSecondary')}
               </Button>
             </Link>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: showIntro ? 0 : 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2"
-          >
-            <motion.div className="w-1.5 h-1.5 bg-white rounded-full" />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* ========== CARDS DE ESTILOS EM DESTAQUE ========== */}
-      <section className="py-12 bg-white">
+      <section className="pt-6 pb-0 bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -236,13 +370,13 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl md:text-3xl font-inter font-light text-wg-black mb-2 tracking-tight">
+            <h2 className="wg-heading-display text-2xl md:text-3xl text-wg-black mb-2">
               Estilos em Destaque
             </h2>
-            <p className="text-wg-gray font-light">Encontre o estilo que combina com você</p>
+            <p className="wg-text-body">Encontre o estilo que combina com você</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
             {/* Minimalismo */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -253,11 +387,11 @@ const Home = () => {
               <Link to="/estilos/minimalismo" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=480&h=600&q=65&fm=webp"
-                    srcSet="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=360&h=450&q=60&fm=webp 360w, https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=480&h=600&q=65&fm=webp 480w, https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=640&h=800&q=65&fm=webp 640w"
+                    src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=400&h=500&q=58&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=240&h=300&q=50&fm=webp 240w, https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=320&h=400&q=55&fm=webp 320w, https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=400&h=500&q=58&fm=webp 400w"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 20vw"
-                    width="480"
-                    height="600"
+                    width="400"
+                    height="500"
                     alt="Estilo Minimalismo"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -286,11 +420,11 @@ const Home = () => {
               <Link to="/estilos/moderno" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=480&h=600&q=65&fm=webp"
-                    srcSet="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=360&h=450&q=60&fm=webp 360w, https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=480&h=600&q=65&fm=webp 480w, https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=640&h=800&q=65&fm=webp 640w"
+                    src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=400&h=500&q=58&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=240&h=300&q=50&fm=webp 240w, https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=320&h=400&q=55&fm=webp 320w, https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=400&h=500&q=58&fm=webp 400w"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 20vw"
-                    width="480"
-                    height="600"
+                    width="400"
+                    height="500"
                     alt="Estilo Moderno"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -319,11 +453,11 @@ const Home = () => {
               <Link to="/estilos/industrial" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=480&h=600&q=65&fm=webp"
-                    srcSet="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=360&h=450&q=60&fm=webp 360w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=480&h=600&q=65&fm=webp 480w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=640&h=800&q=65&fm=webp 640w"
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&h=500&q=58&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=240&h=300&q=50&fm=webp 240w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=320&h=400&q=55&fm=webp 320w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&h=500&q=58&fm=webp 400w"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 20vw"
-                    width="480"
-                    height="600"
+                    width="400"
+                    height="500"
                     alt="Estilo Industrial"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -352,11 +486,11 @@ const Home = () => {
               <Link to="/estilos/contemporaneo" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=480&h=600&q=65&fm=webp"
-                    srcSet="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=360&h=450&q=60&fm=webp 360w, https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=480&h=600&q=65&fm=webp 480w, https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=640&h=800&q=65&fm=webp 640w"
+                    src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=400&h=500&q=58&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=240&h=300&q=50&fm=webp 240w, https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=320&h=400&q=55&fm=webp 320w, https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=400&h=500&q=58&fm=webp 400w"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 20vw"
-                    width="480"
-                    height="600"
+                    width="400"
+                    height="500"
                     alt="Estilo Contemporâneo"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -385,11 +519,11 @@ const Home = () => {
               <Link to="/estilos/japandi" className="group block">
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=480&h=600&q=65&fm=webp"
-                    srcSet="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=360&h=450&q=60&fm=webp 360w, https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=480&h=600&q=65&fm=webp 480w, https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=640&h=800&q=65&fm=webp 640w"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 20vw"
-                    width="480"
-                    height="600"
+                    src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=400&h=500&q=58&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=240&h=300&q=50&fm=webp 240w, https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=320&h=400&q=55&fm=webp 320w, https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=400&h=500&q=58&fm=webp 400w"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 16vw"
+                    width="400"
+                    height="500"
                     alt="Estilo Japandi"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -407,17 +541,53 @@ const Home = () => {
                 </div>
               </Link>
             </motion.div>
+
+            {/* Novo Card: Clássico */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+            >
+              <Link to="/estilos/classico" className="group block">
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img
+                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&h=500&q=58&fm=webp"
+                    srcSet="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=240&h=300&q=50&fm=webp 240w, https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=320&h=400&q=55&fm=webp 320w, https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&h=500&q=58&fm=webp 400w"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 16vw"
+                    width="400"
+                    height="500"
+                    alt="Estilo Clássico"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="flex gap-1 mb-2">
+                      {['#E5C07B', '#A67C52', '#FFFFFF'].map((color, idx) => (
+                        <div key={idx} className="w-4 h-4 rounded-full border border-white/50" style={{ backgroundColor: color }} />
+                      ))}
+                    </div>
+                    <h3 className="text-white font-semibold text-lg">Clássico</h3>
+                    <p className="text-white/70 text-xs line-clamp-2">Elegância atemporal e detalhes sofisticados.</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           </div>
 
+          {/* Espaço entre cards e link */}
+          <div className="h-6 md:h-8" />
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mt-8"
+            className="text-center mt-0 mb-0"
           >
             <Link
               to="/revista-estilos"
-              className="inline-flex items-center gap-2 text-wg-orange hover:text-wg-orange/80 font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-wg-orange hover:text-wg-brown font-medium transition-colors"
+              style={{ marginBottom: 0, paddingBottom: 0 }}
             >
               Ver todos os 30 estilos
               <ArrowRight className="w-4 h-4" />
@@ -426,37 +596,67 @@ const Home = () => {
         </div>
       </section>
 
+      <div className="wg-neon-divider" aria-hidden="true" />
+
       {/* ========== BLOCO INSTITUCIONAL - QUEM SOMOS ========== */}
-      <section className="section-padding bg-white relative overflow-hidden">
-        <AnimatedStrokes variant="colorCycle" opacity={0.08} count={5} duration={4} />
-        <div className="container-custom">
+      <section className="pt-8 pb-8 bg-white relative overflow-hidden">
+        {/* Efeito neon atrás do bloco, mas sem sobrepor o conteúdo */}
+        <div className="absolute inset-0 z-0 pointer-events-none select-none">
+          <AnimatedStrokes variant="colorCycle" opacity={0.08} count={5} duration={4} />
+        </div>
+        <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
           >
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
-              {t('home.about.kicker', { years: estatisticas.anosExperiencia })}
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter font-light text-wg-black mb-8 leading-tight normal-case tracking-tight">
-              {t('home.about.title')}
-            </h2>
-            <p className="text-lg md:text-xl text-wg-gray leading-relaxed mb-6 font-light">
-              {t('home.about.paragraphs.0')}
-            </p>
-            <p className="text-lg md:text-xl text-wg-gray leading-relaxed font-light">
-              <Trans i18nKey="home.about.paragraphs.1">
-                Entregamos <strong className="font-medium text-wg-black">controle, previsibilidade e tranquilidade</strong> para quem valoriza excelencia.
-              </Trans>
-            </p>
+            <div className="wg-card-editorial">
+              <div className="p-6 md:p-8">
+                <div className="grid grid-cols-1 md:grid-cols-[72px_1fr] gap-6 md:gap-8">
+                  <div className="md:h-full">
+                    <div className="grid grid-cols-3 md:grid-cols-1 md:grid-rows-3 gap-2 md:gap-0 h-full">
+                      {logosNucleos.map((logo, index) => (
+                        <div
+                          key={logo.src}
+                          className={`flex justify-center ${index === 0 ? 'md:items-start' : index === 2 ? 'md:items-end' : 'md:items-center'}`}
+                        >
+                          <img
+                            src={logo.src}
+                            alt={logo.alt}
+                            width="84"
+                            height="84"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-12 md:w-full h-auto max-h-14 object-contain opacity-70 scale-[1.45]"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="md:grid md:grid-rows-[auto_auto_auto] md:gap-4">
+                    <div>
+                      <p className={`mb-2 text-wg-gray ${editorialScale.kicker}`}>{t('home.about.kicker', { years: estatisticas.anosExperiencia })}</p>
+                      <h2 className={`mb-4 normal-case tracking-tight font-semibold ${editorialScale.title}`}>{t('home.about.title')}</h2>
+                    </div>
+                    <p className={editorialScale.body}>
+                      {t('home.about.paragraphs.0')}
+                    </p>
+                    <p className={editorialScale.body}>
+                      <Trans i18nKey="home.about.paragraphs.1">
+                        Entregamos <strong className="font-medium text-wg-black">controle, previsibilidade e tranquilidade</strong> para quem valoriza excelencia.
+                      </Trans>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* ========== BLOCO DE NÚMEROS / RESULTADOS - DINÂMICO ========== */}
-      <section className="py-16 bg-wg-gray-light">
+      <section ref={statsSectionRef} className="py-16 bg-wg-gray-light">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {/* Projetos em Andamento - Contratos Ativos +1 */}
@@ -468,7 +668,7 @@ const Home = () => {
               className="text-center"
             >
               <div className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-wg-orange mb-2">
-                {estatisticas.projetosAndamento}<span className="text-2xl md:text-3xl">+</span>
+                {displayStats.projetosAndamento}<span className="text-2xl md:text-3xl">+</span>
               </div>
               <p className="text-sm md:text-base text-wg-gray font-light">
                 <Trans i18nKey="home.stats.inProgress">
@@ -486,7 +686,7 @@ const Home = () => {
               className="text-center"
             >
               <div className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-wg-orange mb-2">
-                +{estatisticas.clientesAtendidos}
+                +{displayStats.clientesAtendidos}
               </div>
               <p className="text-sm md:text-base text-wg-gray font-light">
                 <Trans i18nKey="home.stats.clients">
@@ -504,9 +704,7 @@ const Home = () => {
               className="text-center"
             >
               <div className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-wg-orange mb-2">
-                +{estatisticas.metrosRevestimentos >= 1000
-                  ? Math.floor(estatisticas.metrosRevestimentos / 1000)
-                  : estatisticas.metrosRevestimentos}
+                +{displayStats.metrosRevestimentos}
                 <span className="text-2xl md:text-3xl">{estatisticas.metrosRevestimentos >= 1000 ? 'mil' : ''}</span>
               </div>
               <p className="text-sm md:text-base text-wg-gray font-light">
@@ -525,9 +723,7 @@ const Home = () => {
               className="text-center"
             >
               <div className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-wg-orange mb-2">
-                {estatisticas.horasProjetando >= 1000
-                  ? Math.floor(estatisticas.horasProjetando / 1000)
-                  : estatisticas.horasProjetando}
+                {displayStats.horasProjetando}
                 <span className="text-2xl md:text-3xl">{estatisticas.horasProjetando >= 1000 ? 'mil' : ''}</span>
               </div>
               <p className="text-sm md:text-base text-wg-gray font-light">
@@ -541,7 +737,7 @@ const Home = () => {
       </section>
 
       {/* ========== BLOCO TURN KEY PREMIUM ========== */}
-      <section className="py-20 bg-wg-black text-white relative overflow-hidden">
+      <section className="py-[68px] bg-wg-black text-white relative overflow-hidden">
         <AnimatedStrokes variant="diagonal" opacity={0.06} count={4} duration={5} />
         <div className="container-custom relative z-10">
           <motion.div
@@ -554,7 +750,7 @@ const Home = () => {
             <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
               {t('home.turnKey.kicker')}
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter font-light mb-8 leading-tight normal-case tracking-tight">
+            <h2 className="wg-heading-display text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight">
               {t('home.turnKey.title')}
             </h2>
 
@@ -606,7 +802,7 @@ const Home = () => {
                 <span className="text-sm font-medium text-wg-orange">Visualize antes de decidir</span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter font-light mb-6 leading-tight tracking-tight">
+              <h2 className="wg-heading-display text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
                 Crie seu <span className="text-wg-orange">Moodboard</span> e visualize suas cores no ambiente
               </h2>
 
@@ -626,7 +822,7 @@ const Home = () => {
               </div>
 
               <Link to="/moodboard">
-                <Button className="btn-apple text-lg px-8 py-4">
+                <Button className="wg-btn-pill-primary">
                   <Palette className="w-5 h-5 mr-2" />
                   Criar Meu Moodboard
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -642,7 +838,9 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <HomeColorTransformer />
+              <Suspense fallback={<div className="aspect-video rounded-2xl bg-white/5 border border-white/10" />}>
+                <HomeColorTransformer />
+              </Suspense>
             </motion.div>
           </div>
         </div>
@@ -659,13 +857,13 @@ const Home = () => {
             className="text-center mb-16"
           >
             <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
-              {t('home.units.kicker')}
+              NOSSOS NÚCLEOS
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter font-light text-wg-black mb-4 normal-case tracking-tight">
-              {t('home.units.title')}
+            <h2 className="wg-heading-display text-3xl md:text-4xl lg:text-5xl text-wg-black mb-4">
+              Especialização + Integração
             </h2>
-            <p className="text-lg text-wg-gray max-w-2xl mx-auto font-light">
-              {t('home.units.subtitle')}
+            <p className="wg-text-body max-w-2xl mx-auto">
+              Três disciplinas sob o mesmo padrão de qualidade, gestão e responsabilidade.
             </p>
           </motion.div>
 
@@ -683,7 +881,7 @@ const Home = () => {
                     <div className={`h-1.5 bg-${nucleo.color}`}></div>
                     <div className="p-8 flex-1 flex flex-col">
                       <nucleo.icon className={`w-12 h-12 mb-6 text-${nucleo.color}`} />
-                      <h3 className="text-2xl font-inter font-medium text-wg-black mb-4 normal-case tracking-tight group-hover:text-wg-orange transition-colors">
+                      <h3 className={`text-2xl font-inter font-medium text-wg-black mb-4 normal-case tracking-tight group-hover:text-${nucleo.color} transition-colors`}>
                         {nucleo.title}
                       </h3>
                       <p className="text-wg-gray leading-relaxed mb-4 font-light flex-1">
@@ -692,7 +890,7 @@ const Home = () => {
                       <p className="text-sm text-wg-black font-medium italic border-l-2 border-wg-orange pl-4 mb-6">
                         {nucleo.highlight}
                       </p>
-                      <div className="flex items-center text-wg-orange font-medium group-hover:translate-x-2 transition-transform mt-auto">
+                      <div className={`flex items-center text-wg-orange group-hover:text-${nucleo.color} font-medium group-hover:translate-x-2 transition-transform mt-auto`}>
                         Saiba mais
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </div>
@@ -719,7 +917,7 @@ const Home = () => {
             >
               <img
                 src="/images/banners/ENGENHARIA.webp"
-                srcSet="/images/banners/ENGENHARIA-640.webp 640w, /images/banners/ENGENHARIA-960.webp 960w, /images/banners/ENGENHARIA-1280.webp 1280w, /images/banners/ENGENHARIA.webp 1920w"
+                srcSet="/images/banners/ENGENHARIA-640.webp 640w, /images/banners/ENGENHARIA-960-opt.webp 960w, /images/banners/ENGENHARIA-1280.webp 1280w, /images/banners/ENGENHARIA.webp 1920w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 alt={t('home.turnKeyBlock.imageAlt')}
                 className="w-full h-full object-cover"
@@ -833,10 +1031,10 @@ const Home = () => {
             <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
               {t('home.methodology.kicker')}
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter font-light text-wg-black mb-4 normal-case tracking-tight">
+            <h2 className="wg-heading-display text-3xl md:text-4xl lg:text-5xl text-wg-black mb-4">
               {t('home.methodology.title')}
             </h2>
-            <p className="text-lg text-wg-gray max-w-2xl mx-auto font-light">
+            <p className="wg-text-body max-w-2xl mx-auto">
               {t('home.methodology.subtitle')}
             </p>
           </motion.div>
@@ -884,7 +1082,15 @@ const Home = () => {
       </section>
 
       {/* ========== GALERIA DE PROJETOS ========== */}
-      <ProjectGallery />
+      <section ref={projectGalleryRef} aria-label="Galeria de projetos">
+        {projectGalleryVisible ? (
+          <Suspense fallback={<div className="h-[560px] bg-wg-gray-light" aria-hidden="true" />}>
+            <ProjectGallery />
+          </Suspense>
+        ) : (
+          <div className="h-[560px] bg-wg-gray-light" aria-hidden="true" />
+        )}
+      </section>
       {/* ========== BLOCO EXPERIÊNCIA & TECNOLOGIA ========== */}
       <section className="section-padding relative overflow-hidden bg-gradient-to-br from-white via-wg-gray-light to-white">
         <div className="absolute -top-24 -right-20 h-72 w-72 rounded-full bg-wg-orange/10 blur-3xl"></div>
@@ -900,10 +1106,10 @@ const Home = () => {
               <span className="text-wg-orange font-poppins text-xs tracking-[0.35em] uppercase mb-4 block">
                 {t('home.dashboard.kicker')}
               </span>
-              <h2 className="text-3xl md:text-5xl font-playfair italic text-wg-black mb-6 normal-case leading-tight">
+              <h2 className="wg-heading-display text-3xl md:text-5xl text-wg-black mb-6 leading-tight">
                 {t('home.dashboard.title')}
               </h2>
-              <p className="text-lg text-wg-gray leading-relaxed mb-8 font-light">
+              <p className="wg-text-body mb-8">
                 {t('home.dashboard.paragraph')}
               </p>
 
@@ -955,7 +1161,7 @@ const Home = () => {
                       <div className="w-3 h-3 rounded-full bg-wg-orange"></div>
                       <div className="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <span className="text-white/70 text-xs font-poppins tracking-[0.2em] uppercase">WG Easy</span>
+                    <span className="text-white text-xs font-poppins tracking-[0.2em] uppercase">WG Easy</span>
                   </div>
                   <div className="mt-3 text-white/60 text-xs font-mono">{t('home.dashboard.systemUrl')}</div>
                 </div>
@@ -1018,22 +1224,38 @@ const Home = () => {
       </section>
 
       {/* ========== GOOGLE REVIEWS ========== */}
-      <GoogleReviewsBadge />
+      <section ref={reviewsRef} aria-label="Avaliações Google">
+        {reviewsVisible ? (
+          <Suspense fallback={<div className="h-[160px] bg-white" aria-hidden="true" />}>
+            <GoogleReviewsBadge />
+          </Suspense>
+        ) : (
+          <div className="h-[160px] bg-white" aria-hidden="true" />
+        )}
+      </section>
 
       {/* ========== ASSISTENTE IA - LIZ ========== */}
       {/* <LizAssistant /> */} {/* DESATIVADO - Manter apenas WhatsApp */}
 
       {/* ========== ENCERRAMENTO INSTITUCIONAL ========== */}
-      <section className="py-24 md:py-32 bg-wg-black text-white">
+      <section className="relative overflow-hidden py-14 md:py-20 bg-wg-black text-white">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle at 20% 10%, rgba(242,92,38,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(255,255,255,0.08), transparent 40%)",
+          }}
+        />
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            className="relative max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter font-light mb-8 leading-tight normal-case tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-inter font-medium mb-5 leading-tight normal-case tracking-tight [text-wrap:balance] [text-shadow:0_8px_32px_rgba(0,0,0,0.35)] [&>span:first-of-type]:bg-gradient-to-r [&>span:first-of-type]:from-white/90 [&>span:first-of-type]:to-white/70 [&>span:first-of-type]:bg-clip-text [&>span:first-of-type]:text-transparent [&>span:last-of-type]:bg-gradient-to-r [&>span:last-of-type]:from-wg-orange [&>span:last-of-type]:to-wg-orange [&>span:last-of-type]:bg-clip-text [&>span:last-of-type]:text-transparent">
               <Trans i18nKey="home.closing.title">
                 Grupo WG Almeida.<br />
                 <span className="text-white/70">Onde ideias ganham forma, processos ganham controle</span><br />
@@ -1041,20 +1263,13 @@ const Home = () => {
               </Trans>
             </h2>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-              <Link to="/contato">
-                <Button className="btn-apple text-lg px-10 py-5">
-                  {t('home.closing.ctaPrimary')}
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mt-7">
+              <Link to="/contato" className="inline-flex items-center justify-center wg-btn-pill-primary">
+                {t('home.closing.ctaPrimary')}
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-              <Link to="/projetos">
-                <Button
-                  variant="ghost"
-                  className="text-lg px-10 py-5 border border-white/40 text-white bg-white/5 hover:bg-white/15 backdrop-blur-sm transition-all rounded-2xl"
-                >
-                  {t('home.closing.ctaSecondary')}
-                </Button>
+              <Link to="/projetos" className="inline-flex items-center justify-center wg-btn-pill-secondary">
+                {t('home.closing.ctaSecondary')}
               </Link>
             </div>
           </motion.div>
@@ -1065,3 +1280,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+

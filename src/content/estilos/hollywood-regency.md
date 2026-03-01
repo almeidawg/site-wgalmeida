@@ -1,7 +1,7 @@
 ---
-title: "Hollywood Regency"
+title: "Hollywood Regency: Guia de Decoração com Glamour e Drama Elegante"
 slug: "hollywood-regency"
-excerpt: "Glamour teatral dos anos 40 com drama visual, espelhos abundantes e luxo ousado que celebra o excesso elegante de Hollywood."
+excerpt: "Aprenda a criar ambientes Hollywood Regency com espelhos, metais e composição sofisticada inspirada na era de ouro do cinema."
 image: "/images/estilos/hollywood-regency.webp"
 quote: "Mais glamour, mais drama, mais tudo!"
 author: "Dorothy Draper"
@@ -14,7 +14,7 @@ colors: ["#000000", "#FFD700", "#FF1493", "#FFFFFF"]
 
 ## O Estilo Hollywood Regency
 
-O **Hollywood Regency** é **glamour puro** - teatral, dramático, ousado e absolutamente **luxuoso**. Nascido na era dourada de Hollywood (anos 1930-50), é o estilo das estrelas de cinema, sets glamourosos e a vida extravagante de Beverly Hills.
+O **Hollywood Regency** é a expressão máxima do glamour decorativo, com estética teatral, luxuosa e marcante. Inspirado na era de ouro do cinema, o estilo usa contraste, brilho e drama visual com sofisticação.
 
 Criado pela lendária designer **Dorothy Draper** e popularizado por designers de set de cinema, o Hollywood Regency é sobre **drama visual**, **espelhos por todo lado**, **cores ousadas** e a atitude de "mais é mais" (mas com elegância!).
 

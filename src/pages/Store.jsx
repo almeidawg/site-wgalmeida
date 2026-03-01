@@ -1,10 +1,11 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
+import React, { lazy, Suspense } from 'react';
+import { motion } from '@/lib/motion-lite';
 import { ShoppingBag, Sparkles } from 'lucide-react';
-import ProductsList from '@/components/ProductsList';
 import { useTranslation } from 'react-i18next';
+import SEO from '@/components/SEO';
+import { SCHEMAS } from '@/data/schemaConfig';
 
+const ProductsList = lazy(() => import('@/components/ProductsList'));
 // Animações elegantes
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -18,13 +19,10 @@ const Store = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{t('seo.store.title')} - Grupo WG Almeida</title>
-        <meta name="description" content={t('seo.store.description')} />
-      </Helmet>
+      <SEO pathname="/store" schema={SCHEMAS.breadcrumbStore} />
 
       {/* Hero elegante */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -158,7 +156,9 @@ const Store = () => {
             </div>
           </motion.div>
 
-          <ProductsList />
+          <Suspense fallback={null}>
+            <ProductsList />
+          </Suspense>
         </div>
       </section>
     </>
@@ -166,3 +166,9 @@ const Store = () => {
 };
 
 export default Store;
+
+
+
+
+
+

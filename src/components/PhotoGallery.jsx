@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { LazyImage } from "./OptimizedImage";
 import { useTranslation } from 'react-i18next';
@@ -75,6 +75,8 @@ const PhotoFrame = ({ image, project, index, onClick }) => {
               src={image.src}
               alt={t(image.labelKey)}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              width={600}
+              height={450}
             />
 
             {/* Overlay gradiente no hover */}
@@ -152,6 +154,10 @@ const LightboxModal = ({ images, currentIndex, onClose, onPrev, onNext }) => {
                 src={images[currentIndex]?.src}
                 alt={images[currentIndex]?.labelKey ? t(images[currentIndex]?.labelKey) : ''}
                 className="max-h-[75vh] w-auto mx-auto object-contain"
+                width={1280}
+                height={720}
+                loading="lazy"
+                decoding="async"
               />
             </div>
 

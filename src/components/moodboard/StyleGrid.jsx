@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { Search, Filter, Grid, List } from 'lucide-react';
 import StyleCard from './StyleCard';
 

@@ -1,11 +1,11 @@
 ---
-title: "Sustentabilidade na Construção Civil: Práticas Essenciais em 2026"
+title: "Sustentabilidade na Construcao Civil 2026: 15 Praticas para Reduzir Custo e Desperdicio"
 slug: "sustentabilidade-construcao-civil-2026"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "sustentabilidade"
 image: "/images/blog/sustentabilidade-construcao-civil-2026.webp"
-excerpt: "Descubra como tornar sua obra mais sustentável com materiais ecológicos, eficiência energética e certificações verdes."
+excerpt: "Guia pratico com 15 acoes sustentaveis para obra: menor desperdicio, mais eficiencia energetica e reducao real de custo operacional."
 tags:
   - "sustentabilidade"
   - "construção sustentável"
@@ -13,9 +13,9 @@ tags:
   - "eficiência energética"
 featured: false
 ---
-# Sustentabilidade na Construção Civil: Práticas Essenciais em 2026
+# Sustentabilidade na Construcao Civil 2026: 15 Praticas com Retorno Real
 
-A construção sustentável não é mais tendência, é necessidade. Em 2026, práticas ecológicas são obrigatórias e valorizam o imóvel.
+Se voce quer construir com menor custo operacional e menos desperdicio, estas 15 praticas de sustentabilidade ajudam a melhorar desempenho da obra sem perder qualidade de entrega.
 
 ## Por Que Construir de Forma Sustentável?
 
@@ -286,3 +286,10 @@ Sustentabilidade é investimento, não gasto:
 ✅ Responsabilidade ambiental
 
 Em 2026, construir sustentável é obrigação de quem se importa com o futuro.
+
+## Leitura recomendada
+
+- [Tendencias da construcao civil 2026](/blog/tendencias-construcao-civil-2026)
+- [EVF: estudo de viabilidade financeira](/blog/evf-estudo-viabilidade-financeira)
+- [Steel Frame vs Alvenaria: qual escolher](/blog/steel-frame-vs-alvenaria-qual-escolher)
+

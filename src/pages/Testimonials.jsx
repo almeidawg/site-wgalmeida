@@ -1,14 +1,14 @@
 import React from 'react';
 import SEO from '@/components/SEO';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Star, ExternalLink, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
+import { GOOGLE_WRITE_REVIEW_URL } from '@/constants/googleReviews';
+import useGoogleReviews from '@/hooks/useGoogleReviews';
 
-// Link direto para avaliações no Google
-const GOOGLE_REVIEWS_URL = "https://g.page/r/CRiQxxxxxxxxxx/review"; // Atualizar com o link real
-const GOOGLE_MAPS_URL = "https://maps.google.com/?q=WG+Almeida+Arquitetura+São+Paulo";
+const GOOGLE_MAPS_URL = 'https://maps.google.com/?q=WG+Almeida+Arquitetura+São+Paulo';
 
 // Animações elegantes
 const fadeInUp = {
@@ -21,6 +21,7 @@ const fadeInUp = {
 const Testimonials = () => {
   const { t } = useTranslation();
   const whatsappUrl = `https://wa.me/5511984650002?text=${encodeURIComponent(t('testimonialsPage.cta.whatsappMessage'))}`;
+  const { reviews, averageRating, reviewCount, countLabel } = useGoogleReviews();
 
   // Parceiros reais
   const partners = [
@@ -35,14 +36,35 @@ const Testimonials = () => {
   return (
     <>
       <SEO
+        pathname="/depoimentos"
         title={t('seo.testimonials.title')}
         description={t('seo.testimonials.description')}
         keywords={t('seo.testimonials.keywords')}
-        url="https://wgalmeida.com.br/depoimentos"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Grupo WG Almeida",
+          url: "https://wgalmeida.com.br",
+          telephone: "+55-11-98465-0002",
+          email: "contato@wgalmeida.com.br",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Sao Paulo",
+            addressRegion: "SP",
+            addressCountry: "BR",
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "5.0",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: String(reviewCount || 50),
+          },
+        }}
       />
 
       {/* Hero elegante */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -154,13 +176,30 @@ const Testimonials = () => {
                       <Star key={i} className="w-6 h-6 text-wg-orange fill-wg-orange" />
                     ))}
                   </div>
-                  <span className="text-2xl font-bold text-wg-black">5.0</span>
+                  <span className="text-2xl font-bold text-wg-black">{averageRating.toFixed(1)}</span>
                 </div>
               </div>
 
               <p className="text-wg-gray text-lg mb-8">
-                {t('testimonialsPage.google.note')}
+                {t('testimonialsPage.google.note')} {countLabel}
               </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-left">
+                {reviews.map((review) => (
+                  <article key={review.id} className="rounded-2xl border border-gray-100 bg-wg-gray-light p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 rounded-full bg-wg-orange/10 text-wg-orange flex items-center justify-center text-sm font-semibold">
+                        {review.avatar}
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-wg-black">{review.name}</p>
+                        <p className="text-xs text-wg-gray">{review.date}</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-wg-gray leading-relaxed">{review.text}</p>
+                  </article>
+                ))}
+              </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -174,7 +213,7 @@ const Testimonials = () => {
                   </Button>
                 </a>
                 <a
-                  href={GOOGLE_REVIEWS_URL}
+                  href={GOOGLE_WRITE_REVIEW_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

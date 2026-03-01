@@ -1,5 +1,7 @@
 node_modules/
 dist/
+dist-local/
+dist-check/
 dist-deploy/
 build/
 coverage/
@@ -21,3 +23,6 @@ out/
 yarn-error.log
 npm-debug.log
 *.lock
+NUL
+nul
+configurar-emailjs-automatico.js

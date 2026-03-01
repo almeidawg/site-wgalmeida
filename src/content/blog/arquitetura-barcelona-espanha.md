@@ -1,7 +1,7 @@
 ---
-title: "Arquitetura de Barcelona: Gaudí, Modernisme e a Sagrada Família"
+title: "Arquitetura de Barcelona: Gaudi, Modernisme e Icones Como a Sagrada Familia"
 slug: "arquitetura-barcelona-espanha"
-excerpt: "Descubra Barcelona - capital mundial do Modernisme Catalão. Da Sagrada Família aos mosaicos de Park Güell, explore a arquitetura visionária de Gaudí que transformou uma cidade em obra de arte viva."
+excerpt: "Guia da arquitetura de Barcelona com Gaudi, Sagrada Familia e Park Guell, destacando estilos e licoes para projetos contemporaneos."
 date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
@@ -10,11 +10,11 @@ image: "/images/blog/arquitetura-barcelona-espanha.webp"
 featured: true
 ---
 
-# Arquitetura de Barcelona: Gaudí, Modernisme e a Sagrada Família
+# Arquitetura de Barcelona: Gaudi, Modernisme e a Sagrada Familia
 
 ## A Cidade que Gaudí Transformou em Sonho
 
-**Barcelona** é um **museu a céu aberto** do **Modernisme** (Art Nouveau catalão) - onde a arquitetura de **Antoni Gaudí** transformou edifícios em **organismos vivos** que parecem ter crescido da terra, não sido construídos.
+**Barcelona** e um **museu a ceu aberto** do **Modernisme** (Art Nouveau catalao), onde a arquitetura de **Antoni Gaudi** transformou edificios em formas organicas que parecem ter crescido da terra.
 
 É uma cidade onde **9 Patrimônios Mundiais da UNESCO** convivem com bairros góticos medievais e praias mediterrâneas. Onde a **Sagrada Família** - em construção há **144 anos** - desafia todas as leis da arquitetura. Onde mosaicos coloridos (trencadís) explodem em formas orgânicas que desafiam a gravidade.
 

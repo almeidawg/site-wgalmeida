@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Download, ArrowLeft } from 'lucide-react';
 import CoverPage from '@/components/moodboard-generator/CoverPage';
 import EnvironmentPage from '@/components/moodboard-generator/EnvironmentPage';
@@ -185,8 +185,10 @@ export default function MoodboardGenerator() {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <SEO
-        title="Gerador de Moodboards Profissional | WG Almeida"
+        pathname="/moodboard-generator"
+        title="Gerador de Moodboard Profissional | WG Almeida"
         description="Crie moodboards personalizados e profissionais para seus clientes. Selecione estilos, ambientes, materiais e paleta de cores com imagens de alta qualidade."
+        keywords="gerador moodboard, moodboard profissional, apresentacao design interiores, paleta cores ambientes"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

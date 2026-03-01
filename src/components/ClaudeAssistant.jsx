@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { MessageCircle, X, Send, User, Bot, Loader2 } from 'lucide-react';
 import { sendClaudePrompt } from '@/lib/claudeClient';
 import { useTranslation } from 'react-i18next';

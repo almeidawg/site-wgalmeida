@@ -1,7 +1,7 @@
 ---
-title: "Arquitetura de Bruxelas: Capital do Art Nouveau e a Grand Place Dourada"
+title: "Arquitetura de Bruxelas: Art Nouveau, Grand Place e Icones da Capital Europeia"
 slug: "arquitetura-bruxelas-belgica"
-excerpt: "Descubra Bruxelas - da Grand Place dourada ao Art Nouveau de Victor Horta, passando pelo Atomium futurista. A capital europeia onde história e modernidade convivem em harmonia arquitetônica."
+excerpt: "Descubra a arquitetura de Bruxelas da Grand Place ao Art Nouveau de Victor Horta, com licoes de historia e modernidade urbana."
 date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
@@ -10,11 +10,11 @@ image: "/images/blog/arquitetura-bruxelas-belgica.webp"
 featured: true
 ---
 
-# Arquitetura de Bruxelas: Capital do Art Nouveau e a Grand Place Dourada
+# Arquitetura de Bruxelas: Art Nouveau, Grand Place e Icones da Cidade
 
 ## A Capital da Europa e do Art Nouveau
 
-**Bruxelas** é uma cidade de **contrastes arquitetônicos extraordinários** - de um lado, a **Grand Place** medieval dourada (considerada a praça mais bonita do mundo), do outro, o **Atomium** futurista. Entre eles, centenas de **obras-primas Art Nouveau** que fizeram de Bruxelas a **capital mundial deste movimento**.
+**Bruxelas** e uma cidade de **contrastes arquitetonicos**: de um lado, a **Grand Place** medieval dourada; de outro, o **Atomium** futurista. Entre esses marcos, o acervo Art Nouveau de Victor Horta coloca a cidade entre as referencias europeias do movimento.
 
 Como sede da **União Europeia e NATO**, Bruxelas também abriga arquitetura institucional moderna e contemporânea, criando uma cidade onde **mil anos de história coexistem** com o futuro.
 

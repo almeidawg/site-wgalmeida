@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Loader2, Check, Sparkles, Palette, Wand2, Image } from 'lucide-react';
 
 const GENERATION_STEPS = [

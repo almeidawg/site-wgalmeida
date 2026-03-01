@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { ArrowLeftRight, Check, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -37,20 +37,20 @@ const DEMO_IMAGES = [
   {
     id: 'poltrona',
     name: 'Poltrona',
-    externalUrl: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800',
-    thumbnail: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200&h=150&fit=crop',
+    externalUrl: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=640&h=360&q=55&fm=webp',
+    thumbnail: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=96&h=72&q=45&fm=webp',
   },
   {
     id: 'sala',
     name: 'Sala',
-    externalUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800',
-    thumbnail: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=200&h=150&fit=crop',
+    externalUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=640&h=360&q=55&fm=webp',
+    thumbnail: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=96&h=72&q=45&fm=webp',
   },
   {
     id: 'quarto',
     name: 'Quarto',
-    externalUrl: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800',
-    thumbnail: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=200&h=150&fit=crop',
+    externalUrl: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=640&h=360&q=55&fm=webp',
+    thumbnail: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=96&h=72&q=45&fm=webp',
   },
 ];
 
@@ -58,17 +58,22 @@ const DEMO_IMAGES = [
 const generateTransformUrl = (publicId, color, cloudName) => {
   if (!publicId) return null;
   const hexColor = color.replace('#', '');
-  return `https://res.cloudinary.com/${cloudName}/image/upload/e_gen_recolor:prompt_walls;to-color_${hexColor};multiple_true/${publicId}`;
+  return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto:eco,w_640,c_fill/e_gen_recolor:prompt_walls;to-color_${hexColor};multiple_true/${publicId}`;
 };
 
 const HomeColorTransformer = () => {
   const [selectedImage, setSelectedImage] = useState(DEMO_IMAGES[0]);
   const [selectedPalette, setSelectedPalette] = useState(COLOR_PALETTES[0]);
-  const [imageData, setImageData] = useState(null);
+  const [imageData, setImageData] = useState({
+    publicId: null,
+    url: DEMO_IMAGES[0].externalUrl,
+    isDemo: true,
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
-  const [transformedUrl, setTransformedUrl] = useState(null);
+  const [transformedUrl, setTransformedUrl] = useState(DEMO_IMAGES[0].externalUrl);
+  const [isActivated, setIsActivated] = useState(false);
 
   const containerRef = useRef(null);
 
@@ -90,7 +95,8 @@ const HomeColorTransformer = () => {
         const data = await response.json();
         setImageData({
           publicId: data.public_id,
-          url: data.secure_url,
+          // Mantem a imagem original otimizada do Unsplash no comparador
+          url: image.externalUrl,
         });
         // Gerar URL transformada
         const url = generateTransformUrl(data.public_id, selectedPalette.mainColor, CLOUDINARY_CLOUD_NAME);
@@ -117,11 +123,6 @@ const HomeColorTransformer = () => {
     }
   };
 
-  // Carregar primeira imagem ao montar
-  useEffect(() => {
-    uploadImage(selectedImage);
-  }, []);
-
   // Atualizar transformação quando mudar paleta
   useEffect(() => {
     if (imageData?.publicId) {
@@ -134,7 +135,24 @@ const HomeColorTransformer = () => {
   const handleSelectImage = (image) => {
     if (image.id !== selectedImage.id) {
       setSelectedImage(image);
-      uploadImage(image);
+      setImageData({
+        publicId: null,
+        url: image.externalUrl,
+        isDemo: true,
+      });
+      setTransformedUrl(image.externalUrl);
+      if (isActivated) {
+        uploadImage(image);
+      }
+    }
+  };
+
+  const handleActivate = () => {
+    if (!isActivated) {
+      setIsActivated(true);
+      if (!imageData?.publicId) {
+        uploadImage(selectedImage);
+      }
     }
   };
 
@@ -178,8 +196,14 @@ const HomeColorTransformer = () => {
       <div
         ref={containerRef}
         className="relative rounded-2xl overflow-hidden shadow-2xl cursor-ew-resize select-none aspect-video bg-gray-800"
-        onMouseDown={() => setIsDragging(true)}
-        onTouchStart={() => setIsDragging(true)}
+        onMouseDown={() => {
+          handleActivate();
+          setIsDragging(true);
+        }}
+        onTouchStart={() => {
+          handleActivate();
+          setIsDragging(true);
+        }}
       >
         {isLoading ? (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
@@ -203,11 +227,7 @@ const HomeColorTransformer = () => {
                 src={imageData?.url || selectedImage.externalUrl}
                 alt="Original"
                 className="absolute top-0 left-0 h-full object-cover"
-                style={{
-                  width: containerRef.current
-                    ? `${containerRef.current.offsetWidth}px`
-                    : '100%',
-                }}
+                style={{ width: '100%' }}
               />
             </div>
 
@@ -256,13 +276,19 @@ const HomeColorTransformer = () => {
       <div className="flex gap-2 mt-4 justify-center">
         {COLOR_PALETTES.map((palette) => (
           <button
+            type="button"
             key={palette.id}
-            onClick={() => setSelectedPalette(palette)}
+            onClick={() => {
+              handleActivate();
+              setSelectedPalette(palette);
+            }}
             className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
               selectedPalette.id === palette.id
                 ? 'bg-white/20 ring-2 ring-wg-orange'
                 : 'bg-white/10 hover:bg-white/15'
             }`}
+            aria-label={`Selecionar paleta ${palette.name}`}
+            title={palette.name}
           >
             <div className="flex gap-1">
               {palette.colors.slice(0, 3).map((color, idx) => (
@@ -285,6 +311,7 @@ const HomeColorTransformer = () => {
       <div className="flex gap-3 mt-4 justify-center">
         {DEMO_IMAGES.map((img) => (
           <button
+            type="button"
             key={img.id}
             onClick={() => handleSelectImage(img)}
             className={`relative w-16 h-12 rounded-lg overflow-hidden transition-all ${
@@ -292,11 +319,15 @@ const HomeColorTransformer = () => {
                 ? 'ring-2 ring-wg-orange opacity-100'
                 : 'border-2 border-white/30 opacity-60 hover:opacity-100'
             }`}
+            aria-label={`Selecionar imagem ${img.name}`}
+            title={img.name}
           >
             <img
               src={img.thumbnail}
               alt={img.name}
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
             {selectedImage.id === img.id && (
               <div className="absolute inset-0 bg-wg-orange/30 flex items-center justify-center">

@@ -1,9 +1,9 @@
-import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { Suspense, lazy, useEffect } from 'react';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 // import ClaudeAssistant from '@/components/ClaudeAssistant'; // DESATIVADO TEMPORARIAMENTE - Manter apenas WhatsApp
-import { useAuth } from '@/contexts/SupabaseAuthContext';
+import { AuthProvider } from '@/contexts/SupabaseAuthContext';
 import { Loader2 } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 
@@ -72,16 +72,64 @@ const LoadingFallback = () => (
 );
 
 function App() {
-  const { loading: authLoading } = useAuth();
+  const location = useLocation();
+  const shouldInitAuth = ["/login", "/register", "/account", "/admin", "/room-visualizer", "/visualizador-ambientes"].some((path) => location.pathname.startsWith(path));
 
-  if (authLoading) {
-    return <LoadingFallback />;
-  }
+  // Garante canonical sempre sem "www" em qualquer rota SPA
+  useEffect(() => {
+    const link = document.querySelector('link[rel="canonical"]');
+    if (link) {
+      const rawPath = location?.pathname || '/';
+      let normalizedPath = rawPath.replace(/\/{2,}/g, '/');
+      if (normalizedPath.length > 1 && normalizedPath.endsWith('/')) {
+        normalizedPath = normalizedPath.slice(0, -1);
+      }
+      link.setAttribute('href', `https://wgalmeida.com.br${normalizedPath}`);
+    }
+  }, [location]);
+
+  // Sinaliza ao prerender que os metadados da rota atual ja foram aplicados.
+  useEffect(() => {
+    let isDone = false;
+    let observer;
+    let timeoutId;
+
+    const emitReady = () => {
+      if (isDone) return;
+      isDone = true;
+      document.dispatchEvent(new Event('prerender-ready'));
+      if (observer) observer.disconnect();
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
+
+    // Usa MutationObserver em vez de polling a cada 120ms
+    const main = document.querySelector('main');
+    if (main) {
+      const check = () => {
+        const heading = main.querySelector('h1, h2');
+        if (heading?.textContent?.trim()?.length) emitReady();
+      };
+      check(); // verificar imediatamente
+      if (!isDone) {
+        observer = new MutationObserver(check);
+        observer.observe(main, { childList: true, subtree: true });
+      }
+    }
+
+    // Fallback: 3s maximo
+    timeoutId = window.setTimeout(emitReady, 3000);
+
+    return () => {
+      if (observer) observer.disconnect();
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
+  }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <Header />
-      <main className="flex-grow pt-20 bg-white">
+    <AuthProvider autoInit={shouldInitAuth}>
+      <div className="min-h-screen flex flex-col bg-white">
+        <Header />
+        <main className="flex-grow bg-white" style={{ paddingTop: 'var(--header-height)' }}>
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -94,8 +142,8 @@ function App() {
             <Route path="/processo" element={<Process />} />
             <Route path="/depoimentos" element={<Testimonials />} />
             <Route path="/contato" element={<Contact />} />
-            <Route path="/solicite-sua-proposta" element={<SoliciteProposta />} />
             <Route path="/solicite-proposta" element={<SoliciteProposta />} />
+            <Route path="/solicite-sua-proposta" element={<Navigate to="/solicite-proposta" replace />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<Blog />} />
             <Route path="/faq" element={<FAQ />} />
@@ -104,16 +152,17 @@ function App() {
 
             {/* Moodboard & Room Visualizer */}
             <Route path="/moodboard" element={<Moodboard />} />
-            <Route path="/gerador-moodboard" element={<MoodboardGenerator />} />
             <Route path="/moodboard-generator" element={<MoodboardGenerator />} />
+            <Route path="/gerador-moodboard" element={<Navigate to="/moodboard-generator" replace />} />
             <Route path="/room-visualizer" element={<RoomVisualizer />} />
-            <Route path="/visualizador-ambientes" element={<RoomVisualizer />} />
+            <Route path="/visualizador-ambientes" element={<Navigate to="/room-visualizer" replace />} />
 
             {/* Landing Pages Estratégicas (SEO) */}
             <Route path="/construtora-alto-padrao-sp" element={<ConstrutoraAltoPadraoSP />} />
             <Route path="/reforma-apartamento-sp" element={<ReformaApartamentoSP />} />
             <Route path="/arquitetura-corporativa" element={<ArquiteturaCorporativa />} />
             <Route path="/obra-turn-key" element={<ObraTurnKey />} />
+            <Route path="/turn-key/alto_padrao" element={<Navigate to="/obra-turn-key" replace />} />
 
             {/* Landing Pages Serviço + Bairro (SEO Local) */}
             <Route path="/reforma-apartamento-itaim" element={<ReformaApartamentoItaim />} />
@@ -172,7 +221,20 @@ function App() {
       <Footer />
       {/* <ClaudeAssistant /> */} {/* DESATIVADO - Manter apenas WhatsApp */}
     </div>
+    </AuthProvider>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+

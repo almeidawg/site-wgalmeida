@@ -1,11 +1,11 @@
 ---
-title: "Reforma de Banheiro Pequeno: 20 Dicas para Otimizar Espaço"
+title: "Reforma de Banheiro Pequeno 2026: 20 Solucoes para Ganhar Espaco"
 slug: "reforma-banheiro-pequeno-otimizacao"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "reforma"
 image: "/images/blog/reforma-banheiro-pequeno-otimizacao.webp"
-excerpt: "Transforme seu banheiro pequeno com soluções inteligentes: layout, cores, revestimentos, louças e truques que ampliam visualmente."
+excerpt: "Guia de reforma para banheiro pequeno com 20 solucoes de layout, materiais e marcenaria para ampliar espaco sem estourar o orcamento."
 tags:
   - "banheiro pequeno"
   - "reforma banheiro"
@@ -13,7 +13,9 @@ tags:
   - "espaço"
 featured: false
 ---
-# Reforma de Banheiro Pequeno: 20 Dicas para Otimizar
+# Reforma de Banheiro Pequeno 2026: 20 Dicas para Otimizar Espaco
+
+Se o banheiro e pequeno, o resultado depende de layout, escolha de revestimentos e detalhes de marcenaria. Estas 20 dicas ajudam a ganhar espaco util e melhorar conforto sem comprometer o orcamento.
 
 ## Entendendo Banheiro Pequeno
 
@@ -454,3 +456,10 @@ Banheiro pequeno bem planejado:
 3. Iluminação abundante
 4. Espelhos grandes
 5. Louças compactas
+
+## Leitura recomendada
+
+- [Reforma de cozinha planejada: guia completo](/blog/reforma-cozinha-planejada-guia-completo)
+- [Quanto tempo dura uma reforma de apartamento](/blog/quanto-tempo-dura-reforma-apartamento)
+- [Marcenaria sob medida: tendencias 2026](/blog/marcenaria-sob-medida-tendencias-2026)
+

@@ -1222,6 +1222,11 @@
       "title": "Inspírese y Aprenda"
     },
     "readMore": "Leer mas",
+    "readerGuide": {
+      "title": "Lectura Guiada",
+      "tocTitle": "En este articulo",
+      "reading": "leyendo"
+    },
     "relatedProducts": {
       "title": "Productos Relacionados",
       "view": "Ver",
@@ -1923,4 +1928,3 @@
   },
   "welcomeMessage": "Hola! Soy Horizons, tu companera de codigo IA. Estoy aqui para ayudarte a crear aplicaciones web increibles!"
 }
-

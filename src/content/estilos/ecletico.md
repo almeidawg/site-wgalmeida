@@ -1,7 +1,7 @@
 ---
-title: "Eclético"
+title: "Estilo Eclético: Como Misturar Referências com Harmonia e Personalidade"
 slug: "ecletico"
-excerpt: "Mix consciente de estilos, épocas e culturas com personalidade única que celebra a criatividade e a liberdade de expressão."
+excerpt: "Aprenda a combinar estilos, épocas e cores no estilo eclético para criar ambientes autênticos, criativos e visualmente equilibrados."
 image: "/images/estilos/ecletico.webp"
 quote: "O ecletismo é a liberdade de amar o que você ama sem seguir regras."
 author: "Jonathan Adler"
@@ -14,7 +14,7 @@ colors: ["#FF6B6B", "#4ECDC4", "#FFE66D", "#95E1D3"]
 
 ## O Estilo Eclético
 
-O estilo eclético é sobre **liberdade criativa** - misturar diferentes estilos, épocas, culturas e influências de forma **intencional e harmoniosa**. Não é seguir um manual de decoração, mas criar um ambiente que **conta sua história** através de peças que você realmente ama.
+O estilo eclético é sobre **liberdade criativa com curadoria**: misturar estilos, épocas e culturas de forma **intencional e harmoniosa**. O resultado é um ambiente com identidade própria, que conta sua história sem parecer aleatório.
 
 Inspirado por designers como **Jonathan Adler**, **Kelly Wearstler** e **Martyn Lawrence Bullard**, o eclético é para quem não quer ser definido por um único estilo, mas quer criar algo **absolutamente único e pessoal**.
 

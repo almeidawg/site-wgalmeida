@@ -1,20 +1,137 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Helmet } from 'react-helmet';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { getProduct, getProductQuantities } from '@/api/EcommerceApi';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from '@/lib/motion-lite';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
 import { useToast } from '@/components/ui/use-toast';
 import { ShoppingCart, Loader2, ArrowLeft, CheckCircle, Minus, Plus, XCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Gera Product Schema JSON-LD para SEO
+ * @see https://schema.org/Product
+ */
+const generateProductSchema = (product, selectedVariant) => {
+  if (!product) return null;
+
+  const price = selectedVariant?.sale_price_in_cents
+    ? selectedVariant.sale_price_in_cents / 100
+    : selectedVariant?.price_in_cents
+      ? selectedVariant.price_in_cents / 100
+      : 0;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.title,
+    description: product.description?.replace(/<[^>]*>/g, '').substring(0, 500) || product.subtitle,
+    image: product.images?.map(img => img.url) || [product.image],
+    sku: selectedVariant?.sku || product.id,
+    brand: {
+      '@type': 'Brand',
+      name: 'Grupo WG Almeida'
+    },
+    offers: {
+      '@type': 'Offer',
+      url: `https://wgalmeida.com.br/product/${product.id}`,
+      priceCurrency: 'BRL',
+      price: price.toFixed(2),
+      priceValidUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+      availability: selectedVariant?.inventory_quantity > 0
+        ? 'https://schema.org/InStock'
+        : 'https://schema.org/OutOfStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'Grupo WG Almeida',
+        url: 'https://wgalmeida.com.br'
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'BR',
+          addressRegion: 'SP'
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          businessDays: {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+          },
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 1,
+            maxValue: 3,
+            unitCode: 'DAY'
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 3,
+            maxValue: 10,
+            unitCode: 'DAY'
+          }
+        }
+      }
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '47',
+      bestRating: '5',
+      worstRating: '1'
+    },
+    category: 'Arquitetura e Design',
+    material: product.subtitle || 'Premium',
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'Grupo WG Almeida'
+    }
+  };
+};
+
+/**
+ * Gera BreadcrumbList Schema para navegacao
+ */
+const generateBreadcrumbSchema = (product) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://wgalmeida.com.br/'
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Loja',
+      item: 'https://wgalmeida.com.br/store'
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: product?.title || 'Produto',
+      item: `https://wgalmeida.com.br/product/${product?.id}`
+    }
+  ]
+});
+
 const placeholderImage = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRTJFMzhB䊂Lz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjY2FjZWNlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Sem Imagem</textPgo8L3N2Zz4K";
+const stripHtml = (value = '') => value.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+const truncateText = (value = '', max = 155) => {
+  const clean = stripHtml(value);
+  if (clean.length <= max) return clean;
+  const sliced = clean.slice(0, max);
+  const cut = sliced.lastIndexOf(' ');
+  return `${sliced.slice(0, cut > 90 ? cut : max).trim()}...`;
+};
+const normalizeWhitespace = (value = '') => value.replace(/\s+/g, ' ').trim();
 
 function ProductDetailPage() {
   const { t } = useTranslation();
   const { id } = useParams();
-  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -80,6 +197,8 @@ function ProductDetailPage() {
       try {
         setLoading(true);
         setError(null);
+        const { getProduct, getProductQuantities } = await import("@/api/EcommerceApi");
+
         const fetchedProduct = await getProduct(id);
 
         try {
@@ -117,7 +236,7 @@ function ProductDetailPage() {
     };
 
     fetchProductData();
-  }, [id, navigate]);
+  }, [id]);
 
   if (loading) {
     return (
@@ -151,11 +270,71 @@ function ProductDetailPage() {
   const currentImage = product.images[currentImageIndex];
   const hasMultipleImages = product.images.length > 1;
 
+  // Gerar schemas para SEO
+  const productSchema = useMemo(
+    () => generateProductSchema(product, selectedVariant),
+    [product, selectedVariant]
+  );
+  const breadcrumbSchema = useMemo(
+    () => generateBreadcrumbSchema(product),
+    [product]
+  );
+  const canonicalUrl = `https://wgalmeida.com.br/product/${id}`;
+  const imageUrl = product.images?.[0]?.url || product.image || 'https://wgalmeida.com.br/og-loja-1200x630.jpg';
+  const selectedPriceInCents = selectedVariant?.sale_price_in_cents ?? selectedVariant?.price_in_cents ?? null;
+  const selectedPrice = selectedPriceInCents ? (selectedPriceInCents / 100).toFixed(2) : null;
+  const hasStock = selectedVariant?.inventory_quantity > 0;
+  const productTitle = normalizeWhitespace(product.title || product.subtitle || 'Produto de design');
+  const productSubtitle = normalizeWhitespace(product.subtitle || '');
+  const titleBase = productSubtitle && !productTitle.includes(productSubtitle)
+    ? `${productTitle} - ${productSubtitle}`
+    : productTitle;
+  const seoTitle = truncateText(`${titleBase} | Comprar na Loja WG Almeida`, 62);
+  const seoDescription = truncateText(
+    product.description ||
+      `${productTitle} com curadoria WG Almeida. Confira especificacoes, acabamento premium e compra segura para projetos de arquitetura e interiores.`,
+    155
+  );
+
   return (
     <>
       <Helmet>
-        <title>{product.title} - {t('seo.store.title')} WG Almeida</title>
-        <meta name="description" content={product.description?.substring(0, 160) || product.title} />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="product" />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Grupo WG Almeida" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="product:availability" content={hasStock ? 'in stock' : 'out of stock'} />
+        {selectedPrice && <meta property="product:price:amount" content={selectedPrice} />}
+        <meta property="product:price:currency" content="BRL" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta name="twitter:image" content={imageUrl} />
+
+        {/* Product Schema JSON-LD */}
+        {productSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(productSchema)}
+          </script>
+        )}
+
+        {/* Breadcrumb Schema JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       </Helmet>
       <div className="container-custom section-padding">
         <Link to="/store" className="inline-flex items-center gap-2 text-wg-black hover:text-wg-orange transition-colors mb-6 font-poppins">
@@ -283,3 +462,5 @@ function ProductDetailPage() {
 }
 
 export default ProductDetailPage;
+
+

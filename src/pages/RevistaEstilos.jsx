@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import SEO from '@/components/SEO';
@@ -169,10 +169,10 @@ const RevistaEstilos = () => {
   return (
     <>
       <SEO
+        pathname="/revista-estilos"
         title="Revista de Estilos | Descubra seu Estilo Ideal - WG Almeida"
         description="Explore nossa revista de estilos: Minimalismo, Clássico, Moderno, Vintage, Tropical, Boho e mais. Descubra qual estilo combina com você."
         keywords="estilos de decoração, design de interiores, minimalismo, clássico, moderno, vintage, tropical, boho, revista de estilos"
-        url="https://wgalmeida.com.br/revista-estilos"
       />
 
       {/* Hero Section */}

@@ -4,12 +4,13 @@ echo   DEPLOY GRUPO WG ALMEIDA - VERCEL
 echo ========================================
 echo.
 
-echo [1/4] Verificando build...
-if not exist "dist\index.html" (
-    echo Build nao encontrado. Executando build...
-    call npm run build
-) else (
-    echo Build encontrado!
+echo [1/4] Validando SEO + build...
+call npm run seo:validate:fresh
+if errorlevel 1 (
+    echo.
+    echo SEO validation/build falhou. Deploy cancelado.
+    pause
+    exit /b 1
 )
 echo.
 

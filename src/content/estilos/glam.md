@@ -1,7 +1,7 @@
 ---
-title: "Glam"
+title: "Estilo Glam: Como Decorar com Luxo, Brilho e Sofisticação"
 slug: "glam"
-excerpt: "Glamour e luxo com dourados reluzentes, velvets sedosos, espelhos dramáticos e sofisticação que celebra o excesso elegante."
+excerpt: "Descubra como aplicar o estilo Glam com veludo, metais e espelhos para criar ambientes impactantes e elegantes."
 image: "/images/estilos/glam.webp"
 quote: "Não existe nada como o excesso de glamour."
 author: "Coco Chanel"
@@ -14,7 +14,7 @@ colors: ["#000000", "#FFD700", "#FFFFFF", "#C0C0C0"]
 
 ## O Estilo Glam
 
-O estilo **Glam** (ou Hollywood Regency) é sobre **luxo sem desculpas**, **brilho** e **drama**. É inspirado pela era dourada de Hollywood, hotéis de luxo parisienses e palácios art déco. Pense em **veludo**, **dourado**, **cristais** e **espelhos** - muito espelho!
+O estilo **Glam** é sobre luxo, brilho e impacto visual com acabamento refinado. Inspirado na era dourada de Hollywood, ele combina veludo, metais e espelhos para criar ambientes sofisticados e memoráveis.
 
 Este é o estilo de quem não tem medo de **brilhar** (literalmente), de quem ama **sofisticação** e quer que cada ambiente seja uma **experiência sensorial luxuosa**.
 

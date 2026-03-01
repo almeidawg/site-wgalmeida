@@ -34,13 +34,13 @@ El briefing es la etapa que define el exito del proyecto. Es cuando traducimos e
 
 ## Las dimensiones que orientan el proyecto
 
-1. **Perfil de los residentes** y dinamica familiar  
-2. **Rutina y estilo de vida** (trabajo, ocio, recepcion)  
-3. **Preferencias esteticas** y referencias visuales  
-4. **Necesidades funcionales** y almacenamiento  
-5. **Tecnologia y automatizacion** deseadas  
-6. **Presupuesto y prioridades** reales  
-7. **Cronograma y plazos** esperados  
+1. **Perfil de los residentes** y dinamica familiar
+2. **Rutina y estilo de vida** (trabajo, ocio, recepcion)
+3. **Preferencias esteticas** y referencias visuales
+4. **Necesidades funcionales** y almacenamiento
+5. **Tecnologia y automatizacion** deseadas
+6. **Presupuesto y prioridades** reales
+7. **Cronograma y plazos** esperados
 
 ---
 
@@ -54,10 +54,10 @@ El briefing es la etapa que define el exito del proyecto. Es cuando traducimos e
 
 ## Que sucede despues
 
-1. Analisis tecnico de la informacion  
-2. Moodboard y direccion estetica  
-3. Estudio de layout  
-4. Presentacion del concepto  
+1. Analisis tecnico de la informacion
+2. Moodboard y direccion estetica
+3. Estudio de layout
+4. Presentacion del concepto
 
 ---
 
@@ -136,3 +136,4 @@ Si buscas un proyecto a medida, con acompanamiento completo y acabado premium, h
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 11 98465-0002
+

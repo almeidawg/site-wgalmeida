@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { Check, Plus, X, Upload, Image as ImageIcon, Trash2 } from 'lucide-react';
 
 // Paletas predefinidas inspiradas em design de interiores

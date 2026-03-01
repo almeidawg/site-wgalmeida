@@ -1,22 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, ShoppingCart as ShoppingCartIcon, User, LogOut, Ruler, Building2, Hammer, Sparkles, Users, ExternalLink, Monitor } from 'lucide-react';
+import React, { useState, useEffect, useMemo, Suspense, lazy } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ChevronDown, ShoppingCart as ShoppingCartIcon, Ruler, Building2, Hammer, Monitor, Globe } from 'lucide-react';
 // Removido Framer Motion para reduzir bundle e melhorar TBT
 import { Button } from '@/components/ui/button';
-import ShoppingCart from '@/components/ShoppingCart';
 import { useCart } from '@/hooks/useCart';
-import { useAuth } from '@/contexts/SupabaseAuthContext';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from '@/components/LanguageSelector';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+const ShoppingCart = lazy(() => import('@/components/ShoppingCart'));
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,22 +19,23 @@ const Header = () => {
   const { t } = useTranslation();
 
   const WG_EASY_URL = 'https://easy.wgalmeida.com.br';
+  const MANAGEMENT_URL = '/admin';
   const location = useLocation();
-  const navigate = useNavigate();
-  const { user, profile, signOut } = useAuth();
 
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
-  const handleLogout = async () => {
-    await signOut();
-    navigate('/');
-  };
-
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -53,7 +45,7 @@ const Header = () => {
     setMobileUnitsOpen(false);
   }, [location]);
 
-  const navItems = [
+  const navItems = useMemo(() => [
     { label: t('nav.home'), path: '/' },
     { label: t('nav.about'), path: '/sobre' },
     { label: t('nav.brand'), path: '/a-marca' },
@@ -63,9 +55,9 @@ const Header = () => {
     { label: 'FAQ', path: '/faq' },
     { label: t('nav.store'), path: '/store' },
     { label: t('nav.contact'), path: '/contato' },
-  ];
+  ], [t]);
 
-  const unitsItems = [
+  const unitsItems = useMemo(() => [
     {
       label: t('nav.architecture'),
       path: '/arquitetura',
@@ -73,6 +65,7 @@ const Header = () => {
       description: t('header.units.architecture'),
       borderHoverClass: 'hover:border-wg-green',
       iconClass: 'text-wg-green',
+      hoverTextClass: 'group-hover:text-wg-green',
     },
     {
       label: t('nav.engineering'),
@@ -81,6 +74,7 @@ const Header = () => {
       description: t('header.units.engineering'),
       borderHoverClass: 'hover:border-wg-blue',
       iconClass: 'text-wg-blue',
+      hoverTextClass: 'group-hover:text-wg-blue',
     },
     {
       label: t('nav.carpentry'),
@@ -89,26 +83,29 @@ const Header = () => {
       description: t('header.units.carpentry'),
       borderHoverClass: 'hover:border-wg-brown',
       iconClass: 'text-wg-brown',
+      hoverTextClass: 'group-hover:text-wg-brown',
     },
-  ];
+  ], [t]);
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
+        className={`fixed top-0 left-0 right-0 z-[80] relative transition-all duration-300 bg-white ${
           isScrolled ? 'shadow-md' : ''
         }`}
       >
         <div className="container-custom">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between" style={{ height: 'var(--header-height)' }}>
             <div className="flex-1 lg:flex-none">
               <Link to="/" className="flex items-center space-x-3">
                 <img
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-12 object-contain"
                   alt="Logo Grupo WG Almeida"
-                  src="/images/logo.png"
-                  width="183"
-                  height="48"
+                  src="/images/logo.png?v=2"
+                  width="96"
+                  height="96"
+                  decoding="async"
+                  fetchPriority="low"
                 />
               </Link>
             </div>
@@ -135,11 +132,7 @@ const Header = () => {
                 
                   {isUnitsMenuOpen && (
                     <div
-                      
-                      
-                      
-                      
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-screen max-w-3xl animate-fadeIn"
+                      className="absolute top-full left-0 z-[90] mt-0 w-[min(90vw,48rem)]"
                     >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden grid grid-cols-3 gap-4 p-6 border border-gray-100">
                         {unitsItems.map((subItem) => (
@@ -150,7 +143,7 @@ const Header = () => {
                           >
                             <div className="flex items-center mb-2">
                               <subItem.icon className={`w-6 h-6 mr-3 ${subItem.iconClass}`} />
-                              <span className="font-poppins font-semibold text-wg-black group-hover:text-wg-orange">{subItem.label}</span>
+                              <span className={`font-poppins font-semibold text-wg-black ${subItem.hoverTextClass}`}>{subItem.label}</span>
                             </div>
                             <p className="text-sm text-wg-gray">{subItem.description}</p>
                           </Link>
@@ -194,15 +187,26 @@ const Header = () => {
                 )}
               </button>
 
+              {/* Botão Acesso à Gestão */}
+              <a
+                href={MANAGEMENT_URL}
+                aria-label="Acessar área de gestão"
+                title="Acessar área de gestão"
+                className="hidden md:flex items-center justify-center w-10 h-10 bg-white border border-gray-200 rounded-full shadow-sm hover:border-wg-orange hover:shadow-md transition-all"
+              >
+                <Globe className="h-4 w-4 text-wg-orange" />
+              </a>
+
               {/* Botão WG Easy - Acesso direto ao sistema */}
               <a
                 href={WG_EASY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:flex items-center gap-2 px-4 py-2 bg-wg-orange text-white rounded-full font-medium text-sm hover:bg-wg-orange/90 hover:shadow-md transition-all"
+                aria-label={t('header.wgEasyAccess')}
+                title={t('header.wgEasyAccess')}
+                className="hidden md:flex items-center justify-center w-10 h-10 bg-white border border-gray-200 rounded-full shadow-sm hover:border-wg-orange hover:shadow-md transition-all"
               >
-                <Monitor className="h-4 w-4" />
-                <span>{t('header.wgEasy')}</span>
+                <Monitor className="h-5 w-5 text-wg-black" />
               </a>
 
               <button
@@ -217,13 +221,16 @@ const Header = () => {
           </div>
         </div>
 
+        {/* Neon divider between white header and hero/content */}
+        <div className="wg-neon-divider" aria-hidden="true" />
+
         
           {isMobileMenuOpen && (
             <div
               
               
               
-              className="lg:hidden bg-white border-t animate-slideDown"
+              className="lg:hidden bg-white border-t animate-slideDown z-[90] relative"
             >
               <nav className="container-custom py-4 space-y-2">
                 {[...navItems.slice(0,3), {label: 'Unidades', dropdown: unitsItems}, ...navItems.slice(3)].map((item, index) => (
@@ -274,12 +281,19 @@ const Header = () => {
                     <LanguageSelector variant="compact" />
                   </div>
                   <a
+                    href={MANAGEMENT_URL}
+                    className="flex items-center justify-center gap-2 w-full px-4 py-3 border border-wg-orange text-wg-orange rounded-lg font-semibold hover:bg-wg-orange/10 transition-all"
+                  >
+                    <Globe className="h-4 w-4" />
+                    <span>Área de Gestão</span>
+                  </a>
+                  <a
                     href={WG_EASY_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-wg-orange text-white rounded-lg font-medium hover:bg-wg-orange/90 transition-all"
+                    className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-wg-orange text-white rounded-lg font-semibold hover:bg-wg-brown transition-all"
                   >
-                    <Monitor className="h-5 w-5" />
+                    <Monitor className="h-5 w-5 text-white" />
                     <span>{t('header.wgEasyAccess')}</span>
                   </a>
                   <Link to="/contato" className="block">
@@ -291,9 +305,23 @@ const Header = () => {
           )}
         
       </header>
-      <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+      {isCartOpen && (
+        <Suspense fallback={null}>
+          <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+        </Suspense>
+      )}
     </>
   );
 };
 
 export default Header;
+
+
+
+
+
+
+
+
+
+

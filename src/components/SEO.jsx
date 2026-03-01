@@ -1,166 +1,248 @@
 import { Helmet } from 'react-helmet-async';
-import { useTranslation } from 'react-i18next';
+import { getSEOConfig } from '@/data/seoConfig';
 
-const defaultMeta = {
-  title: 'Grupo WG Almeida | Arquitetura, Engenharia e Marcenaria Premium em São Paulo',
-  description: 'Grupo WG Almeida - 14 anos de excelência em arquitetura, engenharia e marcenaria de alto padrão em São Paulo. Sistema Turn Key Premium. Projetos residenciais e comerciais.',
-  keywords: 'arquitetura alto padrão são paulo, engenharia turn key, marcenaria sob medida, reforma residencial, projeto arquitetônico, construção premium, WG Almeida',
-  image: 'https://wgalmeida.com.br/images/og-image.jpg',
-  url: 'https://wgalmeida.com.br',
-  type: 'website'
-};
+/**
+ * Componente SEO - gerencia meta tags, canonical e JSON-LD por rota.
+ * Compatível com o uso antigo (title/description/url) e com a nova
+ * configuração centralizada (pathname).
+ */
 
-export default function SEO({
+/**
+ * Gera BreadcrumbList JSON-LD a partir do pathname.
+ * Ex: /blog/etapas-reforma => Home > Blog > Etapas Reforma
+ */
+function buildBreadcrumbs(pathname) {
+  const BASE = 'https://wgalmeida.com.br';
+  const segments = pathname.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+  const items = [{ name: 'Home', url: `${BASE}/` }];
+
+  const labelMap = {
+    sobre: 'Sobre', processo: 'Processo', projetos: 'Projetos',
+    blog: 'Blog', store: 'Loja', arquitetura: 'Arquitetura',
+    engenharia: 'Engenharia', marcenaria: 'Marcenaria', contato: 'Contato',
+    depoimentos: 'Depoimentos', faq: 'FAQ', 'a-marca': 'A Marca',
+    'solicite-proposta': 'Solicite Proposta',
+  };
+
+  let path = '';
+  for (const seg of segments) {
+    path += `/${seg}`;
+    const label = labelMap[seg] || seg.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    items.push({ name: label, url: `${BASE}${path}` });
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      item: item.url
+    }))
+  };
+}
+
+export function SEO({
+  pathname = '/',
+  schema = null,
   title,
   description,
   keywords,
-  image,
   url,
-  type = 'website',
+  canonical,
+  og = {},
+  twitter = {},
+  robots,
   noindex = false,
-  schema
+  lang = 'pt-BR',
+  alternates = []
 }) {
-  const { i18n } = useTranslation();
-  const language = i18n.language || 'pt-BR';
-  const localeMap = {
-    'pt-BR': 'pt_BR',
-    'en': 'en_US',
-    'es': 'es_ES',
+  const normalizePathname = (input = '/') => {
+    let value = input || '/';
+    if (!value.startsWith('/')) value = `/${value}`;
+    value = value.replace(/\/{2,}/g, '/');
+    if (value.length > 1 && value.endsWith('/')) value = value.slice(0, -1);
+    return value;
   };
-  const ogLocale = localeMap[language] || 'pt_BR';
 
-  const seo = {
-    title: title ? `${title} | Grupo WG Almeida` : defaultMeta.title,
-    description: description || defaultMeta.description,
-    keywords: keywords || defaultMeta.keywords,
-    image: image || defaultMeta.image,
-    url: url || defaultMeta.url,
-    type: type
+  const resolvePathname = () => {
+    if (pathname && pathname !== '/') return pathname;
+    if (!url) return pathname || '/';
+    try {
+      const parsed = new URL(url);
+      return parsed.pathname || '/';
+    } catch {
+      return pathname || '/';
+    }
   };
+
+  const resolvedPathname = normalizePathname(resolvePathname());
+  const config = getSEOConfig(resolvedPathname);
+  const resolvedCanonical = canonical || url || config.canonical || `https://wgalmeida.com.br${resolvedPathname}`;
+
+  const meta = {
+    title: title || config.title,
+    description: description || config.description,
+    keywords: Array.isArray(keywords) ? keywords.join(', ') : (keywords || ''),
+    canonical: resolvedCanonical,
+    robots: noindex ? 'noindex, nofollow' : robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+    og: { ...config.og, url: resolvedCanonical, ...og },
+    twitter: { ...config.twitter, ...twitter }
+  };
+
+  const schemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
+
+  // Adiciona BreadcrumbList automaticamente se pathname tem segmentos
+  if (resolvedPathname !== '/') {
+    schemas.push(buildBreadcrumbs(resolvedPathname));
+  }
 
   return (
     <Helmet>
-      <html lang={language} />
-      {/* Titulo */}
-      <title>{seo.title}</title>
+      <html lang={lang} />
 
-      {/* Meta Tags Basicas */}
-      <meta name="description" content={seo.description} />
-      <meta name="keywords" content={seo.keywords} />
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
+      <title>{meta.title}</title>
+      <meta name="description" content={meta.description} />
+      {meta.keywords && <meta name="keywords" content={meta.keywords} />}
+      <meta name="robots" content={meta.robots} />
 
-      {/* Canonical URL */}
-      <link rel="canonical" href={seo.url} />
+      <link rel="canonical" href={meta.canonical} />
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={seo.type} />
-      <meta property="og:url" content={seo.url} />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:image" content={seo.image} />
-      <meta property="og:locale" content={ogLocale} />
+      {/* hreflang alternates para conteúdo multilingual */}
+      {alternates.map(({ hrefLang, href }) => (
+        <link key={hrefLang} rel="alternate" hrefLang={hrefLang} href={href} />
+      ))}
+      {alternates.length > 0 && (
+        <link rel="alternate" hrefLang="x-default" href={meta.canonical} />
+      )}
+
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="language" content="Portuguese" />
+      <meta httpEquiv="content-language" content="pt-BR" />
+      <meta name="author" content="Grupo WG Almeida" />
+      <meta name="contact" content="contato@wgalmeida.com.br" />
+      <meta name="theme-color" content="#1a1a1a" />
+
+      {/* Open Graph */}
+      <meta property="og:locale" content="pt_BR" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={meta.og.title} />
+      <meta property="og:description" content={meta.og.description} />
+      <meta property="og:image" content={meta.og.image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:url" content={meta.og.url} />
       <meta property="og:site_name" content="Grupo WG Almeida" />
 
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={seo.url} />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
+      {/* Twitter */}
+      <meta name="twitter:card" content={meta.twitter.card || 'summary_large_image'} />
+      <meta name="twitter:title" content={meta.twitter.title} />
+      <meta name="twitter:description" content={meta.twitter.description} />
+      <meta name="twitter:image" content={meta.twitter.image} />
+      <meta name="twitter:image:alt" content={meta.twitter.title} />
 
-      {/* Schema.org JSON-LD customizado */}
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
+      {/* JSON-LD */}
+      {schemas.map((item, idx) => (
+        <script key={idx} type="application/ld+json">
+          {JSON.stringify(item)}
         </script>
-      )}
+      ))}
+
+      {/* DNS-prefetch para trackers carregados sob demanda */}
+      <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     </Helmet>
   );
 }
 
-// Schemas prontos para reutilizar
+// Mantém compatibilidade com imports default existentes
+export default SEO;
+
+// Helpers antigos preservados para compatibilidade com páginas que os utilizam
 export const schemas = {
-  // Schema para pagina de servico
   service: (name, description, url) => ({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": name,
-    "description": description,
-    "url": url,
-    "provider": {
-      "@type": "Organization",
-      "name": "Grupo WG Almeida",
-      "url": "https://wgalmeida.com.br"
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name,
+    description,
+    url,
+    provider: {
+      '@type': 'Organization',
+      name: 'Grupo WG Almeida',
+      url: 'https://wgalmeida.com.br'
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "São Paulo"
+    areaServed: {
+      '@type': 'City',
+      name: 'São Paulo'
     }
   }),
 
-  // Schema para pagina de bairro/regiao
   localBusiness: (neighborhood) => ({
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": `Arquitetura Alto Padrão ${neighborhood} - Grupo WG Almeida`,
-    "description": `Serviços de arquitetura, engenharia e marcenaria de alto padrão em ${neighborhood}, São Paulo.`,
-    "url": `https://wgalmeida.com.br/${neighborhood.toLowerCase().replace(/\s+/g, '-')}`,
-    "telephone": "+55-11-98465-0002",
-    "email": "contato@wgalmeida.com.br",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "São Paulo",
-      "addressRegion": "SP",
-      "addressCountry": "BR"
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: `Arquitetura Alto Padrão ${neighborhood} - Grupo WG Almeida`,
+    description: `Serviços de arquitetura, engenharia e marcenaria de alto padrão em ${neighborhood}, São Paulo.`,
+    url: `https://wgalmeida.com.br/${neighborhood
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/\s+/g, '-')}`,
+    telephone: '+55-11-98465-0002',
+    email: 'contato@wgalmeida.com.br',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'São Paulo',
+      addressRegion: 'SP',
+      addressCountry: 'BR'
     },
-    "areaServed": {
-      "@type": "Neighborhood",
-      "name": neighborhood,
-      "containedInPlace": {
-        "@type": "City",
-        "name": "São Paulo"
+    areaServed: {
+      '@type': 'Neighborhood',
+      name: neighborhood,
+      containedInPlace: {
+        '@type': 'City',
+        name: 'São Paulo'
       }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "47"
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '50'
     }
   }),
 
-  // Schema para artigo de blog
   article: (title, description, url, datePublished, image) => ({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "url": url,
-    "datePublished": datePublished,
-    "image": image,
-    "author": {
-      "@type": "Organization",
-      "name": "Grupo WG Almeida"
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    url,
+    datePublished,
+    image,
+    author: {
+      '@type': 'Organization',
+      name: 'Grupo WG Almeida'
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Grupo WG Almeida",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://wgalmeida.com.br/images/logo.png"
+    publisher: {
+      '@type': 'Organization',
+      name: 'Grupo WG Almeida',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://wgalmeida.com.br/images/logo.png'
       }
     }
   }),
 
-  // Schema para FAQ
   faq: (questions) => ({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": questions.map(q => ({
-      "@type": "Question",
-      "name": q.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": q.answer
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: questions.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: q.answer
       }
     }))
   })

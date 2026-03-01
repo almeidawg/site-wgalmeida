@@ -1222,6 +1222,11 @@
       "title": "Get Inspired and Learn"
     },
     "readMore": "Read more",
+    "readerGuide": {
+      "title": "Reading Guide",
+      "tocTitle": "In this article",
+      "reading": "reading"
+    },
     "relatedProducts": {
       "title": "Related Products",
       "view": "View",
@@ -1923,4 +1928,3 @@
   },
   "welcomeMessage": "Hello! I'm Horizons, your AI coding companion. I'm here to help you build amazing web applications!"
 }
-

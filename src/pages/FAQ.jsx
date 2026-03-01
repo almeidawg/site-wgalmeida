@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import SEO from '@/components/SEO';
+import { motion } from '@/lib/motion-lite';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
+import './faq.css';
 
 export default function FAQPage() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -65,26 +66,17 @@ export default function FAQPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Perguntas Frequentes - FAQ | Grupo WG Almeida</title>
-        <meta
-          name="description"
-          content="Respostas claras sobre Turn Key Premium, processos, prazos, garantias e serviços do Grupo WG Almeida. Tire suas dúvidas sobre arquitetura, engenharia e marcenaria de alto padrão."
-        />
-        <link rel="canonical" href="https://wgalmeida.com.br/faq" />
-        <meta property="og:title" content="Perguntas Frequentes - FAQ | Grupo WG Almeida" />
-        <meta property="og:description" content="Respostas claras sobre Turn Key Premium, processos, prazos, garantias e serviços do Grupo WG Almeida." />
-        <meta property="og:url" content="https://wgalmeida.com.br/faq" />
-
-        {/* Schema.org JSON-LD para FAQPage */}
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
+      <SEO
+        pathname="/faq"
+        title="Perguntas Frequentes - FAQ | Grupo WG Almeida"
+        description="Respostas claras sobre Turn Key Premium, processos, prazos, garantias e serviços do Grupo WG Almeida. Tire suas dúvidas sobre arquitetura, engenharia e marcenaria de alto padrão."
+        keywords="perguntas frequentes, faq arquitetura, turn key premium, reforma apartamento sp, prazo obra, orcamento reforma"
+        schema={faqSchema}
+      />
 
       <div className="faq-page">
         {/* Hero Banner */}
-        <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
           <motion.div
             className="absolute inset-0 z-0"
             initial={{ scale: 1.1 }}

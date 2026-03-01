@@ -53,13 +53,15 @@ export const notificarNovoCadastro = async (nome, email) => {
 };
 
 // Enviar notificacao de contato
-export const notificarNovoContato = async (nome, email, assunto, mensagem) => {
+export const notificarNovoContato = async (nome, email, telefone, assunto, mensagem) => {
   try {
     const emailjs = await loadEmailJS();
 
     const templateParams = {
+      to_email: 'william@wgalmeida.com.br',
       user_name: nome,
       user_email: email,
+      user_phone: telefone || 'Não informado',
       subject: assunto || 'Sem assunto',
       message: mensagem,
       date: new Date().toLocaleString('pt-BR', {
@@ -70,7 +72,7 @@ export const notificarNovoContato = async (nome, email, assunto, mensagem) => {
 
     const response = await emailjs.send(
       EMAILJS_SERVICE_ID,
-      'template_contato', // Criar template separado para contatos
+      'template_contato',
       templateParams
     );
 
@@ -82,7 +84,42 @@ export const notificarNovoContato = async (nome, email, assunto, mensagem) => {
   }
 };
 
+// Enviar notificacao de nova proposta
+export const notificarNovaProposta = async (dados) => {
+  try {
+    const emailjs = await loadEmailJS();
+
+    const templateParams = {
+      to_email: 'william@wgalmeida.com.br',
+      user_name: dados.nome,
+      user_email: dados.email,
+      user_phone: dados.telefone,
+      project_type: dados.tipo_imovel || 'Não informado',
+      project_area: dados.area_aproximada || 'Não informado',
+      project_description: dados.descricao_projeto,
+      origin: dados.origem || 'site',
+      date: new Date().toLocaleString('pt-BR', {
+        dateStyle: 'full',
+        timeStyle: 'short'
+      })
+    };
+
+    const response = await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      'template_proposta',
+      templateParams
+    );
+
+    console.log('Email de proposta enviado:', response.status);
+    return { success: true };
+  } catch (error) {
+    console.error('Erro ao enviar email de proposta:', error);
+    return { success: false, error };
+  }
+};
+
 export default {
   notificarNovoCadastro,
-  notificarNovoContato
+  notificarNovoContato,
+  notificarNovaProposta
 };

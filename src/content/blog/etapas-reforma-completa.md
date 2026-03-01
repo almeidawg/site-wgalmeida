@@ -26,13 +26,13 @@ Reforma completa exige sequencia correta, planejamento tecnico e controle de qua
 
 ## Panorama das etapas
 
-1. Planejamento  
-2. Demolicao e remocoes  
-3. Infraestrutura  
-4. Vedacoes e contrapiso  
-5. Acabamentos  
-6. Finalizacao  
-7. Entrega  
+1. Planejamento
+2. Demolicao e remocoes
+3. Infraestrutura
+4. Vedacoes e contrapiso
+5. Acabamentos
+6. Finalizacao
+7. Entrega
 
 ---
 
@@ -305,3 +305,4 @@ Se voce busca um projeto sob medida, com acompanhamento completo e acabamento pr
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 11 98465-0002
+

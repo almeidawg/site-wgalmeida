@@ -1,9 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import { Helmet } from 'react-helmet';
 import { Link, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion-lite';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
-import { supabase } from '@/lib/customSupabaseClient';
+import SEO from '@/components/SEO';
 import { notificarNovoCadastro } from '@/lib/emailService';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
@@ -103,10 +102,12 @@ const Register = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{t('seo.register.title')}</title>
-        <meta name="description" content={t('seo.register.description')} />
-      </Helmet>
+      <SEO
+        pathname="/register"
+        title={t('seo.register.title')}
+        description={t('seo.register.description')}
+        noindex
+      />
       <div className="section-padding bg-wg-gray-light min-h-[80vh] flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -117,9 +118,12 @@ const Register = () => {
           <div className="text-center">
             <div className="flex justify-center mb-6">
                 <img
-                  className="h-16 w-auto object-contain"
+                  className="h-16 w-16 object-contain"
                   alt={t('registerPage.logoAlt')}
-                  src="/images/logo.png" 
+                  src="/images/logo-96.webp"
+                  width="96"
+                  height="96"
+                  decoding="async"
                 />
             </div>
             <h1 className="text-3xl font-oswald font-bold text-wg-black">{t('registerPage.heading')}</h1>

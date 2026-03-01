@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { Globe, ChevronDown, Check } from 'lucide-react';
 
 const languages = [
@@ -26,6 +26,7 @@ const LanguageSelector = ({ variant = 'default' }) => {
       <div className="flex gap-2">
         {languages.map((lang) => (
           <button
+            type="button"
             key={lang.code}
             onClick={() => changeLanguage(lang.code)}
             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm transition-all ${
@@ -34,6 +35,7 @@ const LanguageSelector = ({ variant = 'default' }) => {
                 : 'bg-gray-100 hover:bg-gray-200'
             }`}
             title={lang.name}
+            aria-label={`Selecionar idioma: ${lang.name}`}
           >
             {lang.flag}
           </button>
@@ -45,12 +47,15 @@ const LanguageSelector = ({ variant = 'default' }) => {
   return (
     <div className="relative">
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
           variant === 'navbar'
             ? 'text-white/80 hover:text-white hover:bg-white/10'
             : 'text-wg-gray hover:text-wg-black hover:bg-gray-100'
         }`}
+        aria-label={`Idioma atual: ${currentLanguage.name}. Abrir seletor de idioma`}
+        aria-expanded={isOpen}
       >
         <Globe className="w-4 h-4" />
         <span className="text-sm font-medium hidden sm:inline">{currentLanguage.flag}</span>
@@ -75,6 +80,7 @@ const LanguageSelector = ({ variant = 'default' }) => {
             >
               {languages.map((lang) => (
                 <button
+                  type="button"
                   key={lang.code}
                   onClick={() => changeLanguage(lang.code)}
                   className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors ${

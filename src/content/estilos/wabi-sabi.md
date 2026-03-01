@@ -1,7 +1,7 @@
 ---
-title: "Wabi-Sabi"
+title: "Estilo Wabi-Sabi: Decoração Japonesa com Beleza Imperfeita"
 slug: "wabi-sabi"
-excerpt: "Filosofia japonesa da beleza imperfeita com aceitação do transitório, texturas naturais e serenidade que encontra perfeição na imperfeição."
+excerpt: "Entenda o estilo Wabi-Sabi e aprenda a criar ambientes serenos com texturas naturais, simplicidade e autenticidade."
 image: "/images/estilos/wabi-sabi.webp"
 quote: "A imperfeição é beleza, a loucura é genialidade, e é melhor ser absolutamente ridículo do que absolutamente chato."
 author: "Marilyn Monroe (sobre Wabi-Sabi)"
@@ -14,7 +14,7 @@ colors: ["#F5F5DC", "#8B7D6B", "#FFFFFF", "#6B4423"]
 
 ## O Estilo Wabi-Sabi
 
-**Wabi-Sabi** não é apenas um estilo de design - é uma **filosofia de vida japonesa** que encontra beleza na **imperfeição**, **impermanência** e **incompletude**. É sobre aceitar o ciclo natural da vida, celebrar o envelhecimento e encontrar serenidade na simplicidade.
+**Wabi-Sabi** é uma filosofia japonesa aplicada ao design que valoriza imperfeição, impermanência e simplicidade. Na prática, o estilo cria ambientes serenos e autênticos, com materiais naturais e beleza sem excessos.
 
 **Wabi** (侘): Simplicidade rústica, beleza na modéstia
 **Sabi** (寂): Beleza que vem com o tempo e uso

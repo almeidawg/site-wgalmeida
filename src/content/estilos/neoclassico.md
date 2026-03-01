@@ -1,7 +1,7 @@
 ---
-title: "Neo-Clássico"
+title: "Estilo Neoclássico: Sofisticação Atemporal com Toque Contemporâneo"
 slug: "neoclassico"
-excerpt: "Elegância greco-romana reinventada com simetria atemporal, molduras refinadas e sofisticação contemporânea que honra a tradição."
+excerpt: "Descubra como aplicar o estilo neoclássico em interiores elegantes com simetria, molduras refinadas e materiais nobres."
 image: "/images/estilos/neoclassico.webp"
 quote: "A arquitetura é música congelada."
 author: "Johann Wolfgang von Goethe"
@@ -14,7 +14,7 @@ colors: ["#FFFFFF", "#C0C0C0", "#DAA520", "#2F4F4F"]
 
 ## O Estilo Neo-Clássico
 
-O **Neo-Clássico** é a elegância greco-romana reinventada para o século 21. Mantém a **simetria**, **proporção** e **ornamentação** do clássico, mas com **linhas mais limpas** e paleta **mais contemporânea**.
+O **Neo-Clássico** traduz a elegância greco-romana para projetos atuais. Ele mantém **simetria**, **proporção** e detalhes clássicos, mas com leitura mais leve, paleta neutra e acabamento contemporâneo.
 
 É o clássico **refinado e atualizado** - sem excessos mas mantendo a sofisticação.
 

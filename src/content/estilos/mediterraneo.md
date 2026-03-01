@@ -1,7 +1,7 @@
 ---
-title: "Mediterrâneo"
+title: "Estilo Mediterrâneo: Decoração Leve com Azul, Branco e Terracota"
 slug: "mediterraneo"
-excerpt: "Sol da Grécia e Itália com azul e branco, terracota aquecida e charme costeiro que traz o mar Mediterrâneo para casa."
+excerpt: "Veja como criar ambientes no estilo mediterrâneo com cores claras, materiais naturais e atmosfera praiana inspirada na Europa."
 image: "/images/estilos/mediterraneo.webp"
 quote: "A arquitetura mediterrânea é uma celebração do sol, do mar e da vida ao ar livre."
 author: "Oscar Niemeyer"
@@ -14,7 +14,7 @@ colors: ["#FFFFFF", "#4169E1", "#D2691E", "#F0E68C"]
 
 ## O Estilo Mediterrâneo
 
-O estilo mediterrâneo captura a **essência das costas ensolaradas** da Grécia, Itália, Espanha e sul da França. É sobre **vida ao ar livre**, **luz natural abundante** e a paleta de cores que reflete o mar azul, o céu claro, as casas brancas e a terracota aquecida pelo sol.
+O estilo mediterrâneo captura a **essência das costas ensolaradas** da Grécia, Itália, Espanha e sul da França. A proposta combina **vida ao ar livre**, **luz natural abundante** e uma paleta que remete ao mar, ao céu claro e à terracota aquecida pelo sol.
 
 Inspirado nas vilas de **Santorini**, **Amalfi**, **Provence** e **Costa del Sol**, este estilo traz o **Mediterrâneo** para dentro de casa, criando ambientes **relaxantes, acolhedores e cheios de luz**.
 

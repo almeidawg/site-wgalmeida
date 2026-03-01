@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import SEO from '@/components/SEO';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { X, ChevronLeft, ChevronRight, ZoomIn, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
+import { SCHEMAS } from '@/data/schemaConfig';
 
 /**
  * Página de Projetos - Galeria Premium WG Almeida
@@ -132,15 +133,10 @@ const Projects = () => {
 
   return (
     <>
-      <SEO
-        title={t('seo.projects.title')}
-        description={t('seo.projects.description')}
-        keywords={t('seo.projects.keywords')}
-        url="https://wgalmeida.com.br/projetos"
-      />
+      <SEO pathname="/projetos" schema={SCHEMAS.breadcrumbProjects} />
 
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
         <div className="absolute inset-0 z-0">
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
@@ -204,10 +200,10 @@ const Projects = () => {
               <button
                 key={filter.id}
                 onClick={() => setSelectedFilter(filter.id)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`${
                   selectedFilter === filter.id
-                    ? 'bg-wg-orange text-white shadow-lg'
-                    : 'bg-wg-gray-light text-wg-gray hover:bg-wg-orange/10 hover:text-wg-orange'
+                    ? 'wg-btn-pill-primary'
+                    : 'wg-btn-pill-secondary'
                 }`}
               >
                 {filter.label}

@@ -4,23 +4,23 @@
  */
 
 import { useState, useEffect } from "react";
-import { supabase } from "@/lib/customSupabaseClient";
 
 // Data de fundação do primeiro CNPJ (para cálculo de horas)
 // Desde 28/10/2011
 const DATA_FUNDACAO = new Date("2011-10-28");
 
-export function useEstatisticasWG() {
-  const [estatisticas, setEstatisticas] = useState({
-    // Valores base (fallback caso não consiga buscar do banco)
+export function useEstatisticasWG(options = {}) {
+  const { enabled = true } = options;
+  // Valores fallback renderizam imediatamente (não bloqueia LCP)
+  const [estatisticas, setEstatisticas] = useState(() => ({
     clientesAtendidos: 270,
     metrosRevestimentos: 3000,
-    projetosAndamento: 6,
-    horasProjetando: 0,
-    anosExperiencia: 14,
-    loading: true,
+    projetosAndamento: 7,
+    horasProjetando: Math.floor((Date.now() - new Date("2011-10-28").getTime()) / 3600000),
+    anosExperiencia: Math.floor((Date.now() - new Date("2011-10-28").getTime()) / (365.25 * 86400000)),
+    loading: false,
     error: null,
-  });
+  }));
 
   // Calcular horas desde a fundação
   const calcularHorasDesdeDataFundacao = () => {
@@ -39,8 +39,14 @@ export function useEstatisticasWG() {
   };
 
   useEffect(() => {
+    if (!enabled) return () => {};
+
+    let isCancelled = false;
+
     const buscarEstatisticas = async () => {
       try {
+        const { supabase } = await import("@/lib/customSupabaseClient");
+
         // Buscar contratos ativos (projetos em andamento)
         // eslint-disable-next-line no-unused-vars
         const { data: contratosAtivos, error: errorAtivos } = await supabase
@@ -82,6 +88,8 @@ export function useEstatisticasWG() {
         const horasProjetando = calcularHorasDesdeDataFundacao();
         const anosExperiencia = calcularAnosExperiencia();
 
+        if (isCancelled) return;
+
         setEstatisticas({
           clientesAtendidos: Math.max(clientesAtendidos, 270), // Mínimo 270 (histórico)
           metrosRevestimentos: Math.max(metrosRevestimentos, 3000), // Mínimo 3000 (histórico)
@@ -92,6 +100,8 @@ export function useEstatisticasWG() {
           error: null,
         });
       } catch (error) {
+        if (isCancelled) return;
+
         console.error("Erro ao buscar estatísticas:", error);
         // Em caso de erro, usar valores base
         setEstatisticas((prev) => ({
@@ -104,7 +114,23 @@ export function useEstatisticasWG() {
       }
     };
 
-    buscarEstatisticas();
+    // Defer Supabase queries until after LCP (5s or user interaction)
+    let scheduled = false;
+    const schedule = () => {
+      if (scheduled) return;
+      scheduled = true;
+      buscarEstatisticas();
+    };
+
+    const timeoutId = setTimeout(schedule, 5000);
+    const events = ['scroll', 'click', 'touchstart'];
+    const onInteraction = () => {
+      clearTimeout(timeoutId);
+      // Small delay after interaction to not compete with UI response
+      setTimeout(schedule, 800);
+      events.forEach(e => window.removeEventListener(e, onInteraction));
+    };
+    events.forEach(e => window.addEventListener(e, onInteraction, { once: true, passive: true }));
 
     // Atualizar horas a cada minuto
     const intervalHoras = setInterval(() => {
@@ -114,8 +140,13 @@ export function useEstatisticasWG() {
       }));
     }, 60000);
 
-    return () => clearInterval(intervalHoras);
-  }, []);
+    return () => {
+      isCancelled = true;
+      clearTimeout(timeoutId);
+      clearInterval(intervalHoras);
+      events.forEach(e => window.removeEventListener(e, onInteraction));
+    };
+  }, [enabled]);
 
   return estatisticas;
 }

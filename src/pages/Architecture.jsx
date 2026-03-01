@@ -1,10 +1,11 @@
 import React from 'react';
-import SEO, { schemas } from '@/components/SEO';
-import { motion } from 'framer-motion';
+import SEO from '@/components/SEO';
+import { motion } from '@/lib/motion-lite';
 import { PenTool, Home, FileCheck, Users, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
+import { SCHEMAS } from '@/data/schemaConfig';
 
 // Animações elegantes
 const fadeInUp = {
@@ -43,19 +44,12 @@ const Architecture = () => {
   return (
     <>
       <SEO
-        title={t('seo.architecture.title')}
-        description={t('seo.architecture.description')}
-        keywords={t('seo.architecture.keywords')}
-        url="https://wgalmeida.com.br/arquitetura"
-        schema={schemas.service(
-          t('architecturePage.schema.name'),
-          t('architecturePage.schema.description'),
-          'https://wgalmeida.com.br/arquitetura'
-        )}
+        pathname="/arquitetura"
+        schema={[SCHEMAS.serviceArchitecture, SCHEMAS.breadcrumbArchitecture]}
       />
 
       {/* Hero elegante com cor da unidade */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}

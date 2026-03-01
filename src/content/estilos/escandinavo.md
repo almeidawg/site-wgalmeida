@@ -1,7 +1,7 @@
 ---
-title: "Escandinavo"
+title: "Estilo Escandinavo: Guia Completo para Decorar com Aconchego Nórdico"
 slug: "escandinavo"
-excerpt: "Funcionalidade, minimalismo e aconchego nórdico com madeiras claras, tons neutros e design atemporal."
+excerpt: "Aprenda a aplicar o estilo escandinavo com paleta clara, madeira natural e soluções funcionais para uma casa elegante e acolhedora."
 image: "/images/estilos/escandinavo.webp"
 quote: "Visite os amigos com frequência. O mato cresce depressa em caminhos pouco percorridos."
 author: "Provérbio Escandinavo"
@@ -14,7 +14,7 @@ colors: ["#FFFFFF", "#F5F5F5", "#D4C5B9", "#2C3E50"]
 
 ## De Onde Surgiu o Estilo Escandinavo?
 
-O design escandinavo nasceu oficialmente em **1897** em uma exposição de artes das Indústrias de Estocolmo. Porém, apenas 100 anos depois ele começou a ser reconhecido mundialmente. Muitos designers contribuíram para a divulgação do estilo, e características marcantes como **luminosidade e madeiras com tons claros** viraram moda global.
+O design escandinavo nasceu oficialmente em **1897** em uma exposição de artes das Indústrias de Estocolmo e ganhou força global décadas depois. Hoje, o estilo é referência para quem busca ambientes claros, funcionais e acolhedores, com **luminosidade e madeiras em tons claros** como protagonistas.
 
 O termo "escandinavo" vem da **região geográfica** que abrange Dinamarca, Suécia e Noruega - os países nórdicos.
 

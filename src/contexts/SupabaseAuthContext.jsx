@@ -1,65 +1,134 @@
 import React, { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react';
-import { supabase } from '@/lib/customSupabaseClient';
 import { useToast } from '@/components/ui/use-toast';
 
 const AuthContext = createContext(undefined);
+const AUTH_REQUEST_TIMEOUT_MS = 8000;
+let supabaseClientPromise = null;
 
-export const AuthProvider = ({ children }) => {
+const getSupabaseClient = async () => {
+  if (!supabaseClientPromise) {
+    supabaseClientPromise = import('@/lib/customSupabaseClient').then((mod) => mod.supabase);
+  }
+  return supabaseClientPromise;
+};
+
+const withTimeout = (promise, timeoutMs = AUTH_REQUEST_TIMEOUT_MS) => {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => {
+      setTimeout(() => reject(new Error('Auth timeout')), timeoutMs);
+    }),
+  ]);
+};
+
+export const AuthProvider = ({ children, autoInit = true }) => {
   const { toast } = useToast();
 
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null);
   const [session, setSession] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(autoInit);
+
+  const getSupabase = useCallback(async () => {
+    return getSupabaseClient();
+  }, []);
 
   const fetchProfile = useCallback(async (user) => {
-    if (user) {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', user.id)
-        .single();
-      
+    if (!user) {
+      setProfile(null);
+      return;
+    }
+
+    try {
+      const supabase = await getSupabase();
+      const { data, error } = await withTimeout(
+        supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', user.id)
+          .single()
+      );
+
       if (error && error.code !== 'PGRST116') { // PGRST116: row not found
         console.error('Error fetching profile:', error);
         setProfile(null);
       } else {
         setProfile(data);
       }
-    } else {
+    } catch (error) {
+      console.error('Error fetching profile (timeout/network):', error);
       setProfile(null);
     }
-  }, []);
+  }, [getSupabase]);
 
-  useEffect(() => {
-    const getSessionAndProfile = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
+  const ensureInitialized = useCallback(async () => {
+    try {
+      const supabase = await getSupabase();
+      const { data: { session } } = await withTimeout(supabase.auth.getSession());
       setSession(session);
       setUser(session?.user ?? null);
       await fetchProfile(session?.user);
+    } catch (error) {
+      console.error('Error initializing auth session:', error);
+      setSession(null);
+      setUser(null);
+      setProfile(null);
+    } finally {
       setLoading(false);
+    }
+  }, [fetchProfile, getSupabase]);
+
+  useEffect(() => {
+    if (!autoInit) {
+      setLoading(false);
+      return () => {};
+    }
+
+    setLoading(true);
+    let mounted = true;
+    let subscription = null;
+
+    const initAuth = async () => {
+      const supabase = await getSupabase();
+      if (!mounted) return;
+
+      const { data } = supabase.auth.onAuthStateChange(
+        async (event, nextSession) => {
+          setSession(nextSession);
+          setUser(nextSession?.user ?? null);
+          await fetchProfile(nextSession?.user);
+          if (event === 'SIGNED_OUT') {
+            setProfile(null);
+          }
+        }
+      );
+      subscription = data.subscription;
+      await ensureInitialized();
     };
 
-    getSessionAndProfile();
+    const scheduleInit = () => {
+      initAuth().catch((error) => {
+        console.error('Error initializing auth listener:', error);
+        setLoading(false);
+      });
+    };
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
-        await fetchProfile(session?.user);
-        if (event === 'SIGNED_IN') {
-          // Additional logic on sign in can go here
-        }
-        if (event === 'SIGNED_OUT') {
-          setProfile(null);
-        }
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      window.requestIdleCallback(scheduleInit, { timeout: 2500 });
+    } else {
+      setTimeout(scheduleInit, 600);
+    }
+
+    return () => {
+      mounted = false;
+      if (subscription) {
+        subscription.unsubscribe();
       }
-    );
-
-    return () => subscription.unsubscribe();
-  }, [fetchProfile]);
+    };
+  }, [autoInit, ensureInitialized, fetchProfile, getSupabase]);
 
   const signUp = useCallback(async (email, password, options) => {
+    const supabase = await getSupabase();
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
@@ -74,9 +143,10 @@ export const AuthProvider = ({ children }) => {
       });
     }
     return { user: data.user, error };
-  }, [toast]);
+  }, [getSupabase, toast]);
 
   const signIn = useCallback(async (email, password) => {
+    const supabase = await getSupabase();
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -92,29 +162,24 @@ export const AuthProvider = ({ children }) => {
     }
   
     if (data.user) {
-      const { data: profileData, error: profileError } = await supabase
+      const { data: profileData } = await supabase
         .from('profiles')
-        .select('role')
+        .select('id, email, nome, ativo')
         .eq('id', data.user.id)
         .single();
-  
-      if (profileError) {
-        toast({
-          variant: "destructive",
-          title: "Falha ao buscar perfil",
-          description: profileError.message,
-        });
-        await supabase.auth.signOut(); // Log out if profile is inaccessible
-        return { user: null, profile: null, error: profileError };
-      }
-  
-      return { user: data.user, profile: profileData, error: null };
+
+      // Admin: domínio wgalmeida.com.br
+      const isAdmin = data.user.email?.endsWith('@wgalmeida.com.br') ?? false;
+      const profile = profileData ? { ...profileData, role: isAdmin ? 'admin' : 'user' } : { role: isAdmin ? 'admin' : 'user' };
+
+      return { user: data.user, profile, error: null };
     }
     
     return { user: null, profile: null, error: new Error('Usuário não encontrado após o login.') };
-  }, [toast]);
+  }, [getSupabase, toast]);
 
   const signOut = useCallback(async () => {
+    const supabase = await getSupabase();
     const { error } = await supabase.auth.signOut();
     if (error) {
       toast({
@@ -128,17 +193,18 @@ export const AuthProvider = ({ children }) => {
         setProfile(null);
     }
     return { error };
-  }, [toast]);
+  }, [getSupabase, toast]);
 
   const value = useMemo(() => ({
     user,
     profile,
     session,
     loading,
+    ensureInitialized,
     signUp,
     signIn,
     signOut,
-  }), [user, profile, session, loading, signUp, signIn, signOut]);
+  }), [user, profile, session, loading, ensureInitialized, signUp, signIn, signOut]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
@@ -150,3 +216,4 @@ export const useAuth = () => {
   }
   return context;
 };
+

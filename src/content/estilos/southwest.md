@@ -1,7 +1,7 @@
 ---
-title: "Southwest"
+title: "Estilo Southwest: Decoração com Tons Terrosos e Identidade do Deserto"
 slug: "southwest"
-excerpt: "Tons terrosos do deserto americano com terracota quente, turquesa vibrante e artesanato nativo que celebra o sudoeste."
+excerpt: "Entenda o estilo Southwest com terracota, turquesa e artesanato nativo para ambientes quentes e cheios de personalidade."
 image: "/images/estilos/southwest.webp"
 quote: "O deserto é um oceano no qual as ondas não se movem."
 author: "Provérbio Navajo"
@@ -14,7 +14,7 @@ colors: ["#CD853F", "#40E0D0", "#D2691E", "#F4A460"]
 
 ## O Estilo Southwest
 
-O estilo **Southwest** captura a essência quente e vibrante do **deserto do sudoeste americano** - Arizona, Novo México, Texas. É sobre tons terrosos, artesanato nativo americano, arquitetura adobe e a beleza árida do deserto.
+O estilo **Southwest** traduz a estética quente e vibrante do deserto do sudoeste americano. A linguagem combina tons terrosos, influência nativa e arquitetura adobe para composições autênticas e acolhedoras.
 
 ## De Onde Surgiu?
 
