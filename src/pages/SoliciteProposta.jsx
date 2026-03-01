@@ -478,6 +478,9 @@ const SoliciteProposta = () => {
         descricao_projeto: descricaoCompleta,
         origem: origemProposta,
         status: 'nova',
+        utm_source: searchParams.get('utm_source') || null,
+        utm_medium: searchParams.get('utm_medium') || null,
+        utm_campaign: searchParams.get('utm_campaign') || null,
       };
 
       // Salvar no Supabase

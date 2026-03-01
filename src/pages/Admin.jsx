@@ -4,6 +4,7 @@ import {
   Search, FileText, TrendingUp, Send, Loader2, Copy, Check,
   BarChart3, Target, Lightbulb, Globe, RefreshCw, Star,
   Share2, ExternalLink, Layers, MessageSquare, Zap, Settings, Eye, EyeOff, Save,
+  Users, ChevronDown,
 } from 'lucide-react';
 import { sendClaudePrompt } from '@/lib/claudeClient';
 import SEO from '@/components/SEO';
@@ -322,6 +323,13 @@ const Admin = () => {
   const [consultantResponse, setConsultantResponse] = useState('');
   const [consultantLoading, setConsultantLoading] = useState(false);
 
+  // Leads
+  const [leadsData, setLeadsData] = useState(null);
+  const [adsData, setAdsData] = useState({ meta: null, google: null, pinterest: null });
+  const [leadsLoading, setLeadsLoading] = useState(false);
+  const [leadsFilter, setLeadsFilter] = useState('todos');
+  const leadsSearchRef = useRef('');
+
   // Configurações de plataformas — defaults pré-preenchidos + override do localStorage
   const [platformSettings, setPlatformSettings] = useState(() => {
     try {
@@ -565,9 +573,79 @@ Responda como consultor experiente:
     setVisibleTokens((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
+  // ─── Leads ────────────────────────────────────────────────────────────────
+  const fetchLeadsData = useCallback(async () => {
+    setLeadsLoading(true);
+    try {
+      const [leadsRes, metaRes, gaRes, pinterestRes] = await Promise.allSettled([
+        fetch('/api/leads'),
+        fetch('/api/meta-ads'),
+        fetch('/api/google-analytics'),
+        fetch('/api/pinterest-ads'),
+      ]);
+
+      if (leadsRes.status === 'fulfilled' && leadsRes.value.ok) {
+        setLeadsData(await leadsRes.value.json());
+      }
+
+      const metaData = metaRes.status === 'fulfilled' && metaRes.value.ok
+        ? await metaRes.value.json() : null;
+      const gaData = gaRes.status === 'fulfilled' && gaRes.value.ok
+        ? await gaRes.value.json() : null;
+      const pinterestData = pinterestRes.status === 'fulfilled' && pinterestRes.value.ok
+        ? await pinterestRes.value.json() : null;
+
+      setAdsData({ meta: metaData, google: gaData, pinterest: pinterestData });
+    } catch (err) {
+      console.error('fetchLeadsData error:', err);
+    } finally {
+      setLeadsLoading(false);
+    }
+  }, []);
+
+  const updateLeadStatus = async (id, tipo, novoStatus) => {
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, tipo, status: novoStatus }),
+      });
+      if (!res.ok) throw new Error('Falha ao atualizar');
+      setLeadsData((prev) => {
+        if (!prev?.leads) return prev;
+        return {
+          ...prev,
+          leads: prev.leads.map((l) =>
+            l.id === id && l.tipo === tipo ? { ...l, status: novoStatus } : l
+          ),
+        };
+      });
+    } catch (err) {
+      console.error('updateLeadStatus error:', err);
+    }
+  };
+
+  const calcCPL = (spend, count) => {
+    if (!spend || !count) return null;
+    return (spend / count).toFixed(2);
+  };
+
+  const getLeadChannel = (lead) => {
+    if (lead.utm_source) return lead.utm_source;
+    if (lead.origem && lead.origem !== 'site') return lead.origem;
+    return 'orgânico';
+  };
+
+  useEffect(() => {
+    if (activeTab === 'leads' && leadsData === null) {
+      fetchLeadsData();
+    }
+  }, [activeTab, leadsData, fetchLeadsData]);
+
   // ─── Tabs ─────────────────────────────────────────────────────────────────
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: Layers },
+    { id: 'leads', label: 'Leads', icon: Users },
     { id: 'social', label: 'Publicador Social', icon: Share2 },
     { id: 'seo', label: t('adminPage.tabs.seo'), icon: Search },
     { id: 'content', label: t('adminPage.tabs.content'), icon: FileText },
@@ -775,6 +853,288 @@ Responda como consultor experiente:
                     ))}
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* ══ LEADS ═══════════════════════════════════════════════════════ */}
+            {activeTab === 'leads' && (
+              <div className="space-y-6">
+                {/* Header */}
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+                  <Users className="w-6 h-6 text-wg-orange" />
+                  <div>
+                    <h2 className="text-lg font-semibold">Painel de Leads</h2>
+                    <p className="text-sm text-gray-500">Últimos 90 dias · canal de origem · CPL por fonte</p>
+                  </div>
+                  <button
+                    onClick={fetchLeadsData}
+                    className="ml-auto p-2 text-gray-400 hover:text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
+                    title="Atualizar"
+                  >
+                    <RefreshCw className={`w-4 h-4 ${leadsLoading ? 'animate-spin' : ''}`} />
+                  </button>
+                </div>
+
+                {leadsLoading && (
+                  <div className="flex items-center justify-center py-8 text-gray-400">
+                    <Loader2 className="w-5 h-5 animate-spin mr-2" /> Carregando leads...
+                  </div>
+                )}
+
+                {!leadsLoading && leadsData && (() => {
+                  const allLeads = leadsData.leads || [];
+                  const propostas = allLeads.filter((l) => l.tipo === 'proposta');
+                  const contatos = allLeads.filter((l) => l.tipo === 'contato');
+
+                  // Agrupa por canal
+                  const byChannel = {};
+                  allLeads.forEach((l) => {
+                    const ch = getLeadChannel(l);
+                    if (!byChannel[ch]) byChannel[ch] = [];
+                    byChannel[ch].push(l);
+                  });
+
+                  const metaLeads = allLeads.filter((l) =>
+                    ['instagram', 'facebook', 'meta', 'paid_social'].includes(
+                      (l.utm_source || l.utm_medium || '').toLowerCase()
+                    )
+                  );
+                  const paidSearchLeads = allLeads.filter((l) =>
+                    ['google', 'cpc', 'paid_search'].includes(
+                      (l.utm_source || l.utm_medium || '').toLowerCase()
+                    )
+                  );
+                  const organicLeads = allLeads.filter((l) =>
+                    !l.utm_source || ['organic', 'site', 'orgânico'].includes((l.utm_source || '').toLowerCase())
+                  );
+                  const pinterestLeads = allLeads.filter((l) =>
+                    ['pinterest'].includes((l.utm_source || '').toLowerCase())
+                  );
+
+                  const metaSpend = adsData.meta?.spend || 0;
+                  const gaRows = adsData.google?.rows || [];
+                  const pinterestSpend = adsData.pinterest?.spend || 0;
+
+                  const totalCPL = calcCPL(
+                    metaSpend + pinterestSpend,
+                    metaLeads.length + pinterestLeads.length
+                  );
+
+                  // Filtro
+                  const searchTerm = leadsSearchRef.current?.value?.toLowerCase() || '';
+                  const visibleLeads = allLeads.filter((l) => {
+                    if (leadsFilter === 'proposta' && l.tipo !== 'proposta') return false;
+                    if (leadsFilter === 'contato' && l.tipo !== 'contato') return false;
+                    if (searchTerm && !(
+                      l.nome?.toLowerCase().includes(searchTerm) ||
+                      l.email?.toLowerCase().includes(searchTerm) ||
+                      l.utm_source?.toLowerCase().includes(searchTerm)
+                    )) return false;
+                    return true;
+                  });
+
+                  return (
+                    <>
+                      {/* KPIs — 2 colunas */}
+                      <div className="grid md:grid-cols-2 gap-4">
+                        {/* Resumo geral */}
+                        <div className="bg-gray-50 rounded-xl p-4 space-y-2">
+                          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Este período (90 dias)</p>
+                          <div className="grid grid-cols-2 gap-3">
+                            <div>
+                              <p className="text-2xl font-bold text-wg-black">{allLeads.length}</p>
+                              <p className="text-xs text-gray-500">leads totais</p>
+                            </div>
+                            <div>
+                              <p className="text-2xl font-bold text-wg-orange">{propostas.length}</p>
+                              <p className="text-xs text-gray-500">propostas</p>
+                            </div>
+                            <div>
+                              <p className="text-2xl font-bold text-blue-600">{contatos.length}</p>
+                              <p className="text-xs text-gray-500">contatos</p>
+                            </div>
+                            <div>
+                              <p className="text-2xl font-bold text-green-600">
+                                {totalCPL ? `R$${totalCPL}` : '—'}
+                              </p>
+                              <p className="text-xs text-gray-500">CPL médio (pago)</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* KPIs por canal */}
+                        <div className="space-y-2">
+                          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Por canal</p>
+                          {[
+                            {
+                              label: 'Meta (Instagram/FB)',
+                              leads: metaLeads.length,
+                              spend: metaSpend,
+                              color: 'from-purple-500 via-pink-500 to-orange-400',
+                              hasData: adsData.meta?.source !== 'no_credentials',
+                            },
+                            {
+                              label: 'Google Ads (Paid Search)',
+                              leads: paidSearchLeads.length,
+                              spend: 0,
+                              color: 'from-blue-500 to-blue-400',
+                              hasData: false,
+                              gaRows: gaRows.filter((r) =>
+                                r.channel?.toLowerCase().includes('paid search')
+                              ),
+                            },
+                            {
+                              label: 'Orgânico / Direto',
+                              leads: organicLeads.length,
+                              spend: 0,
+                              color: 'from-green-500 to-green-400',
+                              hasData: true,
+                              noSpend: true,
+                            },
+                            {
+                              label: 'Pinterest Ads',
+                              leads: pinterestLeads.length,
+                              spend: pinterestSpend,
+                              color: 'from-red-500 to-red-400',
+                              hasData: adsData.pinterest?.source !== 'no_credentials',
+                            },
+                          ].map((ch) => (
+                            <div key={ch.label} className="flex items-center gap-3 p-2.5 bg-white border border-gray-100 rounded-lg">
+                              <div className={`w-2 h-8 rounded-full bg-gradient-to-b ${ch.color} flex-shrink-0`} />
+                              <div className="flex-1 min-w-0">
+                                <p className="text-xs font-medium text-gray-700 truncate">{ch.label}</p>
+                                <p className="text-xs text-gray-400">
+                                  {ch.noSpend ? 'R$0 gasto' :
+                                    ch.hasData ? `R$${Number(ch.spend).toFixed(2)} gasto` :
+                                    'aguardando credenciais'}
+                                </p>
+                              </div>
+                              <div className="text-right flex-shrink-0">
+                                <p className="text-sm font-semibold text-wg-black">{ch.leads}</p>
+                                <p className="text-xs text-gray-400">leads</p>
+                              </div>
+                              {!ch.noSpend && !ch.hasData && (
+                                <span className="text-xs bg-amber-100 text-amber-600 px-1.5 py-0.5 rounded">sem token</span>
+                              )}
+                              {ch.hasData && !ch.noSpend && ch.spend > 0 && (
+                                <span className="text-xs bg-green-100 text-green-600 px-1.5 py-0.5 rounded">
+                                  CPL R${calcCPL(ch.spend, ch.leads) || '—'}
+                                </span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Filtros + busca */}
+                      <div className="flex flex-wrap items-center gap-2">
+                        {['todos', 'proposta', 'contato'].map((f) => (
+                          <button
+                            key={f}
+                            onClick={() => setLeadsFilter(f)}
+                            className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                              leadsFilter === f
+                                ? 'bg-wg-orange text-white'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                            }`}
+                          >
+                            {f === 'todos' ? 'Todos' : f === 'proposta' ? 'Propostas' : 'Contatos'}
+                          </button>
+                        ))}
+                        <input
+                          ref={leadsSearchRef}
+                          type="text"
+                          placeholder="Buscar por nome, email, canal..."
+                          onChange={() => setLeadsFilter((f) => f)} // força re-render
+                          className="ml-auto px-3 py-1.5 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-wg-orange/30 w-56"
+                        />
+                      </div>
+
+                      {/* Tabela de leads */}
+                      <div className="overflow-x-auto -mx-2">
+                        <table className="w-full text-sm">
+                          <thead>
+                            <tr className="border-b border-gray-100">
+                              <th className="text-left py-2 px-3 text-xs font-semibold text-gray-500">Data</th>
+                              <th className="text-left py-2 px-3 text-xs font-semibold text-gray-500">Nome</th>
+                              <th className="text-left py-2 px-3 text-xs font-semibold text-gray-500">Canal</th>
+                              <th className="text-left py-2 px-3 text-xs font-semibold text-gray-500">Tipo</th>
+                              <th className="text-left py-2 px-3 text-xs font-semibold text-gray-500">Origem</th>
+                              <th className="text-left py-2 px-3 text-xs font-semibold text-gray-500">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {visibleLeads.length === 0 && (
+                              <tr>
+                                <td colSpan={6} className="py-8 text-center text-gray-400 text-sm">
+                                  Nenhum lead encontrado
+                                </td>
+                              </tr>
+                            )}
+                            {visibleLeads.slice(0, 50).map((lead) => (
+                              <tr key={`${lead.tipo}-${lead.id}`} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                                <td className="py-2 px-3 text-xs text-gray-400 whitespace-nowrap">
+                                  {lead.created_at
+                                    ? new Date(lead.created_at).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit' })
+                                    : '—'}
+                                </td>
+                                <td className="py-2 px-3">
+                                  <p className="font-medium text-wg-black truncate max-w-[140px]">{lead.nome}</p>
+                                  <p className="text-xs text-gray-400 truncate max-w-[140px]">{lead.email}</p>
+                                </td>
+                                <td className="py-2 px-3">
+                                  <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">
+                                    {getLeadChannel(lead)}
+                                  </span>
+                                </td>
+                                <td className="py-2 px-3">
+                                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                                    lead.tipo === 'proposta'
+                                      ? 'bg-orange-100 text-orange-700'
+                                      : 'bg-blue-100 text-blue-700'
+                                  }`}>
+                                    {lead.tipo === 'proposta' ? 'Proposta' : 'Contato'}
+                                  </span>
+                                </td>
+                                <td className="py-2 px-3 text-xs text-gray-500 max-w-[120px] truncate">
+                                  {lead.utm_campaign || lead.origem || '—'}
+                                </td>
+                                <td className="py-2 px-3">
+                                  <div className="relative group inline-block">
+                                    <select
+                                      value={lead.status || 'nova'}
+                                      onChange={(e) => updateLeadStatus(lead.id, lead.tipo, e.target.value)}
+                                      className={`text-xs pl-2 pr-6 py-1 rounded-full border appearance-none cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-wg-orange/30 ${
+                                        {
+                                          nova: 'bg-yellow-50 text-yellow-700 border-yellow-200',
+                                          contato: 'bg-blue-50 text-blue-700 border-blue-200',
+                                          visita: 'bg-purple-50 text-purple-700 border-purple-200',
+                                          proposta: 'bg-orange-50 text-orange-700 border-orange-200',
+                                          fechado: 'bg-green-50 text-green-700 border-green-200',
+                                          perdido: 'bg-red-50 text-red-700 border-red-200',
+                                        }[lead.status] || 'bg-gray-50 text-gray-700 border-gray-200'
+                                      }`}
+                                    >
+                                      {['nova', 'contato', 'visita', 'proposta', 'fechado', 'perdido'].map((s) => (
+                                        <option key={s} value={s}>{s.charAt(0).toUpperCase() + s.slice(1)}</option>
+                                      ))}
+                                    </select>
+                                    <ChevronDown className="absolute right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 pointer-events-none text-current opacity-60" />
+                                  </div>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                        {visibleLeads.length > 50 && (
+                          <p className="text-xs text-gray-400 text-center py-2">
+                            Mostrando 50 de {visibleLeads.length} leads
+                          </p>
+                        )}
+                      </div>
+                    </>
+                  );
+                })()}
               </div>
             )}
 

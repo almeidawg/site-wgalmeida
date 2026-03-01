@@ -8,6 +8,7 @@ import { supabase } from '@/lib/customSupabaseClient';
 import { notificarNovoContato } from '@/lib/emailService';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 
 // Animações elegantes
 const fadeInUp = {
@@ -20,6 +21,7 @@ const fadeInUp = {
 const Contact = () => {
   const { toast } = useToast();
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -58,6 +60,10 @@ const Contact = () => {
           phone: formData.phone,
           subject: formData.subject,
           message: formData.message,
+          utm_source: searchParams.get('utm_source') || null,
+          utm_medium: searchParams.get('utm_medium') || null,
+          utm_campaign: searchParams.get('utm_campaign') || null,
+          origem: searchParams.get('utm_source') ? `site-${searchParams.get('utm_source')}` : 'site',
         },
       ]);
 

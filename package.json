@@ -44,6 +44,7 @@
     "clsx": "^2.0.0",
     "core-js": "^3.48.0",
     "framer-motion": "^10.16.4",
+    "google-auth-library": "^9.15.1",
     "gray-matter": "^4.0.3",
     "html2canvas": "^1.4.1",
     "i18next": "^25.7.3",
