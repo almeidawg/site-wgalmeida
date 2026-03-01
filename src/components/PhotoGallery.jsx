@@ -27,8 +27,8 @@ const galleryProjects = [
     categoryKey: "photoGallery.projects.itaim.category",
     images: [
       { src: "/images/imagens/04 Depois.webp", labelKey: "photoGallery.projects.itaim.images.integratedLiving" },
-      { src: "/images/imagens/1.webp", labelKey: "photoGallery.projects.itaim.images.masterSuite" },
-      { src: "/images/imagens/2.webp", labelKey: "photoGallery.projects.itaim.images.homeOffice" },
+      { src: "/images/imagens/ARQ-VILANOVACONCEICAO (1).webp", labelKey: "photoGallery.projects.itaim.images.masterSuite" },
+      { src: "/images/imagens/ARQ-VILANOVACONCEICAO (2).webp", labelKey: "photoGallery.projects.itaim.images.homeOffice" },
     ],
   },
   {
@@ -37,8 +37,8 @@ const galleryProjects = [
     categoryKey: "photoGallery.projects.jardins.category",
     images: [
       { src: "/images/imagens/3.webp", labelKey: "photoGallery.projects.jardins.images.walkInCloset" },
-      { src: "/images/imagens/7.webp", labelKey: "photoGallery.projects.jardins.images.library" },
-      { src: "/images/imagens/8.webp", labelKey: "photoGallery.projects.jardins.images.gourmetCounter" },
+      { src: "/images/imagens/ARQ-ENG-MARC-BOORKLIN (1).webp", labelKey: "photoGallery.projects.jardins.images.library" },
+      { src: "/images/imagens/ARQ-ENG-MARC-BOORKLIN (2).webp", labelKey: "photoGallery.projects.jardins.images.gourmetCounter" },
     ],
   },
   {
@@ -46,9 +46,9 @@ const galleryProjects = [
     titleKey: "photoGallery.projects.vilaNova.title",
     categoryKey: "photoGallery.projects.vilaNova.category",
     images: [
-      { src: "/images/imagens/9.webp", labelKey: "photoGallery.projects.vilaNova.images.terrace" },
-      { src: "/images/imagens/10.webp", labelKey: "photoGallery.projects.vilaNova.images.pool" },
-      { src: "/images/imagens/11.webp", labelKey: "photoGallery.projects.vilaNova.images.outdoorLounge" },
+      { src: "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (1).webp", labelKey: "photoGallery.projects.vilaNova.images.terrace" },
+      { src: "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (2).webp", labelKey: "photoGallery.projects.vilaNova.images.pool" },
+      { src: "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (3).webp", labelKey: "photoGallery.projects.vilaNova.images.outdoorLounge" },
     ],
   },
 ];

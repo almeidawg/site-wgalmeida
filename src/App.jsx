@@ -66,8 +66,8 @@ const MarcenariaSobMedidaMorumbi = lazy(() => import('@/pages/MarcenariaSobMedid
 const ArquiteturaInterioresVilaNovaConceicao = lazy(() => import('@/pages/ArquiteturaInterioresVilaNovaConceicao'));
 
 const LoadingFallback = () => (
-  <div className="min-h-screen w-full flex justify-center items-center bg-white">
-    <Loader2 className="h-16 w-16 text-wg-orange animate-spin" />
+  <div className="min-h-screen w-full flex justify-center items-center bg-wg-gray-light">
+    <Loader2 className="h-10 w-10 text-wg-orange animate-spin opacity-60" />
   </div>
 );
 

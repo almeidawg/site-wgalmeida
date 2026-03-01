@@ -46,10 +46,10 @@ const TOTAL_DURATION = 45000; // 45 segundos total
 
 // Imagens do portfólio para o flash
 const portfolioImages = [
-  '/images/projects/galpao-surubiju-alphaville/1.jpg',
-  '/images/projects/casa-gaivota-moema/1.jpg',
-  '/images/projects/apartamento-alameda-alphaville/3sala_03_39270011980_o.jpg',
-  '/images/projects/apartamento-square-santo-amaro/sala01.jpg',
+  '/images/projects/galpao-surubiju-alphaville/1.webp',
+  '/images/projects/casa-gaivota-moema/1.webp',
+  '/images/projects/apartamento-alameda-alphaville/3sala_03_39270011980_o.webp',
+  '/images/projects/apartamento-square-santo-amaro/sala01.webp',
 ];
 
 // ============================================================
