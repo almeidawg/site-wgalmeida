@@ -738,7 +738,6 @@ const Home = () => {
 
       {/* ========== BLOCO TURN KEY PREMIUM ========== */}
       <section className="py-[68px] bg-wg-black text-white relative overflow-hidden">
-        <AnimatedStrokes variant="diagonal" opacity={0.06} count={4} duration={5} />
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}

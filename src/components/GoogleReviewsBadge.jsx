@@ -14,7 +14,7 @@ const ReviewCard = ({ review, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
-      className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+      className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col"
     >
       {/* Header compacto */}
       <div className="flex items-center gap-3 mb-3">
@@ -35,7 +35,7 @@ const ReviewCard = ({ review, index }) => {
       </div>
 
       {/* Review text */}
-      <p className="text-wg-gray text-xs leading-relaxed">{review.text}</p>
+      <p className="text-wg-gray text-xs leading-relaxed flex-1">{review.text}</p>
     </motion.div>
   );
 };
