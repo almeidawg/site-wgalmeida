@@ -12,9 +12,9 @@ import {
   Award,
   TrendingUp,
   Phone,
-  Star
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import BrandStar from '@/components/BrandStar';
 
 const ReformaApartamentoItaim = () => {
   const pageUrl = 'https://wgalmeida.com.br/reforma-apartamento-itaim';
@@ -130,7 +130,7 @@ const ReformaApartamentoItaim = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
-        <div className="relative z-10 container-custom text-center text-white px-4 py-20">
+        <div className="relative z-10 container-custom text-center text-white px-4 py-12 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -288,7 +288,7 @@ const ReformaApartamentoItaim = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex items-start gap-3 p-4 bg-wg-gray-light rounded-xl"
               >
-                <Star className="w-5 h-5 text-wg-orange flex-shrink-0 mt-0.5" />
+                <BrandStar className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <p className="text-wg-gray font-light">{item}</p>
               </motion.div>
             ))}

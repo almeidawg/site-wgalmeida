@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
-import { Star, ExternalLink, MapPin } from 'lucide-react';
+import { ExternalLink, MapPin, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
@@ -171,7 +171,7 @@ const Testimonials = () => {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <div className="flex">
+                  <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-6 h-6 text-wg-orange fill-wg-orange" />
                     ))}
@@ -271,7 +271,7 @@ const Testimonials = () => {
         <div className="container-custom">
           <motion.div
             {...fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             {/* Linha decorativa */}
             <motion.div
@@ -318,7 +318,7 @@ const Testimonials = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-wg-black text-white">
+      <section className="py-12 md:py-16 bg-wg-black text-white">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}

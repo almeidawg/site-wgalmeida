@@ -147,7 +147,7 @@ const Carpentry = () => {
         <div className="container-custom relative z-10">
           <motion.div
             {...fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             {/* Linha decorativa */}
             <motion.div

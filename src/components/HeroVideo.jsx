@@ -6,6 +6,8 @@ const HeroVideo = () => {
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const [videoFailed, setVideoFailed] = useState(false);
   const [allowVideo, setAllowVideo] = useState(true);
+  const [batteryOk, setBatteryOk] = useState(true);
+  const [performanceOk, setPerformanceOk] = useState(true);
   const videoRef = useRef(null);
 
   const bindMediaQueryChange = (mediaQuery, handler) => {
@@ -49,9 +51,38 @@ const HeroVideo = () => {
     };
   }, []);
 
+  // Bateria e performance: se bateria muito baixa ou device muito fraco, preferimos poster estático
+  useEffect(() => {
+    let cleanupBattery;
+    if (navigator.getBattery) {
+      navigator.getBattery().then((battery) => {
+        const updateBattery = () => {
+          const lowLevel = battery.level <= 0.2;
+          const savingMode = battery.dischargingTime === Infinity; // modo economia em alguns devices
+          setBatteryOk(!lowLevel && !savingMode);
+        };
+        updateBattery();
+        battery.addEventListener('levelchange', updateBattery);
+        battery.addEventListener('chargingchange', updateBattery);
+        cleanupBattery = () => {
+          battery.removeEventListener('levelchange', updateBattery);
+          battery.removeEventListener('chargingchange', updateBattery);
+        };
+      }).catch(() => setBatteryOk(true));
+    }
+
+    const deviceMem = navigator.deviceMemory || 4;
+    const cores = navigator.hardwareConcurrency || 4;
+    setPerformanceOk(deviceMem >= 2 && cores >= 4);
+
+    return () => {
+      if (cleanupBattery) cleanupBattery();
+    };
+  }, []);
+
   // Carregar video apos 2s ou interacao do usuario (melhora LCP)
   useEffect(() => {
-    if (!allowVideo || isMobile) return;
+    if (!allowVideo || !batteryOk || !performanceOk) return;
 
     const loadVideo = () => setShouldLoadVideo(true);
     
@@ -64,7 +95,7 @@ const HeroVideo = () => {
       clearTimeout(timer);
       events.forEach(e => window.removeEventListener(e, loadVideo));
     };
-  }, [allowVideo, isMobile]);
+  }, [allowVideo, batteryOk, performanceOk]);
 
   const videoUrl = isMobile
     ? '/videos/hero/VERTICAL_compressed.mp4'
@@ -88,7 +119,7 @@ const HeroVideo = () => {
 
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-      {allowVideo && shouldLoadVideo && !videoFailed && (
+      {allowVideo && batteryOk && performanceOk && shouldLoadVideo && !videoFailed && (
         <video
           ref={videoRef}
           className={'absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ' + (isLoaded ? 'opacity-100' : 'opacity-0')}

@@ -229,7 +229,7 @@ export const schemas = {
       name: 'Grupo WG Almeida',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://wgalmeida.com.br/images/logo.png'
+        url: 'https://wgalmeida.com.br/images/logo-192.webp'
       }
     }
   }),

@@ -8,47 +8,76 @@ const Footer = () => {
 
   return (
     <footer className="bg-wg-black text-white">
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.15fr_0.9fr_0.9fr_2.35fr_1.15fr] gap-8 lg:gap-4">
-          <div>
-            <Link to="/" className="inline-block mb-4 bg-white p-2 rounded-lg">
-              <img
-                className="h-12 w-12 object-contain"
-                alt="Logo Grupo WG Almeida"
-                src="/images/logo-96.webp"
-                width="96"
-                height="96"
-                loading="lazy"
-                decoding="async"
-              />
+      <div className="container-custom py-12 md:py-16">
+        {/* Empresas do Grupo - acima do mapa do site */}
+        <div className="mb-10">
+          <div className="flex flex-wrap items-center gap-6">
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-widest whitespace-nowrap">
+              Empresas do Grupo:
+            </span>
+            <Link to="/" className="opacity-80 hover:opacity-100 transition-opacity">
+              <div className="bg-white p-2 rounded-lg">
+                <img
+                  className="h-12 w-12 object-contain"
+                  alt="Logo Grupo WG Almeida"
+                  src="/images/logo-96.webp"
+                  width="96"
+                  height="96"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              {t('footer.description')}
-            </p>
-            <div className="flex space-x-4">
-              <a href="https://www.instagram.com/grupowgalmeida" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label={t('footer.followInstagram')}>
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="https://www.facebook.com/wgalmeidaarquitetura" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label={t('footer.followFacebook')}>
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="https://www.linkedin.com/company/wgalmeida" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label={t('footer.followLinkedin')}>
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://br.pinterest.com/wgalmeida" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label="Seguir no Pinterest">
-                <Pin className="w-5 h-5" />
-              </a>
-              <a href="https://www.homify.com.br/profissionais/232168/grupo-wg-almeida-arquitetura-engenharia-e-marcenaria-de-alto-padrao" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label="Ver perfil no Homify">
-                <Home className="w-5 h-5" />
-              </a>
-              <a href="https://www.houzz.com/user/wgalmeida" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label="Ver perfil no Houzz">
-                <Building2 className="w-5 h-5" />
-              </a>
-            </div>
+            <a
+              href="https://easylocker.wgalmeida.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-60 hover:opacity-100 transition-opacity"
+              title="EasyLocker — Armários Inteligentes"
+            >
+              <img
+                src="/images/logo-easylocker.png"
+                alt="EasyLocker"
+                className="h-[60px] w-auto object-contain"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="https://buildtech.wgalmeida.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-60 hover:opacity-100 transition-opacity"
+              title="WG.build tech — Sites, Sistemas & Automação"
+            >
+              <img
+                src="/images/logo-buildtech-transparent.png"
+                alt="WG.build tech"
+                className="h-[90px] w-auto object-contain"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="https://wnomasvinho.wgalmeida.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-60 hover:opacity-100 transition-opacity"
+              title="Wno Mas Vinho & Cia"
+            >
+              <img
+                src="/images/logo-wno-mas.png"
+                alt="Wno Mas Vinho & Cia"
+                className="h-[60px] w-auto object-contain"
+                loading="lazy"
+              />
+            </a>
           </div>
+        </div>
 
+        <div className="border-t border-gray-800 pt-10" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_0.9fr_1.6fr_1.1fr] gap-8 lg:gap-6 items-start">
           <div>
-            <span className="font-poppins font-semibold text-lg mb-4 block">{t('footer.navigation')}</span>
+            <span className="font-poppins text-lg mb-3 block text-gray-200">{t('footer.navigation')}</span>
             <nav className="space-y-2">
               <Link to="/" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm">
                 {t('nav.home')}
@@ -74,8 +103,8 @@ const Footer = () => {
             </nav>
           </div>
 
-          <div>
-            <span className="font-poppins font-semibold text-lg mb-4 block">{t('footer.units')}</span>
+          <div className="lg:mr-4">
+            <span className="font-poppins text-lg mb-3 block text-gray-200">{t('footer.units')}</span>
             <nav className="space-y-2">
               <Link to="/arquitetura" className="block text-gray-400 hover:text-wg-green transition-colors text-sm">
                 {t('nav.architecture')}
@@ -102,9 +131,9 @@ const Footer = () => {
           </div>
 
           {/* Onde Atuamos - SEO Local */}
-          <div className="lg:-ml-4">
-            <span className="font-poppins font-semibold text-lg mb-4 block">{t('footer.regions')}</span>
-            <nav className="grid grid-cols-3 gap-x-9 gap-y-2">
+          <div className="lg:mx-auto">
+            <span className="font-poppins text-lg mb-3 block text-gray-200">{t('footer.regions')}</span>
+            <nav className="grid grid-cols-3 gap-x-6 gap-y-2">
               <Link to="/jardins" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm leading-snug whitespace-normal">
                 Jardins
               </Link>
@@ -157,7 +186,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <span className="font-poppins font-semibold text-lg mb-4 block">{t('footer.contact')}</span>
+            <span className="font-poppins text-lg mb-3 block text-gray-200">{t('footer.contact')}</span>
             <div className="space-y-3">
               <a href="tel:+5511984650002" className="flex items-start space-x-3 hover:text-wg-orange transition-colors group">
                 <Phone className="w-5 h-5 text-wg-orange mt-0.5 flex-shrink-0" />
@@ -177,58 +206,28 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-wg-orange mt-0.5 flex-shrink-0" />
                 <span className="text-gray-400 text-sm">{t('footer.address')}</span>
               </div>
+              {/* Redes Sociais */}
+              <div className="flex space-x-4 mt-4 pt-4 border-t border-gray-800">
+                <a href="https://www.instagram.com/grupowgalmeida" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label={t('footer.followInstagram')}>
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="https://www.facebook.com/wgalmeidaarquitetura" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label={t('footer.followFacebook')}>
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="https://www.linkedin.com/company/wgalmeida" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label={t('footer.followLinkedin')}>
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://br.pinterest.com/wgalmeida" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label="Seguir no Pinterest">
+                  <Pin className="w-5 h-5" />
+                </a>
+                <a href="https://www.homify.com.br/profissionais/232168/grupo-wg-almeida-arquitetura-engenharia-e-marcenaria-de-alto-padrao" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label="Ver perfil no Homify">
+                  <Home className="w-5 h-5" />
+                </a>
+                <a href="https://www.houzz.com/user/wgalmeida" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-wg-orange transition-colors" aria-label="Ver perfil no Houzz">
+                  <Building2 className="w-5 h-5" />
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
-
-        {/* Empresas do Grupo */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-wrap items-center gap-6 mb-8">
-            <span className="text-xs font-semibold text-gray-500 uppercase tracking-widest whitespace-nowrap">
-              Empresas do Grupo:
-            </span>
-            <a
-              href="https://easylocker.wgalmeida.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-60 hover:opacity-100 transition-opacity"
-              title="EasyLocker — Armários Inteligentes"
-            >
-              <img
-                src="/images/logo-easylocker.png"
-                alt="EasyLocker"
-                className="h-[72px] w-auto object-contain"
-                loading="lazy"
-              />
-            </a>
-            <a
-              href="https://buildtech.wgalmeida.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-60 hover:opacity-100 transition-opacity"
-              title="WG.build tech — Sites, Sistemas & Automação"
-            >
-              <img
-                src="/images/logo-buildtech-transparent.png"
-                alt="WG.build tech"
-                className="h-[115px] w-auto object-contain"
-                loading="lazy"
-              />
-            </a>
-            <a
-              href="https://wnomasvinho.wgalmeida.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-60 hover:opacity-100 transition-opacity"
-              title="Wno Mas Vinho & Cia"
-            >
-              <img
-                src="/images/logo-wno-mas.png"
-                alt="Wno Mas Vinho & Cia"
-                className="h-[72px] w-auto object-contain"
-                loading="lazy"
-              />
-            </a>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
 import { Wrench, ClipboardCheck, Zap, Award, ArrowRight } from 'lucide-react';
@@ -39,6 +39,23 @@ const Engineering = () => {
       description: t('engineeringPage.services.3.description'),
     },
   ];
+
+  const etapas = [
+    { title: 'Etapas Iniciais', desc: 'Documentação, alvará, demarcação' },
+    { title: 'Mobilização', desc: 'Estruturação do canteiro de obras' },
+    { title: 'Limpeza', desc: 'Regularizações e preparação do terreno' },
+    { title: 'Marcação', desc: 'Gabarito e demarcação da fundação' },
+    { title: 'Fundação', desc: 'Estacas, blocos e estrutura base' },
+    { title: 'Estruturas', desc: 'Pilares, vigas, lajes e cobertura' },
+    { title: 'Alvenaria', desc: 'Vedações e fechamentos' },
+    { title: 'Instalações', desc: 'Elétrica, hidráulica, ar-condicionado' },
+    { title: 'Acabamentos', desc: 'Pisos, revestimentos, pintura' },
+    { title: 'Marcenaria', desc: 'Mobiliário sob medida' },
+    { title: 'Louças e Metais', desc: 'Instalação de equipamentos' },
+    { title: 'Entrega', desc: 'Casa pronta para morar' },
+  ];
+
+  const [etapaLiberada, setEtapaLiberada] = useState(1);
 
   return (
     <>
@@ -137,6 +154,66 @@ const Engineering = () => {
         </motion.div>
       </section>
 
+      {/* Fluxo interativo de etapas */}
+      <section className="section-padding bg-wg-gray-light relative overflow-hidden">
+        <div className="container-custom relative z-10">
+          <motion.div
+            {...fadeInUp}
+            className="text-center mb-12"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm text-wg-blue font-medium shadow-sm">
+              Turn Key · Sequência Técnica
+            </span>
+            <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black mt-4 mb-3 tracking-tight">
+              Empreitada Global (Engenharia)
+            </h2>
+            <p className="text-lg text-wg-gray max-w-3xl mx-auto">
+              Etapas organizadas em ordem lógica. Cada passo precisa de aprovação antes de liberar o próximo.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {etapas.map((etapa, index) => {
+              const numero = index + 1;
+              const liberada = numero <= etapaLiberada;
+              const ehAtual = numero === etapaLiberada;
+              return (
+                <motion.div
+                  key={etapa.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.04 }}
+                  className={`group relative rounded-2xl border ${liberada ? 'border-wg-blue/30 bg-white' : 'border-gray-200 bg-white/70'} shadow-sm hover:shadow-lg transition-all duration-300`}
+                >
+                  <div className="flex items-start gap-3 p-5">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-semibold ${liberada ? 'bg-wg-blue/10 text-wg-blue' : 'bg-gray-100 text-gray-400'}`}>
+                      {String(numero).padStart(2, '0')}
+                    </div>
+                    <div className="flex-1">
+                      <p className={`text-base font-semibold ${liberada ? 'text-wg-black' : 'text-gray-500'}`}>{etapa.title}</p>
+                      <p className="text-sm text-wg-gray mt-1">{etapa.desc}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between px-5 pb-5 text-xs">
+                    <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full ${liberada ? 'bg-wg-blue/10 text-wg-blue' : 'bg-gray-100 text-gray-500'}`}>
+                      {liberada ? 'Liberado' : 'Bloqueado'}
+                    </span>
+                    <button
+                      disabled={!ehAtual}
+                      onClick={() => setEtapaLiberada((prev) => Math.min(prev + 1, etapas.length))}
+                      className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${ehAtual ? 'bg-wg-blue text-white hover:bg-wg-blue/90' : 'bg-gray-200 text-gray-500 cursor-not-allowed'}`}
+                    >
+                      {ehAtual ? 'Aprovar etapa' : 'Aguarde etapa anterior'}
+                    </button>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding bg-white relative overflow-hidden">
         {/* Elementos decorativos */}
         <div className="absolute inset-0 opacity-5">
@@ -147,7 +224,7 @@ const Engineering = () => {
         <div className="container-custom relative z-10">
           <motion.div
             {...fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             {/* Linha decorativa */}
             <motion.div

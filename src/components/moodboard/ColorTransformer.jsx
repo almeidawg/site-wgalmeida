@@ -492,7 +492,7 @@ const ElementColorSelector = ({ element, selectedColor, onColorSelect, available
 // COMPONENTE PRINCIPAL
 // ============================================
 // Logo URL para marca d'água
-const LOGO_URL = '/images/logo.png';
+const LOGO_URL = '/images/logo-192.webp';
 
 const ColorTransformer = ({ externalColors = [] }) => {
   // Estados

@@ -4,13 +4,13 @@ import { motion } from '@/lib/motion-lite';
 import { Link } from 'react-router-dom';
 import {
   Palette, Type, Target, Heart, Lightbulb, Users, Ruler, Building2, Hammer,
-  ArrowRight, CheckCircle2, Sparkles, Eye, Flag, Award, Shield, Zap,
-  Clock, Users2, TrendingUp, Star
+  ArrowRight, CheckCircle2, Eye, Flag, Award, Shield, Zap,
+  Clock, Users2, TrendingUp
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import AnimatedStrokes, { AnimatedDivider } from '@/components/AnimatedStrokes';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { Trans, useTranslation } from 'react-i18next';
+import BrandStar from '@/components/BrandStar';
 
 const AMarca = () => {
   const { t } = useTranslation();
@@ -19,7 +19,7 @@ const AMarca = () => {
   const nucleos = t('brandPage.nuclei.items', { returnObjects: true });
   const turnKeySteps = t('brandPage.turnKey.steps', { returnObjects: true });
 
-  const valueIcons = [Target, Heart, Zap, Users2, TrendingUp, Shield, Lightbulb, Star];
+  const valueIcons = [Target, Heart, Zap, Users2, TrendingUp, Shield, Lightbulb, BrandStar];
   const nucleusIcons = [Ruler, Building2, Hammer];
 
   return (
@@ -76,7 +76,7 @@ const AMarca = () => {
       </section>
 
       {/* Proposito Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -87,7 +87,7 @@ const AMarca = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-wg-orange/10 rounded-xl flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-wg-orange" />
+                  <BrandStar className="w-7 h-7" />
                 </div>
                 <span className="text-sm font-medium text-wg-orange uppercase tracking-wider">{t('brandPage.purpose.kicker')}</span>
               </div>
@@ -117,9 +117,9 @@ const AMarca = () => {
             >
               <div className="rounded-2xl p-12 flex items-center justify-center">
                 <img
-                  src="/images/logo.png"
+                  src="/images/logo-192.webp"
                   alt="Logo Grupo WG Almeida"
-                  className="max-w-full h-auto"
+                  className="max-w-[70%] h-auto mx-auto"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-wg-orange/10 rounded-full -z-10" />
@@ -130,7 +130,7 @@ const AMarca = () => {
       </section>
 
       {/* Missao e Visao Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Missao */}
@@ -202,13 +202,13 @@ const AMarca = () => {
       </section>
 
       {/* Valores Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <Award className="w-12 h-12 text-wg-orange mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-wg-black mb-4">
@@ -245,13 +245,13 @@ const AMarca = () => {
       </section>
 
       {/* Color Palette Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <Palette className="w-12 h-12 text-wg-orange mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-wg-black mb-4">
@@ -299,7 +299,7 @@ const AMarca = () => {
       </section>
 
       {/* Typography Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -367,13 +367,13 @@ const AMarca = () => {
       </section>
 
       {/* Three Nuclei Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-wg-black mb-4">
               {t('brandPage.nuclei.title')}
@@ -425,7 +425,7 @@ const AMarca = () => {
       </section>
 
       {/* Empreitada Global Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -470,8 +470,7 @@ const AMarca = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-wg-black relative overflow-hidden">
-        <AnimatedStrokes variant="horizontal" opacity={0.1} count={4} />
+      <section className="py-12 md:py-16 bg-wg-black relative overflow-hidden">
 
         <div className="container-custom relative z-10">
           <motion.div

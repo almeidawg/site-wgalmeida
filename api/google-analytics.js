@@ -1,28 +1,61 @@
 // Google Analytics 4 — busca sessões e conversões por canal
 // Env vars necessárias: GA4_PROPERTY_ID, GOOGLE_SA_CLIENT_EMAIL, GOOGLE_SA_PRIVATE_KEY
-// Auth: Google Service Account via JWT (google-auth-library)
+// Auth: Google Service Account via JWT (Node.js crypto — sem dependências externas)
 
-import { JWT } from 'google-auth-library';
+import crypto from 'crypto';
+
+function b64url(buf) {
+  return Buffer.from(buf).toString('base64url');
+}
+
+async function getGoogleToken(clientEmail, privateKey) {
+  const header = b64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
+  const now = Math.floor(Date.now() / 1000);
+  const payload = b64url(JSON.stringify({
+    iss: clientEmail,
+    scope: 'https://www.googleapis.com/auth/analytics.readonly',
+    aud: 'https://oauth2.googleapis.com/token',
+    exp: now + 3600,
+    iat: now,
+  }));
+
+  const signingInput = `${header}.${payload}`;
+  const sign = crypto.createSign('RSA-SHA256');
+  sign.update(signingInput);
+  const sig = sign.sign(privateKey, 'base64url');
+  const jwt = `${signingInput}.${sig}`;
+
+  const resp = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+      assertion: jwt,
+    }),
+  });
+
+  if (!resp.ok) {
+    const err = await resp.text();
+    throw new Error(`Token error: ${err}`);
+  }
+  const data = await resp.json();
+  return data.access_token;
+}
 
 export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
 
-  const propertyId = process.env.GA4_PROPERTY_ID;
-  const clientEmail = process.env.GOOGLE_SA_CLIENT_EMAIL;
-  const privateKey = process.env.GOOGLE_SA_PRIVATE_KEY?.replace(/\\n/g, '\n');
+  const propertyId = process.env.GA4_PROPERTY_ID?.trim();
+  const clientEmail = process.env.GOOGLE_SA_CLIENT_EMAIL?.trim();
+  // Handle both actual newlines and escaped \n sequences; strip \r from Windows line endings
+  const privateKey = process.env.GOOGLE_SA_PRIVATE_KEY?.replace(/\\n/g, '\n').replace(/\r/g, '').trim();
 
   if (!propertyId || !clientEmail || !privateKey) {
     return res.status(200).json({ source: 'no_credentials' });
   }
 
   try {
-    const auth = new JWT({
-      email: clientEmail,
-      key: privateKey,
-      scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
-    });
-
-    const { token } = await auth.getAccessToken();
+    const token = await getGoogleToken(clientEmail, privateKey);
 
     const url = `https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:runReport`;
     const body = {
@@ -52,7 +85,6 @@ export default async function handler(req, res) {
 
     const data = await resp.json();
 
-    // Normalizar rows para { channel, sessions, conversions, users }
     const rows = (data.rows || []).map((row) => ({
       channel: row.dimensionValues?.[0]?.value || 'Unknown',
       sessions: Number(row.metricValues?.[0]?.value || 0),

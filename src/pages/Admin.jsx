@@ -1,14 +1,16 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { motion } from '@/lib/motion-lite';
 import {
   Search, FileText, TrendingUp, Send, Loader2, Copy, Check,
   BarChart3, Target, Lightbulb, Globe, RefreshCw, Star,
   Share2, ExternalLink, Layers, MessageSquare, Zap, Settings, Eye, EyeOff, Save,
-  Users, ChevronDown,
+  Users, ChevronDown, Monitor, Link2, Trash2, Plus, CheckCircle2, ArrowLeft,
+  BookOpen, X, Clock, Tag,
 } from 'lucide-react';
 import { sendClaudePrompt } from '@/lib/claudeClient';
 import SEO from '@/components/SEO';
 import { useTranslation } from 'react-i18next';
+import BrandStar from '@/components/BrandStar';
 
 // ─── Contexto da empresa ──────────────────────────────────────────────────────
 const WG_CONTEXT = `
@@ -140,6 +142,51 @@ const PLATFORM_FIELDS = {
     { key: 'profileUrl', label: 'URL do Perfil',           placeholder: 'https://www.homify.com.br/professionals/...',      type: 'url'      },
   ],
 };
+
+// ─── Landing pages disponíveis no site ────────────────────────────────────────
+const LANDING_PAGES = [
+  { id: 'construtora-alto-padrao-sp',                  label: 'Construtora Alto Padrão SP',          categoria: 'Serviço Estratégico' },
+  { id: 'reforma-apartamento-sp',                      label: 'Reforma Apartamento SP',               categoria: 'Serviço Estratégico' },
+  { id: 'arquitetura-corporativa',                     label: 'Arquitetura Corporativa',              categoria: 'Serviço Estratégico' },
+  { id: 'obra-turn-key',                               label: 'Obra Turn Key',                        categoria: 'Serviço Estratégico' },
+  { id: 'reforma-apartamento-itaim',                   label: 'Reforma Apt. Itaim',                   categoria: 'Serviço + Região' },
+  { id: 'reforma-apartamento-jardins',                 label: 'Reforma Apt. Jardins',                 categoria: 'Serviço + Região' },
+  { id: 'construtora-brooklin',                        label: 'Construtora Brooklin',                 categoria: 'Serviço + Região' },
+  { id: 'marcenaria-sob-medida-morumbi',               label: 'Marcenaria Morumbi',                   categoria: 'Serviço + Região' },
+  { id: 'arquitetura-interiores-vila-nova-conceicao',  label: 'Arquitetura Vila Nova Conceição',      categoria: 'Serviço + Região' },
+  { id: 'brooklin',              label: 'Brooklin',              categoria: 'Bairro' },
+  { id: 'vila-nova-conceicao',   label: 'Vila Nova Conceição',   categoria: 'Bairro' },
+  { id: 'itaim',                 label: 'Itaim Bibi',            categoria: 'Bairro' },
+  { id: 'jardins',               label: 'Jardins',               categoria: 'Bairro' },
+  { id: 'cidade-jardim',         label: 'Cidade Jardim',         categoria: 'Bairro' },
+  { id: 'morumbi',               label: 'Morumbi',               categoria: 'Bairro' },
+  { id: 'vila-mariana',          label: 'Vila Mariana',          categoria: 'Bairro' },
+  { id: 'mooca',                 label: 'Mooca',                 categoria: 'Bairro' },
+  { id: 'alto-de-pinheiros',     label: 'Alto de Pinheiros',     categoria: 'Bairro' },
+  { id: 'moema',                 label: 'Moema',                 categoria: 'Bairro' },
+  { id: 'campo-belo',            label: 'Campo Belo',            categoria: 'Bairro' },
+  { id: 'higienopolis',          label: 'Higienópolis',          categoria: 'Bairro' },
+  { id: 'pinheiros',             label: 'Pinheiros',             categoria: 'Bairro' },
+  { id: 'perdizes',              label: 'Perdizes',              categoria: 'Bairro' },
+  { id: 'paraiso',               label: 'Paraíso',               categoria: 'Bairro' },
+  { id: 'aclimacao',             label: 'Aclimação',             categoria: 'Bairro' },
+];
+
+// ─── Blog posts para o publicador social ──────────────────────────────────────
+const BLOG_RAW = import.meta.glob('/src/content/blog/*.md', { as: 'raw', eager: true });
+const BLOG_POSTS = Object.entries(BLOG_RAW).map(([path, raw]) => {
+  const titleMatch = raw.match(/^title:\s*["']?(.+?)["']?\s*$/m);
+  const excerptMatch = raw.match(/^excerpt:\s*["']?(.+?)["']?\s*$/m);
+  const imageMatch = raw.match(/^image:\s*["']?(.+?)["']?\s*$/m);
+  const categoryMatch = raw.match(/^category:\s*["']?(.+?)["']?\s*$/m);
+  return {
+    slug: path.replace('/src/content/blog/', '').replace('.md', ''),
+    title: titleMatch?.[1]?.replace(/^["']|["']$/g, '') || path,
+    excerpt: excerptMatch?.[1]?.replace(/^["']|["']$/g, '') || '',
+    image: imageMatch?.[1]?.replace(/^["']|["']$/g, '') || '',
+    category: categoryMatch?.[1]?.replace(/^["']|["']$/g, '') || '',
+  };
+}).sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'));
 
 // ─── Parser da resposta social do Claude ─────────────────────────────────────
 function parseSocialContent(raw) {
@@ -329,6 +376,18 @@ const Admin = () => {
   const [leadsLoading, setLeadsLoading] = useState(false);
   const [leadsFilter, setLeadsFilter] = useState('todos');
   const leadsSearchRef = useRef('');
+
+  // Landing Pages / Campanhas
+  const [campaigns, setCampaigns] = useState([]);
+  const [campaignsLoading, setCampaignsLoading] = useState(false);
+  const [editingCampaign, setEditingCampaign] = useState(null);
+  const [campaignSaving, setCampaignSaving] = useState(false);
+  const [campaignCopied, setCampaignCopied] = useState(false);
+
+  // Blog article search (Publicador Social)
+  const [blogSearch, setBlogSearch] = useState('');
+  const [blogSearchOpen, setBlogSearchOpen] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
   // Configurações de plataformas — defaults pré-preenchidos + override do localStorage
   const [platformSettings, setPlatformSettings] = useState(() => {
@@ -642,10 +701,97 @@ Responda como consultor experiente:
     }
   }, [activeTab, leadsData, fetchLeadsData]);
 
+  // ─── Campanhas / Landing Pages ────────────────────────────────────────────
+  const fetchCampaigns = useCallback(async () => {
+    setCampaignsLoading(true);
+    try {
+      const res = await fetch('/api/campaigns');
+      if (res.ok) setCampaigns((await res.json()).campaigns || []);
+    } catch (err) {
+      console.error('fetchCampaigns error:', err);
+    } finally {
+      setCampaignsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (activeTab === 'landing' && campaigns.length === 0 && !campaignsLoading) {
+      fetchCampaigns();
+    }
+  }, [activeTab, campaigns.length, campaignsLoading, fetchCampaigns]);
+
+  const buildCampaignUrl = (c) => {
+    if (!c?.landing_page_id) return '';
+    const base = `https://wgalmeida.com.br/${c.landing_page_id}`;
+    const p = new URLSearchParams();
+    if (c.utm_source) p.set('utm_source', c.utm_source);
+    if (c.utm_medium) p.set('utm_medium', c.utm_medium);
+    if (c.utm_campaign) p.set('utm_campaign', c.utm_campaign);
+    if (c.utm_content) p.set('utm_content', c.utm_content);
+    const qs = p.toString();
+    return qs ? `${base}?${qs}` : base;
+  };
+
+  const saveCampaign = async (campaign) => {
+    setCampaignSaving(true);
+    try {
+      const isNew = !campaign.id;
+      const url_final = buildCampaignUrl(campaign);
+      const payload = { ...campaign, url_final };
+      const res = await fetch('/api/campaigns', {
+        method: isNew ? 'POST' : 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(await res.text());
+      const { campaign: saved } = await res.json();
+      if (isNew) {
+        setCampaigns((prev) => [saved, ...prev]);
+      } else {
+        setCampaigns((prev) => prev.map((c) => (c.id === saved.id ? saved : c)));
+      }
+      setEditingCampaign(saved);
+    } catch (err) {
+      console.error('saveCampaign error:', err);
+    } finally {
+      setCampaignSaving(false);
+    }
+  };
+
+  const approveCampaign = async () => {
+    if (!editingCampaign) return;
+    await saveCampaign({ ...editingCampaign, status: 'aprovada' });
+  };
+
+  const deleteCampaign = async (id) => {
+    try {
+      await fetch('/api/campaigns', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id }),
+      });
+      setCampaigns((prev) => prev.filter((c) => c.id !== id));
+      if (editingCampaign?.id === id) setEditingCampaign(null);
+    } catch (err) {
+      console.error('deleteCampaign error:', err);
+    }
+  };
+
+  const newCampaign = () => setEditingCampaign({
+    nome: '', landing_page_id: '', landing_page_label: '',
+    utm_source: 'meta', utm_medium: 'paid', utm_campaign: '', utm_content: '',
+    texto_titulo: '', texto_subtitulo: '', texto_cta: '', notas: '',
+    status: 'rascunho',
+  });
+
+  const updateField = (field, value) =>
+    setEditingCampaign((prev) => ({ ...prev, [field]: value }));
+
   // ─── Tabs ─────────────────────────────────────────────────────────────────
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: Layers },
     { id: 'leads', label: 'Leads', icon: Users },
+    { id: 'landing', label: 'Landing Pages', icon: Monitor },
     { id: 'social', label: 'Publicador Social', icon: Share2 },
     { id: 'seo', label: t('adminPage.tabs.seo'), icon: Search },
     { id: 'content', label: t('adminPage.tabs.content'), icon: FileText },
@@ -707,7 +853,7 @@ Responda como consultor experiente:
 
                 {/* Header avaliações */}
                 <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
-                  <Star className="w-6 h-6 text-wg-orange" />
+                  <BrandStar className="w-6 h-6" />
                   <div>
                     <h2 className="text-lg font-semibold">Avaliações Google</h2>
                     <p className="text-sm text-gray-500">Avaliações em tempo real + respostas com IA</p>
@@ -1138,6 +1284,313 @@ Responda como consultor experiente:
               </div>
             )}
 
+            {/* ══ LANDING PAGES ═══════════════════════════════════════════════ */}
+            {activeTab === 'landing' && (
+              <div className="space-y-6">
+                {/* Header */}
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+                  <Monitor className="w-6 h-6 text-wg-orange" />
+                  <div>
+                    <h2 className="text-lg font-semibold">Campanhas de Landing Page</h2>
+                    <p className="text-sm text-gray-500">
+                      Selecione uma landing page, personalize e gere o link com UTM para campanhas
+                    </p>
+                  </div>
+                  {!editingCampaign && (
+                    <button
+                      onClick={newCampaign}
+                      className="ml-auto flex items-center gap-2 px-4 py-2 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors text-sm font-medium"
+                    >
+                      <Plus className="w-4 h-4" /> Nova Campanha
+                    </button>
+                  )}
+                  {editingCampaign && (
+                    <button
+                      onClick={() => setEditingCampaign(null)}
+                      className="ml-auto flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-600 rounded-xl hover:bg-gray-200 transition-colors text-sm"
+                    >
+                      <ArrowLeft className="w-4 h-4" /> Voltar
+                    </button>
+                  )}
+                </div>
+
+                {/* ─ EDITOR DE CAMPANHA ─ */}
+                {editingCampaign && (
+                  <div className="space-y-5">
+                    {/* Status badge */}
+                    <div className="flex items-center gap-3">
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                        editingCampaign.status === 'aprovada' ? 'bg-green-100 text-green-700'
+                        : editingCampaign.status === 'preview' ? 'bg-blue-100 text-blue-700'
+                        : 'bg-gray-100 text-gray-600'
+                      }`}>
+                        {editingCampaign.status === 'aprovada' ? '✓ Aprovada'
+                          : editingCampaign.status === 'preview' ? '👁 Em Preview'
+                          : '✏ Rascunho'}
+                      </span>
+                      {editingCampaign.id && (
+                        <span className="text-xs text-gray-400">ID: {editingCampaign.id?.slice(0, 8)}…</span>
+                      )}
+                    </div>
+
+                    {/* Nome + Landing Page */}
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                          Nome da Campanha *
+                        </label>
+                        <input
+                          type="text"
+                          value={editingCampaign.nome}
+                          onChange={(e) => updateField('nome', e.target.value)}
+                          placeholder="Ex: Meta Ads — Reforma Itaim Jul/25"
+                          className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30 text-sm"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                          Landing Page *
+                        </label>
+                        <select
+                          value={editingCampaign.landing_page_id}
+                          onChange={(e) => {
+                            const lp = LANDING_PAGES.find((p) => p.id === e.target.value);
+                            updateField('landing_page_id', e.target.value);
+                            updateField('landing_page_label', lp?.label || '');
+                            if (!editingCampaign.utm_campaign) updateField('utm_campaign', e.target.value);
+                          }}
+                          className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-wg-orange/30 text-sm"
+                        >
+                          <option value="">Selecionar página...</option>
+                          {['Serviço Estratégico', 'Serviço + Região', 'Bairro'].map((cat) => (
+                            <optgroup key={cat} label={cat}>
+                              {LANDING_PAGES.filter((p) => p.categoria === cat).map((p) => (
+                                <option key={p.id} value={p.id}>{p.label}</option>
+                              ))}
+                            </optgroup>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* UTM Parameters */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <Tag className="w-4 h-4 text-gray-500" />
+                        <span className="text-sm font-medium text-gray-700">Parâmetros UTM</span>
+                      </div>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        {[
+                          { key: 'utm_source', label: 'utm_source', ph: 'meta / google / pinterest' },
+                          { key: 'utm_medium', label: 'utm_medium', ph: 'paid / cpc / social' },
+                          { key: 'utm_campaign', label: 'utm_campaign', ph: 'nome-da-campanha' },
+                          { key: 'utm_content', label: 'utm_content', ph: 'criativo-a / variante-1' },
+                        ].map(({ key, label, ph }) => (
+                          <div key={key}>
+                            <label className="block text-xs text-gray-500 mb-1 font-mono">{label}</label>
+                            <input
+                              type="text"
+                              value={editingCampaign[key] || ''}
+                              onChange={(e) => updateField(key, e.target.value)}
+                              placeholder={ph}
+                              className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-wg-orange/30 text-sm font-mono"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Textos personalizados */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <FileText className="w-4 h-4 text-gray-500" />
+                        <span className="text-sm font-medium text-gray-700">Textos da Campanha</span>
+                        <span className="text-xs text-gray-400">(referência para o anúncio)</span>
+                      </div>
+                      <div className="grid md:grid-cols-3 gap-3">
+                        <div>
+                          <label className="block text-xs text-gray-500 mb-1">Título principal</label>
+                          <input
+                            type="text"
+                            value={editingCampaign.texto_titulo || ''}
+                            onChange={(e) => updateField('texto_titulo', e.target.value)}
+                            placeholder="Headline do anúncio"
+                            className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs text-gray-500 mb-1">Subtítulo</label>
+                          <input
+                            type="text"
+                            value={editingCampaign.texto_subtitulo || ''}
+                            onChange={(e) => updateField('texto_subtitulo', e.target.value)}
+                            placeholder="Descrição do anúncio"
+                            className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs text-gray-500 mb-1">CTA (Call to Action)</label>
+                          <input
+                            type="text"
+                            value={editingCampaign.texto_cta || ''}
+                            onChange={(e) => updateField('texto_cta', e.target.value)}
+                            placeholder="Ex: Solicite uma proposta"
+                            className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-wg-orange/30"
+                          />
+                        </div>
+                      </div>
+                      <div className="mt-3">
+                        <label className="block text-xs text-gray-500 mb-1">Notas internas</label>
+                        <textarea
+                          rows={2}
+                          value={editingCampaign.notas || ''}
+                          onChange={(e) => updateField('notas', e.target.value)}
+                          placeholder="Observações sobre público, criativo, verba, etc."
+                          className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-wg-orange/30 resize-none"
+                        />
+                      </div>
+                    </div>
+
+                    {/* URL Gerada */}
+                    {editingCampaign.landing_page_id && (
+                      <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Link2 className="w-4 h-4 text-gray-500" />
+                          <span className="text-sm font-medium text-gray-700">URL da Campanha</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <code className="flex-1 text-xs bg-white px-3 py-2 rounded-lg border border-gray-200 font-mono break-all text-gray-700">
+                            {buildCampaignUrl(editingCampaign)}
+                          </code>
+                          <button
+                            onClick={() => {
+                              navigator.clipboard.writeText(buildCampaignUrl(editingCampaign));
+                              setCampaignCopied(true);
+                              setTimeout(() => setCampaignCopied(false), 2000);
+                            }}
+                            className="flex-shrink-0 p-2 hover:bg-gray-100 rounded-lg"
+                          >
+                            {campaignCopied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4 text-gray-500" />}
+                          </button>
+                          <a
+                            href={buildCampaignUrl(editingCampaign)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-shrink-0 p-2 hover:bg-gray-100 rounded-lg"
+                            title="Abrir para preview"
+                          >
+                            <ExternalLink className="w-4 h-4 text-gray-500" />
+                          </a>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Ações */}
+                    <div className="flex items-center gap-3 pt-2">
+                      <button
+                        onClick={() => saveCampaign(editingCampaign)}
+                        disabled={campaignSaving || !editingCampaign.nome || !editingCampaign.landing_page_id}
+                        className="flex items-center gap-2 px-5 py-2.5 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors disabled:opacity-50 text-sm font-medium"
+                      >
+                        {campaignSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
+                        Salvar
+                      </button>
+
+                      {editingCampaign.id && editingCampaign.status !== 'aprovada' && (
+                        <button
+                          onClick={approveCampaign}
+                          disabled={campaignSaving}
+                          className="flex items-center gap-2 px-5 py-2.5 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-colors disabled:opacity-50 text-sm font-medium"
+                        >
+                          <CheckCircle2 className="w-4 h-4" /> Aprovada
+                        </button>
+                      )}
+
+                      {editingCampaign.status === 'aprovada' && (
+                        <div className="flex items-center gap-2 px-4 py-2.5 bg-green-50 border border-green-200 rounded-xl">
+                          <CheckCircle2 className="w-4 h-4 text-green-600" />
+                          <span className="text-sm text-green-700 font-medium">Campanha aprovada</span>
+                        </div>
+                      )}
+
+                      {editingCampaign.id && (
+                        <button
+                          onClick={() => deleteCampaign(editingCampaign.id)}
+                          className="ml-auto flex items-center gap-1.5 px-3 py-2.5 text-red-500 hover:bg-red-50 rounded-xl transition-colors text-sm"
+                        >
+                          <Trash2 className="w-4 h-4" /> Excluir
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* ─ LISTA DE CAMPANHAS ─ */}
+                {!editingCampaign && (
+                  <div className="space-y-3">
+                    {campaignsLoading && (
+                      <div className="flex items-center justify-center py-8 text-gray-400">
+                        <Loader2 className="w-5 h-5 animate-spin mr-2" /> Carregando campanhas...
+                      </div>
+                    )}
+
+                    {!campaignsLoading && campaigns.length === 0 && (
+                      <div className="text-center py-12 text-gray-400">
+                        <Monitor className="w-12 h-12 mx-auto mb-3 opacity-30" />
+                        <p className="font-medium">Nenhuma campanha criada</p>
+                        <p className="text-sm mt-1">Clique em "Nova Campanha" para começar</p>
+                      </div>
+                    )}
+
+                    {campaigns.map((c) => (
+                      <div
+                        key={c.id}
+                        className="flex items-center gap-4 p-4 border border-gray-200 rounded-xl hover:border-wg-orange/30 hover:bg-wg-orange/5 transition-all cursor-pointer group"
+                        onClick={() => setEditingCampaign(c)}
+                      >
+                        <div className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${
+                          c.status === 'aprovada' ? 'bg-green-500' : c.status === 'preview' ? 'bg-blue-500' : 'bg-gray-300'
+                        }`} />
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-sm text-gray-800">{c.nome}</p>
+                          <p className="text-xs text-gray-500 truncate">{c.landing_page_label || c.landing_page_id}</p>
+                          {(c.utm_source || c.utm_medium) && (
+                            <p className="text-xs text-gray-400 font-mono mt-0.5">
+                              {[c.utm_source, c.utm_medium, c.utm_campaign].filter(Boolean).join(' · ')}
+                            </p>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${
+                            c.status === 'aprovada' ? 'bg-green-100 text-green-700'
+                            : c.status === 'preview' ? 'bg-blue-100 text-blue-700'
+                            : 'bg-gray-100 text-gray-500'
+                          }`}>
+                            {c.status}
+                          </span>
+                          {c.url_final && (
+                            <a
+                              href={c.url_final}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="p-1.5 hover:bg-gray-100 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                            >
+                              <ExternalLink className="w-3.5 h-3.5 text-gray-400" />
+                            </a>
+                          )}
+                          <Clock className="w-3 h-3 text-gray-300" />
+                          <span className="text-xs text-gray-400">
+                            {new Date(c.created_at).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' })}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* ══ PUBLICADOR SOCIAL ═══════════════════════════════════════════ */}
             {activeTab === 'social' && (
               <div className="space-y-6">
@@ -1149,6 +1602,80 @@ Responda como consultor experiente:
                       Gere conteúdo otimizado para 6 plataformas de uma vez
                     </p>
                   </div>
+                </div>
+
+                {/* Selecionar artigo do blog */}
+                <div className="p-4 bg-blue-50 border border-blue-100 rounded-xl">
+                  <div className="flex items-center gap-2 mb-3">
+                    <BookOpen className="w-4 h-4 text-blue-600" />
+                    <span className="text-sm font-medium text-blue-800">Usar artigo do blog como base (opcional)</span>
+                  </div>
+
+                  {selectedArticle ? (
+                    <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-blue-200">
+                      {selectedArticle.image && (
+                        <img src={selectedArticle.image} alt="" className="w-12 h-12 object-cover rounded-lg flex-shrink-0" />
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-800 leading-tight">{selectedArticle.title}</p>
+                        {selectedArticle.category && (
+                          <span className="text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full mt-1 inline-block">{selectedArticle.category}</span>
+                        )}
+                      </div>
+                      <button
+                        onClick={() => { setSelectedArticle(null); setBlogSearch(''); if (socialTopicRef.current) socialTopicRef.current.value = ''; if (socialNotesRef.current) socialNotesRef.current.value = ''; }}
+                        className="p-1 hover:bg-gray-100 rounded flex-shrink-0"
+                      >
+                        <X className="w-4 h-4 text-gray-400" />
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="relative">
+                      <div className="flex items-center gap-2 px-3 py-2.5 bg-white border border-blue-200 rounded-lg">
+                        <Search className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                        <input
+                          type="text"
+                          value={blogSearch}
+                          onChange={(e) => { setBlogSearch(e.target.value); setBlogSearchOpen(true); }}
+                          onFocus={() => setBlogSearchOpen(true)}
+                          placeholder="Buscar artigo pelo título..."
+                          className="flex-1 text-sm outline-none bg-transparent"
+                        />
+                        {blogSearch && (
+                          <button onClick={() => { setBlogSearch(''); setBlogSearchOpen(false); }}>
+                            <X className="w-3.5 h-3.5 text-gray-400" />
+                          </button>
+                        )}
+                      </div>
+                      {blogSearchOpen && blogSearch.length >= 2 && (() => {
+                        const q = blogSearch.toLowerCase();
+                        const filtered = BLOG_POSTS.filter((p) => p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q)).slice(0, 8);
+                        return filtered.length > 0 ? (
+                          <div className="absolute z-10 top-full mt-1 left-0 right-0 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden">
+                            {filtered.map((post) => (
+                              <button
+                                key={post.slug}
+                                className="w-full text-left px-4 py-2.5 hover:bg-orange-50 text-sm flex items-center gap-2 border-b border-gray-50 last:border-0"
+                                onClick={() => {
+                                  setSelectedArticle(post);
+                                  setBlogSearch('');
+                                  setBlogSearchOpen(false);
+                                  if (socialTopicRef.current) socialTopicRef.current.value = post.title;
+                                  if (socialNotesRef.current) socialNotesRef.current.value = post.excerpt;
+                                }}
+                              >
+                                <BookOpen className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
+                                <div className="flex-1 min-w-0">
+                                  <p className="font-medium text-gray-800 truncate">{post.title}</p>
+                                  {post.category && <p className="text-xs text-gray-400">{post.category}</p>}
+                                </div>
+                              </button>
+                            ))}
+                          </div>
+                        ) : null;
+                      })()}
+                    </div>
+                  )}
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4">

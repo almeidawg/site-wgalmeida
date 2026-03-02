@@ -220,14 +220,13 @@ const HomeColorTransformer = () => {
 
             {/* Imagem Original (esquerda, cortada) */}
             <div
-              className="absolute inset-0 overflow-hidden"
-              style={{ width: `${sliderPosition}%` }}
+              className="absolute inset-0"
+              style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
               <img
                 src={imageData?.url || selectedImage.externalUrl}
                 alt="Original"
-                className="absolute top-0 left-0 h-full object-cover"
-                style={{ width: '100%' }}
+                className="w-full h-full object-cover"
               />
             </div>
 
@@ -307,8 +306,8 @@ const HomeColorTransformer = () => {
         ))}
       </div>
 
-      {/* Miniaturas de Ambientes */}
-      <div className="flex gap-3 mt-4 justify-center">
+      {/* Miniaturas de Ambientes + CTA na mesma linha */}
+      <div className="flex flex-wrap sm:flex-nowrap gap-3 mt-4 justify-center items-center">
         {DEMO_IMAGES.map((img) => (
           <button
             type="button"
@@ -336,13 +335,10 @@ const HomeColorTransformer = () => {
             )}
           </button>
         ))}
-      </div>
 
-      {/* CTA */}
-      <div className="text-center mt-6">
         <Link
           to="/moodboard"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-wg-orange text-white rounded-xl font-semibold hover:bg-wg-orange/90 transition-colors shadow-lg"
+          className="inline-flex items-center gap-2 px-5 py-3 h-12 bg-wg-orange text-white rounded-xl font-semibold hover:bg-wg-orange/90 transition-colors shadow-lg whitespace-nowrap"
         >
           Explorar Mais Ambientes
           <ArrowLeftRight className="w-4 h-4" />

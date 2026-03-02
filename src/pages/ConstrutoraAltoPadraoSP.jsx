@@ -110,7 +110,7 @@ const ConstrutoraAltoPadraoSP = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
-        <div className="relative z-10 container-custom text-center text-white px-4 py-20">
+        <div className="relative z-10 container-custom text-center text-white px-4 py-12 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const DEFAULT_AVERAGE = 5.0;
-const DEFAULT_COUNT = 50;
+const DEFAULT_AVERAGE = 4.6; // manter alinhado à nota real da plataforma
+const DEFAULT_COUNT = 53;
 
 const unique = (items) => [...new Set(items.filter(Boolean))];
 

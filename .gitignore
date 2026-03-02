@@ -59,3 +59,21 @@ debug.log
 
 # Vercel
 .vercel
+
+# Credenciais e chaves
+wg-ga4-sa-key.json
+*-sa-key.json
+*.key.json
+
+# Vite cache timestamps
+vite.config.js.timestamp-*
+
+# Debug screenshots
+debug_*.png
+
+# Yarn
+.yarnrc.yml
+yarn.lock
+
+# Tools/scripts locais
+tools/

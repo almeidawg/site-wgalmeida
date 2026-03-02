@@ -18,8 +18,7 @@ import {
   Camera,
   MessagesSquare,
   FolderOpen,
-  Palette,
-  Sparkles
+  Palette
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AnimatedStrokes from '@/components/AnimatedStrokes';
@@ -72,21 +71,34 @@ const Home = () => {
 
   const handleIntroComplete = () => {
     setShowIntro(false);
-    sessionStorage.setItem('wg-intro-seen', 'true');
   };
 
   useEffect(() => {
-    if (sessionStorage.getItem('wg-intro-seen')) return;
-
-    // Bloqueia apenas motion reduzido e saveData — remove restrição de RAM e mobile
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const hasSaveData = Boolean(navigator.connection?.saveData);
+    const deviceMem = navigator.deviceMemory || 4;
+    const cores = navigator.hardwareConcurrency || 4;
+    const perfOk = deviceMem >= 2 && cores >= 4;
 
-    if (prefersReducedMotion || hasSaveData) return;
+    const enableIntroNow = () => {
+      setShowIntro(true);
+      sessionStorage.setItem('wg-intro-triggered', 'true');
+    };
+
+    const runWithBatteryCheck = async () => {
+      if (prefersReducedMotion || hasSaveData || !perfOk) return;
+      try {
+        const battery = await navigator.getBattery?.();
+        if (battery && battery.level <= 0.2) return;
+      } catch (_) {
+        // sem suporte, segue
+      }
+      enableIntroNow();
+    };
 
     let timeoutId;
     const enableIntro = () => {
-      timeoutId = window.setTimeout(() => setShowIntro(true), 800);
+      timeoutId = window.setTimeout(runWithBatteryCheck, 800);
     };
 
     if (typeof window.requestIdleCallback === 'function') {
@@ -282,21 +294,15 @@ const Home = () => {
         <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/70 via-wg-black/50 to-wg-black/70 z-10"></div>
 
-        <div className="relative z-20 container-custom max-w-4xl mx-auto text-center text-white px-6 sm:px-8">
+        <div className="relative z-20 container-custom w-full max-w-[1500px] mx-auto text-center text-white px-4 sm:px-6 lg:px-8">
           {/* H1 Principal - Responsivo para mobile */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: showIntro ? 0 : 1, y: showIntro ? 40 : 0 }}
             transition={{ duration: 1, delay: showIntro ? 0 : 0.3, ease: "easeOut" }}
-            className="wg-heading-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 leading-tight"
+            className="wg-heading-display text-2xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] 2xl:text-[50px] mb-6 leading-tight tracking-tight"
           >
-            {/* Mobile: quebra em 3 linhas / Desktop: uma linha */}
-            <span className="block sm:inline">{t('nav.architecture')}</span>
-            <span className="text-wg-orange mx-1 sm:mx-2 hidden sm:inline">.</span>
-            <span className="block sm:inline">{t('nav.engineering')}</span>
-            <span className="text-wg-orange mx-1 sm:mx-2 hidden sm:inline">.</span>
-            <span className="block sm:inline">{t('nav.carpentry')}</span>
-            <span className="text-wg-orange hidden sm:inline">.</span>
+            Arquitetura, engenharia e marcenaria de alto padrão.
           </motion.h1>
 
           {/* Subtítulo */}
@@ -358,6 +364,87 @@ const Home = () => {
               </Button>
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ========== BLOCO DE NÚMEROS / RESULTADOS - DINÂMICO ========== */}
+      <section ref={statsSectionRef} className="py-6 bg-wg-gray-light">
+        <div className="container-custom">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {/* Projetos em Andamento - Contratos Ativos +1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0 }}
+              className="text-center"
+            >
+              <div className="text-3xl md:text-4xl lg:text-5xl font-inter font-light text-wg-orange mb-1">
+                {displayStats.projetosAndamento}<span className="text-xl md:text-2xl">+</span>
+              </div>
+              <p className="text-sm md:text-base text-wg-gray font-light">
+                <Trans i18nKey="home.stats.inProgress">
+                  Projetos em<br />andamento
+                </Trans>
+              </p>
+            </motion.div>
+
+            {/* Clientes Atendidos - Soma quando contrato ativa */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="text-3xl md:text-4xl lg:text-5xl font-inter font-light text-wg-orange mb-1">
+                +{displayStats.clientesAtendidos}
+              </div>
+              <p className="text-sm md:text-base text-wg-gray font-light">
+                <Trans i18nKey="home.stats.clients">
+                  Clientes<br />atendidos
+                </Trans>
+              </p>
+            </motion.div>
+
+            {/* Metros de Revestimentos - Soma de contratos ativos */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="text-3xl md:text-4xl lg:text-5xl font-inter font-light text-wg-orange mb-1">
+                +{displayStats.metrosRevestimentos}
+                <span className="text-xl md:text-2xl">{estatisticas.metrosRevestimentos >= 1000 ? 'mil' : ''}</span>
+              </div>
+              <p className="text-sm md:text-base text-wg-gray font-light">
+                <Trans i18nKey="home.stats.coverings">
+                  Metros de revestimentos<br />assentados
+                </Trans>
+              </p>
+            </motion.div>
+
+            {/* Horas Projetando - Automático desde o primeiro CNPJ */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="text-3xl md:text-4xl lg:text-5xl font-inter font-light text-wg-orange mb-1">
+                {displayStats.horasProjetando}
+                <span className="text-xl md:text-2xl">{estatisticas.horasProjetando >= 1000 ? 'mil' : ''}</span>
+              </div>
+              <p className="text-sm md:text-base text-wg-gray font-light">
+                <Trans i18nKey="home.stats.hours">
+                  Horas projetando<br />e construindo historias
+                </Trans>
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -598,6 +685,49 @@ const Home = () => {
 
       <div className="wg-neon-divider" aria-hidden="true" />
 
+      {/* ========== BLOCO TURN KEY PREMIUM ========== */}
+      <section className="py-[68px] bg-wg-black text-white relative overflow-hidden">
+        <div className="container-custom relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
+              {t('home.turnKey.kicker')}
+            </span>
+            <h2 className="wg-heading-display text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight">
+              {t('home.turnKey.title')}
+            </h2>
+
+            <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-10">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-wg-green rounded-full"></div>
+                <span className="text-xl font-light">{t('home.turnKey.points.0')}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-wg-blue rounded-full"></div>
+                <span className="text-xl font-light">{t('home.turnKey.points.1')}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-wg-orange rounded-full"></div>
+                <span className="text-xl font-light">{t('home.turnKey.points.2')}</span>
+              </div>
+            </div>
+
+            <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-8 font-light">
+              {t('home.turnKey.paragraph')}
+            </p>
+
+            <p className="text-xl italic text-wg-orange">
+              {t('home.turnKey.quote')}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ========== BLOCO INSTITUCIONAL - QUEM SOMOS ========== */}
       <section className="pt-8 pb-8 bg-white relative overflow-hidden">
         {/* Efeito neon atrás do bloco, mas sem sobrepor o conteúdo */}
@@ -655,132 +785,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ========== BLOCO DE NÚMEROS / RESULTADOS - DINÂMICO ========== */}
-      <section ref={statsSectionRef} className="py-16 bg-wg-gray-light">
-        <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            {/* Projetos em Andamento - Contratos Ativos +1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0 }}
-              className="text-center"
-            >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-wg-orange mb-2">
-                {displayStats.projetosAndamento}<span className="text-2xl md:text-3xl">+</span>
-              </div>
-              <p className="text-sm md:text-base text-wg-gray font-light">
-                <Trans i18nKey="home.stats.inProgress">
-                  Projetos em<br />andamento
-                </Trans>
-              </p>
-            </motion.div>
-
-            {/* Clientes Atendidos - Soma quando contrato ativa */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-center"
-            >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-wg-orange mb-2">
-                +{displayStats.clientesAtendidos}
-              </div>
-              <p className="text-sm md:text-base text-wg-gray font-light">
-                <Trans i18nKey="home.stats.clients">
-                  Clientes<br />atendidos
-                </Trans>
-              </p>
-            </motion.div>
-
-            {/* Metros de Revestimentos - Soma de contratos ativos */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center"
-            >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-wg-orange mb-2">
-                +{displayStats.metrosRevestimentos}
-                <span className="text-2xl md:text-3xl">{estatisticas.metrosRevestimentos >= 1000 ? 'mil' : ''}</span>
-              </div>
-              <p className="text-sm md:text-base text-wg-gray font-light">
-                <Trans i18nKey="home.stats.coverings">
-                  Metros de revestimentos<br />assentados
-                </Trans>
-              </p>
-            </motion.div>
-
-            {/* Horas Projetando - Automático desde o primeiro CNPJ */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center"
-            >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-wg-orange mb-2">
-                {displayStats.horasProjetando}
-                <span className="text-2xl md:text-3xl">{estatisticas.horasProjetando >= 1000 ? 'mil' : ''}</span>
-              </div>
-              <p className="text-sm md:text-base text-wg-gray font-light">
-                <Trans i18nKey="home.stats.hours">
-                  Horas projetando<br />e construindo historias
-                </Trans>
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== BLOCO TURN KEY PREMIUM ========== */}
-      <section className="py-[68px] bg-wg-black text-white relative overflow-hidden">
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
-              {t('home.turnKey.kicker')}
-            </span>
-            <h2 className="wg-heading-display text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight">
-              {t('home.turnKey.title')}
-            </h2>
-
-            <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-10">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-wg-green rounded-full"></div>
-                <span className="text-xl font-light">{t('home.turnKey.points.0')}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-wg-blue rounded-full"></div>
-                <span className="text-xl font-light">{t('home.turnKey.points.1')}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-wg-orange rounded-full"></div>
-                <span className="text-xl font-light">{t('home.turnKey.points.2')}</span>
-              </div>
-            </div>
-
-            <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-8 font-light">
-              {t('home.turnKey.paragraph')}
-            </p>
-
-            <p className="text-xl italic text-wg-orange">
-              {t('home.turnKey.quote')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ========== BLOCO FERRAMENTA MOODBOARD ========== */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
         {/* Background decorativo */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-wg-orange blur-3xl"></div>
@@ -796,11 +802,6 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-wg-orange/20 rounded-full mb-6">
-                <Sparkles className="w-4 h-4 text-wg-orange" />
-                <span className="text-sm font-medium text-wg-orange">Visualize antes de decidir</span>
-              </div>
-
               <h2 className="wg-heading-display text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
                 Crie seu <span className="text-wg-orange">Moodboard</span> e visualize suas cores no ambiente
               </h2>
@@ -846,14 +847,14 @@ const Home = () => {
       </section>
 
       {/* ========== BLOCO NÚCLEOS (antes UNIDADES) ========== */}
-      <section className="section-padding bg-wg-gray-light">
+      <section className="py-12 md:py-16 bg-wg-gray-light">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
               NOSSOS NÚCLEOS
@@ -903,7 +904,7 @@ const Home = () => {
       </section>
 
       {/* ========== BLOCO DESTAQUE - UNIDADE DE ENGENHARIA TURN KEY ========== */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
             {/* Bloco Visual - Imagem com overlay */}
@@ -1018,14 +1019,14 @@ const Home = () => {
       </section>
 
       {/* ========== BLOCO METODOLOGIA (antes PROCESSO) ========== */}
-      <section className="section-padding bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
               {t('home.methodology.kicker')}
@@ -1091,7 +1092,7 @@ const Home = () => {
         )}
       </section>
       {/* ========== BLOCO EXPERIÊNCIA & TECNOLOGIA ========== */}
-      <section className="section-padding relative overflow-hidden bg-gradient-to-br from-white via-wg-gray-light to-white">
+      <section className="py-12 md:py-16 relative overflow-hidden bg-gradient-to-br from-white via-wg-gray-light to-white">
         <div className="absolute -top-24 -right-20 h-72 w-72 rounded-full bg-wg-orange/10 blur-3xl"></div>
         <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-wg-blue/10 blur-3xl"></div>
         <div className="container-custom relative">

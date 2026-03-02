@@ -274,7 +274,7 @@ const Projects = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-wg-black text-white">
+      <section className="py-12 md:py-16 bg-wg-black text-white">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

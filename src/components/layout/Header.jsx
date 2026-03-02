@@ -101,7 +101,7 @@ const Header = () => {
                 <img
                   className="h-12 w-12 object-contain"
                   alt="Logo Grupo WG Almeida"
-                  src="/images/logo.png?v=2"
+                  src="/images/logo-192.webp"
                   width="96"
                   height="96"
                   decoding="async"

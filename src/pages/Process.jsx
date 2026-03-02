@@ -81,7 +81,7 @@ const Process = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-3xl md:text-5xl font-oswald font-bold text-wg-black mb-4">
               {t('processPage.stepsTitle')}
@@ -134,7 +134,7 @@ const Process = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <span className="text-wg-orange font-medium tracking-[0.2em] uppercase text-sm mb-4 block">
               {t('processPage.onboarding.kicker')}
