@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite --host :: --port 3000",
-    "build": "npm run seo:og && vite build && npm run perf:images && npm run seo:routes",
+    "build": "npm run seo:og && vite build && npm run seo:routes",
     "build:local": "npm run seo:og && vite build --outDir dist-local --emptyOutDir false --clearScreen false && npm run seo:routes:local",
     "analyze": "ANALYZE=true vite build",
     "seo:og": "node ./build-seo-og.mjs",
@@ -19,7 +19,7 @@
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "perf:seo": "powershell -ExecutionPolicy Bypass -File ./test-seo.ps1",
     "perf:assets": "node ./tools/perf-assets-report.mjs",
-    "perf:images": "node -e \"console.log('[perf:images] skipped (no-op).')\"",
+    "perf:images": "node ./tools/recompress-critical-images.mjs dist",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
