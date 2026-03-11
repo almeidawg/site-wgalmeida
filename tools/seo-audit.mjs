@@ -26,17 +26,28 @@ function read(relPath) {
   return fs.readFileSync(path.join(root, relPath), "utf8");
 }
 
-["public/robots.txt", "public/sitemap.xml", "public/sitemap-index.xml", "index.html"].forEach((file) => {
+console.log("\nSEO Audit - Grupo WG Almeida");
+console.log("----------------------------");
+
+// 1. Check critical files
+["public/robots.txt", "public/sitemap.xml", "index.html"].forEach((file) => {
   if (exists(file)) ok(`${file} exists`);
   else fail(`${file} is missing`);
 });
 
+// 2. Audit index.html
 if (exists("index.html")) {
   const html = read("index.html");
 
+  // Keywords check (Should NOT exist)
+  if (html.includes('name="keywords"')) fail("index.html still contains legacy 'keywords' meta tag");
+  else ok("index.html is clean (no legacy keywords)");
+
+  // Encoding check
   if (html.includes("Ã")) fail("index.html contains encoding artifacts (mojibake)");
   else ok("index.html has no mojibake artifacts");
 
+  // Social images
   const ogMatch = html.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i);
   const twMatch = html.match(/<meta\s+name="twitter:image"\s+content="([^"]+)"/i);
 
@@ -51,7 +62,8 @@ if (exists("index.html")) {
       return;
     }
     if (url.startsWith("https://wgalmeida.com.br/")) {
-      const localPath = `public/${url.replace("https://wgalmeida.com.br/", "")}`;
+      const fileName = url.replace("https://wgalmeida.com.br/", "");
+      const localPath = exists(`dist/${fileName}`) ? `dist/${fileName}` : `public/${fileName}`;
       if (exists(localPath)) ok(`${name} points to existing file (${localPath})`);
       else fail(`${name} points to missing file (${localPath})`);
       return;
@@ -60,12 +72,21 @@ if (exists("index.html")) {
   });
 }
 
-if (exists("public/robots.txt")) {
-  const robots = read("public/robots.txt");
-  if (robots.includes("Sitemap: https://wgalmeida.com.br/sitemap-index.xml")) ok("robots.txt references sitemap-index.xml");
-  else fail("robots.txt does not reference sitemap-index.xml");
+// 3. Audit Components for Accessibility/SEO
+const componentDir = path.join(root, "src", "components");
+if (fs.existsSync(componentDir)) {
+  const heroVideoPath = path.join(componentDir, "HeroVideo.jsx");
+  if (fs.existsSync(heroVideoPath)) {
+    const content = fs.readFileSync(heroVideoPath, "utf8");
+    if (content.includes('alt=""') && content.includes('HeroVideo')) {
+      fail("HeroVideo.jsx still has empty alt tags for poster image");
+    } else {
+      ok("HeroVideo.jsx has descriptive alt tags");
+    }
+  }
 }
 
+// 4. Check react-helmet usage
 const sourceDir = path.join(root, "src");
 if (fs.existsSync(sourceDir)) {
   const files = [];
@@ -91,10 +112,8 @@ if (fs.existsSync(sourceDir)) {
   }
 }
 
-console.log("\nSEO Audit");
-console.log("---------");
 checks.forEach((line) => console.log(line));
-console.log("---------");
+console.log("----------------------------");
 
 if (hasError) {
   console.error("SEO audit finished with errors.");

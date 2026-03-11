@@ -49,7 +49,6 @@ const RegionTemplate = ({
       <Helmet>
         <title>{resolvedTitle} | Grupo WG Almeida</title>
         <meta name="description" content={resolvedMetaDescription} />
-        <meta name="keywords" content={t('regions.defaults.keywords', { region: regionName })} />
         <link rel="canonical" href={`https://wgalmeida.com.br/${regionSlug}`} />
 
         {/* Schema.org JSON-LD para LocalBusiness */}

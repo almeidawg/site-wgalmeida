@@ -794,8 +794,7 @@ const PortfolioFlash = ({ show }) => (
           >
             <img
               src={img}
-              alt=""
-              aria-hidden="true"
+              alt={`Projeto de Arquitetura e Engenharia de Luxo - Grupo WG Almeida ${i + 1}`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/40" />

@@ -104,7 +104,6 @@ export function SEO({
 
       <title>{meta.title}</title>
       <meta name="description" content={meta.description} />
-      {meta.keywords && <meta name="keywords" content={meta.keywords} />}
       <meta name="robots" content={meta.robots} />
 
       <link rel="canonical" href={meta.canonical} />

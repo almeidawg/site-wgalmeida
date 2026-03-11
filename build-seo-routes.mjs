@@ -10,6 +10,31 @@ const templatePath = path.join(outputRoot, "index.html");
 
 const sitemapPath = path.join(root, "public", "sitemap.xml");
 
+function getBlogRoutes() {
+  const blogPath = path.join(root, "src", "content", "blog");
+  const routes = [];
+  if (fs.existsSync(blogPath)) {
+    const files = fs.readdirSync(blogPath).filter(f => f.endsWith('.md'));
+    files.forEach(file => {
+      const slug = file.replace('.md', '');
+      routes.push(`/blog/${slug}`);
+    });
+    
+    // Verificar subpastas de idiomas
+    ['en', 'es'].forEach(lang => {
+      const langPath = path.join(blogPath, lang);
+      if (fs.existsSync(langPath)) {
+        const langFiles = fs.readdirSync(langPath).filter(f => f.endsWith('.md'));
+        langFiles.forEach(file => {
+          const slug = file.replace('.md', '');
+          routes.push(`/blog/${slug}`); // O sistema de tradução usa o mesmo slug no roteamento
+        });
+      }
+    });
+  }
+  return routes;
+}
+
 function getRoutesFromSitemap() {
   if (!fs.existsSync(sitemapPath)) return [];
 
@@ -35,7 +60,12 @@ function getRoutesFromSitemap() {
 }
 
 const ROUTES = Array.from(
-  new Set(["/", ...Object.keys(SEO_CONFIG).filter((route) => route !== "/"), ...getRoutesFromSitemap()])
+  new Set([
+    "/", 
+    ...Object.keys(SEO_CONFIG).filter((route) => route !== "/"), 
+    ...getBlogRoutes(),
+    ...getRoutesFromSitemap()
+  ])
 );
 
 const replaceOne = (html, pattern, value) => {

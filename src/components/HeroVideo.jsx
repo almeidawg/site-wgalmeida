@@ -107,8 +107,7 @@ const HeroVideo = () => {
         src="/images/hero-poster-1280.webp"
         srcSet="/images/hero-poster-640.webp 640w, /images/hero-poster-960-opt.webp 960w, /images/hero-poster-1280.webp 1280w"
         sizes="100vw"
-        alt=""
-        aria-hidden="true"
+        alt="Grupo WG Almeida - Arquitetura, Engenharia e Marcenaria de Alto Padrão em São Paulo"
         className={'absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ' + (isLoaded ? 'opacity-0' : 'opacity-100')}
         width="1280"
         height="720"
