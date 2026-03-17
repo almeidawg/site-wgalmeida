@@ -6,6 +6,9 @@ module.exports = {
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
   ],
+  safelist: [
+    'scrollbar-hide',
+  ],
   theme: {
     container: {
       center: true,

@@ -12,6 +12,17 @@ import SEO from '@/components/SEO';
 import { useTranslation } from 'react-i18next';
 import BrandStar from '@/components/BrandStar';
 
+// Injetar CSS para scrollbar-hide
+const scrollbarHideStyle = `
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
 // ─── Contexto da empresa ──────────────────────────────────────────────────────
 const WG_CONTEXT = `
 CONTEXTO DA EMPRESA - GRUPO WG ALMEIDA:
@@ -336,6 +347,15 @@ const DEFAULT_PLATFORM_SETTINGS = {
 // ─── Componente principal ─────────────────────────────────────────────────────
 const Admin = () => {
   const { t } = useTranslation();
+  
+  // Injetar CSS para scrollbar-hide
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = scrollbarHideStyle;
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, []);
+  
   const [activeTab, setActiveTab] = useState('dashboard');
   const [copiedId, setCopiedId] = useState(null);
 
