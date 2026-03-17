@@ -85,6 +85,24 @@ const Header = () => {
       iconClass: 'text-wg-brown',
       hoverTextClass: 'group-hover:text-wg-brown',
     },
+    {
+      label: 'WG Build.tech',
+      path: '/buildtech',
+      icon: Monitor,
+      description: 'Consultoria de IA e Tecnologia para Construção.',
+      borderHoverClass: 'hover:border-wg-blue',
+      iconClass: 'text-wg-blue',
+      hoverTextClass: 'group-hover:text-wg-blue',
+    },
+    {
+      label: 'Easy Locker',
+      path: '/easylocker',
+      icon: Lock,
+      description: 'Armários inteligentes para gestão de encomendas.',
+      borderHoverClass: 'hover:border-wg-orange',
+      iconClass: 'text-wg-orange',
+      hoverTextClass: 'group-hover:text-wg-orange',
+    },
   ], [t]);
 
   return (

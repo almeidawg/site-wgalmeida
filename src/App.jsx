@@ -170,6 +170,8 @@ function App() {
             <Route path="/construtora-brooklin" element={<ConstrutoraBrooklin />} />
             <Route path="/marcenaria-sob-medida-morumbi" element={<MarcenariaSobMedidaMorumbi />} />
             <Route path="/arquitetura-interiores-vila-nova-conceicao" element={<ArquiteturaInterioresVilaNovaConceicao />} />
+            <Route path="/buildtech" element={<BuildTech />} />
+            <Route path="/easylocker" element={<EasyLocker />} />
 
             {/* Region Pages (SEO) */}
             <Route path="/brooklin" element={<Brooklin />} />

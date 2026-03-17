@@ -125,6 +125,16 @@ export const SEO_CONFIG = {
     "Reforma Apartamento Itaim Bibi | Grupo WG Almeida",
     "Reforma premium de apartamentos no Itaim com projeto e obra integrados."
   ),
+  "/buildtech": page(
+    "/buildtech",
+    "WG Build.tech | Consultoria de IA e Tecnologia para Construção",
+    "Liderança mundial em arquitetura e tecnologia. Conheça as soluções de IA e o ecossistema WG Easy para o mercado imobiliário."
+  ),
+  "/easylocker": page(
+    "/easylocker",
+    "Easy Locker | Armários Inteligentes para Condomínios de Luxo",
+    "A solução definitiva para gestão de encomendas. Armários inteligentes automatizados com a tecnologia do Grupo WG Almeida."
+  ),
   "/revista-estilos": page(
     "/revista-estilos",
     "Revista de Estilos | Descubra seu Estilo de Decoracao | WG Almeida",
