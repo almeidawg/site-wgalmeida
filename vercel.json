@@ -180,6 +180,14 @@
   ],
   "rewrites": [
     {
+      "source": "/buildtech/easyfood/:path*",
+      "destination": "https://frontend-snowy-five-15.vercel.app/:path*"
+    },
+    {
+      "source": "/buildtech/:path*",
+      "destination": "https://wg-build-tech.vercel.app/:path*"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "/api/$1"
     },
