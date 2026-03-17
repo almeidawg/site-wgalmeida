@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/buildtech/easyfood/:path*",
-      "destination": "https://frontend-snowy-five-15.vercel.app/:path*"
+      "destination": "https://restaurante-lyart.vercel.app/:path*"
     },
     {
       "source": "/buildtech/:path*",
