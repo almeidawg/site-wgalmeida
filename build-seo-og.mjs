@@ -22,12 +22,17 @@ async function run() {
 
   for (const file of targets) {
     const out = path.join(root, "public", file);
-    const buffer = await sharp(source)
-      .resize(1200, 630, { fit: "cover" })
-      .jpeg({ quality: 82, mozjpeg: true })
-      .toBuffer();
-    await fs.promises.writeFile(out, buffer);
-    console.log(`ok: public/${file}`);
+    try {
+      const buffer = await sharp(source)
+        .resize(1200, 630, { fit: "cover" })
+        .jpeg({ quality: 82, mozjpeg: true })
+        .toBuffer();
+      await fs.promises.writeFile(out, buffer);
+      console.log(`ok: public/${file}`);
+    } catch (e) {
+      console.warn(`[WARN] skipped ${file} due to sharp error on Vercel: ${e.message}`);
+      // Skip failing file and proceed with the build.
+    }
   }
 }
 
