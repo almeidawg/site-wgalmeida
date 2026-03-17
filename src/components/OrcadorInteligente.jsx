@@ -25,22 +25,21 @@ const OrcadorInteligente = () => {
     setLoading(true);
 
     try {
-      // 1. Salvar Lead no Supabase (WG Easy)
-      const { data: propostaData, error } = await supabase.from('propostas_solicitadas').insert([{
-        nome: formData.nome,
+      // 1. Salvar Lead no Supabase (Tabela contacts - padrão do ecossistema)
+      const { data: contactData, error: contactError } = await supabase.from('contacts').insert([{
+        name: formData.nome,
         email: formData.email,
-        telefone: formData.telefone,
-        assunto: `Orçamento Inteligente: ${formData.servico}`,
-        mensagem: `Imóvel: ${formData.tipoImovel} | Metragem: ${formData.metragem}m² | Prazo: ${formData.prazo}`,
-        origem: 'orcador_inteligente',
+        phone: formData.telefone,
+        subject: `Orçamento Inteligente: ${formData.servico}`,
+        message: `Imóvel: ${formData.tipoImovel} | Metragem: ${formData.metragem}m² | Prazo: ${formData.prazo}`,
       }]).select();
 
-      if (error) throw error;
+      if (contactError) throw contactError;
 
-      // 2. Criar Card no Kanban de Oportunidades
+      // 2. Criar Card no Kanban de Oportunidades (WG Easy)
       await supabase.from('kanban_cards').insert([{
-        titulo: `Orçamento: ${formData.nome} (${formData.servico})`,
-        descricao: `Tipo: ${formData.tipoImovel}\nMetragem: ${formData.metragem}m²\nPrazo: ${formData.prazo}`,
+        titulo: `Lead Orçador: ${formData.nome}`,
+        descricao: `Serviço: ${formData.servico}\nTipo: ${formData.tipoImovel}\nMetragem: ${formData.metragem}m²\nPrazo: ${formData.prazo}`,
         modulo: 'oportunidades',
         board_id: 1,
         coluna_id: 1,
@@ -48,8 +47,7 @@ const OrcadorInteligente = () => {
         payload: {
           email: formData.email,
           origem: 'orcador_inteligente',
-        },
-        org_id: '00000000-0000-0000-0000-000000000000'
+        }
       }]);
 
       setSuccess(true);
