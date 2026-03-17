@@ -452,13 +452,22 @@ const Blog = () => {
     const hreflangAlternates = [];
     const BASE = 'https://wgalmeida.com.br';
     const allLocales = { 'pt-BR': rawPostsByLocale['pt-BR'], en: rawPostsByLocale.en, es: rawPostsByLocale.es };
+    
+    // Mapeamento de locale para o formato esperado pelo Google (ex: pt-BR, en, es)
+    const localeToHreflang = { 'pt-BR': 'pt-BR', en: 'en', es: 'es' };
+
     for (const [locale, posts] of Object.entries(allLocales)) {
       const slugExists = Object.keys(posts || {}).some(p => p.endsWith(`/${artigoAtual.slug}.md`));
       if (slugExists) {
-        const hrefLang = locale === 'pt-BR' ? 'pt-BR' : locale;
+        const hrefLang = localeToHreflang[locale] || locale;
         hreflangAlternates.push({ hrefLang, href: `${BASE}/blog/${artigoAtual.slug}` });
       }
     }
+
+    // og:locale mapping
+    const localeToOg = { 'pt-BR': 'pt_BR', en: 'en_US', es: 'es_ES' };
+    const currentOgLocale = localeToOg[i18n.language] || 'pt_BR';
+
     const readerGuideLabel = t('blogPage.readerGuide.title', 'Leitura Guiada');
     const tocTitleLabel = t('blogPage.readerGuide.tocTitle', 'Neste artigo');
     const readingLabel = t('blogPage.readerGuide.reading', 'lendo');

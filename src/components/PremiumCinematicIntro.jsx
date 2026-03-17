@@ -373,7 +373,7 @@ const LogoReveal = ({ show }) => (
         >
           <img
             src={WG_LOGO}
-            alt="WG Almeida"
+            alt="Logo Grupo WG Almeida - Arquitetura, Engenharia e Marcenaria de Alto Padrão"
             className="h-28 md:h-40 w-auto relative z-10"
           />
         </motion.div>

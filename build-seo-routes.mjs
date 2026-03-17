@@ -190,6 +190,35 @@ async function run() {
     await fs.promises.writeFile(routeIndexPath, html);
     console.log(`ok: ${path.join(outDir, route === "/" ? "index.html" : `${route.slice(1)}/index.html`)}`);
   }
+
+  // Geração do Sitemap dinâmico
+  console.log("Generating dynamic sitemap.xml...");
+  const today = new Date().toISOString().split('T')[0];
+  const sitemapEntries = ROUTES.map(route => {
+    let priority = "0.8";
+    if (route === "/") priority = "1.0";
+    else if (["/arquitetura", "/engenharia", "/marcenaria", "/projetos"].includes(route)) priority = "0.9";
+    else if (route.startsWith("/blog/")) priority = "0.7";
+
+    return `  <url>
+    <loc>https://wgalmeida.com.br${route === "/" ? "" : route}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${route.startsWith("/blog/") ? "monthly" : "weekly"}</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
+  }).join("\n");
+
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapEntries}
+</urlset>`;
+
+  const finalSitemapPath = path.join(outputRoot, "sitemap.xml");
+  await fs.promises.writeFile(finalSitemapPath, sitemapXml);
+  
+  // Também atualizar na pasta public para o próximo build
+  await fs.promises.writeFile(sitemapPath, sitemapXml);
+  console.log(`Sitemap updated with ${ROUTES.length} routes.`);
 }
 
 run().catch((error) => {

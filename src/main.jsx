@@ -52,12 +52,31 @@ const reportWebVitals = (onPerfEntry) => {
   }
 };
 
-// Reportar metricas apenas em desenvolvimento
-if (import.meta.env.DEV) {
-  reportWebVitals((metric) => {
-    console.log(`[Web Vitals] ${metric.name}: ${metric.value.toFixed(2)}`);
+// Função para enviar métricas para o Analytics
+const sendToAnalytics = (metric) => {
+  const { name, delta, id, value } = metric;
+  
+  // Envia para o dataLayer (GTM)
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'web_vitals',
+    event_category: 'Web Vitals',
+    event_label: id,
+    value: Math.round(name === 'CLS' ? value * 1000 : value),
+    metric_name: name,
+    metric_id: id,
+    metric_value: value,
+    metric_delta: delta,
+    non_interaction: true,
   });
-}
+
+  if (import.meta.env.DEV) {
+    console.log(`[Web Vitals] ${name}: ${value.toFixed(2)} (ID: ${id})`);
+  }
+};
+
+// Ativar monitoramento em todos os ambientes (envio condicional via GTM)
+reportWebVitals(sendToAnalytics);
 
 // Registrar Service Worker para PWA
 if ('serviceWorker' in navigator && import.meta.env.PROD) {

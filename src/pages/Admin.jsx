@@ -301,7 +301,7 @@ const DEFAULT_PLATFORM_SETTINGS = {
   instagram: {
     handle: '@grupowgalmeida',
     profileUrl: 'https://www.instagram.com/grupowgalmeida',
-    businessAccountId: '',
+    businessAccountId: '17841400459223767',
     accessToken: '',
   },
   pinterest: {
@@ -311,9 +311,9 @@ const DEFAULT_PLATFORM_SETTINGS = {
     accessToken: '',
   },
   google: {
-    locationId: '',
+    locationId: 'accounts/114942475148092797613/locations/8643261541893325725',
     placeId: 'ChIJA6dposNQzpQRNOLWlYgmF7c',
-    profileUrl: 'https://business.google.com/',
+    profileUrl: 'https://business.google.com/dashboard/l/08643261541893325725',
     apiKey: 'AIzaSyA8xFxv3eKrnek30EVLg2ZSwrCcl8CL0hc',
   },
   linkedin: {

@@ -136,12 +136,15 @@ export const SCHEMAS = {
     "@type": "ProfessionalService",
     name: "Grupo WG Almeida",
     url: BASE_URL,
+    image: `${BASE_URL}/og-home-1200x630.jpg`,
     telephone: "+55-11-98465-0002",
-    email: "contato@wgalmeida.com.br",
+    priceRange: "$$$",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Sao Paulo",
+      streetAddress: "Rua Guararapes, 305",
+      addressLocality: "Brooklin, Sao Paulo",
       addressRegion: "SP",
+      postalCode: "04561-000",
       addressCountry: "BR",
     },
     aggregateRating: {
@@ -151,7 +154,34 @@ export const SCHEMAS = {
       worstRating: "1",
       ratingCount: "50",
     },
+    review: [
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "William Almeida" },
+        reviewRating: { "@type": "Rating", ratingValue: "5" },
+        reviewBody: "Excelente atendimento e rigor tecnico em todas as etapas da obra.",
+      },
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "K. S." },
+        reviewRating: { "@type": "Rating", ratingValue: "5" },
+        reviewBody: "Marcenaria de altissima qualidade, integrada perfeitamente ao projeto.",
+      }
+    ]
   },
+
+  faq: (questions) => ({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questions.map((q) => ({
+      "@type": "Question",
+      name: q.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: q.answer,
+      },
+    })),
+  }),
 };
 
 export default SCHEMAS;

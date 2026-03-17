@@ -135,7 +135,7 @@ const HeroVideo = () => {
             setVideoFailed(true);
             setIsLoaded(false);
           }}
-          aria-hidden="true"
+          aria-label="Apresentação visual cinemática do Grupo WG Almeida - Arquitetura, Engenharia e Marcenaria de Luxo"
         >
           <track kind="captions" src="/videos/hero/descricao.vtt" srcLang="pt-BR" label="Português" />
         </video>
