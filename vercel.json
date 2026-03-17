@@ -8,12 +8,16 @@
       "destination": "https://restaurante-lyart.vercel.app/:path*"
     },
     {
-      "source": "/buildtech/:path*",
-      "destination": "https://wg-build-tech.vercel.app/:path*"
-    },
-    {
       "source": "/api/(.*)",
       "destination": "/api/$1"
+    },
+    {
+      "source": "/buildtech",
+      "destination": "/buildtech/index.html"
+    },
+    {
+      "source": "/easylocker",
+      "destination": "/easylocker/index.html"
     },
     {
       "source": "/sobre",
@@ -44,7 +48,11 @@
       "destination": "/marcenaria/index.html"
     },
     {
-      "source": "/((?!buildtech|api|sobre|processo|projetos|store|arquitetura|engenharia|marcenaria).*)",
+      "source": "/solicite-proposta",
+      "destination": "/solicite-proposta/index.html"
+    },
+    {
+      "source": "/((?!api|buildtech|easylocker|sobre|processo|projetos|store|arquitetura|engenharia|marcenaria|solicite-proposta).*)",
       "destination": "/index.html"
     }
   ],
