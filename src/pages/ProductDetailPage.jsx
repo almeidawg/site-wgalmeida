@@ -407,7 +407,7 @@ function ProductDetailPage() {
 
             {product.variants.length > 1 && (
               <div className="mb-6">
-                <h3 className="text-sm font-poppins font-semibold text-wg-black mb-2">{t('storePage.productDetail.options')}</h3>
+                <h3 className="text-sm font-poppins text-wg-black mb-2">{t('storePage.productDetail.options')}</h3>
                 <div className="flex flex-wrap gap-2">
                   {product.variants.map(variant => (
                     <Button

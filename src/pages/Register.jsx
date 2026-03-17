@@ -126,7 +126,7 @@ const Register = () => {
                   decoding="async"
                 />
             </div>
-            <h1 className="text-3xl font-oswald font-bold text-wg-black">{t('registerPage.heading')}</h1>
+            <h1 className="text-3xl font-oswald text-wg-black">{t('registerPage.heading')}</h1>
             <p className="mt-2 text-wg-gray">{t('registerPage.subtitle')}</p>
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleRegister}>

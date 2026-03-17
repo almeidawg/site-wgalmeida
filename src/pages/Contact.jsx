@@ -1,55 +1,55 @@
-import React, { useState } from 'react';
-import SEO from '@/components/SEO';
-import { motion } from '@/lib/motion-lite';
-import { Phone, Mail, MapPin, Send, MessageCircle, Loader2, Clock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
-import { supabase } from '@/lib/customSupabaseClient';
-import { notificarNovoContato } from '@/lib/emailService';
-import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
-import { useTranslation } from 'react-i18next';
-import { useSearchParams } from 'react-router-dom';
+import ResponsiveWebpImage from '@/components/ResponsiveWebpImage'
+import SEO from '@/components/SEO'
+import { Button } from '@/components/ui/button'
+import { useToast } from '@/components/ui/use-toast'
+import { supabase } from '@/lib/customSupabaseClient'
+import { notificarNovoContato } from '@/lib/emailService'
+import { motion } from '@/lib/motion-lite'
+import { Clock, Loader2, Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react'
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useSearchParams } from 'react-router-dom'
 
 // Animações elegantes
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
-};
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+}
 
 const Contact = () => {
-  const { toast } = useToast();
-  const { t } = useTranslation();
-  const [searchParams] = useSearchParams();
-  const [loading, setLoading] = useState(false);
+  const { toast } = useToast()
+  const { t } = useTranslation()
+  const [searchParams] = useSearchParams()
+  const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     subject: '',
     message: '',
-  });
+  })
 
   // Formatar telefone (apenas números brasileiros)
   const formatPhone = (value) => {
-    const numbers = value.replace(/\D/g, '');
-    const limitedNumbers = numbers.slice(0, 11);
+    const numbers = value.replace(/\D/g, '')
+    const limitedNumbers = numbers.slice(0, 11)
     if (limitedNumbers.length <= 10) {
-      return limitedNumbers.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+      return limitedNumbers.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3')
     }
-    return limitedNumbers.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-  };
+    return limitedNumbers.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3')
+  }
 
-  const isValidEmail = (email) => /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+  const isValidEmail = (email) => /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault()
+    setLoading(true)
 
     try {
       if (!isValidEmail(formData.email)) {
-        throw new Error('Insira um e-mail válido (ex: nome@email.com)');
+        throw new Error('Insira um e-mail válido (ex: nome@email.com)')
       }
 
       // Salvar no Supabase
@@ -63,11 +63,13 @@ const Contact = () => {
           utm_source: searchParams.get('utm_source') || null,
           utm_medium: searchParams.get('utm_medium') || null,
           utm_campaign: searchParams.get('utm_campaign') || null,
-          origem: searchParams.get('utm_source') ? `site-${searchParams.get('utm_source')}` : 'site',
+          origem: searchParams.get('utm_source')
+            ? `site-${searchParams.get('utm_source')}`
+            : 'site',
         },
-      ]);
+      ])
 
-      if (error) throw error;
+      if (error) throw error
 
       // Enviar notificação por email para william@wgalmeida.com.br
       await notificarNovoContato(
@@ -76,27 +78,27 @@ const Contact = () => {
         formData.phone,
         formData.subject,
         formData.message
-      );
+      )
 
       toast({
         title: t('contactPage.toast.successTitle'),
         description: t('contactPage.toast.successDescription'),
-      });
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      })
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
     } catch (error) {
       toast({
         variant: 'destructive',
         title: t('contactPage.toast.errorTitle'),
         description: t('contactPage.toast.errorDescription'),
-      });
+      })
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511984650002', '_blank');
-  };
+    window.open('https://wa.me/5511984650002', '_blank')
+  }
 
   return (
     <>
@@ -106,21 +108,21 @@ const Contact = () => {
         description={t('seo.contact.description')}
         keywords={t('seo.contact.keywords')}
         schema={{
-          "@context": "https://schema.org",
-          "@type": "ContactPage",
-          name: "Contato | Grupo WG Almeida",
-          url: "https://wgalmeida.com.br/contato",
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          name: 'Contato | Grupo WG Almeida',
+          url: 'https://wgalmeida.com.br/contato',
           mainEntity: {
-            "@type": "Organization",
-            name: "Grupo WG Almeida",
-            telephone: "+55-11-98465-0002",
-            email: "contato@wgalmeida.com.br",
+            '@type': 'Organization',
+            name: 'Grupo WG Almeida',
+            telephone: '+55-11-98465-0002',
+            email: 'contato@wgalmeida.com.br',
             contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+55-11-98465-0002",
-              contactType: "customer service",
-              availableLanguage: "Portuguese",
-              areaServed: "BR",
+              '@type': 'ContactPoint',
+              telephone: '+55-11-98465-0002',
+              contactType: 'customer service',
+              availableLanguage: 'Portuguese',
+              areaServed: 'BR',
             },
           },
         }}
@@ -132,7 +134,7 @@ const Contact = () => {
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
         >
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
@@ -240,7 +242,7 @@ const Contact = () => {
                     <Phone className="w-5 h-5 text-wg-orange" />
                   </div>
                   <div>
-                    <p className="font-inter font-semibold text-wg-black">{t('contactPage.info.phoneLabel')}</p>
+                    <p className="font-inter text-wg-black">{t('contactPage.info.phoneLabel')}</p>
                     <a
                       href="https://wa.me/5511984650002"
                       target="_blank"
@@ -263,7 +265,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-wg-orange" />
                   </div>
                   <div>
-                    <p className="font-inter font-semibold text-wg-black">{t('contactPage.info.emailLabel')}</p>
+                    <p className="font-inter text-wg-black">{t('contactPage.info.emailLabel')}</p>
                     <p className="text-wg-gray">contato@wgalmeida.com.br</p>
                   </div>
                 </motion.div>
@@ -279,7 +281,7 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-wg-orange" />
                   </div>
                   <div>
-                    <p className="font-inter font-semibold text-wg-black">{t('contactPage.info.addressLabel')}</p>
+                    <p className="font-inter text-wg-black">{t('contactPage.info.addressLabel')}</p>
                     <p className="text-wg-gray">{t('contactPage.info.addressValue')}</p>
                   </div>
                 </motion.div>
@@ -295,7 +297,7 @@ const Contact = () => {
                     <Clock className="w-5 h-5 text-wg-orange" />
                   </div>
                   <div>
-                    <p className="font-inter font-semibold text-wg-black">{t('contactPage.info.hoursLabel')}</p>
+                    <p className="font-inter text-wg-black">{t('contactPage.info.hoursLabel')}</p>
                     <p className="text-wg-gray">{t('contactPage.info.hoursValue')}</p>
                   </div>
                 </motion.div>
@@ -313,10 +315,13 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100"
+              >
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-wg-black font-poppins font-semibold mb-2">
+                    <label className="block text-wg-black font-poppins mb-2">
                       {t('contactPage.form.name')}
                     </label>
                     <input
@@ -330,7 +335,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block text-wg-black font-poppins font-semibold mb-2">
+                    <label className="block text-wg-black font-poppins mb-2">
                       {t('contactPage.form.email')}
                     </label>
                     <input
@@ -344,13 +349,15 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block text-wg-black font-poppins font-semibold mb-2">
+                    <label className="block text-wg-black font-poppins mb-2">
                       {t('contactPage.form.phone')}
                     </label>
                     <input
                       type="tel"
                       value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: formatPhone(e.target.value) })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: formatPhone(e.target.value) })
+                      }
                       placeholder={t('contactPage.form.phonePlaceholder')}
                       maxLength={15}
                       className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20 outline-none transition-all"
@@ -359,7 +366,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block text-wg-black font-poppins font-semibold mb-2">
+                    <label className="block text-wg-black font-poppins mb-2">
                       {t('contactPage.form.subject')}
                     </label>
                     <input
@@ -372,7 +379,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block text-wg-black font-poppins font-semibold mb-2">
+                    <label className="block text-wg-black font-poppins mb-2">
                       {t('contactPage.form.message')}
                     </label>
                     <textarea
@@ -400,7 +407,7 @@ const Contact = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

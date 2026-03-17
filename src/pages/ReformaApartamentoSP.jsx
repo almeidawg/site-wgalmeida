@@ -228,7 +228,7 @@ const ReformaApartamentoSP = () => {
                 className="bg-white rounded-2xl p-6 shadow-lg flex items-start gap-6"
               >
                 <div className="flex-shrink-0 w-16 h-16 bg-wg-orange rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">{etapa.numero}</span>
+                  <span className="text-white text-xl">{etapa.numero}</span>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-inter font-medium text-wg-black mb-2">
@@ -279,7 +279,7 @@ const ReformaApartamentoSP = () => {
                 <h3 className="text-xl font-inter font-medium text-wg-black mb-2">
                   {faixa.padrao}
                 </h3>
-                <p className="text-2xl font-bold text-wg-orange mb-6">
+                <p className="text-2xl text-wg-orange mb-6">
                   {faixa.valor}
                 </p>
                 <ul className="space-y-2 text-left">

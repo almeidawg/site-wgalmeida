@@ -105,7 +105,7 @@ const RoomVisualizerContent = () => {
               <ArrowLeft className="w-5 h-5" />
               Nova visualização
             </button>
-            <h1 className="text-2xl font-bold text-gray-800">Sua Visualização</h1>
+            <h1 className="text-2xl text-gray-800">Sua Visualização</h1>
             <div />
           </div>
 
@@ -180,7 +180,7 @@ const RoomVisualizerContent = () => {
               <Wand2 className="w-5 h-5" />
               <span className="text-sm font-medium">Powered by AI</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl mb-4">
               Visualizador de <span className="text-wg-orange">Ambientes</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -204,7 +204,7 @@ const RoomVisualizerContent = () => {
             ].map((step, i) => (
               <div key={step.num} className="flex items-center">
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
+                  className={`w-10 h-10 rounded-full flex items-center justify-center ${
                     i === 0 && importedColors.length > 0
                       ? 'bg-green-500 text-white'
                       : i === 1 && photo
@@ -314,7 +314,7 @@ const RoomVisualizer = () => {
           <div className="w-16 h-16 bg-wg-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <Lock className="w-8 h-8 text-wg-orange" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl text-gray-800 mb-4">
             Acesso Exclusivo
           </h2>
           <p className="text-gray-600 mb-6">
