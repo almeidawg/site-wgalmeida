@@ -1,39 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { motion } from '@/lib/motion-lite';
-import { useAuth } from '@/contexts/SupabaseAuthContext';
-import SEO from '@/components/SEO';
-import { useToast } from '@/components/ui/use-toast';
-import { Loader2, Mail, Lock, ShieldCheck } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import SEO from '@/components/SEO'
+import { useToast } from '@/components/ui/use-toast'
+import { useAuth } from '@/contexts/SupabaseAuthContext'
+import { motion } from '@/lib/motion-lite'
+import { Loader2, Lock, Mail, ShieldCheck } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Login = () => {
-  const { t } = useTranslation();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const { signIn, user } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { toast } = useToast();
+  const { t } = useTranslation()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
+  const { signIn, user } = useAuth()
+  const navigate = useNavigate()
+  const location = useLocation()
+  const { toast } = useToast()
 
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || '/'
 
   useEffect(() => {
     if (user) {
-      navigate(from, { replace: true });
+      navigate(from, { replace: true })
     }
-  }, [user, navigate, from]);
+  }, [user, navigate, from])
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault()
+    setLoading(true)
 
-    const { profile, error } = await signIn(email, password);
+    const { profile, error } = await signIn(email, password)
 
     if (error) {
-      setLoading(false);
-      return;
+      setLoading(false)
+      return
     }
 
     if (profile) {
@@ -41,24 +41,24 @@ const Login = () => {
         toast({
           title: t('loginPage.toasts.adminSuccessTitle'),
           description: t('loginPage.toasts.adminSuccessDescription'),
-        });
-        navigate('/admin', { replace: true });
+        })
+        navigate('/admin', { replace: true })
       } else {
         toast({
           title: t('loginPage.toasts.successTitle'),
           description: t('loginPage.toasts.successDescription'),
-        });
-        navigate(from, { replace: true });
+        })
+        navigate(from, { replace: true })
       }
     } else {
       toast({
         variant: 'destructive',
         title: t('loginPage.toasts.unexpectedErrorTitle'),
         description: t('loginPage.toasts.unexpectedErrorDescription'),
-      });
-      setLoading(false);
+      })
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <>
@@ -71,7 +71,6 @@ const Login = () => {
 
       {/* Fundo escuro premium */}
       <div className="min-h-screen bg-wg-black flex flex-col items-center justify-center px-4 relative overflow-hidden">
-
         {/* Faixa laranja no topo */}
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-wg-orange" />
 
@@ -79,7 +78,8 @@ const Login = () => {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: 'repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 48px), repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 48px)',
+            backgroundImage:
+              'repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 48px), repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 48px)',
           }}
         />
 
@@ -103,12 +103,12 @@ const Login = () => {
 
           {/* Título */}
           <div className="text-center mb-8">
-            <h1 className="font-oswald text-[2.25rem] font-bold text-white tracking-[0.15em] uppercase leading-none">
+            <h1 className="font-oswald text-[2.25rem] text-white tracking-[0.15em] uppercase leading-none">
               Área Interna
             </h1>
             <div className="mt-3 flex items-center justify-center gap-3">
               <span className="block h-px w-10 bg-wg-orange/60" />
-              <span className="text-[10px] font-spartan font-semibold tracking-[0.22em] uppercase text-gray-400">
+              <span className="text-[10px] font-spartan tracking-[0.22em] uppercase text-gray-500">
                 Grupo WG Almeida
               </span>
               <span className="block h-px w-10 bg-wg-orange/60" />
@@ -117,13 +117,11 @@ const Login = () => {
 
           {/* Card do formulário */}
           <div className="bg-white rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,0.5)] overflow-hidden">
-
             {/* Barra de acento no topo do card */}
             <div className="h-1 bg-gradient-to-r from-wg-orange to-wg-orange-dark" />
 
             <div className="px-8 py-8">
               <form onSubmit={handleLogin} autoComplete="off" className="space-y-4">
-
                 {/* E-mail */}
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
@@ -162,9 +160,13 @@ const Login = () => {
                   disabled={loading}
                   className="w-full py-3 mt-2 bg-wg-orange hover:bg-wg-orange-dark text-white font-oswald font-semibold text-sm tracking-[0.1em] uppercase rounded-xl transition-colors duration-200 disabled:opacity-60 flex items-center justify-center gap-2"
                 >
-                  {loading
-                    ? <><Loader2 className="h-4 w-4 animate-spin" /> Verificando...</>
-                    : 'Entrar'}
+                  {loading ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" /> Verificando...
+                    </>
+                  ) : (
+                    'Entrar'
+                  )}
                 </button>
               </form>
             </div>
@@ -178,7 +180,7 @@ const Login = () => {
         </motion.div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

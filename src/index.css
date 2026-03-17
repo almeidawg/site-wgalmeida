@@ -2,10 +2,38 @@
    Mantemos stacks de fallback para evitar requests de fontes quebradas. */
 
 /* ── Font metric overrides for CLS-free swap ── */
-@font-face { font-family: 'Inter Fallback'; src: local('Arial'), local('Helvetica Neue'), local('Helvetica'); size-adjust: 107.64%; ascent-override: 90.49%; descent-override: 22.56%; line-gap-override: 0%; }
-@font-face { font-family: 'Poppins Fallback'; src: local('Arial'), local('Helvetica Neue'), local('Helvetica'); size-adjust: 113.09%; ascent-override: 86.44%; descent-override: 28.82%; line-gap-override: 0%; }
-@font-face { font-family: 'Oswald Fallback'; src: local('Arial Narrow'), local('Helvetica Neue'), local('Arial'); size-adjust: 88.07%; ascent-override: 114.43%; descent-override: 28.79%; line-gap-override: 0%; }
-@font-face { font-family: 'Playfair Fallback'; src: local('Georgia'), local('Times New Roman'), local('serif'); size-adjust: 112.03%; ascent-override: 84.28%; descent-override: 22.07%; line-gap-override: 0%; }
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+  size-adjust: 107.64%;
+  ascent-override: 90.49%;
+  descent-override: 22.56%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Poppins Fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+  size-adjust: 113.09%;
+  ascent-override: 86.44%;
+  descent-override: 28.82%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Oswald Fallback';
+  src: local('Arial Narrow'), local('Helvetica Neue'), local('Arial');
+  size-adjust: 88.07%;
+  ascent-override: 114.43%;
+  descent-override: 28.79%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Playfair Fallback';
+  src: local('Georgia'), local('Times New Roman'), local('serif');
+  size-adjust: 112.03%;
+  ascent-override: 84.28%;
+  descent-override: 22.07%;
+  line-gap-override: 0%;
+}
 
 @tailwind base;
 @tailwind components;
@@ -34,14 +62,14 @@
   --ring: 16 88% 53%;
   --radius: 0.5rem;
 
-  --wg-orange: #F25C26;
-  --wg-orange-text: #BA4C1B;
-  --wg-green: #5E9B94;
-  --wg-blue: #2B4580;
-  --wg-brown: #8B5E3C;
-  --wg-black: #2E2E2E;
-  --wg-gray: #4C4C4C;
-  --wg-gray-light: #F3F3F3;
+  --wg-orange: #f25c26;
+  --wg-orange-text: #ba4c1b;
+  --wg-green: #5e9b94;
+  --wg-blue: #2b4580;
+  --wg-brown: #8b5e3c;
+  --wg-black: #2e2e2e;
+  --wg-gray: #4c4c4c;
+  --wg-gray-light: #f3f3f3;
   --wg-apple-surface: 245 245 247;
   --wg-apple-accent: 18 18 18;
   --wg-apple-muted: 110 110 110;
@@ -53,7 +81,8 @@
     @apply border-border;
     scroll-behavior: smooth;
   }
-  html, body {
+  html,
+  body {
     @apply bg-white text-foreground antialiased;
     font-family: 'Inter', 'Inter Fallback', 'Poppins', 'Roboto', sans-serif;
     margin: 0;
@@ -63,18 +92,25 @@
   }
 
   /* Prevenir overflow horizontal em todas as seções */
-  main, section, article, div {
+  main,
+  section,
+  article,
+  div {
     max-width: 100vw;
   }
 
   /* Tipografia base — Inter light é o padrão visual do site.
      Use .wg-heading-display (Inter light) para heroes e .wg-heading-section (Poppins semibold) para seções.
      font-oswald é reservado apenas onde explicitamente aplicado via classe utilitária. */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-inter font-light tracking-tight normal-case;
   }
 }
-
 
 @layer utilities {
   .font-inter {
@@ -118,60 +154,130 @@
   }
 
   .btn-primary {
-    @apply bg-wg-orange text-white px-6 py-3 rounded-md font-poppins font-semibold 
+    @apply bg-wg-orange text-white px-6 py-3 rounded-md font-poppins font-semibold
            hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
   }
-  
+
   .section-padding {
     @apply py-12 md:py-16;
   }
-  
+
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .bg-wg-orange { background-color: var(--wg-orange); }
-  .text-wg-orange { color: var(--wg-orange-text); }
-  .border-wg-orange { border-color: var(--wg-orange); }
-  .hover\:text-wg-orange:hover { color: var(--wg-orange-text); }
-  .hover\:bg-wg-orange:hover { background-color: var(--wg-orange); }
-  .hover\:border-wg-orange:hover { border-color: var(--wg-orange); }
-  
-  .bg-wg-green { background-color: var(--wg-green); }
-  .text-wg-green { color: var(--wg-green); }
-  .border-wg-green { border-color: var(--wg-green); }
-  .hover\:text-wg-green:hover { color: var(--wg-green); }
-  .hover\:bg-wg-green:hover { background-color: var(--wg-green); }
-  .hover\:border-wg-green:hover { border-color: var(--wg-green); }
+  .bg-wg-orange {
+    background-color: var(--wg-orange);
+  }
+  .text-wg-orange {
+    color: var(--wg-orange-text);
+  }
+  .border-wg-orange {
+    border-color: var(--wg-orange);
+  }
+  .hover\:text-wg-orange:hover {
+    color: var(--wg-orange-text);
+  }
+  .hover\:bg-wg-orange:hover {
+    background-color: var(--wg-orange);
+  }
+  .hover\:border-wg-orange:hover {
+    border-color: var(--wg-orange);
+  }
 
-  .bg-wg-blue { background-color: var(--wg-blue); }
-  .text-wg-blue { color: var(--wg-blue); }
-  .border-wg-blue { border-color: var(--wg-blue); }
-  .hover\:text-wg-blue:hover { color: var(--wg-blue); }
-  .hover\:bg-wg-blue:hover { background-color: var(--wg-blue); }
-  .hover\:border-wg-blue:hover { border-color: var(--wg-blue); }
+  .bg-wg-green {
+    background-color: var(--wg-green);
+  }
+  .text-wg-green {
+    color: var(--wg-green);
+  }
+  .border-wg-green {
+    border-color: var(--wg-green);
+  }
+  .hover\:text-wg-green:hover {
+    color: var(--wg-green);
+  }
+  .hover\:bg-wg-green:hover {
+    background-color: var(--wg-green);
+  }
+  .hover\:border-wg-green:hover {
+    border-color: var(--wg-green);
+  }
 
-  .bg-wg-brown { background-color: var(--wg-brown); }
-  .text-wg-brown { color: var(--wg-brown); }
-  .border-wg-brown { border-color: var(--wg-brown); }
-  .hover\:text-wg-brown:hover { color: var(--wg-brown); }
-  .hover\:bg-wg-brown:hover { background-color: var(--wg-brown); }
-  .hover\:border-wg-brown:hover { border-color: var(--wg-brown); }
+  .bg-wg-blue {
+    background-color: var(--wg-blue);
+  }
+  .text-wg-blue {
+    color: var(--wg-blue);
+  }
+  .border-wg-blue {
+    border-color: var(--wg-blue);
+  }
+  .hover\:text-wg-blue:hover {
+    color: var(--wg-blue);
+  }
+  .hover\:bg-wg-blue:hover {
+    background-color: var(--wg-blue);
+  }
+  .hover\:border-wg-blue:hover {
+    border-color: var(--wg-blue);
+  }
 
-  .bg-wg-black { background-color: var(--wg-black); }
-  .text-wg-black { color: var(--wg-black); }
+  .bg-wg-brown {
+    background-color: var(--wg-brown);
+  }
+  .text-wg-brown {
+    color: var(--wg-brown);
+  }
+  .border-wg-brown {
+    border-color: var(--wg-brown);
+  }
+  .hover\:text-wg-brown:hover {
+    color: var(--wg-brown);
+  }
+  .hover\:bg-wg-brown:hover {
+    background-color: var(--wg-brown);
+  }
+  .hover\:border-wg-brown:hover {
+    border-color: var(--wg-brown);
+  }
 
-  .bg-wg-gray { background-color: var(--wg-gray); }
-  .text-wg-gray { color: var(--wg-gray); }
+  .bg-wg-black {
+    background-color: var(--wg-black);
+  }
+  .text-wg-black {
+    color: var(--wg-black);
+  }
 
-  .bg-wg-gray-light { background-color: var(--wg-gray-light); }
-  .text-wg-gray-light { color: var(--wg-gray-light); }
+  .bg-wg-gray {
+    background-color: var(--wg-gray);
+  }
+  .text-wg-gray {
+    color: var(--wg-gray);
+  }
 
-  .bg-wg-apple-surface { background-color: rgb(var(--wg-apple-surface)); }
-  .text-wg-apple-accent { color: rgb(var(--wg-apple-accent)); }
-  .text-wg-apple-muted { color: rgb(var(--wg-apple-muted)); }
-  .border-wg-apple-highlight { border-color: rgb(var(--wg-apple-highlight)); }
-  .bg-wg-apple-highlight { background-color: rgb(var(--wg-apple-highlight)); }
+  .bg-wg-gray-light {
+    background-color: var(--wg-gray-light);
+  }
+  .text-wg-gray-light {
+    color: var(--wg-gray-light);
+  }
+
+  .bg-wg-apple-surface {
+    background-color: rgb(var(--wg-apple-surface));
+  }
+  .text-wg-apple-accent {
+    color: rgb(var(--wg-apple-accent));
+  }
+  .text-wg-apple-muted {
+    color: rgb(var(--wg-apple-muted));
+  }
+  .border-wg-apple-highlight {
+    border-color: rgb(var(--wg-apple-highlight));
+  }
+  .bg-wg-apple-highlight {
+    background-color: rgb(var(--wg-apple-highlight));
+  }
   .shadow-apple-card {
     box-shadow: 0 25px 50px rgba(15, 15, 15, 0.12);
   }
@@ -180,7 +286,10 @@
     background-color: rgb(var(--wg-apple-accent));
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      background-color 0.3s ease;
   }
   .btn-apple:hover {
     transform: translateY(-1px);
@@ -234,11 +343,11 @@
   /* Hide scrollbar while keeping scroll functionality */
   @layer utilities {
     .scrollbar-hide {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;     /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
     }
     .scrollbar-hide::-webkit-scrollbar {
-      display: none;  /* Chrome, Safari and Opera */
+      display: none; /* Chrome, Safari and Opera */
     }
   }
 
@@ -252,10 +361,10 @@
     background: linear-gradient(
       90deg,
       rgba(242, 92, 38, 0.18) 0%,
-      #F25C26 18%,
-      #5E9B94 45%,
-      #2B4580 72%,
-      #8B5E3C 100%
+      #f25c26 18%,
+      #5e9b94 45%,
+      #2b4580 72%,
+      #8b5e3c 100%
     );
     background-size: 100% 100%;
     animation: wgNeonPulse 2.4s ease-in-out infinite;
@@ -278,8 +387,13 @@
   }
 
   @keyframes wgNeonPulse {
-    0%, 100% { opacity: 0.85; }
-    50% { opacity: 1; }
+    0%,
+    100% {
+      opacity: 0.85;
+    }
+    50% {
+      opacity: 1;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -288,5 +402,4 @@
       opacity: 0.95;
     }
   }
-
 }

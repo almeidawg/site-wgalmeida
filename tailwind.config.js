@@ -6,9 +6,7 @@ module.exports = {
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
   ],
-  safelist: [
-    'scrollbar-hide',
-  ],
+  safelist: ['scrollbar-hide'],
   theme: {
     container: {
       center: true,
@@ -80,11 +78,11 @@ module.exports = {
           from: { height: 0 },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
-        'fadeIn': {
+        fadeIn: {
           from: { opacity: 0, transform: 'translateY(10px)' },
           to: { opacity: 1, transform: 'translateY(0)' },
         },
-        'slideDown': {
+        slideDown: {
           from: { opacity: 0, maxHeight: 0 },
           to: { opacity: 1, maxHeight: '500px' },
         },
@@ -96,10 +94,10 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'fadeIn': 'fadeIn 0.2s ease-out',
-        'slideDown': 'slideDown 0.2s ease-out',
+        fadeIn: 'fadeIn 0.2s ease-out',
+        slideDown: 'slideDown 0.2s ease-out',
       },
     },
   },
   plugins: [require('tailwindcss-animate')],
-};
+}
