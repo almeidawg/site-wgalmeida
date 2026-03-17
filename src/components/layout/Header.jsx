@@ -87,7 +87,8 @@ const Header = () => {
     },
     {
       label: 'WG Build.tech',
-      path: '/buildtech',
+      path: '/buildtech/',
+      external: true,
       icon: Monitor,
       description: 'Consultoria de IA e Tecnologia para Construção.',
       borderHoverClass: 'hover:border-wg-blue',
@@ -96,8 +97,9 @@ const Header = () => {
     },
     {
       label: 'Easy Locker',
-      path: '/easylocker',
-      icon: Lock,
+      path: '/easylocker/',
+      external: true,
+      icon: Globe,
       description: 'Armários inteligentes para gestão de encomendas.',
       borderHoverClass: 'hover:border-wg-orange',
       iconClass: 'text-wg-orange',
@@ -153,19 +155,27 @@ const Header = () => {
                       className="absolute top-full left-0 z-[90] mt-0 w-[min(90vw,48rem)]"
                     >
                       <div className="bg-white shadow-lg rounded-lg overflow-hidden grid grid-cols-3 gap-4 p-6 border border-gray-100">
-                        {unitsItems.map((subItem) => (
-                          <Link
-                            key={subItem.label}
-                            to={subItem.path}
-                            className={`group block p-4 rounded-lg hover:bg-gray-50 transition-colors border-l-4 border-transparent ${subItem.borderHoverClass}`}
-                          >
-                            <div className="flex items-center mb-2">
-                              <subItem.icon className={`w-6 h-6 mr-3 ${subItem.iconClass}`} />
-                              <span className={`font-poppins font-semibold text-wg-black ${subItem.hoverTextClass}`}>{subItem.label}</span>
-                            </div>
-                            <p className="text-sm text-wg-gray">{subItem.description}</p>
-                          </Link>
-                        ))}
+                        {unitsItems.map((subItem) => {
+                          const className = `group block p-4 rounded-lg hover:bg-gray-50 transition-colors border-l-4 border-transparent ${subItem.borderHoverClass}`;
+                          const content = (
+                            <>
+                              <div className="flex items-center mb-2">
+                                <subItem.icon className={`w-6 h-6 mr-3 ${subItem.iconClass}`} />
+                                <span className={`font-poppins font-semibold text-wg-black ${subItem.hoverTextClass}`}>{subItem.label}</span>
+                              </div>
+                              <p className="text-sm text-wg-gray">{subItem.description}</p>
+                            </>
+                          );
+                          return subItem.external ? (
+                            <a key={subItem.label} href={subItem.path} className={className}>
+                              {content}
+                            </a>
+                          ) : (
+                            <Link key={subItem.label} to={subItem.path} className={className}>
+                              {content}
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
@@ -268,15 +278,18 @@ const Header = () => {
                         </button>
                         {isMobileUnitsOpen && (
                           <div className="pl-4 space-y-1 bg-gray-50 rounded-md mx-4">
-                            {item.dropdown.map((subItem) => (
-                              <Link
-                                key={subItem.label}
-                                to={subItem.path}
-                                className="block px-4 py-2 text-wg-gray hover:text-wg-orange transition-colors text-sm"
-                              >
-                                {subItem.label}
-                              </Link>
-                            ))}
+                            {item.dropdown.map((subItem) => {
+                              const className = "block px-4 py-2 text-wg-gray hover:text-wg-orange transition-colors text-sm";
+                              return subItem.external ? (
+                                <a key={subItem.label} href={subItem.path} className={className}>
+                                  {subItem.label}
+                                </a>
+                              ) : (
+                                <Link key={subItem.label} to={subItem.path} className={className}>
+                                  {subItem.label}
+                                </Link>
+                              );
+                            })}
                           </div>
                         )}
                       </>
