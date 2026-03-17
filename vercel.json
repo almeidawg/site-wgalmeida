@@ -4,16 +4,24 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/buildtech/easyfood/:path*",
-      "destination": "https://restaurante-lyart.vercel.app/:path*"
+      "source": "/buildtech/easyfood/(.*)",
+      "destination": "https://restaurante-lyart.vercel.app/$1"
+    },
+    {
+      "source": "/buildtech/easyfood",
+      "destination": "https://restaurante-lyart.vercel.app/"
+    },
+    {
+      "source": "/buildtech/(.*)",
+      "destination": "https://wg-build-tech.vercel.app/$1"
+    },
+    {
+      "source": "/buildtech",
+      "destination": "https://wg-build-tech.vercel.app/"
     },
     {
       "source": "/api/(.*)",
       "destination": "/api/$1"
-    },
-    {
-      "source": "/buildtech",
-      "destination": "/buildtech/index.html"
     },
     {
       "source": "/easylocker",
@@ -52,7 +60,7 @@
       "destination": "/solicite-proposta/index.html"
     },
     {
-      "source": "/((?!api|buildtech|easylocker|sobre|processo|projetos|store|arquitetura|engenharia|marcenaria|solicite-proposta).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
