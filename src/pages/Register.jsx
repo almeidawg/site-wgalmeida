@@ -1,13 +1,13 @@
-import React, { useState, useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { motion } from '@/lib/motion-lite';
-import { useAuth } from '@/contexts/SupabaseAuthContext';
-import SEO from '@/components/SEO';
-import { notificarNovoCadastro } from '@/lib/emailService';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
-import { Loader2, Mail, Lock, User, Check, X } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import SEO from '@/components/SEO'
+import { Button } from '@/components/ui/button'
+import { useToast } from '@/components/ui/use-toast'
+import { useAuth } from '@/contexts/SupabaseAuthContext'
+import { notificarNovoCadastro } from '@/lib/emailService'
+import { motion } from '@/lib/motion-lite'
+import { Check, Loader2, Lock, Mail, User, X } from 'lucide-react'
+import { useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Link, useNavigate } from 'react-router-dom'
 
 // Componente de validação de senha
 const PasswordRequirement = ({ met, text }) => (
@@ -15,90 +15,99 @@ const PasswordRequirement = ({ met, text }) => (
     {met ? <Check className="w-3 h-3" /> : <X className="w-3 h-3" />}
     <span>{text}</span>
   </div>
-);
+)
 
 const Register = () => {
-  const { t } = useTranslation();
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [showPasswordRequirements, setShowPasswordRequirements] = useState(false);
-  const { signUp } = useAuth();
-  const navigate = useNavigate();
-  const { toast } = useToast();
+  const { t } = useTranslation()
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [showPasswordRequirements, setShowPasswordRequirements] = useState(false)
+  const { signUp } = useAuth()
+  const navigate = useNavigate()
+  const { toast } = useToast()
 
   // Validação de senha em tempo real
-  const passwordValidation = useMemo(() => ({
-    minLength: password.length >= 8,
-    hasLowercase: /[a-z]/.test(password),
-    hasUppercase: /[A-Z]/.test(password),
-    hasNumber: /[0-9]/.test(password),
-    isStrong: password.length >= 8 && /[a-z]/.test(password) && /[A-Z]/.test(password) && /[0-9]/.test(password),
-  }), [password]);
+  const passwordValidation = useMemo(
+    () => ({
+      minLength: password.length >= 8,
+      hasLowercase: /[a-z]/.test(password),
+      hasUppercase: /[A-Z]/.test(password),
+      hasNumber: /[0-9]/.test(password),
+      isStrong:
+        password.length >= 8 &&
+        /[a-z]/.test(password) &&
+        /[A-Z]/.test(password) &&
+        /[0-9]/.test(password),
+    }),
+    [password]
+  )
 
   const handleRegister = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     // Validar senha antes de enviar
     if (!passwordValidation.isStrong) {
       toast({
         variant: 'destructive',
         title: 'Senha fraca',
-        description: 'Sua senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.',
-      });
-      return;
+        description:
+          'Sua senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.',
+      })
+      return
     }
 
     if (password !== confirmPassword) {
       toast({
         variant: 'destructive',
         title: t('registerPage.toasts.passwordMismatch'),
-      });
-      return;
+      })
+      return
     }
-    setLoading(true);
+    setLoading(true)
 
     const { user, error } = await signUp(email, password, {
       data: {
         nome: nome,
       },
-    });
+    })
 
     if (error) {
       // Traduzir erros comuns do Supabase
-      let errorMessage = error.message;
+      let errorMessage = error.message
       if (error.message?.includes('weak_password')) {
-        errorMessage = 'Senha muito fraca. Use pelo menos 8 caracteres com letras maiúsculas, minúsculas e números.';
+        errorMessage =
+          'Senha muito fraca. Use pelo menos 8 caracteres com letras maiúsculas, minúsculas e números.'
       } else if (error.message?.includes('already registered')) {
-        errorMessage = 'Este email já está cadastrado.';
+        errorMessage = 'Este email já está cadastrado.'
       }
 
       toast({
         variant: 'destructive',
         title: 'Erro no cadastro',
         description: errorMessage,
-      });
-      setLoading(false);
-      return;
+      })
+      setLoading(false)
+      return
     }
 
     // Enviar notificacao por email para o admin
     try {
-      await notificarNovoCadastro(nome, email);
+      await notificarNovoCadastro(nome, email)
     } catch (err) {
-      console.error('Erro ao enviar notificacao:', err);
+      console.error('Erro ao enviar notificacao:', err)
     }
 
-    setLoading(false);
+    setLoading(false)
 
     toast({
       title: t('registerPage.toasts.successTitle'),
       description: t('registerPage.toasts.successDescription'),
-    });
-    navigate('/login');
-  };
+    })
+    navigate('/login')
+  }
 
   return (
     <>
@@ -117,14 +126,14 @@ const Register = () => {
         >
           <div className="text-center">
             <div className="flex justify-center mb-6">
-                <img
-                  className="h-16 w-16 object-contain"
-                  alt={t('registerPage.logoAlt')}
-                  src="/images/logo-96.webp"
-                  width="96"
-                  height="96"
-                  decoding="async"
-                />
+              <img
+                className="h-16 w-16 object-contain"
+                alt={t('registerPage.logoAlt')}
+                src="/images/logo-96.webp"
+                width="96"
+                height="96"
+                decoding="async"
+              />
             </div>
             <h1 className="text-3xl font-oswald text-wg-black">{t('registerPage.heading')}</h1>
             <p className="mt-2 text-wg-gray">{t('registerPage.subtitle')}</p>
@@ -188,10 +197,22 @@ const Register = () => {
                   className="p-3 bg-gray-50 rounded-md space-y-1"
                 >
                   <p className="text-xs font-medium text-gray-600 mb-2">Requisitos da senha:</p>
-                  <PasswordRequirement met={passwordValidation.minLength} text="Mínimo 8 caracteres" />
-                  <PasswordRequirement met={passwordValidation.hasLowercase} text="Pelo menos uma letra minúscula (a-z)" />
-                  <PasswordRequirement met={passwordValidation.hasUppercase} text="Pelo menos uma letra maiúscula (A-Z)" />
-                  <PasswordRequirement met={passwordValidation.hasNumber} text="Pelo menos um número (0-9)" />
+                  <PasswordRequirement
+                    met={passwordValidation.minLength}
+                    text="Mínimo 8 caracteres"
+                  />
+                  <PasswordRequirement
+                    met={passwordValidation.hasLowercase}
+                    text="Pelo menos uma letra minúscula (a-z)"
+                  />
+                  <PasswordRequirement
+                    met={passwordValidation.hasUppercase}
+                    text="Pelo menos uma letra maiúscula (A-Z)"
+                  />
+                  <PasswordRequirement
+                    met={passwordValidation.hasNumber}
+                    text="Pelo menos um número (0-9)"
+                  />
                 </motion.div>
               )}
               <div className="relative">
@@ -225,7 +246,7 @@ const Register = () => {
         </motion.div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Register;
+export default Register

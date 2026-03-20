@@ -185,7 +185,7 @@
     },
     {
       "source": "/buildtech/:path*",
-      "destination": "https://wg-build-tech.vercel.app/:path*"
+      "destination": "https://wgalmeida-buildtech.vercel.app/:path*"
     },
     {
       "source": "/api/(.*)",

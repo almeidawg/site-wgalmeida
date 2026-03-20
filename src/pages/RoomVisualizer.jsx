@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react';
-import { motion } from '@/lib/motion-lite';
-import { Navigate } from 'react-router-dom';
-import { Wand2, Lock, ArrowLeft, Sparkles } from 'lucide-react';
-import { useAuth } from '@/contexts/SupabaseAuthContext';
-import { RoomVisualizerProvider, useRoomVisualizer } from '@/contexts/RoomVisualizerContext';
 import {
-  RoomTypeSelector,
-  PhotoUploader,
-  MoodboardImporter,
   GenerationProgress,
+  MoodboardImporter,
+  PhotoUploader,
   ResultViewer,
-} from '@/components/room-visualizer';
-import SEO from '@/components/SEO';
+  RoomTypeSelector,
+} from '@/components/room-visualizer'
+import SEO from '@/components/SEO'
+import { RoomVisualizerProvider, useRoomVisualizer } from '@/contexts/RoomVisualizerContext'
+import { useAuth } from '@/contexts/SupabaseAuthContext'
+import { motion } from '@/lib/motion-lite'
+import { ArrowLeft, Lock, Sparkles, Wand2 } from 'lucide-react'
 
 const RoomVisualizerContent = () => {
-  const { user } = useAuth();
+  const { user } = useAuth()
   const {
     roomType,
     setRoomType,
@@ -35,42 +33,42 @@ const RoomVisualizerContent = () => {
     canGenerate,
     result,
     reset,
-  } = useRoomVisualizer();
+  } = useRoomVisualizer()
 
   const handleGenerate = async () => {
-    await generateVisualization();
-  };
+    await generateVisualization()
+  }
 
   const handleDownload = () => {
     if (result?.generatedImage) {
-      const link = document.createElement('a');
-      link.href = result.generatedImage;
-      link.download = `visualizacao-wg-almeida-${Date.now()}.png`;
-      link.click();
+      const link = document.createElement('a')
+      link.href = result.generatedImage
+      link.download = `visualizacao-wg-almeida-${Date.now()}.png`
+      link.click()
     }
-  };
+  }
 
   const handleShare = async () => {
     if (result?.generatedImage && navigator.share) {
       try {
-        const blob = await fetch(result.generatedImage).then((r) => r.blob());
-        const file = new File([blob], 'visualizacao.png', { type: 'image/png' });
+        const blob = await fetch(result.generatedImage).then((r) => r.blob())
+        const file = new File([blob], 'visualizacao.png', { type: 'image/png' })
         await navigator.share({
           title: 'Minha Visualização - WG Almeida',
           text: 'Confira como ficou meu ambiente com as cores e estilos que escolhi!',
           files: [file],
-        });
+        })
       } catch (err) {
         // Fallback para copiar link
-        console.log('Share failed:', err);
+        console.log('Share failed:', err)
       }
     }
-  };
+  }
 
   const handleSave = async () => {
     // Já é salvo automaticamente no histórico do usuário
-    console.log('Visualização salva no histórico');
-  };
+    console.log('Visualização salva no histórico')
+  }
 
   // Se estiver gerando, mostra o progresso
   if (isGenerating) {
@@ -84,7 +82,7 @@ const RoomVisualizerContent = () => {
           />
         </div>
       </div>
-    );
+    )
   }
 
   // Se tiver resultado, mostra o viewer
@@ -147,15 +145,13 @@ const RoomVisualizerContent = () => {
               </div>
               <div>
                 <p className="text-gray-500">Gerado em</p>
-                <p className="font-medium">
-                  {new Date(result.createdAt).toLocaleString('pt-BR')}
-                </p>
+                <p className="font-medium">{new Date(result.createdAt).toLocaleString('pt-BR')}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   // Formulário principal
@@ -184,8 +180,8 @@ const RoomVisualizerContent = () => {
               Visualizador de <span className="text-wg-orange">Ambientes</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Envie uma foto do seu espaço e veja como ele ficará com as cores e estilos
-              do seu moodboard. Tecnologia de IA fotorrealista.
+              Envie uma foto do seu espaço e veja como ele ficará com as cores e estilos do seu
+              moodboard. Tecnologia de IA fotorrealista.
             </p>
           </motion.div>
         </div>
@@ -208,17 +204,15 @@ const RoomVisualizerContent = () => {
                     i === 0 && importedColors.length > 0
                       ? 'bg-green-500 text-white'
                       : i === 1 && photo
-                      ? 'bg-green-500 text-white'
-                      : i === 2 && roomType
-                      ? 'bg-green-500 text-white'
-                      : 'bg-gray-200 text-gray-500'
+                        ? 'bg-green-500 text-white'
+                        : i === 2 && roomType
+                          ? 'bg-green-500 text-white'
+                          : 'bg-gray-200 text-gray-500'
                   }`}
                 >
                   {step.num}
                 </div>
-                <span className="ml-2 text-sm text-gray-600 hidden sm:inline">
-                  {step.label}
-                </span>
+                <span className="ml-2 text-sm text-gray-600 hidden sm:inline">{step.label}</span>
                 {i < 3 && <div className="w-8 h-0.5 bg-gray-200 mx-2" />}
               </div>
             ))}
@@ -234,11 +228,7 @@ const RoomVisualizerContent = () => {
                 onClear={clearImportedMoodboard}
               />
 
-              <PhotoUploader
-                photo={photo}
-                onPhotoChange={setPhoto}
-                isProcessing={isGenerating}
-              />
+              <PhotoUploader photo={photo} onPhotoChange={setPhoto} isProcessing={isGenerating} />
             </div>
 
             {/* Right Column */}
@@ -271,8 +261,8 @@ const RoomVisualizerContent = () => {
                   {!importedColors.length && !importedStyles.length
                     ? 'Importe um moodboard primeiro'
                     : !photo
-                    ? 'Envie uma foto do ambiente'
-                    : 'Selecione o tipo de ambiente'}
+                      ? 'Envie uma foto do ambiente'
+                      : 'Selecione o tipo de ambiente'}
                 </p>
               )}
 
@@ -287,11 +277,11 @@ const RoomVisualizerContent = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
 const RoomVisualizer = () => {
-  const { user, loading } = useAuth();
+  const { user, loading } = useAuth()
 
   // Mostra loading enquanto verifica auth
   if (loading) {
@@ -299,7 +289,7 @@ const RoomVisualizer = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin w-8 h-8 border-4 border-wg-orange border-t-transparent rounded-full" />
       </div>
-    );
+    )
   }
 
   // Redireciona para login se não autenticado
@@ -314,12 +304,10 @@ const RoomVisualizer = () => {
           <div className="w-16 h-16 bg-wg-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <Lock className="w-8 h-8 text-wg-orange" />
           </div>
-          <h2 className="text-2xl text-gray-800 mb-4">
-            Acesso Exclusivo
-          </h2>
+          <h2 className="text-2xl text-gray-800 mb-4">Acesso Exclusivo</h2>
           <p className="text-gray-600 mb-6">
-            O Visualizador de Ambientes IA é uma ferramenta exclusiva para clientes
-            cadastrados. Faça login ou crie sua conta gratuita para acessar.
+            O Visualizador de Ambientes IA é uma ferramenta exclusiva para clientes cadastrados.
+            Faça login ou crie sua conta gratuita para acessar.
           </p>
           <div className="space-y-3">
             <a
@@ -343,14 +331,14 @@ const RoomVisualizer = () => {
           </a>
         </motion.div>
       </div>
-    );
+    )
   }
 
   return (
     <RoomVisualizerProvider>
       <RoomVisualizerContent />
     </RoomVisualizerProvider>
-  );
-};
+  )
+}
 
-export default RoomVisualizer;
+export default RoomVisualizer
