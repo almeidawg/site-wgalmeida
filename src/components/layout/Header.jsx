@@ -97,13 +97,21 @@ const Header = () => {
     },
     {
       label: 'Easy Locker',
-      path: '/easylocker/',
-      external: true,
+      path: '/easylocker',
       icon: Globe,
       description: 'Armários inteligentes para gestão de encomendas.',
       borderHoverClass: 'hover:border-wg-orange',
       iconClass: 'text-wg-orange',
       hoverTextClass: 'group-hover:text-wg-orange',
+    },
+    {
+      label: 'W Nomas Vinhos',
+      path: '/wnomas',
+      icon: Globe,
+      description: 'Curadoria de vinhos, clube de assinatura e experiências exclusivas.',
+      borderHoverClass: 'hover:border-[#8B1A2E]',
+      iconClass: 'text-[#8B1A2E]',
+      hoverTextClass: 'group-hover:text-[#8B1A2E]',
     },
   ], [t]);
 

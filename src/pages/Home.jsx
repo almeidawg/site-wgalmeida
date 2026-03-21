@@ -14,6 +14,8 @@ import {
   Sofa,
   CheckCircle2,
   Monitor,
+  Lock,
+  Wine,
   Calendar,
   Camera,
   MessagesSquare,
@@ -252,6 +254,30 @@ const Home = () => {
       icon: Hammer,
       description: t('home.units.carpentry.description'),
       highlight: t('home.units.carpentry.highlight'),
+      color: 'wg-brown',
+    },
+    {
+      title: 'WG Build Tech',
+      path: '/buildtech',
+      icon: Monitor,
+      description: 'Consultoria de IA e tecnologia para construção e gestão de projetos.',
+      highlight: 'Tecnologia + Construção',
+      color: 'wg-blue',
+    },
+    {
+      title: 'WG EasyLocker',
+      path: '/easylocker',
+      icon: Lock,
+      description: 'Armários inteligentes com acesso por app para condomínios e empresas.',
+      highlight: 'IoT + Segurança',
+      color: 'wg-orange',
+    },
+    {
+      title: 'W Nomas Vinhos',
+      path: '/wnomas',
+      icon: Wine,
+      description: 'Curadoria de vinhos, clube de assinatura e experiências exclusivas.',
+      highlight: 'Vinhos + Experiências',
       color: 'wg-brown',
     },
   ];
@@ -867,7 +893,7 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {nucleos.map((nucleo, index) => (
               <motion.div
                 key={index}
