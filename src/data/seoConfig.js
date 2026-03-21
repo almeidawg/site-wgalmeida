@@ -135,6 +135,11 @@ export const SEO_CONFIG = {
     "Easy Locker | Armários Inteligentes para Condomínios de Luxo",
     "A solução definitiva para gestão de encomendas. Armários inteligentes automatizados com a tecnologia do Grupo WG Almeida."
   ),
+  "/wnomasvinho": page(
+    "/wnomasvinho",
+    "Wno Mas Vinhos & Cia | Curadoria de Vinhos Premium",
+    "Wno Mas Vinhos & Cia com curadoria premium de vinhos, champagnes e experiências autorais em uma apresentação digital própria."
+  ),
   "/revista-estilos": page(
     "/revista-estilos",
     "Revista de Estilos | Descubra seu Estilo de Decoracao | WG Almeida",

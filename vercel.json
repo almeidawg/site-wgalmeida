@@ -168,6 +168,16 @@
       "permanent": true
     },
     {
+      "source": "/wnomas",
+      "destination": "/wnomasvinho",
+      "permanent": true
+    },
+    {
+      "source": "/wnomas/:path*",
+      "destination": "/wnomasvinho/:path*",
+      "permanent": true
+    },
+    {
       "source": "/modelo1",
       "destination": "/projetos",
       "permanent": true
@@ -190,22 +200,6 @@
     {
       "source": "/buildtech/:path*",
       "destination": "https://wgalmeida-buildtech.vercel.app/:path*"
-    },
-    {
-      "source": "/wnomas",
-      "destination": "https://unomas-vinho.vercel.app/"
-    },
-    {
-      "source": "/wnomas/:path*",
-      "destination": "https://unomas-vinho.vercel.app/:path*"
-    },
-    {
-      "source": "/wnomasvinho",
-      "destination": "https://unomas-vinho.vercel.app/"
-    },
-    {
-      "source": "/wnomasvinho/:path*",
-      "destination": "https://unomas-vinho.vercel.app/:path*"
     },
     {
       "source": "/easylocker",

@@ -139,16 +139,21 @@ function App() {
     }
   }, [location.pathname])
 
-  // Não mostrar header em páginas como login e admin
-  const isFullPageRoute = ['/login', '/admin'].some((path) => location.pathname.startsWith(path))
+  // Não mostrar header/footer em páginas standalone
+  const isHomeRoute = location.pathname === '/'
+  const isStandaloneRoute =
+    isHomeRoute ||
+    ['/login', '/admin', '/wnomasvinho', '/wnomas'].some((path) =>
+      location.pathname.startsWith(path)
+    )
 
   return (
     <AuthProvider autoInit={shouldInitAuth}>
       <div className="min-h-screen flex flex-col bg-white">
-        {!isFullPageRoute && <Header />}
+        {!isStandaloneRoute && <Header />}
         <main
           className="flex-grow bg-white"
-          style={{ paddingTop: isFullPageRoute ? '0' : 'var(--header-height)' }}
+          style={{ paddingTop: isStandaloneRoute ? '0' : 'var(--header-height)' }}
         >
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
@@ -159,7 +164,8 @@ function App() {
               <Route path="/engenharia" element={<Engineering />} />
               <Route path="/marcenaria" element={<Carpentry />} />
               {/* Outras empresas do Grupo WG Almeida */}
-              <Route path="/wnomas" element={<Wnomas />} />
+              <Route path="/wnomasvinho" element={<Wnomas />} />
+              <Route path="/wnomas" element={<Navigate to="/wnomasvinho" replace />} />
               <Route path="/easylocker" element={<EasyLocker />} />
               <Route path="/buildtech" element={<BuildTech />} />
               <Route path="/projetos" element={<Projects />} />
@@ -260,7 +266,7 @@ function App() {
             </Routes>
           </Suspense>
         </main>
-        <Footer />
+        {!isStandaloneRoute && <Footer />}
         {/* <ClaudeAssistant /> */} {/* DESATIVADO - Manter apenas WhatsApp */}
       </div>
     </AuthProvider>
