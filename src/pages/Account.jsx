@@ -165,7 +165,7 @@ const Account = () => {
     const statusConfig = {
       'ativo': { bg: 'bg-green-100', text: 'text-green-700', icon: CheckCircle2, label: t('accountPage.status.active') },
       'em_andamento': { bg: 'bg-blue-100', text: 'text-blue-700', icon: Clock, label: t('accountPage.status.inProgress') },
-      'pendente': { bg: 'bg-yellow-100', text: 'text-yellow-700', icon: AlertCircle, label: t('accountPage.status.pending') },
+      'pendente': { bg: 'bg-wg-orange/10', text: 'text-wg-orange-dark', icon: AlertCircle, label: t('accountPage.status.pending') },
       'concluido': { bg: 'bg-green-100', text: 'text-green-700', icon: CheckCircle2, label: t('accountPage.status.completed') },
       'finalizado': { bg: 'bg-green-100', text: 'text-green-700', icon: CheckCircle2, label: t('accountPage.status.finished') },
     };

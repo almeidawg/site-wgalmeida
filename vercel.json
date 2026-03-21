@@ -186,9 +186,27 @@
       "source": "/modelo2",
       "destination": "/projetos",
       "permanent": true
+    },
+    {
+      "source": "/buildtech/easyfood",
+      "destination": "/buildtech/projetos/easyfood",
+      "permanent": true
+    },
+    {
+      "source": "/buildtech/easyfood/:path*",
+      "destination": "/buildtech/projetos/easyfood/:path*",
+      "permanent": true
     }
   ],
   "rewrites": [
+    {
+      "source": "/buildtech/projetos/easyfood",
+      "destination": "https://restaurante-lyart.vercel.app/entrada.html"
+    },
+    {
+      "source": "/buildtech/projetos/easyfood/:path*",
+      "destination": "https://restaurante-lyart.vercel.app/:path*"
+    },
     {
       "source": "/buildtech/easyfood/:path*",
       "destination": "https://restaurante-lyart.vercel.app/:path*"

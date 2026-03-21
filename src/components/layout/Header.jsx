@@ -105,8 +105,8 @@ const Header = () => {
       hoverTextClass: 'group-hover:text-wg-orange',
     },
     {
-      label: 'W Nomas Vinhos',
-      path: '/wnomas',
+      label: 'Wno Mas Vinhos & Cia',
+      path: '/wnomasvinho',
       icon: Globe,
       description: 'Curadoria de vinhos, clube de assinatura e experiências exclusivas.',
       borderHoverClass: 'hover:border-[#8B1A2E]',

@@ -376,7 +376,7 @@ const StarRating = ({ rating, size = 'sm' }) => (
         key={i}
         className={`${size === 'sm' ? 'w-3.5 h-3.5' : 'w-5 h-5'} ${
           i <= Math.round(rating)
-            ? 'fill-yellow-400 text-yellow-400'
+            ? 'fill-wg-orange text-wg-orange'
             : 'fill-gray-200 text-gray-200'
         }`}
       />
@@ -1070,8 +1070,8 @@ Responda como consultor experiente:
 
                 {/* Resumo de rating */}
                 {reviews && !reviewsLoading && (
-                  <div className="flex items-center gap-4 p-4 bg-yellow-50 rounded-xl border border-yellow-100">
-                    <div className="text-4xl font-bold text-yellow-500">
+                  <div className="flex items-center gap-4 p-4 bg-wg-orange/5 rounded-xl border border-wg-orange/20">
+                    <div className="text-4xl font-bold text-wg-orange">
                       {Number(reviews.averageRating).toFixed(1)}
                     </div>
                     <div>
@@ -1536,7 +1536,7 @@ Responda como consultor experiente:
                                         }
                                         className={`text-xs pl-2 pr-6 py-1 rounded-full border appearance-none cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-wg-orange/30 ${
                                           {
-                                            nova: 'bg-yellow-50 text-yellow-700 border-yellow-200',
+                                            nova: 'bg-wg-orange/10 text-wg-orange-dark border-wg-orange/20',
                                             contato: 'bg-blue-50 text-blue-700 border-blue-200',
                                             visita:
                                               'bg-purple-50 text-purple-700 border-purple-200',

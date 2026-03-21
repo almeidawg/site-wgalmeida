@@ -57,15 +57,15 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://wnomasvinho.wgalmeida.com.br"
+              href="https://wgalmeida.com.br/wnomasvinho"
               target="_blank"
               rel="noopener noreferrer"
               className="opacity-60 hover:opacity-100 transition-opacity"
-              title="Wno Mas Vinho & Cia"
+              title="Wno Mas Vinhos & Cia"
             >
               <img
                 src="/images/logo-wno-mas.webp"
-                alt="Wno Mas Vinho & Cia"
+                alt="Wno Mas Vinhos & Cia"
                 className="h-[60px] w-auto object-contain"
                 loading="lazy"
               />

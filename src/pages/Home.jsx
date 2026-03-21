@@ -231,6 +231,32 @@ const Home = () => {
     estatisticas.horasProjetando
   ]);
 
+  useEffect(() => {
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousBodyHeight = document.body.style.height;
+
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+
+    return () => {
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+      document.body.style.height = previousBodyHeight;
+    };
+  }, []);
+
+  return (
+    <>
+      <SEO
+        pathname="/"
+        schema={[SCHEMAS.organization, SCHEMAS.localBusiness, SCHEMAS.breadcrumbHome]}
+      />
+      <SanfonaHero />
+    </>
+  );
+
   // Unidades (antes "Serviços")
   const nucleos = [
     {
@@ -274,8 +300,8 @@ const Home = () => {
       color: 'wg-orange',
     },
     {
-      title: 'W Nomas Vinhos',
-      path: '/wnomas',
+      title: 'Wno Mas Vinhos & Cia',
+      path: '/wnomasvinho',
       icon: Wine,
       description: 'Curadoria de vinhos, clube de assinatura e experiências exclusivas.',
       highlight: 'Vinhos + Experiências',
