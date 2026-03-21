@@ -2,11 +2,6 @@
   "version": 2,
   "redirects": [
     {
-      "source": "/buildtech/clientes/:path*",
-      "destination": "https://buildtech.wgalmeida.com.br/clientes/:path*",
-      "permanent": false
-    },
-    {
       "source": "/(.*)",
       "has": [
         {
@@ -190,11 +185,11 @@
     },
     {
       "source": "/buildtech",
-      "destination": "https://buildtech.wgalmeida.com.br/"
+      "destination": "https://wgalmeida-buildtech.vercel.app/"
     },
     {
       "source": "/buildtech/:path*",
-      "destination": "https://buildtech.wgalmeida.com.br/:path*"
+      "destination": "https://wgalmeida-buildtech.vercel.app/:path*"
     },
     {
       "source": "/wnomas",
