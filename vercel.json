@@ -193,6 +193,16 @@
       "permanent": true
     },
     {
+      "source": "/projetos/mercadoimobiliario",
+      "destination": "/buildtech/projetos/mercadoimobiliario",
+      "permanent": true
+    },
+    {
+      "source": "/projetos/mercadoimobiliario/:path*",
+      "destination": "/buildtech/projetos/mercadoimobiliario/:path*",
+      "permanent": true
+    },
+    {
       "source": "/buildtech/easyfood/:path*",
       "destination": "/buildtech/projetos/easyfood/:path*",
       "permanent": true
