@@ -52,6 +52,11 @@ const RoomVisualizer = lazy(() => import('@/pages/RoomVisualizer'))
 const RevistaEstilos = lazy(() => import('@/pages/RevistaEstilos'))
 const EstiloDetail = lazy(() => import('@/pages/EstiloDetail'))
 
+// Empresas do Grupo WG Almeida
+const Wnomas = lazy(() => import('@/pages/Wnomas'))
+const EasyLocker = lazy(() => import('@/pages/EasyLocker'))
+const BuildTech = lazy(() => import('@/pages/BuildTech'))
+
 // Landing Pages Estratégicas (SEO)
 const ConstrutoraAltoPadraoSP = lazy(() => import('@/pages/ConstrutoraAltoPadraoSP'))
 const ReformaApartamentoSP = lazy(() => import('@/pages/ReformaApartamentoSP'))
@@ -153,6 +158,10 @@ function App() {
               <Route path="/arquitetura" element={<Architecture />} />
               <Route path="/engenharia" element={<Engineering />} />
               <Route path="/marcenaria" element={<Carpentry />} />
+              {/* Outras empresas do Grupo WG Almeida */}
+              <Route path="/wnomas" element={<Wnomas />} />
+              <Route path="/easylocker" element={<EasyLocker />} />
+              <Route path="/buildtech" element={<BuildTech />} />
               <Route path="/projetos" element={<Projects />} />
               <Route path="/processo" element={<Process />} />
               <Route path="/depoimentos" element={<Testimonials />} />
