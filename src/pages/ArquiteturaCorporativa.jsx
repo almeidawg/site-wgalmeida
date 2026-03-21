@@ -134,7 +134,7 @@ const ArquiteturaCorporativa = () => {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black hero-under-header">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: 'url(/images/hero-architecture.jpg)' }}
+          style={{ backgroundImage: 'url(/images/banners/ARQ.webp)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 

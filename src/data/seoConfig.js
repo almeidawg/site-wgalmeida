@@ -4,12 +4,12 @@ const DEFAULT_OG_IMAGE = `${BASE_URL}/og-home-1200x630.jpg`;
 const defaultConfig = {
   title: "Grupo WG Almeida | Arquitetura, Engenharia e Marcenaria",
   description:
-    "Grupo WG Almeida: arquitetura, engenharia e marcenaria premium em Sao Paulo. Projetos autorais com execucao integrada.",
+    "O Grupo WG Almeida oferece soluções premium e integradas em arquitetura, engenharia e marcenaria em São Paulo. Conheça nossos projetos autorais e solicite uma proposta.",
   canonical: `${BASE_URL}/`,
   og: {
     title: "Grupo WG Almeida | Arquitetura, Engenharia e Marcenaria",
     description:
-      "Arquitetura, engenharia e marcenaria premium com gestao integrada.",
+      "O Grupo WG Almeida oferece soluções premium e integradas em arquitetura, engenharia e marcenaria em São Paulo. Conheça nossos projetos autorais e solicite uma proposta.",
     image: DEFAULT_OG_IMAGE,
     url: `${BASE_URL}/`,
   },
@@ -17,7 +17,7 @@ const defaultConfig = {
     card: "summary_large_image",
     title: "Grupo WG Almeida | Arquitetura, Engenharia e Marcenaria",
     description:
-      "Arquitetura, engenharia e marcenaria premium com gestao integrada.",
+      "O Grupo WG Almeida oferece soluções premium e integradas em arquitetura, engenharia e marcenaria em São Paulo. Conheça nossos projetos autorais e solicite uma proposta.",
     image: DEFAULT_OG_IMAGE,
   },
 };

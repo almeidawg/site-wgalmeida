@@ -24,54 +24,106 @@ npm run dev          # porta 3000
 
 # Build + deploy
 npm run build
-npx vercel deploy --prebuilt --prod
+git add -A && git commit -m "msg" && git push origin master
+# Auto-deploy via Vercel (NÃO usar npx vercel --prod diretamente)
 ```
 
 ---
 
-## Arquitetura — Grupo WG Almeida (monodomain)
+## Arquitetura CORRETA — Monodomain Hub
 
-O site `wgalmeida.com.br` é o hub central do Grupo, com TODAS as empresas acessíveis via subpath:
+`wgalmeida.com.br` é o HUB central. Cada empresa tem seu PRÓPRIO site Vercel
+e o hub proxifica via `vercel.json`.
 
-| URL | Página | Arquivo | Status |
-|-----|--------|---------|--------|
-| `/` | Home (accordion de empresas) | `src/pages/Home.jsx` | ✅ |
-| `/arquitetura` | WG Arquitetura | `src/pages/Architecture.jsx` | ✅ |
-| `/engenharia` | WG Engenharia | `src/pages/Engineering.jsx` | ✅ |
-| `/marcenaria` | WG Marcenaria | `src/pages/Carpentry.jsx` | ✅ |
-| `/wnomas` | W Nomas Vinhos | `src/pages/Wnomas.jsx` | ✅ (adicionado 21/03) |
-| `/easylocker` | WG EasyLocker | `src/pages/EasyLocker.jsx` | ✅ (adicionado 21/03) |
-| `/buildtech` | WG Build Tech | proxy → buildtech.wgalmeida.com.br | ✅ (vercel rewrite) |
+### Regra de ouro
+> Cada empresa com site próprio = deploy separado no Vercel + proxy rewrite em vercel.json.
+> Empresas sem site próprio = página React dentro do app principal.
 
-### Regra de ouro — Sem duplicação
-- Cada empresa tem UMA página dentro deste React app
-- Projetos de cliente ficam em `buildtech.wgalmeida.com.br/clientes/<slug>`
-- `buildtech.wgalmeida.com.br` é projeto Vercel separado, acessível também via proxy em `/buildtech`
+### Mapa de subpaths
+
+| URL | Tipo | Vercel Project | Status |
+|-----|------|---------------|--------|
+| `/` | React SPA (hub) | site_grupowgalmeida | ✅ |
+| `/arquitetura` | React page (app principal) | site_grupowgalmeida | ✅ |
+| `/engenharia` | React page (app principal) | site_grupowgalmeida | ✅ |
+| `/marcenaria` | React page (app principal) | site_grupowgalmeida | ✅ |
+| `/buildtech` + `/buildtech/:path*` | **Proxy** → buildtech.wgalmeida.com.br | wg-WTB-build-tech | ✅ |
+| `/wnomas` + `/wnomas/:path*` | **Proxy** → unomas-vinho.vercel.app | wnomas-vinho | ✅ |
+| `/wnomasvinho` + `/wnomasvinho/:path*` | **Proxy** → unomas-vinho.vercel.app | wnomas-vinho | ✅ |
+| `/easylocker` + `/easylocker/:path*` | **Proxy** → wg-easylocker.vercel.app | wg-easylocker | ✅ |
+
+### Sites de empresas — Projetos Vercel separados
+
+| Empresa | Pasta local | Vercel project | URL pública |
+|---------|------------|---------------|-------------|
+| WG Build Tech | `wg-WTB-build-tech/files/` | wg-WTB-build-tech | buildtech.wgalmeida.com.br |
+| W Nomas Vinhos | `wnomasvinhos/site/` | wnomas-vinho | unomas-vinho.vercel.app |
+| WG EasyLocker | `wg-easylocker/01_Easy_Locker_Site/` | wg-easylocker | wg-easylocker.vercel.app |
 
 ---
 
-## Vercel.json — Rewrites importantes
-1. `/buildtech` + `/buildtech/:path*` → proxy para `buildtech.wgalmeida.com.br` ✅
-2. `/buildtech/clientes/:path*` → redirect externo ✅
-3. `/buildtech/easyfood/:path*` → proxy para restaurante app ✅
-4. `/sobre`, `/arquitetura`, `/engenharia`, `/marcenaria`, etc. → static HTML prerender ✅
-5. `/(.*) → /index.html` → SPA catch-all (cobre /wnomas, /easylocker) ✅
+## Deploy por empresa
 
-**ATENÇÃO:** `/wnomas` e `/easylocker` NÃO têm rewrite estático — caem no SPA catch-all. Isso é correto, mas se precisar de prerender para SEO, adicionar:
+### Hub principal (wgalmeida.com.br)
+```bash
+cd 01_site-wgalmeida/site
+npm run build
+git add -A && git commit -m "msg" && git push origin master
+# → Vercel auto-deploy
+```
+
+### WG Build Tech
+```bash
+cd wg-WTB-build-tech
+# editar arquivos em files/
+git add -A && git commit -m "msg" && git push
+# ou: npx vercel --prod --yes
+```
+
+### W Nomas Vinhos
+```bash
+cd wnomasvinhos/site
+# editar HTML estático
+npx vercel --prod --yes
+```
+
+### WG EasyLocker
+```bash
+cd wg-easylocker/01_Easy_Locker_Site
+npm run build
+npx vercel --prod --yes
+```
+
+---
+
+## Como adicionar nova empresa ao hub
+
+1. Deploy da empresa em Vercel separado → obter URL de produção
+2. Adicionar rewrite em `vercel.json` do hub:
 ```json
-{ "source": "/wnomas", "destination": "/wnomas/index.html" },
-{ "source": "/easylocker", "destination": "/easylocker/index.html" }
+{ "source": "/nova-empresa", "destination": "https://nova-empresa.vercel.app/" },
+{ "source": "/nova-empresa/:path*", "destination": "https://nova-empresa.vercel.app/:path*" }
 ```
+3. (Opcional) Criar React page em `src/pages/NovaEmpresa.jsx` como landing page SEO
+4. Adicionar rota em `src/App.jsx` e item em `Header.jsx` unitsItems
+5. Build + push → auto-deploy
 
 ---
 
 ## Últimas sessões
 
-### 2026-03-21
+### 2026-03-21 (sessão atual)
+- ✅ Deploy W Nomas Vinhos → `unomas-vinho.vercel.app`
+- ✅ Deploy WG EasyLocker → `wg-easylocker.vercel.app`
+- ✅ Proxy rewrites adicionados em `vercel.json` para `/wnomas`, `/wnomasvinho`, `/easylocker`
+- ✅ Arquitetura documentada e corrigida (monodomain hub com proxies)
+- ✅ Push feito → auto-deploy em andamento
+
+### 2026-03-21 (sessão anterior)
 - Adicionadas rotas `/wnomas`, `/easylocker`, `/buildtech` no App.jsx
-- Páginas `Wnomas.jsx`, `EasyLocker.jsx`, `BuildTech.jsx` já existiam mas sem rota
-- Criado este RETURN-POINT.md
-- `public/buildtech/clientes/` = pasta untracked, não deletar (pode ter conteúdo relevante)
+- Páginas React criadas: `Wnomas.jsx`, `EasyLocker.jsx`, `BuildTech.jsx`
+- Header mega menu atualizado com W Nomas e EasyLocker
+- Home.jsx atualizado com 6 empresas no grid
 
 ### Antes de 2026-03-21
 - Header atualizado com ícone Globe para CTA WGEasy
@@ -80,7 +132,8 @@ O site `wgalmeida.com.br` é o hub central do Grupo, com TODAS as empresas acess
 
 ---
 
-## Onde parou
-- Rotas adicionadas, falta commit + push para deploy automático
-- Home.jsx ainda NÃO tem o accordion de todas as empresas — próxima sessão
-- Verificar se BuildTech.jsx (rota React) deve ser mantido ou removido (Vercel proxy já cobre /buildtech)
+## O que está pendente
+- ⚠️ Sites de wnomas e easylocker usam paths relativos — testar navegação via proxy `/wnomas` e `/easylocker`
+- Se navegação quebrar (links internos), opção A: adicionar `<base href="/wnomas/">` nas páginas HTML do wnomas
+- EasyLocker é Vite/React — assets em `/assets/...` podem não funcionar via proxy sem configurar `base: '/easylocker/'` no vite.config
+- Considerar adicionar subdomínios customizados no Vercel: `wnomas.wgalmeida.com.br`, `easylocker.wgalmeida.com.br`

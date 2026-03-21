@@ -232,8 +232,8 @@
     "hero": {
       "subtitle": "Um ecossistema completo para construir com excelência.",
       "subheadline": "Planejamos, executamos e entregamos espaços de alto padrão — do conceito ao último detalhe, sob um único padrão de gestão.",
-      "ctaPrimary": "Conheça o Grupo WG Almeida",
-      "ctaSecondary": "Veja como trabalhamos"
+      "ctaPrimary": "Conhecer Soluções de Arquitetura e Engenharia",
+      "ctaSecondary": "Explorar Processo Turn Key Premium"
     },
     "about": {
       "kicker": "Há {{years}} anos construindo excelência",
@@ -347,8 +347,8 @@
     },
     "closing": {
       "title": "Grupo WG Almeida.<br /><span>Onde ideias ganham forma, processos ganham controle</span><br /><span>e espaços ganham alma.</span>",
-      "ctaPrimary": "Iniciar seu Projeto",
-      "ctaSecondary": "Ver Portfólio"
+      "ctaPrimary": "Iniciar Orçamento do seu Projeto",
+      "ctaSecondary": "Explorar Portfólio de Obras"
     }
   },
   "aboutPage": {

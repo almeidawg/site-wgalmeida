@@ -36,7 +36,7 @@ const Footer = () => {
               title="EasyLocker — Armários Inteligentes"
             >
               <img
-                src="/images/logo-easylocker.png"
+                src="/images/logo-easylocker.webp"
                 alt="EasyLocker"
                 className="h-[60px] w-auto object-contain"
                 loading="lazy"
@@ -50,7 +50,7 @@ const Footer = () => {
               title="WG.build tech — Sites, Sistemas & Automação"
             >
               <img
-                src="/images/logo-buildtech-transparent.png"
+                src="/images/logo-buildtech-transparent.webp"
                 alt="WG.build tech"
                 className="h-[90px] w-auto object-contain"
                 loading="lazy"
@@ -64,7 +64,7 @@ const Footer = () => {
               title="Wno Mas Vinho & Cia"
             >
               <img
-                src="/images/logo-wno-mas.png"
+                src="/images/logo-wno-mas.webp"
                 alt="Wno Mas Vinho & Cia"
                 className="h-[60px] w-auto object-contain"
                 loading="lazy"

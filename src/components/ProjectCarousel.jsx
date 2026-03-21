@@ -72,7 +72,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.paulistano.subtitle',
     descriptionKey: 'projectCarousel.projects.paulistano.description',
     statKey: 'projectCarousel.projects.paulistano.stat',
-    image: '/images/projects/condominio-paulistano-monte-kemel/original100.JPG',
+    image: '/images/projects/condominio-paulistano-monte-kemel/original100.webp',
     folder: 'condominio-paulistano-monte-kemel',
   },
   {

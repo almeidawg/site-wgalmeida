@@ -17,14 +17,15 @@ const QUALIDADE = 80;
 const TAMANHO_MINIMO_KB = 10; // 10KB
 
 async function converterImagem(arquivoOrigem) {
-  const ext = path.extname(arquivoOrigem).toLowerCase();
+  const extOriginal = path.extname(arquivoOrigem);
+  const extLower = extOriginal.toLowerCase();
 
-  // Só converter PNG, JPG, JPEG
-  if (!['.png', '.jpg', '.jpeg'].includes(ext)) {
+  // Só converter PNG, JPG, JPEG (case insensitive)
+  if (!['.png', '.jpg', '.jpeg'].includes(extLower)) {
     return null;
   }
 
-  const arquivoDestino = arquivoOrigem.replace(ext, '.webp');
+  const arquivoDestino = arquivoOrigem.substring(0, arquivoOrigem.length - extOriginal.length) + '.webp';
 
   // Verificar se já existe WebP
   if (fs.existsSync(arquivoDestino)) {

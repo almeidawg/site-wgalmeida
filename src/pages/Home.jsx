@@ -26,6 +26,7 @@ import { Button } from '@/components/ui/button';
 import AnimatedStrokes from '@/components/AnimatedStrokes';
 
 import HeroVideo from '@/components/HeroVideo';
+import SanfonaHero from '@/components/home/SanfonaHero';
 // Lazy load PremiumCinematicIntro para reduzir TBT (Total Blocking Time)
 const PremiumCinematicIntro = lazy(() => import('@/components/PremiumCinematicIntro'));
 const ProjectGallery = lazy(() => import('@/components/ProjectGallery'));
@@ -314,6 +315,9 @@ const Home = () => {
           <PremiumCinematicIntro onComplete={handleIntroComplete} />
         </Suspense>
       )}
+
+      {/* ========== SANFONA DE EMPRESAS ========== */}
+      <SanfonaHero />
 
       {/* ========== HERO SECTION COM VÍDEO ========== */}
       <section className="relative min-h-[calc(100vh-var(--header-height))] md:h-[calc(100vh-var(--header-height))] flex items-center justify-center overflow-hidden bg-wg-black pb-16 sm:pb-20 hero-under-header">
@@ -868,63 +872,6 @@ const Home = () => {
                 <HomeColorTransformer />
               </Suspense>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== BLOCO NÚCLEOS (antes UNIDADES) ========== */}
-      <section className="py-12 md:py-16 bg-wg-gray-light">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-10"
-          >
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
-              NOSSOS NÚCLEOS
-            </span>
-            <h2 className="wg-heading-display text-3xl md:text-4xl lg:text-5xl text-wg-black mb-4">
-              Especialização + Integração
-            </h2>
-            <p className="wg-text-body max-w-2xl mx-auto">
-              Três disciplinas sob o mesmo padrão de qualidade, gestão e responsabilidade.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {nucleos.map((nucleo, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-              >
-                <Link to={nucleo.path} className="block h-full">
-                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
-                    <div className={`h-1.5 bg-${nucleo.color}`}></div>
-                    <div className="p-8 flex-1 flex flex-col">
-                      <nucleo.icon className={`w-12 h-12 mb-6 text-${nucleo.color}`} />
-                      <h3 className={`text-2xl font-inter font-medium text-wg-black mb-4 normal-case tracking-tight group-hover:text-${nucleo.color} transition-colors`}>
-                        {nucleo.title}
-                      </h3>
-                      <p className="text-wg-gray leading-relaxed mb-4 font-light flex-1">
-                        {nucleo.description}
-                      </p>
-                      <p className="text-sm text-wg-black font-medium italic border-l-2 border-wg-orange pl-4 mb-6">
-                        {nucleo.highlight}
-                      </p>
-                      <div className={`flex items-center text-wg-orange group-hover:text-${nucleo.color} font-medium group-hover:translate-x-2 transition-transform mt-auto`}>
-                        Saiba mais
-                        <ArrowRight className="ml-2 w-4 h-4" />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
