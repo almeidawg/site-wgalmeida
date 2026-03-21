@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EventOS — Sistema Operacional para Ecossistemas de Eventos | Grupo UMAUMA × WG build.tech">
+  <meta property="og:title" content="EventOS — UMAUMA">
+  <meta property="og:description" content="Plataforma integrada de gestão para 14 agências de eventos e entretenimento">
+  <title>EventOS — Projeto UMAUMA | WG build.tech</title>
+
+  <link rel="stylesheet" href="design-tokens.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+    body {
+      background: #fbfaf9;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* NAVEGAÇÃO FIXA */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(251, 250, 249, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #046bd2;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #046bd2;
+    }
+
+    .nav-cta {
+      background: #046bd2;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-cta:hover {
+      background: #045cb4;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(4, 107, 210, 0.2);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      margin-top: 80px;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(4, 107, 210, 0.1);
+      border: 1px solid rgba(4, 107, 210, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #046bd2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      color: #1a1a1a;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #046bd2 0%, #ff5d30 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    /* ACESSO RÁPIDO */
+    .quick-access {
+      padding: 5rem 2rem;
+      background: white;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+      color: #1a1a1a;
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: #666;
+      margin: 0;
+    }
+
+    /* CARDS GRID */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .access-card {
+      padding: 2.5rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fbfaf9 0%, white 100%);
+      border: 2px solid rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .access-card:hover {
+      transform: translateY(-12px);
+      border-color: #046bd2;
+      box-shadow: 0 24px 48px rgba(4, 107, 210, 0.15);
+      background: white;
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .card-number {
+      font-size: 0.85rem;
+      color: #999;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .access-card h3 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: #1a1a1a;
+      font-weight: 700;
+    }
+
+    .access-card p {
+      color: #666;
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .card-meta {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* FEATURES SECTION */
+    .features {
+      padding: 5rem 2rem;
+      background: #fbfaf9;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      padding: 2rem;
+      border-radius: 12px;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: #046bd2;
+      box-shadow: 0 20px 40px rgba(4, 107, 210, 0.1);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      margin: 0 0 0.75rem 0;
+      color: #1a1a1a;
+    }
+
+    .feature-card p {
+      color: #666;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* STATS SECTION */
+    .stats {
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #046bd2 0%, #045cb4 100%);
+      color: white;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .stat-item h4 {
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: 700;
+    }
+
+    .stat-item p {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a1a;
+      color: #999;
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin: 0 0 0.5rem 0;
+    }
+
+    /* ANIMAÇÕES */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        margin-top: 120px;
+        padding: 2rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .access-card h3 {
+        font-size: 1.2rem;
+      }
+
+      .card-icon {
+        font-size: 2.5rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+  <style>
+    :root {
+      --home-ink: #0f172a;
+      --home-blue: #046bd2;
+      --home-orange: #ff5d30;
+      --home-gold: #c9a96e;
+      --home-line: rgba(15, 23, 42, 0.08);
+      --home-surface: rgba(255, 255, 255, 0.84);
+    }
+
+    body.home-shell {
+      background:
+        radial-gradient(circle at top left, rgba(4, 107, 210, 0.15), transparent 22%),
+        radial-gradient(circle at top right, rgba(255, 93, 48, 0.10), transparent 22%),
+        linear-gradient(180deg, #f8fbff 0%, #f5efe4 100%);
+      color: var(--home-ink);
+      padding-left: 0;
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+    }
+
+     .home-side-nav {`r`n      display: none;
+      position: fixed;
+      top: 104px;
+      left: 22px;
+      width: 234px;
+      padding: 1rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--home-line);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 46px rgba(15, 23, 42, 0.10);
+      z-index: 30;
+    }
+
+    .home-side-nav h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; color: rgba(15,23,42,.45); margin-bottom: .9rem; }
+    .home-side-links { display:grid; gap:.55rem; }
+    .home-side-link { display:block; padding:.85rem .95rem; border-radius:16px; color:rgba(15,23,42,.76); background:rgba(15,23,42,.04); font-weight:600; transition:all .22s ease; }
+    .home-side-link:hover { background:linear-gradient(135deg, rgba(4,107,210,.12), rgba(255,93,48,.08)); color:var(--home-blue); transform:translateX(4px); }
+    .home-side-note { margin-top:1rem; padding:.95rem; border-radius:18px; background:linear-gradient(135deg, rgba(4,107,210,.08), rgba(255,93,48,.08)); color:rgba(15,23,42,.72); font-size:.92rem; line-height:1.65; }
+
+    .hero { min-height: auto; padding-top: 3rem; }
+    .hero-content { max-width: 1100px; }
+    .hero-panel {
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+      gap:1.5rem;
+      text-align:left;
+      align-items:stretch;
+    }
+    .hero-main, .hero-side, .access-card, .feature-card, .stat-item {
+      background: var(--home-surface);
+      border: 1px solid var(--home-line);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 46px rgba(15,23,42,.08);
+      border-radius: 26px;
+    }
+    .hero-main { padding:2.8rem; position:relative; overflow:hidden; }
+    .hero-main::after { content:""; position:absolute; right:-70px; bottom:-80px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle, rgba(255,93,48,.18), transparent 72%); }
+    .hero-badge { margin-bottom:1rem; font-weight:700; }
+    .hero-main h1 { font-size:clamp(2.7rem,4.6vw,4.8rem); line-height:.95; letter-spacing:-.05em; max-width:10ch; }
+    .hero-main h1 span { color:var(--home-blue); }
+    .hero-main .hero-subtitle { font-size:1.08rem; line-height:1.8; color:rgba(15,23,42,.72); max-width:56ch; }
+    .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem; }
+    .hero-actions a { display:inline-flex; align-items:center; justify-content:center; padding:.95rem 1.4rem; border-radius:14px; text-decoration:none; font-weight:700; transition:all .25s ease; }
+    .hero-actions .primary { background:linear-gradient(135deg, var(--home-blue), var(--home-orange)); color:white; box-shadow:0 18px 36px rgba(4,107,210,.22); }
+    .hero-actions .secondary { background:rgba(255,255,255,.74); color:var(--home-ink); border:1px solid rgba(15,23,42,.08); }
+    .hero-signals { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.9rem; margin-top:1.5rem; }
+    .hero-signal { padding:1rem; border-radius:18px; background:rgba(15,23,42,.04); border:1px solid rgba(15,23,42,.05); }
+    .hero-signal strong { display:block; font-size:1.5rem; margin-bottom:.2rem; }
+    .hero-signal span { color:rgba(15,23,42,.58); font-size:.9rem; }
+    .hero-side { padding:1.6rem; background:linear-gradient(160deg, rgba(4,107,210,.97), rgba(2,77,151,.98)); color:white; display:flex; flex-direction:column; gap:1rem; }
+    .hero-side h3 { color:white; font-size:1.45rem; }
+    .hero-side p { color:rgba(255,255,255,.84); line-height:1.7; }
+    .hero-side-card { padding:1rem 1.1rem; border-radius:18px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.14); }
+    .section-header { max-width:760px; }
+    .access-card:hover, .feature-card:hover, .stat-item:hover { transform:translateY(-6px); box-shadow:0 24px 42px rgba(4,107,210,.14); }
+    .quick-access, .features, .stats { background: transparent; border-top:none; }
+
+    @media (min-width: 1220px) {
+      body.home-shell { padding-left: 262px; }
+      nav { left:18px; right:18px; border-radius:20px; top:16px; }
+    }
+    @media (max-width: 1219px) {  .home-side-nav {`r`n      display: none; display:none; } }
+    @media (max-width: 980px) { .hero-panel, .hero-signals { grid-template-columns:1fr; text-align:left; } }
+  </style>
+
+  <style>
+    @media (min-width: 1220px) {
+      body.home-shell {
+        padding-left: 286px;
+      }
+
+       .home-side-nav {`r`n      display: none;
+        width: 248px;
+      }
+
+      .hero-content,
+      .section-header,
+      .cards-grid,
+      .features-grid,
+      .stats-grid {
+        max-width: none;
+      }
+
+      .hero {
+        padding: 3.5rem 2rem 2rem;
+      }
+
+      .quick-access,
+      .features,
+      .stats,
+      footer {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body class="home-shell">
+  <!-- NAVEGAÇÃO -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="https://umauma.com.br/wp-content/uploads/2024/09/Group-2.svg" alt="EventOS" style="height: 32px;">
+      <span>EventOS</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="01-Pitch/EventOS-Pitch.html">📊 Pitch</a></li>
+      <li><a href="02-Analise-Requisitos/Analise-Requisitos.html">📋 Requisitos</a></li>
+      <li><a href="03-Demo-Produto/EventOS-Demo.html">🎯 Demo</a></li>
+      <li><a href="04-Diagnostico-Operacional/Diagnostico-Operacional.html">🧭 Diagnóstico</a></li>
+      <li><a href="#features">Módulos</a></li>
+    </ul>
+    <a href="01-Pitch/EventOS-Pitch.html" class="nav-cta">Comece Aqui →</a>
+  </nav>
+  <aside class="home-side-nav" aria-label="Navegação lateral da jornada">
+    <h4>Jornada EventOS</h4>
+    <div class="home-side-links">
+      <a class="home-side-link" href="01-Pitch/EventOS-Pitch.html">Pitch estratégico</a>
+      <a class="home-side-link" href="02-Analise-Requisitos/Analise-Requisitos.html">Requisitos e fases</a>
+      <a class="home-side-link" href="03-Demo-Produto/EventOS-Demo.html">Demo interativa</a>
+      <a class="home-side-link" href="04-Diagnostico-Operacional/Diagnostico-Operacional.html">Diagnóstico aplicado</a>
+      <a class="home-side-link" href="05-Entregaveis-WGEasy/Entrega-WGEasy.html">O que podemos entregar</a>
+      <a class="home-side-link" href="#features">Módulos</a>
+    </div>
+    <div class="home-side-note">
+      Menu lateral para apresentar o projeto como jornada executiva, não apenas como coleção de páginas isoladas.
+    </div>
+  </aside>
+
+  <!-- HERO -->
+    <section class="hero">
+    <div class="hero-content">
+      <div class="hero-panel">
+        <div class="hero-main">
+          <div class="hero-badge">✨ Plataforma SaaS para Eventos</div>
+          <h1>Gestão integrada para <span>14 agências</span> com leitura executiva real.</h1>
+          <p class="hero-subtitle">
+            EventOS reposiciona a operação do Grupo UMAUMA: menos manutenção manual, mais previsibilidade, mais margem visível e uma camada única para projetos, equipe, financeiro e automações.
+          </p>
+          <div class="hero-actions">
+            <a href="01-Pitch/EventOS-Pitch.html" class="primary">Começar pelo Pitch</a>
+            <a href="04-Diagnostico-Operacional/Diagnostico-Operacional.html" class="secondary">Ver Diagnóstico</a>
+            <a href="05-Entregaveis-WGEasy/Entrega-WGEasy.html" class="secondary">O que podemos entregar</a>
+          </div>
+          <div class="hero-signals">
+            <div class="hero-signal"><strong>14</strong><span>agências conectadas em uma narrativa única</span></div>
+            <div class="hero-signal"><strong>36</strong><span>requisitos já organizados por fase e prioridade</span></div>
+            <div class="hero-signal"><strong>4</strong><span>camadas de apresentação para vender visão e produto</span></div>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <div>
+            <h3>O que esta entrega faz</h3>
+            <p>Transforma a conversa com o cliente em uma experiência mais clara, visual e convincente, partindo do problema real até a solução aplicada.</p>
+          </div>
+          <div class="hero-side-card">
+            <p>Pitch para tese estratégica e posicionamento.</p>
+          </div>
+          <div class="hero-side-card">
+            <p>Requisitos para clareza de escopo, fases e investimento.</p>
+          </div>
+          <div class="hero-side-card">
+            <p>Demo e diagnóstico para provar aderência e valor percebido.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACESSO RÁPIDO - SEQUÊNCIA LÓGICA -->
+  <section id="acesso" class="quick-access">
+    <div class="section-header">
+      <h2>📍 Jornada do Projeto</h2>
+      <p>Siga a sequência: Pitch → Análise → Demo → Diagnóstico aplicado → Entregáveis</p>
+    </div>
+
+    <div class="cards-grid">
+      <!-- CARD 1: PITCH -->
+      <a href="01-Pitch/EventOS-Pitch.html" class="access-card">
+        <div>
+          <div class="card-number">ETAPA 1</div>
+          <div class="card-icon">📊</div>
+          <h3>Pitch Completo</h3>
+          <p>
+            Entenda o mercado, os desafios do Grupo UMAUMA, a solução proposta e o roadmap de desenvolvimento em 7 seções estruturadas.
+          </p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-item">✨ 7 seções</div>
+          <div class="meta-item">🎨 14 agências</div>
+          <div class="meta-item">📈 Mercado</div>
+        </div>
+      </a>
+
+      <!-- CARD 2: ANÁLISE DE REQUISITOS -->
+      <a href="02-Analise-Requisitos/Analise-Requisitos.html" class="access-card">
+        <div>
+          <div class="card-number">ETAPA 2</div>
+          <div class="card-icon">📋</div>
+          <h3>Análise de Requisitos</h3>
+          <p>
+            36 funcionalidades mapeadas por módulo e fase. Filtro inteligente para prioridade, fase de desenvolvimento e categoria.
+          </p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-item">📦 36 requisitos</div>
+          <div class="meta-item">🎯 3 fases</div>
+          <div class="meta-item">🔍 Filtros</div>
+        </div>
+      </a>
+
+      <!-- CARD 3: DEMO INTERATIVA -->
+      <a href="03-Demo-Produto/EventOS-Demo.html" class="access-card">
+        <div>
+          <div class="card-number">ETAPA 3</div>
+          <div class="card-icon">🎯</div>
+          <h3>Demo Interativa</h3>
+          <p>
+            Explore 7 abas funcionais: Dashboard, Projetos, Gantt, Kanban, Tarefas, Automações e Equipe com dados reais de UMAUMA.
+          </p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-item">🎬 7 abas</div>
+          <div class="meta-item">⚙️ Automações</div>
+          <div class="meta-item">👥 12 profissionais</div>
+        </div>
+      </a>
+
+      <!-- CARD 4: DIAGNÓSTICO -->
+      <a href="04-Diagnostico-Operacional/Diagnostico-Operacional.html" class="access-card">
+        <div>
+          <div class="card-number">ETAPA 4</div>
+          <div class="card-icon">🧭</div>
+          <h3>Diagnóstico Operacional</h3>
+          <p>
+            Leitura visual aplicada do sistema atual do Grupo UMAUMA com dores observadas, fluxo provável e prioridades de automação para o EventOS.
+          </p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-item">🎥 2 vídeos</div>
+          <div class="meta-item">🖼️ 1 imagem</div>
+          <div class="meta-item">⚡ Prioridades</div>
+        </div>
+      </a>
+      <!-- CARD 5: ENTREGÁVEIS -->
+      <a href="05-Entregaveis-WGEasy/Entrega-WGEasy.html" class="access-card">
+        <div>
+          <div class="card-number">ETAPA 5</div>
+          <div class="card-icon">🧩</div>
+          <h3>O Que Podemos Entregar</h3>
+          <p>
+            Página comercial para apresentar blocos de entrega, módulos, implantação e proposta de valor do EventOS.
+          </p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-item">🎯 Entregáveis</div>
+          <div class="meta-item">🧱 Módulos</div>
+          <div class="meta-item">🚀 Implantação</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- MÓDULOS PRINCIPAIS -->
+  <section id="features" class="features">
+    <div class="section-header">
+      <h2>Módulos Integrados</h2>
+      <p>Seis pilares da plataforma EventOS</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Dashboard Executivo</h3>
+        <p>Visão unificada com KPIs, eventos ativos, receita e métricas financeiras em tempo real.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <h3>Gestão de Projetos</h3>
+        <p>Kanban, Timeline Gantt e workflow visual para controlar cada evento passo a passo.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Alocação de Equipe</h3>
+        <p>Gerencie recursos, skills, disponibilidade e utilização de todos os profissionais.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>Financeiro Integrado</h3>
+        <p>Receitas, custos, margens e orçamentos centralizados com análise de lucratividade.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚙️</div>
+        <h3>Automações Inteligentes</h3>
+        <p>6 workflows automáticos com gatilhos e integrações (Google, Slack, Zapier, etc).</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>BI & Relatórios</h3>
+        <p>Análises avançadas, tendências, insights de dados e relatórios executivos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h4>14</h4>
+        <p>Agências Integradas</p>
+      </div>
+      <div class="stat-item">
+        <h4>36</h4>
+        <p>Requisitos Mapeados</p>
+      </div>
+      <div class="stat-item">
+        <h4>7</h4>
+        <p>Telas Funcionais</p>
+      </div>
+      <div class="stat-item">
+        <h4>6</h4>
+        <p>Workflows Automáticos</p>
+      </div>
+      <div class="stat-item">
+        <h4>1</h4>
+        <p>Diagnóstico Aplicado</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>EventOS</strong> — Confidencial — WG build.tech × Grupo UMAUMA — Março 2026</p>
+    <p>Plataforma de gestão integrada para ecossistemas de eventos</p>
+    <p style="margin-top: 1rem; opacity: 0.7;">Comece pelo Pitch → Análise de Requisitos → Demo Interativa → Diagnóstico Operacional → O Que Podemos Entregar</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+

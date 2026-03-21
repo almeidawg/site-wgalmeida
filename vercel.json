@@ -2,6 +2,11 @@
   "version": 2,
   "redirects": [
     {
+      "source": "/buildtech/clientes/:path*",
+      "destination": "https://buildtech.wgalmeida.com.br/clientes/:path*",
+      "permanent": false
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
@@ -184,8 +189,36 @@
       "destination": "https://restaurante-lyart.vercel.app/:path*"
     },
     {
+      "source": "/buildtech",
+      "destination": "https://buildtech.wgalmeida.com.br/"
+    },
+    {
       "source": "/buildtech/:path*",
-      "destination": "https://wgalmeida-buildtech.vercel.app/:path*"
+      "destination": "https://buildtech.wgalmeida.com.br/:path*"
+    },
+    {
+      "source": "/wnomas",
+      "destination": "https://unomas-vinho.vercel.app/"
+    },
+    {
+      "source": "/wnomas/:path*",
+      "destination": "https://unomas-vinho.vercel.app/:path*"
+    },
+    {
+      "source": "/wnomasvinho",
+      "destination": "https://unomas-vinho.vercel.app/"
+    },
+    {
+      "source": "/wnomasvinho/:path*",
+      "destination": "https://unomas-vinho.vercel.app/:path*"
+    },
+    {
+      "source": "/easylocker",
+      "destination": "https://wg-easylocker.vercel.app/"
+    },
+    {
+      "source": "/easylocker/:path*",
+      "destination": "https://wg-easylocker.vercel.app/:path*"
     },
     {
       "source": "/api/(.*)",

@@ -37,3 +37,13 @@
 ---
 
 Dúvidas? Consulte este documento antes de cada deploy.
+## 7. BuildTech clientes no monodomain
+- O subdominio oficial de aprovacao e `https://buildtech.wgalmeida.com.br/clientes/<slug>/`.
+- Se tambem for necessario atender `https://wgalmeida.com.br/buildtech/clientes/<slug>/`, manter em `vercel.json` um redirect explicito de `/buildtech/clientes/:path*` para `https://buildtech.wgalmeida.com.br/clientes/:path*`.
+- Nao confiar apenas no rewrite generico `/buildtech/:path*`.
+- Sempre que atualizar essa regra, rodar novo deploy de producao do projeto `grupo-wg-almeida`.
+- Checklist minimo para clientes BuildTech:
+  - publicar com `publish-approval.mjs`
+  - deploy de producao em `wg-WTB-build-tech/files`
+  - validar `buildtech.wgalmeida.com.br/clientes/<slug>`
+  - validar `wgalmeida.com.br/buildtech/clientes/<slug>`
