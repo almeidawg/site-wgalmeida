@@ -1,393 +1,397 @@
-import React, { useEffect, useState } from 'react';
+﻿// SanfonaHero v3 — WG Almeida — 24/03/2026
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+
+const DESKTOP_BP = 900;
+const TX = '0 1px 4px rgba(0,0,0,0.9),0 4px 16px rgba(0,0,0,0.7),0 12px 40px rgba(0,0,0,0.5)';
+
+/*
+  Imagens Unsplash — IDs fornecidos por William Almeida:
+  Arquitetura : 3QzMBrvCeyQ  (person writing on white paper)
+  Engenharia  : K67sBVqLLuw  (grayscale low angle building)
+  Marcenaria  : vqMQN9zImG4  (modern kitchen bar stools)
+  Build Tech  : xuTJZ7uD7PI  (blue background lines and dots)
+  EasyLocker  : 8fHan-6KDm0  (person holding white and black box)
+  Wno Mas     : HzjLEv5VwJw  (two glasses wine bread on table)
+*/
+const U = (id) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=2400&q=90`;
 
 const COMPANIES = [
   {
-    id: 'arquitetura',
-    name: 'Arquitetura',
-    shortName: 'ARQ',
-    tagline: 'Projetos residenciais e corporativos de alto padrão',
-    description: 'Ambientes autorais, proporção elegante e soluções personalizadas para cada cliente.',
-    color: '#5E9B94',
-    path: '/arquitetura',
-    bgImage: '/images/imagens/ARQ-VILANOVACONCEICAO (3).webp',
-    bgPosition: 'center center',
-    highlights: ['Residencial', 'Interiores', 'Corporativo'],
+    id: 'arquitetura', index: '01', name: 'Arquitetura',
+    color: '#5E9B94', path: '/arquitetura',
+    tagline: 'Projetos que definem\ncomo se vive.',
+    bullets: [
+      'Residencial e corporativo de alto padrão',
+      'Interiores, volumetria e paisagismo',
+      'Do projeto ao acabamento com rigor',
+    ],
     cta: 'Conhecer arquitetura',
+    img: U('photo-3QzMBrvCeyQ'),
+    imgPos: 'center center',
   },
   {
-    id: 'engenharia',
-    name: 'Engenharia',
-    shortName: 'ENG',
-    tagline: 'Estrutura, execução e gestão completa de obra',
-    description: 'Coordenação técnica, cronograma e obra turn key com rigor de ponta a ponta.',
-    color: '#2B4580',
-    path: '/engenharia',
-    bgImage: '/images/imagens/ENG-COND-POTADOSOL-MARINQUE (12).webp',
-    bgPosition: 'center center',
-    highlights: ['Estrutural', 'Obra', 'Turn Key'],
+    id: 'engenharia', index: '02', name: 'Engenharia',
+    color: '#2B4580', path: '/engenharia',
+    tagline: 'Estrutura sólida,\nentrega precisa.',
+    bullets: [
+      'Cálculo estrutural e coordenação de obra',
+      'Cronograma físico-financeiro rigoroso',
+      'Obra turn key com gestão integrada',
+    ],
     cta: 'Explorar engenharia',
+    img: U('photo-K67sBVqLLuw'),
+    imgPos: 'center 40%',
   },
   {
-    id: 'marcenaria',
-    name: 'Marcenaria',
-    shortName: 'MARC',
-    tagline: 'Mobiliário planejado com acabamento premium',
-    description: 'Marcenaria sob medida com desenho preciso, materiais nobres e execução refinada.',
-    color: '#8B5E3C',
-    path: '/marcenaria',
-    bgImage: '/images/imagens/STUDIO-BROOKLIN (4).webp',
-    bgPosition: 'center center',
-    highlights: ['Sob Medida', 'Detalhe', 'Acabamento'],
+    id: 'marcenaria', index: '03', name: 'Marcenaria',
+    color: '#8B5E3C', path: '/marcenaria',
+    tagline: 'Cada móvel nasce\npara aquele espaço.',
+    bullets: [
+      'Mobiliário sob medida com design autoral',
+      'Materiais nobres, acabamento premium',
+      'Do projeto ao encaixe perfeito',
+    ],
     cta: 'Ver marcenaria',
+    img: U('photo-vqMQN9zImG4'),
+    imgPos: 'center center',
   },
   {
-    id: 'buildtech',
-    name: 'WG Build Tech',
-    shortName: 'TECH',
-    tagline: 'IA, automação e sistemas para operação e negócios',
-    description: 'Produtos digitais, fluxos inteligentes e tecnologia aplicada à construção e serviços.',
-    color: '#046BD2',
-    path: '/buildtech',
-    bgImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2200&q=90',
-    bgPosition: 'center center',
-    highlights: ['IA', 'Automação', 'Sistemas'],
+    id: 'buildtech', index: '04', name: 'WG Build Tech',
+    color: '#046BD2', path: '/buildtech',
+    tagline: 'Tecnologia que\ntransforma operações.',
+    bullets: [
+      'Sistemas SaaS, IA e automação',
+      'Produtos digitais para construção',
+      'Agentes inteligentes e fluxos conectados',
+    ],
     cta: 'Entrar em Build Tech',
+    img: U('photo-xuTJZ7uD7PI'),
+    imgPos: 'center center',
   },
   {
-    id: 'easylocker',
-    name: 'WG EasyLocker',
-    shortName: 'LOCK',
-    tagline: 'Armários inteligentes para condomínios e empresas',
-    description: 'Controle por aplicativo, rastreio em tempo real e operação física com camada digital.',
-    color: '#F25C26',
-    path: '/easylocker',
-    bgImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=2200&q=90',
-    bgPosition: 'center center',
-    highlights: ['IoT', 'App', 'Segurança'],
+    id: 'easylocker', index: '05', name: 'WG EasyLocker',
+    color: '#F25C26', path: '/easylocker',
+    tagline: 'Armários inteligentes\npara o mundo físico.',
+    bullets: [
+      'Controle por app, rastreio em tempo real',
+      'Para condomínios, empresas e eventos',
+      'Operação física com camada digital',
+    ],
     cta: 'Conhecer EasyLocker',
+    img: U('photo-8fHan-6KDm0'),
+    imgPos: 'center center',
   },
   {
-    id: 'wnomas',
-    name: 'Wno Mas Vinhos & Cia',
-    shortName: 'VINHOS',
-    tagline: 'Curadoria, clube e experiências em torno do vinho',
-    description: 'Seleção premium, experiência sensorial e identidade forte para um público de curadoria.',
-    color: '#8B1A2E',
-    path: '/wnomasvinho',
-    bgImage: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=2200&q=90',
-    bgPosition: 'center center',
-    highlights: ['Curadoria', 'Clube', 'Experiência'],
+    id: 'wnomas', index: '06', name: 'Wno Mas Vinhos',
+    color: '#8B1A2E', path: '/wnomasvinho',
+    tagline: 'Curadoria, clube\ne experiência sensorial.',
+    bullets: [
+      'Seleção premium de vinhos autorais',
+      'Clube de assinatura e experiências',
+      'Identidade forte para um público exigente',
+    ],
     cta: 'Conhecer Wno Mas',
+    img: U('photo-HzjLEv5VwJw'),
+    imgPos: 'center center',
   },
 ];
 
-const CONTENT_SHADOW = '0 2px 10px rgba(0,0,0,0.88), 0 10px 28px rgba(0,0,0,0.72), 0 18px 60px rgba(0,0,0,0.55)';
-const MOBILE_BP = 768;
+const TX_HEAVY = '0 1px 4px rgba(0,0,0,0.9),0 4px 16px rgba(0,0,0,0.7),0 12px 40px rgba(0,0,0,0.5)';
 
 export default function SanfonaHero() {
-  const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [tapIndex, setTapIndex] = useState(null);
+  const navigate   = useNavigate();
+  const sectionRef = useRef(null);
+  const [desktop, setDesktop] = useState(() => window.innerWidth >= DESKTOP_BP);
+  const [active,  setActive]  = useState(0);
+  const [tapped,  setTapped]  = useState(false);
 
   useEffect(() => {
-    const onResize = () => {
-      const mobile = window.innerWidth < MOBILE_BP;
-      setIsMobile(mobile);
+    const fn = () => setDesktop(window.innerWidth >= DESKTOP_BP);
+    window.addEventListener('resize', fn);
+    return () => window.removeEventListener('resize', fn);
+  }, []);
 
-      if (mobile) {
-        setActiveIndex((prev) => (prev == null ? 0 : prev));
-      } else if (activeIndex == null) {
-        setActiveIndex(0);
+  useEffect(() => {
+    if (desktop) return;
+    const fn = (e) => {
+      if (!sectionRef.current?.contains(e.target)) {
+        setActive(0);
+        setTapped(false);
       }
     };
+    document.addEventListener('pointerdown', fn);
+    return () => document.removeEventListener('pointerdown', fn);
+  }, [desktop]);
 
-    onResize();
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, [activeIndex]);
+  const go    = useCallback((path) => navigate(path), [navigate]);
+  const onCTA = (e, path) => { e.stopPropagation(); go(path); };
 
-  const handleNavigate = (path) => navigate(path);
+  const onEnter = (i) => { if (desktop) setActive(i); };
+  const onLeave = ()  => { if (desktop) setActive(0); };
 
-  const handleInteraction = (index, path) => {
-    if (isMobile) {
-      if (tapIndex === index && activeIndex === index) {
-        handleNavigate(path);
-        return;
-      }
-      setActiveIndex(index);
-      setTapIndex(index);
-      return;
-    }
-
-    handleNavigate(path);
+  const onClick = (i, path) => {
+    if (desktop) { go(path); return; }
+    if (active !== i) { setActive(i); setTapped(true); }
   };
+
+  const onKey = (e, i, path) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (desktop) { go(path); return; }
+      if (active === i && tapped) go(path);
+      else { setActive(i); setTapped(true); }
+    }
+    if (e.key === 'Escape') { setActive(0); setTapped(false); }
+  };
+
+  const fActive   = desktop ? 3.8 : 4.2;
+  const fInactive = desktop ? 0.26 : 1;
+  const TR = 'flex 540ms cubic-bezier(0.22,1,0.36,1)';
 
   return (
     <section
+      ref={sectionRef}
       aria-label="Empresas do Grupo WG Almeida"
-      onMouseLeave={() => {
-        if (!isMobile) {
-          setActiveIndex(0);
-        }
-      }}
+      onMouseLeave={onLeave}
       style={{
         display: 'flex',
-        flexDirection: isMobile ? 'column' : 'row',
+        flexDirection: desktop ? 'row' : 'column',
         width: '100%',
-        height: '100vh',
+        height: desktop ? '100vh' : 'calc(100svh - 56px)',
         overflow: 'hidden',
-        background: '#050505',
+        background: '#060606',
+        touchAction: 'pan-y',
       }}
     >
-      {COMPANIES.map((company, index) => {
-        const isActive = activeIndex === index;
+      {COMPANIES.map((c, i) => {
+        const isActive = active === i;
 
         return (
           <article
-            key={company.id}
+            key={c.id}
             role="button"
             tabIndex={0}
             aria-expanded={isActive}
-            onMouseEnter={() => {
-              if (!isMobile) {
-                setActiveIndex(index);
-              }
-            }}
-            onClick={() => handleInteraction(index, company.path)}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                handleInteraction(index, company.path);
-              }
-              if (event.key === 'Escape') {
-                setActiveIndex(0);
-              }
-            }}
+            aria-label={`${c.name} — ${c.tagline.replace('\n', ' ')}`}
+            onMouseEnter={() => onEnter(i)}
+            onClick={() => onClick(i, c.path)}
+            onKeyDown={(e) => onKey(e, i, c.path)}
             style={{
               position: 'relative',
-              flex: isMobile ? (isActive ? 4.2 : 1) : (isActive ? 3.6 : 0.28),
-              minWidth: 0,
+              flex: isActive ? fActive : fInactive,
+              minWidth: 0, minHeight: 0,
               overflow: 'hidden',
               cursor: 'pointer',
-              transition: 'flex 560ms cubic-bezier(0.22, 1, 0.36, 1)',
-              borderRight: !isMobile && index < COMPANIES.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
-              borderBottom: isMobile && index < COMPANIES.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+              transition: TR,
               outline: 'none',
-              background: '#0b0b0b',
+              background: '#0a0a0a',
+              WebkitTapHighlightColor: 'transparent',
+              borderRight:  desktop && i < COMPANIES.length - 1
+                ? '1px solid rgba(255,255,255,0.05)' : 'none',
+              borderBottom: !desktop && i < COMPANIES.length - 1
+                ? '1px solid rgba(255,255,255,0.05)' : 'none',
             }}
           >
-            <div
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                inset: 0,
-                backgroundImage: `url("${company.bgImage}")`,
-                backgroundSize: 'cover',
-                backgroundPosition: company.bgPosition,
-                transform: isActive ? 'scale(1)' : 'scale(1.05)',
-                transition: 'transform 680ms cubic-bezier(0.22, 1, 0.36, 1)',
-              }}
-            />
+            {/* Imagem de fundo */}
+            <div style={{
+              position: 'absolute', inset: 0,
+              backgroundImage: `url("${c.img}")`,
+              backgroundSize: 'cover',
+              backgroundPosition: c.imgPos,
+              transform: isActive ? 'scale(1)' : 'scale(1.06)',
+              transition: 'transform 700ms cubic-bezier(0.22,1,0.36,1)',
+            }} />
 
-            <div
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.26) 58%, rgba(0,0,0,0.72) 100%)',
-              }}
-            />
+            {/* Máscara gradiente igual ao MVP */}
+            <div style={{
+              position: 'absolute', inset: 0,
+              background: isActive
+                ? 'linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.50) 42%, rgba(0,0,0,0.10) 100%)'
+                : 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.12) 100%)',
+              transition: 'background 400ms ease',
+            }} />
 
-            <div
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                bottom: 0,
-                width: 4,
-                background: company.color,
-                zIndex: 2,
-              }}
-            />
+            {/* Traço de cor — lateral desktop / superior mobile */}
+            <div style={{
+              position: 'absolute',
+              ...(desktop
+                ? { left: 0, top: 0, bottom: 0, width: 3 }
+                : { top: 0, left: 0, right: 0, height: 3 }),
+              background: c.color,
+              opacity: isActive ? 1 : 0.5,
+              transition: 'opacity 300ms ease',
+              zIndex: 2,
+            }} />
 
-            {!isActive && !isMobile ? (
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  zIndex: 3,
-                  display: 'flex',
-                  alignItems: 'flex-end',
-                  justifyContent: 'center',
-                  paddingBottom: 26,
-                }}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 12,
-                    transform: 'rotate(-180deg)',
-                    writingMode: 'vertical-rl',
-                    color: '#fff',
-                    textShadow: CONTENT_SHADOW,
-                    userSelect: 'none',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: 11,
-                      fontWeight: 800,
-                      letterSpacing: '0.22em',
-                      textTransform: 'uppercase',
-                      color: company.color,
-                    }}
-                  >
-                    {company.shortName}
-                  </span>
-                  <strong
-                    className="font-playfair"
-                    style={{
-                      fontSize: 'clamp(1.15rem, 1.55vw, 1.45rem)',
-                      lineHeight: 1,
-                      letterSpacing: '-0.03em',
-                    }}
-                  >
-                    {company.name}
-                  </strong>
+            {/* Linhas diagonais decorativas — efeito trama */}
+            <svg aria-hidden="true" style={{
+              position: 'absolute', inset: 0,
+              width: '100%', height: '100%',
+              opacity: isActive ? 0.07 : 0.03,
+              transition: 'opacity 400ms ease',
+              pointerEvents: 'none', zIndex: 1,
+            }}>
+              {[0,1,2,3,4,5,6,7,8,9,10,11].map((k) => (
+                <line key={k}
+                  x1={`${k * 9}%`} y1="0%"
+                  x2={`${k * 9 - 28}%`} y2="100%"
+                  stroke="white" strokeWidth="0.5"
+                />
+              ))}
+            </svg>
+
+            {/* Label vertical — desktop, faixa fechada */}
+            {!isActive && desktop && (
+              <div style={{
+                position: 'absolute', inset: 0, zIndex: 3,
+                display: 'flex', alignItems: 'flex-end',
+                justifyContent: 'center', paddingBottom: 28,
+              }}>
+                <div style={{
+                  display: 'flex', flexDirection: 'column',
+                  alignItems: 'center', gap: 10,
+                  transform: 'rotate(-180deg)',
+                  writingMode: 'vertical-rl',
+                  userSelect: 'none',
+                }}>
+                  <span style={{
+                    fontSize: 10, fontWeight: 800,
+                    letterSpacing: '0.26em', textTransform: 'uppercase',
+                    color: c.color, textShadow: TX,
+                  }}>{c.index}</span>
+                  <strong style={{
+                    fontFamily: '"Playfair Display",Georgia,serif',
+                    fontSize: 'clamp(1rem,1.3vw,1.3rem)',
+                    fontWeight: 700, letterSpacing: '-0.02em',
+                    color: '#fff', textShadow: TX, lineHeight: 1,
+                  }}>{c.name}</strong>
                 </div>
               </div>
-            ) : null}
+            )}
 
-            <div
-              style={{
-                position: 'absolute',
-                inset: 0,
-                zIndex: 4,
-                display: 'flex',
-                alignItems: 'flex-end',
-                justifyContent: 'flex-start',
-                padding: isMobile ? '20px 20px 22px 22px' : '34px 30px 30px 30px',
-              }}
-            >
-              <div
-                style={{
-                  opacity: isActive || isMobile ? 1 : 0,
-                  transform: isActive || isMobile ? 'translateY(0)' : 'translateY(18px)',
-                  transition: 'opacity 260ms ease, transform 420ms ease',
-                  transitionDelay: isActive ? '120ms' : '0ms',
-                  pointerEvents: isActive || isMobile ? 'auto' : 'none',
-                  maxWidth: isMobile ? '100%' : 420,
-                }}
-              >
-                <span
-                  style={{
-                    display: 'inline-block',
-                    marginBottom: 10,
-                    fontSize: 11,
-                    fontWeight: 800,
-                    letterSpacing: '0.2em',
-                    textTransform: 'uppercase',
-                    color: company.color,
-                    textShadow: CONTENT_SHADOW,
-                  }}
-                >
-                  {company.shortName}
-                </span>
+            {/* Label horizontal — mobile/tablet, faixa fechada */}
+            {!isActive && !desktop && (
+              <div style={{
+                position: 'absolute', inset: 0, zIndex: 3,
+                display: 'flex', alignItems: 'center',
+                paddingLeft: 20, gap: 10,
+              }}>
+                <span style={{
+                  fontSize: 11, fontWeight: 800,
+                  letterSpacing: '0.22em', textTransform: 'uppercase',
+                  color: c.color, textShadow: TX,
+                }}>{c.index}</span>
+                <strong style={{
+                  fontFamily: '"Playfair Display",Georgia,serif',
+                  fontSize: 'clamp(1rem,4vw,1.3rem)',
+                  fontWeight: 700, color: '#fff',
+                  textShadow: TX, letterSpacing: '-0.02em',
+                }}>{c.name}</strong>
+              </div>
+            )}
 
-                <h2
-                  className="font-playfair"
-                  style={{
-                    margin: 0,
-                    color: '#fff',
-                    fontSize: isMobile ? '1.55rem' : 'clamp(2rem, 2.7vw, 3.25rem)',
-                    lineHeight: 0.94,
-                    letterSpacing: '-0.045em',
-                    textShadow: CONTENT_SHADOW,
-                  }}
-                >
-                  {company.name}
-                </h2>
+            {/* Conteúdo expandido */}
+            <div style={{
+              position: 'absolute', inset: 0, zIndex: 4,
+              display: 'flex', alignItems: 'flex-end',
+              padding: desktop ? '40px 36px 36px' : '16px 22px 24px',
+              opacity: isActive ? 1 : 0,
+              transform: isActive ? 'translateY(0)' : 'translateY(16px)',
+              transition: 'opacity 220ms ease, transform 360ms ease',
+              transitionDelay: isActive ? '90ms' : '0ms',
+              pointerEvents: isActive ? 'auto' : 'none',
+            }}>
+              <div style={{ maxWidth: desktop ? 400 : '100%' }}>
 
-                <p
-                  style={{
-                    margin: '10px 0 0',
-                    color: '#fff',
-                    fontSize: isMobile ? '0.96rem' : '1rem',
-                    lineHeight: 1.5,
-                    textShadow: CONTENT_SHADOW,
-                    maxWidth: 420,
-                  }}
-                >
-                  {company.tagline}
-                </p>
-
-                <p
-                  style={{
-                    margin: '14px 0 0',
-                    color: 'rgba(255,255,255,0.96)',
-                    fontSize: 15,
-                    lineHeight: 1.65,
-                    textShadow: CONTENT_SHADOW,
-                    maxWidth: 460,
-                  }}
-                >
-                  {company.description}
-                </p>
-
-                <div
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: 8,
-                    marginTop: 18,
-                  }}
-                >
-                  {company.highlights.map((item) => (
-                    <span
-                      key={item}
-                      style={{
-                        padding: '6px 12px',
-                        borderRadius: 999,
-                        background: company.color,
-                        color: '#fff',
-                        fontSize: 11,
-                        fontWeight: 800,
-                        letterSpacing: '0.08em',
-                        textTransform: 'uppercase',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.22)',
-                      }}
-                    >
-                      {item}
-                    </span>
-                  ))}
+                {/* Número grande com linha — exato do MVP */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
+                  <span style={{
+                    fontFamily: '"Playfair Display",Georgia,serif',
+                    fontSize: desktop ? 'clamp(3rem,4vw,5.5rem)' : '2.4rem',
+                    fontWeight: 800, fontStyle: 'italic',
+                    color: c.color, lineHeight: 1,
+                    letterSpacing: '-0.06em', textShadow: TX,
+                  }}>{c.index}</span>
+                  <div style={{ width: 44, height: 1, background: c.color, opacity: 0.7 }} />
+                  <span style={{
+                    fontSize: 11, fontWeight: 800,
+                    letterSpacing: '0.2em', textTransform: 'uppercase',
+                    color: 'rgba(255,255,255,0.55)', textShadow: TX,
+                  }}>{c.name}</span>
                 </div>
 
-                <span
+                {/* Tagline em itálico serif — igual ao MVP */}
+                <h2 style={{
+                  margin: 0,
+                  fontFamily: '"Playfair Display",Georgia,serif',
+                  fontSize: desktop
+                    ? 'clamp(1.9rem,2.5vw,3.2rem)'
+                    : 'clamp(1.45rem,5vw,2rem)',
+                  fontWeight: 700,
+                  fontStyle: 'italic',
+                  lineHeight: 1.08,
+                  letterSpacing: '-0.045em',
+                  color: '#fff',
+                  textShadow: TX,
+                  whiteSpace: 'pre-line',
+                }}>{c.tagline}</h2>
+
+                {/* Bullets com ponto colorido — igual ao MVP */}
+                <ul style={{
+                  margin: '16px 0 0', padding: 0, listStyle: 'none',
+                  display: 'flex', flexDirection: 'column', gap: 8,
+                }}>
+                  {c.bullets.map((b) => (
+                    <li key={b} style={{
+                      display: 'flex', alignItems: 'flex-start', gap: 9,
+                      color: 'rgba(255,255,255,0.85)',
+                      fontSize: desktop ? 14 : 13,
+                      lineHeight: 1.5,
+                      textShadow: '0 1px 6px rgba(0,0,0,0.8)',
+                    }}>
+                      <span style={{
+                        width: 5, height: 5, borderRadius: '50%',
+                        background: c.color, flexShrink: 0, marginTop: 5,
+                      }} />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA Button branco */}
+                <button
+                  onClick={(e) => onCTA(e, c.path)}
                   style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 10,
+                    display: 'inline-flex', alignItems: 'center', gap: 9,
                     marginTop: 22,
-                    padding: '12px 18px',
+                    padding: desktop ? '12px 22px' : '10px 18px',
                     borderRadius: 999,
-                    background: '#fff',
-                    color: '#080808',
-                    fontSize: 12,
-                    fontWeight: 800,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                    boxShadow: '0 18px 48px rgba(0,0,0,0.28)',
+                    background: '#fff', color: '#080808',
+                    fontSize: 11, fontWeight: 800,
+                    letterSpacing: '0.1em', textTransform: 'uppercase',
+                    border: 'none', cursor: 'pointer',
+                    boxShadow: '0 12px 40px rgba(0,0,0,0.32)',
+                    transition: 'transform .15s ease, box-shadow .15s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.04)';
+                    e.currentTarget.style.boxShadow = '0 18px 52px rgba(0,0,0,0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.32)';
                   }}
                 >
-                  {company.cta}
-                  <ArrowRight size={14} />
-                </span>
+                  {c.cta}
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <path d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+                      stroke="#080808" strokeWidth="1.8"
+                      strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+
               </div>
             </div>
           </article>
