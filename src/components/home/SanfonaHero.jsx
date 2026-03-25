@@ -96,7 +96,7 @@ export default function SanfonaHero() {
   const navigate   = useNavigate();
   const sectionRef = useRef(null);
   const [desktop, setDesktop] = useState(() => window.innerWidth >= DESKTOP_BP);
-  const [active,  setActive]  = useState(0);
+  const [active,  setActive]  = useState(-1);
   const [tapped,  setTapped]  = useState(false);
 
   useEffect(() => {
@@ -121,7 +121,7 @@ export default function SanfonaHero() {
   const onCTA = (e, path) => { e.stopPropagation(); go(path); };
 
   const onEnter = (i) => { if (desktop) setActive(i); };
-  const onLeave = ()  => { if (desktop) setActive(0); };
+  const onLeave = ()  => { if (desktop) { setActive(-1); setTapped(false); } };
 
   const onClick = (i, path) => {
     if (desktop) { go(path); return; }
@@ -138,8 +138,9 @@ export default function SanfonaHero() {
     if (e.key === 'Escape') { setActive(0); setTapped(false); }
   };
 
-  const fActive   = desktop ? 3.8 : 4.2;
-  const fInactive = desktop ? 0.26 : 1;
+  const fActive   = desktop ? 3.6 : 4.2;
+  const fInactive = desktop ? 0.28 : 1;
+  const hasActive = active >= 0;
   const TR = 'flex 540ms cubic-bezier(0.22,1,0.36,1)';
 
   return (
@@ -172,7 +173,7 @@ export default function SanfonaHero() {
             onKeyDown={(e) => onKey(e, i, c.path)}
             style={{
               position: 'relative',
-              flex: isActive ? fActive : fInactive,
+              flex: hasActive ? (isActive ? fActive : fInactive) : 1,
               minWidth: 0, minHeight: 0,
               overflow: 'hidden',
               cursor: 'pointer',
