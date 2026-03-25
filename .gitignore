@@ -77,3 +77,72 @@ yarn.lock
 
 # Tools/scripts locais
 tools/
+
+# ── ADICIONADO 24/03/2026 — exclusoes de arquivos pesados e temporarios ──
+
+# Imagens de projetos (pesadas — servidas via Vercel/CDN, nao versionadas)
+public/images/imagens/
+public/images/projects/
+public/images/banners/
+public/images/estilos/
+public/images/blog/
+public/images/gallery/
+public/images/about/
+public/images/webp/
+public/videos/
+
+# Pasta de cliente UmaUma (vai para projects-denv, repo proprio)
+public/buildtech/
+
+# Pastas de sessao/debug/documentos locais
+_migracao_*/
+Acapulco Blog/
+banners  (1)/
+20260228/
+analise google/
+Screen/
+Erros/
+Conteudo Site/
+banner landing Pages/
+Claude/
+Ponto de Partida/
+Institucional e Manual da Marca/
+
+# Screenshots de debug
+debug_*.png
+debug_*.jpg
+
+# Scripts locais de deploy/SEO/migracao
+deploy-*.py
+deploy-*.bat
+gsc_*.py
+run_*.ps1
+seo_*.ps1
+setup_seo_task.ps1
+batch_transcribe.py
+transcribe.py
+convert-*.cjs
+fix_app.py
+oauth_refresh_helper.py
+generate_segments.py
+patch-files.py
+*.timestamp-*.mjs
+*.vsix
+*.lnk
+transcripts_*.jsonl
+wg-ga4-sa-key.json
+.gsc_refresh_token
+.oauth_state.json
+brand_pdf_extract.json
+vitest-setup.json
+NORMAS_DESIGN_ESTRATEGICO.json
+
+# Docs locais nao relacionadas ao codigo
+REVISTA-ESTILOS*.md
+STATUS-HOJE*.md
+GOOGLE-REVIEWS-UPDATE.md
+DEPLOY-COMPLETO.md
+ESTRUTURA-MIDIA.md
+GUIA-IMAGENS*.md
+PADRAO-TIPOGRAFICO*.md
+.vite

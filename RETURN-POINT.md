@@ -1,139 +1,103 @@
 # RETURN-POINT — Site WG Almeida (wgalmeida.com.br)
-**Atualizado:** 2026-03-21
 
 ---
 
-## Repositório & Deploy
-- **Git remote:** `https://github.com/almeidawg/site_grupowgalmeida.git`
-- **Branch principal:** `master` → auto-deploy via Vercel
-- **URL produção:** `https://wgalmeida.com.br`
-- **Vercel Project:** site_grupowgalmeida
+## Última sessão
 
-## Stack
-React 18 + Vite + TailwindCSS + React Router v6 + Supabase + i18next
+**Data:** 24/03/2026  
+**Responsável:** William Almeida + Claude Sonnet 4.6
 
-## Caminho do projeto
-```
-C:\Users\Atendimento\Documents\_WG_build.tech\02_20260310_Projetos\_Grupo-WGAlmeida_Projetos\01_site-wgalmeida\site\
-```
+---
 
-## Comandos
+## O que foi feito (24/03/2026)
+
+- **SanfonaHero v3** — reescrita completa do componente `src/components/home/SanfonaHero.jsx`
+- Efeito replicado exatamente do MVP EasyFood (`entrada.html`): faixas verticais full-height, expansão flex animada
+- Máscara gradiente de baixo para cima, traço de cor lateral (desktop) / superior (mobile)
+- Linhas diagonais decorativas SVG (trama sutil, opacidade aumenta no hover)
+- Número grande em italic serif, tagline Playfair Display italic, bullets com ponto colorido, CTA branco
+- Desktop (≥900px): hover expande, clique navega direto
+- Mobile/Tablet (<900px): tap expande, botão CTA explícito navega — sem 2 toques confusos
+- 6 empresas com imagens Unsplash (IDs fornecidos por William):
+  - ARQ: `3QzMBrvCeyQ` | ENG: `K67sBVqLLuw` | MARC: `vqMQN9zImG4`
+  - TECH: `xuTJZ7uD7PI` | LOCK: `8fHan-6KDm0` | VINHOS: `HzjLEv5VwJw`
+- Commit `69380d5` → push → Vercel deploy automático
+
+## Último sessão anterior
+
+**Data:** 01/03/2026  
+**Responsável:** William Almeida + agente IA
+
+---
+
+## O que foi feito na sessão
+
+- Substituídas todas as estrelas padrão pelo ícone institucional (`/images/icone.png`) via componente `BrandStar` reutilizado. Aplicado em reviews, páginas regionais e admin.
+- Bloco de reviews do Google agora exibe 4 cards alinhados (resumo + 3 reviews) e ganhou efeito de traços finos animados (reuse `AnimatedStrokes`).
+- Ícone da marca copiado para `site/public/images/icone.png`.
+- Build validado pós-ajustes: `npm run build` (ok).
+
+- Atualizado `src/components/layout/Header.jsx`:
+  - adicionado ícone `Globe` (lucide-react) no CTA de acesso WG Easy (desktop e mobile)
+  - ajustado layout do botão desktop (`gap` + `px`) para suportar dois ícones
+- Criada pasta de documentação da sessão:
+  - `Em-Desenvolvimento/01_site-wgalmeida/20260228/`
+- Documentos criados/atualizados:
+  - `20260228/ANALISE-SITE-WGALMEIDA.md`
+  - `20260228/PROMPT-MELHORIAS-SITE.md`
+  - `_Agentes/Projetos/AGENTE-SITE-WGALMEIDA.md`
+- Build validado com sucesso (`npm run build`)
+- Deploy de produção executado com sucesso:
+  - URL de produção: `https://wgalmeida.com.br`
+  - URL do deploy: `https://grupo-wg-almeida-ew9bg291z-william-almeidas-projects.vercel.app`
+- Integração das avaliações Google unificada (Home + Depoimentos):
+  - hook compartilhado `src/hooks/useGoogleReviews.js`
+  - fonte por prioridade: `VITE_GOOGLE_REVIEWS_URL` -> `/api/google-reviews` -> `/data/google-reviews.json`
+  - cards atualizados com as 3 avaliações reais da sessão
+- Endpoint server-side criado para reviews reais no Vercel:
+  - `api/google-reviews.js` (usa `GOOGLE_PLACE_ID` + `GOOGLE_PLACES_API_KEY`)
+- Servidor local para aprovação visual iniciado em `http://localhost:3000`
+
+---
+
+## Estado atual
+
+### Funcionando
+- Site em produção em `https://wgalmeida.com.br`
+- Deploy automático via Vercel
+- Header com CTA WG Easy atualizado para melhor clareza visual
+- Documentação técnica da sessão organizada em `20260228/`
+
+### Pendências conhecidas
+- Implementar monitoramento real (Web Vitals + GA4 eventos + Error Boundary/Sentry)
+- Configurar Lighthouse CI para acompanhamento contínuo
+- Revisar otimizações de bundle (JS/CSS não utilizados)
+
+---
+
+## Próximos passos sugeridos
+
+1. Executar `npm run build` e validar que não houve regressão após alteração do Header
+2. Fazer deploy (`npx vercel --prod`) se a mudança visual for para produção
+3. Priorizar backlog técnico de monitoramento (Lighthouse CI + Web Vitals)
+
+---
+
+## Como subir o ambiente
+
 ```bash
-# Dev local
-npm run dev          # porta 3000
-
-# Build + deploy
-npm run build
-git add -A && git commit -m "msg" && git push origin master
-# Auto-deploy via Vercel (NÃO usar npx vercel --prod diretamente)
+cd "C:/Users/Atendimento/Documents/_WG_build.tech/Em-Desenvolvimento/01_site-wgalmeida/site"
+npm install
+npm run dev
 ```
 
 ---
 
-## Arquitetura CORRETA — Monodomain Hub
+## Contexto rápido
 
-`wgalmeida.com.br` é o HUB central. Cada empresa tem seu PRÓPRIO site Vercel
-e o hub proxifica via `vercel.json`.
-
-### Regra de ouro
-> Cada empresa com site próprio = deploy separado no Vercel + proxy rewrite em vercel.json.
-> Empresas sem site próprio = página React dentro do app principal.
-
-### Mapa de subpaths
-
-| URL | Tipo | Vercel Project | Status |
-|-----|------|---------------|--------|
-| `/` | React SPA (hub) | site_grupowgalmeida | ✅ |
-| `/arquitetura` | React page (app principal) | site_grupowgalmeida | ✅ |
-| `/engenharia` | React page (app principal) | site_grupowgalmeida | ✅ |
-| `/marcenaria` | React page (app principal) | site_grupowgalmeida | ✅ |
-| `/buildtech` + `/buildtech/:path*` | **Proxy** → buildtech.wgalmeida.com.br | wg-WTB-build-tech | ✅ |
-| `/wnomas` + `/wnomas/:path*` | **Proxy** → unomas-vinho.vercel.app | wnomas-vinho | ✅ |
-| `/wnomasvinho` + `/wnomasvinho/:path*` | **Proxy** → unomas-vinho.vercel.app | wnomas-vinho | ✅ |
-| `/easylocker` + `/easylocker/:path*` | **Proxy** → wg-easylocker.vercel.app | wg-easylocker | ✅ |
-
-### Sites de empresas — Projetos Vercel separados
-
-| Empresa | Pasta local | Vercel project | URL pública |
-|---------|------------|---------------|-------------|
-| WG Build Tech | `wg-WTB-build-tech/files/` | wg-WTB-build-tech | buildtech.wgalmeida.com.br |
-| W Nomas Vinhos | `wnomasvinhos/site/` | wnomas-vinho | unomas-vinho.vercel.app |
-| WG EasyLocker | `wg-easylocker/01_Easy_Locker_Site/` | wg-easylocker | wg-easylocker.vercel.app |
-
----
-
-## Deploy por empresa
-
-### Hub principal (wgalmeida.com.br)
-```bash
-cd 01_site-wgalmeida/site
-npm run build
-git add -A && git commit -m "msg" && git push origin master
-# → Vercel auto-deploy
+```txt
+Projeto: Site WG Almeida
+Path: Em-Desenvolvimento/01_site-wgalmeida/site/
+Produção: https://wgalmeida.com.br
+Status: Em produção + manutenção ativa
 ```
-
-### WG Build Tech
-```bash
-cd wg-WTB-build-tech
-# editar arquivos em files/
-git add -A && git commit -m "msg" && git push
-# ou: npx vercel --prod --yes
-```
-
-### W Nomas Vinhos
-```bash
-cd wnomasvinhos/site
-# editar HTML estático
-npx vercel --prod --yes
-```
-
-### WG EasyLocker
-```bash
-cd wg-easylocker/01_Easy_Locker_Site
-npm run build
-npx vercel --prod --yes
-```
-
----
-
-## Como adicionar nova empresa ao hub
-
-1. Deploy da empresa em Vercel separado → obter URL de produção
-2. Adicionar rewrite em `vercel.json` do hub:
-```json
-{ "source": "/nova-empresa", "destination": "https://nova-empresa.vercel.app/" },
-{ "source": "/nova-empresa/:path*", "destination": "https://nova-empresa.vercel.app/:path*" }
-```
-3. (Opcional) Criar React page em `src/pages/NovaEmpresa.jsx` como landing page SEO
-4. Adicionar rota em `src/App.jsx` e item em `Header.jsx` unitsItems
-5. Build + push → auto-deploy
-
----
-
-## Últimas sessões
-
-### 2026-03-21 (sessão atual)
-- ✅ Deploy W Nomas Vinhos → `unomas-vinho.vercel.app`
-- ✅ Deploy WG EasyLocker → `wg-easylocker.vercel.app`
-- ✅ Proxy rewrites adicionados em `vercel.json` para `/wnomas`, `/wnomasvinho`, `/easylocker`
-- ✅ Arquitetura documentada e corrigida (monodomain hub com proxies)
-- ✅ Push feito → auto-deploy em andamento
-
-### 2026-03-21 (sessão anterior)
-- Adicionadas rotas `/wnomas`, `/easylocker`, `/buildtech` no App.jsx
-- Páginas React criadas: `Wnomas.jsx`, `EasyLocker.jsx`, `BuildTech.jsx`
-- Header mega menu atualizado com W Nomas e EasyLocker
-- Home.jsx atualizado com 6 empresas no grid
-
-### Antes de 2026-03-21
-- Header atualizado com ícone Globe para CTA WGEasy
-- Deploy completo com sucesso
-- PSI Score: Mobile 79–92, Desktop 93
-
----
-
-## O que está pendente
-- ⚠️ Sites de wnomas e easylocker usam paths relativos — testar navegação via proxy `/wnomas` e `/easylocker`
-- Se navegação quebrar (links internos), opção A: adicionar `<base href="/wnomas/">` nas páginas HTML do wnomas
-- EasyLocker é Vite/React — assets em `/assets/...` podem não funcionar via proxy sem configurar `base: '/easylocker/'` no vite.config
-- Considerar adicionar subdomínios customizados no Vercel: `wnomas.wgalmeida.com.br`, `easylocker.wgalmeida.com.br`
