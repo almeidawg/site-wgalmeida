@@ -6,16 +6,8 @@ const DESKTOP_BP = 900;
 const TX = '0 1px 4px rgba(0,0,0,0.9),0 4px 16px rgba(0,0,0,0.7),0 12px 40px rgba(0,0,0,0.5)';
 
 /*
-  Imagens Unsplash — IDs fornecidos por William Almeida:
-  Arquitetura : 3QzMBrvCeyQ  (person writing on white paper)
-  Engenharia  : K67sBVqLLuw  (grayscale low angle building)
-  Marcenaria  : vqMQN9zImG4  (modern kitchen bar stools)
-  Build Tech  : xuTJZ7uD7PI  (blue background lines and dots)
-  EasyLocker  : 8fHan-6KDm0  (person holding white and black box)
-  Wno Mas     : HzjLEv5VwJw  (two glasses wine bread on table)
+  Imagens locais (public/images) para evitar 404 externos e garantir performance.
 */
-const U = (id) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=2400&q=90`;
 
 const COMPANIES = [
   {
@@ -28,7 +20,7 @@ const COMPANIES = [
       'Do projeto ao acabamento com rigor',
     ],
     cta: 'Conhecer arquitetura',
-    img: U('photo-3QzMBrvCeyQ'),
+    img: '/images/banners/ARQ.webp',
     imgPos: 'center center',
   },
   {
@@ -41,7 +33,7 @@ const COMPANIES = [
       'Obra turn key com gestão integrada',
     ],
     cta: 'Explorar engenharia',
-    img: U('photo-K67sBVqLLuw'),
+    img: '/images/banners/ENGENHARIA.webp',
     imgPos: 'center 40%',
   },
   {
@@ -54,7 +46,7 @@ const COMPANIES = [
       'Do projeto ao encaixe perfeito',
     ],
     cta: 'Ver marcenaria',
-    img: U('photo-vqMQN9zImG4'),
+    img: '/images/banners/MARCENARIA.webp',
     imgPos: 'center center',
   },
   {
@@ -67,7 +59,7 @@ const COMPANIES = [
       'Agentes inteligentes e fluxos conectados',
     ],
     cta: 'Entrar em Build Tech',
-    img: U('photo-xuTJZ7uD7PI'),
+    img: '/images/banners/9.webp',
     imgPos: 'center center',
   },
   {
@@ -80,7 +72,7 @@ const COMPANIES = [
       'Operação física com camada digital',
     ],
     cta: 'Conhecer EasyLocker',
-    img: U('photo-8fHan-6KDm0'),
+    img: '/images/banners/5.webp',
     imgPos: 'center center',
   },
   {
@@ -93,7 +85,7 @@ const COMPANIES = [
       'Identidade forte para um público exigente',
     ],
     cta: 'Conhecer Wno Mas',
-    img: U('photo-HzjLEv5VwJw'),
+    img: '/images/wno-mas/catalogo-visual-2024.jpg',
     imgPos: 'center center',
   },
 ];
