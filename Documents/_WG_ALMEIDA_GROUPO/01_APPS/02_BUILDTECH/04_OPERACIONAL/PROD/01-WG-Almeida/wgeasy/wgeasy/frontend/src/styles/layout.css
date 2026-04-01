@@ -1,0 +1,480 @@
+﻿/* =========================================
+   Layout principal (sidebar + conteúdo)
+   ========================================= */
+.layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Sidebar fixa à esquerda */
+.layout > .wg-sidebar {
+  width: 190px;
+  flex-shrink: 0;
+  border-right: 1px solid #e5e5e5;
+  background: #fff;
+  overflow-y: auto;
+  transition: width 200ms ease;
+}
+
+/* Sidebar recolhida (apenas ícones) */
+.layout > .wg-sidebar.collapsed {
+  width: 52px;
+}
+
+/* Coluna direita (topbar + tabs + conteúdo) */
+.layout-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Área de conteúdo scrollável */
+.layout-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  background: #ffffff;
+}
+
+/* =========================================
+   Tabs horizontais (TabNavigation)
+   ========================================= */
+.wg-tabs-container {
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 0 10px;
+  flex-shrink: 0;
+  overflow: hidden; /* Impede quebra de linha */
+}
+
+.wg-tabs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px; /* Reduzido 10% mais (era 32px) */
+  gap: 4px;
+}
+
+.wg-tabs-scroll {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Oculta scrollbar no Firefox */
+  -ms-overflow-style: none; /* Oculta scrollbar no IE/Edge */
+  flex: 1;
+  max-width: calc(100% - 80px); /* Reserva espaço para botÍo "Fechar tudo" */
+}
+
+.wg-tabs-scroll::-webkit-scrollbar {
+  display: none; /* Oculta scrollbar no Chrome/Safari */
+}
+
+.wg-tab-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 6px; /* Reduzido 10% mais */
+  border-radius: 5px;
+  background: #f5f5f5;
+  color: #444;
+  font-size: 10px; /* Reduzido 10% mais (era 11px) */
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 120ms ease;
+  max-width: 120px; /* Limita largura máxima reduzida */
+  flex-shrink: 0;
+}
+
+.wg-tab-item span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 85px;
+}
+
+.wg-tab-item:hover {
+  background: #ededed;
+}
+
+.wg-tab-item.wg-tab-active {
+  background: #ffe6db;
+  color: #f25c26;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px #ffd0bd;
+}
+
+.wg-tab-close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wg-tabs-actions {
+  flex-shrink: 0;
+}
+
+.wg-tabs-actions button {
+  border: none;
+  background: transparent;
+  font-size: 10px; /* Reduzido (era 12px) */
+  color: #666;
+  cursor: pointer;
+  padding: 4px 6px; /* Reduzido (era 6px 8px) */
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.wg-tabs-actions button:hover {
+  background: #f1f1f1;
+}
+
+/* Estado de loading do título da aba */
+.wg-tab-loading {
+  opacity: 0.6;
+  animation: tab-pulse 1s ease-in-out infinite;
+}
+
+@keyframes tab-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Topbar minimal - linha única */
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+/* Linha única do topbar - tabs + fechar tudo + sino + avatar + nome */
+.topbar-single-row {
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  min-height: 44px;
+  gap: 8px;
+}
+
+/* Mobile row */
+.topbar-mobile-row {
+  min-height: 44px;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.topbar-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  color: #1a1a1a;
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  color: #1a1a1a;
+}
+.topbar-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #444;
+  font-size: 14px;
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.user-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+.user-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 4px;
+  width: 180px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  z-index: 50;
+}
+.user-email {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: #666;
+  border-bottom: 1px solid #f0f0f0;
+}
+.user-menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  color: #1a1a1a;
+}
+.user-menu-item:hover {
+  background: #f7f7f7;
+}
+
+@media (max-width: 768px) {
+  .layout > .wg-sidebar {
+    display: none !important;
+  }
+
+  /* Topbar estilo app nativo */
+  .topbar {
+    height: 48px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    padding: 0 12px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .topbar-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1c1c1e;
+  }
+
+  .btn-ghost {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+  }
+
+  .btn-ghost:active {
+    background: rgba(0, 0, 0, 0.08);
+    transform: scale(0.95);
+  }
+
+  .topbar-user {
+    font-size: 12px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .avatar-text {
+    font-size: 11px;
+  }
+
+  .user-name {
+    display: none; /* Oculta nome no mobile para economizar espaço */
+  }
+
+  .layout-content {
+    padding: 12px;
+    padding-left: calc(12px + env(safe-area-inset-left, 0px));
+    padding-right: calc(12px + env(safe-area-inset-right, 0px));
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    background: #ffffff;
+    min-height: calc(100vh - 48px);
+    /* Permitir gestos nativos do iOS nas bordas */
+    overscroll-behavior: contain;
+  }
+
+  /* Tabs estilo app */
+  .wg-tabs-container {
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding: 0 8px;
+  }
+
+  .wg-tabs-header {
+    height: 36px;
+  }
+
+  .wg-tab-item {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .wg-tab-item.wg-tab-active {
+    background: rgba(242, 92, 38, 0.15);
+  }
+
+  /* User menu estilo iOS */
+  .user-menu {
+    width: calc(100vw - 24px);
+    max-width: 280px;
+    right: 12px;
+    border-radius: 14px;
+    border: none;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    overflow: hidden;
+  }
+
+  .user-menu-item {
+    padding: 14px 16px;
+    font-size: 15px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .user-menu-item:last-child {
+    border-bottom: none;
+  }
+
+  .user-menu-item:active {
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  .user-email {
+    padding: 12px 16px;
+    font-size: 13px;
+    background: rgba(0, 0, 0, 0.03);
+  }
+}
+
+/* =========================================
+   Dark Mode — classe .dark no <html>
+   ========================================= */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background: #0f0f0f;
+  color: #e5e5e5;
+}
+
+html.dark .layout {
+  background: #0f0f0f;
+}
+
+html.dark .layout > .wg-sidebar {
+  background: #1a1a1a;
+  border-right-color: #2a2a2a;
+}
+
+html.dark .layout-content {
+  background: #0f0f0f;
+}
+
+html.dark .topbar {
+  background: #1a1a1a;
+  border-bottom-color: #2a2a2a;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+html.dark .user-menu {
+  background: #1f1f1f;
+  border-color: #2e2e2e;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+html.dark .user-email {
+  border-bottom-color: #2e2e2e;
+  color: #888;
+}
+
+html.dark .user-menu-item {
+  color: #e5e5e5;
+}
+
+html.dark .user-menu-item:hover {
+  background: #2a2a2a;
+}
+
+html.dark .wg-tab-item {
+  background: #2a2a2a;
+  color: #ccc;
+}
+
+html.dark .wg-tab-item:hover {
+  background: #333;
+}
+
+html.dark .wg-tab-item.wg-tab-active {
+  background: #3d1f14;
+  color: #f97248;
+  box-shadow: inset 0 0 0 1px #6b2e1a;
+}
+
+html.dark .wg-tabs-container {
+  background: #1a1a1a;
+  border-bottom-color: #2a2a2a;
+}
+
+html.dark .topbar-title {
+  color: #e5e5e5;
+}
+
+html.dark .btn-ghost {
+  background: #1f1f1f;
+  border-color: #2e2e2e;
+  color: #e5e5e5;
+}
+
+html.dark .avatar {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+}
+
+html.dark .avatar-text {
+  color: #e5e5e5;
+}
+
+html.dark .topbar-user {
+  color: #aaa;
+}
+
+html.dark .wg-tabs-actions button {
+  color: #aaa;
+}
+
+html.dark .wg-tabs-actions button:hover {
+  background: #2a2a2a;
+}
+
