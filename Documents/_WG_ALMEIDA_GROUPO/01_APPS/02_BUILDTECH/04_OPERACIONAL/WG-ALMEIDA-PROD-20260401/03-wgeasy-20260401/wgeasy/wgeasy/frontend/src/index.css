@@ -1,0 +1,896 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================= */
+/*    WG — Tipografia Oficial    */
+/*    Design System Compacto     */
+/* ============================= */
+
+:root {
+  /* Escala tipográfica reduzida ~15% */
+  --wg-text-h1: 1.0625rem; /* 17px (antes 20px) */
+  --wg-text-h2: 0.9375rem; /* 15px (antes 18px) */
+  --wg-text-h3: 0.8125rem; /* 13px (antes 16px) */
+  --wg-text-body: 0.75rem; /* 12px (antes 14px) */
+  --wg-text-sm: 0.6875rem; /* 11px (antes 13px) */
+  --wg-text-xs: 0.625rem; /* 10px (antes 12px) */
+  --wg-text-tag: 0.5625rem; /* 9px (antes 11px) */
+
+  /* Espaçamentos compactos */
+  --wg-space-1: 0.125rem; /* 2px */
+  --wg-space-2: 0.25rem; /* 4px */
+  --wg-space-3: 0.375rem; /* 6px */
+  --wg-space-4: 0.5rem; /* 8px */
+  --wg-space-5: 0.625rem; /* 10px */
+  --wg-space-6: 0.75rem; /* 12px */
+}
+
+html {
+  font-size: 100%; /* 16px base — rem resolve against this, not body */
+}
+
+body {
+  @apply font-poppins text-[#4C4C4C] bg-[#F3F3F3];
+  font-size: var(--wg-text-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* PadronizaçÍo: evitar negrito em todo o sistema */
+.font-medium,
+.font-semibold,
+.font-bold {
+  font-weight: 400 !important;
+}
+
+b,
+strong {
+  font-weight: 400 !important;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-oswald tracking-tight;
+  font-weight: 400 !important;
+}
+
+h1 {
+  font-size: var(--wg-text-h1);
+}
+h2 {
+  font-size: var(--wg-text-h2);
+}
+h3 {
+  font-size: var(--wg-text-h3);
+}
+
+.subtitle {
+  @apply font-poppins text-[#585858] font-normal;
+  font-size: var(--wg-text-sm);
+}
+
+.page-header-inline {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.page-header-first-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-header-title {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: #1e1e1e;
+  line-height: 1.2;
+}
+
+.page-header-subtitle-inline {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .page-header-inline {
+    gap: 0.5rem;
+  }
+
+  .page-header-subtitle-inline {
+    white-space: normal;
+    max-width: 320px;
+  }
+}
+
+/* ============================= */
+/*   Classes Utilitárias WG      */
+/* ============================= */
+
+.wg-text-h1 {
+  font-size: var(--wg-text-h1);
+  font-weight: 400;
+}
+.wg-text-h2 {
+  font-size: var(--wg-text-h2);
+  font-weight: 400;
+}
+.wg-text-h3 {
+  font-size: var(--wg-text-h3);
+  font-weight: 400;
+}
+.wg-text-body {
+  font-size: var(--wg-text-body);
+}
+.wg-text-sm {
+  font-size: var(--wg-text-sm);
+}
+.wg-text-xs {
+  font-size: var(--wg-text-xs);
+}
+.wg-text-tag {
+  font-size: var(--wg-text-tag);
+  font-weight: 400;
+}
+
+/* ============================= */
+/*   Espaçamentos Compactos      */
+/* ============================= */
+
+.wg-card {
+  background: white;
+  border-radius: 0.625rem; /* 10px */
+  padding: var(--wg-space-4);
+  border: 1px solid #e5e7eb;
+}
+
+.wg-card-compact {
+  background: white;
+  border-radius: 0.625rem; /* 10px */
+  padding: var(--wg-space-3);
+  border: 1px solid #e5e7eb;
+}
+
+/* ============================= */
+/*   Dashboard Progress Bars     */
+/* ============================= */
+
+.wg-progress {
+  width: 100%;
+  border-radius: 9999px;
+  overflow: hidden;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.wg-progress--slim {
+  height: 0.375rem;
+}
+
+.wg-progress--thick {
+  height: 1.25rem;
+}
+
+.wg-progress--track-slate {
+  background-color: #475569;
+}
+
+.wg-progress--track-slate::-webkit-progress-bar {
+  background-color: #475569;
+}
+
+.wg-progress--track-gray {
+  background-color: #f3f4f6;
+}
+
+.wg-progress--track-gray::-webkit-progress-bar {
+  background-color: #f3f4f6;
+}
+
+.wg-progress--emerald::-webkit-progress-value {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.wg-progress--emerald::-moz-progress-bar {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.wg-progress--orange-500::-webkit-progress-value {
+  background-color: #f97316;
+}
+
+.wg-progress--orange-500::-moz-progress-bar {
+  background-color: #f97316;
+}
+
+.wg-progress--orange-400::-webkit-progress-value {
+  background-color: #fb923c;
+}
+
+.wg-progress--orange-400::-moz-progress-bar {
+  background-color: #fb923c;
+}
+
+.wg-progress--orange-300::-webkit-progress-value {
+  background-color: #fdba74;
+}
+
+.wg-progress--orange-300::-moz-progress-bar {
+  background-color: #fdba74;
+}
+
+.wg-progress--orange-200::-webkit-progress-value {
+  background-color: #fed7aa;
+}
+
+.wg-progress--orange-200::-moz-progress-bar {
+  background-color: #fed7aa;
+}
+
+/* Reduzir padding padrÍo de cards e containers */
+.p-4 {
+  padding: 0.75rem !important;
+} /* 12px ao invés de 16px */
+.p-6 {
+  padding: 1rem !important;
+} /* 16px ao invés de 24px */
+.px-4 {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+.px-6 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+.py-4 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+.py-6 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+/* Gaps menores */
+.gap-4 {
+  gap: 0.75rem !important;
+}
+.gap-6 {
+  gap: 1rem !important;
+}
+
+/* ============================= */
+/*   Tipografia em Componentes   */
+/* ============================= */
+
+/* Textos em tabelas */
+table th,
+table td {
+  font-size: var(--wg-text-sm);
+  padding: var(--wg-space-3) var(--wg-space-4);
+}
+
+/* Labels de formulários */
+label,
+.label {
+  font-size: var(--wg-text-xs);
+  font-weight: 500;
+}
+
+/* Inputs mais compactos */
+input,
+select,
+textarea {
+  font-size: var(--wg-text-body);
+  padding: var(--wg-space-3) var(--wg-space-4);
+}
+
+/* Placeholders menores */
+input::placeholder,
+textarea::placeholder {
+  font-size: var(--wg-text-sm);
+  color: #9ca3af;
+}
+
+/* BotÍµes */
+button,
+.btn {
+  font-size: var(--wg-text-body);
+}
+
+/* Tags e badges */
+.badge,
+.tag,
+[class*="badge"],
+[class*="tag"] {
+  font-size: var(--wg-text-tag);
+  padding: var(--wg-space-1) var(--wg-space-3);
+}
+
+/* ============================= */
+/*     Scrollbar WG Moderno      */
+/* ============================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* ============================= */
+/*   Phone Input Internacional   */
+/* ============================= */
+.phone-input-internacional {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.phone-input-internacional .PhoneInputCountry {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  background-color: white;
+  min-width: fit-content;
+  white-space: nowrap;
+}
+
+.phone-input-internacional .PhoneInputCountryIcon {
+  width: 1.25rem;
+  height: 0.875rem; /* ~14px — bandeira pequena, detalhe ao lado do DDI */
+  border-radius: 0.125rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.phone-input-internacional .PhoneInputCountryIcon img,
+.phone-input-internacional .PhoneInputCountryIcon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.phone-input-internacional .PhoneInputCountrySelectArrow {
+  margin-left: 0.25rem;
+  opacity: 0.6;
+}
+
+.phone-input-internacional .PhoneInputCountrySelect {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.phone-input-internacional input {
+  flex: 1;
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.phone-input-internacional input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* Estilo para inputs de telefone em altura h-11 */
+.phone-input-internacional.h-11 .PhoneInputCountry {
+  height: 2.75rem;
+}
+
+.phone-input-internacional.h-11 input {
+  height: 2.75rem;
+}
+
+/* ============================= */
+/*   RESPONSIVIDADE MOBILE WG    */
+/*   Otimizado para parecer App  */
+/* ============================= */
+
+@media (max-width: 768px) {
+  /* ======== TIPOGRAFIA MOBILE (reduzida 10%) ======== */
+  :root {
+    --wg-text-h1: 1.125rem; /* 18px - reduzido 10% de 1.25rem */
+    --wg-text-h2: 1rem; /* 16px - reduzido 10% */
+    --wg-text-h3: 0.875rem; /* 14px - reduzido 10% */
+    --wg-text-body: 0.8125rem; /* 13px - reduzido 10% */
+    --wg-text-sm: 0.75rem; /* 12px - reduzido 10% */
+    --wg-text-xs: 0.6875rem; /* 11px - reduzido 10% */
+    --wg-text-tag: 0.625rem; /* 10px - reduzido 10% */
+  }
+
+  /* ======== PREVENÍ‡ÍƒO DE OVERFLOW HORIZONTAL ======== */
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    position: relative;
+  }
+
+  /* Prevenir overflow em todos os containers */
+  *,
+  *::before,
+  *::after {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Fix para elementos que podem causar overflow */
+  .layout,
+  .layout-main,
+  main,
+  section,
+  article,
+  div[class*="container"],
+  div[class*="wrapper"] {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* Container principal com padding menor */
+  .layout-content {
+    padding: 0.625rem !important;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+    overflow-x: hidden !important;
+  }
+
+  /* ======== ÍCONES E EMOJIS REDUZIDOS ======== */
+  /* Ícones lucide-react */
+  svg[class*="lucide"],
+  svg[stroke="currentColor"],
+  .icon,
+  [class*="icon"] svg {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Ícones em headers/títulos */
+  h1 svg,
+  h2 svg,
+  h3 svg,
+  .text-xl svg,
+  .text-2xl svg,
+  .text-3xl svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* Ícones menores em badges/tags */
+  .badge svg,
+  .tag svg,
+  [class*="badge"] svg,
+  [class*="tag"] svg,
+  .text-xs svg,
+  .text-sm svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  /* Emojis reduzidos */
+  span[role="img"],
+  .emoji,
+  [class*="emoji"] {
+    font-size: 0.875rem !important;
+    line-height: 1 !important;
+  }
+
+  /* ======== CARDS E CONTAINERS ======== */
+  /* Cards com padding reduzido e overflow controlado */
+  .wg-card,
+  .wg-card-compact,
+  .bg-white.rounded-xl,
+  .bg-white.rounded-lg,
+  .bg-white.rounded-md,
+  [class*="card"] {
+    padding: 0.625rem !important;
+    overflow: hidden !important;
+    word-wrap: break-word !important;
+  }
+
+  /* Cards em flex com ícones - prevenir overflow */
+  .flex.items-center,
+  .flex.items-start {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Texto em cards deve truncar */
+  .flex.items-center > span,
+  .flex.items-center > p,
+  .flex.items-center > div:not([class*="icon"]) {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    min-width: 0 !important;
+  }
+
+  /* ======== GRIDS RESPONSIVOS ======== */
+  /* Grids de 3+ colunas viram 1 coluna */
+  .grid-cols-3,
+  .grid-cols-4,
+  .grid-cols-5,
+  .grid-cols-6,
+  [class*="grid-cols-\["] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Grids de 2 colunas ficam em 2 (stats cards) */
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  /* ExceçÍo: forçar 1 coluna */
+  .grid-cols-2.mobile-1-col,
+  .mobile-grid-1 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stats cards sempre em 2 colunas */
+  .grid.grid-cols-5,
+  .grid.grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  /* ======== HEADERS DE PÍGINA ======== */
+  .text-2xl {
+    font-size: 1.125rem !important;
+  }
+  .text-3xl {
+    font-size: 1.25rem !important;
+  }
+  .text-xl {
+    font-size: 1rem !important;
+  }
+  .text-lg {
+    font-size: 0.9375rem !important;
+  }
+
+  /* ======== TABELAS RESPONSIVAS ======== */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    font-size: 0.75rem !important;
+  }
+
+  table th,
+  table td {
+    padding: 0.5rem 0.375rem !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap;
+  }
+
+  /* ======== FLEX RESPONSIVO ======== */
+  /* Cards em linha viram coluna (exceto com ícones pequenos) */
+  .flex.items-center.gap-4:not(.mobile-flex-row),
+  .flex.items-center.gap-6:not(.mobile-flex-row) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  /* Manter flex row em casos específicos */
+  .mobile-flex-row,
+  .flex.items-center.gap-2,
+  .flex.items-center.gap-1,
+  .flex.gap-2,
+  .flex.gap-1 {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+  }
+
+  /* ======== BOTÍ•ES TOUCH-FRIENDLY ======== */
+  button,
+  .btn,
+  [type="button"],
+  [type="submit"] {
+    min-height: 40px;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.8125rem !important;
+  }
+
+  /* BotÍµes de ícone */
+  button.p-2,
+  button.p-1\.5,
+  button.p-1,
+  button[class*="rounded-full"],
+  .btn-icon {
+    min-height: 36px !important;
+    min-width: 36px !important;
+    padding: 0.375rem !important;
+  }
+
+  /* ======== INPUTS TOUCH-FRIENDLY ======== */
+  input,
+  select,
+  textarea {
+    min-height: 40px;
+    padding: 0.5rem 0.625rem !important;
+    font-size: 16px !important; /* Previne zoom no iOS */
+  }
+
+  /* ======== MODAIS FULLSCREEN ======== */
+  .fixed.inset-0 > div,
+  [class*="modal"],
+  [class*="Modal"],
+  [role="dialog"] {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    margin: 0 !important;
+    border-radius: 12px 12px 0 0 !important;
+    width: 100% !important;
+  }
+
+  /* Drawer de baixo para cima */
+  .mobile-drawer {
+    max-height: 85vh !important;
+    border-radius: 16px 16px 0 0 !important;
+  }
+
+  /* ======== CONTAINERS ======== */
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl,
+  .max-w-4xl,
+  .max-w-3xl,
+  .max-w-2xl,
+  .max-w-xl,
+  [class*="max-w-\["] {
+    max-width: 100% !important;
+    padding-left: 0.625rem !important;
+    padding-right: 0.625rem !important;
+  }
+
+  /* ======== ESPAÍ‡AMENTOS REDUZIDOS ======== */
+  .gap-4 {
+    gap: 0.375rem !important;
+  }
+  .gap-6 {
+    gap: 0.5rem !important;
+  }
+  .gap-8 {
+    gap: 0.75rem !important;
+  }
+
+  .p-4 {
+    padding: 0.5rem !important;
+  }
+  .p-6 {
+    padding: 0.625rem !important;
+  }
+  .p-8 {
+    padding: 0.75rem !important;
+  }
+  .px-4 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .px-6 {
+    padding-left: 0.625rem !important;
+    padding-right: 0.625rem !important;
+  }
+  .px-8 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .py-4 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .py-6 {
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem !important;
+  }
+  .py-8 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  /* ======== TOPBAR COMPACTO ======== */
+  .topbar,
+  [class*="topbar"] {
+    padding: 0.375rem 0.625rem !important;
+    height: 48px !important;
+    min-height: 48px !important;
+  }
+
+  /* ======== TABS COM SCROLL ======== */
+  .tab-navigation,
+  [class*="tab-nav"],
+  .tabs,
+  [role="tablist"] {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap !important;
+    gap: 0.25rem !important;
+  }
+
+  .tab-navigation::-webkit-scrollbar,
+  [class*="tab-nav"]::-webkit-scrollbar,
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Tab items mais compactos */
+  [role="tab"],
+  .tab-item,
+  [class*="tab-"] {
+    padding: 0.375rem 0.625rem !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ======== KANBAN COMPACTO ======== */
+  [class*="kanban"] {
+    gap: 0.375rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ======== CHARTS RESPONSIVOS ======== */
+  .recharts-wrapper,
+  [class*="chart"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 180px;
+    overflow: hidden !important;
+  }
+
+  .recharts-legend-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    margin-top: 0.25rem;
+    font-size: 0.625rem !important;
+  }
+
+  /* ======== VISIBILIDADE MOBILE ======== */
+  .mobile-hide,
+  .hidden-mobile,
+  .md\:block:not(.mobile-show),
+  .lg\:block:not(.mobile-show) {
+    display: none !important;
+  }
+
+  .mobile-show,
+  .visible-mobile {
+    display: block !important;
+  }
+
+  .mobile-flex {
+    display: flex !important;
+  }
+
+  /* ======== TEXTO TRUNCADO ======== */
+  .mobile-truncate,
+  .truncate {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+  }
+
+  /* ======== NÍšCLEOS E CARDS ESPECÍFICOS ======== */
+  .nucleo-cards,
+  [class*="nucleo"] {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+
+  /* ======== Z-INDEX FIXES ======== */
+  .dropdown-content,
+  [class*="dropdown"],
+  [class*="popover"],
+  [class*="tooltip"] {
+    z-index: 1000 !important;
+  }
+
+  /* ======== SCROLL SUAVE ESTILO APP ======== */
+  main,
+  [class*="scroll"] {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* ======== ANIMAÍ‡Í•ES REDUZIDAS (performance) ======== */
+  @media (prefers-reduced-motion: no-preference) {
+    * {
+      transition-duration: 0.15s !important;
+    }
+  }
+
+  /* ======== SAFE AREAS (iPhone X+) ======== */
+  .layout-content-padding-safe {
+    padding-left: max(0.625rem, env(safe-area-inset-left)) !important;
+    padding-right: max(0.625rem, env(safe-area-inset-right)) !important;
+  }
+}
+
+/* ============================= */
+/*   RESPONSIVIDADE TABLET       */
+/* ============================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Grids de 4+ colunas viram 2 */
+  .grid-cols-4,
+  .grid-cols-5,
+  .grid-cols-6 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Grids de 3 colunas mantÍªm */
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Container principal */
+  .layout-content-tablet {
+    padding: 1rem !important;
+  }
+
+  /* Sidebar mais estreita */
+  .wg-sidebar {
+    width: 200px !important;
+  }
+}
+
+/* ============================= */
+/*   PRINT STYLES                */
+/* ============================= */
+
+@media print {
+  .mobile-bottom-nav,
+  .wg-sidebar,
+  .topbar,
+  .tab-navigation,
+  button:not(.print-show) {
+    display: none !important;
+  }
+
+  .layout-content-print {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  body {
+    background: white !important;
+  }
+}
+
+
+

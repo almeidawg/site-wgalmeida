@@ -1,0 +1,519 @@
+﻿.wg-sidebar {
+  width: 190px;
+  height: 100vh;
+  background: white;
+  border-right: 1px solid #eee;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 200ms ease, padding 200ms ease;
+  /* Scroll fino e elegante */
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+/* Webkit scroll (Chrome, Safari, Edge) */
+.wg-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.wg-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wg-sidebar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 6px;
+}
+
+.wg-sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af;
+}
+
+.wg-sidebar-logo {
+  font-family: Oswald, sans-serif;
+  font-size: 18px; /* Reduzido de 22px */
+  margin-bottom: 10px; /* Reduzido de 16px */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduzido de 12px */
+}
+
+.wg-sidebar-logo img {
+  height: 5rem; /* Reduzido de h-24 */
+}
+
+.wg-logo-primary {
+  color: #ff6b35;
+  font-weight: bold;
+}
+
+.wg-logo-secondary {
+  margin-left: 4px;
+  color: #555;
+}
+
+.wg-sidebar-section-title {
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 0.4px;
+}
+
+.wg-sidebar-section {
+  margin-top: 2px;
+}
+
+.wg-sidebar-section-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  color: #555;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 4px 6px; /* Reduzido de 6px 8px */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.wg-sidebar-section-head:hover {
+  background: #f5f5f5;
+}
+
+.wg-sidebar-head-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wg-sidebar-head-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+}
+
+.wg-sidebar-items {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Reduzido de 4px */
+}
+
+.wg-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduzido de 10px */
+  padding: 5px 8px; /* Reduzido de 8px 10px */
+  border-radius: 6px;
+  text-decoration: none;
+  color: #444;
+  font-size: 11px; /* Padronizado para 11px */
+  font-weight: 400; /* Padronizado */
+  transition: 150ms ease;
+}
+
+/* Subgrupos (Financeiro, Pessoas) - reset completo para ficar igual aos links */
+.wg-sidebar-item.subgroup-head {
+  font-family: inherit;
+  font-size: 11px; /* Padronizado para 11px */
+  font-weight: 400;
+  color: #444;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wg-sidebar-item:hover {
+  background: #f5f5f5;
+}
+
+.wg-sidebar-item.active {
+  background: #F25C26;
+  color: white;
+  font-weight: 600;
+}
+
+.wg-sidebar-icon {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Submenus sem ícones */
+.wg-sidebar-items .wg-sidebar-icon {
+  display: none;
+}
+
+/* Mobile off-canvas */
+@media (max-width: 768px) {
+  .wg-sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    z-index: 50;
+    transition: left 0.2s ease;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+  /* Mobile: collapsed nÍo se aplica - sempre full width off-canvas */
+  .wg-sidebar.collapsed {
+    width: 240px;
+    padding: 12px 10px;
+    align-items: stretch;
+  }
+  .wg-sidebar.collapsed .wg-sidebar-logo img {
+    height: 5rem;
+  }
+  .wg-sidebar.collapsed .wg-logo-secondary,
+  .wg-sidebar.collapsed .wg-sidebar-section-title,
+  .wg-sidebar.collapsed .wg-sidebar-label {
+    display: initial;
+  }
+  .wg-sidebar.collapsed .wg-sidebar-items {
+    display: flex;
+  }
+  .wg-sidebar.collapsed .wg-sidebar-section-head {
+    justify-content: space-between;
+    padding: 4px 6px;
+  }
+  .wg-sidebar.collapsed .wg-sidebar-section-head > svg {
+    display: initial;
+  }
+  .wg-sidebar.collapsed .wg-sidebar-section-head.expanded,
+  .wg-sidebar.collapsed .wg-sidebar-section-head.active,
+  .wg-sidebar.collapsed .wg-sidebar-section-head[aria-expanded="true"] {
+    margin-left: -3px;
+    padding-left: 9px;
+    border-left: 3px solid #F25C26;
+    border-radius: 6px;
+  }
+  .wg-sidebar.open {
+    left: 0;
+  }
+  .wg-sidebar-logo {
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .wg-sidebar-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #1a1a1a;
+  }
+  .layout-main {
+    margin-left: 0 !important;
+  }
+}
+
+/* Overlay (somente mobile) */
+.sidebar-overlay {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    z-index: 40;
+  }
+}
+
+/* ============================================================
+   ESTADOS PREMIUM - SeçÍo Expandida e Subitens
+   ============================================================ */
+
+/* SeçÍo expandida - destaque laranja WG */
+.wg-sidebar-section-head.expanded,
+.wg-sidebar-section-head[aria-expanded="true"] {
+  background: rgba(242, 92, 38, 0.08);
+  border-left: 3px solid #F25C26;
+  color: #F25C26;
+  font-weight: 700;
+  margin-left: -3px;
+  padding-left: 9px;
+}
+
+/* SeçÍo ativa (quando tem path e está na página) */
+.wg-sidebar-section-head.active {
+  background: rgba(242, 92, 38, 0.08);
+  border-left: 3px solid #F25C26;
+  color: #F25C26;
+  font-weight: 700;
+  margin-left: -3px;
+  padding-left: 9px;
+}
+
+.wg-sidebar-section-head.active .wg-sidebar-head-icon {
+  color: #F25C26;
+}
+
+.wg-sidebar-section-head.expanded .wg-sidebar-head-icon,
+.wg-sidebar-section-head[aria-expanded="true"] .wg-sidebar-head-icon {
+  color: #F25C26;
+}
+
+/* Subitens ativos */
+.wg-sidebar-subitem {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11px; /* Padronizado para 11px */
+  font-weight: 400; /* Padronizado */
+  color: #555;
+  text-decoration: none;
+  display: block;
+  transition: all 150ms ease;
+}
+
+.wg-sidebar-subitem:hover {
+  background: #f5f5f5;
+}
+
+.wg-sidebar-subitem.active {
+  background: rgba(242, 92, 38, 0.12);
+  color: #F25C26;
+  font-weight: 600;
+}
+
+/* ============================================================
+   CORES DOS NÚCLEOS - Identidade Visual
+   ============================================================ */
+
+/* Arquitetura - Verde Mineral */
+.wg-sidebar-section[data-nucleo="arquitetura"] .wg-sidebar-section-head {
+  color: #5E9B94;
+}
+
+.wg-sidebar-section[data-nucleo="arquitetura"] .wg-sidebar-section-head.expanded,
+.wg-sidebar-section[data-nucleo="arquitetura"] .wg-sidebar-section-head.active {
+  background: rgba(94, 155, 148, 0.12);
+  border-left-color: #5E9B94;
+  color: #5E9B94;
+}
+
+.wg-sidebar-section[data-nucleo="arquitetura"] .wg-sidebar-section-head .wg-sidebar-head-icon {
+  color: #5E9B94;
+}
+
+.wg-sidebar-section[data-nucleo="arquitetura"] .wg-sidebar-item.active {
+  background: #5E9B94;
+  color: white;
+}
+
+.wg-sidebar-section[data-nucleo="arquitetura"] .wg-sidebar-item:hover:not(.active) {
+  background: rgba(94, 155, 148, 0.1);
+  color: #5E9B94;
+}
+
+/* Engenharia - Azul Técnico */
+.wg-sidebar-section[data-nucleo="engenharia"] .wg-sidebar-section-head {
+  color: #2B4580;
+}
+
+.wg-sidebar-section[data-nucleo="engenharia"] .wg-sidebar-section-head.expanded,
+.wg-sidebar-section[data-nucleo="engenharia"] .wg-sidebar-section-head.active {
+  background: rgba(43, 69, 128, 0.12);
+  border-left-color: #2B4580;
+  color: #2B4580;
+}
+
+.wg-sidebar-section[data-nucleo="engenharia"] .wg-sidebar-section-head .wg-sidebar-head-icon {
+  color: #2B4580;
+}
+
+.wg-sidebar-section[data-nucleo="engenharia"] .wg-sidebar-item.active {
+  background: #2B4580;
+  color: white;
+}
+
+.wg-sidebar-section[data-nucleo="engenharia"] .wg-sidebar-item:hover:not(.active) {
+  background: rgba(43, 69, 128, 0.1);
+  color: #2B4580;
+}
+
+/* Marcenaria - Marrom Carvalho */
+.wg-sidebar-section[data-nucleo="marcenaria"] .wg-sidebar-section-head {
+  color: #8B5E3C;
+}
+
+.wg-sidebar-section[data-nucleo="marcenaria"] .wg-sidebar-section-head.expanded,
+.wg-sidebar-section[data-nucleo="marcenaria"] .wg-sidebar-section-head.active {
+  background: rgba(139, 94, 60, 0.12);
+  border-left-color: #8B5E3C;
+  color: #8B5E3C;
+}
+
+.wg-sidebar-section[data-nucleo="marcenaria"] .wg-sidebar-section-head .wg-sidebar-head-icon {
+  color: #8B5E3C;
+}
+
+.wg-sidebar-section[data-nucleo="marcenaria"] .wg-sidebar-item.active {
+  background: #8B5E3C;
+  color: white;
+}
+
+.wg-sidebar-section[data-nucleo="marcenaria"] .wg-sidebar-item:hover:not(.active) {
+  background: rgba(139, 94, 60, 0.1);
+  color: #8B5E3C;
+}
+
+/* ============================================================
+   SIDEBAR RECOLHIDA (COLLAPSED) - Apenas ícones
+   ============================================================ */
+
+.wg-sidebar.collapsed {
+  width: 52px;
+  padding: 12px 6px;
+  align-items: center;
+}
+
+.wg-sidebar.collapsed .wg-sidebar-logo {
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 6px;
+}
+
+.wg-sidebar.collapsed .wg-sidebar-logo img {
+  height: 2rem;
+}
+
+.wg-sidebar.collapsed .wg-logo-secondary {
+  display: none;
+}
+
+.wg-sidebar.collapsed .wg-sidebar-section-title {
+  display: none;
+}
+
+.wg-sidebar.collapsed .wg-sidebar-section-head {
+  justify-content: center;
+  padding: 6px;
+}
+
+/* Ocultar chevron quando recolhido */
+.wg-sidebar.collapsed .wg-sidebar-section-head > svg {
+  display: none;
+}
+
+.wg-sidebar.collapsed .wg-sidebar-head-left {
+  gap: 0;
+}
+
+.wg-sidebar.collapsed .wg-sidebar-head-icon {
+  width: 24px;
+}
+
+/* Ocultar itens expandidos quando recolhido */
+.wg-sidebar.collapsed .wg-sidebar-items {
+  display: none;
+}
+
+/* Ocultar labels no item */
+.wg-sidebar.collapsed .wg-sidebar-label {
+  display: none;
+}
+
+/* Remover borda esquerda da seçÍo expandida/ativa quando recolhido */
+.wg-sidebar.collapsed .wg-sidebar-section-head.expanded,
+.wg-sidebar.collapsed .wg-sidebar-section-head.active,
+.wg-sidebar.collapsed .wg-sidebar-section-head[aria-expanded="true"] {
+  margin-left: 0;
+  padding-left: 6px;
+  border-left: none;
+  border-radius: 8px;
+}
+
+/* BotÍo de toggle recolher/expandir */
+.wg-sidebar-toggle {
+  display: none;
+  margin-top: auto;
+  padding: 6px;
+  border: none;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 150ms ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.wg-sidebar-toggle:hover {
+  background: #f5f5f5;
+  color: #444;
+}
+
+/* Mostrar botÍo toggle apenas em desktop */
+@media (min-width: 769px) {
+  .wg-sidebar-toggle {
+    display: flex;
+  }
+}
+
+/* Tooltip para ícones no modo recolhido */
+.wg-sidebar.collapsed .wg-sidebar-section {
+  position: relative;
+}
+
+.wg-sidebar.collapsed .wg-sidebar-section-head[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 8px;
+  padding: 4px 10px;
+  background: #333;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 6px;
+  z-index: 100;
+  pointer-events: none;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* ============================================================
+   TRANSIÇÕES SUAVES
+   ============================================================ */
+
+.wg-sidebar-section-head,
+.wg-sidebar-item,
+.wg-sidebar-subitem {
+  transition: all 150ms ease;
+}
+
+/* Chevron rotaçÍo suave */
+.wg-sidebar-section-head svg:last-child {
+  transition: transform 200ms ease;
+}
+
+.wg-sidebar-section-head.expanded svg:last-child,
+.wg-sidebar-section-head[aria-expanded="true"] svg:last-child {
+  transform: rotate(180deg);
+}
+
