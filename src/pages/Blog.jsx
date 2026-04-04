@@ -558,6 +558,7 @@ const Blog = () => {
               className="w-full h-full object-cover"
               style={{ objectPosition: artigoAtual.heroPosition }}
               loading="eager"
+              onError={(e) => { e.currentTarget.src = '/images/placeholder.webp'; }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-wg-black via-wg-black/60 to-transparent" />
           </motion.div>
@@ -608,6 +609,7 @@ const Blog = () => {
                     className="h-full w-full object-cover"
                     style={{ objectPosition: artigoAtual.heroPosition }}
                     loading="lazy"
+                    onError={(e) => { e.currentTarget.src = '/images/placeholder.webp'; }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/25 to-transparent md:bg-gradient-to-t" />
                 </div>
@@ -808,6 +810,7 @@ const Blog = () => {
             alt={artigoRecente?.title}
             className="w-full h-full object-cover"
             loading="eager"
+            onError={(e) => { e.currentTarget.src = '/images/placeholder.webp'; }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-wg-black via-wg-black/60 to-transparent" />
         </motion.div>
@@ -958,6 +961,7 @@ const Blog = () => {
                       alt={artigo.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
+                      onError={(e) => { e.currentTarget.src = '/images/placeholder.webp'; }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
