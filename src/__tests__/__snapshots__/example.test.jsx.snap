@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Padrões Comuns > deve renderizar corretamente (snapshot) 1`] = `
+<div
+  class="card"
+>
+  Conteúdo
+</div>
+`;

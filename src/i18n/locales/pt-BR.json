@@ -1,0 +1,2131 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre",
+    "brand": "A Marca",
+    "architecture": "Arquitetura",
+    "engineering": "Engenharia",
+    "carpentry": "Marcenaria",
+    "projects": "Projetos",
+    "process": "Processo",
+    "testimonials": "Depoimentos",
+    "contact": "Contato",
+    "store": "Loja",
+    "blog": "Blog",
+    "requestQuote": "Solicitar Proposta",
+    "login": "Entrar",
+    "myAccount": "Minha Conta"
+  },
+  "header": {
+    "unitsLabel": "Unidades",
+    "units": {
+      "architecture": "Design sofisticado e projetos completos.",
+      "engineering": "Planejamento e gerenciamento de alto padrão.",
+      "carpentry": "Mobiliário sob medida com acabamento premium."
+    },
+    "cartAria": "Abrir carrinho de compras",
+    "wgEasy": "WG Easy",
+    "wgEasyAccess": "Acessar WG Easy",
+    "openMenu": "Abrir menu de navegação",
+    "closeMenu": "Fechar menu de navegação",
+    "languageLabel": "Idioma:",
+    "ctaSpecialist": "Fale com um Especialista"
+  },
+  "hero": {
+    "title": "Transformando Sonhos em Espaços de Alto Padrão",
+    "subtitle": "14 anos de excelência em Arquitetura, Engenharia e Marcenaria integrados em um único ecossistema",
+    "cta": "Solicitar Proposta",
+    "ctaSecondary": "Conhecer Projetos"
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "subtitle": "Conheça o Grupo WG Almeida",
+    "description": "Há 14 anos transformando sonhos em realidade com projetos de arquitetura, engenharia e marcenaria de alto padrão em São Paulo.",
+    "years": "Anos de Experiência",
+    "projects": "Projetos Entregues",
+    "clients": "Clientes Satisfeitos",
+    "awards": "Prêmios e Reconhecimentos"
+  },
+  "nucleos": {
+    "title": "Nossos Núcleos",
+    "subtitle": "Soluções integradas para seu projeto",
+    "architecture": {
+      "title": "Arquitetura",
+      "description": "Projetos residenciais e comerciais de alto padrão com design exclusivo e funcionalidade"
+    },
+    "engineering": {
+      "title": "Engenharia",
+      "description": "Execução de obras com gestão Turn Key - do projeto à entrega das chaves"
+    },
+    "carpentry": {
+      "title": "Marcenaria",
+      "description": "Móveis sob medida com acabamento premium e design personalizado"
+    }
+  },
+  "process": {
+    "title": "Nosso Processo",
+    "subtitle": "Como trabalhamos",
+    "step1": {
+      "title": "Briefing",
+      "description": "Entendemos suas necessidades e desejos"
+    },
+    "step2": {
+      "title": "Projeto",
+      "description": "Desenvolvemos o projeto arquitetônico"
+    },
+    "step3": {
+      "title": "Execução",
+      "description": "Realizamos a obra com excelência"
+    },
+    "step4": {
+      "title": "Entrega",
+      "description": "Entregamos seu sonho realizado"
+    }
+  },
+  "contact": {
+    "title": "Fale Conosco",
+    "subtitle": "Estamos prontos para atendê-lo",
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "subject": "Assunto",
+    "message": "Mensagem",
+    "send": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada com sucesso!",
+    "error": "Erro ao enviar mensagem. Tente novamente."
+  },
+  "footer": {
+    "description": "Transformamos histórias em espaços que unem técnica, design e propósito.",
+    "navigation": "Navegação",
+    "units": "Núcleos",
+    "regions": "Onde Atuamos",
+    "contact": "Contato",
+    "whatsapp": "WhatsApp",
+    "address": "São Paulo, SP - Brooklin",
+    "wgEasyAccess": "Acesso ao Sistema WG Easy",
+    "rights": "Todos os direitos reservados",
+    "followInstagram": "Siga-nos no Instagram",
+    "followFacebook": "Curta nossa página no Facebook",
+    "followLinkedin": "Conecte-se conosco no LinkedIn",
+    "quickLinks": "Links Rápidos",
+    "followUs": "Siga-nos",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
+  },
+  "blog": {
+    "title": "Blog & Revista",
+    "subtitle": "Inspiração, tendências e conhecimento em arquitetura e design",
+    "readMore": "Ler mais",
+    "categories": {
+      "all": "Todos",
+      "architecture": "Arquitetura",
+      "engineering": "Engenharia",
+      "carpentry": "Marcenaria",
+      "design": "Design",
+      "technology": "Tecnologia",
+      "trends": "Tendências",
+      "tips": "Dicas"
+    }
+  },
+  "cta": {
+    "getQuote": "Solicitar Orçamento",
+    "learnMore": "Saiba Mais",
+    "viewProjects": "Ver Projetos",
+    "contactUs": "Fale Conosco",
+    "scheduleVisit": "Agendar Visita"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "retry": "Tentar novamente",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "seeAll": "Ver todos",
+    "search": "Buscar"
+  },
+  "seo": {
+    "home": {
+      "title": "Arquitetura, Engenharia e Marcenaria de Alto Padrão em São Paulo",
+      "description": "Ecossistema integrado de arquitetura, engenharia e marcenaria de alto padrão. Sistema turn key premium em São Paulo: Brooklin, Itaim, Jardins, Vila Nova Conceição. 14 anos de excelência.",
+      "keywords": "arquitetura alto padrão são paulo, engenharia turn key, marcenaria sob medida, obras premium brooklin, reforma apartamento itaim, arquiteto jardins, construtora premium sp"
+    },
+    "about": {
+      "title": "Sobre Nós - História e Valores",
+      "description": "Conheça a história, missão, visão e valores do Grupo WG Almeida. 14 anos integrando arquitetura, engenharia e marcenaria de alto padrão em São Paulo.",
+      "keywords": "sobre wg almeida, historia grupo wg, valores empresa arquitetura, missao visao construtora sao paulo"
+    },
+    "process": {
+      "title": "Processo Turn Key - Do Conceito à Entrega",
+      "description": "Conheça nosso processo integrado Turn Key: do conceito à entrega das chaves. 6 etapas com excelência em arquitetura, engenharia e marcenaria.",
+      "keywords": "processo turn key, etapas obra, como funciona projeto arquitetonico, cronograma construcao, gestao de obras"
+    },
+    "architecture": {
+      "title": "Arquitetura Alto Padrão São Paulo",
+      "description": "Projetos arquitetônicos completos de alto padrão em São Paulo. Design de interiores, coordenação técnica e aprovação. Brooklin, Jardins, Itaim, Vila Nova Conceição.",
+      "keywords": "arquitetura alto padrão são paulo, projeto arquitetônico, design de interiores, arquiteto brooklin, arquiteto jardins, reforma apartamento luxo"
+    },
+    "engineering": {
+      "title": "Engenharia Turn Key São Paulo",
+      "description": "Soluções completas em engenharia Turn Key em São Paulo. Planejamento, gerenciamento de obras e instalações de alto padrão. Entrega chave na mão.",
+      "keywords": "engenharia turn key são paulo, gerenciamento de obras, construtora alto padrão, reforma apartamento, construção residencial, obra chave na mão"
+    },
+    "carpentry": {
+      "title": "Marcenaria Sob Medida São Paulo",
+      "description": "Marcenaria sob medida de alto padrão em São Paulo. Móveis planejados, instalação técnica e produção artesanal com madeiras nobres. Garantia de 8 anos.",
+      "keywords": "marcenaria sob medida são paulo, móveis planejados alto padrão, marceneiro brooklin, móveis sob medida jardins, marcenaria luxo, móveis personalizados"
+    },
+    "testimonials": {
+      "title": "Depoimentos - Avaliações de Clientes",
+      "description": "Veja as avaliações reais de nossos clientes no Google. 14 anos construindo sonhos com excelência em arquitetura, engenharia e marcenaria. Nota 5.0 no Google.",
+      "keywords": "WG Almeida avaliações, depoimentos clientes arquitetura, reviews engenharia São Paulo, avaliação google construtora"
+    },
+    "contact": {
+      "title": "Contato - Fale Conosco",
+      "description": "Entre em contato com o Grupo WG Almeida. Atendimento em São Paulo: Brooklin, Jardins, Itaim, Vila Nova Conceição. WhatsApp: (11) 98465-0002.",
+      "keywords": "contato wg almeida, telefone arquiteto são paulo, whatsapp construtora, orçamento arquitetura"
+    },
+    "projects": {
+      "title": "Projetos - Portfólio de Arquitetura e Engenharia",
+      "description": "Conheça nosso portfólio de projetos residenciais e corporativos de alto padrão em São Paulo. Mais de 400 projetos entregues com arquitetura, engenharia e marcenaria integradas.",
+      "keywords": "projetos arquitetura são paulo, portfólio construtora, obras alto padrão, reforma apartamento luxo, projetos residenciais"
+    },
+    "blog": {
+      "title": "Blog & Revista - Arquitetura e Design",
+      "description": "Inspiração, tendências e conhecimento em arquitetura, engenharia e design de interiores. Artigos, dicas e novidades do Grupo WG Almeida em São Paulo.",
+      "keywords": "blog arquitetura, tendências design interiores, dicas reforma, artigos engenharia, novidades construção"
+    },
+    "store": {
+      "title": "Loja",
+      "description": "Explore nossos produtos exclusivos na loja do Grupo WG Almeida. Itens decorativos, luminárias e peças selecionadas."
+    },
+    "success": {
+      "title": "Compra Realizada com Sucesso!",
+      "description": "Sua compra foi finalizada com sucesso. Obrigado por escolher a loja do Grupo WG Almeida."
+    },
+    "login": {
+      "title": "Login - Grupo WG Almeida",
+      "description": "Acesse sua conta no Grupo WG Almeida."
+    },
+    "register": {
+      "title": "Registro - Grupo WG Almeida",
+      "description": "Crie sua conta no Grupo WG Almeida."
+    },
+    "account": {
+      "title": "Minha Conta - Grupo WG Almeida",
+      "description": "Gerencie sua conta e acompanhe seus projetos no Grupo WG Almeida."
+    },
+    "proposal": {
+      "title": "Solicite sua Proposta - Grupo WG Almeida",
+      "description": "Solicite sua proposta personalizada para arquitetura, engenharia e marcenaria de alto padrão."
+    }
+  },
+  "home": {
+    "impactPhrases": [
+      "Técnica no traço. Luxo no silêncio.",
+      "Do projeto à entrega, sem ruídos.",
+      "Um só time. Uma só paixão. Um só padrão.",
+      "Onde cada detalhe tem intenção."
+    ],
+    "hero": {
+      "subtitle": "Um ecossistema completo para construir com excelência.",
+      "subheadline": "Planejamos, executamos e entregamos espaços de alto padrão — do conceito ao último detalhe, sob um único padrão de gestão.",
+      "ctaPrimary": "Conhecer Soluções de Arquitetura e Engenharia",
+      "ctaSecondary": "Explorar Processo Turn Key Premium"
+    },
+    "about": {
+      "kicker": "Há {{years}} anos construindo excelência",
+      "title": "O Grupo WG Almeida é um ecossistema de soluções integradas em arquitetura, engenharia e marcenaria de alto padrão.",
+      "paragraphs": [
+        "Desenvolvemos o projeto arquitetônico em conjunto com o planejamento da reforma e totalmente alinhado à marcenaria, de ponta a ponta. Do conceito à entrega, integramos técnica, gestão e execução em um único fluxo para garantir qualidade, previsibilidade e coerência em cada detalhe.",
+        "Mais do que projetar e construir, entregamos <strong>controle, previsibilidade e tranquilidade</strong> para quem valoriza excelência."
+      ]
+    },
+    "stats": {
+      "inProgress": "Projetos em<br />andamento",
+      "clients": "Clientes<br />atendidos",
+      "coverings": "Metros de revestimentos<br />assentados",
+      "hours": "Horas projetando<br />e construindo histórias"
+    },
+    "turnKey": {
+      "kicker": "Sistema Turn Key Premium",
+      "title": "Um time, uma paixão e um só padrão!",
+      "points": [
+        "Um único time",
+        "Uma única paixão",
+        "Um único padrão"
+      ],
+      "paragraph": "Planejamos, executamos e finalizamos cada projeto com visão global, controle técnico e curadoria de acabamentos — eliminando ruídos, retrabalhos e improvisos.",
+      "quote": "\"Planejar bem é respeitar o tempo, o investimento e o sonho do cliente.\""
+    },
+    "units": {
+      "kicker": "Nossas Unidades",
+      "title": "Especialização + Integração",
+      "subtitle": "Três disciplinas sob o mesmo padrão de qualidade, gestão e responsabilidade.",
+      "architecture": {
+        "title": "Arquitetura",
+        "description": "Projetos arquitetônicos completos, interiores autorais, compatibilização técnica e coordenação de todas as disciplinas.",
+        "highlight": "Arquitetura pensada para ser construída — com beleza, lógica e viabilidade."
+      },
+      "engineering": {
+        "title": "Engenharia",
+        "description": "Execução de obras residenciais e corporativas no sistema turn key. Planejamento, cronograma, controle de custos e gestão de fornecedores.",
+        "highlight": "Precisão, método e responsabilidade do início ao fim."
+      },
+      "carpentry": {
+        "title": "Marcenaria",
+        "description": "Mobiliário sob medida de alto padrão, desenvolvido em perfeita integração com o projeto e a obra.",
+        "highlight": "Marcenaria como extensão da arquitetura — não como complemento."
+      }
+    },
+    "turnKeyBadge": {
+      "label": "Unidade de",
+      "unit": "Engenharia",
+      "tag": "Sistema Turn Key Premium"
+    },
+    "turnKeyBlock": {
+      "kicker": "Gestão de Obra Turn Key",
+      "title": "Do projeto à entrega,<br /><span>sem ruídos.</span>",
+      "paragraph": "Assumimos a responsabilidade total pela execução da sua obra — planejamento, cronograma, controle de custos, gestão de fornecedores e equipes técnicas. Você acompanha tudo em tempo real, com tranquilidade.",
+      "benefits": [
+        "Cronograma controlado",
+        "Custos previsíveis",
+        "Gestão integrada",
+        "Qualidade garantida"
+      ],
+      "quote": "\"Precisão, método e responsabilidade do início ao fim.\"",
+      "cta": "Conheça a Unidade de Engenharia",
+      "imageAlt": "Unidade de Engenharia - Gestão de Obra Turn Key"
+    },
+    "methodology": {
+      "kicker": "Nossa Metodologia",
+      "title": "Como Trabalhamos",
+      "subtitle": "Cada etapa é conduzida com clareza, método e responsabilidade.",
+      "steps": [
+        { "title": "Entendimento profundo", "desc": "Briefing detalhado do cliente e do espaço" },
+        { "title": "Projeto executivo", "desc": "Projeto técnico detalhado e completo" },
+        { "title": "Planejamento", "desc": "Financeiro, técnico e cronograma" },
+        { "title": "Execução integrada", "desc": "Obra conduzida com gestão rigorosa" },
+        { "title": "Marcenaria premium", "desc": "Acabamentos e mobiliário sob medida" },
+        { "title": "Entrega assistida", "desc": "Pós-obra e acompanhamento" }
+      ],
+      "quote": "\"Aqui, excelência não é promessa. É processo.\""
+    },
+    "dashboard": {
+      "kicker": "Dashboard WG Easy",
+      "title": "Controle vivo da obra, do projeto ao acabamento.",
+      "paragraph": "Um painel único para acompanhar aprovações, cronograma e comunicação sem ruídos. Tudo em tempo real, com transparência total para o cliente.",
+      "features": [
+        "Etapas do projeto",
+        "Cronograma da obra",
+        "Registros do dia a dia",
+        "Comunicação centralizada",
+        "Decisões e documentos"
+      ],
+      "cards": [
+        { "label": "Tempo real", "value": "Alertas, etapas e aprovações no mesmo painel." },
+        { "label": "Organização", "value": "Documentos e decisões centralizados com histórico." }
+      ],
+      "systemUrl": "sistema.wgalmeida.com.br",
+      "panel": {
+        "phase": { "label": "Fase", "value": "Execução" },
+        "deadline": { "label": "Prazo", "value": "Em dia" },
+        "control": { "label": "Controle", "value": "Ativo" },
+        "items": [
+          { "label": "Projeto Executivo", "status": "Concluído" },
+          { "label": "Fase de Execução", "status": "Em andamento" },
+          { "label": "Marcenaria", "status": "Aguardando" }
+        ],
+        "status": {
+          "label": "Status geral",
+          "value": "Execução controlada",
+          "helper": "SLA, aprovações e fotos sincronizados."
+        }
+      }
+    },
+    "closing": {
+      "title": "Grupo WG Almeida.<br /><span>Onde ideias ganham forma, processos ganham controle</span><br /><span>e espaços ganham alma.</span>",
+      "ctaPrimary": "Iniciar Orçamento do seu Projeto",
+      "ctaSecondary": "Explorar Portfólio de Obras"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "kicker": "Grupo WG Almeida",
+      "title": "Nossa História",
+      "subtitle": "Técnica, tradição e inovação em cada projeto",
+      "imageAlt": "Escritório Grupo WG Almeida com equipe trabalhando"
+    },
+    "stats": {
+      "years": "Anos de Experiência",
+      "projects": "Projetos Entregues",
+      "units": "Unidades Integradas",
+      "method": "Metodologia Ágil"
+    },
+    "story": {
+      "title": "QUEM SOMOS",
+      "paragraphs": [
+        "O Grupo WG Almeida nasceu da visão de integrar três pilares fundamentais da construção de alto padrão: arquitetura, engenharia e marcenaria. Com anos de experiência no mercado, consolidamos nossa posição como referência em projetos que unem técnica impecável e design sofisticado.",
+        "Nossa trajetória é marcada pela busca constante da excelência, pela atenção aos detalhes e pelo compromisso inabalável com a satisfação de nossos clientes. Cada projeto é tratado como único, recebendo dedicação integral de nossa equipe multidisciplinar.",
+        "Acreditamos que a verdadeira qualidade está na integração perfeita entre todas as etapas do projeto, do conceito inicial à entrega final. Por isso, oferecemos soluções completas em sistema turn key, garantindo controle total sobre prazos, custos e qualidade."
+      ]
+    },
+    "values": {
+      "mission": {
+        "title": "Missão",
+        "description": "Transformar espaços através da integração perfeita entre arquitetura, engenharia e marcenaria, entregando projetos de alto padrão com excelência técnica e estética."
+      },
+      "vision": {
+        "title": "Visão",
+        "description": "Ser referência nacional em projetos integrados de alto padrão, reconhecidos pela qualidade, inovação e compromisso com a satisfação do cliente."
+      },
+      "values": {
+        "title": "Valores",
+        "description": "Excelência técnica, compromisso com prazos, transparência, inovação constante e respeito ao cliente e ao meio ambiente."
+      },
+      "purpose": {
+        "title": "Propósito",
+        "description": "Criar ambientes que unem técnica, design e propósito, transformando histórias em espaços que inspiram e perduram."
+      }
+    },
+    "ceo": {
+      "imageAlt": "William Almeida - Founder & CEO do Grupo WG Almeida",
+      "role": "Founder & CEO",
+      "name": "William Almeida",
+      "paragraphs": [
+        "Antes de ser grupo, sistema ou método, existia um desafio comum às empresas em crescimento: <span>decisões sem dados claros</span>, processos dependentes de pessoas, precificação inconsistente e baixa capacidade de escala.",
+        "A resposta nunca foi improvisada. <span>Foi estrutura.</span>",
+        "William Almeida, Fundador e CEO, construiu sua trajetória atuando diretamente na operação, assumindo responsabilidades e transformando complexidade em sistemas funcionais. A transição para o desenvolvimento de sistemas foi uma decisão estratégica para garantir controle, previsibilidade e crescimento sustentável.",
+        "Nesse contexto surgiu o <span>WG Easy</span>, um sistema interno desenvolvido para resolver problemas reais de precificação, propostas, contratos, planejamento e execução — aplicado diariamente em operação real.",
+        "O Grupo WG Almeida se consolida como uma estrutura que une <span>visão executiva</span>, <span>pensamento sistêmico</span> e <span>execução prática</span> — executiva na criação, organização e otimização de negócios."
+      ],
+      "signature": "WG Almeida"
+    },
+    "differential": {
+      "kicker": "O que nos torna únicos",
+      "title": "Nosso Diferencial",
+      "paragraph": "A integração completa entre arquitetura, engenharia e marcenaria nos permite oferecer soluções únicas e personalizadas. Nossa equipe multidisciplinar trabalha em sinergia desde o primeiro traço até a entrega das chaves, garantindo que cada detalhe reflita a visão e os valores de nossos clientes.",
+      "quote": "A voz WG Almeida é firme, elegante e humana."
+    }
+  },
+  "processPage": {
+    "hero": {
+      "title": "NOSSO PROCESSO",
+      "subtitle": "Do conceito à entrega, com integração total",
+      "imageAlt": "Processo de trabalho WG Almeida"
+    },
+    "stepsTitle": "ETAPAS DO PROJETO",
+    "stepsSubtitle": "Metodologia comprovada que garante excelência em cada fase",
+    "steps": [
+      {
+        "title": "Conceito",
+        "description": "Reunião inicial para entender necessidades, desejos e visão do cliente. Definição de briefing e diretrizes do projeto."
+      },
+      {
+        "title": "Projeto",
+        "description": "Desenvolvimento de estudos preliminares, anteprojeto e projeto executivo com todas as disciplinas integradas."
+      },
+      {
+        "title": "Aprovação",
+        "description": "Gestão de aprovações junto aos órgãos competentes e preparação de documentação técnica completa."
+      },
+      {
+        "title": "Planejamento",
+        "description": "Definição de cronograma, orçamento detalhado e seleção de fornecedores e parceiros qualificados."
+      },
+      {
+        "title": "Execução",
+        "description": "Gestão completa da obra com acompanhamento técnico diário, controle de qualidade e relatórios periódicos."
+      },
+      {
+        "title": "Entrega",
+        "description": "Finalização com vistoria técnica, documentação as-built e suporte pós-entrega para garantia de satisfação."
+      }
+    ],
+    "onboarding": {
+      "kicker": "Exclusividade WG Almeida",
+      "title": "Onboarding Arquitetônico",
+      "subtitle": "Desenvolvemos uma metodologia exclusiva para iniciar cada projeto com total clareza e alinhamento. O onboarding arquitetônico é o primeiro passo para garantir que sua visão seja compreendida em todos os detalhes.",
+      "items": [
+        {
+          "title": "Briefing Profundo",
+          "desc": "Imersão completa no seu estilo de vida, necessidades e desejos. Entendemos não só o que você quer, mas por que você quer."
+        },
+        {
+          "title": "Análise Visual",
+          "desc": "Coletamos referências visuais, estudamos seu acervo pessoal e criamos um moodboard exclusivo para guiar o projeto."
+        },
+        {
+          "title": "Documentação Técnica",
+          "desc": "Levantamento detalhado do imóvel, análise estrutural, mapeamento de instalações e identificação de oportunidades."
+        },
+        {
+          "title": "Cronograma Realista",
+          "desc": "Definição de prazos factíveis, marcos de entrega e pontos de decisão para você acompanhar cada fase."
+        },
+        {
+          "title": "Apresentação 3D",
+          "desc": "Visualização imersiva do projeto antes da execução. Você vê exatamente como será o resultado final."
+        },
+        {
+          "title": "Canal Dedicado",
+          "desc": "Acesso à área do cliente WG para acompanhamento em tempo real, comunicação direta e documentação organizada."
+        }
+      ]
+    },
+    "engineering": {
+      "kicker": "Unidade de Engenharia",
+      "title": "Gestão de Obra Turn Key",
+      "subtitle": "Nossa engenharia não é apenas execução — é gestão completa. Desde o planejamento até a entrega, controlamos cada variável para garantir prazo, custo e qualidade.",
+      "items": [
+        "Planejamento executivo com cronograma detalhado",
+        "Gestão de fornecedores e compras qualificados",
+        "Controle de custos com relatórios semanais",
+        "Acompanhamento técnico diário em obra",
+        "Coordenação de todas as disciplinas",
+        "Documentação as-built e manual do proprietário"
+      ],
+      "stats": [
+        "Obras entregues no prazo",
+        "Projetos com orçamento controlado",
+        "Anos de experiência",
+        "Metodologia Ágil"
+      ]
+    },
+    "integration": {
+      "title": "Integração Total",
+      "paragraph": "A grande vantagem do Grupo WG Almeida é a integração completa entre arquitetura, engenharia e marcenaria. Isso garante que todas as etapas do projeto sejam perfeitamente coordenadas, eliminando retrabalhos, reduzindo prazos e assegurando a qualidade final.",
+      "quote": "\"Do projeto à entrega, com precisão, estética e alto desempenho.\""
+    }
+  },
+  "architecturePage": {
+    "hero": {
+      "kicker": "Unidade de Arquitetura",
+      "title": "Arquitetura",
+      "subtitle": "Design sofisticado que une funcionalidade e estética",
+      "badge": "Projetos Completos",
+      "imageAlt": "Projeto arquitetônico de alto padrão"
+    },
+    "servicesKicker": "O que oferecemos",
+    "servicesTitle": "Nossos Serviços",
+    "servicesSubtitle": "Soluções arquitetônicas completas para projetos residenciais e corporativos",
+    "services": [
+      {
+        "title": "Projeto Completo",
+        "description": "Desenvolvimento integral de projetos arquitetônicos residenciais e corporativos, do conceito à execução."
+      },
+      {
+        "title": "Interiores",
+        "description": "Design de interiores sofisticado com foco em funcionalidade, estética e conforto."
+      },
+      {
+        "title": "Aprovação",
+        "description": "Gestão completa de aprovações junto aos órgãos competentes e regularização de projetos."
+      },
+      {
+        "title": "Coordenação",
+        "description": "Coordenação técnica entre todas as disciplinas do projeto, garantindo integração perfeita."
+      }
+    ],
+    "commitment": {
+      "kicker": "Nosso compromisso",
+      "title": "Excelência em Cada Detalhe",
+      "paragraphs": [
+        "Nossa equipe de arquitetura combina criatividade, técnica e experiência para criar espaços únicos que refletem a personalidade e as necessidades de cada cliente.",
+        "Trabalhamos com as mais modernas ferramentas de projeto e renderização, possibilitando que nossos clientes visualizem cada detalhe antes da execução.",
+        "A integração com nossas unidades de engenharia e marcenaria garante que o projeto seja executado exatamente como planejado, sem surpresas ou imprevistos."
+      ],
+      "badge": "\"Arquitetura pensada para ser construída.\"",
+      "imageAlt": "Projeto arquitetônico WG Almeida - Vila Nova Conceição"
+    },
+    "cta": "Fale com um arquiteto",
+    "schema": {
+      "name": "Arquitetura Alto Padrão",
+      "description": "Projetos arquitetônicos completos de alto padrão em São Paulo. Design de interiores sofisticado e coordenação técnica."
+    }
+  },
+  "engineeringPage": {
+    "hero": {
+      "kicker": "Unidade de Engenharia",
+      "title": "Engenharia",
+      "subtitle": "Precisão técnica e gestão eficiente em cada obra",
+      "badge": "Sistema Turn Key",
+      "imageAlt": "Obra de engenharia de alto padrão em execução"
+    },
+    "servicesKicker": "O que oferecemos",
+    "servicesTitle": "Nossos Serviços",
+    "servicesSubtitle": "Soluções completas em engenharia para projetos de alto padrão",
+    "services": [
+      {
+        "title": "Turn Key",
+        "description": "Entrega completa do projeto, da fundação ao acabamento, com gestão total de prazos e qualidade."
+      },
+      {
+        "title": "Planejamento e Gerenciamento",
+        "description": "Gestão técnica e administrativa de obras, garantindo eficiência e controle de custos."
+      },
+      {
+        "title": "Instalações",
+        "description": "Projetos e execução de instalações elétricas, hidráulicas, HVAC e automação predial."
+      },
+      {
+        "title": "Qualidade",
+        "description": "Controle rigoroso de qualidade em todas as etapas, com certificações e laudos técnicos."
+      }
+    ],
+    "commitment": {
+      "kicker": "Nosso compromisso",
+      "title": "Engenharia de Excelência",
+      "paragraphs": [
+        "Nossa equipe de engenharia é composta por profissionais altamente qualificados, com vasta experiência em obras de alto padrão e complexidade técnica.",
+        "Utilizamos metodologias modernas de gestão de projetos, garantindo controle total sobre prazos, custos e qualidade em todas as etapas da obra.",
+        "O sistema Turn Key permite que nossos clientes tenham tranquilidade total, sabendo que cada detalhe está sendo cuidadosamente gerenciado por nossa equipe."
+      ],
+      "imageAlt": "Equipe de engenharia trabalhando em projeto técnico",
+      "badge": "Anos de experiência"
+    },
+    "cta": "Fale com um engenheiro",
+    "schema": {
+      "name": "Engenharia Turn Key",
+      "description": "Soluções completas em engenharia Turn Key. Entrega do projeto da fundação ao acabamento com gestão total."
+    }
+  },
+  "carpentryPage": {
+    "hero": {
+      "kicker": "Unidade de Marcenaria",
+      "title": "Marcenaria",
+      "subtitle": "Arte e técnica em cada peça criada",
+      "badge": "Atelier WG",
+      "imageAlt": "Marcenaria de alto padrão com móveis sob medida"
+    },
+    "servicesKicker": "O que oferecemos",
+    "servicesTitle": "Nossos Serviços",
+    "servicesSubtitle": "Mobiliário exclusivo e personalizado com acabamento premium",
+    "services": [
+      {
+        "title": "Mobiliário Sob Medida",
+        "description": "Criação de móveis exclusivos e personalizados, projetados especificamente para cada ambiente."
+      },
+      {
+        "title": "Instalação Técnica",
+        "description": "Instalação profissional com acabamento impecável e atenção aos mínimos detalhes."
+      },
+      {
+        "title": "Atelier WG",
+        "description": "Produção artesanal de peças únicas com madeiras nobres e acabamentos premium."
+      },
+      {
+        "title": "Projetos Integrados",
+        "description": "Desenvolvimento de marcenaria integrada ao projeto arquitetônico e de interiores."
+      }
+    ],
+    "commitment": {
+      "kicker": "Nosso compromisso",
+      "title": "Artesanato e Precisão",
+      "paragraphs": [
+        "Nossa marcenaria combina técnicas artesanais tradicionais com tecnologia de ponta, criando peças únicas que são verdadeiras obras de arte funcionais.",
+        "Trabalhamos exclusivamente com madeiras nobres selecionadas, garantindo durabilidade, beleza e sustentabilidade em cada projeto.",
+        "A integração com nossas unidades de arquitetura e engenharia permite criar soluções perfeitamente harmonizadas com o projeto global, do planejamento à instalação final."
+      ],
+      "badge": "\"Marcenaria como extensão da arquitetura.\"",
+      "imageAlt": "Marcenaria WG Almeida - Mobiliário sob medida Brooklin"
+    },
+    "cta": "Fale com um especialista",
+    "schema": {
+      "name": "Marcenaria Sob Medida",
+      "description": "Mobiliário sob medida de alto padrão. Produção artesanal com madeiras nobres e acabamentos premium."
+    }
+  },
+  "testimonialsPage": {
+    "hero": {
+      "kicker": "Nossos Clientes",
+      "title": "Depoimentos",
+      "subtitle": "A satisfação de nossos clientes é nossa maior conquista",
+      "imageAlt": "Clientes satisfeitos WG Almeida"
+    },
+    "google": {
+      "kicker": "Avaliações Verificadas",
+      "title": "Veja o que nossos clientes dizem",
+      "subtitle": "Todas as nossas avaliações são reais e verificadas pelo Google. Convidamos você a conhecer a experiência de quem já realizou projetos conosco.",
+      "note": "Acesse nossas avaliações no Google e veja a experiência real de nossos clientes.",
+      "ctaMaps": "Ver no Google Maps",
+      "ctaReview": "Deixar Avaliação"
+    },
+    "stats": [
+      "Anos de experiência",
+      "Projetos entregues",
+      "Clientes satisfeitos"
+    ],
+    "partners": {
+      "kicker": "Parcerias de Excelência",
+      "title": "Nossos Parceiros",
+      "subtitle": "Trabalhamos com as melhores marcas e fornecedores do mercado"
+    },
+    "cta": {
+      "title": "Pronto para fazer parte dessa história?",
+      "subtitle": "Entre em contato e descubra como podemos transformar seu projeto em realidade.",
+      "whatsapp": "Falar no WhatsApp",
+      "message": "Enviar Mensagem",
+      "whatsappMessage": "Olá! Vi o site e gostaria de saber mais sobre os serviços da WG Almeida."
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "kicker": "Entre em Contato",
+      "title": "Fale Conosco",
+      "subtitle": "Estamos prontos para transformar seu projeto em realidade",
+      "imageAlt": "Contato Grupo WG Almeida"
+    },
+    "info": {
+      "kicker": "Vamos conversar",
+      "title": "Entre em Contato",
+      "subtitle": "Preencha o formulário ou utilize um de nossos canais de atendimento. Nossa equipe está pronta para atendê-lo.",
+      "phoneLabel": "Telefone",
+      "emailLabel": "E-mail",
+      "addressLabel": "Endereço",
+      "addressValue": "São Paulo, SP - Brooklin",
+      "hoursLabel": "Horário",
+      "hoursValue": "Seg - Sex: 9h às 18h",
+      "whatsappCta": "Falar no WhatsApp"
+    },
+    "form": {
+      "name": "Nome *",
+      "email": "E-mail *",
+      "phone": "Telefone",
+      "phonePlaceholder": "(11) 99999-9999",
+      "subject": "Assunto",
+      "message": "Mensagem *",
+      "sending": "Enviando...",
+      "submit": "Enviar Mensagem"
+    },
+    "toast": {
+      "errorTitle": "Erro ao enviar mensagem!",
+      "errorDescription": "Ocorreu um problema. Tente novamente mais tarde.",
+      "successTitle": "Mensagem enviada!",
+      "successDescription": "Entraremos em contato em breve. Obrigado!"
+    }
+  },
+  "projectsPage": {
+    "hero": {
+      "kicker": "Nosso Portfólio",
+      "title": "Projetos que Transformam",
+      "subtitle": "Cada projeto começa em um ponto, que ganha forma no traço e transformam Histórias em um modo de viver.",
+      "imageAlt": "Projetos WG Almeida"
+    },
+    "filters": [
+      { "id": "all", "label": "Todos" },
+      { "id": "residential", "label": "Residencial" },
+      { "id": "corporate", "label": "Corporativo" }
+    ],
+    "meta": {
+      "area": "Área",
+      "duration": "Prazo"
+    },
+    "cta": {
+      "title": "Pronto para transformar seu espaço?",
+      "subtitle": "Entre em contato e descubra como podemos transformar suas ideias em realidade.",
+      "button": "Iniciar Projeto"
+    },
+    "projects": [
+      {
+        "id": 1,
+        "title": "Casa Home Resort Acapulco",
+        "category": "residential",
+        "tags": ["Arquitetura", "Engenharia", "Marcenaria"],
+        "area": "650m²",
+        "duration": "24 meses",
+        "location": "Acapulco, Guarujá - SP",
+        "description": "Projeto residencial completo em condomínio de alto padrão no litoral paulista. Integração total entre arquitetura, engenharia e marcenaria para criar um verdadeiro resort particular com vista para o mar.",
+        "images": [
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (2).webp", "label": "Fachada Principal" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (3).webp", "label": "Living Integrado" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (4).webp", "label": "Área Gourmet" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (5).webp", "label": "Piscina com Deck" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (6).webp", "label": "Suíte Master" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (7).webp", "label": "Varanda Panorâmica" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (8).webp", "label": "Sala de TV" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (9).webp", "label": "Cozinha Gourmet" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (10).webp", "label": "Banheiro Master" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (11).webp", "label": "Área de Lazer" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (14).webp", "label": "Vista Noturna" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (15).webp", "label": "Detalhes Marcenaria" },
+          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (16).webp", "label": "Paisagismo" }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Corporativo Alphaville",
+        "category": "corporate",
+        "tags": ["Arquitetura", "Engenharia", "Marcenaria"],
+        "area": "1.200m²",
+        "duration": "18 meses",
+        "location": "Alphaville, Barueri - SP",
+        "description": "Projeto corporativo integrado com arquitetura moderna, engenharia de ponta e marcenaria premium. Espaços pensados para produtividade e bem-estar dos colaboradores.",
+        "images": [
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (1).webp", "label": "Fachada Corporativa" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (2).webp", "label": "Recepção Executiva" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (3).webp", "label": "Open Space" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (4).webp", "label": "Sala de Reuniões" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (5).webp", "label": "Diretoria" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (6).webp", "label": "Copa Gourmet" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (7).webp", "label": "Área de Descompressão" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (8).webp", "label": "Hall de Entrada" },
+          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (9).webp", "label": "Detalhes do Projeto" }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Condomínio Porta do Sol",
+        "category": "residential",
+        "tags": ["Arquitetura", "Engenharia"],
+        "area": "420m²",
+        "duration": "16 meses",
+        "location": "Mairinque - SP",
+        "description": "Projeto residencial em condomínio fechado com arquitetura contemporânea e engenharia estrutural de alto padrão. Integração perfeita com a natureza local.",
+        "images": [
+          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (11).webp", "label": "Vista Frontal" },
+          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (12).webp", "label": "Área Social" },
+          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (13).webp", "label": "Jardim" },
+          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (14).webp", "label": "Piscina" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (10).webp", "label": "Estrutura" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (11).webp", "label": "Fundação" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (12).webp", "label": "Execução" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (13).webp", "label": "Acabamento" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (14).webp", "label": "Detalhes Estruturais" },
+          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (15).webp", "label": "Vista Final" }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Transformação Residencial",
+        "category": "residential",
+        "tags": ["Reforma", "Antes e Depois", "Turn Key"],
+        "area": "280m²",
+        "duration": "12 meses",
+        "location": "São Paulo - SP",
+        "description": "Transformação completa de residência com reforma integral. Projeto turn key que mostra o poder da renovação: do antes ao depois, uma nova história.",
+        "images": [
+          { "src": "/images/imagens/01 Depois 01.webp", "label": "Resultado Final 1" },
+          { "src": "/images/imagens/02 Depois 02 .webp", "label": "Resultado Final 2" },
+          { "src": "/images/imagens/03 Depois .webp", "label": "Resultado Final 3" },
+          { "src": "/images/imagens/04 Depois.webp", "label": "Resultado Final 4" }
+        ],
+        "beforeAfter": [
+          { "before": "/images/imagens/01 Antes 01.webp", "after": "/images/imagens/01 Depois 01.webp", "label": "Ambiente 1" },
+          { "before": "/images/imagens/02 Antes 02.webp", "after": "/images/imagens/02 Depois 02 .webp", "label": "Ambiente 2" },
+          { "before": "/images/imagens/03 Antes.webp", "after": "/images/imagens/03 Depois .webp", "label": "Ambiente 3" },
+          { "before": "/images/imagens/04 Antes.webp", "after": "/images/imagens/04 Depois.webp", "label": "Ambiente 4" }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Projeto Itaim",
+        "category": "residential",
+        "tags": ["Engenharia", "Alto Padrão"],
+        "area": "350m²",
+        "duration": "14 meses",
+        "location": "Itaim Bibi, São Paulo - SP",
+        "description": "Projeto de engenharia em uma das regiões mais nobres de São Paulo. Execução com rigor técnico e acabamentos de primeira linha.",
+        "images": [
+          { "src": "/images/imagens/BANNERITTAIM-ENGENHARIA.webp", "label": "Banner Projeto" },
+          { "src": "/images/imagens/3.webp", "label": "Detalhe Interior" },
+          { "src": "/images/imagens/7.webp", "label": "Área Social" },
+          { "src": "/images/imagens/8.webp", "label": "Acabamentos" },
+          { "src": "/images/imagens/9.webp", "label": "Vista Geral" }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Residência Premium",
+        "category": "residential",
+        "tags": ["Arquitetura", "Marcenaria"],
+        "area": "480m²",
+        "duration": "20 meses",
+        "location": "São Paulo - SP",
+        "description": "Residência de alto padrão com marcenaria exclusiva e arquitetura contemporânea. Cada ambiente pensado para proporcionar conforto e sofisticação.",
+        "images": [
+          { "src": "/images/imagens/10.webp", "label": "Living Room" },
+          { "src": "/images/imagens/11.webp", "label": "Sala de Jantar" },
+          { "src": "/images/imagens/12.webp", "label": "Home Theater" }
+        ]
+      }
+    ]
+  },
+  "brandPage": {
+    "hero": {
+      "kicker": "Nossa Identidade",
+      "title": "A Marca <span>WG Almeida</span>",
+      "quote": "\"Tradicao que inspira confianca. Inovacao que transforma resultados.\"",
+      "subtitle": "Nosso compromisso e unir engenharia, arquitetura e marcenaria com excelencia tecnica, proposito e respeito, entregando obras que encantam e espacos que inspiram."
+    },
+    "purpose": {
+      "kicker": "Nosso Proposito",
+      "title": "Transformar espacos em experiencias que encantam e inspiram",
+      "paragraphs": [
+        "Construimos mais do que obras: criamos <strong>ambientes com alma</strong>, que refletem o estilo de vida, a essencia e os sonhos de cada cliente.",
+        "Unimos <strong>arquitetura, engenharia e marcenaria de alto padrao</strong> com proposito, tecnica e sensibilidade — para que cada projeto seja unico, funcional e memoravel."
+      ]
+    },
+    "mission": {
+      "title": "Nossa Missao",
+      "paragraphs": [
+        "Encantar pessoas e o mundo, <strong>projetando, reformando e construindo espacos em alta performance</strong> — do projeto arquitetonico a execucao completa.",
+        "Ser reconhecida por clientes e parceiros como uma empresa <strong>etica, transparente e honesta</strong>, comprometida com organizacao, limpeza, prazos, qualidade e responsabilidade em cada etapa."
+      ],
+      "quote": "\"Voce nao sera o primeiro a chegar nem o ultimo a sair da obra — sempre sera o cliente. E ele deve encontrar sua casa como gostaria: <strong>sem cara de obra</strong>.\""
+    },
+    "vision": {
+      "title": "Nossa Visao",
+      "paragraphs": [
+        "Superar expectativas por meio da <strong>inovacao tecnologica, sustentabilidade e excelencia operacional</strong>, oferecendo solucoes personalizadas e integradas no sistema <em>turn key</em>.",
+        "Ser referencia em <strong>construcao civil residencial e corporativa</strong>, garantindo rentabilidade saudavel atraves da confianca, satisfacao e fidelizacao dos clientes atendidos."
+      ],
+      "tags": ["Inovacao", "Sustentabilidade", "Turn Key"]
+    },
+    "valuesSection": {
+      "title": "Nossos Valores",
+      "subtitle": "Os pilares que sustentam nossa marca e guiam cada decisao, cada projeto, cada entrega."
+    },
+    "values": [
+      {
+        "title": "Busca pela Perfeicao",
+        "description": "Exige humildade, determinacao e paciencia em cada detalhe."
+      },
+      {
+        "title": "Dedicacao",
+        "description": "Ir alem das atribuicoes da funcao, com entusiasmo genuino."
+      },
+      {
+        "title": "Gestao Agil",
+        "description": "Simples, flexivel, agil e integrada em todos os processos."
+      },
+      {
+        "title": "Cooperacao",
+        "description": "Transparencia, justica e genuino interesse em atender e entender."
+      },
+      {
+        "title": "Crescimento",
+        "description": "Trabalho como oportunidade de desenvolvimento pessoal e coletivo."
+      },
+      {
+        "title": "Etica",
+        "description": "Simplicidade, respeito e integridade em todas as acoes."
+      },
+      {
+        "title": "Aprendizado",
+        "description": "Erros sao assumidos e transformados em melhoria continua."
+      },
+      {
+        "title": "Excelencia",
+        "description": "Realizacao profissional como combustivel para novos desafios."
+      }
+    ],
+    "colorsSection": {
+      "title": "Paleta de Cores",
+      "subtitle": "Cada cor foi escolhida para representar um aspecto unico da nossa marca, criando uma identidade visual rica e significativa."
+    },
+    "colors": [
+      {
+        "name": "WG Orange",
+        "hex": "#F25C26",
+        "rgb": "RGB(242, 92, 38)",
+        "meaning": "Energia, criatividade e paixao pela arquitetura",
+        "usage": "Cor principal, CTAs, destaques"
+      },
+      {
+        "name": "WG Green",
+        "hex": "#5E9B94",
+        "rgb": "RGB(94, 155, 148)",
+        "meaning": "Equilibrio, sustentabilidade e harmonia",
+        "usage": "Arquitetura, elementos naturais"
+      },
+      {
+        "name": "WG Blue",
+        "hex": "#2B4580",
+        "rgb": "RGB(43, 69, 128)",
+        "meaning": "Confianca, solidez e profissionalismo",
+        "usage": "Engenharia, elementos tecnicos"
+      },
+      {
+        "name": "WG Brown",
+        "hex": "#8B5E3C",
+        "rgb": "RGB(139, 94, 60)",
+        "meaning": "Tradicao, materiais nobres e artesanato",
+        "usage": "Marcenaria, elementos premium"
+      }
+    ],
+    "typography": {
+      "title": "Tipografia",
+      "subtitle": "A combinacao de tipografias foi escolhida para equilibrar elegancia e legibilidade, refletindo a sofisticacao e profissionalismo da marca.",
+      "titleLabel": "Titulos",
+      "titleDesc": "Elegante e classica, transmite sofisticacao.",
+      "bodyLabel": "Corpo de Texto",
+      "bodyDesc": "Moderna e limpa, oferece excelente legibilidade.",
+      "sampleTitle": "Transformamos sonhos em espacos que inspiram",
+      "sampleText": "Cada projeto e uma oportunidade de criar algo unico, que reflete a personalidade e os desejos de quem vai habita-lo."
+    },
+    "nuclei": {
+      "title": "Tres Nucleos, Uma Visao",
+      "subtitle": "Nossa marca integra tres areas de expertise em uma solucao completa — do projeto a execucao, do sonho a realidade.",
+      "items": [
+        {
+          "name": "Arquitetura",
+          "color": "#5E9B94",
+          "description": "Design sofisticado e projetos que traduzem sonhos em realidade."
+        },
+        {
+          "name": "Engenharia",
+          "color": "#2B4580",
+          "description": "Planejamento e execucao com excelencia tecnica."
+        },
+        {
+          "name": "Marcenaria",
+          "color": "#8B5E3C",
+          "description": "Mobiliario sob medida com acabamento premium."
+        }
+      ]
+    },
+    "turnKey": {
+      "badge": "Turn Key",
+      "title": "Empreitada Global",
+      "subtitle": "Modalidade de execucao em que nos comprometemos a construir ou reformar de forma completa, do inicio ao fim da obra.",
+      "steps": [
+        { "num": "01", "title": "Etapas Iniciais", "desc": "Documentacao, alvara, demarcacao" },
+        { "num": "02", "title": "Mobilizacao", "desc": "Estruturacao do canteiro de obras" },
+        { "num": "03", "title": "Limpeza", "desc": "Regularizacoes e preparacao do terreno" },
+        { "num": "04", "title": "Marcacao", "desc": "Gabarito e demarcacao da fundacao" },
+        { "num": "05", "title": "Fundacao", "desc": "Estacas, blocos e estrutura base" },
+        { "num": "06", "title": "Estruturas", "desc": "Pilares, vigas, lajes e cobertura" },
+        { "num": "07", "title": "Alvenaria", "desc": "Vedacoes e fechamentos" },
+        { "num": "08", "title": "Instalacoes", "desc": "Eletrica, hidraulica, ar-condicionado" },
+        { "num": "09", "title": "Acabamentos", "desc": "Pisos, revestimentos, pintura" },
+        { "num": "10", "title": "Marcenaria", "desc": "Mobiliario sob medida" },
+        { "num": "11", "title": "Loucas e Metais", "desc": "Instalacao de equipamentos" },
+        { "num": "12", "title": "Entrega", "desc": "Sua casa pronta para morar" }
+      ]
+    },
+    "cta": {
+      "title": "Vamos Criar Algo Incrivel Juntos?",
+      "subtitle": "Tradicao que inspira confianca. Inovacao que transforma resultados. Deixe-nos transformar seu sonho em realidade.",
+      "primary": "Fale com um Especialista",
+      "secondary": "Ver Projetos"
+    }
+  },
+  "regions": {
+    "defaults": {
+      "keywords": "arquitetura {{region}}, engenharia {{region}}, marcenaria {{region}}, obras alto padrão {{region}}, reforma apartamento {{region}}",
+      "coverage": "Nossa atuação em {{region}}",
+      "servicesTitle": "Soluções integradas de alto padrão",
+      "highlightsTitle": "Por que escolher a WG Almeida em {{region}}?",
+      "quote": "\"{{region}} exige um nível elevado de detalhamento, acabamento e discrição — e é exatamente nesse contexto que o Grupo WG Almeida atua.\"",
+      "ctaTitle": "Pronto para iniciar seu projeto em {{region}}?",
+      "ctaDescription": "Entre em contato e descubra como podemos transformar seu espaço com excelência.",
+      "ctaPrimary": "Falar com Especialista",
+      "ctaSecondary": "Ver Projetos",
+      "services": [
+        {
+          "title": "Arquitetura",
+          "items": ["Projetos residenciais", "Interiores autorais", "Reformas completas"]
+        },
+        {
+          "title": "Engenharia",
+          "items": ["Obras turn key", "Gestão de projetos", "Acompanhamento técnico"]
+        },
+        {
+          "title": "Marcenaria",
+          "items": ["Mobiliário sob medida", "Acabamentos premium", "Integração total"]
+        }
+      ]
+    },
+    "brooklin": {
+      "name": "Brooklin",
+      "title": "Arquitetura e Reforma de Apartamento no Brooklin | WG Almeida",
+      "metaDescription": "Projetos de arquitetura e reforma de apartamento no Brooklin com sistema turn key: planejamento, obra e marcenaria integrada. Solicite orcamento.",
+      "heroImage": "/images/regions/brooklin.jpg",
+      "intro": [
+        "O Grupo WG Almeida atua no Brooklin com projetos completos de arquitetura, engenharia e marcenaria sob medida, atendendo um dos bairros mais estratégicos e valorizados de São Paulo.",
+        "Nossa atuação no Brooklin é focada em apartamentos de médio e alto padrão, casas contemporâneas e reformas completas no sistema turn key.",
+        "Planejamos cada projeto com atenção à infraestrutura do edifício, normas técnicas, logística urbana e, principalmente, ao estilo de vida do cliente.",
+        "Aqui, arquitetura não é estética isolada. É planejamento inteligente aliado à execução precisa."
+      ],
+      "highlights": [
+        "Conhecimento profundo das normas e regulamentos dos condomínios da região",
+        "Logística de obra adaptada à infraestrutura urbana do Brooklin",
+        "Fornecedores e parceiros qualificados próximos ao bairro",
+        "Projetos que valorizam a conexão com a Avenida Berrini e região corporativa",
+        "Acabamentos que refletem o padrão de exigência dos moradores",
+        "Gestão de obras silenciosa e organizada"
+      ],
+      "cta": {
+        "quote": "No Brooklin, arquitetura não é estética isolada. É planejamento inteligente aliado à execução precisa.",
+        "title": "Seu projeto no Brooklin merece excelência",
+        "description": "Converse com nossos especialistas e descubra como podemos transformar seu espaço no Brooklin."
+      }
+    },
+    "itaim": {
+      "name": "Itaim Bibi",
+      "title": "Arquitetura e Reforma Alto Padrão no Itaim Bibi SP",
+      "metaDescription": "Arquitetura, reforma de apartamento e construtora no Itaim Bibi. Sistema Turn Key Premium. Projetos completos com acabamento impecável. Orçamento sem compromisso.",
+      "heroImage": "/images/regions/itaim.jpg",
+      "intro": [
+        "No Itaim Bibi, atuamos principalmente em apartamentos residenciais, escritórios e espaços corporativos, além de reformas completas com prazo e controle.",
+        "O sistema turn key WG Almeida garante que arquitetura, engenharia e marcenaria caminhem juntas, evitando interferências, atrasos e retrabalhos — comuns em regiões densas como o Itaim.",
+        "Nossa expertise na região permite obras organizadas, silenciosas e previsíveis, respeitando as normas dos condomínios e a rotina dos moradores.",
+        "Resultado: entregas no prazo, com qualidade impecável e sem surpresas."
+      ],
+      "highlights": [
+        "Gestão de obras adaptada à densidade urbana do Itaim",
+        "Experiência com reformas em edifícios comerciais e residenciais",
+        "Logística otimizada para carga e descarga em vias movimentadas",
+        "Equipe preparada para obras em horários específicos",
+        "Acabamentos compatíveis com o padrão do bairro",
+        "Comunicação transparente com síndicos e administradoras"
+      ],
+      "cta": {
+        "quote": "Obras organizadas, silenciosas e previsíveis. É assim que trabalhamos no Itaim.",
+        "title": "Transforme seu espaço no Itaim com quem entende a região",
+        "description": "Projetos e obras de alto padrão adaptados às particularidades do Itaim Bibi."
+      }
+    },
+    "jardins": {
+      "name": "Jardins",
+      "title": "Construtora Turn Key nos Jardins SP | Reforma Alto Padrão",
+      "metaDescription": "Construtora e arquitetura de alto padrão nos Jardins. Reforma de casas e apartamentos premium. Sistema Turn Key com projeto, obra e entrega. 14 anos de experiência.",
+      "heroImage": "/images/regions/jardins.jpg",
+      "intro": [
+        "Os Jardins representam tradição, sofisticação e arquitetura de alto nível. Nossa atuação no bairro respeita essa história, aliando técnica contemporânea e acabamento refinado.",
+        "Trabalhamos com casas e apartamentos de alto padrão, interiores sofisticados e marcenaria como elemento arquitetônico.",
+        "Cada projeto começa em um ponto, que ganha forma no traço e transformam Histórias em um modo de viver.",
+        "Nos Jardins, entregamos não apenas espaços — entregamos legado."
+      ],
+      "highlights": [
+        "Respeito à arquitetura histórica e contemporânea da região",
+        "Projetos que valorizam a localização privilegiada",
+        "Materiais nobres e acabamentos de altíssima qualidade",
+        "Integração harmoniosa entre áreas internas e externas",
+        "Marcenaria como elemento arquitetônico diferenciador",
+        "Equipe especializada em reformas de casas e apartamentos de época"
+      ],
+      "cta": {
+        "quote": "Nos Jardins, entregamos não apenas espaços — entregamos legado.",
+        "title": "Seu projeto nos Jardins com a expertise WG Almeida",
+        "description": "Tradição e contemporaneidade unidas em projetos de excelência."
+      }
+    },
+    "cidade-jardim": {
+      "name": "Cidade Jardim",
+      "title": "Arquitetura Exclusiva na Cidade Jardim | Construtora WG Almeida",
+      "metaDescription": "Arquitetura exclusiva e obras de alto padrao na Cidade Jardim com gestao turn key, planejamento tecnico e execucao premium com discricao total.",
+      "heroImage": "/images/regions/cidade-jardim.jpg",
+      "intro": [
+        "A Cidade Jardim exige discrição, planejamento e alto nível técnico. O Grupo WG Almeida atua com foco em projetos completos, obras de grande porte e marcenaria de excelência.",
+        "Aqui, o diferencial está no método: planejamento técnico profundo, gestão rigorosa e execução sem improvisos.",
+        "Obras grandes exigem processos ainda maiores. Nossa experiência em empreendimentos de alto padrão garante controle absoluto de ponta a ponta.",
+        "Na Cidade Jardim, cada detalhe é pensado para superar expectativas."
+      ],
+      "highlights": [
+        "Experiência em projetos de grande porte e alta complexidade",
+        "Gestão de múltiplos fornecedores com padrão unificado",
+        "Planejamento detalhado para obras de longa duração",
+        "Discrição e confidencialidade em projetos exclusivos",
+        "Acabamentos e materiais importados de primeira linha",
+        "Acompanhamento técnico especializado em todas as fases"
+      ],
+      "cta": {
+        "quote": "Obras grandes exigem processos ainda maiores.",
+        "title": "Projetos exclusivos na Cidade Jardim merecem a WG Almeida",
+        "description": "Discrição, método e excelência em projetos de alto padrão."
+      }
+    },
+    "morumbi": {
+      "name": "Morumbi",
+      "title": "Construtora e Reforma de Alto Padrao no Morumbi | WG Almeida",
+      "metaDescription": "Construtora no Morumbi para casas e apartamentos de alto padrao com arquitetura, engenharia e marcenaria sob medida. Entrega turn key completa.",
+      "heroImage": "/images/regions/morumbi.jpg",
+      "intro": [
+        "No Morumbi, nossa atuação contempla desde reformas completas até obras residenciais de alto padrão em terrenos, condomínios e apartamentos.",
+        "Trabalhamos com projetos que exigem compatibilização técnica, planejamento estrutural e logística de obra bem definida.",
+        "O sistema turn key WG garante controle absoluto de ponta a ponta, integrando arquitetura, engenharia e marcenaria em um único fluxo de gestão.",
+        "No Morumbi, transformamos espaços com a mesma excelência que aplicamos em todas as regiões premium de São Paulo."
+      ],
+      "highlights": [
+        "Experiência em casas e apartamentos de grandes metragens",
+        "Projetos adaptados às características dos condomínios da região",
+        "Logística de obra para terrenos e construções novas",
+        "Gestão integrada de todas as etapas do projeto",
+        "Marcenaria sob medida para espaços amplos",
+        "Acabamentos premium compatíveis com o padrão do bairro"
+      ],
+      "cta": {
+        "quote": "O sistema turn key WG garante controle absoluto de ponta a ponta.",
+        "title": "Seu projeto no Morumbi com a excelência WG Almeida",
+        "description": "Arquitetura, engenharia e marcenaria integradas para resultados extraordinários."
+      }
+    },
+    "vila-nova-conceicao": {
+      "name": "Vila Nova Conceição",
+      "title": "Reforma Apartamento Vila Nova Conceição | Construtora Premium",
+      "metaDescription": "Reforma de apartamento e construtora na Vila Nova Conceição. Projetos arquitetônicos autorais com sistema turn key. Alto padrão garantido.",
+      "heroImage": "/images/regions/vila-nova-conceicao.jpg",
+      "intro": [
+        "A Vila Nova Conceição exige um nível elevado de detalhamento, acabamento e discrição — e é exatamente nesse contexto que o Grupo WG Almeida atua.",
+        "Entregamos projetos arquitetônicos autorais, obras de alto padrão com controle rigoroso e marcenaria personalizada integrada ao projeto.",
+        "Cada etapa é conduzida com planejamento, cronograma claro e curadoria de materiais compatível com o padrão do bairro.",
+        "Luxo, para nós, é coerência entre projeto, obra e entrega."
+      ],
+      "highlights": [
+        "Experiência com os principais edifícios e condomínios da região",
+        "Discrição e respeito às regras de convivência dos empreendimentos premium",
+        "Curadoria de materiais e acabamentos de altíssimo padrão",
+        "Proximidade com o Parque Ibirapuera e valorização das vistas",
+        "Equipe de obra treinada para ambiente de alto padrão",
+        "Acompanhamento pessoal em todas as etapas"
+      ],
+      "cta": {
+        "quote": "Luxo, para nós, é coerência entre projeto, obra e entrega.",
+        "title": "Seu projeto na Vila Nova Conceição em mãos especializadas",
+        "description": "A excelência que a Vila Nova Conceição exige, com a expertise WG Almeida."
+      }
+    },
+    "altoDePinheiros": {
+      "name": "Alto de Pinheiros",
+      "title": "Reforma e Arquitetura no Alto de Pinheiros | WG Almeida",
+      "metaDescription": "Reforma de casas e apartamentos no Alto de Pinheiros com arquitetura, engenharia e marcenaria sob medida. Projeto e obra no sistema turn key.",
+      "heroImage": "/images/regions/alto-de-pinheiros.jpg",
+      "intro": [
+        "O Alto de Pinheiros combina tranquilidade residencial com sofisticação urbana. Nossa atuação no bairro reflete esse equilíbrio, com projetos que valorizam espaços amplos, integração com áreas verdes e arquitetura contemporânea.",
+        "Trabalhamos com casas modernas, apartamentos de alto padrão e reformas completas que respeitam a identidade do bairro.",
+        "Cada projeto é desenvolvido com foco em funcionalidade, conforto e design atemporal.",
+        "No Alto de Pinheiros, entregamos projetos que se integram harmoniosamente ao estilo de vida sofisticado do bairro."
+      ],
+      "highlights": [
+        "Experiência em casas com áreas externas e jardins",
+        "Projetos que valorizam ventilação natural e iluminação",
+        "Conhecimento das particularidades dos condomínios da região",
+        "Integração harmoniosa entre ambientes internos e externos",
+        "Marcenaria premium adaptada a espaços amplos",
+        "Acabamentos contemporâneos com materiais nobres"
+      ],
+      "cta": {
+        "quote": "Projetos que se integram harmoniosamente ao estilo de vida sofisticado do bairro.",
+        "title": "Transforme seu espaço no Alto de Pinheiros",
+        "description": "Arquitetura contemporânea e execução impecável em um dos bairros mais valorizados de São Paulo."
+      }
+    },
+    "moema": {
+      "name": "Moema",
+      "title": "Reforma de Apartamento em Moema | Arquitetura Turn Key",
+      "metaDescription": "Reforma de apartamento em Moema com arquitetura, engenharia e marcenaria integradas. Projetos turn key de alto padrao com cronograma previsivel.",
+      "heroImage": "/images/regions/moema.jpg",
+      "intro": [
+        "Moema é sinônimo de qualidade de vida, infraestrutura completa e padrão elevado. Nossa atuação no bairro foca em reformas de apartamentos, projetos de interiores e marcenaria integrada.",
+        "Trabalhamos com apartamentos de médio e alto padrão, otimizando layouts, atualizando acabamentos e criando ambientes funcionais e sofisticados.",
+        "Cada projeto em Moema é planejado para valorizar a localização privilegiada, com proximidade ao Parque Ibirapuera e excelente infraestrutura urbana.",
+        "Em Moema, entregamos reformas que transformam apartamentos em espaços únicos e personalizados."
+      ],
+      "highlights": [
+        "Especialização em reformas de apartamentos de 80m² a 250m²",
+        "Otimização de layouts para maior funcionalidade",
+        "Experiência com condomínios e edifícios da região",
+        "Logística de obra adaptada ao bairro residencial",
+        "Marcenaria sob medida para maximizar espaços",
+        "Acabamentos modernos e atemporais"
+      ],
+      "cta": {
+        "quote": "Reformas que transformam apartamentos em espaços únicos e personalizados.",
+        "title": "Renove seu apartamento em Moema com a WG Almeida",
+        "description": "Projetos completos turn key com qualidade e prazo garantidos."
+      }
+    },
+    "campoBelo": {
+      "name": "Campo Belo",
+      "title": "Reforma de Apartamento no Campo Belo | WG Almeida",
+      "metaDescription": "Arquitetura e reforma de apartamento no Campo Belo com gestao turn key, acabamento premium e obra com prazos claros. Fale com nossa equipe.",
+      "heroImage": "/images/regions/campo-belo.jpg",
+      "intro": [
+        "O Campo Belo é um bairro residencial consolidado, com forte presença de famílias e profissionais que valorizam qualidade e praticidade. Nossa atuação aqui foca em reformas inteligentes e projetos funcionais.",
+        "Trabalhamos com reformas de apartamentos, projetos de interiores e marcenaria sob medida, sempre com foco em otimização de espaços e conforto.",
+        "Cada projeto é desenvolvido com planejamento rigoroso, respeito aos cronogramas e acabamentos de qualidade.",
+        "No Campo Belo, entregamos reformas que unem praticidade e sofisticação."
+      ],
+      "highlights": [
+        "Projetos adaptados ao perfil residencial do bairro",
+        "Reformas de apartamentos com foco em funcionalidade",
+        "Conhecimento das normas dos condomínios da região",
+        "Logística de obra organizada e silenciosa",
+        "Marcenaria inteligente para otimização de espaços",
+        "Relação custo-benefício equilibrada e transparente"
+      ],
+      "cta": {
+        "quote": "Reformas que unem praticidade e sofisticação.",
+        "title": "Seu projeto no Campo Belo com a expertise WG Almeida",
+        "description": "Planejamento, execução e entrega no prazo com qualidade garantida."
+      }
+    },
+    "higienopolis": {
+      "name": "Higienópolis",
+      "title": "Reforma de Apartamento em Higienopolis | Arquitetura WG Almeida",
+      "metaDescription": "Reforma de apartamento em Higienopolis com preservacao arquitetonica, atualizacao tecnica e acabamento premium. Projeto completo com gestao de obra.",
+      "heroImage": "/images/regions/higienopolis.jpg",
+      "intro": [
+        "Higienópolis é um dos bairros mais tradicionais e charmosos de São Paulo, com arquitetura histórica, arborização e atmosfera cultural única. Nossa atuação respeita essa identidade, aliando tradição e contemporaneidade.",
+        "Trabalhamos com apartamentos clássicos, reformas que preservam elementos originais e projetos que valorizam a história do imóvel.",
+        "Cada projeto em Higienópolis é desenvolvido com sensibilidade arquitetônica, respeito ao patrimônio e acabamentos refinados.",
+        "Em Higienópolis, entregamos projetos que honram a história e abraçam o contemporâneo."
+      ],
+      "highlights": [
+        "Experiência com apartamentos históricos e de época",
+        "Reformas que preservam elementos arquitetônicos originais",
+        "Conhecimento das particularidades dos edifícios clássicos",
+        "Projetos que valorizam pé-direito alto e grandes janelas",
+        "Marcenaria que dialoga com a arquitetura do imóvel",
+        "Discrição e respeito à atmosfera cultural do bairro"
+      ],
+      "cta": {
+        "quote": "Projetos que honram a história e abraçam o contemporâneo.",
+        "title": "Seu projeto em Higienópolis merece a WG Almeida",
+        "description": "Sensibilidade arquitetônica e execução impecável em um bairro histórico."
+      }
+    },
+    "pinheiros": {
+      "name": "Pinheiros",
+      "title": "Reforma de Apartamento em Pinheiros | Arquitetura Contemporanea",
+      "metaDescription": "Arquitetura contemporanea e reforma de apartamento em Pinheiros para projetos residenciais e comerciais com foco em funcionalidade e acabamento.",
+      "heroImage": "/images/regions/pinheiros.jpg",
+      "intro": [
+        "Pinheiros é um bairro vibrante, que combina vida cultural, gastronomia e diversidade arquitetônica. Nossa atuação aqui reflete essa energia, com projetos contemporâneos, funcionais e criativos.",
+        "Trabalhamos com apartamentos residenciais, espaços comerciais e reformas completas que valorizam a localização estratégica do bairro.",
+        "Cada projeto é desenvolvido com foco em design contemporâneo, otimização de espaços e integração com a vida urbana.",
+        "Em Pinheiros, entregamos projetos que dialogam com a diversidade e energia do bairro."
+      ],
+      "highlights": [
+        "Projetos contemporâneos para apartamentos e espaços comerciais",
+        "Experiência com a diversidade arquitetônica do bairro",
+        "Reformas que otimizam layouts e maximizam funcionalidade",
+        "Logística de obra adaptada à alta densidade urbana",
+        "Marcenaria moderna e versátil",
+        "Acabamentos que refletem o estilo cosmopolita de Pinheiros"
+      ],
+      "cta": {
+        "quote": "Projetos que dialogam com a diversidade e energia do bairro.",
+        "title": "Transforme seu espaço em Pinheiros",
+        "description": "Arquitetura contemporânea e execução precisa em um dos bairros mais vibrantes de São Paulo."
+      }
+    },
+    "perdizes": {
+      "name": "Perdizes",
+      "title": "Reforma de Apartamento em Perdizes | Arquitetura Residencial",
+      "metaDescription": "Reforma de apartamento em Perdizes com foco em conforto, funcionalidade e valorizacao do imovel. Arquitetura, engenharia e marcenaria integradas.",
+      "heroImage": "/images/regions/perdizes.jpg",
+      "intro": [
+        "Perdizes é um bairro residencial tradicional, com forte presença de famílias e profissionais liberais. Nossa atuação aqui foca em reformas funcionais, projetos de interiores e marcenaria integrada.",
+        "Trabalhamos com apartamentos de diversos tamanhos, otimizando espaços, modernizando acabamentos e criando ambientes acolhedores.",
+        "Cada projeto é planejado com atenção às necessidades das famílias, priorizando conforto, funcionalidade e durabilidade.",
+        "Em Perdizes, entregamos reformas que melhoram a qualidade de vida dos moradores."
+      ],
+      "highlights": [
+        "Especialização em reformas de apartamentos familiares",
+        "Projetos que priorizam conforto e funcionalidade",
+        "Conhecimento dos condomínios e edifícios da região",
+        "Logística de obra respeitosa e organizada",
+        "Marcenaria funcional para famílias",
+        "Relação transparente e cronograma respeitado"
+      ],
+      "cta": {
+        "quote": "Reformas que melhoram a qualidade de vida dos moradores.",
+        "title": "Seu projeto em Perdizes com a WG Almeida",
+        "description": "Reformas planejadas, executadas e entregues com excelência."
+      }
+    },
+    "paraiso": {
+      "name": "Paraíso",
+      "title": "Reforma de Apartamento no Paraiso | Arquitetura Moderna SP",
+      "metaDescription": "Reforma de apartamento no Paraiso com arquitetura moderna, engenharia integrada e obra turn key para imoveis compactos e de alto padrao.",
+      "heroImage": "/images/regions/paraiso.jpg",
+      "intro": [
+        "O Paraíso é um bairro estratégico, com excelente infraestrutura, transporte e conexão com toda a cidade. Nossa atuação aqui foca em reformas de apartamentos e projetos de interiores modernos.",
+        "Trabalhamos com apartamentos de diversos perfis, desde compactos até unidades amplas, sempre com foco em funcionalidade e design contemporâneo.",
+        "Cada projeto é desenvolvido com planejamento técnico, respeito aos prazos e acabamentos de qualidade.",
+        "No Paraíso, entregamos reformas que valorizam a localização privilegiada e transformam apartamentos em lares personalizados."
+      ],
+      "highlights": [
+        "Reformas adaptadas a apartamentos de diferentes metragens",
+        "Otimização de layouts para melhor aproveitamento de espaços",
+        "Experiência com edifícios e condomínios da região",
+        "Logística de obra eficiente e organizada",
+        "Marcenaria sob medida para diversos perfis de cliente",
+        "Acabamentos modernos e duráveis"
+      ],
+      "cta": {
+        "quote": "Reformas que valorizam a localização privilegiada do bairro.",
+        "title": "Renove seu apartamento no Paraíso",
+        "description": "Projetos completos com planejamento, qualidade e prazo garantidos."
+      }
+    },
+    "aclimacao": {
+      "name": "Aclimação",
+      "title": "Reforma Residencial na Aclimacao | Arquitetura e Obra Integrada",
+      "metaDescription": "Reforma residencial na Aclimacao com arquitetura, engenharia e marcenaria integradas para modernizar ambientes com conforto e previsibilidade de prazo.",
+      "heroImage": "/images/regions/aclimacao.jpg",
+      "intro": [
+        "A Aclimação é um bairro residencial tradicional, conhecido pelo parque homônimo e atmosfera familiar. Nossa atuação aqui foca em reformas residenciais, projetos funcionais e marcenaria integrada.",
+        "Trabalhamos com apartamentos e casas, priorizando conforto, otimização de espaços e acabamentos de qualidade.",
+        "Cada projeto é desenvolvido com respeito às características do bairro e às necessidades dos moradores.",
+        "Na Aclimação, entregamos reformas que unem tradição e modernidade."
+      ],
+      "highlights": [
+        "Projetos residenciais adaptados ao perfil familiar do bairro",
+        "Reformas que preservam o caráter residencial da região",
+        "Conhecimento dos edifícios e condomínios locais",
+        "Logística de obra silenciosa e respeitosa",
+        "Marcenaria funcional e durável",
+        "Cronograma transparente e cumprido"
+      ],
+      "cta": {
+        "quote": "Reformas que unem tradição e modernidade.",
+        "title": "Seu projeto na Aclimação com a WG Almeida",
+        "description": "Reformas planejadas e executadas com qualidade em um bairro tradicional de São Paulo."
+      }
+    }
+  },
+  "blogPage": {
+    "fallback": {
+      "title": "Artigo WG Almeida",
+      "author": "Grupo WG Almeida",
+      "category": "Blog"
+    },
+    "categories": {
+      "all": "Todos",
+      "architecture": "Arquitetura",
+      "engineering": "Engenharia",
+      "carpentry": "Marcenaria",
+      "design": "Design",
+      "technology": "Tecnologia",
+      "trends": "Tendências",
+      "tips": "Dicas"
+    },
+    "notFound": {
+      "title": "Artigo não encontrado",
+      "subtitle": "O conteúdo pode ter sido movido ou ainda não foi publicado.",
+      "cta": "Voltar ao Blog"
+    },
+    "readingTime": "{{minutes}} min de leitura",
+    "readingTimeShort": "{{minutes}} min",
+    "backToBlog": "Voltar ao Blog",
+    "hero": {
+      "featured": "Artigo em Destaque",
+      "cta": "Ler Artigo Completo"
+    },
+    "section": {
+      "latest": "Últimos Artigos",
+      "title": "Inspire-se e Aprenda"
+    },
+    "readMore": "Ler mais",
+    "readerGuide": {
+      "title": "Leitura Guiada",
+      "tocTitle": "Neste artigo",
+      "reading": "lendo"
+    },
+    "relatedProducts": {
+      "title": "Produtos Relacionados",
+      "view": "Ver",
+      "viewAll": "Ver Todos os Produtos"
+    },
+    "newsletter": {
+      "title": "Receba Inspiração Direto no seu E-mail",
+      "subtitle": "Assine nossa newsletter e receba as últimas tendências, dicas e novidades sobre arquitetura, engenharia e design.",
+      "placeholder": "Seu melhor e-mail",
+      "button": "Assinar"
+    }
+  },
+  "storePage": {
+    "hero": {
+      "kicker": "Loja Exclusiva",
+      "title": "Nossa Loja",
+      "subtitle": "Produtos selecionados com a qualidade WG Almeida",
+      "badge": "Itens Decorativos Premium",
+      "imageAlt": "Luminárias e itens decorativos premium"
+    },
+    "catalog": {
+      "kicker": "Catálogo",
+      "title": "Produtos Selecionados",
+      "subtitle": "Luminárias, peças decorativas e itens exclusivos para transformar seus ambientes",
+      "tags": {
+        "architecture": "Arquitetura",
+        "engineering": "Engenharia",
+        "carpentry": "Marcenaria"
+      }
+    },
+    "loading": "Carregando produtos...",
+    "errors": {
+      "loadFailed": "Falha ao carregar produtos",
+      "loadError": "Erro ao carregar produtos: {{error}}"
+    },
+    "empty": {
+      "title": "Nenhum produto disponível no momento.",
+      "subtitle": "Volte em breve para novidades!"
+    },
+    "productFallback": {
+      "subtitle": "Confira este produto incrível!",
+      "add": "Adicionar"
+    },
+    "cart": {
+      "title": "Carrinho de Compras",
+      "empty": "Seu carrinho está vazio.",
+      "emptyTitle": "Seu carrinho está vazio",
+      "emptyDescription": "Adicione produtos ao carrinho antes de finalizar a compra.",
+      "addedTitle": "Adicionado ao Carrinho!",
+      "addedDescription": "{{title}} foi adicionado ao seu carrinho.",
+      "errorTitle": "Erro ao adicionar ao carrinho",
+      "checkoutErrorTitle": "Erro no Checkout",
+      "checkoutErrorDescription": "Houve um problema ao iniciar o checkout. Por favor, tente novamente.",
+      "remove": "Remover",
+      "total": "Total",
+      "checkout": "Finalizar Compra"
+    },
+    "productDetail": {
+      "addedTitle": "Adicionado ao Carrinho!",
+      "addedDescription": "{{quantity}} x {{title}} ({{variant}}) adicionado.",
+      "errorTitle": "Ops! Algo deu errado.",
+      "loadFailed": "Falha ao carregar o produto",
+      "loadError": "Erro ao carregar o produto: {{error}}",
+      "backToStore": "Voltar para a loja",
+      "prevImage": "Imagem anterior",
+      "nextImage": "Proxima imagem",
+      "goToImage": "Ir para a imagem {{index}}",
+      "options": "Opções",
+      "addToCart": "Adicionar ao Carrinho",
+      "inStock": "{{count}} em estoque!",
+      "lowStock": "Estoque insuficiente. Apenas {{count}} restantes.",
+      "unavailable": "Indisponível no momento"
+    }
+  },
+  "successPage": {
+    "title": "OBRIGADO PELA SUA COMPRA!",
+    "subtitle": "Seu pedido foi recebido com sucesso e já está sendo processado. Você receberá um e-mail com os detalhes da sua compra em breve.",
+    "cta": "Continuar Comprando"
+  },
+  "loginPage": {
+    "logoAlt": "Logo Grupo WG Almeida",
+    "heading": "Área do Cliente",
+    "subtitle": "Acesse sua conta para continuar.",
+    "emailPlaceholder": "Seu e-mail",
+    "passwordPlaceholder": "Sua senha",
+    "submitting": "Entrando...",
+    "submit": "Entrar",
+    "noAccount": "Não tem uma conta?",
+    "createAccount": "Crie uma agora",
+    "toasts": {
+      "adminSuccessTitle": "Login de Admin bem-sucedido!",
+      "adminSuccessDescription": "Redirecionando para o painel...",
+      "successTitle": "Login bem-sucedido!",
+      "successDescription": "Bem-vindo de volta!",
+      "unexpectedErrorTitle": "Erro inesperado",
+      "unexpectedErrorDescription": "Não foi possível verificar o perfil do usuário."
+    }
+  },
+  "registerPage": {
+    "logoAlt": "Logo Grupo WG Almeida",
+    "heading": "Criar Conta",
+    "subtitle": "Junte-se à nossa comunidade de clientes.",
+    "namePlaceholder": "Seu nome completo",
+    "emailPlaceholder": "Seu e-mail",
+    "passwordPlaceholder": "Crie uma senha",
+    "confirmPasswordPlaceholder": "Confirme sua senha",
+    "submitting": "Criando...",
+    "submit": "Criar Conta",
+    "hasAccount": "Já tem uma conta?",
+    "loginLink": "Faça login",
+    "toasts": {
+      "passwordMismatch": "As senhas não coincidem!",
+      "successTitle": "Registro realizado com sucesso!",
+      "successDescription": "Por favor, verifique seu e-mail para confirmar sua conta e depois faça o login."
+    }
+  },
+  "accountPage": {
+    "toasts": {
+      "loggedOut": "Você saiu da sua conta.",
+      "notReadyTitle": "Em Construção",
+      "notReadyDescription": "Esta funcionalidade estará disponível em breve."
+    },
+    "defaultName": "Cliente",
+    "notAvailable": "N/A",
+    "status": {
+      "active": "Ativo",
+      "inProgress": "Em andamento",
+      "pending": "Pendente",
+      "completed": "Concluído",
+      "finished": "Finalizado"
+    },
+    "loading": "Carregando suas informações...",
+    "hero": {
+      "kicker": "Área do Cliente",
+      "greeting": "Olá, {{name}}!",
+      "subtitle": "Bem-vindo à sua área exclusiva",
+      "wgEasy": "Acessar WG Easy",
+      "customerPortal": "Portal do Cliente"
+    },
+    "quickAccess": {
+      "title": "Acesso Rápido",
+      "access": "Acessar"
+    },
+    "cards": {
+      "contracts": {
+        "title": "Meus Contratos",
+        "descriptionWithCount": "{{count}} contrato(s) ativo(s)",
+        "descriptionEmpty": "Nenhum contrato ainda"
+      },
+      "requestQuote": {
+        "title": "Solicitar Proposta",
+        "description": "Peça um orçamento personalizado"
+      },
+      "files": {
+        "title": "Meus Arquivos",
+        "description": "Acesse documentos e projetos"
+      },
+      "contact": {
+        "title": "Falar Conosco",
+        "description": "Entre em contato com a equipe"
+      }
+    },
+    "contracts": {
+      "title": "Meus <span>Contratos</span>",
+      "viewAll": "Ver todos",
+      "inProgress": "Projeto em andamento",
+      "value": "Valor:",
+      "start": "Início:",
+      "contractLabel": "Contrato #{{number}}"
+    },
+    "accountInfo": {
+      "title": "Minha Conta",
+      "name": "Nome",
+      "email": "Email",
+      "phone": "Telefone",
+      "edit": "Editar informações",
+      "logout": "Sair da Conta"
+    },
+    "nucleos": {
+      "sectionTitle": "Nossos Núcleos",
+      "sectionTitleActive": "Seus Núcleos Contratados",
+      "hired": "Contratado",
+      "learnMore": "Saiba mais",
+      "architecture": {
+        "label": "Arquitetura",
+        "description": "Projetos residenciais e comerciais"
+      },
+      "engineering": {
+        "label": "Engenharia",
+        "description": "Obras e reformas completas"
+      },
+      "carpentry": {
+        "label": "Marcenaria",
+        "description": "Móveis sob medida"
+      }
+    },
+    "cta": {
+      "titleExisting": "Quer expandir seu projeto?",
+      "titleNew": "Tem um projeto em mente?",
+      "subtitle": "Solicite uma proposta personalizada",
+      "button": "Solicitar Proposta"
+    },
+    "support": {
+      "title": "Precisa de <span>Ajuda</span>?",
+      "subtitle": "Estamos prontos para atender você",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "form": "Formulário",
+      "portal": "Portal Completo"
+    }
+  },
+  "adminPage": {
+    "title": "Central de IA - WG Almeida",
+    "subtitle": "Ferramentas inteligentes para otimização do site",
+    "tabs": {
+      "seo": "Análise SEO",
+      "content": "Gerador de Conteúdo",
+      "consultant": "Consultor Estratégico"
+    },
+    "contentTypes": {
+      "page": "Página do Site",
+      "blog": "Artigo de Blog",
+      "description": "Descrição de Serviço",
+      "cta": "Chamadas para Ação",
+      "social": "Posts Redes Sociais"
+    },
+    "quickQuestions": [
+      "Como melhorar o posicionamento no Google?",
+      "Quais conteúdos gerar para o blog?",
+      "Como me diferenciar dos concorrentes?",
+      "Estratégia para captar mais leads"
+    ],
+    "seo": {
+      "title": "Analisador SEO",
+      "subtitle": "Analise páginas e receba recomendações de otimização",
+      "placeholder": "Ex: Home, Arquitetura, Brooklin, Sobre...",
+      "analyze": "Analisar",
+      "error": "Erro ao analisar: {{message}}"
+    },
+    "content": {
+      "title": "Gerador de Conteúdo",
+      "subtitle": "Crie textos otimizados para diferentes formatos",
+      "typeLabel": "Tipo de Conteúdo",
+      "topicLabel": "Tema/Assunto",
+      "topicPlaceholder": "Ex: Reforma de apartamento no Itaim",
+      "generate": "Gerar Conteúdo",
+      "error": "Erro ao gerar: {{message}}"
+    },
+    "consultant": {
+      "title": "Consultor Estratégico",
+      "subtitle": "Tire dúvidas sobre posicionamento, mercado e estratégia",
+      "placeholder": "Faça sua pergunta sobre estratégia, marketing, SEO ou posicionamento...",
+      "submit": "Consultar",
+      "error": "Erro: {{message}}"
+    },
+    "footer": "Powered by Claude AI | Dados atualizados em tempo real"
+  },
+  "wgEasyModal": {
+    "subtitle": "Área do Colaborador",
+    "description": "Acesse o sistema de gestão de projetos e acompanhamento de obras.",
+    "error": "Erro ao acessar o sistema. Tente novamente.",
+    "emailPlaceholder": "Seu e-mail corporativo",
+    "loading": "Acessando...",
+    "submit": "Acessar WG Easy",
+    "directAccess": "Ou acesse diretamente em easy.wgalmeida.com.br"
+  },
+  "projectGallery": {
+    "kicker": "Nossos Projetos",
+    "previous": "Fotos anteriores",
+    "next": "Próximas fotos",
+    "goToPage": "Ir para página {{page}}",
+    "viewInstagram": "Ver mais no Instagram",
+    "close": "Fechar",
+    "previousPhoto": "Foto anterior",
+    "nextPhoto": "Próxima foto",
+    "titles": {
+      "apartmentBrooklin": "Apartamento Brooklin",
+      "corporateAlphaville": "Corporativo Alphaville",
+      "vilaNovaConceicao": "Vila Nova Conceição",
+      "guarujaHome": "Casa Guarujá",
+      "portaDoSol": "Cond. Porta do Sol"
+    },
+    "categories": {
+      "integratedLiving": "Living Integrado",
+      "livingRoom": "Sala de Estar",
+      "kitchen": "Cozinha",
+      "suite": "Suite",
+      "reception": "Recepção",
+      "meetingRoom": "Sala de Reunião",
+      "office": "Escritório",
+      "workspace": "Área de Trabalho",
+      "living": "Living",
+      "diningRoom": "Sala de Jantar",
+      "gourmetKitchen": "Cozinha Gourmet",
+      "masterSuite": "Suite Master",
+      "facade": "Fachada",
+      "outdoorArea": "Área Externa",
+      "pool": "Piscina",
+      "commonArea": "Área Comum",
+      "leisure": "Lazer",
+      "landscaping": "Paisagismo"
+    }
+  },
+  "projectCarousel": {
+    "kicker": "Projetos em destaque",
+    "title": "Portfólio vivo do Grupo WG Almeida",
+    "previous": "Projeto anterior",
+    "next": "Próximo projeto",
+    "details": "Detalhes",
+    "goTo": "Ir para {{title}}",
+    "projects": {
+      "acapulco": {
+        "title": "Casa Resort Acapulco",
+        "subtitle": "Guarujá • Residencial",
+        "description": "Projeto turnkey que transforma história em espaço com arquitetura sensorial, acabamento em marcenaria premium e entrega com curadoria.",
+        "stat": "450 m² • 18 meses"
+      },
+      "alameda": {
+        "title": "Apartamento Alameda",
+        "subtitle": "Alphaville • Residencial",
+        "description": "Interiores contemporâneos com integração de espaços e marcenaria sob medida para um living sofisticado.",
+        "stat": "320 m² • 14 meses"
+      },
+      "lesChamps": {
+        "title": "Cobertura Les Champs",
+        "subtitle": "Osasco • Residencial",
+        "description": "Cobertura duplex com projeto de interiores premium, terraço gourmet e acabamentos de alto padrão.",
+        "stat": "280 m² • 12 meses"
+      },
+      "lumenit": {
+        "title": "Lumenit Corporativo",
+        "subtitle": "Alphaville • Comercial",
+        "description": "Ambiente corporativo com design funcional, iluminação estratégica e marcenaria executiva.",
+        "stat": "180 m² • 8 meses"
+      },
+      "grandPanamby": {
+        "title": "Apartamento Grand Panamby",
+        "subtitle": "São Paulo • Residencial",
+        "description": "Reforma completa com arquitetura de interiores e soluções de engenharia para otimização de espaços.",
+        "stat": "250 m² • 10 meses"
+      },
+      "square": {
+        "title": "Apartamento Square",
+        "subtitle": "Santo Amaro • Residencial",
+        "description": "Design moderno com integração de ambientes sociais e marcenaria planejada.",
+        "stat": "150 m² • 8 meses"
+      },
+      "gaivota": {
+        "title": "Casa Gaivota",
+        "subtitle": "Moema • Residencial",
+        "description": "Residência urbana com projeto arquitetônico contemporâneo e paisagismo integrado.",
+        "stat": "380 m² • 16 meses"
+      },
+      "portaDoSol": {
+        "title": "Casa Porta do Sol",
+        "subtitle": "Mairinque • Residencial",
+        "description": "Casa de campo com arquitetura sustentável e integração com a natureza.",
+        "stat": "420 m² • 14 meses"
+      },
+      "paulistano": {
+        "title": "Condomínio Paulistano",
+        "subtitle": "Monte Kemel • Residencial",
+        "description": "Reforma de unidade em condomínio com projeto de interiores e marcenaria personalizada.",
+        "stat": "200 m² • 10 meses"
+      },
+      "cureDent": {
+        "title": "Consultório Cure Dent",
+        "subtitle": "Cotia • Comercial",
+        "description": "Clínica odontológica com design funcional, ergonomia e acabamentos de alta performance.",
+        "stat": "120 m² • 6 meses"
+      },
+      "surubiju": {
+        "title": "Galpão Surubiju",
+        "subtitle": "Alphaville Industrial • Comercial",
+        "description": "Projeto industrial com soluções de engenharia para logística e operação eficiente.",
+        "stat": "800 m² • 12 meses"
+      }
+    }
+  },
+  "photoGallery": {
+    "kicker": "Nosso Portfólio",
+    "title": "Galeria de Projetos",
+    "subtitle": "Cada projeto começa em um ponto, que ganha forma no traço e transforma histórias em um modo de viver.",
+    "projects": {
+      "brooklin": {
+        "title": "Residência Brooklin",
+        "category": "Arquitetura & Interiores",
+        "images": {
+          "livingRoom": "Sala de Estar",
+          "gourmetKitchen": "Cozinha Gourmet",
+          "leisureArea": "Área de Lazer"
+        }
+      },
+      "itaim": {
+        "title": "Apartamento Itaim",
+        "category": "Reforma Completa",
+        "images": {
+          "integratedLiving": "Living Integrado",
+          "masterSuite": "Suíte Master",
+          "homeOffice": "Home Office"
+        }
+      },
+      "jardins": {
+        "title": "Casa Jardins",
+        "category": "Marcenaria Premium",
+        "images": {
+          "walkInCloset": "Closet Planejado",
+          "library": "Biblioteca",
+          "gourmetCounter": "Bancada Gourmet"
+        }
+      },
+      "vilaNova": {
+        "title": "Cobertura Vila Nova",
+        "category": "Engenharia & Arquitetura",
+        "images": {
+          "terrace": "Terraço Panorâmico",
+          "pool": "Piscina",
+          "outdoorLounge": "Lounge Externo"
+        }
+      }
+    }
+  },
+  "instagramGallery": {
+    "kicker": "Siga-nos no Instagram",
+    "previous": "Fotos anteriores",
+    "next": "Próximas fotos",
+    "postAlt": "Post Instagram {{id}}",
+    "viewOnInstagram": "Ver no Instagram",
+    "goToPage": "Ir para página {{page}}",
+    "viewMore": "Ver mais no Instagram",
+    "close": "Fechar",
+    "previousPhoto": "Foto anterior",
+    "nextPhoto": "Próxima foto",
+    "openOnInstagram": "Abrir no Instagram"
+  },
+  "seoAiInsights": {
+    "kicker": "IA para SEO",
+    "title": "Inteligência artificial apontando o próximo passo no buscador",
+    "subtitle": "Recomendação contínua baseada em dados de performance e contexto do Google Meu Negócio para manter a presença orgânica alinhada com o estilo premium do Grupo WG Almeida.",
+    "footer": "Esses insights são gerados por uma pipeline de IA que combina dados de performance, feedback de clientes e referências do Google Meu Negócio. Use como guia para priorizar atualizações de conteúdo, backlinks e UX."
+  },
+  "googleReviews": {
+    "description": "Arquitetura, Engenharia e Marcenaria de Alto Padrão em São Paulo",
+    "count": "• 50+ avaliações",
+    "countWithValue": "• {{count}} avaliações",
+    "viewAll": "Ver todas as avaliações no Google",
+    "reviews": [
+      {
+        "id": 1,
+        "name": "Mariana S.",
+        "rating": 5,
+        "date": "há 2 semanas",
+        "text": "Reforma completa com muito cuidado e atenção aos detalhes. Resultado superou as expectativas.",
+        "avatar": "M"
+      },
+      {
+        "id": 2,
+        "name": "Carlos Eduardo R.",
+        "rating": 5,
+        "date": "há 1 mês",
+        "text": "Projeto de arquitetura e marcenaria impecável. Prazo cumprido e equipe muito profissional.",
+        "avatar": "C"
+      },
+      {
+        "id": 3,
+        "name": "Ana Paula M.",
+        "rating": 5,
+        "date": "há 1 mês",
+        "text": "Espaço comercial transformado. Engenharia e marcenaria perfeitas. Nota 10!",
+        "avatar": "A"
+      }
+    ]
+  },
+  "lizAssistant": {
+    "errors": {
+      "sendFailed": "Desculpe, ocorreu um erro. Tente novamente.",
+      "microphone": "Não foi possível acessar o microfone. Verifique as permissões.",
+      "transcription": "Não foi possível transcrever o áudio",
+      "audioProcessing": "Desculpe, não consegui entender. Pode repetir?"
+    },
+    "greeting": "Olá! Aqui é a Liz, assistente virtual da WG Almeida. Como posso ajudar você hoje?",
+    "ctaTitle": "Falar com a Liz",
+    "ctaSubtitle": "Atendimento inteligente WG",
+    "calling": "Em ligação • {{duration}}",
+    "role": "Assistente WG Almeida",
+    "startCall": "Iniciar ligação",
+    "endCall": "Encerrar ligação",
+    "callStatus": {
+      "processing": "Processando...",
+      "speaking": "Liz está falando...",
+      "listening": "Ouvindo...",
+      "tapToSpeak": "Toque para falar",
+      "tapToStop": "Toque para parar"
+    },
+    "emptyState": {
+      "title": "Olá! Sou a Liz, assistente da WG Almeida.",
+      "subtitle": "Como posso ajudar você hoje?"
+    },
+    "inputPlaceholder": "Digite sua mensagem...",
+    "stopRecording": "Parar gravação",
+    "startRecording": "Gravar mensagem de voz"
+  },
+  "claudeAssistant": {
+    "greeting": "Olá! Sou a assistente virtual do Grupo WG Almeida. Como posso ajudá-lo hoje? Posso falar sobre nossos serviços de arquitetura, engenharia e marcenaria de alto padrão.",
+    "errorMessage": "Desculpe, houve um problema ao processar sua mensagem. Por favor, entre em contato diretamente pelo telefone ou formulário de contato.",
+    "quickQuestions": [
+      "Quais serviços vocês oferecem?",
+      "Como funciona o sistema turn key?",
+      "Em quais regiões vocês atuam?"
+    ],
+    "open": "Abrir assistente",
+    "title": "Assistente WG Almeida",
+    "poweredBy": "Powered by Claude AI",
+    "close": "Fechar",
+    "quickLabel": "Perguntas frequentes:",
+    "placeholder": "Digite sua mensagem..."
+  },
+  "premiumIntro": {
+    "whatsappMessage": "Olá! Vi o site da WG Almeida e quero transformar meu projeto em realidade!",
+    "whatsappAria": "Abrir WhatsApp para contato",
+    "tagline": "Arquitetura • Engenharia • Marcenaria",
+    "cta": {
+      "subtitle": "Fale agora com nosso time",
+      "button": "Chamar no WhatsApp"
+    },
+    "skip": "Pular",
+    "stages": {
+      "whoWeAre": {
+        "kicker": "Quem Somos",
+        "line1": "Há 14 anos construindo",
+        "line2": "histórias com excelência."
+      },
+      "ecosystem": {
+        "line1": "Um ecossistema completo",
+        "line2": "de soluções integradas."
+      },
+      "whatWeDo": {
+        "kicker": "O Que Fazemos",
+        "line1": "Do conceito à entrega.",
+        "line2": "Do projeto ao último detalhe."
+      },
+      "units": {
+        "kicker": "Nossas Unidades",
+        "line1": "Três disciplinas.",
+        "line2": "Um único padrão."
+      },
+      "architecture": {
+        "title": "Arquitetura",
+        "subtitle": "Projetos autorais e funcionais"
+      },
+      "engineering": {
+        "title": "Engenharia",
+        "subtitle": "Execução com precisão e método"
+      },
+      "carpentry": {
+        "title": "Marcenaria",
+        "subtitle": "Mobiliário sob medida de alto padrão"
+      },
+      "howWeWork": {
+        "kicker": "Como Fazemos",
+        "line1": "Sistema Turn Key Premium.",
+        "line2": "Planejamento, execução e entrega sob gestão única."
+      },
+      "wgEasy": {
+        "kicker": "Tecnologia & Transparência",
+        "subtitle": "Acompanhe seu projeto em tempo real.",
+        "features": ["Cronograma", "Fotos", "Documentos", "Comunicação"]
+      },
+      "impact": {
+        "line1": "Um time. Uma paixão.",
+        "line2": "Um só padrão."
+      },
+      "finalCta": {
+        "line1": "Antes de existir um espaço,",
+        "line2": "existe uma <span>HISTÓRIA</span>",
+        "line3": "esperando para ser projetada."
+      }
+    }
+  },
+  "proposal": {
+    "yes": "Sim",
+    "no": "Não",
+    "storyPhases": [
+      { "lines": ["Todo projeto nasce", "de um ponto."], "duration": 3500 },
+      { "lines": ["Cada projeto começa em um ponto,", "que ganha forma no traço e transforma", "Histórias em um modo de viver."], "duration": 4500 },
+      { "lines": ["Do ponto de partida", "ao último detalhe,"], "subtitle": "transformamos histórias em espaços para viver.", "duration": 4000 },
+      { "lines": ["Mas é no traço", "que a vida começa a acontecer."], "duration": 3500 },
+      { "lines": ["Projetar é ouvir histórias."], "subtitle": "Construir é transformá-las em espaço.", "duration": 4000 },
+      { "lines": ["Arquitetura", "Engenharia", "Marcenaria"], "type": "services", "duration": 3000 }
+    ],
+    "services": {
+      "carpentry": "Marcenaria",
+      "glass": "Vidraçaria",
+      "stone": "Marmoraria",
+      "paint": "Pintura",
+      "lighting": "Iluminação",
+      "furniture": "Mobiliário",
+      "plaster": "Gesso/Drywall",
+      "electrical": "Elétrica"
+    },
+    "servicesSelected": "{{count}} serviço(s) selecionado(s)",
+    "validation": {
+      "name": "Informe seu nome",
+      "email": "Informe seu email",
+      "phone": "Informe seu telefone",
+      "errorTitle": "Erro"
+    },
+    "summary": {
+      "notProvided": "Não informado",
+      "notSpecified": "Não especificado",
+      "noServices": "Nenhum selecionado",
+      "projectName": "Empreendimento: {{value}}",
+      "area": "Metragem: {{value}}",
+      "hasFloorplan": "Possui planta: {{value}}",
+      "hasArchitecture": "Possui projeto arquitetônico: {{value}}",
+      "renovationScope": "Reformar todos ambientes: {{value}}",
+      "services": "Serviços: {{value}}"
+    },
+    "screens": {
+      "property": {
+        "title": "Sobre o Imóvel",
+        "subtitle": "Vamos conhecer seu espaço",
+        "nameLabel": "Qual o nome do empreendimento?",
+        "namePlaceholder": "Ex: Edifício Aurora, Casa Vila Nova...",
+        "areaLabel": "Metragem aproximada (m²)",
+        "areaPlaceholder": "Ex: 120"
+      },
+      "floorplan": {
+        "title": "Planta ou Projeto",
+        "subtitle": "Você possui a planta ou o projeto do imóvel?",
+        "uploadPrompt": "Clique para anexar arquivo",
+        "uploadFormats": "PDF, JPG ou DWG",
+        "noPlanTitle": "Sem problemas!",
+        "noPlanDescription": "Podemos solicitar a planta junto à construtora ou condomínio. Nossa equipe cuidará de tudo para você."
+      },
+      "architecture": {
+        "title": "Projeto Arquitetônico",
+        "subtitle": "Você já possui projeto arquitetônico?",
+        "noProjectTitle": "Excelente oportunidade!",
+        "noProjectDescription": "Nossa equipe de arquitetura pode desenvolver o projeto ideal para você. Do conceito à execução, cuidamos de cada detalhe."
+      },
+      "scope": {
+        "title": "Escopo da Reforma",
+        "subtitle": "Você pretende reformar todos os ambientes?",
+        "all": "Sim, todos",
+        "some": "Alguns",
+        "detailsLabel": "Quais ambientes você pretende reformar?",
+        "detailsPlaceholder": "Ex: Sala, cozinha e banheiro social..."
+      },
+      "services": {
+        "title": "Serviços",
+        "subtitle": "Selecione os serviços desejados"
+      },
+      "contact": {
+        "title": "Estamos quase lá!",
+        "subtitle": "Dados para contato",
+        "nameLabel": "Seu nome",
+        "namePlaceholder": "Nome completo",
+        "emailLabel": "E-mail",
+        "emailPlaceholder": "seu@email.com",
+        "phoneLabel": "WhatsApp",
+        "phonePlaceholder": "(11) 99999-9999"
+      }
+    },
+    "confirmation": {
+      "title": "Confirme sua solicitação",
+      "projectName": "Empreendimento:",
+      "area": "Metragem:",
+      "services": "Serviços:",
+      "contact": "Contato:",
+      "responseTitle": "Retorno garantido em até 48h",
+      "responseDescription": "Nossa equipe entrará em contato para entender cada detalhe do seu projeto e apresentar a melhor solução personalizada."
+    },
+    "storytelling": {
+      "tapToInteract": "Toque para interagir",
+      "startNow": "Começar agora"
+    },
+    "navigation": {
+      "back": "Voltar",
+      "next": "Continuar",
+      "submit": "Enviar",
+      "sending": "Enviando...",
+      "progress": "{{current}} de {{total}}"
+    },
+    "success": {
+      "title": "Solicitação <span>Enviada!</span>",
+      "description": "Obrigado pelo interesse! Nossa equipe entrará em contato em até <strong>48 horas</strong> para dar início ao seu projeto.",
+      "instagram": "Siga no Instagram",
+      "website": "Visite nosso Site",
+      "backToStart": "Voltar ao início"
+    }
+  },
+  "heroVideo": {
+    "ariaLabel": "Vídeo de apresentação do Grupo WG Almeida mostrando projetos de arquitetura, engenharia e marcenaria de alto padrão",
+    "trackLabel": "Descrição em Português"
+  },
+  "cta": {
+    "message": "Vamos transformar suas ideias em realidade."
+  },
+  "welcomeMessage": "Olá! Sou a Horizons, sua assistente de código de IA. Estou aqui para ajudar você a construir aplicações web incríveis!"
+}

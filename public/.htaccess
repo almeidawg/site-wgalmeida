@@ -1,0 +1,327 @@
+# =====================================================
+# GRUPO WG ALMEIDA - OTIMIZACOES DE PERFORMANCE
+# Atualizado: 2025-01-15 - Correcoes MIME, CSP e ES Modules
+# =====================================================
+
+# =====================================================
+# MIME TYPES - PRIORIDADE MAXIMA (antes de qualquer rewrite)
+# Corrige erro: "blocked due to MIME type mismatch"
+# =====================================================
+<IfModule mod_mime.c>
+  # JavaScript ES Modules - CRITICO para React/Vite
+  AddType application/javascript .js .mjs .jsx
+  RemoveType .js
+  AddType application/javascript .js
+
+  # CSS
+  AddType text/css .css
+
+  # JSON e Manifest
+  AddType application/json .json
+  AddType application/manifest+json .webmanifest .manifest
+
+  # Imagens
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType image/svg+xml .svg .svgz
+
+  # Videos
+  AddType video/mp4 .mp4
+  AddType video/webm .webm
+  AddType video/ogg .ogv
+
+  # Fontes
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType font/ttf .ttf
+  AddType font/otf .otf
+  AddType application/vnd.ms-fontobject .eot
+
+  # Source Maps (desenvolvimento)
+  AddType application/json .map
+</IfModule>
+
+# Forcar MIME type correto para JavaScript (fallback)
+<FilesMatch "\.js$">
+  ForceType application/javascript
+</FilesMatch>
+
+<FilesMatch "\.mjs$">
+  ForceType application/javascript
+</FilesMatch>
+
+<FilesMatch "\.css$">
+  ForceType text/css
+</FilesMatch>
+
+# =====================================================
+# SERVE PRE-COMPRESSED BROTLI/GZIP FILES
+# Vite build gera .br e .gz junto aos originais — servir
+# diretamente evita CPU de compressao on-the-fly e entrega
+# Brotli mesmo em servidores sem mod_brotli (ex: Hostinger)
+# =====================================================
+
+# MIME types corretos para arquivos pre-comprimidos
+<FilesMatch "\.js\.br$">
+  ForceType application/javascript
+</FilesMatch>
+<FilesMatch "\.js\.gz$">
+  ForceType application/javascript
+</FilesMatch>
+<FilesMatch "\.css\.br$">
+  ForceType text/css
+</FilesMatch>
+<FilesMatch "\.css\.gz$">
+  ForceType text/css
+</FilesMatch>
+<FilesMatch "\.html\.br$">
+  ForceType text/html
+</FilesMatch>
+<FilesMatch "\.html\.gz$">
+  ForceType text/html
+</FilesMatch>
+<FilesMatch "\.xml\.br$">
+  ForceType application/xml
+</FilesMatch>
+<FilesMatch "\.xml\.gz$">
+  ForceType application/xml
+</FilesMatch>
+<FilesMatch "\.json\.br$">
+  ForceType application/json
+</FilesMatch>
+<FilesMatch "\.json\.gz$">
+  ForceType application/json
+</FilesMatch>
+
+# Headers de Content-Encoding para arquivos pre-comprimidos
+<IfModule mod_headers.c>
+  <FilesMatch "\.br$">
+    Header set Content-Encoding br
+  </FilesMatch>
+  <FilesMatch "\.gz$">
+    Header set Content-Encoding gzip
+  </FilesMatch>
+</IfModule>
+
+# Rewrite para servir versoes pre-comprimidas automaticamente
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Nao reescrever requests que ja sao para .br ou .gz
+  RewriteRule \.br$ - [L]
+  RewriteRule \.gz$ - [L]
+
+  # Brotli primeiro (menor, melhor compressao)
+  RewriteCond %{HTTP:Accept-Encoding} br
+  RewriteCond %{REQUEST_FILENAME}.br -f
+  RewriteRule ^(.+)\.(js|css|html|xml|json)$ $1.$2.br [E=no-gzip:1,L]
+
+  # Gzip como fallback
+  RewriteCond %{HTTP:Accept-Encoding} gzip
+  RewriteCond %{REQUEST_FILENAME}.gz -f
+  RewriteRule ^(.+)\.(js|css|html|xml|json)$ $1.$2.gz [E=no-gzip:1,L]
+</IfModule>
+
+# Compressao on-the-fly como ultimo fallback (para arquivos sem .br/.gz)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml application/xhtml+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# =====================================================
+# CACHE CONTROL - OTIMIZADO PARA PERFORMANCE
+# =====================================================
+<IfModule mod_headers.c>
+  Header set X-Powered-By "Hostinger Horizons"
+
+  # HTML - sem cache (sempre buscar versao mais recente)
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  # CSS e JS com hash (cache longo - 1 ano)
+  <If "%{REQUEST_URI} =~ m#^/assets/.*$#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+
+  # Imagens WebP (cache 30 dias)
+  <FilesMatch "\.(webp)$">
+    Header set Cache-Control "public, max-age=2592000, immutable"
+  </FilesMatch>
+
+  # Imagens JPG/PNG (cache 30 dias)
+  <FilesMatch "\.(jpg|jpeg|png|gif|ico|svg)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # Videos (cache 7 dias)
+  <FilesMatch "\.(mp4|webm|ogg)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+
+  # Fontes (cache 1 ano)
+  <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Manifest PWA (cache 1 dia)
+  <FilesMatch "manifest\.json$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+
+  # Vary header para Accept-Encoding
+  Header append Vary "Accept-Encoding"
+</IfModule>
+
+# =====================================================
+# SEGURANCA - HEADERS CRITICOS
+# =====================================================
+<IfModule mod_headers.c>
+  # Proteger contra XSS (legado, mas ainda util)
+  Header set X-XSS-Protection "1; mode=block"
+
+  # Prevenir MIME sniffing
+  Header set X-Content-Type-Options "nosniff"
+
+  # Referrer Policy
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # X-Frame-Options - Previne clickjacking
+  Header set X-Frame-Options "SAMEORIGIN"
+
+  # HSTS - Força HTTPS (max-age 1 ano)
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Cross-Origin-Opener-Policy - Isola janela de outros documentos
+  Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+
+  # Cross-Origin-Embedder-Policy (opcional, pode quebrar embeds)
+  # Header set Cross-Origin-Embedder-Policy "require-corp"
+
+  # Permissions-Policy - Controla recursos do navegador
+  Header set Permissions-Policy "accelerometer=(), camera=(), geolocation=(self), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+
+  # Content-Security-Policy - Politica de seguranca de conteudo
+  # Atualizado 2025-01-15: Adicionado Pinterest ao frame-src
+  # IMPORTANTE: CSP deve permitir todos os recursos necessarios
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://s.pinimg.com https://ct.pinterest.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https: http:; font-src 'self' data:; connect-src 'self' https://*.supabase.co https://www.google-analytics.com https://www.googletagmanager.com https://ct.pinterest.com https://s.pinimg.com https://api.pinterest.com wss://*.supabase.co; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://ct.pinterest.com https://www.facebook.com; media-src 'self' blob: data: https://res.cloudinary.com; object-src 'none'; base-uri 'self'; form-action 'self' https://ct.pinterest.com; frame-ancestors 'self'; worker-src 'self' blob:;"
+</IfModule>
+
+# =====================================================
+# REDIRECIONAMENTOS 301 - PAGINAS REMOVIDAS
+# =====================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirecionar paginas antigas/inexistentes para home (410 Gone seria ideal, mas 301 funciona)
+  RewriteRule ^modelo2/?$ / [R=301,L]
+
+  # Redirecionar /inicio/ para / (duplicata da home)
+  RewriteRule ^inicio/?$ / [R=301,L]
+
+  # Bloquear acesso a templates Elementor (retornar 410 Gone)
+  RewriteRule ^elementor-hf/ - [G,L]
+</IfModule>
+
+# =====================================================
+# SPA FALLBACK - React Router
+# CRITICO: Nao redirecionar arquivos estaticos para index.html
+# Isso causa erro de MIME type (text/html para .js)
+# =====================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # NUNCA reescrever arquivos que existem fisicamente
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # NUNCA reescrever arquivos estaticos (mesmo se nao existirem)
+  # Isso evita servir index.html com MIME type errado
+  RewriteCond %{REQUEST_URI} \.(js|mjs|jsx|css|map|json|webmanifest|br|gz)$ [NC,OR]
+  RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|webp|avif|svg|ico)$ [NC,OR]
+  RewriteCond %{REQUEST_URI} \.(mp4|webm|ogg|mp3|wav)$ [NC,OR]
+  RewriteCond %{REQUEST_URI} \.(woff|woff2|ttf|otf|eot)$ [NC,OR]
+  RewriteCond %{REQUEST_URI} \.(pdf|xml|txt)$ [NC,OR]
+  RewriteCond %{REQUEST_URI} ^/assets/ [NC,OR]
+  RewriteCond %{REQUEST_URI} ^/images/ [NC,OR]
+  RewriteCond %{REQUEST_URI} ^/videos/ [NC,OR]
+  RewriteCond %{REQUEST_URI} ^/docs/ [NC]
+  RewriteRule ^ - [L]
+
+  # Apenas rotas de navegacao vao para index.html (SPA)
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# =====================================================
+# SERVIR WEBP AUTOMATICAMENTE (se browser suportar)
+# =====================================================
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{REQUEST_FILENAME} (.*)\.(jpe?g|png)$
+  RewriteCond %{REQUEST_FILENAME}.webp -f
+  RewriteRule ^(.+)\.(jpe?g|png)$ $1.$2.webp [T=image/webp,L]
+</IfModule>
+
+# ETags para validacao de cache
+FileETag MTime Size
+
+# =====================================================
+# KEEP-ALIVE - CONEXOES PERSISTENTES
+# =====================================================
+<IfModule mod_headers.c>
+  Header set Connection keep-alive
+</IfModule>
+
+# =====================================================
+# EARLY HINTS (HTTP/2+ 103 para recursos criticos)
+# =====================================================
+<IfModule mod_http2.c>
+  # Preload da fonte critica (Early Hints)
+  <FilesMatch "index\.html$">
+    Header add Link "</fonts/inter-400.woff2>; rel=preload; as=font; type=font/woff2; crossorigin"
+  </FilesMatch>
+</IfModule>
+
+# =====================================================
+# ERROR DOCUMENTS - PAGINAS DE ERRO CUSTOMIZADAS
+# =====================================================
+# Para arquivos estaticos que nao existem, retornar 404 real
+# Em vez de servir index.html com status 200
+
+<FilesMatch "\.(js|mjs|css|json|map|jpg|jpeg|png|gif|webp|avif|svg|ico|mp4|webm|woff|woff2|ttf|pdf)$">
+  # Se o arquivo estatico nao existir, retornar 404 (nao redirecionar para SPA)
+</FilesMatch>
+
+# =====================================================
+# PERFORMANCE ADICIONAL
+# =====================================================
+<IfModule mod_headers.c>
+  # Remover header desnecessario
+  Header unset ETag
+  Header unset X-Powered-By
+  Header unset Server
+
+  # Preconnect para CDN de videos hero (Cloudinary)
+  <FilesMatch "index\.html$">
+    Header add Link "<https://res.cloudinary.com>; rel=preconnect; crossorigin"
+  </FilesMatch>
+</IfModule>
+
+# Desabilitar ETags (reduz overhead)
+FileETag None
+
+# =====================================================
+# PREVENIR HOTLINKING DE IMAGENS
+# =====================================================
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP_REFERER} !^$
+  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?wgalmeida\.com\.br [NC]
+  RewriteCond %{HTTP_REFERER} !^https?://localhost [NC]
+  RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|webp|mp4|webm)$ [NC]
+  RewriteRule .* - [F,L]
+</IfModule>

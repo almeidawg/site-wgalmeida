@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Sitemap principal com todas as paginas -->
+  <sitemap>
+    <loc>https://wgalmeida.com.br/sitemap.xml</loc>
+    <lastmod>2026-02-14</lastmod>
+  </sitemap>
+
+  <!-- Video Sitemap para indexacao de videos -->
+  <sitemap>
+    <loc>https://wgalmeida.com.br/video-sitemap.xml</loc>
+    <lastmod>2026-02-14</lastmod>
+  </sitemap>
+</sitemapindex>

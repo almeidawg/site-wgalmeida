@@ -1,0 +1,25 @@
+# Robots.txt - Grupo WG Almeida
+# https://wgalmeida.com.br
+# Atualizado: 2026-02-28
+
+User-agent: *
+Allow: /
+
+# Areas privadas, duplicadas ou tecnicas
+Disallow: /admin
+Disallow: /account
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+Disallow: /elementor-hf/
+Disallow: /inicio
+Disallow: /inicio/
+Disallow: /modelo2
+Disallow: /modelo2/
+Disallow: /coverage
+Disallow: /coverage/
+
+# Sitemaps
+Sitemap: https://wgalmeida.com.br/sitemap-index.xml
+Sitemap: https://wgalmeida.com.br/sitemap.xml
+Sitemap: https://wgalmeida.com.br/video-sitemap.xml
