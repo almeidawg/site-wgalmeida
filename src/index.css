@@ -1,0 +1,515 @@
+/* Tipografia canônica WG Almeida: Suisse Int'l */
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse/SuisseIntl-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse/SuisseIntl-Book.ttf') format('truetype');
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse/SuisseIntl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse/SuisseIntl-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Font metric overrides for CLS-free swap ── */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+  size-adjust: 107.64%;
+  ascent-override: 90.49%;
+  descent-override: 22.56%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Poppins Fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+  size-adjust: 113.09%;
+  ascent-override: 86.44%;
+  descent-override: 28.82%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Oswald Fallback';
+  src: local('Arial Narrow'), local('Helvetica Neue'), local('Arial');
+  size-adjust: 88.07%;
+  ascent-override: 114.43%;
+  descent-override: 28.79%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Playfair Fallback';
+  src: local('Georgia'), local('Times New Roman'), local('serif');
+  size-adjust: 112.03%;
+  ascent-override: 84.28%;
+  descent-override: 22.07%;
+  line-gap-override: 0%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-height: 5rem;
+  --background: 255 255 255;
+  --foreground: 46 46 46;
+  --card: 255 255 255;
+  --card-foreground: 46 46 46;
+  --popover: 255 255 255;
+  --popover-foreground: 46 46 46;
+  --primary: 16 88% 53%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 243 243 243;
+  --secondary-foreground: 46 46 46;
+  --muted: 243 243 243;
+  --muted-foreground: 76 76 76;
+  --accent: 243 243 243;
+  --accent-foreground: 46 46 46;
+  --destructive: 239 68 68;
+  --destructive-foreground: 255 255 255;
+  --border: 229 229 229;
+  --input: 229 229 229;
+  --ring: 16 88% 53%;
+  --radius: 0.5rem;
+
+  --wg-orange: #c96a43;
+  --wg-orange-text: #8f5238;
+  --wg-green: #5e9b94;
+  --wg-blue: #2b4580;
+  --wg-brown: #8b5e3c;
+  --wg-black: #2e2e2e;
+  --wg-gray: #4c4c4c;
+  --wg-gray-light: #f3f3f3;
+  --wg-apple-surface: 245 245 247;
+  --wg-apple-accent: 18 18 18;
+  --wg-apple-muted: 110 110 110;
+  --wg-apple-highlight: 230 230 236;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+  /* Remove focus outline global — usa focus-visible apenas quando necessário */
+  *:focus {
+    outline: none;
+  }
+  *:focus-visible {
+    outline: 2px solid rgba(43, 69, 128, 0.5);
+    outline-offset: 2px;
+  }
+
+  html,
+  body {
+    @apply bg-white text-foreground antialiased;
+    font-family: 'Suisse Intl', 'Inter', 'Inter Fallback', 'Poppins', 'Roboto', sans-serif;
+    font-weight: 350;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevenir overflow horizontal em todas as seções */
+  main,
+  section,
+  article,
+  div {
+    max-width: 100vw;
+  }
+
+  /* Tipografia base · Suisse Int'l conduz a leitura institucional.
+     Use .wg-heading-display e .wg-heading-section com pesos leves; evite pesos fortes.
+     font-oswald é reservado apenas onde explicitamente aplicado via classe utilitária. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-inter font-light tracking-tight normal-case;
+  }
+
+  b,
+  strong {
+    font-weight: inherit;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Suisse Intl', 'Inter', sans-serif;
+  }
+
+  .font-suisse {
+    font-family: 'Suisse Intl', 'Inter', sans-serif;
+  }
+
+  .subtitle {
+    @apply font-suisse font-light;
+  }
+
+  .quote {
+    @apply font-playfair italic;
+  }
+
+  /* Animação suave para elementos */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Glassmorphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Gradiente premium */
+  .gradient-premium {
+    background: linear-gradient(135deg, var(--wg-black) 0%, #1a1a1a 100%);
+  }
+
+  .btn-primary {
+    @apply bg-wg-orange text-white px-6 py-3 rounded-md font-inter font-light
+           hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .bg-wg-orange {
+    background-color: var(--wg-orange);
+  }
+  .text-wg-orange {
+    color: var(--wg-orange-text);
+  }
+  .border-wg-orange {
+    border-color: var(--wg-orange);
+  }
+  .hover\:text-wg-orange:hover {
+    color: var(--wg-orange-text);
+  }
+  .hover\:bg-wg-orange:hover {
+    background-color: var(--wg-orange);
+  }
+  .hover\:border-wg-orange:hover {
+    border-color: var(--wg-orange);
+  }
+
+  .bg-wg-green {
+    background-color: var(--wg-green);
+  }
+  .text-wg-green {
+    color: var(--wg-green);
+  }
+  .border-wg-green {
+    border-color: var(--wg-green);
+  }
+  .hover\:text-wg-green:hover {
+    color: var(--wg-green);
+  }
+  .hover\:bg-wg-green:hover {
+    background-color: var(--wg-green);
+  }
+  .hover\:border-wg-green:hover {
+    border-color: var(--wg-green);
+  }
+
+  .bg-wg-blue {
+    background-color: var(--wg-blue);
+  }
+  .text-wg-blue {
+    color: var(--wg-blue);
+  }
+  .border-wg-blue {
+    border-color: var(--wg-blue);
+  }
+  .hover\:text-wg-blue:hover {
+    color: var(--wg-blue);
+  }
+  .hover\:bg-wg-blue:hover {
+    background-color: var(--wg-blue);
+  }
+  .hover\:border-wg-blue:hover {
+    border-color: var(--wg-blue);
+  }
+
+  .bg-wg-brown {
+    background-color: var(--wg-brown);
+  }
+  .text-wg-brown {
+    color: var(--wg-brown);
+  }
+  .border-wg-brown {
+    border-color: var(--wg-brown);
+  }
+  .hover\:text-wg-brown:hover {
+    color: var(--wg-brown);
+  }
+  .hover\:bg-wg-brown:hover {
+    background-color: var(--wg-brown);
+  }
+  .hover\:border-wg-brown:hover {
+    border-color: var(--wg-brown);
+  }
+
+  .bg-wg-black {
+    background-color: var(--wg-black);
+  }
+  .text-wg-black {
+    color: var(--wg-black);
+  }
+
+  .bg-wg-gray {
+    background-color: var(--wg-gray);
+  }
+  .text-wg-gray {
+    color: var(--wg-gray);
+  }
+
+  .bg-wg-gray-light {
+    background-color: var(--wg-gray-light);
+  }
+  .text-wg-gray-light {
+    color: var(--wg-gray-light);
+  }
+
+  .bg-wg-apple-surface {
+    background-color: rgb(var(--wg-apple-surface));
+  }
+  .text-wg-apple-accent {
+    color: rgb(var(--wg-apple-accent));
+  }
+  .text-wg-apple-muted {
+    color: rgb(var(--wg-apple-muted));
+  }
+  .border-wg-apple-highlight {
+    border-color: rgb(var(--wg-apple-highlight));
+  }
+  .bg-wg-apple-highlight {
+    background-color: rgb(var(--wg-apple-highlight));
+  }
+  .shadow-apple-card {
+    box-shadow: 0 25px 50px rgba(15, 15, 15, 0.12);
+  }
+  .btn-apple {
+    @apply text-white px-6 py-3 rounded-2xl font-light tracking-tight;
+    background-color: rgb(var(--wg-apple-accent));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      background-color 0.3s ease;
+  }
+  .btn-apple:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(201, 106, 67, 0.22);
+    background-color: var(--wg-orange);
+  }
+  /* Botão secundário em fundo escuro -- borda branca, bg transparente */
+  .btn-hero-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-light transition-all;
+    border: 1px solid rgba(255,255,255,0.58);
+    color: #ffffff;
+    background: rgba(255,255,255,0.03);
+  }
+  .btn-hero-outline:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.74);
+  }
+
+  /* Design system aprovado: tipografia e componentes base */
+  .wg-heading-display {
+    @apply font-inter font-light tracking-tight normal-case;
+  }
+
+  .wg-heading-section {
+    @apply font-inter font-light tracking-tight normal-case;
+  }
+
+  .wg-text-body {
+    @apply font-inter text-[16px] leading-[1.65] text-wg-gray;
+  }
+
+  .wg-text-caption {
+    @apply font-poppins text-[13px] leading-[1.4] text-wg-gray;
+  }
+
+  .wg-btn-pill-primary {
+    @apply h-auto px-6 py-2 rounded-full text-sm font-light transition-all duration-300 bg-white text-wg-black shadow-lg hover:bg-gray-100 hover:text-wg-black;
+  }
+
+  .wg-btn-pill-secondary {
+    @apply h-auto px-6 py-2 rounded-full text-sm font-light transition-all duration-300 bg-wg-gray-light text-wg-gray hover:bg-gray-200 hover:text-wg-black;
+  }
+
+  .font-medium,
+  .font-semibold,
+  .font-bold,
+  .font-extrabold,
+  .font-black {
+    font-weight: 300 !important;
+  }
+
+  .wg-card-editorial {
+    @apply overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-[#F8F8F8] shadow-sm;
+  }
+
+  .wg-divider-thin {
+    @apply border-t border-gray-200;
+  }
+
+  /* Mobile safe-area padding for hero/header overlap */
+  .pt-safe {
+    padding-top: calc(1.25rem + env(safe-area-inset-top));
+  }
+
+  /* Hero sections that should visually start under the fixed header */
+  .hero-under-header {
+    margin-top: calc(var(--header-height) * -1);
+  }
+
+  .process-range {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    background: rgba(46, 46, 46, 0.1);
+  }
+
+  .process-range:focus,
+  .process-range:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .process-range::-webkit-slider-runnable-track {
+    height: 0.5rem;
+    border-radius: 999px;
+    background: rgba(46, 46, 46, 0.1);
+  }
+
+  .process-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    margin-top: -0.25rem;
+    border-radius: 999px;
+    border: 1px solid rgba(43, 69, 128, 0.22);
+    background: var(--wg-blue);
+    box-shadow:
+      0 0 0 4px rgba(43, 69, 128, 0.08),
+      0 4px 12px rgba(43, 69, 128, 0.18);
+  }
+
+  .process-range::-moz-range-track {
+    height: 0.5rem;
+    border: none;
+    border-radius: 999px;
+    background: rgba(46, 46, 46, 0.1);
+  }
+
+  .process-range::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid rgba(43, 69, 128, 0.22);
+    border-radius: 999px;
+    background: var(--wg-blue);
+    box-shadow:
+      0 0 0 4px rgba(43, 69, 128, 0.08),
+      0 4px 12px rgba(43, 69, 128, 0.18);
+  }
+
+  /* Hide scrollbar while keeping scroll functionality */
+  @layer utilities {
+    .scrollbar-hide {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none; /* Chrome, Safari and Opera */
+    }
+  }
+
+  /* Divider below fixed header kept intentionally quiet */
+  .wg-neon-divider {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(46, 46, 46, 0.04) 0%,
+      rgba(46, 46, 46, 0.12) 22%,
+      rgba(46, 46, 46, 0.08) 54%,
+      rgba(43, 69, 128, 0.08) 100%
+    );
+    background-size: 100% 100%;
+    animation: none;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    z-index: 60;
+  }
+
+  @media (min-width: 1024px) {
+    .wg-neon-divider {
+      height: 1px;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    }
+  }
+
+  @keyframes wgNeonPulse {
+    0%,
+    100% {
+      opacity: 0.85;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wg-neon-divider {
+      opacity: 1;
+    }
+  }
+}

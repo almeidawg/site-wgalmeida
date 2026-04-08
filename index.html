@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<!-- Analytics - Lazy Loaded para performance -->
+		<script>
+		// Lazy load GTM e Pinterest apos interacao do usuario ou 3s de idle
+		// Reduz TBT (Total Blocking Time) significativamente
+		(function() {
+			var gtmLoaded = false;
+			var pinterestLoaded = false;
+
+			function loadGTM() {
+				if (gtmLoaded) return;
+				gtmLoaded = true;
+
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+				var f = document.getElementsByTagName('script')[0];
+				var j = document.createElement('script');
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PT885HFQ';
+				f.parentNode.insertBefore(j, f);
+			}
+
+			function loadPinterest() {
+				if (pinterestLoaded) return;
+				pinterestLoaded = true;
+
+				if (!window.pintrk) {
+					window.pintrk = function() {
+						window.pintrk.queue.push(Array.prototype.slice.call(arguments));
+					};
+					window.pintrk.queue = [];
+					window.pintrk.version = "3.0";
+				}
+				var t = document.createElement("script");
+				t.async = true;
+				t.src = "https://s.pinimg.com/ct/core.js";
+				t.onload = function() {
+					pintrk('load', '2612738255823');
+					pintrk('page');
+				};
+				document.head.appendChild(t);
+			}
+
+			function loadAllTrackers() {
+				loadGTM();
+				loadPinterest();
+			}
+
+			// Carregar apos interacao do usuario
+			var events = ['scroll', 'click', 'touchstart', 'mousemove', 'keydown'];
+			var loadOnce = function() {
+				loadAllTrackers();
+				events.forEach(function(e) { window.removeEventListener(e, loadOnce); });
+			};
+			events.forEach(function(e) { window.addEventListener(e, loadOnce, { once: true, passive: true }); });
+
+			// Carregar trackers somente apos interacao real do usuario
+		})();
+		</script>
+		<!-- End Lazy Loaded Analytics (GTM + Pinterest) -->
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<!-- SEO Primary -->
+		<title>Grupo WG Almeida | Arquitetura, Engenharia e Marcenaria Premium em Sao Paulo</title>
+		<meta name="description" content="Grupo WG Almeida - 14 anos de excelencia em arquitetura, engenharia e marcenaria de alto padrao em Sao Paulo. Sistema Turn Key Premium. Projetos residenciais e comerciais no Brooklin, Vila Nova Conceicao, Itaim Bibi, Jardins." />
+		<meta name="author" content="Grupo WG Almeida" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		<!-- Canonical dinamico para SPAs - fallback antes do React Helmet -->
+		<link rel="canonical" id="dynamic-canonical" href="https://wgalmeida.com.br/" />
+		<script>
+			(function() {
+				var canonical = document.getElementById('dynamic-canonical');
+				if (canonical) {
+					var normalizedPath = window.location.pathname || '/';
+					normalizedPath = normalizedPath.replace(/\/{2,}/g, '/');
+					if (normalizedPath.length > 1 && normalizedPath.endsWith('/')) {
+						normalizedPath = normalizedPath.slice(0, -1);
+					}
+					canonical.href = 'https://wgalmeida.com.br' + normalizedPath;
+				}
+			})();
+		</script>
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://wgalmeida.com.br/" />
+		<meta property="og:title" content="Grupo WG Almeida | Arquitetura, Engenharia e Marcenaria Premium" />
+		<meta property="og:description" content="14 anos transformando sonhos em espacos de alto padrao. Arquitetura, Engenharia e Marcenaria integrados em um unico ecossistema." />
+		<meta property="og:image" content="https://wgalmeida.com.br/og-home-1200x630.jpg" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta property="og:site_name" content="Grupo WG Almeida" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="https://wgalmeida.com.br/" />
+		<meta name="twitter:title" content="Grupo WG Almeida | Arquitetura, Engenharia e Marcenaria Premium" />
+		<meta name="twitter:description" content="14 anos transformando sonhos em espacos de alto padrao. Arquitetura, Engenharia e Marcenaria integrados." />
+		<meta name="twitter:image" content="https://wgalmeida.com.br/og-home-1200x630.jpg" />
+
+		<!-- Geo Tags -->
+		<meta name="geo.region" content="BR-SP" />
+		<meta name="geo.placename" content="Sao Paulo" />
+		<meta name="geo.position" content="-23.5505;-46.6333" />
+		<meta name="ICBM" content="-23.5505, -46.6333" />
+
+		<!-- Theme Color -->
+		<meta name="theme-color" content="#F25C26" />
+		<meta name="msapplication-TileColor" content="#F25C26" />
+
+		<!-- PWA Manifest -->
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-title" content="WG Almeida" />
+
+
+		<!-- Preload do primeiro painel do hero (LCP) -->
+		<link rel="preload" as="image" href="/images/banners/foto-obra-1.jpg" fetchpriority="high" />
+
+		<!-- DNS prefetch for third-party services (loaded on interaction) -->
+		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+		<link rel="dns-prefetch" href="https://s.pinimg.com" />
+		<link rel="dns-prefetch" href="https://ct.pinterest.com" />
+
+		<!-- Poster hero: o preload foi removido para evitar warning em rotas que nao usam o hero -->
+		<!-- Videos hero sao muito grandes (160MB+), nao fazer prefetch -->
+		<!-- TODO: Comprimir videos para 5-10MB usando script scripts/optimize-videos.sh -->
+
+		<!-- Fontes self-hosted via @font-face em index.css (sem request externo) -->
+
+		<!-- Schema.org JSON-LD -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Grupo WG Almeida",
+			"alternateName": "WG Almeida Arquitetura",
+			"url": "https://wgalmeida.com.br",
+			"logo": "https://wgalmeida.com.br/images/logo.png",
+			"description": "Grupo WG Almeida - 14 anos de excelencia em arquitetura, engenharia e marcenaria de alto padrao em Sao Paulo.",
+			"foundingDate": "2010",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Sao Paulo",
+				"addressRegion": "SP",
+				"addressCountry": "BR",
+				"postalCode": "04571-000"
+			},
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "+55-11-98465-0002",
+				"contactType": "customer service",
+				"availableLanguage": ["Portuguese"]
+			},
+			"sameAs": [
+				"https://www.instagram.com/wgalmeida.arq",
+				"https://www.facebook.com/wgalmeidaarquitetura",
+				"https://www.linkedin.com/company/wgalmeida"
+			],
+			"areaServed": {
+				"@type": "City",
+				"name": "Sao Paulo"
+			},
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Servicos",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Arquitetura de Alto Padrao",
+							"description": "Projetos arquitetonicos residenciais e comerciais"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Engenharia Turn Key",
+							"description": "Execucao completa de obras com gestao integrada"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Marcenaria Sob Medida",
+							"description": "Mobiliario personalizado de alto padrao"
+						}
+					}
+				]
+			}
+		}
+		</script>
+
+		<!-- Local Business Schema - Otimizado para Bairros Premium -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "ProfessionalService",
+			"@id": "https://wgalmeida.com.br/#organization",
+			"name": "Grupo WG Almeida - Arquitetura Alto Padrao Sao Paulo",
+			"alternateName": ["WG Almeida Arquitetura", "Arquitetura Premium SP", "Escritorio Arquitetura Jardins"],
+			"image": "https://wgalmeida.com.br/images/logo.png",
+			"telephone": "+55-11-98465-0002",
+			"email": "contato@wgalmeida.com.br",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Brooklin Novo",
+				"addressLocality": "Sao Paulo",
+				"addressRegion": "SP",
+				"postalCode": "04571-000",
+				"addressCountry": "BR"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": -23.6167,
+				"longitude": -46.6945
+			},
+			"url": "https://wgalmeida.com.br",
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+				"opens": "09:00",
+				"closes": "18:00"
+			},
+			"priceRange": "$$$$",
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "5.0",
+				"reviewCount": "47",
+				"bestRating": "5"
+			},
+			"areaServed": [
+				{"@type": "City", "name": "Sao Paulo", "sameAs": "https://pt.wikipedia.org/wiki/S%C3%A3o_Paulo"},
+				{"@type": "Neighborhood", "name": "Jardins", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Vila Nova Conceicao", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Itaim Bibi", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Brooklin", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Morumbi", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Cidade Jardim", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Alto de Pinheiros", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Moema", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Campo Belo", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Higienopolis", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Pinheiros", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Perdizes", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}},
+				{"@type": "Neighborhood", "name": "Vila Mariana", "containedInPlace": {"@type": "City", "name": "Sao Paulo"}}
+			],
+			"knowsAbout": [
+				"Arquitetura de Alto Padrao",
+				"Projetos Residenciais Premium",
+				"Reforma de Apartamentos de Luxo",
+				"Engenharia Turn Key",
+				"Marcenaria Sob Medida",
+				"Design de Interiores",
+				"Construcao Civil Premium"
+			],
+			"slogan": "Transformando sonhos em espacos de alto padrao ha 14 anos"
+		}
+		</script>
+
+		<!-- BreadcrumbList Schema agora é dinâmico via SEO.jsx -->
+		<!-- FAQPage Schema movido para FAQ.jsx (carrega apenas na rota /faq) -->
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT885HFQ"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<!-- Pinterest Tag (noscript) -->
+		<noscript><img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?event=init&tid=2612738255823&noscript=1" /></noscript>
+		<!-- End Pinterest Tag (noscript) -->
+
+		<div id="root"></div>
+		<script type="module" src="/src/main.jsx"></script>
+	</body>
+</html>
+
+
+
+

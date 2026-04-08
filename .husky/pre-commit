@@ -1,0 +1,11 @@
+#!/bin/sh
+# WG BuildTech — pre-commit hook (site-wgalmeida)
+
+echo "🔍 [WG] Verificando secrets..."
+npx secretlint "**/*" --secretlintignore .secretlintignore 2>/dev/null || {
+  echo "🚨 [WG] COMMIT BLOQUEADO: credencial detectada!"
+  echo "   Cheque: API keys, JWT tokens, senhas hardcoded"
+  exit 1
+}
+
+echo "✅ [WG] pre-commit OK"

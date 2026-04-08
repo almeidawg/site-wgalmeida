@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposta WG Almeida · Contrato Controlado</title>
+  <meta name="description" content="Modelo de proposta e contrato criado pela WG Almeida a partir do WGEasy. Dinamize a negociação com o cliente e direcione para o WhatsApp oficial." />
+  <style>
+    :root {
+      --wg-black: #050507;
+      --wg-slate: #0d1b26;
+      --wg-gold: #f2b13a;
+      --wg-green: #5e9b94;
+      --wg-blue: #1f4387;
+      --wg-gray: #d5d7dc;
+      --wg-white: #ffffff;
+      font-family: "Inter", "Helvetica Neue", sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #060608 0%, #10151e 70%, #131b27 100%);
+      color: var(--wg-white);
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    header {
+      background: radial-gradient(circle at top right, rgba(247, 181, 58, 0.3), transparent 45%);
+      border-radius: 32px;
+      padding: 40px 48px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 20px 50px rgba(6,6,7,0.55);
+    }
+    header h1 {
+      font-size: clamp(2.1rem, 3vw, 3rem);
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    header p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.72);
+    }
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      font-size: 0.75rem;
+      color: var(--wg-gold);
+      margin-bottom: 16px;
+    }
+    .summary-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .summary-card {
+      background: rgba(255,255,255,0.04);
+      border-radius: 22px;
+      padding: 20px 24px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .summary-card strong {
+      display: block;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 6px;
+    }
+    .summary-card span {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .cta-block {
+      margin-top: 48px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cta-btn {
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.2s ease;
+    }
+    .cta-primary {
+      background: var(--wg-gold);
+      color: var(--wg-black);
+    }
+    .cta-secondary {
+      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--wg-white);
+      background: transparent;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+    }
+    .grid-two {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .panel {
+      background: rgba(255,255,255,0.03);
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 32px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.07);
+    }
+    .panel h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+    .items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item {
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(13, 27, 38, 0.7);
+    }
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .item-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+    .item-description {
+      margin: 8px 0 0;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+    .timeline {
+      margin-top: 36px;
+      border-left: 2px solid rgba(255,255,255,0.3);
+      padding-left: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .timeline-step {
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .timeline-step::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--wg-gold);
+      border: 3px solid rgba(255,255,255,0.7);
+    }
+    .timeline-step strong {
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .timeline-step p {
+      margin: 6px 0 0;
+      font-size: 1rem;
+      max-width: 640px;
+    }
+    section.terms {
+      margin-top: 52px;
+      padding: 36px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    section.terms h2 {
+      font-size: 1.8rem;
+      margin-top: 0;
+    }
+    section.terms ul {
+      list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    section.terms li {
+      background: rgba(255,255,255,0.04);
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.95rem;
+    }
+    footer {
+      margin-top: 64px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Proposta + Contrato</div>
+      <h1>WG Almeida · Núcleo de obras inteligentes</h1>
+      <p>Modelo parcial inspirado nos componentes de WGEasy. Agregamos espaços para escopo, cronograma e termos contratuais que podem ser compartilhados diretamente pelo WhatsApp oficial da Liz.</p>
+      <div class="summary-grid">
+        <article class="summary-card">
+          <strong>Cliente</strong>
+          <span>Estúdio Arc&Co</span>
+          <p style="margin: 6px 0 0; font-size: 0.85rem; color: rgba(255,255,255,0.6);">Núcleo: Arquitetura · Engenharia · Marcenaria</p>
+        </article>
+        <article class="summary-card">
+          <strong>Escopo</strong>
+          <span>Reforma · 103 m²</span>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Foco em movimento, iluminação e acabamentos premium.</p>
+        </article>
+        <article class="summary-card">
+          <strong>Investimento</strong>
+          <span>R$ 1.460.000</span>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Entrada 40% · 4 parcelas</p>
+        </article>
+        <article class="summary-card">
+          <strong>Prazo</strong>
+          <span>6,5 a 9 meses</span>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Cronograma guiado pelo WGEasy (agendamento automático).</p>
+        </article>
+      </div>
+      <div class="cta-block">
+        <a class="cta-btn cta-primary" href="https://wa.me/5511984650002?text=Ol%C3%A1%20Liz%2C%20quero%20receber%20o%20estudo%20WG%20Almeida" target="_blank">
+          Falar com Liz
+        </a>
+        <a class="cta-btn cta-secondary" href="mailto:liz@wgalmeida.com.br?subject=Proposta%20WG%20Almeida">
+          Enviar por e-mail
+        </a>
+      </div>
+    </header>
+
+    <div class="grid-two">
+      <div class="panel">
+        <h3>Itens da proposta</h3>
+        <ul class="items">
+          <li class="item">
+            <div class="item-row">
+              <span>Arquitetura</span>
+              <strong>R$ 480.000</strong>
+            </div>
+            <div class="item-title">Projeto executivo + 3D</div>
+            <p class="item-description">Documentação exclusiva, gestão de decisões e compatibilização com especialidades.</p>
+          </li>
+          <li class="item">
+            <div class="item-row">
+              <span>Engenharia</span>
+              <strong>R$ 360.000</strong>
+            </div>
+            <div class="item-title">Consultoria estrutural e coordenação de obra</div>
+            <p class="item-description">Cronograma físico-financeiro integrado e acompanhamento de campo com WGEasy.</p>
+          </li>
+          <li class="item">
+            <div class="item-row">
+              <span>Marcenaria</span>
+              <strong>R$ 620.000</strong>
+            </div>
+            <div class="item-title">Peças sob medida + instalação premium</div>
+            <p class="item-description">Medição executiva, fabricação e regulagem com testes de encaixes certificados.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Contratos vinculados</h3>
+        <div class="item">
+          <div class="item-row">
+            <span>Contrato</span>
+            <strong>WG Turn Key · 2026-004</strong>
+          </div>
+          <div class="item-description">
+            Referência cruzada com a proposta aprovada e campo automático para valores, cronograma, checklist e garantia.
+          </div>
+        </div>
+        <div class="item" style="margin-top: 16px;">
+          <div class="item-row">
+            <span>Vigência</span>
+            <strong>12 meses</strong>
+          </div>
+          <div class="item-description">
+            Compromisso firmado com pagamentos mensais, revisões de escopo e avaliação de performance pós-entrega.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="timeline">
+      <div class="timeline-step">
+        <strong>Diagnóstico + Briefing</strong>
+        <p>2 a 3 semanas · levantamento, rota produtiva e definição do núcleo.</p>
+      </div>
+      <div class="timeline-step">
+        <strong>Projeto e orçamento</strong>
+        <p>4 a 6 semanas · compatibilização, EVF e homologação de fornecedores.</p>
+      </div>
+      <div class="timeline-step">
+        <strong>Execução integral</strong>
+        <p>10 a 16 semanas · obra, marcenaria, instalações finais e entrega assistida (inclui fase de acabamento fino).</p>
+      </div>
+      <div class="timeline-step">
+        <strong>Entrega + Contrato</strong>
+        <p>Checklist, documentação digital, garantia e integração com o portal do cliente.</p>
+      </div>
+    </section>
+
+    <section class="terms">
+      <h2>Termos e condições</h2>
+      <ul>
+        <li>Validade da proposta: até 15 dias corridos · sujeito a disponibilidade.</li>
+        <li>Pagamentos: entrada de 40% + 4 parcelas mensais, atualizadas via WGEasy Finance.</li>
+        <li>Revisão de prazo: ajustes automáticos no módulo cronograma conforme mudanças de escopo.</li>
+        <li>Garantia: 24 meses em serviços · 10 anos em estruturas metálicas.</li>
+        <li>Dados de contato: Liz · +55 11 98465-0002 · contato@wgalmeida.com.br.</li>
+        <li>Envio seguro: a versão final sai do WGEasy e é replicada no portal para evitar cópias indevidas.</li>
+      </ul>
+    </section>
+
+    <footer>
+      Modelo hospedado no projeto site-wgalmeida (pasta public). Atualize o conteúdo com a biblioteca WGEasy antes de compartilhar o link.
+    </footer>
+  </div>
+</body>
+</html>
