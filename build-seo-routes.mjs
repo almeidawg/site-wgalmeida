@@ -6,11 +6,11 @@ const BASE_URL = "https://wgalmeida.com.br";
 
 /** Parse YAML frontmatter from markdown string */
 function parseFrontmatterSimple(raw) {
-  const match = raw.match(/^---\n([\s\S]*?)\n---/);
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!match) return {};
   const yaml = match[1];
   const result = {};
-  for (const line of yaml.split('\n')) {
+  for (const line of yaml.split(/\r?\n/)) {
     const m = line.match(/^(\w+):\s*"?([^"]*)"?\s*$/);
     if (m) result[m[1]] = m[2].trim();
   }
@@ -40,7 +40,7 @@ function getEstiloSEO(slug) {
   const displayName = slug.split('-').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
   const title = fm.title ? `${fm.title} - Guia Completo de Estilo | WG Almeida` : `${displayName} - Guia Completo de Estilo | WG Almeida`;
   const description = fm.excerpt || `Descubra o estilo ${displayName}: caracteristicas, cores e como aplicar na sua casa com a curadoria do Grupo WG Almeida.`;
-  const image = `${BASE_URL}/og-home-1200x630.jpg`;
+  const image = fm.image ? `${BASE_URL}${fm.image}` : `${BASE_URL}/og-home-1200x630.jpg`;
   const canonical = `${BASE_URL}/estilos/${slug}`;
   return { title, description, canonical, og: { title, description, image, url: canonical }, twitter: { card: "summary_large_image", title, description, image } };
 }

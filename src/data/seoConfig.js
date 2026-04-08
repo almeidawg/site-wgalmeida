@@ -38,57 +38,68 @@ export const SEO_CONFIG = {
   "/sobre": page(
     "/sobre",
     "Grupo WG Almeida: 14 Anos Entregando Arquitetura, Engenharia e Marcenaria em SP",
-    "Conheça a metodologia Turn Key do Grupo WG Almeida — projeto, obra e marcenaria integrados, sem ruído operacional. Atendemos residências e corporativos de alto padrão em São Paulo."
+    "Conheça a metodologia Turn Key do Grupo WG Almeida — projeto, obra e marcenaria integrados, sem ruído operacional. Atendemos residências e corporativos de alto padrão em São Paulo.",
+    `${BASE_URL}/og-sobre-1200x630.jpg`
   ),
   "/a-marca": page(
     "/a-marca",
     "A Marca | Grupo WG Almeida",
-    "Identidade e posicionamento do Grupo WG Almeida."
+    "Identidade e posicionamento do Grupo WG Almeida.",
+    `${BASE_URL}/og-sobre-1200x630.jpg`
   ),
   "/arquitetura": page(
     "/arquitetura",
     "Arquitetura Residencial e Corporativa em Sao Paulo | Grupo WG Almeida",
-    "Projetos de arquitetura residencial e corporativa em Sao Paulo com conceito autoral, detalhamento tecnico e entrega integrada."
+    "Projetos de arquitetura residencial e corporativa em Sao Paulo com conceito autoral, detalhamento tecnico e entrega integrada.",
+    `${BASE_URL}/og-arquitetura-1200x630.jpg`
   ),
   "/engenharia": page(
     "/engenharia",
     "Engenharia e Gerenciamento de Obras em Sao Paulo | Turn Key WG Almeida",
-    "Engenharia com planejamento, compatibilizacao e gerenciamento de obras em Sao Paulo para reduzir atrasos, retrabalho e risco de custo."
+    "Engenharia com planejamento, compatibilizacao e gerenciamento de obras em Sao Paulo para reduzir atrasos, retrabalho e risco de custo.",
+    `${BASE_URL}/og-engenharia-1200x630.jpg`
   ),
   "/marcenaria": page(
     "/marcenaria",
     "Marcenaria Sob Medida e Moveis Planejados em Sao Paulo | Grupo WG Almeida",
-    "Marcenaria sob medida e moveis planejados com projeto tecnico, acabamento premium e instalacao integrada para residencias e corporativo."
+    "Marcenaria sob medida e moveis planejados com projeto tecnico, acabamento premium e instalacao integrada para residencias e corporativo.",
+    `${BASE_URL}/og-marcenaria-1200x630.jpg`
   ),
   "/projetos": page(
     "/projetos",
     "Projetos de Arquitetura e Reformas em Sao Paulo | Portfolio WG Almeida",
-    "Veja projetos residenciais e corporativos executados pela WG Almeida em Sao Paulo, com arquitetura autoral, engenharia e marcenaria integradas."
+    "Veja projetos residenciais e corporativos executados pela WG Almeida em Sao Paulo, com arquitetura autoral, engenharia e marcenaria integradas.",
+    `${BASE_URL}/og-projetos-1200x630.jpg`
   ),
   "/processo": page(
     "/processo",
     "Processo | Grupo WG Almeida",
-    "Conheca o processo integrado do Grupo WG Almeida."
+    "Conheca o processo integrado do Grupo WG Almeida.",
+    `${BASE_URL}/og-processo-1200x630.jpg`
   ),
   "/depoimentos": page(
     "/depoimentos",
     "Depoimentos | Grupo WG Almeida",
-    "Avaliacoes e resultados de clientes do Grupo WG Almeida."
+    "Avaliacoes e resultados de clientes do Grupo WG Almeida.",
+    `${BASE_URL}/og-sobre-1200x630.jpg`
   ),
   "/contato": page(
     "/contato",
     "Contato WG Almeida | Solicite Orcamento de Arquitetura e Reforma",
-    "Fale com a equipe WG Almeida para solicitar orcamento de arquitetura, engenharia e marcenaria em Sao Paulo."
+    "Fale com a equipe WG Almeida para solicitar orcamento de arquitetura, engenharia e marcenaria em Sao Paulo.",
+    `${BASE_URL}/og-home-1200x630.jpg`
   ),
   "/store": page(
     "/store",
     "Loja de Decoracao e Design Premium | Grupo WG Almeida",
-    "Compre produtos de decoracao e design premium com curadoria WG Almeida para ambientes residenciais e corporativos."
+    "Compre produtos de decoracao e design premium com curadoria WG Almeida para ambientes residenciais e corporativos.",
+    `${BASE_URL}/og-loja-1200x630.jpg`
   ),
   "/blog": page(
     "/blog",
     "Blog | Grupo WG Almeida",
-    "Conteudos sobre arquitetura, engenharia, marcenaria e obras."
+    "Conteudos sobre arquitetura, engenharia, marcenaria e obras.",
+    `${BASE_URL}/og-home-1200x630.jpg`
   ),
   "/faq": page(
     "/faq",
