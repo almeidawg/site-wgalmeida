@@ -171,7 +171,11 @@ function App() {
               <Route path="/easylocker" element={<EasyLocker />} />
               <Route path="/buildtech" element={<BuildTech />} />
               <Route path="/obraeasy" element={<ObraEasyLanding />} />
-              <Route path="/easyrealstate" element={<EasyRealStateLanding />} />
+              <Route path="/easy-real-state" element={<EasyRealStateLanding />} />
+              <Route
+                path="/easyrealstate"
+                element={<Navigate to="/easy-real-state" replace />}
+              />
               <Route path="/projetos" element={<Projects />} />
               <Route path="/processo" element={<Process />} />
               <Route path="/depoimentos" element={<Testimonials />} />
@@ -278,3 +282,6 @@ function App() {
 }
 
 export default App
+
+
+

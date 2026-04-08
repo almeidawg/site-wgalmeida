@@ -127,6 +127,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://wgalmeida.com.br/obraeasy</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wgalmeida.com.br/easy-real-state</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://wgalmeida.com.br/wnomasvinho</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>

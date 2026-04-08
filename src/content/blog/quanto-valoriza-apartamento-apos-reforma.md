@@ -147,6 +147,7 @@ A valorização de um apartamento após reforma é real, mensurável e previsív
 
 O EVF transforma a pergunta "quanto vai valorizar?" de uma estimativa subjetiva em um cálculo técnico baseado em dados de mercado. Isso significa melhores decisões de investimento, negociações mais transparentes e reformas executadas com propósito estratégico.
 
-**Simule o EVF do seu imóvel:** [EasyRealEstate →](/easyrealstate)
+**Simule o EVF do seu imóvel:** [EasyRealEstate →](/easy-real-state)
 
 Ou se você quer reformar com qualidade e previsibilidade antes de calcular o valor final: [Solicite uma proposta do Grupo WG Almeida](/solicite-proposta)
+

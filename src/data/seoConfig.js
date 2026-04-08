@@ -135,6 +135,16 @@ export const SEO_CONFIG = {
     "Easy Locker | Armários Inteligentes para Condomínios de Luxo",
     "A solução definitiva para gestão de encomendas. Armários inteligentes automatizados com a tecnologia do Grupo WG Almeida."
   ),
+  "/obraeasy": page(
+    "/obraeasy",
+    "ObraEasy | Plataforma de Gestão de Obras com EVF e Cronograma",
+    "Conheça o ObraEasy: plataforma para orçamento, EVF, cronograma, contratos e gestão financeira de obras para clientes, corretores e construtoras."
+  ),
+  "/easy-real-state": page(
+    "/easy-real-state",
+    "EasyRealState | Calculadora de Valor Imobiliário para Corretores",
+    "Avalie imóveis com dados reais de mercado em São Paulo e integre o estudo de reforma com o ecossistema Easy do Grupo WG Almeida."
+  ),
   "/wnomasvinho": page(
     "/wnomasvinho",
     "Wno Mas Vinhos & Cia | Curadoria de Vinhos Premium",
@@ -167,4 +177,7 @@ export function getSEOConfig(pathname = "/") {
 }
 
 export default SEO_CONFIG;
+
+
+
 

@@ -8,7 +8,7 @@ import {
 import { Link } from 'react-router-dom'
 
 const EasyRealStateLanding = () => {
-  const pageUrl = 'https://wgalmeida.com.br/easyrealstate'
+  const pageUrl = 'https://wgalmeida.com.br/easy-real-state'
 
   const planos = [
     {
@@ -422,3 +422,4 @@ const EasyRealStateLanding = () => {
 }
 
 export default EasyRealStateLanding
+

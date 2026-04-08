@@ -24,6 +24,11 @@
       "permanent": true
     },
     {
+      "source": "/easyrealstate",
+      "destination": "/easy-real-state",
+      "permanent": true
+    },
+    {
       "source": "/product/b92476ff-e03d-4100-8313-6859dee90564",
       "destination": "/product/a7bef3ac-2865-4405-94f0-782b51537077",
       "permanent": true
@@ -271,6 +276,14 @@
       "destination": "/marcenaria/index.html"
     },
     {
+      "source": "/obraeasy",
+      "destination": "/obraeasy/index.html"
+    },
+    {
+      "source": "/easy-real-state",
+      "destination": "/easy-real-state/index.html"
+    },
+    {
       "source": "/blog/:slug",
       "destination": "/blog/:slug/index.html"
     },
@@ -324,3 +337,6 @@
     }
   ]
 }
+
+
+
