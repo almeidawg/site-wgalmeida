@@ -97,3 +97,38 @@ Copiar este bloco para novos incidentes:
   - `tools/audit-blog-unsplash-selection.mjs`
   - `docs/UI-BUGS-AND-FIXES.md`
 
+## [INC-20260410-02] Rotas sem barra final em `3011` caiam no SEO generico da home
+
+- Data: 2026-04-10
+- Status: Resolved
+- Severidade: High
+- Ambiente: preview
+- URL(s):
+  - `http://localhost:3011/sobre`
+  - `http://localhost:3011/blog/arquitetura-barcelona-espanha`
+- Sintoma:
+  - A mesma rota entregava SEO diferente conforme a URL:
+    - sem barra final (`/slug`) => `<title>` e OG da home
+    - com barra final (`/slug/`) => SEO prerender correto da pagina
+- Causa raiz:
+  - O build gerava apenas `dist/<rota>/index.html`.
+  - No `vite preview`, URLs sem barra final caiam no fallback SPA (`/index.html`) em vez do HTML prerender da rota.
+- Correcao:
+  - `build-seo-routes.mjs` passou a gerar alias `dist/<rota>.html` para todas as rotas nao raiz.
+  - Exemplo: alem de `dist/blog/arquitetura-barcelona-espanha/index.html`, agora tambem existe `dist/blog/arquitetura-barcelona-espanha.html`.
+- Validacao:
+  - `npm run lint` => OK
+  - `npm run build` => OK
+  - `curl` na homologacao `3011` retornando mesmo `<title>` com e sem barra final para:
+    - `/sobre` e `/sobre/`
+    - `/blog/arquitetura-barcelona-espanha` e `/blog/arquitetura-barcelona-espanha/`
+- Evidencias:
+  - logs de build com geracao dos aliases `.html` para rotas SEO
+  - validacao HTTP em `localhost:3011` com metadados equivalentes nas duas variantes de URL
+- Prevencao:
+  - Em toda homologacao SEO, validar rota com e sem barra final.
+  - Manter o gerador de rotas como fonte unica da estrategia de prerender.
+- Arquivos alterados:
+  - `build-seo-routes.mjs`
+  - `docs/INCIDENT-LOG.md`
+  - `RETURN-POINT.md`

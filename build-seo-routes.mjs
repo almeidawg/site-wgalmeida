@@ -1,9 +1,23 @@
 import fs from "node:fs";
 import path from "node:path";
 import { SEO_CONFIG, getSEOConfig } from "./src/data/seoConfig.js";
+import { getCloudinaryBlogImage } from "./src/data/blogImageManifest.js";
+import { getBlogImageUrl } from "./src/data/blogImageManifest.js";
+import { getCloudinaryStyleImage } from "./src/data/styleImageManifest.js";
 
 const BASE_URL = "https://wgalmeida.com.br";
-
+const STYLE_BANNERS = [
+  "/images/banners/foto-obra-1.jpg",
+  "/images/banners/foto-obra-2.jpg",
+  "/images/banners/foto-obra-3.jpg",
+  "/images/banners/foto-obra-4.jpg",
+  "/images/banners/foto-obra-5.jpg",
+  "/images/banners/foto-obra-6.jpg",
+  "/images/banners/foto-obra-7.jpg",
+  "/images/banners/ARQ.webp",
+  "/images/banners/ENGENHARIA.webp",
+  "/images/banners/MARCENARIA.webp",
+];
 /** Parse YAML frontmatter from markdown string */
 function parseFrontmatterSimple(raw) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
@@ -17,6 +31,15 @@ function parseFrontmatterSimple(raw) {
   return result;
 }
 
+function getStyleCoverPath(slug) {
+  let hash = 0;
+
+  for (let i = 0; i < slug.length; i += 1) {
+    hash = (hash * 31 + slug.charCodeAt(i)) >>> 0;
+  }
+
+  return STYLE_BANNERS[hash % STYLE_BANNERS.length];
+}
 /** Get SEO config for a blog article from its markdown file */
 function getBlogArticleSEO(slug) {
   const mdPath = path.join(process.cwd(), "src", "content", "blog", `${slug}.md`);
@@ -25,7 +48,26 @@ function getBlogArticleSEO(slug) {
   const fm = parseFrontmatterSimple(raw);
   const title = fm.title ? `${fm.title} | Grupo WG Almeida` : null;
   const description = fm.excerpt || null;
-  const image = fm.image ? `${BASE_URL}${fm.image}` : `${BASE_URL}/og-home-1200x630.jpg`;
+  const hasSpecificFrontmatterImage = Boolean(fm.image && !fm.image.startsWith("/images/banners/"));
+  const slugSpecificManifestImage = getBlogImageUrl({
+    slug,
+    category: fm.category,
+    variant: "seo",
+    allowCategoryFallback: false,
+  });
+  const cloudinaryFallback = getCloudinaryBlogImage({
+    slug,
+    category: fm.category,
+    variant: "seo",
+  });
+  const image = fm.image
+    ? (
+      slugSpecificManifestImage ||
+      (hasSpecificFrontmatterImage
+        ? (fm.image.startsWith("http") ? fm.image : `${BASE_URL}${fm.image}`)
+        : (fm.image.startsWith("http") ? fm.image : `${BASE_URL}${fm.image}`))
+    )
+    : slugSpecificManifestImage || cloudinaryFallback || `${BASE_URL}/og-home-1200x630.jpg`;
   const canonical = `${BASE_URL}/blog/${slug}`;
   if (!title) return null;
   return { title, description, canonical, og: { title, description, image, url: canonical }, twitter: { card: "summary_large_image", title, description, image } };
@@ -40,7 +82,8 @@ function getEstiloSEO(slug) {
   const displayName = slug.split('-').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
   const title = fm.title ? `${fm.title} - Guia Completo de Estilo | WG Almeida` : `${displayName} - Guia Completo de Estilo | WG Almeida`;
   const description = fm.excerpt || `Descubra o estilo ${displayName}: caracteristicas, cores e como aplicar na sua casa com a curadoria do Grupo WG Almeida.`;
-  const image = fm.image ? `${BASE_URL}${fm.image}` : `${BASE_URL}/og-home-1200x630.jpg`;
+  const cloudinaryImage = getCloudinaryStyleImage({ slug, variant: "seo" });
+  const image = cloudinaryImage || `${BASE_URL}${getStyleCoverPath(slug)}`;
   const canonical = `${BASE_URL}/estilos/${slug}`;
   return { title, description, canonical, og: { title, description, image, url: canonical }, twitter: { card: "summary_large_image", title, description, image } };
 }
@@ -245,6 +288,15 @@ async function run() {
     await fs.promises.mkdir(routeDir, { recursive: true });
     await fs.promises.writeFile(routeIndexPath, html);
     console.log(`ok: ${path.join(outDir, route === "/" ? "index.html" : `${route.slice(1)}/index.html`)}`);
+
+    // Create extensionless aliases for static preview servers that resolve
+    // `/foo/bar` to `/foo/bar.html` (without requiring a trailing slash).
+    if (route !== "/") {
+      const routeHtmlAliasPath = path.join(outputRoot, `${route.slice(1)}.html`);
+      await fs.promises.mkdir(path.dirname(routeHtmlAliasPath), { recursive: true });
+      await fs.promises.writeFile(routeHtmlAliasPath, html);
+      console.log(`ok: ${path.join(outDir, `${route.slice(1)}.html`)}`);
+    }
   }
 
   // Geração do Sitemap dinâmico
@@ -281,4 +333,8 @@ run().catch((error) => {
   console.error(error);
   process.exit(1);
 });
+
+
+
+
 

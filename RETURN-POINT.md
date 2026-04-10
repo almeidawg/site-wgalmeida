@@ -1,5 +1,5 @@
 # RETURN-POINT — site-wgalmeida
-**Atualizado:** 10/04/2026 (sessão continuação - correção editorial Barcelona + governança de incidentes/ecossistema)
+**Atualizado:** 10/04/2026 (sessao continuacao - Barcelona 3011 + correcoes SEO sem barra final em preview)
 **Deploy:** wgalmeida.com.br ✅ EM PRODUÇÃO — último deploy 08/04
 
 ---
@@ -775,3 +775,83 @@ site-wgalmeida/
 - manter homologação oficial em `preview` quando a revisão do time usar `localhost:3011`
 - usar `docs/INCIDENT-LOG.md` para todo incidente real novo
 - iniciar cada nova rodada com o prompt de `docs/ECOSYSTEM-OPERATING-PROMPT.md`
+
+## Continuação 10/04 — automação do diagnóstico de túneis/portas
+
+- criada automação canônica de auditoria operacional:
+  - `tools/audit-infra-tunnels.mjs`
+- o script lê e cruza:
+  - `Operacao-Tuneis-PM2/TUNEIS-ATIVOS.json`
+  - `Operacao-Tuneis-PM2/PORTAS-RESERVADAS.md`
+- validações executadas pela automação:
+  - conflitos abertos no manifesto
+  - duplicidade de túnel por porta
+  - owner divergente da governança
+  - túnel ativo fora de porta reservada
+  - log ausente ou fora do diretório canônico
+- integração no workflow do projeto:
+  - `package.json` recebeu `npm run infra:tunnels:audit`
+- estrutura de rastreabilidade criada:
+  - `Operacao-Tuneis-PM2/logs/`
+  - `Operacao-Tuneis-PM2/audits/`
+- documentação atualizada para operação obrigatória pré start/stop:
+  - `Operacao-Tuneis-PM2/RUNBOOK-OPERACAO-INFRA-TUNEIS-PM2.md`
+  - `07_20260310_Infraestrutura/README.md`
+- observação operacional desta rodada:
+  - validação de execução do comando não foi rodada no ambiente atual porque o shell segue intermitente com `CreateProcessWithLogonW failed: 1326`
+
+## Próximo passo recomendado (infra)
+
+- executar `npm run infra:tunnels:audit` no repo canônico e anexar o JSON gerado em `Operacao-Tuneis-PM2/audits/`
+- com base no relatório, fechar primeiro o conflito de `5173` (ferramenta única por porta)
+- migrar os logs ativos de `%TEMP%` para `Operacao-Tuneis-PM2/logs/` mantendo os PIDs sem downtime
+
+## Continuação 10/04 — execução real da estabilização de túneis (com restart controlado)
+
+- auditoria inicial executada:
+  - `npm run infra:tunnels:audit`
+  - resultado inicial: `status: warning`, `7` riscos médios
+- ações executadas nesta rodada:
+  - desativado túnel `ngrok` duplicado da porta `5173`
+  - reinicializados túneis `cloudflared` de `5173`, `3010` e `3005` para usar log canônico em:
+    - `07_20260310_Infraestrutura/Operacao-Tuneis-PM2/logs/`
+  - manifesto atualizado em:
+    - `07_20260310_Infraestrutura/Operacao-Tuneis-PM2/TUNEIS-ATIVOS.json`
+  - `localtunnel` (`8092`) e `ngrok` (`5173`) marcados como `inactive` no manifesto
+  - conflitos do manifesto zerados (`conflicts: []`)
+- estado final ativo após consolidação:
+  - `5173` → `https://traveler-functions-holders-toll.trycloudflare.com` (PID `60364`)
+  - `3010` → `https://cabinets-concepts-cylinder-enrolled.trycloudflare.com` (PID `56724`)
+  - `3005` → `https://adjustment-cfr-fotos-intense.trycloudflare.com` (PID `58924`)
+- auditoria final executada na mesma sessão:
+  - `npm run infra:tunnels:audit`
+  - resultado final: `status: ok`, `0` riscos
+  - relatório: `07_20260310_Infraestrutura/Operacao-Tuneis-PM2/audits/tunnel-audit-2026-04-10T20-28-31-752Z.json`
+- base operacional sincronizada nesta rodada:
+  - `07_20260310_Infraestrutura/Operacao-Tuneis-PM2/PORTAS-RESERVADAS.md`
+
+## Próximo passo recomendado (infra pós-estabilização)
+
+- manter a decisão de ferramenta única por porta (`cloudflared`) até nova aprovação explícita
+- ao abrir túnel novo, atualizar manifesto e rodar `npm run infra:tunnels:audit` antes de publicar URL para o time
+- se `8092` voltar a operar, registrar novo processo/URL no manifesto antes do primeiro compartilhamento
+
+## Continuacao 10/04 - fix SEO sem barra final em `3011`
+
+- incidente detectado na homologacao:
+  - `http://localhost:3011/sobre` e `http://localhost:3011/blog/arquitetura-barcelona-espanha`
+  - sem `/` final carregava SEO da home; com `/` final carregava SEO da rota
+- causa raiz:
+  - o build SEO gerava apenas `dist/<rota>/index.html`
+  - `vite preview` sem barra final fazia fallback para `dist/index.html`
+- correcao aplicada:
+  - `build-seo-routes.mjs` agora gera alias adicional `dist/<rota>.html` para todas as rotas nao raiz
+  - isso permite que servidores estaticos resolvam `/rota` com o mesmo HTML prerender de `/rota/`
+- validacao executada:
+  - `npm run lint` -> OK
+  - `npm run build` -> OK
+  - confirmacao em `3011`:
+    - `/sobre` == `/sobre/` (mesmo `<title>`)
+    - `/blog/arquitetura-barcelona-espanha` == `/blog/arquitetura-barcelona-espanha/` (mesmo `<title>`)
+- documentacao sincronizada:
+  - `docs/INCIDENT-LOG.md` com entrada `INC-20260410-02`
