@@ -1,0 +1,91 @@
+{
+  "audit_date": "2026-04-09",
+  "mode": "QA_HARMONIZATION",
+  "dry_run": false,
+  "generated_outputs": [
+    "qa-status-matrix.json",
+    "fix-plan-aligned.json",
+    "qa-execution-summary.json"
+  ],
+  "source_artifacts": [
+    "fix-plan.json",
+    "full-audit-report.json",
+    "issues-summary.json"
+  ],
+  "rule": "TODO PLANO PRECISA TER STATUS REAL E EVIDENCIA",
+  "consistency_check": {
+    "fix_plan_items": 6,
+    "mapped_report_domains": 6,
+    "status_mismatches_resolved": [
+      "quality_gates agora aparece como PARTIALLY_IMPLEMENTED com evidencia explicita de gates e testes",
+      "governanca foi classificada como VALIDATED por evidencia nominal de scripts e artefatos",
+      "mcp_ia permaneceu como NOT_STARTED por ausencia de remediacao executada"
+    ]
+  },
+  "status_totals": {
+    "NOT_STARTED": 1,
+    "PARTIALLY_IMPLEMENTED": 4,
+    "IMPLEMENTED": 0,
+    "VALIDATED": 1
+  },
+  "qa_gates": {
+    "existing": [
+      "site_wgalmeida: build",
+      "wgeasy_frontend: build",
+      "obraeasy_frontend: build",
+      "obraeasy_backend: build",
+      "obraeasy_backend: lint",
+      "obraeasy_backend: check:env",
+      "obraeasy_backend: smoke",
+      "obraeasy_backend: test",
+      "obraeasy_backend: validate"
+    ],
+    "applied": [
+      "site_wgalmeida: build",
+      "wgeasy_frontend: build",
+      "obraeasy_frontend: build",
+      "obraeasy_backend: build",
+      "obraeasy_backend: lint",
+      "obraeasy_backend: check:env",
+      "obraeasy_backend: smoke",
+      "obraeasy_backend: test",
+      "obraeasy_backend: validate"
+    ],
+    "tested": [
+      "site_wgalmeida: build",
+      "wgeasy_frontend: build",
+      "obraeasy_frontend: build",
+      "obraeasy_backend: lint",
+      "obraeasy_backend: check:env",
+      "obraeasy_backend: smoke"
+    ],
+    "gaps": [
+      "Falta evidencia nominal para obraeasy_backend: build",
+      "Falta evidencia nominal para obraeasy_backend: test",
+      "Falta evidencia nominal para obraeasy_backend: validate",
+      "Ainda nao existe baseline minimo formalizado por tipo de app"
+    ]
+  },
+  "highest_priority_open_items": [
+    {
+      "domain": "git",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "why_open": "Remotes ausentes e politica operacional ainda nao foram resolvidos."
+    },
+    {
+      "domain": "mcp_ia",
+      "status": "NOT_STARTED",
+      "why_open": "Nao ha restauracao nem fallback documentado nos artefatos revisados."
+    },
+    {
+      "domain": "quality_gates",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "why_open": "O baseline global por tipo de app e a conexao com governanca seguem sem evidencia."
+    }
+  ],
+  "recommended_next_updates": [
+    "Adicionar ao report ou aos artefatos de QA os comandos exatos executados para build, test e validate do backend do ObraEasy, se ja tiverem sido rodados.",
+    "Registrar no report o artefato nominal do teste de regressao de governanca, se ele existir fora dos logs principais.",
+    "Definir baseline minimo de gates por tipo de app para que quality_gates possa sair de PARTIALLY_IMPLEMENTED."
+  ]
+}

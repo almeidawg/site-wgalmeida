@@ -1,0 +1,3836 @@
+[
+  {
+    "slug": "acapulco-club-house-residencia-luxo",
+    "title": "Residência Contemporânea Acapulco Club House: Arquitetura de Luxo e Experiência Residencial",
+    "category": "projetos",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 44,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "residencia contemporanea acapulco club",
+        "searchTerms": [
+          "modern architecture exterior",
+          "residencia contemporanea acapulco club facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "residencia contemporanea acapulco club",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/acapulco-club-house-residencia-luxo/hero.webp",
+        "targetCloudinaryId": "editorial/blog/acapulco-club-house-residencia-luxo/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "residencia contemporanea acapulco club",
+        "searchTerms": [
+          "architectural facade detail",
+          "residencia contemporanea acapulco club facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "residencia contemporanea acapulco club",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/acapulco-club-house-residencia-luxo/card.webp",
+        "targetCloudinaryId": "editorial/blog/acapulco-club-house-residencia-luxo/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetos-brasileiros-famosos-legado",
+    "title": "Arquitetos Brasileiros Famosos: 12 Nomes, Obras e Lições para Projetos Atuais",
+    "category": "arquitetura",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 29,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "arquitetos brasileiros famosos 12",
+        "searchTerms": [
+          "modern renovation interior",
+          "arquitetos brasileiros famosos 12 site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "arquitetos brasileiros famosos 12",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/arquitetos-brasileiros-famosos-legado/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetos-brasileiros-famosos-legado/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "arquitetos brasileiros famosos 12",
+        "searchTerms": [
+          "construction material detail",
+          "arquitetos brasileiros famosos 12 detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "arquitetos brasileiros famosos 12",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/arquitetos-brasileiros-famosos-legado/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetos-brasileiros-famosos-legado/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetos-internacionais-famosos-obras",
+    "title": "Arquitetos Internacionais Famosos: Obras Iconicas e Lições para 2026",
+    "category": "arquitetura",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 97,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "arquitetos internacionais famosos construction 2026",
+        "searchTerms": [
+          "modern renovation interior",
+          "arquitetos internacionais famosos construction site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "arquitetos internacionais famosos construction 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/arquitetos-internacionais-famosos-obras/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetos-internacionais-famosos-obras/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "arquitetos internacionais famosos construction 2026",
+        "searchTerms": [
+          "construction material detail",
+          "arquitetos internacionais famosos construction detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "arquitetos internacionais famosos construction 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/arquitetos-internacionais-famosos-obras/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetos-internacionais-famosos-obras/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetura-alto-padrao",
+    "title": "O Que E Arquitetura de Alto Padrão? Descubra os Diferenciais de um Projeto Premium",
+    "category": "arquitetura",
+    "currentImage": "/images/blog/arquitetura-alto-padrao.webp",
+    "boldCount": 4,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "architecture alto padrao descubra",
+        "searchTerms": [
+          "modern architecture exterior",
+          "architecture alto padrao descubra facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "architecture alto padrao descubra",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-alto-padrao/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-alto-padrao/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "architecture alto padrao descubra",
+        "searchTerms": [
+          "architectural facade detail",
+          "architecture alto padrao descubra facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "architecture alto padrao descubra",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-alto-padrao/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-alto-padrao/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetura-amsterdam-holanda",
+    "title": "Arquitetura de Amsterdam: O Charme dos Canais e Gables Holandeses",
+    "category": "arquitetura internacional",
+    "currentImage": "/images/blog/amsterdam/canal-amsterdam-nikolai-kolosov.webp",
+    "boldCount": 170,
+    "inlineImageCount": 2,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": true,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": true
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "amsterdam architecture",
+        "searchTerms": [
+          "amsterdam modern architecture exterior",
+          "architecture charme canais gables facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "amsterdam architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-amsterdam-holanda/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-amsterdam-holanda/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "amsterdam architecture",
+        "searchTerms": [
+          "amsterdam architectural facade detail",
+          "architecture charme canais gables facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "amsterdam architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-amsterdam-holanda/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-amsterdam-holanda/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetura-barcelona-espanha",
+    "title": "Arquitetura de Barcelona: Gaudi, Modernisme e Icones Como a Sagrada Familia",
+    "category": "arquitetura internacional",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 326,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "barcelona architecture",
+        "searchTerms": [
+          "barcelona modern architecture exterior",
+          "architecture gaudi modernisme icones facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "barcelona architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-barcelona-espanha/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-barcelona-espanha/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "barcelona architecture",
+        "searchTerms": [
+          "barcelona architectural facade detail",
+          "architecture gaudi modernisme icones facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "barcelona architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-barcelona-espanha/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-barcelona-espanha/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetura-bruges-belgica",
+    "title": "Arquitetura de Bruges: A Veneza do Norte e Seu Centro Medieval Preservado",
+    "category": "arquitetura internacional",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 259,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "bruges architecture",
+        "searchTerms": [
+          "bruges modern architecture exterior",
+          "architecture veneza norte seu facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "bruges architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-bruges-belgica/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-bruges-belgica/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "bruges architecture",
+        "searchTerms": [
+          "bruges architectural facade detail",
+          "architecture veneza norte seu facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "bruges architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-bruges-belgica/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-bruges-belgica/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetura-bruxelas-belgica",
+    "title": "Arquitetura de Bruxelas: Art Nouveau, Grand Place e Icones da Capital Europeia",
+    "category": "arquitetura internacional",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 249,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "brussels architecture",
+        "searchTerms": [
+          "brussels modern architecture exterior",
+          "architecture art nouveau grand facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "brussels architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-bruxelas-belgica/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-bruxelas-belgica/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "brussels architecture",
+        "searchTerms": [
+          "brussels architectural facade detail",
+          "architecture art nouveau grand facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "brussels architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-bruxelas-belgica/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-bruxelas-belgica/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetura-haarlem-holanda",
+    "title": "Arquitetura de Haarlem: Joia Medieval da Holanda e os Hofjes Secretos",
+    "category": "arquitetura internacional",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 193,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "haarlem architecture",
+        "searchTerms": [
+          "haarlem modern architecture exterior",
+          "architecture joia medieval hofjes facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "haarlem architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-haarlem-holanda/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-haarlem-holanda/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "haarlem architecture",
+        "searchTerms": [
+          "haarlem architectural facade detail",
+          "architecture joia medieval hofjes facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "haarlem architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-haarlem-holanda/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-haarlem-holanda/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetura-lisboa-portugal",
+    "title": "Arquitetura de Lisboa: Azulejos, Sete Colinas e o Legado Pombalino",
+    "category": "arquitetura internacional",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 308,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "lisbon architecture",
+        "searchTerms": [
+          "lisbon modern architecture exterior",
+          "architecture azulejos sete colinas facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "lisbon architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-lisboa-portugal/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-lisboa-portugal/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "lisbon architecture",
+        "searchTerms": [
+          "lisbon architectural facade detail",
+          "architecture azulejos sete colinas facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "lisbon architecture",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-lisboa-portugal/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-lisboa-portugal/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetura-paris-franca",
+    "title": "Arquitetura de Paris: Guia dos Estilos, Boulevards Haussmannianos e Icones",
+    "category": "arquitetura internacional",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 373,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "paris interior design",
+        "searchTerms": [
+          "paris minimalist interior design",
+          "architecture styles boulevards haussmannianos home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "paris interior design",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/arquitetura-paris-franca/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-paris-franca/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "paris interior design",
+        "searchTerms": [
+          "paris interior styling detail",
+          "architecture styles boulevards haussmannianos decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "paris interior design",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/arquitetura-paris-franca/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-paris-franca/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "arquitetura-sustentavel-certificacoes",
+    "title": "Arquitetura Sustentavel: Certificacoes LEED, AQUA e Casa Azul no Brasil",
+    "category": "sustentabilidade",
+    "currentImage": "/images/banners/SOBRE.webp",
+    "boldCount": 81,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "architecture sustentavel certificacoes leed",
+        "searchTerms": [
+          "modern architecture exterior",
+          "architecture sustentavel certificacoes leed facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "architecture sustentavel certificacoes leed",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-sustentavel-certificacoes/hero.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-sustentavel-certificacoes/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "architecture sustentavel certificacoes leed",
+        "searchTerms": [
+          "architectural facade detail",
+          "architecture sustentavel certificacoes leed facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "architecture sustentavel certificacoes leed",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/arquitetura-sustentavel-certificacoes/card.webp",
+        "targetCloudinaryId": "editorial/blog/arquitetura-sustentavel-certificacoes/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "automacao-residencial-2026-guia",
+    "title": "Automação Residencial em 2026: Quanto Custa e Como Montar uma Smart Home",
+    "category": "tecnologia",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 30,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "automation residential 2026 quanto",
+        "searchTerms": [
+          "smart home interior",
+          "automation residential 2026 quanto automation interior",
+          "clean tech living room",
+          "minimal connected home",
+          "neutral smart interior"
+        ],
+        "searchQuery": "automation residential 2026 quanto",
+        "intent": "technology",
+        "targetLocalFile": "public/images/blog/automacao-residencial-2026-guia/hero.webp",
+        "targetCloudinaryId": "editorial/blog/automacao-residencial-2026-guia/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "automation residential 2026 quanto",
+        "searchTerms": [
+          "smart home detail",
+          "automation residential 2026 quanto panel detail",
+          "tech interior detail",
+          "modern switch detail",
+          "connected home styling"
+        ],
+        "searchQuery": "automation residential 2026 quanto",
+        "intent": "technology",
+        "targetLocalFile": "public/images/blog/automacao-residencial-2026-guia/card.webp",
+        "targetCloudinaryId": "editorial/blog/automacao-residencial-2026-guia/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "bancada-cozinha-ergonomia",
+    "title": "Bancada de cozinha: ergonomia, medidas e especificacoes técnicas",
+    "category": "arquitetura",
+    "currentImage": "/images/blog/bancada-cozinha-ergonomia.webp",
+    "boldCount": 0,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "bancada kitchen ergonomia medidas",
+        "searchTerms": [
+          "modern kitchen interior",
+          "bancada kitchen ergonomia medidas kitchen design",
+          "neutral kitchen palette",
+          "elegant kitchen photography",
+          "clean kitchen layout"
+        ],
+        "searchQuery": "bancada kitchen ergonomia medidas",
+        "intent": "kitchen",
+        "targetLocalFile": "public/images/blog/bancada-cozinha-ergonomia/hero.webp",
+        "targetCloudinaryId": "editorial/blog/bancada-cozinha-ergonomia/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "bancada kitchen ergonomia medidas",
+        "searchTerms": [
+          "kitchen island detail",
+          "bancada kitchen ergonomia medidas finish detail",
+          "modern kitchen styling",
+          "neutral countertop detail",
+          "minimal kitchen composition"
+        ],
+        "searchQuery": "bancada kitchen ergonomia medidas",
+        "intent": "kitchen",
+        "targetLocalFile": "public/images/blog/bancada-cozinha-ergonomia/card.webp",
+        "targetCloudinaryId": "editorial/blog/bancada-cozinha-ergonomia/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "bim-construcao-civil-como-funciona",
+    "title": "BIM na Construção Civil: Como Funciona e Como Reduz Erros e Custos",
+    "category": "tecnologia",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 18,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "bim construction civil reduz",
+        "searchTerms": [
+          "smart home interior",
+          "bim construction civil reduz automation interior",
+          "clean tech living room",
+          "minimal connected home",
+          "neutral smart interior"
+        ],
+        "searchQuery": "bim construction civil reduz",
+        "intent": "technology",
+        "targetLocalFile": "public/images/blog/bim-construcao-civil-como-funciona/hero.webp",
+        "targetCloudinaryId": "editorial/blog/bim-construcao-civil-como-funciona/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "bim construction civil reduz",
+        "searchTerms": [
+          "smart home detail",
+          "bim construction civil reduz panel detail",
+          "tech interior detail",
+          "modern switch detail",
+          "connected home styling"
+        ],
+        "searchQuery": "bim construction civil reduz",
+        "intent": "technology",
+        "targetLocalFile": "public/images/blog/bim-construcao-civil-como-funciona/card.webp",
+        "targetCloudinaryId": "editorial/blog/bim-construcao-civil-como-funciona/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "briefing-projeto-dos-sonhos",
+    "title": "Briefing: Como Planejar o Projeto dos Seus Sonhos",
+    "category": "dicas",
+    "currentImage": "/images/blog/briefing-projeto-dos-sonhos.webp",
+    "boldCount": 14,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "briefing planejar projeto seus",
+        "searchTerms": [
+          "minimalist interior design",
+          "briefing planejar projeto seus home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "briefing planejar projeto seus",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/briefing-projeto-dos-sonhos/hero.webp",
+        "targetCloudinaryId": "editorial/blog/briefing-projeto-dos-sonhos/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "briefing planejar projeto seus",
+        "searchTerms": [
+          "interior styling detail",
+          "briefing planejar projeto seus decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "briefing planejar projeto seus",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/briefing-projeto-dos-sonhos/card.webp",
+        "targetCloudinaryId": "editorial/blog/briefing-projeto-dos-sonhos/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "calculadora-preco-m2-corretores-imobiliarias",
+    "title": "Calculadora de Preço por m² para Corretores e Imobiliárias: Como Avaliar Imóveis com Precisão em 2026",
+    "category": "mercado-imobiliario",
+    "currentImage": "/images/banners/SOBRE.webp",
+    "boldCount": 34,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "calculadora preco m corretores 2026",
+        "searchTerms": [
+          "minimalist interior design",
+          "calculadora preco m corretores home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "calculadora preco m corretores 2026",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/calculadora-preco-m2-corretores-imobiliarias/hero.webp",
+        "targetCloudinaryId": "editorial/blog/calculadora-preco-m2-corretores-imobiliarias/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "calculadora preco m corretores 2026",
+        "searchTerms": [
+          "interior styling detail",
+          "calculadora preco m corretores decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "calculadora preco m corretores 2026",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/calculadora-preco-m2-corretores-imobiliarias/card.webp",
+        "targetCloudinaryId": "editorial/blog/calculadora-preco-m2-corretores-imobiliarias/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "casa-cor-2026-mente-coracao",
+    "title": "Casa Cor 2026: Tema Mente e Coracao e Tendencias da Mostra de Arquitetura",
+    "category": "arquitetura",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 56,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "house cor 2026 tema",
+        "searchTerms": [
+          "minimalist interior design",
+          "house cor 2026 tema home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "house cor 2026 tema",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/casa-cor-2026-mente-coracao/hero.webp",
+        "targetCloudinaryId": "editorial/blog/casa-cor-2026-mente-coracao/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "house cor 2026 tema",
+        "searchTerms": [
+          "interior styling detail",
+          "house cor 2026 tema decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "house cor 2026 tema",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/casa-cor-2026-mente-coracao/card.webp",
+        "targetCloudinaryId": "editorial/blog/casa-cor-2026-mente-coracao/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "closet-planejado-organizacao-otimizacao",
+    "title": "Closet Planejado: Medidas Certas para Organizar Melhor e Ganhar Espaco",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 60,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "closet planejado medidas certas",
+        "searchTerms": [
+          "minimalist interior design",
+          "closet planejado medidas certas home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "closet planejado medidas certas",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/closet-planejado-organizacao-otimizacao/hero.webp",
+        "targetCloudinaryId": "editorial/blog/closet-planejado-organizacao-otimizacao/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "closet planejado medidas certas",
+        "searchTerms": [
+          "interior styling detail",
+          "closet planejado medidas certas decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "closet planejado medidas certas",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/closet-planejado-organizacao-otimizacao/card.webp",
+        "targetCloudinaryId": "editorial/blog/closet-planejado-organizacao-otimizacao/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "cronograma-obra-acompanhamento",
+    "title": "Cronograma de obra: como acompanhar etapas e prazos com clareza",
+    "category": "engenharia",
+    "currentImage": "/images/blog/cronograma-obra-acompanhamento.webp",
+    "boldCount": 0,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "cronograma construction acompanhar etapas",
+        "searchTerms": [
+          "modern renovation interior",
+          "cronograma construction acompanhar etapas site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "cronograma construction acompanhar etapas",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/cronograma-obra-acompanhamento/hero.webp",
+        "targetCloudinaryId": "editorial/blog/cronograma-obra-acompanhamento/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "cronograma construction acompanhar etapas",
+        "searchTerms": [
+          "construction material detail",
+          "cronograma construction acompanhar etapas detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "cronograma construction acompanhar etapas",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/cronograma-obra-acompanhamento/card.webp",
+        "targetCloudinaryId": "editorial/blog/cronograma-obra-acompanhamento/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "custo-construcao-reforma-2026-guia-tecnico-completo",
+    "title": "Quanto Custa Construir e Reformar em 2026: Guia Técnico Completo com Tabelas de Precos SINAPI",
+    "category": "engenharia",
+    "currentImage": "/images/banners/ENGENHARIA.webp",
+    "boldCount": 56,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "quanto custa construir reformar 2026",
+        "searchTerms": [
+          "modern renovation interior",
+          "quanto custa construir reformar site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "quanto custa construir reformar 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/custo-construcao-reforma-2026-guia-tecnico-completo/hero.webp",
+        "targetCloudinaryId": "editorial/blog/custo-construcao-reforma-2026-guia-tecnico-completo/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "quanto custa construir reformar 2026",
+        "searchTerms": [
+          "construction material detail",
+          "quanto custa construir reformar detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "quanto custa construir reformar 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/custo-construcao-reforma-2026-guia-tecnico-completo/card.webp",
+        "targetCloudinaryId": "editorial/blog/custo-construcao-reforma-2026-guia-tecnico-completo/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "documentacao-obra-condominio",
+    "title": "Documentacao para obra em condominio: informe, ART/RRT e responsabilidade",
+    "category": "engenharia",
+    "currentImage": "/images/blog/documentacao-obra-condominio.webp",
+    "boldCount": 0,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "documentacao construction condominium informe",
+        "searchTerms": [
+          "modern renovation interior",
+          "documentacao construction condominium informe site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "documentacao construction condominium informe",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/documentacao-obra-condominio/hero.webp",
+        "targetCloudinaryId": "editorial/blog/documentacao-obra-condominio/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "documentacao construction condominium informe",
+        "searchTerms": [
+          "construction material detail",
+          "documentacao construction condominium informe detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "documentacao construction condominium informe",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/documentacao-obra-condominio/card.webp",
+        "targetCloudinaryId": "editorial/blog/documentacao-obra-condominio/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "dyson-tecnologia-design-residencial",
+    "title": "Dyson Vale a Pena? Engenharia, Design Residencial e Custo-Beneficio",
+    "category": "tecnologia",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 21,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "dyson vale pena engineering",
+        "searchTerms": [
+          "smart home interior",
+          "dyson vale pena engineering automation interior",
+          "clean tech living room",
+          "minimal connected home",
+          "neutral smart interior"
+        ],
+        "searchQuery": "dyson vale pena engineering",
+        "intent": "technology",
+        "targetLocalFile": "public/images/blog/dyson-tecnologia-design-residencial/hero.webp",
+        "targetCloudinaryId": "editorial/blog/dyson-tecnologia-design-residencial/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "dyson vale pena engineering",
+        "searchTerms": [
+          "smart home detail",
+          "dyson vale pena engineering panel detail",
+          "tech interior detail",
+          "modern switch detail",
+          "connected home styling"
+        ],
+        "searchQuery": "dyson vale pena engineering",
+        "intent": "technology",
+        "targetLocalFile": "public/images/blog/dyson-tecnologia-design-residencial/card.webp",
+        "targetCloudinaryId": "editorial/blog/dyson-tecnologia-design-residencial/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "erros-comuns-reforma-como-evitar",
+    "title": "10 Erros Mais Comuns em Reformas e Como Evitá-los",
+    "category": "reforma",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 35,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "10 erros comuns reformas",
+        "searchTerms": [
+          "minimalist interior design",
+          "10 erros comuns reformas home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "10 erros comuns reformas",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/erros-comuns-reforma-como-evitar/hero.webp",
+        "targetCloudinaryId": "editorial/blog/erros-comuns-reforma-como-evitar/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "10 erros comuns reformas",
+        "searchTerms": [
+          "interior styling detail",
+          "10 erros comuns reformas decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "10 erros comuns reformas",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/erros-comuns-reforma-como-evitar/card.webp",
+        "targetCloudinaryId": "editorial/blog/erros-comuns-reforma-como-evitar/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "especificacoes-tecnicas-diferenca",
+    "title": "Especificacoes técnicas que fazem diferenca no resultado final",
+    "category": "arquitetura",
+    "currentImage": "/images/blog/especificacoes-tecnicas-diferenca.webp",
+    "boldCount": 0,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "especificacoes tecnicas fazem diferenca",
+        "searchTerms": [
+          "modern architecture exterior",
+          "especificacoes tecnicas fazem diferenca facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "especificacoes tecnicas fazem diferenca",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/especificacoes-tecnicas-diferenca/hero.webp",
+        "targetCloudinaryId": "editorial/blog/especificacoes-tecnicas-diferenca/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "especificacoes tecnicas fazem diferenca",
+        "searchTerms": [
+          "architectural facade detail",
+          "especificacoes tecnicas fazem diferenca facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "especificacoes tecnicas fazem diferenca",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/especificacoes-tecnicas-diferenca/card.webp",
+        "targetCloudinaryId": "editorial/blog/especificacoes-tecnicas-diferenca/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "etapas-prazos-projeto-arquitetonico",
+    "title": "Etapas e Prazos do Projeto Arquitetônico: do Levantamento ao Executivo",
+    "category": "arquitetura",
+    "currentImage": "/images/blog/etapas-prazos-projeto-arquitetonico.webp",
+    "boldCount": 0,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "etapas prazos projeto arquitetonico",
+        "searchTerms": [
+          "modern architecture exterior",
+          "etapas prazos projeto arquitetonico facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "etapas prazos projeto arquitetonico",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/etapas-prazos-projeto-arquitetonico/hero.webp",
+        "targetCloudinaryId": "editorial/blog/etapas-prazos-projeto-arquitetonico/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "etapas prazos projeto arquitetonico",
+        "searchTerms": [
+          "architectural facade detail",
+          "etapas prazos projeto arquitetonico facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "etapas prazos projeto arquitetonico",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/etapas-prazos-projeto-arquitetonico/card.webp",
+        "targetCloudinaryId": "editorial/blog/etapas-prazos-projeto-arquitetonico/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "etapas-reforma-completa",
+    "title": "Etapas de uma Reforma Completa: Do Inicio a Entrega das Chaves",
+    "category": "engenharia",
+    "currentImage": "/images/blog/etapas-reforma-completa.webp",
+    "boldCount": 30,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "etapas renovation inicio entrega",
+        "searchTerms": [
+          "modern renovation interior",
+          "etapas renovation inicio entrega site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "etapas renovation inicio entrega",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/etapas-reforma-completa/hero.webp",
+        "targetCloudinaryId": "editorial/blog/etapas-reforma-completa/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "etapas renovation inicio entrega",
+        "searchTerms": [
+          "construction material detail",
+          "etapas renovation inicio entrega detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "etapas renovation inicio entrega",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/etapas-reforma-completa/card.webp",
+        "targetCloudinaryId": "editorial/blog/etapas-reforma-completa/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "evf-estudo-viabilidade-financeira",
+    "title": "EVF na Obra: Como Validar Custos e Evitar Estouro de Orçamento Antes de Construir",
+    "category": "planejamento",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 34,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "evf construction validar custos",
+        "searchTerms": [
+          "modern renovation interior",
+          "evf construction validar custos site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "evf construction validar custos",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/evf-estudo-viabilidade-financeira/hero.webp",
+        "targetCloudinaryId": "editorial/blog/evf-estudo-viabilidade-financeira/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "evf construction validar custos",
+        "searchTerms": [
+          "construction material detail",
+          "evf construction validar custos detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "evf construction validar custos",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/evf-estudo-viabilidade-financeira/card.webp",
+        "targetCloudinaryId": "editorial/blog/evf-estudo-viabilidade-financeira/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "guia-estilos-ambientes-residenciais",
+    "title": "Guia de Estilos para Ambientes Residenciais: encontre sua identidade",
+    "category": "tendencias",
+    "currentImage": "/images/blog/guia-estilos-ambientes-residenciais.webp",
+    "boldCount": 7,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "styles ambientes residenciais encontre",
+        "searchTerms": [
+          "minimalist interior design",
+          "styles ambientes residenciais encontre home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "styles ambientes residenciais encontre",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/guia-estilos-ambientes-residenciais/hero.webp",
+        "targetCloudinaryId": "editorial/blog/guia-estilos-ambientes-residenciais/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "styles ambientes residenciais encontre",
+        "searchTerms": [
+          "interior styling detail",
+          "styles ambientes residenciais encontre decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "styles ambientes residenciais encontre",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/guia-estilos-ambientes-residenciais/card.webp",
+        "targetCloudinaryId": "editorial/blog/guia-estilos-ambientes-residenciais/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "guia-estilos-decoracao",
+    "title": "Guia Completo de Estilos de Decoração: Encontre o Seu",
+    "category": "tendencias",
+    "currentImage": "/images/blog/guia-estilos-decoracao.webp",
+    "boldCount": 14,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "styles decor encontre seu",
+        "searchTerms": [
+          "minimalist interior design",
+          "styles decor encontre seu home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "styles decor encontre seu",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/guia-estilos-decoracao/hero.webp",
+        "targetCloudinaryId": "editorial/blog/guia-estilos-decoracao/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "styles decor encontre seu",
+        "searchTerms": [
+          "interior styling detail",
+          "styles decor encontre seu decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "styles decor encontre seu",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/guia-estilos-decoracao/card.webp",
+        "targetCloudinaryId": "editorial/blog/guia-estilos-decoracao/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "harman-kardon-som-ambientes",
+    "title": "Harman Kardon Vale a Pena? Audio Premium e Design para Ambientes Sofisticados",
+    "category": "tecnologia",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 40,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "harman kardon vale pena",
+        "searchTerms": [
+          "smart home interior",
+          "harman kardon vale pena automation interior",
+          "clean tech living room",
+          "minimal connected home",
+          "neutral smart interior"
+        ],
+        "searchQuery": "harman kardon vale pena",
+        "intent": "technology",
+        "targetLocalFile": "public/images/blog/harman-kardon-som-ambientes/hero.webp",
+        "targetCloudinaryId": "editorial/blog/harman-kardon-som-ambientes/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "harman kardon vale pena",
+        "searchTerms": [
+          "smart home detail",
+          "harman kardon vale pena panel detail",
+          "tech interior detail",
+          "modern switch detail",
+          "connected home styling"
+        ],
+        "searchQuery": "harman kardon vale pena",
+        "intent": "technology",
+        "targetLocalFile": "public/images/blog/harman-kardon-som-ambientes/card.webp",
+        "targetCloudinaryId": "editorial/blog/harman-kardon-som-ambientes/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "home-office-ergonomia-produtividade",
+    "title": "Home Office: Guia de Ergonomia e Produtividade para Trabalhar Melhor em Casa",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 23,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "home office ergonomia produtividade",
+        "searchTerms": [
+          "modern office interior",
+          "home office ergonomia produtividade lobby design",
+          "neutral workspace interior",
+          "clean meeting room",
+          "minimal office architecture"
+        ],
+        "searchQuery": "home office ergonomia produtividade",
+        "intent": "corporate",
+        "targetLocalFile": "public/images/blog/home-office-ergonomia-produtividade/hero.webp",
+        "targetCloudinaryId": "editorial/blog/home-office-ergonomia-produtividade/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "home office ergonomia produtividade",
+        "searchTerms": [
+          "office detail interior",
+          "home office ergonomia produtividade room detail",
+          "workspace material detail",
+          "corporate reception detail",
+          "clean office styling"
+        ],
+        "searchQuery": "home office ergonomia produtividade",
+        "intent": "corporate",
+        "targetLocalFile": "public/images/blog/home-office-ergonomia-produtividade/card.webp",
+        "targetCloudinaryId": "editorial/blog/home-office-ergonomia-produtividade/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "iluminacao-residencial-guia-completo",
+    "title": "Iluminação Residencial: Guia Completo para Iluminar Sua Casa",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 108,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "lighting residential iluminar sua",
+        "searchTerms": [
+          "architectural lighting interior",
+          "lighting residential iluminar sua lighting design",
+          "soft light living room",
+          "minimalist ambient lighting",
+          "neutral interior lighting"
+        ],
+        "searchQuery": "lighting residential iluminar sua",
+        "intent": "lighting",
+        "targetLocalFile": "public/images/blog/iluminacao-residencial-guia-completo/hero.webp",
+        "targetCloudinaryId": "editorial/blog/iluminacao-residencial-guia-completo/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "lighting residential iluminar sua",
+        "searchTerms": [
+          "lighting fixture detail",
+          "lighting residential iluminar sua light detail",
+          "soft ambient light",
+          "architectural lighting detail",
+          "minimalist lamp styling"
+        ],
+        "searchQuery": "lighting residential iluminar sua",
+        "intent": "lighting",
+        "targetLocalFile": "public/images/blog/iluminacao-residencial-guia-completo/card.webp",
+        "targetCloudinaryId": "editorial/blog/iluminacao-residencial-guia-completo/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "iluminacao-tecnica-rasgo-de-luz",
+    "title": "Iluminacao técnica e rasgo de luz: quando usar e como especificar",
+    "category": "arquitetura",
+    "currentImage": "/images/blog/iluminacao-tecnica-rasgo-de-luz.webp",
+    "boldCount": 1,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "lighting tecnica rasgo light",
+        "searchTerms": [
+          "architectural lighting interior",
+          "lighting tecnica rasgo light lighting design",
+          "soft light living room",
+          "minimalist ambient lighting",
+          "neutral interior lighting"
+        ],
+        "searchQuery": "lighting tecnica rasgo light",
+        "intent": "lighting",
+        "targetLocalFile": "public/images/blog/iluminacao-tecnica-rasgo-de-luz/hero.webp",
+        "targetCloudinaryId": "editorial/blog/iluminacao-tecnica-rasgo-de-luz/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "lighting tecnica rasgo light",
+        "searchTerms": [
+          "lighting fixture detail",
+          "lighting tecnica rasgo light light detail",
+          "soft ambient light",
+          "architectural lighting detail",
+          "minimalist lamp styling"
+        ],
+        "searchQuery": "lighting tecnica rasgo light",
+        "intent": "lighting",
+        "targetLocalFile": "public/images/blog/iluminacao-tecnica-rasgo-de-luz/card.webp",
+        "targetCloudinaryId": "editorial/blog/iluminacao-tecnica-rasgo-de-luz/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "importancia-contratar-arquiteto",
+    "title": "Por Que Contratar um Arquiteto? A Importância do Profissional Capacitado",
+    "category": "arquitetura",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 77,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "contratar arquiteto importancia profissional",
+        "searchTerms": [
+          "modern architecture exterior",
+          "contratar arquiteto importancia profissional facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "contratar arquiteto importancia profissional",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/importancia-contratar-arquiteto/hero.webp",
+        "targetCloudinaryId": "editorial/blog/importancia-contratar-arquiteto/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "contratar arquiteto importancia profissional",
+        "searchTerms": [
+          "architectural facade detail",
+          "contratar arquiteto importancia profissional facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "contratar arquiteto importancia profissional",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/importancia-contratar-arquiteto/card.webp",
+        "targetCloudinaryId": "editorial/blog/importancia-contratar-arquiteto/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "informe-obra-condominio",
+    "title": "Informe de obra em condominio: como preencher e evitar atrasos",
+    "category": "engenharia",
+    "currentImage": "/images/blog/informe-obra-condominio.webp",
+    "boldCount": 0,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "informe construction condominium preencher",
+        "searchTerms": [
+          "modern renovation interior",
+          "informe construction condominium preencher site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "informe construction condominium preencher",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/informe-obra-condominio/hero.webp",
+        "targetCloudinaryId": "editorial/blog/informe-obra-condominio/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "informe construction condominium preencher",
+        "searchTerms": [
+          "construction material detail",
+          "informe construction condominium preencher detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "informe construction condominium preencher",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/informe-obra-condominio/card.webp",
+        "targetCloudinaryId": "editorial/blog/informe-obra-condominio/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "le-creuset-panelas-design",
+    "title": "Le Creuset Vale a Pena em 2026? Design, Durabilidade e Custo-Beneficio",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 30,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "le creuset vale pena 2026",
+        "searchTerms": [
+          "minimalist interior design",
+          "le creuset vale pena home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "le creuset vale pena 2026",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/le-creuset-panelas-design/hero.webp",
+        "targetCloudinaryId": "editorial/blog/le-creuset-panelas-design/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "le creuset vale pena 2026",
+        "searchTerms": [
+          "interior styling detail",
+          "le creuset vale pena decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "le creuset vale pena 2026",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/le-creuset-panelas-design/card.webp",
+        "targetCloudinaryId": "editorial/blog/le-creuset-panelas-design/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "liz-curadoria-wg-almeida",
+    "title": "Curadoria de Materiais: Liz e o Padrão Premium da WG Almeida",
+    "category": "arquitetura",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 2,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "curadoria materials liz padrao",
+        "searchTerms": [
+          "modern architecture exterior",
+          "curadoria materials liz padrao facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "curadoria materials liz padrao",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/liz-curadoria-wg-almeida/hero.webp",
+        "targetCloudinaryId": "editorial/blog/liz-curadoria-wg-almeida/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "curadoria materials liz padrao",
+        "searchTerms": [
+          "architectural facade detail",
+          "curadoria materials liz padrao facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "curadoria materials liz padrao",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/liz-curadoria-wg-almeida/card.webp",
+        "targetCloudinaryId": "editorial/blog/liz-curadoria-wg-almeida/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "marcas-luxo-internacionais-moveis-design",
+    "title": "Marcas de Luxo Internacionais: 10 Griffes que Definem o Design de Alto Padrão",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 149,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "marcas luxury internacionais 10",
+        "searchTerms": [
+          "minimalist interior design",
+          "marcas luxury internacionais 10 home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "marcas luxury internacionais 10",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/marcas-luxo-internacionais-moveis-design/hero.webp",
+        "targetCloudinaryId": "editorial/blog/marcas-luxo-internacionais-moveis-design/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "marcas luxury internacionais 10",
+        "searchTerms": [
+          "interior styling detail",
+          "marcas luxury internacionais 10 decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "marcas luxury internacionais 10",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/marcas-luxo-internacionais-moveis-design/card.webp",
+        "targetCloudinaryId": "editorial/blog/marcas-luxo-internacionais-moveis-design/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "marcas-luxo-nacionais-moveis-decoracao",
+    "title": "Marcas de Luxo Nacionais: O Melhor do Design Brasileiro para Sua Casa",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 163,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "marcas luxury nacionais melhor",
+        "searchTerms": [
+          "minimalist interior design",
+          "marcas luxury nacionais melhor home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "marcas luxury nacionais melhor",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/marcas-luxo-nacionais-moveis-decoracao/hero.webp",
+        "targetCloudinaryId": "editorial/blog/marcas-luxo-nacionais-moveis-decoracao/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "marcas luxury nacionais melhor",
+        "searchTerms": [
+          "interior styling detail",
+          "marcas luxury nacionais melhor decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "marcas luxury nacionais melhor",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/marcas-luxo-nacionais-moveis-decoracao/card.webp",
+        "targetCloudinaryId": "editorial/blog/marcas-luxo-nacionais-moveis-decoracao/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "marcenaria-sob-medida-tendencias-2026",
+    "title": "Marcenaria Sob Medida 2026: Tendencias, Materiais e Soluções para Otimizar Espacos",
+    "category": "marcenaria",
+    "currentImage": "/images/banners/MARCENARIA.webp",
+    "boldCount": 9,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "custom carpentry sob medida 2026",
+        "searchTerms": [
+          "custom carpentry interior",
+          "custom carpentry sob medida 2026 millwork design",
+          "neutral wood interior",
+          "luxury joinery interior",
+          "clean woodwork composition"
+        ],
+        "searchQuery": "custom carpentry sob medida 2026",
+        "intent": "carpentry",
+        "targetLocalFile": "public/images/blog/marcenaria-sob-medida-tendencias-2026/hero.webp",
+        "targetCloudinaryId": "editorial/blog/marcenaria-sob-medida-tendencias-2026/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "custom carpentry sob medida 2026",
+        "searchTerms": [
+          "woodwork detail craftsmanship",
+          "custom carpentry sob medida 2026 joinery detail",
+          "wood texture interior",
+          "custom shelving detail",
+          "minimal millwork detail"
+        ],
+        "searchQuery": "custom carpentry sob medida 2026",
+        "intent": "carpentry",
+        "targetLocalFile": "public/images/blog/marcenaria-sob-medida-tendencias-2026/card.webp",
+        "targetCloudinaryId": "editorial/blog/marcenaria-sob-medida-tendencias-2026/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "marcenaria-sob-medida",
+    "title": "Marcenaria Sob Medida: Quando Personalizar Faz Toda a Diferenca",
+    "category": "marcenaria",
+    "currentImage": "/images/blog/marcenaria-sob-medida.webp",
+    "boldCount": 12,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "custom carpentry sob medida quando",
+        "searchTerms": [
+          "custom carpentry interior",
+          "custom carpentry sob medida quando millwork design",
+          "neutral wood interior",
+          "luxury joinery interior",
+          "clean woodwork composition"
+        ],
+        "searchQuery": "custom carpentry sob medida quando",
+        "intent": "carpentry",
+        "targetLocalFile": "public/images/blog/marcenaria-sob-medida/hero.webp",
+        "targetCloudinaryId": "editorial/blog/marcenaria-sob-medida/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "custom carpentry sob medida quando",
+        "searchTerms": [
+          "woodwork detail craftsmanship",
+          "custom carpentry sob medida quando joinery detail",
+          "wood texture interior",
+          "custom shelving detail",
+          "minimal millwork detail"
+        ],
+        "searchQuery": "custom carpentry sob medida quando",
+        "intent": "carpentry",
+        "targetLocalFile": "public/images/blog/marcenaria-sob-medida/card.webp",
+        "targetCloudinaryId": "editorial/blog/marcenaria-sob-medida/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "memorial-executivo-obra",
+    "title": "Memorial executivo: objetivo, escopo e responsabilidades da obra",
+    "category": "engenharia",
+    "currentImage": "/images/blog/memorial-executivo-obra.webp",
+    "boldCount": 1,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "memorial executivo objetivo escopo",
+        "searchTerms": [
+          "modern renovation interior",
+          "memorial executivo objetivo escopo site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "memorial executivo objetivo escopo",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/memorial-executivo-obra/hero.webp",
+        "targetCloudinaryId": "editorial/blog/memorial-executivo-obra/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "memorial executivo objetivo escopo",
+        "searchTerms": [
+          "construction material detail",
+          "memorial executivo objetivo escopo detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "memorial executivo objetivo escopo",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/memorial-executivo-obra/card.webp",
+        "targetCloudinaryId": "editorial/blog/memorial-executivo-obra/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "moodboard-mapa-visual",
+    "title": "Moodboard: O Mapa Visual do Seu Projeto",
+    "category": "arquitetura",
+    "currentImage": "/images/blog/moodboard-mapa-visual.webp",
+    "boldCount": 16,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "moodboard mapa visual seu",
+        "searchTerms": [
+          "modern architecture exterior",
+          "moodboard mapa visual seu facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "moodboard mapa visual seu",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/moodboard-mapa-visual/hero.webp",
+        "targetCloudinaryId": "editorial/blog/moodboard-mapa-visual/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "moodboard mapa visual seu",
+        "searchTerms": [
+          "architectural facade detail",
+          "moodboard mapa visual seu facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "moodboard mapa visual seu",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/moodboard-mapa-visual/card.webp",
+        "targetCloudinaryId": "editorial/blog/moodboard-mapa-visual/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "normas-tecnicas-representacao",
+    "title": "Normas técnicas na representacao de projetos: NBR 6492 e NBR 10068",
+    "category": "engenharia",
+    "currentImage": "/images/blog/normas-tecnicas-representacao.webp",
+    "boldCount": 14,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "normas tecnicas representacao nbr",
+        "searchTerms": [
+          "modern renovation interior",
+          "normas tecnicas representacao nbr site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "normas tecnicas representacao nbr",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/normas-tecnicas-representacao/hero.webp",
+        "targetCloudinaryId": "editorial/blog/normas-tecnicas-representacao/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "normas tecnicas representacao nbr",
+        "searchTerms": [
+          "construction material detail",
+          "normas tecnicas representacao nbr detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "normas tecnicas representacao nbr",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/normas-tecnicas-representacao/card.webp",
+        "targetCloudinaryId": "editorial/blog/normas-tecnicas-representacao/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "o-que-e-turn-key",
+    "title": "O Que E Turn Key? O Sistema Completo de Reforma",
+    "category": "engenharia",
+    "currentImage": "/images/blog/o-que-e-turn-key.webp",
+    "boldCount": 8,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "turn key sistema renovation",
+        "searchTerms": [
+          "modern renovation interior",
+          "turn key sistema renovation site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "turn key sistema renovation",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/o-que-e-turn-key/hero.webp",
+        "targetCloudinaryId": "editorial/blog/o-que-e-turn-key/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "turn key sistema renovation",
+        "searchTerms": [
+          "construction material detail",
+          "turn key sistema renovation detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "turn key sistema renovation",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/o-que-e-turn-key/card.webp",
+        "targetCloudinaryId": "editorial/blog/o-que-e-turn-key/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "obraeasy-como-funciona-para-clientes-finais",
+    "title": "ObraEasy: Como Funciona a Plataforma de Gestão de Obras para Clientes Finais",
+    "category": "tecnologia",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 21,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "obraeasy plataforma gestao construction",
+        "searchTerms": [
+          "smart home interior",
+          "obraeasy plataforma gestao construction automation interior",
+          "clean tech living room",
+          "minimal connected home",
+          "neutral smart interior"
+        ],
+        "searchQuery": "obraeasy plataforma gestao construction",
+        "intent": "technology",
+        "targetLocalFile": "public/images/blog/obraeasy-como-funciona-para-clientes-finais/hero.webp",
+        "targetCloudinaryId": "editorial/blog/obraeasy-como-funciona-para-clientes-finais/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "obraeasy plataforma gestao construction",
+        "searchTerms": [
+          "smart home detail",
+          "obraeasy plataforma gestao construction panel detail",
+          "tech interior detail",
+          "modern switch detail",
+          "connected home styling"
+        ],
+        "searchQuery": "obraeasy plataforma gestao construction",
+        "intent": "technology",
+        "targetLocalFile": "public/images/blog/obraeasy-como-funciona-para-clientes-finais/card.webp",
+        "targetCloudinaryId": "editorial/blog/obraeasy-como-funciona-para-clientes-finais/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "obraeasy-para-parceiros-imobiliarias-corretores",
+    "title": "ObraEasy para Parceiros: Como Imobiliarias e Corretores Geram Receita com Gestão de Obras",
+    "category": "parceiros",
+    "currentImage": "/images/banners/SOBRE.webp",
+    "boldCount": 34,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "obraeasy parceiros imobiliarias corretores",
+        "searchTerms": [
+          "modern renovation interior",
+          "obraeasy parceiros imobiliarias corretores site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "obraeasy parceiros imobiliarias corretores",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/obraeasy-para-parceiros-imobiliarias-corretores/hero.webp",
+        "targetCloudinaryId": "editorial/blog/obraeasy-para-parceiros-imobiliarias-corretores/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "obraeasy parceiros imobiliarias corretores",
+        "searchTerms": [
+          "construction material detail",
+          "obraeasy parceiros imobiliarias corretores detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "obraeasy parceiros imobiliarias corretores",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/obraeasy-para-parceiros-imobiliarias-corretores/card.webp",
+        "targetCloudinaryId": "editorial/blog/obraeasy-para-parceiros-imobiliarias-corretores/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "onboarding-processo-wg-almeida",
+    "title": "Onboarding WG Almeida: Como Funciona o Processo do Seu Projeto",
+    "category": "processo",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 100,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "onboarding processo seu projeto",
+        "searchTerms": [
+          "minimalist interior design",
+          "onboarding processo seu projeto home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "onboarding processo seu projeto",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/onboarding-processo-wg-almeida/hero.webp",
+        "targetCloudinaryId": "editorial/blog/onboarding-processo-wg-almeida/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "onboarding processo seu projeto",
+        "searchTerms": [
+          "interior styling detail",
+          "onboarding processo seu projeto decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "onboarding processo seu projeto",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/onboarding-processo-wg-almeida/card.webp",
+        "targetCloudinaryId": "editorial/blog/onboarding-processo-wg-almeida/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "paleta-cores-2026-cor-do-ano",
+    "title": "Cor do Ano 2026: Quais São, Como Combinar e Por Que Essa Paleta Dominou o Design",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 111,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "cor ano 2026 quais",
+        "searchTerms": [
+          "minimalist interior design",
+          "cor ano 2026 quais home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "cor ano 2026 quais",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/paleta-cores-2026-cor-do-ano/hero.webp",
+        "targetCloudinaryId": "editorial/blog/paleta-cores-2026-cor-do-ano/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "cor ano 2026 quais",
+        "searchTerms": [
+          "interior styling detail",
+          "cor ano 2026 quais decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "cor ano 2026 quais",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/paleta-cores-2026-cor-do-ano/card.webp",
+        "targetCloudinaryId": "editorial/blog/paleta-cores-2026-cor-do-ano/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "plantas-interiores-purificam-ar",
+    "title": "20 Plantas para Interiores que Purificam o Ar e Valorizam o Ambiente",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 129,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "20 plantas interiors purificam",
+        "searchTerms": [
+          "minimalist interior design",
+          "20 plantas interiors purificam home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "20 plantas interiors purificam",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/plantas-interiores-purificam-ar/hero.webp",
+        "targetCloudinaryId": "editorial/blog/plantas-interiores-purificam-ar/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "20 plantas interiors purificam",
+        "searchTerms": [
+          "interior styling detail",
+          "20 plantas interiors purificam decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "20 plantas interiors purificam",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/plantas-interiores-purificam-ar/card.webp",
+        "targetCloudinaryId": "editorial/blog/plantas-interiores-purificam-ar/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "profissionais-capacitados-obra",
+    "title": "Profissionais Capacitados na Obra: A Importância de uma Equipe Qualificada",
+    "category": "construção",
+    "currentImage": "/images/banners/ENGENHARIA.webp",
+    "boldCount": 78,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "profissionais capacitados construction importancia",
+        "searchTerms": [
+          "modern renovation interior",
+          "profissionais capacitados construction importancia site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "profissionais capacitados construction importancia",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/profissionais-capacitados-obra/hero.webp",
+        "targetCloudinaryId": "editorial/blog/profissionais-capacitados-obra/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "profissionais capacitados construction importancia",
+        "searchTerms": [
+          "construction material detail",
+          "profissionais capacitados construction importancia detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "profissionais capacitados construction importancia",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/profissionais-capacitados-obra/card.webp",
+        "targetCloudinaryId": "editorial/blog/profissionais-capacitados-obra/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "projeto-executivo-o-que-e",
+    "title": "Projeto Executivo: o que e, o que contem e por que evita retrabalho",
+    "category": "engenharia",
+    "currentImage": "/images/banners/ENGENHARIA.webp",
+    "boldCount": 6,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "projeto executivo contem evita",
+        "searchTerms": [
+          "modern renovation interior",
+          "projeto executivo contem evita site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "projeto executivo contem evita",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/projeto-executivo-o-que-e/hero.webp",
+        "targetCloudinaryId": "editorial/blog/projeto-executivo-o-que-e/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "projeto executivo contem evita",
+        "searchTerms": [
+          "construction material detail",
+          "projeto executivo contem evita detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "projeto executivo contem evita",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/projeto-executivo-o-que-e/card.webp",
+        "targetCloudinaryId": "editorial/blog/projeto-executivo-o-que-e/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "quanto-custa-reformar-apartamento-2026",
+    "title": "Quanto Custa Reformar um Apartamento em 2026? Guia Completo de Precos",
+    "category": "engenharia",
+    "currentImage": "/images/banners/ENGENHARIA.webp",
+    "boldCount": 7,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "quanto custa reformar apartment 2026",
+        "searchTerms": [
+          "modern renovation interior",
+          "quanto custa reformar apartment site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "quanto custa reformar apartment 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/quanto-custa-reformar-apartamento-2026/hero.webp",
+        "targetCloudinaryId": "editorial/blog/quanto-custa-reformar-apartamento-2026/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "quanto custa reformar apartment 2026",
+        "searchTerms": [
+          "construction material detail",
+          "quanto custa reformar apartment detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "quanto custa reformar apartment 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/quanto-custa-reformar-apartamento-2026/card.webp",
+        "targetCloudinaryId": "editorial/blog/quanto-custa-reformar-apartamento-2026/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "quanto-tempo-dura-reforma-apartamento",
+    "title": "Quanto Tempo Dura uma Reforma de Apartamento? Prazo Real por Etapa",
+    "category": "reforma",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 72,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "quanto tempo dura renovation",
+        "searchTerms": [
+          "modern renovation interior",
+          "quanto tempo dura renovation site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "quanto tempo dura renovation",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/quanto-tempo-dura-reforma-apartamento/hero.webp",
+        "targetCloudinaryId": "editorial/blog/quanto-tempo-dura-reforma-apartamento/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "quanto tempo dura renovation",
+        "searchTerms": [
+          "construction material detail",
+          "quanto tempo dura renovation detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "quanto tempo dura renovation",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/quanto-tempo-dura-reforma-apartamento/card.webp",
+        "targetCloudinaryId": "editorial/blog/quanto-tempo-dura-reforma-apartamento/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "quanto-valoriza-apartamento-apos-reforma",
+    "title": "Quanto Valoriza um Apartamento Apos Reforma? EVF — Estimativa de Valor Final",
+    "category": "mercado-imobiliario",
+    "currentImage": "/images/banners/foto-obra-3.jpg",
+    "boldCount": 23,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "quanto valoriza apartment apos",
+        "searchTerms": [
+          "modern renovation interior",
+          "quanto valoriza apartment apos site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "quanto valoriza apartment apos",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/quanto-valoriza-apartamento-apos-reforma/hero.webp",
+        "targetCloudinaryId": "editorial/blog/quanto-valoriza-apartamento-apos-reforma/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "quanto valoriza apartment apos",
+        "searchTerms": [
+          "construction material detail",
+          "quanto valoriza apartment apos detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "quanto valoriza apartment apos",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/quanto-valoriza-apartamento-apos-reforma/card.webp",
+        "targetCloudinaryId": "editorial/blog/quanto-valoriza-apartamento-apos-reforma/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "ralo-linear-areas-molhadas",
+    "title": "Ralo linear e areas molhadas: especificacao correta evita problemas",
+    "category": "engenharia",
+    "currentImage": "/images/blog/ralo-linear-areas-molhadas.webp",
+    "boldCount": 0,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "ralo linear areas molhadas",
+        "searchTerms": [
+          "modern renovation interior",
+          "ralo linear areas molhadas site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "ralo linear areas molhadas",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/ralo-linear-areas-molhadas/hero.webp",
+        "targetCloudinaryId": "editorial/blog/ralo-linear-areas-molhadas/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "ralo linear areas molhadas",
+        "searchTerms": [
+          "construction material detail",
+          "ralo linear areas molhadas detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "ralo linear areas molhadas",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/ralo-linear-areas-molhadas/card.webp",
+        "targetCloudinaryId": "editorial/blog/ralo-linear-areas-molhadas/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "reforma-banheiro-moderno-2026",
+    "title": "Reforma de Banheiro Moderno: Tendencias, Custos e Etapas em 2026",
+    "category": "reforma",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 3,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "renovation bathroom modern trends 2026",
+        "searchTerms": [
+          "minimalist bathroom interior",
+          "renovation bathroom modern trends bathroom design",
+          "neutral bathroom palette",
+          "elegant bathroom photography",
+          "clean spa bathroom"
+        ],
+        "searchQuery": "renovation bathroom modern trends 2026",
+        "intent": "bathroom",
+        "targetLocalFile": "public/images/blog/reforma-banheiro-moderno-2026/hero.webp",
+        "targetCloudinaryId": "editorial/blog/reforma-banheiro-moderno-2026/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "renovation bathroom modern trends 2026",
+        "searchTerms": [
+          "bathroom fixture detail",
+          "renovation bathroom modern trends bathroom detail",
+          "modern vanity detail",
+          "neutral bathroom styling",
+          "soft light bathroom detail"
+        ],
+        "searchQuery": "renovation bathroom modern trends 2026",
+        "intent": "bathroom",
+        "targetLocalFile": "public/images/blog/reforma-banheiro-moderno-2026/card.webp",
+        "targetCloudinaryId": "editorial/blog/reforma-banheiro-moderno-2026/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "reforma-banheiro-pequeno-otimizacao",
+    "title": "Reforma de Banheiro Pequeno 2026: 20 Soluções para Ganhar Espaco",
+    "category": "reforma",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 65,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "renovation bathroom pequeno 2026",
+        "searchTerms": [
+          "minimalist bathroom interior",
+          "renovation bathroom pequeno 2026 bathroom design",
+          "neutral bathroom palette",
+          "elegant bathroom photography",
+          "clean spa bathroom"
+        ],
+        "searchQuery": "renovation bathroom pequeno 2026",
+        "intent": "bathroom",
+        "targetLocalFile": "public/images/blog/reforma-banheiro-pequeno-otimizacao/hero.webp",
+        "targetCloudinaryId": "editorial/blog/reforma-banheiro-pequeno-otimizacao/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "renovation bathroom pequeno 2026",
+        "searchTerms": [
+          "bathroom fixture detail",
+          "renovation bathroom pequeno 2026 bathroom detail",
+          "modern vanity detail",
+          "neutral bathroom styling",
+          "soft light bathroom detail"
+        ],
+        "searchQuery": "renovation bathroom pequeno 2026",
+        "intent": "bathroom",
+        "targetLocalFile": "public/images/blog/reforma-banheiro-pequeno-otimizacao/card.webp",
+        "targetCloudinaryId": "editorial/blog/reforma-banheiro-pequeno-otimizacao/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "reforma-cozinha-planejada-guia-completo",
+    "title": "Reforma de Cozinha Planejada 2026: Quanto Custa, Etapas e Como Evitar Erros",
+    "category": "reforma",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 25,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "renovation kitchen planejada 2026",
+        "searchTerms": [
+          "modern kitchen interior",
+          "renovation kitchen planejada 2026 kitchen design",
+          "neutral kitchen palette",
+          "elegant kitchen photography",
+          "clean kitchen layout"
+        ],
+        "searchQuery": "renovation kitchen planejada 2026",
+        "intent": "kitchen",
+        "targetLocalFile": "public/images/blog/reforma-cozinha-planejada-guia-completo/hero.webp",
+        "targetCloudinaryId": "editorial/blog/reforma-cozinha-planejada-guia-completo/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "renovation kitchen planejada 2026",
+        "searchTerms": [
+          "kitchen island detail",
+          "renovation kitchen planejada 2026 finish detail",
+          "modern kitchen styling",
+          "neutral countertop detail",
+          "minimal kitchen composition"
+        ],
+        "searchQuery": "renovation kitchen planejada 2026",
+        "intent": "kitchen",
+        "targetLocalFile": "public/images/blog/reforma-cozinha-planejada-guia-completo/card.webp",
+        "targetCloudinaryId": "editorial/blog/reforma-cozinha-planejada-guia-completo/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "reforma-saiu-mais-caro-o-que-fazer",
+    "title": "A Reforma Saiu Mais Cara que o Orcamento: O que Aconteceu e Como Evitar",
+    "category": "engenharia",
+    "currentImage": "/images/banners/foto-obra-5.jpg",
+    "boldCount": 18,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "renovation saiu cara orcamento",
+        "searchTerms": [
+          "modern renovation interior",
+          "renovation saiu cara orcamento site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "renovation saiu cara orcamento",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/reforma-saiu-mais-caro-o-que-fazer/hero.webp",
+        "targetCloudinaryId": "editorial/blog/reforma-saiu-mais-caro-o-que-fazer/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "renovation saiu cara orcamento",
+        "searchTerms": [
+          "construction material detail",
+          "renovation saiu cara orcamento detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "renovation saiu cara orcamento",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/reforma-saiu-mais-caro-o-que-fazer/card.webp",
+        "targetCloudinaryId": "editorial/blog/reforma-saiu-mais-caro-o-que-fazer/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "scandia-home-roupa-cama-luxo",
+    "title": "Scandia Home Vale a Pena? 50 Anos de Excelencia em Roupa de Cama de Luxo",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 29,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "scandia home vale pena",
+        "searchTerms": [
+          "minimalist interior design",
+          "scandia home vale pena home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "scandia home vale pena",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/scandia-home-roupa-cama-luxo/hero.webp",
+        "targetCloudinaryId": "editorial/blog/scandia-home-roupa-cama-luxo/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "scandia home vale pena",
+        "searchTerms": [
+          "interior styling detail",
+          "scandia home vale pena decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "scandia home vale pena",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/scandia-home-roupa-cama-luxo/card.webp",
+        "targetCloudinaryId": "editorial/blog/scandia-home-roupa-cama-luxo/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "sistema-easy-metodologia-wg-almeida",
+    "title": "Sistema Easy: A Metodologia WG Almeida que Simplifica Seu Projeto",
+    "category": "metodologia",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 57,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "sistema easy metodologia simplifica",
+        "searchTerms": [
+          "minimalist interior design",
+          "sistema easy metodologia simplifica home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "sistema easy metodologia simplifica",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/sistema-easy-metodologia-wg-almeida/hero.webp",
+        "targetCloudinaryId": "editorial/blog/sistema-easy-metodologia-wg-almeida/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "sistema easy metodologia simplifica",
+        "searchTerms": [
+          "interior styling detail",
+          "sistema easy metodologia simplifica decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "sistema easy metodologia simplifica",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/sistema-easy-metodologia-wg-almeida/card.webp",
+        "targetCloudinaryId": "editorial/blog/sistema-easy-metodologia-wg-almeida/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "steel-frame-vs-alvenaria-qual-escolher",
+    "title": "Steel Frame vs Alvenaria 2026: Qual É Mais Barato, Mais Rápido e Mais Confortável?",
+    "category": "construção civil",
+    "currentImage": "/images/banners/ENGENHARIA.webp",
+    "boldCount": 35,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "steel frame alvenaria 2026",
+        "searchTerms": [
+          "minimalist interior design",
+          "steel frame alvenaria 2026 home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "steel frame alvenaria 2026",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/steel-frame-vs-alvenaria-qual-escolher/hero.webp",
+        "targetCloudinaryId": "editorial/blog/steel-frame-vs-alvenaria-qual-escolher/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "steel frame alvenaria 2026",
+        "searchTerms": [
+          "interior styling detail",
+          "steel frame alvenaria 2026 decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "steel frame alvenaria 2026",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/steel-frame-vs-alvenaria-qual-escolher/card.webp",
+        "targetCloudinaryId": "editorial/blog/steel-frame-vs-alvenaria-qual-escolher/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "sustentabilidade-construcao-civil-2026",
+    "title": "Sustentabilidade na Construção Civil 2026: 15 Praticas para Reduzir Custo e Desperdicio",
+    "category": "sustentabilidade",
+    "currentImage": "/images/banners/SOBRE.webp",
+    "boldCount": 48,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "sustainability construction civil 2026",
+        "searchTerms": [
+          "modern renovation interior",
+          "sustainability construction civil 2026 site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "sustainability construction civil 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/sustentabilidade-construcao-civil-2026/hero.webp",
+        "targetCloudinaryId": "editorial/blog/sustentabilidade-construcao-civil-2026/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "sustainability construction civil 2026",
+        "searchTerms": [
+          "construction material detail",
+          "sustainability construction civil 2026 detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "sustainability construction civil 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/sustentabilidade-construcao-civil-2026/card.webp",
+        "targetCloudinaryId": "editorial/blog/sustentabilidade-construcao-civil-2026/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "tabela-precos-reforma-2026-iccri",
+    "title": "Tabela de Precos de Reforma 2026 — ICCRI: O Indice de Referencia para Obras em Sao Paulo",
+    "category": "engenharia",
+    "currentImage": "/images/banners/foto-obra-2.jpg",
+    "boldCount": 24,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "tabela precos renovation 2026",
+        "searchTerms": [
+          "modern renovation interior",
+          "tabela precos renovation 2026 site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "tabela precos renovation 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/tabela-precos-reforma-2026-iccri/hero.webp",
+        "targetCloudinaryId": "editorial/blog/tabela-precos-reforma-2026-iccri/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "tabela precos renovation 2026",
+        "searchTerms": [
+          "construction material detail",
+          "tabela precos renovation 2026 detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "tabela precos renovation 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/tabela-precos-reforma-2026-iccri/card.webp",
+        "targetCloudinaryId": "editorial/blog/tabela-precos-reforma-2026-iccri/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "tendencias-construcao-civil-2026",
+    "title": "Construção Civil 2026: 12 Tendencias para Reduzir Prazo, Custo e Risco",
+    "category": "construção civil",
+    "currentImage": "/images/banners/ENGENHARIA.webp",
+    "boldCount": 14,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "construction civil 2026 12",
+        "searchTerms": [
+          "modern renovation interior",
+          "construction civil 2026 12 site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "construction civil 2026 12",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/tendencias-construcao-civil-2026/hero.webp",
+        "targetCloudinaryId": "editorial/blog/tendencias-construcao-civil-2026/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "construction civil 2026 12",
+        "searchTerms": [
+          "construction material detail",
+          "construction civil 2026 12 detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "construction civil 2026 12",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/tendencias-construcao-civil-2026/card.webp",
+        "targetCloudinaryId": "editorial/blog/tendencias-construcao-civil-2026/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "tendencias-decoracao-interiores-2026",
+    "title": "Tendencias de Decoração 2026: 20 Ideias Prontas para Sala, Quarto e Cozinha",
+    "category": "decoração",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 21,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "trends decor 2026 20",
+        "searchTerms": [
+          "modern kitchen interior",
+          "trends decor 2026 20 kitchen design",
+          "neutral kitchen palette",
+          "elegant kitchen photography",
+          "clean kitchen layout"
+        ],
+        "searchQuery": "trends decor 2026 20",
+        "intent": "kitchen",
+        "targetLocalFile": "public/images/blog/tendencias-decoracao-interiores-2026/hero.webp",
+        "targetCloudinaryId": "editorial/blog/tendencias-decoracao-interiores-2026/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "trends decor 2026 20",
+        "searchTerms": [
+          "kitchen island detail",
+          "trends decor 2026 20 finish detail",
+          "modern kitchen styling",
+          "neutral countertop detail",
+          "minimal kitchen composition"
+        ],
+        "searchQuery": "trends decor 2026 20",
+        "intent": "kitchen",
+        "targetLocalFile": "public/images/blog/tendencias-decoracao-interiores-2026/card.webp",
+        "targetCloudinaryId": "editorial/blog/tendencias-decoracao-interiores-2026/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "termo-responsabilidade-nbr16280",
+    "title": "Termo de responsabilidade e NBR 16280: o que o condominio exige",
+    "category": "engenharia",
+    "currentImage": "/images/blog/termo-responsabilidade-nbr16280.webp",
+    "boldCount": 0,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": true,
+      "hasCloudinaryCard": true,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "termo responsabilidade nbr 16280",
+        "searchTerms": [
+          "modern renovation interior",
+          "termo responsabilidade nbr 16280 site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "termo responsabilidade nbr 16280",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/termo-responsabilidade-nbr16280/hero.webp",
+        "targetCloudinaryId": "editorial/blog/termo-responsabilidade-nbr16280/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "termo responsabilidade nbr 16280",
+        "searchTerms": [
+          "construction material detail",
+          "termo responsabilidade nbr 16280 detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "termo responsabilidade nbr 16280",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/termo-responsabilidade-nbr16280/card.webp",
+        "targetCloudinaryId": "editorial/blog/termo-responsabilidade-nbr16280/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "varanda-gourmet-planejamento",
+    "title": "Varanda Gourmet: Planejamento, Layout e Custos para Executar sem Erro",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 41,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": true,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "varanda gourmet planejamento layout",
+        "searchTerms": [
+          "minimalist interior design",
+          "varanda gourmet planejamento layout home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "varanda gourmet planejamento layout",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/varanda-gourmet-planejamento/hero.webp",
+        "targetCloudinaryId": "editorial/blog/varanda-gourmet-planejamento/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "varanda gourmet planejamento layout",
+        "searchTerms": [
+          "interior styling detail",
+          "varanda gourmet planejamento layout decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "varanda gourmet planejamento layout",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/varanda-gourmet-planejamento/card.webp",
+        "targetCloudinaryId": "editorial/blog/varanda-gourmet-planejamento/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "williams-sonoma-cozinha-luxo",
+    "title": "Williams Sonoma Vale a Pena? Utensilios Premium para Cozinhas de Alto Padrão",
+    "category": "design",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 11,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": false,
+      "isVariantEntry": false,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "williams sonoma vale pena",
+        "searchTerms": [
+          "minimalist interior design",
+          "williams sonoma vale pena home aesthetic",
+          "neutral living room",
+          "soft color decor",
+          "modern furniture layout"
+        ],
+        "searchQuery": "williams sonoma vale pena",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/williams-sonoma-cozinha-luxo/hero.webp",
+        "targetCloudinaryId": "editorial/blog/williams-sonoma-cozinha-luxo/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "williams sonoma vale pena",
+        "searchTerms": [
+          "interior styling detail",
+          "williams sonoma vale pena decor detail",
+          "minimalist furniture detail",
+          "soft light interior detail",
+          "clean home composition"
+        ],
+        "searchQuery": "williams sonoma vale pena",
+        "intent": "decor",
+        "targetLocalFile": "public/images/blog/williams-sonoma-cozinha-luxo/card.webp",
+        "targetCloudinaryId": "editorial/blog/williams-sonoma-cozinha-luxo/card",
+        "orientation": "landscape"
+      }
+    ]
+  }
+]

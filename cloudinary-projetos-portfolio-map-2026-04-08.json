@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-04-08",
+  "cloudinary_folder": "Projetos-Portfolio",
+  "notes": [
+    "Mapeamento consolidado por bytes, ordem de upload e hash.",
+    "Os public_id do Cloudinary estao aleatorios.",
+    "Tres pares de arquivos locais diferentes foram confirmados como duplicados binarios identicos."
+  ],
+  "videos": [
+    {
+      "public_id": "qjhkakyvjjesxqxijkah",
+      "local_name": "videohorizontal60segundos (1).mp4"
+    },
+    {
+      "public_id": "h6zftberxzqzf4mqpyyr",
+      "local_name": "videovertical30segundos.mp4"
+    }
+  ],
+  "confirmed": [
+    { "public_id": "na5ab83dhqvbujorchck", "local_name": "ARQ-CORPORATIVO-ALPHAVILLE-6800M²-91 (1).png" },
+    { "public_id": "xpr0yajevxmbygbrkfhv", "local_name": "ARQ-CORPORATIVO-ALPHAVILLE-6800M²-91 (2).png" },
+    { "public_id": "qpykk4kmh9s9yyo4dkcj", "local_name": "ARQ-CORPORATIVO-ALPHAVILLE-6800M²-91 (3).png" },
+    { "public_id": "at1ecgqzym6bwbojur9k", "local_name": "ARQ-porta_do_sol_3000m-43 (3).png" },
+    { "public_id": "mjiapl6ycby5i9bpwght", "local_name": "ARQ-porta_do_sol_3000m-43 (4).png.png" },
+    { "public_id": "wq2bvkgbrw75afff7eqe", "local_name": "ARQ-porta_do_sol_3000m-43 (5).png" },
+    { "public_id": "zfvwpmtmnpfzdlkomx5h", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (15).png" },
+    { "public_id": "eu1oxhffdxu12hlzplta", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (16).png" },
+    { "public_id": "at245n3l2p8kcurj9cpe", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (17).png" },
+    { "public_id": "feclul0gt97xkybd1zth", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (18).png" },
+    { "public_id": "undiej7ym254juorunt1", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (19).png" },
+    { "public_id": "f2yy0wqcvrwmgstae2hg", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (20).png" },
+    { "public_id": "zkntgzdtexpfatvsrocv", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (21).png" },
+    { "public_id": "t88ooy6hud8hznuwyiwq", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (22).png" },
+    { "public_id": "m6ssnpqoc20bqbdzo7vb", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (23).png" },
+    { "public_id": "xj5l4ev3fnioubifhpnn", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (24).png" },
+    { "public_id": "la9qlwtreh5x3mhyewsy", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (25).png" },
+    { "public_id": "f2xnn7swjc2b4s5nn8d1", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (26).png" },
+    { "public_id": "vmnix8wh60mkncrkcxma", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (27).png" },
+    { "public_id": "qmbxpcginnlrjynqhgzy", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (28).png" },
+    { "public_id": "y1chdhh3z1n5h1hrovm6", "local_name": "ARQ-PORTA-DO-SOL-3000M-55 (29).png" },
+    { "public_id": "kt97bidolunvjzryp23u", "local_name": "CASARESORT-ACAPULCO-GUAJURA-58 (1).png" },
+    { "public_id": "fwgc5w17xg4iso5eclwu", "local_name": "DETALHES_ESPUMA-PARA-CONFORTO-ACUSTICA-DE-CANOS-92.png" },
+    { "public_id": "jgbftqvhduk0vkazcpqb", "local_name": "ENG-BROOKLIN-130M²-73 (15).png" },
+    { "public_id": "vpfi7k4li2mi3cxdx6t2", "local_name": "ENG-BROOKLIN-130M²-73 (16).png" },
+    { "public_id": "fui1rab8uean2to6jmpd", "local_name": "ENG-BROOKLIN-130M²-73 (17).png" },
+    { "public_id": "nyelzcdmatvsdxkf64qr", "local_name": "ENG-BROOKLIN-130M²-73 (18).png" },
+    { "public_id": "gxikzk684xuo49k9wdfk", "local_name": "ENG-BROOKLIN-130M²-73 (19).png" },
+    { "public_id": "cyynaxwz5c4tix8virva", "local_name": "ENG-BROOKLIN-130M²-73 (20).png" },
+    { "public_id": "zj9ckkgk3bkaudmxle47", "local_name": "ENG-BROOKLIN-130M²-73 (21).png" },
+    { "public_id": "nm10qe4vf1oyvys2pmlc", "local_name": "ENG-BROOKLIN-130M²-73 (22).png" },
+    { "public_id": "kya1a73u4la4fe4wivit", "local_name": "ENG-BROOKLIN-130M²-73 (23).png" },
+    { "public_id": "muluk89cbjx3h2j33yxo", "local_name": "ENG-BROOKLIN-130M²-73 (24).png" },
+    { "public_id": "cagqqrrceqyrbywjazwy", "local_name": "ENG-BROOKLIN-130M²-73 (25).png" },
+    { "public_id": "qdcwv0mpcudkzbnssfi0", "local_name": "ENG-BROOKLIN-130M²-73 (26).png" },
+    { "public_id": "on27bjutditqmp4t3mli", "local_name": "ENG-BROOKLIN-130M²-73 (27).png" },
+    { "public_id": "wq4pdjfxwjeedwrzgi3p", "local_name": "ENG-BROOKLIN-130M²-73 (28).png" },
+    { "public_id": "hxmscyqjoibfu8muihvs", "local_name": "ENG-BROOKLIN-130M²-73 (29).png" },
+    { "public_id": "lkmvw0w3xx8tjjrxucqs", "local_name": "ENG-CORPORATIVO-ALPHAVILLE-6800M²-91 (1)88.png" },
+    { "public_id": "rwi4pnbzpxfj8uzdqqg4", "local_name": "ENG-CORPORATIVO-ALPHAVILLE-6800M²-91 (2)88.png" },
+    { "public_id": "hxtpzmv9fzeqfxnyetxr", "local_name": "ENG-CORPORATIVO-ALPHAVILLE-6800M²-91 (3)88.png" },
+    { "public_id": "tcta4lsv6tl548eh74kp", "local_name": "ENG-MORUMBI-160M²-93-95 (1).png" },
+    { "public_id": "gxjocyybo9vhpgsyksqo", "local_name": "ENG-MORUMBI-160M²-93-95 (2).png" },
+    { "public_id": "iz7fwsm84x1z5u0zza8d", "local_name": "ENG-MORUMBI-160M²-93-95 (3).png" },
+    { "public_id": "euxmuej9knkschbkgtyx", "local_name": "ENG-OBRA EM ANDAMENTO - PERDIZES - 127M²-21(5).png" },
+    { "public_id": "fvho9fdmlu4iooa49my1", "local_name": "ENG-OBRA EM ANDAMENTO - PERDIZES - 127M²-21(6).png" },
+    { "public_id": "ihjigy5lnlr5stle2jut", "local_name": "ENG-OBRA EM ANDAMENTO - PERDIZES - 127M²-21(7).png" },
+    { "public_id": "v0kx6e2ex9ygp7hzewhq", "local_name": "ENG-OBRA EM ANDAMENTO - PERDIZES - 127M²-21(8).png" },
+    { "public_id": "on5zcc0if0jzq6laycac", "local_name": "ENG-OBRA EM ANDAMENTO - PERDIZES - 127M²-21(9).png" },
+    { "public_id": "bswiqs0bivj90kjelpn8", "local_name": "ENG-OBRA EM ANDAMENTO - PERDIZES - 127M²-21(10).png" },
+    { "public_id": "bhrlfs3bjhwjc29jpzhg", "local_name": "ENG-porta_do_sol_3000m-4337 (1).png" },
+    { "public_id": "gluaje6xuclykbtx4iht", "local_name": "ENG-porta_do_sol_3000m-4337 (2).png" },
+    { "public_id": "fnncxu6rvmwemhzzhivc", "local_name": "ENG-porta_do_sol_3000m-4337 (3).png" },
+    { "public_id": "oisqlwdxpav26e3b6sef", "local_name": "ENG-porta_do_sol_3000m-4337 (4).png" },
+    { "public_id": "xim2mh0oviumdutnqtgf", "local_name": "ENG-porta_do_sol_3000m-4337 (5).png" },
+    { "public_id": "rwtxkvwjvahwkquoxxab", "local_name": "ENG-porta_do_sol_3000m-4337 (6).png" },
+    { "public_id": "mansv1m5hel6lrxxfezp", "local_name": "NYSP-Brooklin-35m-85 (1).png" },
+    { "public_id": "dfblpspb2kjupqbm3dfz", "local_name": "NYSP-Brooklin-35m-85 (2).png" }
+  ],
+  "duplicates": [
+    {
+      "public_id": "h1ihcp4efxpemzpintxn",
+      "hash": "4A30128E2E29D10F0A3D7BE417F90545",
+      "local_names": [
+        "DESTAQUES-12 (3).png",
+        "Residência Contemporânea Acapulco Club House-3200M²-GUAJURA-58 (19).png"
+      ]
+    },
+    {
+      "public_id": "deykdwqtjj0pfhaqporj",
+      "hash": "ECDF0E890179DD99CCAD1DCBE554985D",
+      "local_names": [
+        "DESTAQUES-12 (2).png",
+        "Residência Contemporânea Acapulco Club House-3200M²-GUAJURA-58 (18).png"
+      ]
+    },
+    {
+      "public_id": "xna4ou5w5zkbxr14mky7",
+      "hash": "025D7BCFF0AB0916ADDEAEB4C857CB35",
+      "local_names": [
+        "DESTAQUES-12 (1).png",
+        "Residência Contemporânea Acapulco Club House-3200M²-GUAJURA-58 (17).png"
+      ]
+    }
+  ]
+}

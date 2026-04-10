@@ -1,0 +1,94 @@
+{
+  "audit_date": "2026-04-09",
+  "mode": "DRY_RUN_ONLY",
+  "autofix_applied": false,
+  "priorities": [
+    {
+      "priority": "P1",
+      "domain": "governanca",
+      "objective": "Evitar falso positivo estrutural em runtime legitimo",
+      "actions": [
+        "Atualizar regras do enforce para classificar logs recentes com processo ativo como RUNTIME_ATIVO.",
+        "Consumir runtime-patterns-detected.json e adaptive-rules.json antes de recomendar limpeza.",
+        "Criar teste de regressao para logs wgeasy-dev e backend-start na raiz."
+      ],
+      "expected_result": "Governanca deixa de sugerir limpeza de logs operacionais ativos."
+    },
+    {
+      "priority": "P1",
+      "domain": "git",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "objective": "Reduzir drift operacional e melhorar rastreabilidade",
+      "actions": [
+        "Inventariar arquivos gerados e work-in-progress nos repos com dirty state alto.",
+        "Aplicar ignore seguro para locks e scans gerados em C:\\IA e baseline local em ObraEasy.",
+        "Configurar remotes ausentes onde o repositorio for oficial.",
+        "Formalizar politica de exclusao/ignore para artefatos locais recorrentes."
+      ],
+      "expected_result": "Menos ruído no status git e trilha de entrega mais confiavel.",
+      "progress": [
+        "C:\\IA: status total caiu de 528 para 198 apos ajuste de .gitignore.",
+        "ObraEasy: .gitignore base foi reforcado para envs, logs, cache e build.",
+        "Remotes ausentes e worktrees com trabalho real continuam pendentes de decisao operacional."
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "mcp_ia",
+      "objective": "Restaurar observabilidade por recursos MCP",
+      "actions": [
+        "Revisar registro e inicializacao dos servidores MCP usados pela operacao.",
+        "Validar exposicao de resources/templates em sessao de auditoria.",
+        "Documentar fallback oficial quando MCP nao estiver disponivel."
+      ],
+      "expected_result": "Auditorias futuras com contexto estruturado e menos dependencia de varredura manual."
+    },
+    {
+      "priority": "P2",
+      "domain": "quality_gates",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "objective": "Elevar baseline de validacao tecnica nos projetos",
+      "actions": [
+        "Adicionar scripts de lint e teste minimo ao backend do ObraEasy.",
+        "Definir conjunto minimo de validacao por tipo de app: frontend, backend e automacao.",
+        "Conectar validacoes ao processo de governanca."
+      ],
+      "expected_result": "Menos regressao silenciosa e melhor comparabilidade entre projetos.",
+      "progress": [
+        "ObraEasy backend recebeu scripts build, lint, check:env, smoke, test e validate.",
+        "Lint, check:env e smoke passaram localmente em 2026-04-09.",
+        "Os demais projetos ainda precisam convergir para um baseline equivalente."
+      ]
+    },
+    {
+      "priority": "P3",
+      "domain": "supabase",
+      "objective": "Padronizar configuracoes de ambiente",
+      "actions": [
+        "Mapear localizacao exata dos envs por sistema e por camada.",
+        "Definir convenção unica para nomes e local de arquivos .env/.env.local/.env.example.",
+        "Validar presenca de chaves exigidas por app sem expor segredos."
+      ],
+      "expected_result": "Integracao mais previsivel e governanca mais simples."
+    },
+    {
+      "priority": "P3",
+      "domain": "infra",
+      "objective": "Eliminar paths literais incorretos em playbooks e prompts",
+      "actions": [
+        "Substituir paths inexistentes pelas variantes reais usadas no filesystem.",
+        "Adicionar etapa de normalizacao antes do scan em scripts de auditoria.",
+        "Registrar alias historicos apenas como compatibilidade, nunca como fonte principal."
+      ],
+      "expected_result": "Menos falhas por path hardcoded e execucao mais deterministica."
+    }
+  ],
+  "sequencing": [
+    "governanca",
+    "git",
+    "mcp_ia",
+    "quality_gates",
+    "supabase",
+    "infra"
+  ]
+}

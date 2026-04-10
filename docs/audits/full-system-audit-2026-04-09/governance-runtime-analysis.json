@@ -1,0 +1,154 @@
+{
+  "audit_date": "2026-04-09",
+  "mode": "FULL_SYSTEM_AUDIT",
+  "dry_run": true,
+  "auto_fix": false,
+  "validation_depth": "MAX",
+  "rule_principal": "NAO_TRATAR_RUNTIME_COMO_ERRO",
+  "governance_execution": {
+    "script_path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+    "status": "OK_WITH_RUNTIME_ATTENTION",
+    "summary": {
+      "ok": 5,
+      "atencao": 1,
+      "erro": 0,
+      "total_alerts": 6
+    },
+    "baseline_drift": {
+      "status": "OK",
+      "behavior": "dynamic_expected_file",
+      "related_files": [
+        "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\STATUS-PROJETOS.md"
+      ]
+    },
+    "artifacts": {
+      "script_stdout_log": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida\\docs\\audits\\full-system-audit-2026-04-09\\governance-script-output.log",
+      "governance_json": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-193406.json",
+      "governance_md": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-193406.md"
+    }
+  },
+  "attention_analysis": {
+    "original_alert": {
+      "categoria": "estrutura_raiz",
+      "status": "ATENCAO",
+      "detalhe": "Arquivos de log em uso na raiz: 6.",
+      "recomendacao_original": "Encerrar processos que prendem logs e reexecutar enforce."
+    },
+    "classification": "ATENCAO_RUNTIME",
+    "decision": "RUNTIME_ATIVO",
+    "is_structural_error": false,
+    "reasoning": [
+      "Existem logs recentes na raiz com padrao de dev runtime do ecossistema WG.",
+      "Ha processo node/vite ativo associado ao WGEasy frontend.",
+      "As portas observadas refletem servicos ativos e nao evidencia de drift estrutural.",
+      "As regras adaptativas ja reconhecem ROOT_RUNTIME_LOGS, WGEasy e WG_AUTOMATION como zonas protegidas."
+    ]
+  },
+  "runtime_evidence": {
+    "active_processes": [
+      {
+        "pid": 13004,
+        "process_name": "node.exe",
+        "classification": "APP_RUNTIME",
+        "command_line_contains": "wgeasy\\wgeasy\\frontend\\node_modules\\..\\vite\\bin\\vite.js --host 127.0.0.1 --port 4174"
+      },
+      {
+        "pid": 27728,
+        "process_name": "host-switch.exe",
+        "classification": "INFRA_RUNTIME",
+        "command_line_contains": "Rancher Desktop host-switch port-forward"
+      },
+      {
+        "pid": 18408,
+        "process_name": "ollama.exe",
+        "classification": "IA_RUNTIME",
+        "command_line_contains": "ollama local runtime active"
+      }
+    ],
+    "open_ports": [
+      {
+        "port": 4174,
+        "pid": 13004,
+        "classification": "WGEASY_VITE_ACTIVE"
+      },
+      {
+        "port": 3000,
+        "pid": 27728,
+        "classification": "INFRA_PORT_FORWARD"
+      },
+      {
+        "port": 8080,
+        "pid": 27728,
+        "classification": "INFRA_PORT_FORWARD"
+      }
+    ],
+    "root_logs": [
+      {
+        "name": "backend-start.err.log",
+        "last_write": "2026-04-08T20:05:00-03:00",
+        "size_bytes": 1412,
+        "classification": "RUNTIME_RELATED"
+      },
+      {
+        "name": "backend-start.out.log",
+        "last_write": "2026-04-08T20:05:00-03:00",
+        "size_bytes": 0,
+        "classification": "RUNTIME_RELATED"
+      },
+      {
+        "name": "wgeasy-dev-4175.err.log",
+        "last_write": "2026-04-08T18:01:00-03:00",
+        "size_bytes": 0,
+        "classification": "RUNTIME_RELATED"
+      },
+      {
+        "name": "wgeasy-dev-4175.out.log",
+        "last_write": "2026-04-08T18:01:00-03:00",
+        "size_bytes": 0,
+        "classification": "RUNTIME_RELATED"
+      },
+      {
+        "name": "wgeasy-dev.err.log",
+        "last_write": "2026-04-08T20:09:00-03:00",
+        "size_bytes": 0,
+        "classification": "RUNTIME_RELATED"
+      },
+      {
+        "name": "wgeasy-dev.out.log",
+        "last_write": "2026-04-08T20:09:00-03:00",
+        "size_bytes": 678,
+        "classification": "RUNTIME_RELATED"
+      }
+    ],
+    "detected_runtime_entities": [
+      "WGEasy",
+      "WG_AUTOMATION",
+      "vite",
+      "node",
+      "ollama",
+      "Rancher Desktop host-switch"
+    ]
+  },
+  "global_governance_crosscheck": {
+    "adaptive_rules_path": "C:\\Users\\Atendimento\\.codex\\quarantine\\learn-2026-04-09T220250223Z\\adaptive-rules.json",
+    "runtime_patterns_path": "C:\\Users\\Atendimento\\.codex\\quarantine\\learn-2026-04-09T220250223Z\\runtime-patterns-detected.json",
+    "adaptive_recommendations_path": "C:\\Users\\Atendimento\\.codex\\quarantine\\learn-2026-04-09T220250223Z\\adaptive-recommendations.json",
+    "coherence_result": "PARTIALLY_ALIGNED",
+    "conflicts_detected": [
+      {
+        "type": "CLEANUP_VS_RUNTIME",
+        "description": "Governanca sinaliza logs na raiz como atencao generica, enquanto regras adaptativas os classificam como ROOT_RUNTIME_LOGS e RUNTIME_CRITICO."
+      }
+    ],
+    "recommended_policy_direction": [
+      "Ignorar logs ativos com menos de 24h quando houver processo correlato.",
+      "Proteger WGEasy, WG_AUTOMATION e logs de dev associados a portas ativas.",
+      "Separar classificacao de limpeza segura e runtime ativo nas regras de enforce."
+    ]
+  },
+  "final_governance_status": {
+    "overall": "HEALTHY_WITH_RUNTIME_EXCEPTIONS",
+    "structural_failure_detected": false,
+    "next_action": "Ajustar regras de governanca para awareness de runtime, sem limpeza automatica dos logs atualmente classificados como ativos."
+  }
+}

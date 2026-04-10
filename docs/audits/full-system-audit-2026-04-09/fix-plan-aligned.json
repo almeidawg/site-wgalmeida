@@ -1,0 +1,256 @@
+{
+  "audit_date": "2026-04-09",
+  "mode": "QA_HARMONIZATION",
+  "dry_run": false,
+  "rule": "TODO PLANO PRECISA TER STATUS REAL E EVIDENCIA",
+  "source_fix_plan": "fix-plan.json",
+  "source_full_audit_report": "full-audit-report.json",
+  "source_issues_summary": "issues-summary.json",
+  "priorities": [
+    {
+      "priority": "P1",
+      "domain": "governanca",
+      "status": "VALIDATED",
+      "objective": "Evitar falso positivo estrutural em runtime legitimo",
+      "actions": [
+        "Atualizar regras do enforce para classificar logs recentes com processo ativo como RUNTIME_ATIVO.",
+        "Consumir runtime-patterns-detected.json e adaptive-rules.json antes de recomendar limpeza.",
+        "Criar teste de regressao para logs wgeasy-dev e backend-start na raiz."
+      ],
+      "expected_result": "Governanca deixa de sugerir limpeza de logs operacionais ativos.",
+      "report_alignment": {
+        "exists_in_report": true,
+        "report_sections": [
+          "governance",
+          "governance_global",
+          "final_assessment.integration_evidence"
+        ],
+        "execution_state": "EXECUTED_AND_VALIDATED"
+      },
+      "scope": "global",
+      "impact": "alto",
+      "evidence": {
+        "files_altered": [
+          "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+          "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-enforce-estrutura.ps1"
+        ],
+        "scripts_executed": [
+          "wg-governanca-alertas.ps1",
+          "wg-enforce-estrutura.ps1"
+        ],
+        "artifacts": [
+          "governanca-alertas-20260409-200057.json",
+          "estrutura-enforce-20260409-200057.json"
+        ]
+      },
+      "qa_note": "Objetivo validado contra runtime ativo real. Falta apenas evidenciar nominalmente o teste de regressao citado no plano, caso ele exista como arquivo separado."
+    },
+    {
+      "priority": "P1",
+      "domain": "git",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "objective": "Reduzir drift operacional e melhorar rastreabilidade",
+      "actions": [
+        "Inventariar arquivos gerados e work-in-progress nos repos com dirty state alto.",
+        "Aplicar ignore seguro para locks e scans gerados em C:\\IA e baseline local em ObraEasy.",
+        "Configurar remotes ausentes onde o repositorio for oficial.",
+        "Formalizar politica de exclusao/ignore para artefatos locais recorrentes."
+      ],
+      "expected_result": "Menos ruido no status git e trilha de entrega mais confiavel.",
+      "progress": [
+        "C:\\IA: status total caiu de 528 para 198 apos ajuste de .gitignore.",
+        "ObraEasy: .gitignore base foi reforcado para envs, logs, cache e build.",
+        "Remotes ausentes e worktrees com trabalho real continuam pendentes de decisao operacional."
+      ],
+      "report_alignment": {
+        "exists_in_report": true,
+        "report_sections": [
+          "git",
+          "final_assessment.integration_evidence",
+          "issues-summary warning GIT-001",
+          "issues-summary info GIT-002"
+        ],
+        "execution_state": "PARTIALLY_EXECUTED"
+      },
+      "scope": "global",
+      "impact": "alto",
+      "evidence": {
+        "files_altered": [
+          "C:\\IA\\.gitignore",
+          "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\.gitignore"
+        ],
+        "scripts_executed": []
+      },
+      "qa_note": "O saneamento inicial foi aplicado e medido, mas remotes ausentes e politica operacional continuam abertos."
+    },
+    {
+      "priority": "P2",
+      "domain": "mcp_ia",
+      "status": "NOT_STARTED",
+      "objective": "Restaurar observabilidade por recursos MCP",
+      "actions": [
+        "Revisar registro e inicializacao dos servidores MCP usados pela operacao.",
+        "Validar exposicao de resources/templates em sessao de auditoria.",
+        "Documentar fallback oficial quando MCP nao estiver disponivel."
+      ],
+      "expected_result": "Auditorias futuras com contexto estruturado e menos dependencia de varredura manual.",
+      "report_alignment": {
+        "exists_in_report": true,
+        "report_sections": [
+          "mcp_ia",
+          "issues-summary warning MCP-001"
+        ],
+        "execution_state": "RECOMMENDED_ONLY"
+      },
+      "scope": "global",
+      "impact": "medio",
+      "evidence": {
+        "files_altered": [],
+        "scripts_executed": []
+      },
+      "qa_note": "O report confirma indisponibilidade de resources/templates, mas nao registra nenhuma remediacao executada."
+    },
+    {
+      "priority": "P2",
+      "domain": "quality_gates",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "objective": "Elevar baseline de validacao tecnica nos projetos",
+      "actions": [
+        "Adicionar scripts de lint e teste minimo ao backend do ObraEasy.",
+        "Definir conjunto minimo de validacao por tipo de app: frontend, backend e automacao.",
+        "Conectar validacoes ao processo de governanca."
+      ],
+      "expected_result": "Menos regressao silenciosa e melhor comparabilidade entre projetos.",
+      "progress": [
+        "ObraEasy backend recebeu scripts build, lint, check:env, smoke, test e validate.",
+        "Lint, check:env e smoke passaram localmente em 2026-04-09.",
+        "Os demais projetos ainda precisam convergir para um baseline equivalente."
+      ],
+      "report_alignment": {
+        "exists_in_report": true,
+        "report_sections": [
+          "projects.obraeasy_backend",
+          "final_assessment.integration_evidence",
+          "issues-summary info QA-001",
+          "issues-summary info QA-002"
+        ],
+        "execution_state": "PARTIALLY_EXECUTED_AND_PARTIALLY_VALIDATED"
+      },
+      "scope": "local",
+      "impact": "alto",
+      "evidence": {
+        "files_altered": [],
+        "scripts_executed": [
+          "lint",
+          "check:env",
+          "smoke"
+        ]
+      },
+      "qa_gates": {
+        "existing": [
+          "build",
+          "lint",
+          "check:env",
+          "smoke",
+          "test",
+          "validate"
+        ],
+        "applied": [
+          "build",
+          "lint",
+          "check:env",
+          "smoke",
+          "test",
+          "validate"
+        ],
+        "tested": [
+          "lint",
+          "check:env",
+          "smoke"
+        ],
+        "pending_explicit_evidence": [
+          "build",
+          "test",
+          "validate"
+        ]
+      },
+      "qa_note": "O backend do ObraEasy saiu de ausencia de baseline para baseline implementado, mas a definicao do baseline por tipo de app e a integracao com governanca ainda nao aparecem executadas."
+    },
+    {
+      "priority": "P3",
+      "domain": "supabase",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "objective": "Padronizar configuracoes de ambiente",
+      "actions": [
+        "Mapear localizacao exata dos envs por sistema e por camada.",
+        "Definir convencao unica para nomes e local de arquivos .env/.env.local/.env.example.",
+        "Validar presenca de chaves exigidas por app sem expor segredos."
+      ],
+      "expected_result": "Integracao mais previsivel e governanca mais simples.",
+      "report_alignment": {
+        "exists_in_report": true,
+        "report_sections": [
+          "supabase",
+          "issues-summary warning SUPA-001"
+        ],
+        "execution_state": "PARTIALLY_EXECUTED"
+      },
+      "scope": "global",
+      "impact": "medio",
+      "evidence": {
+        "files_altered": [],
+        "scripts_executed": []
+      },
+      "qa_note": "O mapeamento de envs e a verificacao parcial de chaves existem no report, mas ainda nao ha convencao unica consolidada."
+    },
+    {
+      "priority": "P3",
+      "domain": "infra",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "objective": "Eliminar paths literais incorretos em playbooks e prompts",
+      "actions": [
+        "Substituir paths inexistentes pelas variantes reais usadas no filesystem.",
+        "Adicionar etapa de normalizacao antes do scan em scripts de auditoria.",
+        "Registrar alias historicos apenas como compatibilidade, nunca como fonte principal."
+      ],
+      "expected_result": "Menos falhas por path hardcoded e execucao mais deterministica.",
+      "report_alignment": {
+        "exists_in_report": true,
+        "report_sections": [
+          "scan_paths",
+          "issues-summary warning PATH-001"
+        ],
+        "execution_state": "PARTIALLY_EXECUTED"
+      },
+      "scope": "global",
+      "impact": "medio",
+      "evidence": {
+        "files_altered": [],
+        "scripts_executed": []
+      },
+      "qa_note": "Ja existe normalizacao no report, mas os literais errados ainda aparecem no escopo solicitado e seguem pedindo saneamento."
+    }
+  ],
+  "sequencing": [
+    "governanca",
+    "git",
+    "mcp_ia",
+    "quality_gates",
+    "supabase",
+    "infra"
+  ],
+  "alignment_summary": {
+    "validated_objectives": [
+      "governanca"
+    ],
+    "partially_implemented_objectives": [
+      "git",
+      "quality_gates",
+      "supabase",
+      "infra"
+    ],
+    "not_started_objectives": [
+      "mcp_ia"
+    ]
+  }
+}

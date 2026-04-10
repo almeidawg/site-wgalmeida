@@ -1,0 +1,356 @@
+[
+  {
+    "file": "public\\images\\blog\\amsterdam\\canal-amsterdam-nikolai-kolosov.webp",
+    "public_id": "editorial/blog/amsterdam/canal-amsterdam-nikolai-kolosov",
+    "bytes": 522462,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775707787/editorial/blog/amsterdam/canal-amsterdam-nikolai-kolosov.webp"
+  },
+  {
+    "file": "public\\images\\blog\\amsterdam\\gables-amsterdam-vik-molina.webp",
+    "public_id": "editorial/blog/amsterdam/gables-amsterdam-vik-molina",
+    "bytes": 598936,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775707788/editorial/blog/amsterdam/gables-amsterdam-vik-molina.webp"
+  },
+  {
+    "file": "public\\images\\blog\\arquitetura-alto-padrao.webp",
+    "public_id": "editorial/blog/arquitetura-alto-padrao",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694980/editorial/blog/arquitetura-alto-padrao.webp"
+  },
+  {
+    "file": "public\\images\\blog\\bancada-cozinha-ergonomia.webp",
+    "public_id": "editorial/blog/bancada-cozinha-ergonomia",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694981/editorial/blog/bancada-cozinha-ergonomia.webp"
+  },
+  {
+    "file": "public\\images\\blog\\briefing-projeto-dos-sonhos.webp",
+    "public_id": "editorial/blog/briefing-projeto-dos-sonhos",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694981/editorial/blog/briefing-projeto-dos-sonhos.webp"
+  },
+  {
+    "file": "public\\images\\blog\\cronograma-obra-acompanhamento.webp",
+    "public_id": "editorial/blog/cronograma-obra-acompanhamento",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694982/editorial/blog/cronograma-obra-acompanhamento.webp"
+  },
+  {
+    "file": "public\\images\\blog\\documentacao-obra-condominio.webp",
+    "public_id": "editorial/blog/documentacao-obra-condominio",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694983/editorial/blog/documentacao-obra-condominio.webp"
+  },
+  {
+    "file": "public\\images\\blog\\especificacoes-tecnicas-diferenca.webp",
+    "public_id": "editorial/blog/especificacoes-tecnicas-diferenca",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694983/editorial/blog/especificacoes-tecnicas-diferenca.webp"
+  },
+  {
+    "file": "public\\images\\blog\\etapas-prazos-projeto-arquitetonico.webp",
+    "public_id": "editorial/blog/etapas-prazos-projeto-arquitetonico",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694984/editorial/blog/etapas-prazos-projeto-arquitetonico.webp"
+  },
+  {
+    "file": "public\\images\\blog\\etapas-reforma-completa.webp",
+    "public_id": "editorial/blog/etapas-reforma-completa",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694985/editorial/blog/etapas-reforma-completa.webp"
+  },
+  {
+    "file": "public\\images\\blog\\guia-estilos-ambientes-residenciais.webp",
+    "public_id": "editorial/blog/guia-estilos-ambientes-residenciais",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694985/editorial/blog/guia-estilos-ambientes-residenciais.webp"
+  },
+  {
+    "file": "public\\images\\blog\\guia-estilos-decoracao.webp",
+    "public_id": "editorial/blog/guia-estilos-decoracao",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694986/editorial/blog/guia-estilos-decoracao.webp"
+  },
+  {
+    "file": "public\\images\\blog\\iluminacao-tecnica-rasgo-de-luz.webp",
+    "public_id": "editorial/blog/iluminacao-tecnica-rasgo-de-luz",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694986/editorial/blog/iluminacao-tecnica-rasgo-de-luz.webp"
+  },
+  {
+    "file": "public\\images\\blog\\informe-obra-condominio.webp",
+    "public_id": "editorial/blog/informe-obra-condominio",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694987/editorial/blog/informe-obra-condominio.webp"
+  },
+  {
+    "file": "public\\images\\blog\\marcenaria-sob-medida.webp",
+    "public_id": "editorial/blog/marcenaria-sob-medida",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694988/editorial/blog/marcenaria-sob-medida.webp"
+  },
+  {
+    "file": "public\\images\\blog\\memorial-executivo-obra.webp",
+    "public_id": "editorial/blog/memorial-executivo-obra",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694988/editorial/blog/memorial-executivo-obra.webp"
+  },
+  {
+    "file": "public\\images\\blog\\moodboard-mapa-visual.webp",
+    "public_id": "editorial/blog/moodboard-mapa-visual",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694989/editorial/blog/moodboard-mapa-visual.webp"
+  },
+  {
+    "file": "public\\images\\blog\\normas-tecnicas-representacao.webp",
+    "public_id": "editorial/blog/normas-tecnicas-representacao",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694990/editorial/blog/normas-tecnicas-representacao.webp"
+  },
+  {
+    "file": "public\\images\\blog\\o-que-e-turn-key.webp",
+    "public_id": "editorial/blog/o-que-e-turn-key",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694990/editorial/blog/o-que-e-turn-key.webp"
+  },
+  {
+    "file": "public\\images\\blog\\projeto-executivo.webp",
+    "public_id": "editorial/blog/projeto-executivo",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694991/editorial/blog/projeto-executivo.webp"
+  },
+  {
+    "file": "public\\images\\blog\\ralo-linear-areas-molhadas.webp",
+    "public_id": "editorial/blog/ralo-linear-areas-molhadas",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694992/editorial/blog/ralo-linear-areas-molhadas.webp"
+  },
+  {
+    "file": "public\\images\\blog\\termo-responsabilidade-nbr16280.webp",
+    "public_id": "editorial/blog/termo-responsabilidade-nbr16280",
+    "bytes": 78822,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694992/editorial/blog/termo-responsabilidade-nbr16280.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\art-deco.webp",
+    "public_id": "editorial/estilos/art-deco",
+    "bytes": 14396,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694993/editorial/estilos/art-deco.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\art-nouveau.webp",
+    "public_id": "editorial/estilos/art-nouveau",
+    "bytes": 18646,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694993/editorial/estilos/art-nouveau.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\boho.webp",
+    "public_id": "editorial/estilos/boho",
+    "bytes": 54440,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694994/editorial/estilos/boho.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\classico.webp",
+    "public_id": "editorial/estilos/classico",
+    "bytes": 36716,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694995/editorial/estilos/classico.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\coastal.webp",
+    "public_id": "editorial/estilos/coastal",
+    "bytes": 7674,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694995/editorial/estilos/coastal.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\contemporaneo.webp",
+    "public_id": "editorial/estilos/contemporaneo",
+    "bytes": 83570,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694996/editorial/estilos/contemporaneo.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\cottage.webp",
+    "public_id": "editorial/estilos/cottage",
+    "bytes": 12916,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694996/editorial/estilos/cottage.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\ecletico.webp",
+    "public_id": "editorial/estilos/ecletico",
+    "bytes": 17396,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694997/editorial/estilos/ecletico.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\escandinavo.webp",
+    "public_id": "editorial/estilos/escandinavo",
+    "bytes": 10484,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694998/editorial/estilos/escandinavo.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\farmhouse.webp",
+    "public_id": "editorial/estilos/farmhouse",
+    "bytes": 8260,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694998/editorial/estilos/farmhouse.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\glam.webp",
+    "public_id": "editorial/estilos/glam",
+    "bytes": 48242,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775694999/editorial/estilos/glam.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\hampton.webp",
+    "public_id": "editorial/estilos/hampton",
+    "bytes": 79022,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695000/editorial/estilos/hampton.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\hollywood-regency.webp",
+    "public_id": "editorial/estilos/hollywood-regency",
+    "bytes": 79280,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695000/editorial/estilos/hollywood-regency.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\industrial.webp",
+    "public_id": "editorial/estilos/industrial",
+    "bytes": 84046,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695001/editorial/estilos/industrial.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\japandi.webp",
+    "public_id": "editorial/estilos/japandi",
+    "bytes": 54440,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695001/editorial/estilos/japandi.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\maximalista.webp",
+    "public_id": "editorial/estilos/maximalista",
+    "bytes": 83570,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695002/editorial/estilos/maximalista.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\mediterraneo.webp",
+    "public_id": "editorial/estilos/mediterraneo",
+    "bytes": 21188,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695003/editorial/estilos/mediterraneo.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\mid-century.webp",
+    "public_id": "editorial/estilos/mid-century",
+    "bytes": 144582,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695003/editorial/estilos/mid-century.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\minimalismo.webp",
+    "public_id": "editorial/estilos/minimalismo",
+    "bytes": 41088,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695004/editorial/estilos/minimalismo.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\moderno.webp",
+    "public_id": "editorial/estilos/moderno",
+    "bytes": 84046,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695004/editorial/estilos/moderno.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\neoclassico.webp",
+    "public_id": "editorial/estilos/neoclassico",
+    "bytes": 16098,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695005/editorial/estilos/neoclassico.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\provencal.webp",
+    "public_id": "editorial/estilos/provencal",
+    "bytes": 7234,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695006/editorial/estilos/provencal.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\rustico.webp",
+    "public_id": "editorial/estilos/rustico",
+    "bytes": 17310,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695006/editorial/estilos/rustico.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\shabby-chic.webp",
+    "public_id": "editorial/estilos/shabby-chic",
+    "bytes": 9118,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695007/editorial/estilos/shabby-chic.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\southwest.webp",
+    "public_id": "editorial/estilos/southwest",
+    "bytes": 19528,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695007/editorial/estilos/southwest.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\transitional.webp",
+    "public_id": "editorial/estilos/transitional",
+    "bytes": 6788,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695008/editorial/estilos/transitional.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\tropical.webp",
+    "public_id": "editorial/estilos/tropical",
+    "bytes": 62934,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695008/editorial/estilos/tropical.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\tulum.webp",
+    "public_id": "editorial/estilos/tulum",
+    "bytes": 148452,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695009/editorial/estilos/tulum.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\urban-modern.webp",
+    "public_id": "editorial/estilos/urban-modern",
+    "bytes": 11908,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695010/editorial/estilos/urban-modern.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\vintage.webp",
+    "public_id": "editorial/estilos/vintage",
+    "bytes": 16240,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695010/editorial/estilos/vintage.webp"
+  },
+  {
+    "file": "public\\images\\estilos\\wabi-sabi.webp",
+    "public_id": "editorial/estilos/wabi-sabi",
+    "bytes": 7122,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695011/editorial/estilos/wabi-sabi.webp"
+  },
+  {
+    "file": "public\\images\\banners\\ARQ.webp",
+    "public_id": "editorial/banners/ARQ",
+    "bytes": 93969,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695012/editorial/banners/ARQ.jpg"
+  },
+  {
+    "file": "public\\images\\banners\\ENGENHARIA.webp",
+    "public_id": "editorial/banners/ENGENHARIA",
+    "bytes": 93969,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695012/editorial/banners/ENGENHARIA.jpg"
+  },
+  {
+    "file": "public\\images\\banners\\FALECONOSCO.webp",
+    "public_id": "editorial/banners/FALECONOSCO",
+    "bytes": 93969,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695013/editorial/banners/FALECONOSCO.jpg"
+  },
+  {
+    "file": "public\\images\\banners\\MARCENARIA.webp",
+    "public_id": "editorial/banners/MARCENARIA",
+    "bytes": 93969,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695014/editorial/banners/MARCENARIA.jpg"
+  },
+  {
+    "file": "public\\images\\banners\\PROCESSOS.webp",
+    "public_id": "editorial/banners/PROCESSOS",
+    "bytes": 93969,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695014/editorial/banners/PROCESSOS.jpg"
+  },
+  {
+    "file": "public\\images\\banners\\SOBRE.webp",
+    "public_id": "editorial/banners/SOBRE",
+    "bytes": 93969,
+    "secure_url": "https://res.cloudinary.com/dwukfmgrd/image/upload/v1775695015/editorial/banners/SOBRE.jpg"
+  }
+]

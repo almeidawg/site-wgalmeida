@@ -1,0 +1,386 @@
+{
+  "audit_date": "2026-04-09",
+  "mode": "QA_HARMONIZATION",
+  "dry_run": false,
+  "rule": "TODO PLANO PRECISA TER STATUS REAL E EVIDENCIA",
+  "source_artifacts": [
+    "fix-plan.json",
+    "full-audit-report.json",
+    "issues-summary.json"
+  ],
+  "status_scale": [
+    "NOT_STARTED",
+    "PARTIALLY_IMPLEMENTED",
+    "IMPLEMENTED",
+    "VALIDATED"
+  ],
+  "summary": {
+    "items_total": 6,
+    "not_started": 1,
+    "partially_implemented": 4,
+    "implemented": 0,
+    "validated": 1
+  },
+  "items": [
+    {
+      "priority": "P1",
+      "domain": "governanca",
+      "objective": "Evitar falso positivo estrutural em runtime legitimo",
+      "status": "VALIDATED",
+      "exists_in_report": true,
+      "execution_classification": "EXECUTED_AND_VALIDATED",
+      "scope": "global",
+      "impact": "alto",
+      "evidence": {
+        "files_recording_evidence": [
+          "full-audit-report.json",
+          "issues-summary.json"
+        ],
+        "files_altered": [
+          "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+          "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-enforce-estrutura.ps1"
+        ],
+        "scripts_executed": [
+          "wg-governanca-alertas.ps1",
+          "wg-enforce-estrutura.ps1"
+        ],
+        "artifacts": [
+          "governanca-alertas-20260409-200057.json",
+          "estrutura-enforce-20260409-200057.json"
+        ],
+        "report_signals": [
+          "governance.remediation.status = IMPLEMENTED_AND_VALIDATED",
+          "governance_global.adaptive_rules_coherence = ALIGNED_AFTER_REMEDIATION",
+          "issues-summary info GOV-002"
+        ]
+      },
+      "actions_review": [
+        {
+          "action": "Atualizar regras do enforce para classificar logs recentes com processo ativo como RUNTIME_ATIVO.",
+          "status": "VALIDATED"
+        },
+        {
+          "action": "Consumir runtime-patterns-detected.json e adaptive-rules.json antes de recomendar limpeza.",
+          "status": "VALIDATED"
+        },
+        {
+          "action": "Criar teste de regressao para logs wgeasy-dev e backend-start na raiz.",
+          "status": "PARTIALLY_IMPLEMENTED",
+          "note": "O objetivo foi validado em runtime real, mas o artefato do teste de regressao nao aparece nomeado nos inputs."
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "domain": "git",
+      "objective": "Reduzir drift operacional e melhorar rastreabilidade",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "exists_in_report": true,
+      "execution_classification": "PARTIALLY_EXECUTED",
+      "scope": "global",
+      "impact": "alto",
+      "evidence": {
+        "files_recording_evidence": [
+          "fix-plan.json",
+          "full-audit-report.json",
+          "issues-summary.json"
+        ],
+        "files_altered": [
+          "C:\\IA\\.gitignore",
+          "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\.gitignore"
+        ],
+        "scripts_executed": [],
+        "artifacts": [],
+        "report_signals": [
+          "git.status = PARTIALLY_REMEDIATED",
+          "git.remediation_effect.C:\\IA.before_total_changes = 528",
+          "git.remediation_effect.C:\\IA.after_total_changes = 198",
+          "issues-summary warning GIT-001",
+          "issues-summary info GIT-002"
+        ]
+      },
+      "actions_review": [
+        {
+          "action": "Inventariar arquivos gerados e work-in-progress nos repos com dirty state alto.",
+          "status": "IMPLEMENTED"
+        },
+        {
+          "action": "Aplicar ignore seguro para locks e scans gerados em C:\\IA e baseline local em ObraEasy.",
+          "status": "VALIDATED"
+        },
+        {
+          "action": "Configurar remotes ausentes onde o repositorio for oficial.",
+          "status": "NOT_STARTED"
+        },
+        {
+          "action": "Formalizar politica de exclusao/ignore para artefatos locais recorrentes.",
+          "status": "NOT_STARTED"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "mcp_ia",
+      "objective": "Restaurar observabilidade por recursos MCP",
+      "status": "NOT_STARTED",
+      "exists_in_report": true,
+      "execution_classification": "RECOMMENDED_ONLY",
+      "scope": "global",
+      "impact": "medio",
+      "evidence": {
+        "files_recording_evidence": [
+          "full-audit-report.json",
+          "issues-summary.json"
+        ],
+        "files_altered": [],
+        "scripts_executed": [],
+        "artifacts": [],
+        "report_signals": [
+          "mcp_ia.mcp_resources_available = false",
+          "mcp_ia.mcp_resource_templates_available = false",
+          "issues-summary warning MCP-001"
+        ]
+      },
+      "actions_review": [
+        {
+          "action": "Revisar registro e inicializacao dos servidores MCP usados pela operacao.",
+          "status": "NOT_STARTED"
+        },
+        {
+          "action": "Validar exposicao de resources/templates em sessao de auditoria.",
+          "status": "NOT_STARTED"
+        },
+        {
+          "action": "Documentar fallback oficial quando MCP nao estiver disponivel.",
+          "status": "NOT_STARTED"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "quality_gates",
+      "objective": "Elevar baseline de validacao tecnica nos projetos",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "exists_in_report": true,
+      "execution_classification": "PARTIALLY_EXECUTED_AND_PARTIALLY_VALIDATED",
+      "scope": "local",
+      "impact": "alto",
+      "evidence": {
+        "files_recording_evidence": [
+          "fix-plan.json",
+          "full-audit-report.json",
+          "issues-summary.json"
+        ],
+        "files_altered": [],
+        "scripts_executed": [
+          "lint",
+          "check:env",
+          "smoke"
+        ],
+        "artifacts": [],
+        "report_signals": [
+          "projects.obraeasy_backend.quality_gate_status = BASELINE_IMPLEMENTED",
+          "projects.obraeasy_backend.notes registra scripts build, lint, check:env, smoke, test e validate",
+          "issues-summary info QA-001",
+          "issues-summary info QA-002"
+        ]
+      },
+      "actions_review": [
+        {
+          "action": "Adicionar scripts de lint e teste minimo ao backend do ObraEasy.",
+          "status": "VALIDATED"
+        },
+        {
+          "action": "Definir conjunto minimo de validacao por tipo de app: frontend, backend e automacao.",
+          "status": "NOT_STARTED"
+        },
+        {
+          "action": "Conectar validacoes ao processo de governanca.",
+          "status": "NOT_STARTED"
+        }
+      ]
+    },
+    {
+      "priority": "P3",
+      "domain": "supabase",
+      "objective": "Padronizar configuracoes de ambiente",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "exists_in_report": true,
+      "execution_classification": "PARTIALLY_EXECUTED",
+      "scope": "global",
+      "impact": "medio",
+      "evidence": {
+        "files_recording_evidence": [
+          "full-audit-report.json",
+          "issues-summary.json"
+        ],
+        "files_altered": [],
+        "scripts_executed": [],
+        "artifacts": [],
+        "report_signals": [
+          "supabase.status = PARTIAL_STANDARDIZATION",
+          "supabase.projects contem mapeamento de env_files_detected por projeto",
+          "issues-summary warning SUPA-001"
+        ]
+      },
+      "actions_review": [
+        {
+          "action": "Mapear localizacao exata dos envs por sistema e por camada.",
+          "status": "IMPLEMENTED"
+        },
+        {
+          "action": "Definir convencao unica para nomes e local de arquivos .env/.env.local/.env.example.",
+          "status": "NOT_STARTED"
+        },
+        {
+          "action": "Validar presenca de chaves exigidas por app sem expor segredos.",
+          "status": "PARTIALLY_IMPLEMENTED"
+        }
+      ]
+    },
+    {
+      "priority": "P3",
+      "domain": "infra",
+      "objective": "Eliminar paths literais incorretos em playbooks e prompts",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "exists_in_report": true,
+      "execution_classification": "PARTIALLY_EXECUTED",
+      "scope": "global",
+      "impact": "medio",
+      "evidence": {
+        "files_recording_evidence": [
+          "full-audit-report.json",
+          "issues-summary.json"
+        ],
+        "files_altered": [],
+        "scripts_executed": [],
+        "artifacts": [],
+        "report_signals": [
+          "scan_paths.normalized_existing foi produzido",
+          "scan_paths.nonexistent_requested_literals ainda lista paths incorretos",
+          "issues-summary warning PATH-001"
+        ]
+      },
+      "actions_review": [
+        {
+          "action": "Substituir paths inexistentes pelas variantes reais usadas no filesystem.",
+          "status": "PARTIALLY_IMPLEMENTED"
+        },
+        {
+          "action": "Adicionar etapa de normalizacao antes do scan em scripts de auditoria.",
+          "status": "IMPLEMENTED"
+        },
+        {
+          "action": "Registrar alias historicos apenas como compatibilidade, nunca como fonte principal.",
+          "status": "NOT_STARTED"
+        }
+      ]
+    }
+  ],
+  "qa_gates": {
+    "inventory_by_project": {
+      "site_wgalmeida": {
+        "existing": [
+          "build"
+        ],
+        "applied": [
+          "build"
+        ],
+        "tested": [
+          "build"
+        ],
+        "evidence": [
+          "issues-summary info BUILD-001",
+          "full-audit-report projects.site_wgalmeida.build_status = PASS"
+        ]
+      },
+      "wgeasy_frontend": {
+        "existing": [
+          "build"
+        ],
+        "applied": [
+          "build"
+        ],
+        "tested": [
+          "build"
+        ],
+        "evidence": [
+          "issues-summary info BUILD-002",
+          "full-audit-report projects.wgeasy_frontend.build_status = PASS"
+        ]
+      },
+      "obraeasy_frontend": {
+        "existing": [
+          "build"
+        ],
+        "applied": [
+          "build"
+        ],
+        "tested": [
+          "build"
+        ],
+        "evidence": [
+          "issues-summary info BUILD-003",
+          "full-audit-report projects.obraeasy_frontend.build_status = PASS"
+        ]
+      },
+      "obraeasy_backend": {
+        "existing": [
+          "build",
+          "lint",
+          "check:env",
+          "smoke",
+          "test",
+          "validate"
+        ],
+        "applied": [
+          "build",
+          "lint",
+          "check:env",
+          "smoke",
+          "test",
+          "validate"
+        ],
+        "tested": [
+          "lint",
+          "check:env",
+          "smoke"
+        ],
+        "not_yet_tested_with_explicit_evidence": [
+          "build",
+          "test",
+          "validate"
+        ],
+        "coverage_assessment": "BASELINE_IMPLEMENTED_BUT_PARTIALLY_VALIDATED",
+        "evidence": [
+          "fix-plan progress quality_gates[0..2]",
+          "full-audit-report projects.obraeasy_backend.notes",
+          "issues-summary info QA-001",
+          "issues-summary info QA-002"
+        ]
+      }
+    },
+    "ecosystem_baseline": {
+      "defined_by_app_type": false,
+      "applied_projects": [
+        "site_wgalmeida",
+        "wgeasy_frontend",
+        "obraeasy_frontend",
+        "obraeasy_backend"
+      ],
+      "tested_projects": [
+        "site_wgalmeida",
+        "wgeasy_frontend",
+        "obraeasy_frontend",
+        "obraeasy_backend:l\u0069nt",
+        "obraeasy_backend:check:env",
+        "obraeasy_backend:smoke"
+      ],
+      "pending": [
+        "Definir baseline minimo por tipo de app",
+        "Conectar gates ao processo de governanca",
+        "Registrar evidencia nominal para build, test e validate do backend do ObraEasy"
+      ]
+    }
+  }
+}

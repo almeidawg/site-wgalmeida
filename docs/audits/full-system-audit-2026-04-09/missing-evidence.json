@@ -1,0 +1,97 @@
+{
+  "audit_date": "2026-04-09",
+  "mode": "QA_EVIDENCE_AND_BASELINE",
+  "rule": "SE NAO HA EVIDENCIA, NAO EXISTE EXECUCAO",
+  "summary": {
+    "projects_with_missing_evidence": 5,
+    "projects_with_missing_scripts": 2,
+    "projects_fully_covered": 1
+  },
+  "projects": [
+    {
+      "project": "WGEasy Backend",
+      "classification": "NON_COMPLIANT",
+      "missing_scripts": [
+        "check:env",
+        "smoke",
+        "test"
+      ],
+      "missing_evidence": [
+        "lint",
+        "check:env",
+        "smoke",
+        "test",
+        "build"
+      ],
+      "optional_missing": [
+        "validate"
+      ],
+      "recommended_next_step": "Criar wrappers QA para build e lint, adicionar check:env, smoke e test leves, e passar a gravar qa-logs/*.json."
+    },
+    {
+      "project": "ObraEasy Frontend",
+      "classification": "PARTIAL",
+      "missing_scripts": [],
+      "missing_evidence": [
+        "lint",
+        "build",
+        "preview"
+      ],
+      "optional_missing": [],
+      "recommended_next_step": "Adicionar runner QA para frontend e executar lint, build e preview com geracao de evidencias nominais."
+    },
+    {
+      "project": "WGEasy Frontend",
+      "classification": "PARTIAL",
+      "missing_scripts": [],
+      "missing_evidence": [
+        "lint",
+        "build",
+        "preview"
+      ],
+      "optional_missing": [],
+      "recommended_next_step": "Adicionar runner QA para frontend e executar lint, build e preview com geracao de evidencias nominais."
+    },
+    {
+      "project": "Site WG Almeida",
+      "classification": "PARTIAL",
+      "missing_scripts": [],
+      "missing_evidence": [
+        "lint",
+        "build",
+        "preview"
+      ],
+      "optional_missing": [],
+      "recommended_next_step": "Adicionar runner QA para frontend e executar lint, build e preview com geracao de evidencias nominais."
+    },
+    {
+      "project": "Liz WhatsApp",
+      "classification": "NON_COMPLIANT",
+      "missing_scripts": [
+        "execution-check"
+      ],
+      "missing_evidence": [
+        "lint",
+        "execution-check"
+      ],
+      "optional_missing": [
+        "test"
+      ],
+      "recommended_next_step": "Definir um execution-check leve para automacao, criar qa-logs/ e registrar evidencias para lint e execucao basica."
+    }
+  ],
+  "covered_projects": [
+    {
+      "project": "ObraEasy Backend",
+      "classification": "COMPLIANT",
+      "evidence_files": [
+        "build.json",
+        "lint.json",
+        "check-env.json",
+        "smoke.json",
+        "test.json",
+        "validate.json"
+      ]
+    }
+  ]
+}

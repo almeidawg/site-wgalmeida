@@ -1,0 +1,80 @@
+{
+  "audit_date": "2026-04-09",
+  "generated_in_dry_run": true,
+  "implementation_status": {
+    "status": "IMPLEMENTED_AND_VALIDATED",
+    "implemented_at": "2026-04-09T20:00:57-03:00",
+    "scripts_updated": [
+      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-enforce-estrutura.ps1"
+    ],
+    "validation_outputs": [
+      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-200057.json",
+      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\estrutura-enforce-20260409-200057.json"
+    ]
+  },
+  "objective": "Ajustar governanca para awareness de runtime sem tratar atividade legitima como erro.",
+  "runtime_exceptions": [
+    "WGEasy",
+    "WG_AUTOMATION",
+    "vite:4174",
+    "vite:4175",
+    "ROOT_RUNTIME_LOGS",
+    "ollama",
+    "rancher-host-switch"
+  ],
+  "ignore_rules": [
+    "logs ativos <24h",
+    "logs com processo ativo correlato",
+    "logs de dev associados a WGEasy e WG_AUTOMATION",
+    "portas de runtime conhecidas quando acompanhadas de processo valido",
+    "port-forward de infraestrutura local quando identificado como host-switch"
+  ],
+  "protection_rules": [
+    {
+      "target": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\wgeasy-dev*.log",
+      "action": "protect_when_runtime_active"
+    },
+    {
+      "target": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\backend-start*.log",
+      "action": "protect_when_runtime_active"
+    },
+    {
+      "target": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\WG_AUTOMATION",
+      "action": "protect_runtime_zone"
+    },
+    {
+      "target": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_SaaS\\WGEasy",
+      "action": "protect_runtime_zone"
+    }
+  ],
+  "classification_policy": {
+    "when_logs_recent_and_process_active": "RUNTIME_ATIVO",
+    "when_logs_old_and_no_process": "LIMPEZA_SEGURA",
+    "when_root_log_detected_without_runtime_context": "ATENCAO_REAL",
+    "default_principle": "NAO_TRATAR_RUNTIME_COMO_ERRO"
+  },
+  "recommended_rule_changes": [
+    "Adicionar correlacao entre nome do log, comando do processo e porta aberta antes de elevar ATENCAO.",
+    "Usar runtime-patterns-detected.json como fonte de excecoes dinamicas de curta duracao.",
+    "Separar alertas estruturais de alertas operacionais transientes no enforce de governanca."
+  ],
+  "current_validated_state": {
+    "governance_summary": {
+      "ok": 5,
+      "atencao": 1,
+      "erro": 0
+    },
+    "estrutura_raiz": {
+      "classification": "LOGS_MISTOS",
+      "runtime_active_logs": 4,
+      "cleanup_safe_logs": 2
+    },
+    "enforce_dry_run": {
+      "protected_runtime": 4,
+      "planned": 3,
+      "pending_manual": 0,
+      "errors": 0
+    }
+  }
+}

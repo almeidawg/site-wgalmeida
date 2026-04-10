@@ -1,0 +1,180 @@
+{
+  "audit_date": "2026-04-09",
+  "mode": "QA_EVIDENCE_AND_BASELINE",
+  "baseline_definitions": {
+    "backend_minimum": [
+      "lint",
+      "check:env",
+      "smoke",
+      "test",
+      "build"
+    ],
+    "frontend_minimum": [
+      "lint",
+      "build",
+      "preview"
+    ],
+    "automation_minimum": [
+      "lint",
+      "execution-check"
+    ]
+  },
+  "summary": {
+    "projects_total": 6,
+    "compliant": 1,
+    "partial": 3,
+    "non_compliant": 2
+  },
+  "projects": [
+    {
+      "project": "ObraEasy Backend",
+      "app_type": "backend",
+      "baseline": "backend_minimum",
+      "classification": "COMPLIANT",
+      "required_gates": [
+        "lint",
+        "check:env",
+        "smoke",
+        "test",
+        "build"
+      ],
+      "scripts_present": [
+        "lint",
+        "check:env",
+        "smoke",
+        "test",
+        "build",
+        "validate"
+      ],
+      "fresh_evidence": [
+        "lint",
+        "check:env",
+        "smoke",
+        "test",
+        "build"
+      ],
+      "missing_scripts": [],
+      "missing_evidence": []
+    },
+    {
+      "project": "WGEasy Backend",
+      "app_type": "backend",
+      "baseline": "backend_minimum",
+      "classification": "NON_COMPLIANT",
+      "required_gates": [
+        "lint",
+        "check:env",
+        "smoke",
+        "test",
+        "build"
+      ],
+      "scripts_present": [
+        "lint",
+        "build"
+      ],
+      "fresh_evidence": [],
+      "missing_scripts": [
+        "check:env",
+        "smoke",
+        "test"
+      ],
+      "missing_evidence": [
+        "lint",
+        "check:env",
+        "smoke",
+        "test",
+        "build"
+      ]
+    },
+    {
+      "project": "ObraEasy Frontend",
+      "app_type": "frontend",
+      "baseline": "frontend_minimum",
+      "classification": "PARTIAL",
+      "required_gates": [
+        "lint",
+        "build",
+        "preview"
+      ],
+      "scripts_present": [
+        "lint",
+        "build",
+        "preview"
+      ],
+      "fresh_evidence": [],
+      "missing_scripts": [],
+      "missing_evidence": [
+        "lint",
+        "build",
+        "preview"
+      ]
+    },
+    {
+      "project": "WGEasy Frontend",
+      "app_type": "frontend",
+      "baseline": "frontend_minimum",
+      "classification": "PARTIAL",
+      "required_gates": [
+        "lint",
+        "build",
+        "preview"
+      ],
+      "scripts_present": [
+        "lint",
+        "build",
+        "preview"
+      ],
+      "fresh_evidence": [],
+      "missing_scripts": [],
+      "missing_evidence": [
+        "lint",
+        "build",
+        "preview"
+      ]
+    },
+    {
+      "project": "Site WG Almeida",
+      "app_type": "frontend",
+      "baseline": "frontend_minimum",
+      "classification": "PARTIAL",
+      "required_gates": [
+        "lint",
+        "build",
+        "preview"
+      ],
+      "scripts_present": [
+        "lint",
+        "build",
+        "preview"
+      ],
+      "fresh_evidence": [],
+      "missing_scripts": [],
+      "missing_evidence": [
+        "lint",
+        "build",
+        "preview"
+      ]
+    },
+    {
+      "project": "Liz WhatsApp",
+      "app_type": "automation",
+      "baseline": "automation_minimum",
+      "classification": "NON_COMPLIANT",
+      "required_gates": [
+        "lint",
+        "execution-check"
+      ],
+      "scripts_present": [
+        "lint"
+      ],
+      "fresh_evidence": [],
+      "missing_scripts": [
+        "execution-check"
+      ],
+      "missing_evidence": [
+        "lint",
+        "execution-check"
+      ]
+    }
+  ]
+}

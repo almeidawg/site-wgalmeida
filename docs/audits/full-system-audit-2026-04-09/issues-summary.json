@@ -1,0 +1,131 @@
+{
+  "audit_date": "2026-04-09",
+  "summary": {
+    "critical": 0,
+    "warning": 5,
+    "info": 9
+  },
+  "critical": [],
+  "warning": [
+    {
+      "id": "GOV-001",
+      "domain": "governanca",
+      "title": "Ainda existem logs mistos na raiz, mas a regra agora separa runtime ativo de limpeza segura",
+      "classification": "WARNING",
+      "impact": "Restam logs antigos sem correlacao que ainda devem ser saneados, sem afetar os ativos.",
+      "evidence": [
+        "Governanca atual retornou OK=5 | ATENCAO=1 | ERRO=0 em 2026-04-09 20:00:57",
+        "estrutura_raiz passou a reportar: total 6, runtime ativo 4, sem correlacao 2",
+        "Enforce em DryRun marcou 4 logs como PROTEGIDO e 2 logs antigos como PLANEJADO"
+      ],
+      "recommended_action": "Limpar ou mover apenas os logs antigos sem correlacao e monitorar a nova regra."
+    },
+    {
+      "id": "MCP-001",
+      "domain": "mcp_ia",
+      "title": "Sessao sem recursos MCP expostos",
+      "classification": "WARNING",
+      "impact": "Baixa observabilidade por recursos MCP; auditoria dependeu de filesystem e shell.",
+      "evidence": [
+        "list_mcp_resources retornou vazio",
+        "list_mcp_resource_templates retornou vazio"
+      ],
+      "recommended_action": "Revisar configuracao dos servidores MCP e a exposicao de resources/templates."
+    },
+    {
+      "id": "GIT-001",
+      "domain": "git",
+      "title": "Repositorios relevantes com worktrees sujas e remotes ausentes em parte do ecossistema",
+      "classification": "WARNING",
+      "impact": "Aumenta risco de drift, perda de rastreabilidade e dificuldades de rollout.",
+      "evidence": [
+        "site-wgalmeida com 262 mudancas locais, concentradas em src/public/tools, e sem remote configurado",
+        "C:\\IA caiu de 528 para 198 mudancas apos saneamento de ignore, mas segue sem remote e com bastante trabalho nao rastreado",
+        "next-app com dirty=true e sem remote configurado"
+      ],
+      "recommended_action": "Definir politica minima de branch/remoto, separar trabalho real de artefatos e tratar C:\\IA e site-wgalmeida como prioridades de rastreabilidade."
+    },
+    {
+      "id": "SUPA-001",
+      "domain": "supabase",
+      "title": "Configuracao Supabase heterogenea entre projetos",
+      "classification": "WARNING",
+      "impact": "Dificulta governanca de ambientes e pode mascarar falhas de integracao.",
+      "evidence": [
+        "site-wgalmeida e next-app possuem envs com chaves detectadas",
+        "WGEasy usa env em subdiretorio frontend e nao no root do produto",
+        "ObraEasy e EasyRealState nao apresentam padrao consistente no root"
+      ],
+      "recommended_action": "Padronizar localizacao e documentacao de envs por app e por camada."
+    },
+    {
+      "id": "PATH-001",
+      "domain": "infra",
+      "title": "Parte dos caminhos declarados no escopo original nao existe literalmente",
+      "classification": "WARNING",
+      "impact": "Pode quebrar automacoes que dependam de paths hardcoded sem normalizacao.",
+      "evidence": [
+        "Nao existe C:\\Users\\Atendimento\\Documents_WG_ALMEIDA_GROUPO",
+        "Nao existe C:\\Users\\Atendimento\\Documents_WG_build.tech",
+        "Nao existe C:\\Users\\Atendimento.codex"
+      ],
+      "recommended_action": "Corrigir templates e scripts para usar os paths reais com '\\Documents\\_WG_*' e '.codex'."
+    }
+  ],
+  "info": [
+    {
+      "id": "BUILD-001",
+      "domain": "site-wgalmeida",
+      "title": "Build do site atual validado com sucesso",
+      "classification": "INFO"
+    },
+    {
+      "id": "BUILD-002",
+      "domain": "wgeasy",
+      "title": "Build do frontend WGEasy passou; apenas warnings de chunks grandes",
+      "classification": "INFO"
+    },
+    {
+      "id": "BUILD-003",
+      "domain": "obraeasy",
+      "title": "Build do frontend ObraEasy passou com sucesso",
+      "classification": "INFO"
+    },
+    {
+      "id": "VERCEL-001",
+      "domain": "vercel",
+      "title": "CLI autenticada como almeidawg e projeto do site linkado",
+      "classification": "INFO"
+    },
+    {
+      "id": "IA-001",
+      "domain": "ia_local",
+      "title": "Ollama operacional com modelos locais disponiveis; ha warning isolado de simbolo MLX",
+      "classification": "INFO"
+    },
+    {
+      "id": "GOV-002",
+      "domain": "governanca",
+      "title": "Scripts de governanca e enforce agora protegem logs com runtime ativo",
+      "classification": "INFO"
+    },
+    {
+      "id": "GIT-002",
+      "domain": "git",
+      "title": "Saneamento inicial de .gitignore reduziu ruído do repositório C:\\IA",
+      "classification": "INFO"
+    },
+    {
+      "id": "QA-001",
+      "domain": "projetos",
+      "title": "Backend do ObraEasy agora possui gates mínimos de qualidade validados",
+      "classification": "INFO"
+    },
+    {
+      "id": "QA-002",
+      "domain": "projetos",
+      "title": "Smoke test HTTP local confirmou funcionamento básico do backend do ObraEasy",
+      "classification": "INFO"
+    }
+  ]
+}

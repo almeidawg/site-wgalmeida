@@ -1,0 +1,307 @@
+{
+  "audit_meta": {
+    "audit_date": "2026-04-09",
+    "timezone": "America/Sao_Paulo",
+    "mode": "FULL_SYSTEM_AUDIT",
+    "dry_run": true,
+    "auto_fix": false,
+    "validation_depth": "MAX",
+    "workspace_scope": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida"
+  },
+  "scan_paths": {
+    "requested": [
+      "C:\\Users\\Atendimento\\Documents_WG_ALMEIDA_GROUPO\\",
+      "C:\\Users\\Atendimento\\Documents_WG_build.tech\\",
+      "C:\\WG-Server\\",
+      "C:\\Users\\Atendimento.codex\\",
+      "C:\\IA\\"
+    ],
+    "normalized_existing": [
+      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\",
+      "C:\\Users\\Atendimento\\Documents\\_WG_build.tech\\",
+      "C:\\WG-Server\\",
+      "C:\\Users\\Atendimento\\.codex\\",
+      "C:\\IA\\"
+    ],
+    "nonexistent_requested_literals": [
+      "C:\\Users\\Atendimento\\Documents_WG_ALMEIDA_GROUPO\\",
+      "C:\\Users\\Atendimento\\Documents_WG_build.tech\\",
+      "C:\\Users\\Atendimento.codex\\"
+    ]
+  },
+  "governance": {
+    "status": "HEALTHY_WITH_RUNTIME_EXCEPTIONS",
+    "script": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+    "result": {
+      "ok": 5,
+      "atencao": 1,
+      "erro": 0
+    },
+    "baseline_drift": "OK",
+    "status_projetos_present": true,
+    "status_projetos_path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\STATUS-PROJETOS.md",
+    "interpretation": "A unica atencao encontrada decorre de logs mistos na raiz, com separacao validada entre runtime ativo e limpeza segura.",
+    "remediation": {
+      "status": "IMPLEMENTED_AND_VALIDATED",
+      "updated_scripts": [
+        "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+        "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-enforce-estrutura.ps1"
+      ],
+      "latest_governance_report": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-200057.json",
+      "latest_enforce_report": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\estrutura-enforce-20260409-200057.json"
+    }
+  },
+  "mcp_ia": {
+    "mcp_resources_available": false,
+    "mcp_resource_templates_available": false,
+    "ollama": {
+      "installed": true,
+      "running": true,
+      "models": [
+        "qwen2.5:14b",
+        "deepseek-r1:8b",
+        "wg-william:latest",
+        "qwen2.5-coder:14b",
+        "wg-analyst:latest",
+        "wg-liz:latest",
+        "qwen2.5:7b",
+        "nomic-embed-text:latest"
+      ],
+      "warning": "MLX: Failed to load symbol: mlx_bartlett"
+    }
+  },
+  "automations": {
+    "root": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO",
+    "health": "ACTIVE",
+    "evidence": [
+      "WG_AUTOMATION presente e atualizado no dia da auditoria",
+      "02_SCRIPTS, scripts, tmp e data com atividade recente",
+      "Liz_Assistente_WhatsApp com logs recentes"
+    ]
+  },
+  "projects": {
+    "site_wgalmeida": {
+      "build_status": "PASS",
+      "notes": "Build validado anteriormente nesta sessao."
+    },
+    "wgeasy_frontend": {
+      "build_status": "PASS",
+      "runtime_status": "ACTIVE_ON_4174",
+      "notes": "Warnings de chunks grandes, sem falha de build."
+    },
+    "obraeasy_frontend": {
+      "build_status": "PASS"
+    },
+    "obraeasy_backend": {
+      "quality_gate_status": "BASELINE_IMPLEMENTED",
+      "notes": "Scripts build, lint, check:env, smoke, test e validate adicionados e validados localmente."
+    }
+  },
+  "git": {
+    "status": "PARTIALLY_REMEDIATED",
+    "safe_gitignore_updates": [
+      "C:\\IA\\.gitignore",
+      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\.gitignore"
+    ],
+    "remediation_effect": {
+      "C:\\IA": {
+        "before_total_changes": 528,
+        "after_total_changes": 198,
+        "before_untracked": 510,
+        "after_untracked": 180
+      },
+      "notes": [
+        "A reducao ocorreu sem esconder codigo funcional; apenas locks, scans e snapshots claramente gerados foram ignorados.",
+        "ObraEasy recebeu baseline de ignore para env, logs, dependencias e build."
+      ]
+    },
+    "repositories": [
+      {
+        "path": "C:\\IA",
+        "branch": "main",
+        "dirty": true,
+        "change_count": 198,
+        "remote": null,
+        "change_profile": {
+          "modified": 18,
+          "untracked": 180,
+          "dominant_paths": [
+            "Scripts",
+            "Memory",
+            "Knowledge",
+            "Core",
+            "contexto-ia"
+          ]
+        }
+      },
+      {
+        "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\next-app",
+        "branch": "main",
+        "dirty": true,
+        "change_count": 1,
+        "remote": null
+      },
+      {
+        "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida",
+        "branch": "main",
+        "dirty": true,
+        "change_count": 262,
+        "remote": null,
+        "change_profile": {
+          "modified": 161,
+          "deleted": 4,
+          "untracked": 97,
+          "dominant_paths": [
+            "src",
+            "public",
+            "tools",
+            "docs",
+            ".monitor-data"
+          ],
+          "interpretation": "Predominio de desenvolvimento ativo de produto, nao apenas artefato gerado."
+        }
+      },
+      {
+        "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy",
+        "branch": "main",
+        "dirty": true,
+        "change_count": 48,
+        "remote": "https://github.com/almeidawg/obra-easy.git",
+        "change_profile": {
+          "modified": 14,
+          "deleted": 1,
+          "untracked": 33,
+          "dominant_paths": [
+            "frontend",
+            "docs",
+            "database"
+          ]
+        }
+      },
+      {
+        "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\WGEasy",
+        "branch": "main",
+        "dirty": false,
+        "change_count": 0,
+        "remote": "https://github.com/almeidawg/wgeasy.git"
+      },
+      {
+        "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\04_20260310_Prod\\easy-realstate",
+        "branch": "main",
+        "dirty": true,
+        "change_count": 20,
+        "remote": "https://github.com/almeidawg/easyrealstate.git",
+        "change_profile": {
+          "modified": 17,
+          "untracked": 3,
+          "dominant_paths": [
+            "public",
+            "app",
+            "components"
+          ]
+        }
+      }
+    ],
+    "priority_interpretation": [
+      "C:\\IA e site-wgalmeida concentram o maior risco de rastreabilidade.",
+      "easy-realstate e ObraEasy estao sujos, mas com perfil mais claro de feature work.",
+      "WGEasy e o baseline de comparacao saudavel para o ecossistema."
+    ]
+  },
+  "supabase": {
+    "status": "PARTIAL_STANDARDIZATION",
+    "projects": [
+      {
+        "project": "next-app",
+        "env_files_detected": [
+          ".env.local"
+        ],
+        "supabase_keys_detected": true
+      },
+      {
+        "project": "site-wgalmeida",
+        "env_files_detected": [
+          ".env",
+          ".env.example"
+        ],
+        "supabase_keys_detected": true
+      },
+      {
+        "project": "WGEasy frontend",
+        "env_files_detected": [
+          ".env.example",
+          ".env.local"
+        ],
+        "supabase_keys_detected": "not_fully_verified_by_value_exposure_policy"
+      },
+      {
+        "project": "ObraEasy",
+        "env_files_detected": [
+          ".env.local"
+        ],
+        "supabase_keys_detected": false
+      },
+      {
+        "project": "EasyRealState 04_Desenvolvimento",
+        "env_files_detected": [],
+        "supabase_keys_detected": false
+      }
+    ]
+  },
+  "vercel": {
+    "cli_installed": true,
+    "whoami": "almeidawg",
+    "site_wgalmeida_project": {
+      "project_name": "site-wgalmeida",
+      "project_id": "prj_VkUYSKro2o9veg8TxhduigZzHLhd",
+      "org_id": "team_AqwrHGoQjCNQyPXYRP4jgiZq"
+    }
+  },
+  "infra": {
+    "runtime_ports": [
+      {
+        "port": 4174,
+        "owner": "node.exe",
+        "classification": "WGEASY_VITE_ACTIVE"
+      },
+      {
+        "port": 3000,
+        "owner": "host-switch.exe",
+        "classification": "RANCHER_INFRA"
+      },
+      {
+        "port": 8080,
+        "owner": "host-switch.exe",
+        "classification": "RANCHER_INFRA"
+      }
+    ],
+    "runtime_rule": "NAO_TRATAR_RUNTIME_COMO_ERRO"
+  },
+  "governance_global": {
+    "adaptive_rules_coherence": "ALIGNED_AFTER_REMEDIATION",
+    "conflict_summary": "A governanca passou a distinguir logs de runtime ativo e limpeza segura; resta apenas o saneamento dos logs antigos e extras estruturais remanescentes.",
+    "required_outputs": [
+      "governance-runtime-analysis.json",
+      "governance-adjustments.json",
+      "issues-summary.json",
+      "fix-plan.json",
+      "full-audit-report.json"
+    ]
+  },
+  "final_assessment": {
+    "overall_status": "OPERABLE_WITH_GOVERNANCE_AND_STANDARDIZATION_GAPS",
+    "critical_issues": 0,
+    "warnings": 5,
+    "info": 9,
+    "real_integration_status": "PARTIALLY_VALIDATED_WITH_GOVERNANCE_GIT_AND_QA_FIXES",
+    "integration_evidence": [
+      "Builds principais executaram com sucesso",
+      "Runtime do WGEasy esta efetivamente ativo",
+      "Vercel atual esta autenticado e linkado para o site atual",
+      "Governanca e enforce foram ajustados e validados contra runtime ativo real",
+      "Git hygiene inicial aplicada em C:\\IA e baseline de ignore reforcada no ObraEasy",
+      "ObraEasy backend passou em lint, check:env e smoke test HTTP local"
+    ],
+    "limitation": "Nao houve alteracao de configuracao nem correcoes automaticas por restricao explicita de DRY_RUN."
+  }
+}
