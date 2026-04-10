@@ -52,4 +52,4 @@ Ergonomia e detalhe tecnico caminham juntos. Em projetos premium, a bancada e tr
 Quer uma cozinha sob medida com especificacoes precisas? Fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

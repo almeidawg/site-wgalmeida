@@ -24,7 +24,7 @@ La arquitectura de alto nivel no es solo estetica. Es **curaduria**, **personali
 
 > *"La excelencia no es un diferencial. Es el punto de partida."*
 
-Con 14 anos de experiencia en Sao Paulo, el Grupo WG Almeida actua en los barrios mas exigentes de la ciudad, creando proyectos residenciales y comerciales con identidad, desempeno y firma.
+Con 15 anos de experiencia en Sao Paulo, el Grupo WG Almeida actua en los barrios mas exigentes de la ciudad, creando proyectos residenciales y comerciales con identidad, desempeno y firma.
 
 ---
 
@@ -109,7 +109,7 @@ La inversion varia segun complejidad, alcance y nivel de personalizacion:
 
 ## Por que elegir a WG Almeida
 
-- 14 anos de experiencia en proyectos premium
+- 15 anos de experiencia en proyectos premium
 - Integracion total: arquitectura + ingenieria + carpinteria
 - Cronogramas realistas y presupuestos transparentes
 - Curaduria de materiales y detalle autoral
@@ -126,4 +126,5 @@ Cuando proyecto, tecnica y sensibilidad caminan juntos, el resultado es una arqu
 Si buscas un proyecto a medida, con acompanamiento completo y acabado premium, habla con nuestro equipo.
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
+

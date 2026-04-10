@@ -50,4 +50,4 @@ Um informe de obra bem preenchido garante fluidez no processo e evita bloqueios 
 Se voce precisa de suporte tecnico para obras em condominio, fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

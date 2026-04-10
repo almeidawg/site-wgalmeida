@@ -63,4 +63,4 @@ In high-end projects, luxury is in precision. Clear specifications elevate quali
 If you are looking for a project with impeccable detailing, talk to our team.
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

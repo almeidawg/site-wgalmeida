@@ -40,9 +40,9 @@ Com **45 m²**, o hall de entrada é uma declaração arquitetônica. Seu elemen
 
 ### Destaques:
 
-- **Guarda-corpo em vidro estrutural** que reforça a sensação de leveza
-- **Painel decorativo retroiluminado** criando atmosfera sofisticada
-- **Pé-direito duplo** que amplifica a monumentalidade do espaço
+- Guarda-corpo em vidro estrutural que reforça a sensação de leveza
+- Painel decorativo retroiluminado criando atmosfera sofisticada
+- Pé-direito duplo que amplifica a monumentalidade do espaço
 - Circulação que prepara o visitante para a sofisticação que se segue
 
 ---
@@ -128,10 +128,10 @@ A integração visual com living e piscina transforma a área gourmet no grande 
 
 Elegante e funcional, a piscina combina:
 
-- **Raia para natação** com dimensões competitivas
-- **Praia molhada** para relaxamento
-- **Bordas em pedra natural**
-- **Lounge perimetral** para descanso
+- Raia para natação com dimensões competitivas
+- Praia molhada para relaxamento
+- Bordas em pedra natural
+- Lounge perimetral para descanso
 - Integração visual total ao paisagismo
 
 ### Paisagismo Contemporâneo

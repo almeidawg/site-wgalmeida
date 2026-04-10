@@ -44,11 +44,11 @@ Este artigo apresenta os arquitetos internacionais mais influentes da história,
 
 Le Corbusier revolucionou a arquitetura com seus princípios:
 
-1. **Pilotis:** Edifício suspenso sobre colunas
-2. **Planta livre:** Paredes não estruturais
-3. **Fachada livre:** Janelas corridas independentes
-4. **Janelas em fita:** Iluminação natural contínua
-5. **Terraço-jardim:** Cobertura verde habitável
+1. Pilotis: Edifício suspenso sobre colunas
+2. Planta livre: Paredes não estruturais
+3. Fachada livre: Janelas corridas independentes
+4. Janelas em fita: Iluminação natural contínua
+5. Terraço-jardim: Cobertura verde habitável
 
 ### Obras Icônicas
 
@@ -91,7 +91,7 @@ Influenciou diretamente Oscar Niemeyer e a arquitetura moderna brasileira.
 
 Arquitetura deve estar em **harmonia com a natureza** e o ser humano.
 
-**Princípios:**
+### Princípios
 - Integração com o ambiente
 - Horizontalidade (influência das pradarias)
 - Materiais naturais
@@ -188,7 +188,7 @@ Diretor da Bauhaus e criador do International Style.
 
 Arquitetura **paramétrica e fluida**, rompendo com geometria tradicional.
 
-**Características:**
+### Características
 - Formas orgânicas
 - Linhas dinâmicas
 - Espaços fluidos
@@ -244,7 +244,7 @@ Primeira e única mulher a ganhar Pritzker sozinha. Revolucionou o uso de tecnol
 
 Arquitetura **high-tech** com preocupação ambiental e humana.
 
-**Características:**
+### Características
 - Tecnologia exposta
 - Sustentabilidade
 - Eficiência energética
@@ -299,7 +299,7 @@ Mais de 30 prêmios internacionais. Referência em sustentabilidade e high-tech.
 
 Arquitetura **leve, transparente e sensível ao contexto**.
 
-**Características:**
+### Características
 - Detalhamento preciso
 - Materiais high-tech
 - Luz natural
@@ -350,7 +350,7 @@ Mestre do detalhamento e da engenharia precisa.
 
 Arquitetura **conceitual** que questiona convenções.
 
-**Características:**
+### Características
 - Análise teórica profunda
 - Provocação intelectual
 - Formas inesperadas
@@ -393,7 +393,7 @@ Fundador do OMA (Office for Metropolitan Architecture). Influente pensador urban
 
 Arquitetura **escultórica e desconstruída**.
 
-**Características:**
+### Características
 - Formas orgânicas complexas
 - Metalurgia expressiva
 - Volumes fragmentados
@@ -436,7 +436,7 @@ Revolucionou uso de computação no design arquitetônico.
 
 Arquitetura **minimalista** com luz, sombra e natureza.
 
-**Características:**
+### Características
 - Concreto aparente perfeito
 - Luz dramática
 - Geometria pura
@@ -479,7 +479,7 @@ Prova que arquitetura pode ser profundamente emocional com recursos mínimos.
 
 Arquitetura **estrutural-escultórica** inspirada na natureza.
 
-**Características:**
+### Características
 - Estruturas orgânicas
 - Branco predominante
 - Movimento e leveza
@@ -522,7 +522,7 @@ Arquitetura **estrutural-escultórica** inspirada na natureza.
 
 Cada projeto é **único**, respondendo ao contexto.
 
-**Características:**
+### Características
 - Contextualismo extremo
 - Luz e sombra
 - Materiais diversos
@@ -605,11 +605,11 @@ Vencedores mencionados neste artigo:
 
 ## Livros Essenciais
 
-1. **"Por uma Arquitetura"** - Le Corbusier
-2. **"The Natural House"** - Frank Lloyd Wright
-3. **"Menos é Mais"** - Mies van der Rohe (compilação)
-4. **"Zaha Hadid Complete Works"** - Aaron Betsky
-5. **"Conversas com Mies van der Rohe"** - Peter Blake
+1. "Por uma Arquitetura" - Le Corbusier
+2. "The Natural House" - Frank Lloyd Wright
+3. "Menos é Mais" - Mies van der Rohe (compilação)
+4. "Zaha Hadid Complete Works" - Aaron Betsky
+5. "Conversas com Mies van der Rohe" - Peter Blake
 
 ---
 
@@ -625,9 +625,9 @@ Suas obras continuam inspirando novas gerações de arquitetos em todo o mundo, 
 
 Quer um projeto que incorpore a ousadia e inovação desses mestres?
 
-**Entre em Contato:**
+### Entre em Contato
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
 
 ---

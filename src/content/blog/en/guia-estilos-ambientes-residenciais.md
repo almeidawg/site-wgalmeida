@@ -90,4 +90,4 @@ A well-defined style brings unity, elegance, and longevity to the project. At WG
 Want a project aligned to your lifestyle? Talk to our team.
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

@@ -6,7 +6,7 @@ date: "2026-01-26"
 author: "Grupo WG Almeida"
 category: "Arquitetura Internacional"
 tags: ["amsterdam", "holanda", "arquitetura holandesa", "canais", "gables", "era de ouro", "design europeu"]
-image: "/images/banners/ARQ.webp"
+image: "/images/blog/amsterdam/canal-amsterdam-nikolai-kolosov.webp"
 featured: true
 ---
 
@@ -17,6 +17,10 @@ featured: true
 Amsterdam é uma **obra-prima da arquitetura e engenharia** - uma cidade literalmente construída sobre estacas de madeira em solo pantanoso, cortada por **165 canais** e conectada por **1.281 pontes**. É um Patrimônio Mundial da UNESCO e referência de planejamento urbano sustentável.
 
 O que torna a arquitetura de Amsterdam única? As icônicas **casas estreitas e altas** com fachadas inclinadas (**gables**), as **janelas enormes** e a relação harmônica entre construção e água.
+
+![Casarios históricos e canal de Amsterdam](/images/blog/amsterdam/canal-amsterdam-nikolai-kolosov.webp)
+
+*Vista de canal em Amsterdam com a leitura urbana clássica entre água, ponte, fachadas e cúpulas. Foto: Nikolai Kolosov / Unsplash.*
 
 ## A Era de Ouro Holandesa (Século XVII)
 
@@ -84,6 +88,10 @@ No **século XVII**, Amsterdam era o centro financeiro do mundo. A riqueza do co
 - As estacas de madeira (14-18m) se movem com o tempo
 
 **"Dansende Huisjes"** (Casinhas Dançantes) - inclinação irregular = charme!
+
+![Fachadas estreitas e gables sobre o canal em Amsterdam](/images/blog/amsterdam/gables-amsterdam-vik-molina.webp)
+
+*Sequência de fachadas estreitas com gables tradicionais e proporção vertical marcante. Foto: Vik Molina / Unsplash.*
 
 ## Características Arquitetônicas Únicas
 
@@ -440,18 +448,20 @@ A arquitetura de Amsterdam nos ensina que **limitações criam inovação** - so
 
 O Grupo WG Almeida está pronto para criar seu projeto inspirado na arquitetura atemporal de Amsterdam - com tijolos aparentes, janelas generosas e aquele aconchego inconfundível.
 
-**📞 Solicite uma Consultoria Gratuita:**
-- ☎️ **(11) 94077-9181** (WhatsApp)
-- 📧 **contato@wgalmeida.com.br**
-- 🌐 **www.wgalmeida.com.br**
+Solicite uma consultoria gratuita:
 
-**Serviços Especializados:**
-- 🏗️ Reforma Completa
-- 🏠 Construção Residencial Alto Padrão
-- 🎨 Arquitetura + Design de Interiores
-- 🧱 Especialistas em Tijolos Aparentes
-- 🪟 Esquadrias de Alta Performance
-- ♻️ Projetos Sustentáveis
+- WhatsApp: +55 (11) 98465-0002
+- E-mail: contato@wgalmeida.com.br
+- Site: www.wgalmeida.com.br
+
+Serviços especializados:
+
+- Reforma completa
+- Construção residencial de alto padrão
+- Arquitetura e design de interiores
+- Execução de fachadas com tijolos aparentes
+- Esquadrias de alta performance
+- Projetos sustentáveis
 
 ---
 

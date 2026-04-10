@@ -71,4 +71,4 @@ Technical standards are not bureaucracy. They are the foundation of operational 
 Want a project with technical standards and a premium finish? Talk to our team.
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

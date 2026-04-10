@@ -71,4 +71,4 @@ Normas tecnicas nao sao burocracia. Sao o alicerce da excelencia operacional. Um
 Quer um projeto com padrao tecnico e acabamento premium? Fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

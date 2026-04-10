@@ -24,7 +24,7 @@ High-end architecture is not only about aesthetics. It is **curation**, **custom
 
 > *"Excellence is not a differential. It is the starting point."*
 
-With 14 years of experience in Sao Paulo, Grupo WG Almeida operates in the most demanding neighborhoods, creating residential and commercial projects with identity, performance, and signature.
+With 15 years of experience in Sao Paulo, Grupo WG Almeida operates in the most demanding neighborhoods, creating residential and commercial projects with identity, performance, and signature.
 
 ---
 
@@ -109,7 +109,7 @@ Investment varies by complexity, scope, and level of customization:
 
 ## Why choose WG Almeida
 
-- 14 years of experience in premium projects
+- 15 years of experience in premium projects
 - Full integration: architecture + engineering + carpentry
 - Realistic schedules and transparent budgets
 - Material curation and authorial detailing
@@ -126,4 +126,5 @@ When design, technique, and sensibility walk together, the result is architectur
 If you want a tailored project with full follow-up and premium finishing, talk to our team.
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
+

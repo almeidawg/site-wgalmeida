@@ -340,10 +340,10 @@ Incorporamos lições desses mestres:
 
 ## Livros Essenciais
 
-1. **"As Curvas do Tempo"** - Oscar Niemeyer
-2. **"América, Cidade e Natureza"** - Paulo Mendes da Rocha
-3. **"Lina Bo Bardi"** - Olivia de Oliveira
-4. **"Caminhos da Arquitetura"** - Vilanova Artigas
+1. "As Curvas do Tempo" - Oscar Niemeyer
+2. "América, Cidade e Natureza" - Paulo Mendes da Rocha
+3. "Lina Bo Bardi" - Olivia de Oliveira
+4. "Caminhos da Arquitetura" - Vilanova Artigas
 
 ---
 
@@ -361,7 +361,7 @@ Quer um projeto que combine a ousadia dos grandes arquitetos brasileiros com fun
 
 **Entre em Contato:**
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
 
 ---

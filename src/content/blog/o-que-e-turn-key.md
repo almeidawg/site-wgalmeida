@@ -116,4 +116,4 @@ Turn Key e mais do que comodidade. E **gestao de risco, controle de qualidade e 
 Se voce busca um projeto sob medida com previsibilidade e acabamento premium, fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

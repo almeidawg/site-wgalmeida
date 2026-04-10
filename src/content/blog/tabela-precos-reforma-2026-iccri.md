@@ -14,7 +14,7 @@ tags: ["tabela precos reforma 2026", "quanto custa reforma m2", "preco reforma a
 
 O mercado de reformas no Brasil sofre de um problema crônico: a ausência de um índice de referência confiável, transparente e atualizado. Clientes não sabem se o orçamento que receberam é justo. Arquitetos precisam justificar cada linha para o cliente. Engenheiros não têm base comparativa para precificar com precisão. Isso gera insegurança em todos os lados da negociação.
 
-O **ICCRI — Índice de Custo da Construção e Reforma Inteligente** foi desenvolvido pelo Grupo WG Almeida a partir de 14 anos de dados reais de obra em São Paulo. É a nossa contribuição para normalizar a precificação do setor.
+O **ICCRI — Índice de Custo da Construção e Reforma Inteligente** foi desenvolvido pelo Grupo WG Almeida a partir de 15 anos de dados reais de obra em São Paulo. É a nossa contribuição para normalizar a precificação do setor.
 
 ---
 
@@ -161,3 +161,4 @@ O setor de reformas e construção civil perde negócios todos os dias por falta
 O ICCRI é o começo de uma conversa diferente: onde o preço tem fundamento técnico, o cliente entende o que está pagando e o prestador é remunerado de forma justa pela qualidade que entrega.
 
 **Esta é a base do que construímos no Grupo WG Almeida.**
+

@@ -63,4 +63,4 @@ The executive memorial is an essential part of a premium process. It organizes s
 If you are looking for predictability and quality in execution, talk to our team.
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

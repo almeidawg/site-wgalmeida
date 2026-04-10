@@ -312,7 +312,7 @@ Se você tem um projeto em mente e quer saber se é financeiramente viável:
 **Agende uma Consulta de EVF**
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
 
 ---

@@ -68,7 +68,7 @@ O moodboard e onde o conceito ganha forma. Quando ele e bem construido, o projet
 Se voce busca um projeto com curadoria refinada, fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 
 **Especificação de Metais**
 Torneiras, puxadores e luminárias seguem a paleta metálica definida (dourado, cromado, preto, etc.).
@@ -141,5 +141,5 @@ Quando projeto, tecnica e sensibilidade caminham juntos, o resultado deixa de se
 Se voce busca um projeto sob medida, com acompanhamento completo e acabamento premium, fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 

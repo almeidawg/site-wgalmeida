@@ -90,4 +90,4 @@ Um estilo bem definido traz unidade, elegancia e longevidade ao projeto. Na WG A
 Quer um projeto alinhado ao seu estilo de vida? Fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

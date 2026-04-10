@@ -112,4 +112,4 @@ Marcenaria sob medida nao e apenas mobiliario. E **arquitetura aplicada**, com d
 Se voce busca marcenaria premium com integracao total ao projeto, fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

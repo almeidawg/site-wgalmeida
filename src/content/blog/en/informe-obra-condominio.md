@@ -50,4 +50,4 @@ A well-filled work notice ensures a smooth process and avoids administrative blo
 If you need technical support for condo works, talk to our team.
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

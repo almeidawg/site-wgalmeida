@@ -57,4 +57,4 @@ El rasgo de luz es un detalle de alto impacto cuando se ejecuta con rigor tecnic
 Quieres un proyecto con iluminacion precisa y acabado impecable? Habla con nuestro equipo.
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

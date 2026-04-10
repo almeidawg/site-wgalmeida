@@ -70,7 +70,7 @@ Um briefing bem conduzido e o primeiro sinal de um projeto premium. Ele traz cla
 Quer um projeto sob medida com metodo e previsibilidade? Fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 Ocultar o real valor disponível leva a projetos incompatíveis com a realidade.
 
 ### 2. Copiar Projetos de Terceiros
@@ -135,5 +135,5 @@ Quando projeto, tecnica e sensibilidade caminham juntos, o resultado deixa de se
 Se voce busca um projeto sob medida, com acompanhamento completo e acabamento premium, fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 

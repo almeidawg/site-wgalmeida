@@ -51,7 +51,7 @@ Este guia detalha cada etapa do seu projeto, do primeiro contato até a entrega 
 ### O Que Acontece
 
 Você entra em contato através de:
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 - Site: https://wgalmeida.com.br/solicite-proposta
 - E-mail: contato@wgalmeida.com.br
 - Indicação de clientes
@@ -719,7 +719,7 @@ Agende uma consultoria gratuita e conheça nosso processo na prática.
 
 **Entre em Contato:**
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
 
 ---

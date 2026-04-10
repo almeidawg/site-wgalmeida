@@ -61,7 +61,7 @@ Um estilo bem definido cria unidade, elegancia e longevidade. O projeto ganha id
 Quer um projeto alinhado ao seu estilo de vida? Fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 
 ---
 
@@ -154,4 +154,4 @@ Quando projeto, tecnica e sensibilidade caminham juntos, o resultado deixa de se
 Se voce busca um projeto sob medida, com acompanhamento completo e acabamento premium, fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

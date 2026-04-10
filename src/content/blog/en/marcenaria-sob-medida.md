@@ -112,4 +112,4 @@ Custom millwork is not just furniture. It is **applied architecture**, with auth
 If you are looking for premium millwork with full integration to the project, talk to our team.
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

@@ -627,7 +627,7 @@ Nossa equipe cria moodboards personalizados e testa cores in loco antes da execu
 
 **Entre em Contato:**
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
 
 ---

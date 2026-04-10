@@ -68,7 +68,7 @@ The moodboard is where the concept takes shape. When it is well built, the proje
 If you are looking for refined curation, talk to our team.
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 
 **Metal Specification**
 Faucets, handles, and luminaires follow the defined metal palette (gold, chrome, black, etc.).
@@ -141,5 +141,5 @@ When design, technique, and sensitivity move together, the result stops being ju
 If you are looking for a custom project with full follow-up and premium finish, talk to our team.
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 

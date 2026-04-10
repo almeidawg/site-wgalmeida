@@ -112,4 +112,4 @@ Carpinteria a medida no es solo mobiliario. Es **arquitectura aplicada**, con di
 Si buscas carpinteria premium con integracion total al proyecto, habla con nuestro equipo.
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

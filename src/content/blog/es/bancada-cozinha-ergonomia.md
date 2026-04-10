@@ -52,4 +52,4 @@ Ergonomia y detalle tecnico van juntos. En proyectos premium, la encimera se tra
 Quieres una cocina a medida con especificaciones precisas? Habla con nuestro equipo.
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

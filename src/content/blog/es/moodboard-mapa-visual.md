@@ -68,7 +68,7 @@ El moodboard es donde el concepto toma forma. Cuando esta bien construido, el pr
 Si buscas un proyecto con curaduria refinada, habla con nuestro equipo.
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 
 **Especificacion de Metales**
 Griferias, tiradores y luminarias siguen la paleta metalica definida (dorado, cromado, negro, etc.).
@@ -141,5 +141,5 @@ Cuando proyecto, tecnica y sensibilidad caminan juntos, el resultado deja de ser
 Si buscas un proyecto a medida, con acompanamiento completo y acabado premium, habla con nuestro equipo.
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 

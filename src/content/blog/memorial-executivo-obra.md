@@ -63,4 +63,4 @@ O memorial executivo e parte essencial de um processo premium. Ele organiza o es
 Se voce busca previsibilidade e qualidade na execucao, fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

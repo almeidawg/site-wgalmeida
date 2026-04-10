@@ -52,4 +52,4 @@ Ergonomics and technical detail go together. In premium projects, the countertop
 Want a custom kitchen with precise specifications? Talk to our team.
 
 - Request a proposal: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002

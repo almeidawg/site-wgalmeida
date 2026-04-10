@@ -70,7 +70,7 @@ Un briefing bien conducido es la primera senal de un proyecto premium. Aporta cl
 Quieres un proyecto a medida con metodo y previsibilidad? Habla con nuestro equipo.
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 Ocultar el valor real disponible lleva a proyectos incompatibles con la realidad.
 
 ### 2. Copiar Proyectos de Terceros
@@ -135,5 +135,5 @@ Cuando proyecto, tecnica y sensibilidad caminan juntos, el resultado deja de ser
 Si buscas un proyecto a medida, con acompanamiento completo y acabado premium, habla con nuestro equipo.
 
 - Solicita una propuesta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 

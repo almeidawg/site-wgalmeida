@@ -87,7 +87,7 @@ Reforma premium e metodo. Quando cada etapa e respeitada, a obra flui com qualid
 Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 
 **Materiais:**
 - Manta asfáltica
@@ -304,5 +304,5 @@ Quando projeto, tecnica e sensibilidade caminham juntos, o resultado deixa de se
 Se voce busca um projeto sob medida, com acompanhamento completo e acabamento premium, fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 11 98465-0002
+- WhatsApp: +55 (11) 98465-0002
 
