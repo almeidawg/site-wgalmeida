@@ -1,5 +1,5 @@
 # RETURN-POINT — site-wgalmeida
-**Atualizado:** 10/04/2026 (sessão continuação - galerias Cloudinary + revisão final pré-deploy)
+**Atualizado:** 10/04/2026 (sessão continuação - correção editorial Barcelona + governança de incidentes/ecossistema)
 **Deploy:** wgalmeida.com.br ✅ EM PRODUÇÃO — último deploy 08/04
 
 ---
@@ -494,6 +494,7 @@ site-wgalmeida/
   - abrir busca pronta do Unsplash e Google Imagens
   - subir o asset direto no Cloudinary via Upload Widget
   - guardar override local da sessão e montar snippet pronto para colar no manifesto
+  - permitir também montar snippet para `src/data/blogUnsplashSelection.json` quando a escolha for hotlink editorial
 
 ### Fluxo esperado daqui para frente
 
@@ -502,13 +503,275 @@ site-wgalmeida/
 - para cada artigo:
   - escolher a imagem do `hero`
   - escolher a imagem do `card`
-  - copiar o snippet gerado para `src/data/blogImageManifest.js`
+  - decidir entre:
+    - snippet Cloudinary para `src/data/blogImageManifest.js`
+    - snippet Unsplash para `src/data/blogUnsplashSelection.json`
 - depois da curadoria, o blog passa a usar automaticamente:
   - uma imagem no hero
   - outra no card
   - e mantém a base pronta para inserir as mesmas imagens durante a matéria
 
+### Continuação 10/04 — selection JSON do Unsplash no admin
+
+- `src/pages/AdminBlogEditorial.jsx` passou a importar `src/data/blogUnsplashSelection.json` como base do fluxo hotlinked
+- a página agora salva overrides locais também para o caminho Unsplash em `localStorage`:
+  - `wg_blog_editorial_unsplash_v1`
+- cada slot ganhou campos para:
+  - `Unsplash photo ID`
+  - `alt`
+- o painel agora gera dois blocos independentes:
+  - snippet Cloudinary para `src/data/blogImageManifest.js`
+  - snippet Unsplash para `src/data/blogUnsplashSelection.json`
+- validação executada nesta continuação:
+  - `cmd /c npm run build` → OK
+  - `cmd /c npm run lint` → OK
+
+### Continuação 10/04 — status unificado Cloudinary + Unsplash
+
+- `src/pages/AdminBlogEditorial.jsx` passou a considerar cobertura editorial completa quando `hero/card` estiverem resolvidos por qualquer um dos dois caminhos:
+  - manifesto Cloudinary
+  - `selection JSON` do Unsplash
+- com isso, os filtros `pendentes` e `prontos`, os cards de resumo e o selo do artigo deixam de depender apenas do upload Cloudinary
+- o selo por slot também deixou de mostrar falso `sem upload` quando já existe `Unsplash photo ID` preenchido
+- validação executada nesta continuação:
+  - `cmd /c npm run build` → OK
+  - `cmd /c npm run lint` → OK
+
+### Continuação 10/04 — snippets parciais e cobertura mista por slot
+
+- `src/pages/AdminBlogEditorial.jsx` agora gera snippet parcial por slot nos dois caminhos:
+  - `src/data/blogImageManifest.js`
+  - `src/data/blogUnsplashSelection.json`
+- isso elimina o bloqueio antigo em que o painel só ajudava quando `hero` e `card` estavam fechados no mesmo canal
+- o status `prontos` também passou a aceitar cobertura mista:
+  - `hero` via Cloudinary + `card` via Unsplash
+  - `hero` via Unsplash + `card` via Cloudinary
+- os textos da interface foram ajustados para deixar claro que o bloco pode aparecer com apenas um slot definido
+- validação executada nesta continuação:
+  - `cmd /c npm run build` → OK
+  - `cmd /c npm run lint` → OK
+
+### Continuação 10/04 — páginas públicas alinhadas às regras
+
+- bloco de SEO público padronizado com `pathname` explícito em páginas estratégicas e utilitárias:
+  - `src/pages/ConstrutoraAltoPadraoSP.jsx`
+  - `src/pages/ConstrutoraBrooklin.jsx`
+  - `src/pages/ArquiteturaCorporativa.jsx`
+  - `src/pages/ArquiteturaInterioresVilaNovaConceicao.jsx`
+  - `src/pages/ObraTurnKey.jsx`
+  - `src/pages/ReformaApartamentoSP.jsx`
+  - `src/pages/ReformaApartamentoItaim.jsx`
+  - `src/pages/ReformaApartamentoJardins.jsx`
+  - `src/pages/ObraEasyLanding.jsx`
+  - `src/pages/EasyRealStateLanding.jsx`
+  - `src/pages/SoliciteProposta.jsx`
+  - `src/pages/RoomVisualizer.jsx`
+- heros públicos que ainda dependiam de `url('/images/...')` ou `src="/images/..."` passaram a usar `withBasePath(...)` nos pontos revisados
+- copy pública corrigida em `src/pages/ConstrutoraBrooklin.jsx`, removendo o trecho em inglês `Proximity to Berrini` do SEO/schema
+- tipografia pública aproximada das regras da marca em:
+  - `src/pages/EasyLocker.jsx`
+  - `src/pages/Engineering.jsx`
+  - `src/pages/MarcenariaSobMedidaMorumbi.jsx`
+- limpeza residual de mídia/fallback em:
+  - `src/pages/Projects.jsx`
+  - `src/pages/RevistaEstilos.jsx`
+- observação: `src/pages/Blog.jsx` não precisou de ajuste neste bloco porque já estava resolvendo fallback local via helper central
+- validação executada nesta continuação:
+  - `cmd /c npm run lint` → OK
+  - `cmd /c npm run build` → OK
+
 ### Próximo passo recomendado
 
 - preencher em lote os primeiros `10` posts prioritários do filtro `pendentes`
 - começar pelos que também têm `needsCopyNormalization = true`, porque assim resolvemos imagem e peso visual do texto no mesmo ciclo
+
+### Continuação 10/04 — blog cidades e hero full-screen
+
+- confirmado desvio real no editorial Unsplash:
+  - `arquitetura-barcelona-espanha`
+  - `arquitetura-bruxelas-belgica`
+  - ambos estavam reutilizando os mesmos IDs para `hero` e `card`
+- ajuste aplicado em `src/data/blogUnsplashSelection.json` para remover a duplicação exata de Bruxelas em relação a Barcelona
+- refinamento adicional aplicado para não deixar repetição direta de `hero/card` entre as matérias internacionais mapeadas nesta rodada
+- manifesto regenerado em:
+  - `src/data/blogUnsplashManifest.generated.js`
+- observação importante:
+  - a coleção local `unsplash-collection-yU-ii4hFjlg.json` ainda é pequena e não garante correspondência forte para todas as cidades
+  - Paris e Lisboa estão mais bem resolvidas
+  - Barcelona e Bruxelas continuam pedindo uma nova rodada de sourcing para ficarem realmente específicas por cidade
+- diagnóstico de peso tipográfico no blog:
+  - os `.md` ainda carregam muitos `**...**`
+  - mas `src/pages/Blog.jsx` já força `strong` para peso leve na renderização
+  - portanto o problema principal visto nesse bloco era o vínculo de imagem, não `semibold` visual no front
+- padronização de hero full-screen aplicada no sistema base e nas páginas públicas que ainda estavam com `50vh`, `60vh`, `68vh`, `70vh` e `80vh`
+- validação executada neste bloco:
+  - `cmd /c npm run lint` → OK
+  - `cmd /c npm run build` → OK
+
+### Continuação 10/04 — admin editorial priorizado para P1
+
+- `src/pages/AdminBlogEditorial.jsx` passou a normalizar categorias reais da fila antes de montar filtros e labels
+- com isso, o painel deixou de depender apenas do mapa estático antigo e passou a listar corretamente grupos como:
+  - `Arquitetura Internacional`
+  - `Mercado Imobiliário`
+  - `Sustentabilidade`
+- o filtro de status ganhou a visão explícita `Pendentes + normalização`
+- a página agora calcula também o volume real de pendências que acumulam os dois problemas:
+  - sem `hero/card` resolvidos
+  - com `needsCopyNormalization = true`
+- foi criado um bloco novo de operação rápida com os `10` posts prioritários da rodada:
+  - ordenados por `boldCount`
+  - com CTA para filtrar só esse lote
+  - com botão para copiar a lista de slugs e tocar a curadoria em sequência
+- isso fecha o gargalo do próximo passo recomendado anterior, porque o `/admin/blog-editorial` agora já entrega o lote operacional para atacar `P1` e normalização no mesmo ciclo
+- validação desta continuação:
+  - leitura estática concluída
+  - execução de `lint/build` não rodada neste turno porque o shell do ambiente falhou na sandbox (`CreateProcessWithLogonW failed: 1326`)
+
+### Continuação 10/04 — normalização global de negrito no blog
+
+- `src/pages/Blog.jsx` passou a neutralizar `**...**` diretamente no conteúdo markdown carregado dos posts
+- a normalização agora acontece antes do `ReactMarkdown`, reduzindo o peso visual do acervo inteiro sem depender de reescrever manualmente cada `.md`
+- o `tempoLeitura` também passou a ser calculado sobre o conteúdo já normalizado, mantendo a contagem coerente com o texto efetivamente exibido
+- isso resolve o gargalo mais repetitivo do lote prioritário do blog enquanto a curadoria de `hero/card` continua no `/admin/blog-editorial`
+- validação desta continuação:
+  - leitura estática concluída
+  - execução de `lint/build` não rodada neste turno porque o shell do ambiente falhou na sandbox (`CreateProcessWithLogonW failed: 1326`)
+
+### Continuação 10/04 — navegação volta ao topo entre páginas
+
+- `src/App.jsx` ganhou um `RouteScrollManager` na raiz do app
+- a navegação entre rotas agora força abertura no topo da página em vez de preservar a posição anterior de scroll
+- o histórico do navegador passou a usar `scrollRestoration = manual` enquanto a SPA está ativa
+- links com hash continuam suportados:
+  - o alvo é procurado após o render
+  - o scroll respeita offset do header para não esconder o título da seção
+- isso corrige o comportamento percebido ao abrir matérias e outras páginas internas, que antes pareciam iniciar no meio da página
+- validação desta continuação:
+  - leitura estática concluída
+  - execução de `lint/build` não rodada neste turno porque o shell do ambiente falhou na sandbox (`CreateProcessWithLogonW failed: 1326`)
+
+### Continuação 10/04 — validação real pós-ajustes de navegação e blog
+
+- validação executada com acesso completo no repo canônico:
+  - `cmd /c npm run lint` → OK
+  - `cmd /c npm run build` → OK
+- o build passou com os ajustes recentes em:
+  - `src/App.jsx` (`RouteScrollManager` para abrir páginas no topo)
+  - `src/pages/Blog.jsx` (normalização global de `**...**` no markdown)
+  - `src/pages/AdminBlogEditorial.jsx` (lote prioritário e filtros operacionais)
+- o pipeline também concluiu sem falha os passos acoplados do projeto:
+  - `assets:prepare`
+  - `seo:og`
+  - `assets:prune:dist`
+  - `media:prune:dist`
+  - `seo:routes`
+
+### Próximo passo recomendado
+
+- voltar para `/admin/blog-editorial` com o filtro `Pendentes + normalização`
+- preencher `hero/card` reais do lote dos `10` slugs priorizados pelo painel
+- depois, se quisermos fechar mais um bloco técnico, rodar medição real de produção para `P2` (LCP/Core Web Vitals)
+
+### Continuação 10/04 — P1 blog com trio pendente fechado
+
+- concluído o preenchimento dos três slugs prioritários que ainda estavam sem seleção válida no editorial Unsplash:
+  - `marcas-luxo-nacionais-moveis-decoracao`
+  - `paleta-cores-2026-cor-do-ano`
+  - `plantas-interiores-purificam-ar`
+- a coleção local `unsplash-collection-yU-ii4hFjlg.json` foi expandida manualmente de `19` para `25` fotos com assets públicos livres do Unsplash, sem depender da chave da API neste bloco
+- `src/data/blogUnsplashSelection.json` passou a apontar hero/card reais para esse trio, fechando o vazio operacional do primeiro lote prioritário
+- manifesto regenerado em:
+  - `src/data/blogUnsplashManifest.generated.js`
+- resultado prático deste bloco:
+  - o manifesto agora sobe `11` slugs com imagem resolvida
+  - os três slugs novos já aparecem materializados no manifesto gerado
+- observação:
+  - a foto testada para `paleta-cores-2026-cor-do-ano` em `temp_unsplash_palette.html` era `Unsplash+` e foi descartada
+  - foram usadas alternativas gratuitas para manter o fluxo editorial compatível com o sistema atual
+- validação executada neste bloco:
+  - `cmd /c npm run unsplash:manifest:build` → OK
+  - `cmd /c npm run lint` → OK
+  - `cmd /c npm run build` → OK
+
+### Próximo passo recomendado
+
+- continuar o `P1` no `/admin/blog-editorial` revisando visualmente os `hero/card` já resolvidos no lote dos `10`
+- se o lote estiver coerente no front, avançar para `P2` com medição real de produção de `LCP/Core Web Vitals`
+
+### Continuação 10/04 — governança operacional de Infra, Túneis e PM2 (sem downtime)
+
+- sessão dedicada de operação segura para padronizar execução de túneis/processos com rastreabilidade
+- nenhum processo ativo foi derrubado nesta rodada
+- estado encontrado:
+  - múltiplos túneis temporários ativos em `Atendimento` (cloudflared, ngrok e localtunnel)
+  - conflito detectado na porta `5173` (cloudflared + ngrok em paralelo)
+  - logs críticos espalhados em `%TEMP%` (drift operacional)
+- documentação e base canônica criadas em:
+  - `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\Operacao-Tuneis-PM2\RUNBOOK-OPERACAO-INFRA-TUNEIS-PM2.md`
+  - `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\Operacao-Tuneis-PM2\TUNEIS-ATIVOS.json`
+  - `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\Operacao-Tuneis-PM2\PORTAS-RESERVADAS.md`
+- `README` de infraestrutura atualizado para apontar o novo padrão:
+  - `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\README.md`
+- manifesto inicial já registrado com túneis e riscos abertos (status real da sessão)
+
+### Próximo passo recomendado
+
+- consolidar o uso operacional em cima do runbook novo (diagnóstico obrigatório antes de qualquer start/stop)
+- resolver o conflito de `5173` com decisão explícita de ferramenta única por porta
+- migrar logs de túneis críticos para diretório canônico (fora de `%TEMP%`)
+
+## Continuação 10/04 — correção editorial Barcelona + ponto de retorno de governança
+
+- incidente real confirmado no endpoint de homologação usado pelo time:
+  - `http://localhost:3011/blog/arquitetura-barcelona-espanha`
+  - sintoma: card da matéria com imagem ambígua (leitura de cidade incorreta)
+- causa raiz confirmada:
+  - `vite preview` em `:3011` estava servindo `dist` desatualizado em parte do ciclo
+  - mapeamento local de Barcelona ainda permitia `.../card` separado de `.../hero`
+- correção aplicada:
+  - `src/data/blogImageManifest.js`
+    - `arquitetura-barcelona-espanha` com `card/thumb/square -> hero`
+  - `src/data/blogUnsplashSelection.json`
+    - alt editorial com referência geográfica explícita (Barcelona/Bruges)
+  - `tools/audit-blog-unsplash-selection.mjs`
+    - auditoria reforçada para consistência geográfica em `hero/card alt`
+    - duplicidade entre slugs mantida como bloqueio
+  - `src/data/blogUnsplashManifest.generated.js` regenerado
+- validação executada no mesmo ambiente de homologação (`3011`):
+  - `npm run blog:editorial:audit` → OK
+  - `npm run unsplash:manifest:build` → OK
+  - `npm run lint` → OK
+  - `npm run build` → OK
+  - DOM final em `3011`: `cardSrc` de Barcelona passou a resolver para `.../editorial/blog/arquitetura-barcelona-espanha/hero`
+  - evidência visual salva em:
+    - `.monitor-data/barcelona-3011-card-after-build.png`
+
+## Continuação 10/04 — documentação operacional estruturada (novo padrão)
+
+- criado log cronológico de incidentes:
+  - `docs/INCIDENT-LOG.md`
+  - primeira entrada registrada: `INC-20260410-01` (caso Barcelona)
+- playbook técnico atualizado:
+  - `docs/UI-BUGS-AND-FIXES.md`
+  - seção adicionada: caso Barcelona (causa raiz, correção, prevenção, playbook de resposta)
+- criado prompt mestre do ecossistema completo:
+  - `docs/ECOSYSTEM-OPERATING-PROMPT.md`
+  - cobre operação padronizada para:
+    - Linux/WSL
+    - `C:/IA` (espelho `C:/AI`)
+    - Ollama
+    - Liz
+    - perfil `Servidor` (`C:/Users/Administrador`)
+    - pasta `Documentos` (`C:/Users/Atendimento/Documents`)
+  - inclui rotinas:
+    - diária (descoberta e saúde)
+    - semanal (higiene/evidência)
+    - resposta rápida a incidente
+    - regra objetiva de fechamento de tarefa
+
+## Próximo passo recomendado (imediato)
+
+- manter homologação oficial em `preview` quando a revisão do time usar `localhost:3011`
+- usar `docs/INCIDENT-LOG.md` para todo incidente real novo
+- iniciar cada nova rodada com o prompt de `docs/ECOSYSTEM-OPERATING-PROMPT.md`
