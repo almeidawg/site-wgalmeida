@@ -26,7 +26,7 @@ const getFallbackSrc = (src) => {
   if (src.includes('/images/blog/') || src.includes('/images/estilos/')) {
     return withBasePath(BANNERS[hashIndex(src)]);
   }
-  if (src.includes('/images/imagens/') || src.includes('/images/projects/')) {
+  if (src.includes('/images/projects/')) {
     return withBasePath('/images/banners/PROJETOS.webp');
   }
   if (src.includes('/images/regions/')) return withBasePath('/images/banners/ARQ.webp');
@@ -45,20 +45,23 @@ const ResponsiveWebpImage = ({
   fetchPriority,
   ...rest
 }) => {
+  const resolvedSrc = withBasePath(src);
+
   return (
     <img
-      src={src}
+      src={resolvedSrc}
       alt={alt}
       className={className}
       width={width}
       height={height}
+      sizes={sizes}
       loading={loading}
       decoding={decoding}
-      fetchPriority={fetchPriority}
+      fetchpriority={fetchPriority}
       onError={(event) => {
         if (event.currentTarget.dataset.fallbackApplied === 'true') return;
         event.currentTarget.dataset.fallbackApplied = 'true';
-        event.currentTarget.src = getFallbackSrc(src);
+        event.currentTarget.src = getFallbackSrc(resolvedSrc || src);
       }}
       {...rest}
     />
@@ -66,3 +69,4 @@ const ResponsiveWebpImage = ({
 };
 
 export default ResponsiveWebpImage;
+

@@ -148,12 +148,12 @@
   "seo": {
     "home": {
       "title": "Arquitectura, Ingeniería y Muebles a Medida de Alto Nivel en Sao Paulo",
-      "description": "Ecosistema integrado de arquitectura, ingeniería y muebles a medida de alto nivel. Sistema turn key premium en Sao Paulo: Brooklin, Itaim, Jardins, Vila Nova Conceicao. 14 anos de excelencia.",
+      "description": "Ecosistema integrado de arquitectura, ingeniería y muebles a medida de alto nivel. Sistema turn key premium en Sao Paulo: Brooklin, Itaim, Jardins, Vila Nova Conceicao. 15 anos de excelencia.",
       "keywords": "arquitectura alto nivel sao paulo, ingenieria turn key, muebles a medida, obras premium brooklin, reforma apartamento itaim, arquitecto jardins, constructora premium sp"
     },
     "about": {
       "title": "Sobre Nosotros - Historia y Valores",
-      "description": "Conozca la historia, la mision, la vision y los valores del Grupo WG Almeida. 14 anos integrando arquitectura, ingenieria y Carpintería a Medida de alto nivel en Sao Paulo.",
+      "description": "Conozca la historia, la mision, la vision y los valores del Grupo WG Almeida. 15 anos integrando arquitectura, ingenieria y Carpintería a Medida de alto nivel en Sao Paulo.",
       "keywords": "sobre wg almeida, historia del grupo, valores empresa arquitectura, mision vision constructora sao paulo"
     },
     "process": {
@@ -178,12 +178,12 @@
     },
     "testimonials": {
       "title": "Testimonios - Opiniones de Clientes",
-      "description": "Vea las opiniones reales de nuestros clientes en Google. 14 anos construyendo suenos con excelencia en arquitectura, ingenieria y Carpintería a Medida. Nota 5.0 en Google.",
+      "description": "Vea las opiniones reales de nuestros clientes en Google. 15 anos construyendo suenos con excelencia en arquitectura, ingenieria y Carpintería a Medida. Nota 5.0 en Google.",
       "keywords": "WG Almeida opiniones, testimonios clientes arquitectura, reviews ingenieria Sao Paulo, evaluacion google constructora"
     },
     "contact": {
       "title": "Contacto - Hable con Nosotros",
-      "description": "Contacte con el Grupo WG Almeida. Atencion en Sao Paulo: Brooklin, Jardins, Itaim, Vila Nova Conceicao. WhatsApp: (11) 98465-0002.",
+      "description": "Contacte con el Grupo WG Almeida. Atencion en Sao Paulo: Brooklin, Jardins, Itaim, Vila Nova Conceicao. WhatsApp: +55 (11) 98465-0002.",
       "keywords": "contacto wg almeida, telefono arquitecto sao paulo, whatsapp constructora, presupuesto arquitectura"
     },
     "projects": {
@@ -738,19 +738,19 @@
         "location": "Acapulco, Guaruja - SP",
         "description": "Proyecto residencial completo en un condominio de alto nivel en el litoral paulista. Integracion total entre arquitectura, ingenieria y Carpintería a Medida para crear un verdadero resort privado con vista al mar.",
         "images": [
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (2).webp", "label": "Fachada Principal" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (3).webp", "label": "Living Integrado" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (4).webp", "label": "Area Gourmet" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (5).webp", "label": "Piscina con Deck" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (6).webp", "label": "Suite Master" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (7).webp", "label": "Balcon Panoramico" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (8).webp", "label": "Sala de TV" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (9).webp", "label": "Cocina Gourmet" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (10).webp", "label": "Bano Master" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (11).webp", "label": "Area de Ocio" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (14).webp", "label": "Vista Nocturna" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (15).webp", "label": "Detalles de Carpintería a Medida" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (16).webp", "label": "Paisajismo" }
+          { "label": "Fachada Principal" },
+          { "label": "Living Integrado" },
+          { "label": "Area Gourmet" },
+          { "label": "Piscina con Deck" },
+          { "label": "Suite Master" },
+          { "label": "Balcon Panoramico" },
+          { "label": "Sala de TV" },
+          { "label": "Cocina Gourmet" },
+          { "label": "Bano Master" },
+          { "label": "Area de Ocio" },
+          { "label": "Vista Nocturna" },
+          { "label": "Detalles de Carpintería a Medida" },
+          { "label": "Paisajismo" }
         ]
       },
       {
@@ -763,15 +763,15 @@
         "location": "Alphaville, Barueri - SP",
         "description": "Proyecto corporativo integrado con arquitectura moderna, ingenieria de punta y Carpintería a Medida premium. Espacios pensados para productividad y bienestar de los colaboradores.",
         "images": [
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (1).webp", "label": "Fachada Corporativa" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (2).webp", "label": "Recepcion Ejecutiva" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (3).webp", "label": "Open Space" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (4).webp", "label": "Sala de Reuniones" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (5).webp", "label": "Diretoria" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (6).webp", "label": "Cocina Gourmet" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (7).webp", "label": "Area de Descompresion" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (8).webp", "label": "Hall de Entrada" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (9).webp", "label": "Detalles del Proyecto" }
+          { "label": "Fachada Corporativa" },
+          { "label": "Recepcion Ejecutiva" },
+          { "label": "Open Space" },
+          { "label": "Sala de Reuniones" },
+          { "label": "Diretoria" },
+          { "label": "Cocina Gourmet" },
+          { "label": "Area de Descompresion" },
+          { "label": "Hall de Entrada" },
+          { "label": "Detalles del Proyecto" }
         ]
       },
       {
@@ -784,16 +784,16 @@
         "location": "Mairinque - SP",
         "description": "Proyecto residencial en condominio cerrado con arquitectura contemporanea e ingenieria estructural de alto nivel. Integracion perfecta con la naturaleza local.",
         "images": [
-          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (11).webp", "label": "Vista Frontal" },
-          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (12).webp", "label": "Area Social" },
-          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (13).webp", "label": "Jardin" },
-          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (14).webp", "label": "Piscina" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (10).webp", "label": "Estructura" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (11).webp", "label": "Cimentacion" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (12).webp", "label": "Ejecucion" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (13).webp", "label": "Acabado" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (14).webp", "label": "Detalles Estructurales" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (15).webp", "label": "Vista Final" }
+          { "label": "Vista Frontal" },
+          { "label": "Area Social" },
+          { "label": "Jardin" },
+          { "label": "Piscina" },
+          { "label": "Estructura" },
+          { "label": "Cimentacion" },
+          { "label": "Ejecucion" },
+          { "label": "Acabado" },
+          { "label": "Detalles Estructurales" },
+          { "label": "Vista Final" }
         ]
       },
       {
@@ -806,48 +806,42 @@
         "location": "Sao Paulo - SP",
         "description": "Transformacion completa de residencia con reforma integral. Proyecto turn key que muestra el poder de la renovacion: del antes al despues, una nueva historia.",
         "images": [
-          { "src": "/images/imagens/01 Depois 01.webp", "label": "Resultado Final 1" },
-          { "src": "/images/imagens/02 Depois 02 .webp", "label": "Resultado Final 2" },
-          { "src": "/images/imagens/03 Depois .webp", "label": "Resultado Final 3" },
-          { "src": "/images/imagens/04 Depois.webp", "label": "Resultado Final 4" }
-        ],
-        "beforeAfter": [
-          { "before": "/images/imagens/01 Antes 01.webp", "after": "/images/imagens/01 Depois 01.webp", "label": "Ambiente 1" },
-          { "before": "/images/imagens/02 Antes 02.webp", "after": "/images/imagens/02 Depois 02 .webp", "label": "Ambiente 2" },
-          { "before": "/images/imagens/03 Antes.webp", "after": "/images/imagens/03 Depois .webp", "label": "Ambiente 3" },
-          { "before": "/images/imagens/04 Antes.webp", "after": "/images/imagens/04 Depois.webp", "label": "Ambiente 4" }
+          { "label": "Resultado Final 1" },
+          { "label": "Resultado Final 2" },
+          { "label": "Resultado Final 3" },
+          { "label": "Resultado Final 4" }
         ]
       },
       {
         "id": 5,
-        "title": "Proyecto Itaim",
+        "title": "Reforma en Curso Perdizes",
         "category": "residential",
-        "tags": ["Ingenieria", "Alto Nivel"],
-        "area": "350m²",
-        "duration": "14 meses",
-        "location": "Itaim Bibi, Sao Paulo - SP",
-        "description": "Proyecto de ingenieria en una de las regiones mas nobles de Sao Paulo. Ejecucion con rigor tecnico y acabados de primera linea.",
+        "tags": ["Ingenieria", "Reforma Residencial"],
+        "area": "127m²",
+        "duration": "En curso",
+        "location": "Perdizes, Sao Paulo - SP",
+        "description": "Obra residencial en curso en Perdizes, con gestion de ingenieria, seguimiento tecnico y control de ejecucion para una reforma de apartamento con mas previsibilidad y organizacion.",
         "images": [
-          { "src": "/images/imagens/BANNERITTAIM-ENGENHARIA.webp", "label": "Banner del Proyecto" },
-          { "src": "/images/imagens/3.webp", "label": "Detalle Interior" },
-          { "src": "/images/imagens/7.webp", "label": "Area Social" },
-          { "src": "/images/imagens/8.webp", "label": "Acabados" },
-          { "src": "/images/imagens/9.webp", "label": "Vista General" }
+          { "label": "Perdizes · Registro 01" },
+          { "label": "Perdizes · Registro 02" },
+          { "label": "Perdizes · Registro 03" },
+          { "label": "Perdizes · Registro 04" },
+          { "label": "Perdizes · Registro 05" }
         ]
       },
       {
         "id": 6,
-        "title": "Residencia Premium",
+        "title": "Residencia Morumbi",
         "category": "residential",
-        "tags": ["Arquitectura", "Carpintería a Medida"],
-        "area": "480m²",
-        "duration": "20 meses",
-        "location": "Sao Paulo - SP",
-        "description": "Residencia de alto nivel con Carpintería a Medida exclusiva y arquitectura contemporanea. Cada ambiente pensado para brindar confort y sofisticacion.",
+        "tags": ["Ingenieria", "Residencial Alto Nivel"],
+        "area": "160m²",
+        "duration": "Bajo gestion",
+        "location": "Morumbi, Sao Paulo - SP",
+        "description": "Proyecto residencial en Morumbi con ejecucion orientada por ingenieria, compatibilizacion de etapas y coordinacion organizada de obra para un inmueble de alto nivel.",
         "images": [
-          { "src": "/images/imagens/10.webp", "label": "Living Room" },
-          { "src": "/images/imagens/11.webp", "label": "Sala de Comedor" },
-          { "src": "/images/imagens/12.webp", "label": "Home Theater" }
+          { "label": "Morumbi · Registro 01" },
+          { "label": "Morumbi · Registro 02" },
+          { "label": "Morumbi · Registro 03" }
         ]
       }
     ]
@@ -1756,7 +1750,7 @@
     "stages": {
       "whoWeAre": {
         "kicker": "Quienes Somos",
-        "line1": "Hace 14 anos construyendo",
+        "line1": "Hace 15 anos construyendo",
         "line2": "suenos con excelencia."
       },
       "ecosystem": {

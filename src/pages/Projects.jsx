@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
+import { resolvePortfolioProjectImages } from '@/utils/cloudinaryProjectPortfolio';
 
 /**
  * Página de Projetos - Galeria Premium WG Almeida
@@ -32,7 +33,7 @@ const PhotoFrame = ({ image, onClick, index }) => (
       <div className="relative overflow-hidden rounded-lg border border-wg-brown/10">
         <div className="aspect-[4/3] overflow-hidden">
           <img
-            src={image.src}
+            src={image.thumbSrc || image.src}
             alt={image.label}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             loading="lazy"
@@ -55,7 +56,7 @@ const PhotoFrame = ({ image, onClick, index }) => (
 
           {/* Label */}
           <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-            <p className="text-white text-sm font-medium">{image.label}</p>
+            <p className="text-white text-sm font-light">{image.label}</p>
           </div>
         </div>
       </div>
@@ -90,7 +91,7 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => (
       <div className="bg-white p-4 rounded-xl shadow-2xl">
         <div className="border-2 border-wg-brown/20 rounded-lg overflow-hidden">
           <img
-            src={images[currentIndex]?.src}
+            src={images[currentIndex]?.fullSrc || images[currentIndex]?.src}
             alt={images[currentIndex]?.label}
             className="max-h-[70vh] w-auto mx-auto object-contain"
             onError={(event) => {
@@ -100,7 +101,7 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => (
             }}
           />
         </div>
-        <p className="text-center mt-4 text-wg-black font-medium">{images[currentIndex]?.label}</p>
+        <p className="text-center mt-4 text-wg-black font-light">{images[currentIndex]?.label}</p>
         <div className="flex justify-center gap-2 mt-3">
           {images.map((_, idx) => (
             <div key={idx} className={`w-2 h-2 rounded-full ${idx === currentIndex ? 'bg-wg-orange' : 'bg-gray-300'}`} />
@@ -126,7 +127,13 @@ const Projects = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [lightbox, setLightbox] = useState({ open: false, images: [], index: 0 });
 
-  const filteredProjects = projects.filter(p => selectedFilter === 'all' || p.category === selectedFilter);
+  const normalizedProjects = projects.map((project) => ({
+    ...project,
+    images: resolvePortfolioProjectImages(project),
+  }));
+  const filteredProjects = normalizedProjects.filter((project) =>
+    selectedFilter === 'all' || project.category === selectedFilter
+  );
 
   const openLightbox = (images, index) => setLightbox({ open: true, images, index });
   const closeLightbox = () => setLightbox({ ...lightbox, open: false });
@@ -150,7 +157,7 @@ const Projects = () => {
       <SEO pathname="/projetos" schema={SCHEMAS.breadcrumbProjects} />
 
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <div className="absolute inset-0 z-0">
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
@@ -160,18 +167,19 @@ const Projects = () => {
             height="1080"
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-wg-black/70 via-wg-black/50 to-wg-black/70" />
         </div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4">
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block"
+            className="wg-page-hero-kicker text-wg-orange"
           >
             {t('projectsPage.hero.kicker')}
           </motion.span>
@@ -179,7 +187,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 tracking-tight normal-case"
+            className="wg-page-hero-title"
           >
             {t('projectsPage.hero.title')}
           </motion.h1>
@@ -187,27 +195,16 @@ const Projects = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl font-light max-w-3xl mx-auto text-white/80"
+            className="wg-page-hero-subtitle max-w-3xl"
           >
             {t('projectsPage.hero.subtitle')}
           </motion.p>
+          </div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
-            <motion.div className="w-1.5 h-1.5 bg-white rounded-full" />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* Filtros */}
-      <section className="py-8 bg-white border-b border-gray-100 sticky top-20 z-40 backdrop-blur-lg bg-white/90">
+      <section className="sticky top-20 z-40 border-b border-gray-100 bg-white/90 pb-8 pt-4 backdrop-blur-lg md:pt-5">
         <div className="container-custom">
           <div className="flex flex-wrap gap-3 justify-center">
             {filters.map((filter) => (
@@ -241,11 +238,11 @@ const Projects = () => {
             >
               {/* Header do projeto */}
               <div className="p-8 md:p-12 border-b border-gray-100">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                  <div>
+                <div className="grid gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(220px,0.65fr)] lg:items-start">
+                  <div className="min-w-0">
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag, i) => (
-                        <span key={i} className="px-3 py-1 bg-wg-orange/10 text-wg-orange text-xs font-medium rounded-full">
+                        <span key={i} className="px-3 py-1 bg-wg-orange/10 text-wg-orange text-xs font-light rounded-full">
                           {tag}
                         </span>
                       ))}
@@ -254,19 +251,19 @@ const Projects = () => {
                       {project.title}
                     </h2>
                     <p className="text-wg-gray">{project.location}</p>
+                    <p className="mt-6 text-wg-gray leading-relaxed max-w-2xl">{project.description}</p>
                   </div>
-                  <div className="flex gap-8 text-center">
-                    <div>
-                      <p className="text-2xl font-medium text-wg-black">{project.area}</p>
+                  <div className="grid grid-cols-2 gap-4 lg:self-stretch">
+                    <div className="rounded-2xl bg-[#faf7f3] px-5 py-6 text-center shadow-[inset_0_0_0_1px_rgba(46,46,46,0.06)]">
+                      <p className="text-2xl font-light text-wg-black">{project.area}</p>
                       <p className="text-sm text-wg-gray">{t('projectsPage.meta.area')}</p>
                     </div>
-                    <div>
-                      <p className="text-2xl font-medium text-wg-black">{project.duration}</p>
+                    <div className="rounded-2xl bg-[#faf7f3] px-5 py-6 text-center shadow-[inset_0_0_0_1px_rgba(46,46,46,0.06)]">
+                      <p className="text-2xl font-light text-wg-black">{project.duration}</p>
                       <p className="text-sm text-wg-gray">{t('projectsPage.meta.duration')}</p>
                     </div>
                   </div>
                 </div>
-                <p className="mt-6 text-wg-gray leading-relaxed max-w-3xl">{project.description}</p>
               </div>
 
               {/* Galeria de fotos */}
@@ -327,3 +324,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

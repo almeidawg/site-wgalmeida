@@ -13,10 +13,13 @@ const getFallbackSrc = (src) => {
   if (!src) return DEFAULT_FALLBACK;
   if (src.includes("/images/blog/")) return withBasePath("/images/banners/SOBRE.webp");
   if (src.includes("/images/estilos/")) return withBasePath("/images/banners/MARCENARIA.webp");
-  if (src.includes("/images/imagens/") || src.includes("/images/projects/")) return withBasePath("/images/banners/PROJETOS.webp");
+  if (src.includes("/images/projects/")) return withBasePath("/images/banners/PROJETOS.webp");
   if (src.includes("/images/regions/")) return withBasePath("/images/hero-region.webp");
   return DEFAULT_FALLBACK;
 };
+
+const resolveFallbackSrc = (src, fallbackSrc) =>
+  fallbackSrc ? withBasePath(fallbackSrc) : getFallbackSrc(src);
 
 export function OptimizedImage({
   src,
@@ -29,15 +32,18 @@ export function OptimizedImage({
   priority = false,
   onLoad,
   objectFit = "cover",
+  fallbackSrc,
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [imageSrc, setImageSrc] = useState(null);
   const imgRef = useRef(null);
   const supportsWebp = useWebpSupport();
+  const resolvedSrc = withBasePath(src);
+  const resolvedWebpSrc = withBasePath(webpSrc);
 
   // Determinar source baseado em suporte WebP
   useEffect(() => {
-    const finalSrc = supportsWebp && webpSrc ? webpSrc : src;
+    const finalSrc = supportsWebp && resolvedWebpSrc ? resolvedWebpSrc : resolvedSrc;
     setImageSrc(finalSrc);
 
     // Preload se priority = true
@@ -48,7 +54,7 @@ export function OptimizedImage({
       link.href = finalSrc;
       document.head.appendChild(link);
     }
-  }, [src, webpSrc, supportsWebp, priority]);
+  }, [resolvedSrc, resolvedWebpSrc, supportsWebp, priority]);
 
   // Lazy loading com Intersection Observer
   useEffect(() => {
@@ -78,7 +84,7 @@ export function OptimizedImage({
   return (
     <picture>
       {/* WebP com fallback para JPEG */}
-      {supportsWebp && webpSrc && <source srcSet={webpSrc} type="image/webp" />}
+      {supportsWebp && resolvedWebpSrc && <source srcSet={resolvedWebpSrc} type="image/webp" />}
       <img
         ref={imgRef}
         src={loading === "lazy" ? undefined : imageSrc}
@@ -96,7 +102,10 @@ export function OptimizedImage({
         onError={(event) => {
           if (event.currentTarget.dataset.fallbackApplied === "true") return;
           event.currentTarget.dataset.fallbackApplied = "true";
-          event.currentTarget.src = getFallbackSrc(imageSrc || src);
+          event.currentTarget.src = resolveFallbackSrc(
+            imageSrc || resolvedSrc || src,
+            fallbackSrc
+          );
         }}
         loading={loading === "lazy" ? "lazy" : "eager"}
         decoding="async"
@@ -110,15 +119,16 @@ export function OptimizedImage({
 /**
  * LazyImage - Versão simplificada com apenas lazy loading
  */
-export function LazyImage({ src, alt, className = "", width, height, onLoad }) {
+export function LazyImage({ src, alt, className = "", width, height, onLoad, fallbackSrc }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const imgRef = useRef(null);
+  const resolvedSrc = withBasePath(src);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.src = src;
+          entry.target.src = resolvedSrc;
           observer.unobserve(entry.target);
         }
       },
@@ -129,7 +139,7 @@ export function LazyImage({ src, alt, className = "", width, height, onLoad }) {
       observer.observe(imgRef.current);
     }
     return () => observer.disconnect();
-  }, [src]);
+  }, [resolvedSrc]);
 
   return (
     <img
@@ -147,7 +157,7 @@ export function LazyImage({ src, alt, className = "", width, height, onLoad }) {
       onError={(event) => {
         if (event.currentTarget.dataset.fallbackApplied === "true") return;
         event.currentTarget.dataset.fallbackApplied = "true";
-        event.currentTarget.src = getFallbackSrc(src);
+        event.currentTarget.src = resolveFallbackSrc(resolvedSrc || src, fallbackSrc);
       }}
       loading="lazy"
       decoding="async"
@@ -167,23 +177,26 @@ export function ResponsiveImage({
   height,
   objectFit = "cover",
   priority = false,
+  fallbackSrc,
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const supportsWebp = useWebpSupport();
+  const resolvedWebpSrc = withBasePath(webpSrc);
+  const resolvedJpgSrc = withBasePath(jpgSrc);
 
   // Preload para performance crítica
   useEffect(() => {
     if (priority) {
       const preloadImg = new Image();
-      preloadImg.src = supportsWebp ? webpSrc : jpgSrc;
+      preloadImg.src = supportsWebp ? resolvedWebpSrc : resolvedJpgSrc;
     }
-  }, [priority, supportsWebp, webpSrc, jpgSrc]);
+  }, [priority, supportsWebp, resolvedWebpSrc, resolvedJpgSrc]);
 
   return (
     <picture>
-      {supportsWebp && <source srcSet={webpSrc} type="image/webp" />}
+      {supportsWebp && resolvedWebpSrc && <source srcSet={resolvedWebpSrc} type="image/webp" />}
       <img
-        src={jpgSrc}
+        src={resolvedJpgSrc}
         alt={alt}
         className={`transition-opacity duration-300 ${
           isLoaded ? "opacity-100" : "opacity-0"
@@ -196,7 +209,10 @@ export function ResponsiveImage({
         onError={(event) => {
           if (event.currentTarget.dataset.fallbackApplied === "true") return;
           event.currentTarget.dataset.fallbackApplied = "true";
-          event.currentTarget.src = getFallbackSrc(jpgSrc || webpSrc);
+          event.currentTarget.src = resolveFallbackSrc(
+            resolvedJpgSrc || resolvedWebpSrc || jpgSrc || webpSrc,
+            fallbackSrc
+          );
         }}
       />
     </picture>

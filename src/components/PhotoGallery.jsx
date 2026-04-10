@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { LazyImage } from "./OptimizedImage";
 import { useTranslation } from 'react-i18next';
+import { resolvePhotoGalleryProjects } from '@/utils/cloudinaryProjectPortfolio';
 
 /**
  * Galeria de Fotos Moderna com Molduras Elegantes
@@ -10,15 +11,17 @@ import { useTranslation } from 'react-i18next';
  */
 
 // Projetos com fotos antes/depois e detalhes
+const PROJECTS_FALLBACK_IMAGE = '/images/banners/PROJETOS.webp';
+
 const galleryProjects = [
   {
     id: 1,
     titleKey: "photoGallery.projects.brooklin.title",
     categoryKey: "photoGallery.projects.brooklin.category",
     images: [
-      { src: "/images/imagens/01 Depois 01.webp", labelKey: "photoGallery.projects.brooklin.images.livingRoom" },
-      { src: "/images/imagens/02 Depois 02 .webp", labelKey: "photoGallery.projects.brooklin.images.gourmetKitchen" },
-      { src: "/images/imagens/03 Depois .webp", labelKey: "photoGallery.projects.brooklin.images.leisureArea" },
+      { labelKey: "photoGallery.projects.brooklin.images.livingRoom" },
+      { labelKey: "photoGallery.projects.brooklin.images.gourmetKitchen" },
+      { labelKey: "photoGallery.projects.brooklin.images.leisureArea" },
     ],
   },
   {
@@ -26,9 +29,9 @@ const galleryProjects = [
     titleKey: "photoGallery.projects.itaim.title",
     categoryKey: "photoGallery.projects.itaim.category",
     images: [
-      { src: "/images/imagens/04 Depois.webp", labelKey: "photoGallery.projects.itaim.images.integratedLiving" },
-      { src: "/images/imagens/ARQ-VILANOVACONCEICAO (1).webp", labelKey: "photoGallery.projects.itaim.images.masterSuite" },
-      { src: "/images/imagens/ARQ-VILANOVACONCEICAO (2).webp", labelKey: "photoGallery.projects.itaim.images.homeOffice" },
+      { labelKey: "photoGallery.projects.itaim.images.integratedLiving" },
+      { labelKey: "photoGallery.projects.itaim.images.masterSuite" },
+      { labelKey: "photoGallery.projects.itaim.images.homeOffice" },
     ],
   },
   {
@@ -36,9 +39,9 @@ const galleryProjects = [
     titleKey: "photoGallery.projects.jardins.title",
     categoryKey: "photoGallery.projects.jardins.category",
     images: [
-      { src: "/images/imagens/3.webp", labelKey: "photoGallery.projects.jardins.images.walkInCloset" },
-      { src: "/images/imagens/ARQ-ENG-MARC-BOORKLIN (1).webp", labelKey: "photoGallery.projects.jardins.images.library" },
-      { src: "/images/imagens/ARQ-ENG-MARC-BOORKLIN (2).webp", labelKey: "photoGallery.projects.jardins.images.gourmetCounter" },
+      { labelKey: "photoGallery.projects.jardins.images.walkInCloset" },
+      { labelKey: "photoGallery.projects.jardins.images.library" },
+      { labelKey: "photoGallery.projects.jardins.images.gourmetCounter" },
     ],
   },
   {
@@ -46,9 +49,9 @@ const galleryProjects = [
     titleKey: "photoGallery.projects.vilaNova.title",
     categoryKey: "photoGallery.projects.vilaNova.category",
     images: [
-      { src: "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (1).webp", labelKey: "photoGallery.projects.vilaNova.images.terrace" },
-      { src: "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (2).webp", labelKey: "photoGallery.projects.vilaNova.images.pool" },
-      { src: "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (3).webp", labelKey: "photoGallery.projects.vilaNova.images.outdoorLounge" },
+      { labelKey: "photoGallery.projects.vilaNova.images.terrace" },
+      { labelKey: "photoGallery.projects.vilaNova.images.pool" },
+      { labelKey: "photoGallery.projects.vilaNova.images.outdoorLounge" },
     ],
   },
 ];
@@ -65,38 +68,32 @@ const PhotoFrame = ({ image, project, index, onClick }) => {
       className="group relative cursor-pointer"
       onClick={onClick}
     >
-      {/* Moldura externa com sombra elegante */}
       <div className="relative bg-white p-3 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500">
-        {/* Borda interna dourada sutil */}
         <div className="relative overflow-hidden rounded-md border border-wg-brown/20">
-          {/* Imagem */}
           <div className="relative aspect-[4/3] overflow-hidden">
             <LazyImage
-              src={image.src}
+              src={image.thumbSrc || image.src}
               alt={t(image.labelKey)}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               width={600}
               height={450}
+              fallbackSrc={PROJECTS_FALLBACK_IMAGE}
             />
 
-            {/* Overlay gradiente no hover */}
             <div className="absolute inset-0 bg-gradient-to-t from-wg-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            {/* Ícone de zoom */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                 <ZoomIn className="w-6 h-6 text-white" />
               </div>
             </div>
 
-            {/* Label da foto */}
             <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
               <p className="text-white text-sm font-medium">{t(image.labelKey)}</p>
             </div>
           </div>
         </div>
 
-        {/* Detalhes da moldura - cantos decorativos */}
         <div className="absolute top-1 left-1 w-4 h-4 border-t-2 border-l-2 border-wg-orange/30 rounded-tl-lg" />
         <div className="absolute top-1 right-1 w-4 h-4 border-t-2 border-r-2 border-wg-orange/30 rounded-tr-lg" />
         <div className="absolute bottom-1 left-1 w-4 h-4 border-b-2 border-l-2 border-wg-orange/30 rounded-bl-lg" />
@@ -106,7 +103,6 @@ const PhotoFrame = ({ image, project, index, onClick }) => {
   );
 };
 
-// Modal de visualização em tela cheia
 const LightboxModal = ({ images, currentIndex, onClose, onPrev, onNext }) => {
   const { t } = useTranslation();
   return (
@@ -118,7 +114,6 @@ const LightboxModal = ({ images, currentIndex, onClose, onPrev, onNext }) => {
         className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center"
         onClick={onClose}
       >
-        {/* Botão fechar */}
         <button
           onClick={onClose}
           className="absolute top-6 right-6 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
@@ -126,7 +121,6 @@ const LightboxModal = ({ images, currentIndex, onClose, onPrev, onNext }) => {
           <X className="w-6 h-6 text-white" />
         </button>
 
-        {/* Navegação anterior */}
         <button
           onClick={(e) => {
             e.stopPropagation();
@@ -137,7 +131,6 @@ const LightboxModal = ({ images, currentIndex, onClose, onPrev, onNext }) => {
           <ChevronLeft className="w-8 h-8 text-white" />
         </button>
 
-        {/* Imagem principal */}
         <motion.div
           key={currentIndex}
           initial={{ opacity: 0, scale: 0.9 }}
@@ -147,26 +140,28 @@ const LightboxModal = ({ images, currentIndex, onClose, onPrev, onNext }) => {
           className="relative max-w-6xl max-h-[85vh] mx-4"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Moldura elegante para o lightbox */}
           <div className="bg-white p-4 rounded-xl shadow-2xl">
             <div className="border-2 border-wg-brown/20 rounded-lg overflow-hidden">
               <img
-                src={images[currentIndex]?.src}
+                src={images[currentIndex]?.fullSrc || images[currentIndex]?.src}
                 alt={images[currentIndex]?.labelKey ? t(images[currentIndex]?.labelKey) : ''}
                 className="max-h-[75vh] w-auto mx-auto object-contain"
                 width={1280}
                 height={720}
                 loading="lazy"
                 decoding="async"
+                onError={(event) => {
+                  if (event.currentTarget.dataset.fallbackApplied === 'true') return;
+                  event.currentTarget.dataset.fallbackApplied = 'true';
+                  event.currentTarget.src = PROJECTS_FALLBACK_IMAGE;
+                }}
               />
             </div>
 
-            {/* Label */}
             <p className="text-center mt-4 text-wg-black font-medium">
               {images[currentIndex]?.labelKey ? t(images[currentIndex]?.labelKey) : ''}
             </p>
 
-            {/* Indicadores */}
             <div className="flex justify-center gap-2 mt-3">
               {images.map((_, idx) => (
                 <div
@@ -180,7 +175,6 @@ const LightboxModal = ({ images, currentIndex, onClose, onPrev, onNext }) => {
           </div>
         </motion.div>
 
-        {/* Navegação próxima */}
         <button
           onClick={(e) => {
             e.stopPropagation();
@@ -191,7 +185,6 @@ const LightboxModal = ({ images, currentIndex, onClose, onPrev, onNext }) => {
           <ChevronRight className="w-8 h-8 text-white" />
         </button>
 
-        {/* Contador */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-sm">
           {currentIndex + 1} / {images.length}
         </div>
@@ -205,10 +198,10 @@ const PhotoGallery = ({
   title,
 }) => {
   const { t } = useTranslation();
-  const [selectedProject, setSelectedProject] = useState(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [showLightbox, setShowLightbox] = useState(false);
   const [allImages, setAllImages] = useState([]);
+  const resolvedProjects = resolvePhotoGalleryProjects(projects);
 
   const openLightbox = (projectImages, imageIndex) => {
     setAllImages(projectImages);
@@ -230,7 +223,6 @@ const PhotoGallery = ({
     setLightboxIndex((prev) => (prev + 1) % allImages.length);
   };
 
-  // Keyboard navigation
   React.useEffect(() => {
     const handleKeyDown = (e) => {
       if (!showLightbox) return;
@@ -246,7 +238,6 @@ const PhotoGallery = ({
   return (
     <section className="section-padding bg-wg-gray-light">
       <div className="container-custom">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -265,9 +256,8 @@ const PhotoGallery = ({
           </p>
         </motion.div>
 
-        {/* Grid de Projetos */}
         <div className="space-y-16">
-          {projects.map((project, projectIndex) => (
+          {resolvedProjects.map((project, projectIndex) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 40 }}
@@ -275,7 +265,6 @@ const PhotoGallery = ({
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: projectIndex * 0.1 }}
             >
-              {/* Título do projeto */}
               <div className="flex items-center gap-4 mb-8">
                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-wg-orange/30 to-transparent" />
                 <div className="text-center">
@@ -289,7 +278,6 @@ const PhotoGallery = ({
                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-wg-orange/30 to-transparent" />
               </div>
 
-              {/* Grid de fotos */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {project.images.map((image, imageIndex) => (
                   <PhotoFrame
@@ -305,7 +293,6 @@ const PhotoGallery = ({
           ))}
         </div>
 
-        {/* Lightbox */}
         {showLightbox && (
           <LightboxModal
             images={allImages}

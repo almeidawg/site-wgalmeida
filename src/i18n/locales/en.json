@@ -33,14 +33,14 @@
   },
   "hero": {
     "title": "Transforming Dreams into Premium Spaces",
-    "subtitle": "14 years of excellence in Architecture, Engineering and Custom Furniture integrated in a single ecosystem",
+    "subtitle": "15 years of excellence in Architecture, Engineering and Custom Furniture integrated in a single ecosystem",
     "cta": "Request Quote",
     "ctaSecondary": "View Projects"
   },
   "about": {
     "title": "About Us",
     "subtitle": "Get to know Grupo WG Almeida",
-    "description": "For 14 years transforming dreams into reality with high-end architecture, engineering and custom furniture projects in São Paulo.",
+    "description": "For 15 years transforming dreams into reality with high-end architecture, engineering and custom furniture projects in São Paulo.",
     "years": "Years of Experience",
     "projects": "Delivered Projects",
     "clients": "Satisfied Clients",
@@ -148,12 +148,12 @@
   "seo": {
     "home": {
       "title": "High-End Architecture, Engineering, and Custom Furniture in Sao Paulo",
-      "description": "An integrated ecosystem of high-end architecture, engineering, and custom furniture. Premium turn key system in Sao Paulo: Brooklin, Itaim, Jardins, Vila Nova Conceicao. 14 years of excellence.",
+      "description": "An integrated ecosystem of high-end architecture, engineering, and custom furniture. Premium turn key system in Sao Paulo: Brooklin, Itaim, Jardins, Vila Nova Conceicao. 15 years of excellence.",
       "keywords": "high-end architecture sao paulo, turn key engineering, custom furniture, premium construction brooklin, apartment renovation itaim, architect jardins, premium builder sp"
     },
     "about": {
       "title": "About Us - History and Values",
-      "description": "Learn the history, mission, vision, and values of Grupo WG Almeida. 14 years integrating high-end architecture, engineering, and custom furniture in Sao Paulo.",
+      "description": "Learn the history, mission, vision, and values of Grupo WG Almeida. 15 years integrating high-end architecture, engineering, and custom furniture in Sao Paulo.",
       "keywords": "about wg almeida, company history, architecture company values, mission vision construction sao paulo"
     },
     "process": {
@@ -178,12 +178,12 @@
     },
     "testimonials": {
       "title": "Testimonials - Client Reviews",
-      "description": "See real client reviews on Google. 14 years building dreams with excellence in architecture, engineering, and Bespoke Joinery. 5.0 rating on Google.",
+      "description": "See real client reviews on Google. 15 years building dreams with excellence in architecture, engineering, and Bespoke Joinery. 5.0 rating on Google.",
       "keywords": "WG Almeida reviews, architecture client testimonials, engineering reviews Sao Paulo, google review builder"
     },
     "contact": {
       "title": "Contact - Get in Touch",
-      "description": "Contact Grupo WG Almeida. Service in Sao Paulo: Brooklin, Jardins, Itaim, Vila Nova Conceicao. WhatsApp: (11) 98465-0002.",
+      "description": "Contact Grupo WG Almeida. Service in Sao Paulo: Brooklin, Jardins, Itaim, Vila Nova Conceicao. WhatsApp: +55 (11) 98465-0002.",
       "keywords": "contact wg almeida, architect phone sao paulo, whatsapp builder, architecture quote"
     },
     "projects": {
@@ -738,19 +738,19 @@
         "location": "Acapulco, Guaruja - SP",
         "description": "Complete residential project in a high-end seaside condominium. Full integration of architecture, engineering, and Bespoke Joinery to create a private resort with ocean views.",
         "images": [
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (2).webp", "label": "Main Facade" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (3).webp", "label": "Integrated Living" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (4).webp", "label": "Gourmet Area" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (5).webp", "label": "Pool with Deck" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (6).webp", "label": "Master Suite" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (7).webp", "label": "Panoramic Balcony" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (8).webp", "label": "TV Room" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (9).webp", "label": "Gourmet Kitchen" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (10).webp", "label": "Master Bathroom" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (11).webp", "label": "Leisure Area" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (14).webp", "label": "Night View" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (15).webp", "label": "Bespoke Joinery Details" },
-          { "src": "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (16).webp", "label": "Landscaping" }
+          { "label": "Main Facade" },
+          { "label": "Integrated Living" },
+          { "label": "Gourmet Area" },
+          { "label": "Pool with Deck" },
+          { "label": "Master Suite" },
+          { "label": "Panoramic Balcony" },
+          { "label": "TV Room" },
+          { "label": "Gourmet Kitchen" },
+          { "label": "Master Bathroom" },
+          { "label": "Leisure Area" },
+          { "label": "Night View" },
+          { "label": "Bespoke Joinery Details" },
+          { "label": "Landscaping" }
         ]
       },
       {
@@ -763,15 +763,15 @@
         "location": "Alphaville, Barueri - SP",
         "description": "Integrated corporate project with modern architecture, advanced engineering, and premium Bespoke Joinery. Spaces designed for productivity and employee well-being.",
         "images": [
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (1).webp", "label": "Corporate Facade" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (2).webp", "label": "Executive Reception" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (3).webp", "label": "Open Space" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (4).webp", "label": "Meeting Room" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (5).webp", "label": "Board Room" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (6).webp", "label": "Gourmet Pantry" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (7).webp", "label": "Break Area" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (8).webp", "label": "Entrance Hall" },
-          { "src": "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (9).webp", "label": "Project Details" }
+          { "label": "Corporate Facade" },
+          { "label": "Executive Reception" },
+          { "label": "Open Space" },
+          { "label": "Meeting Room" },
+          { "label": "Board Room" },
+          { "label": "Gourmet Pantry" },
+          { "label": "Break Area" },
+          { "label": "Entrance Hall" },
+          { "label": "Project Details" }
         ]
       },
       {
@@ -784,16 +784,16 @@
         "location": "Mairinque - SP",
         "description": "Residential project in a gated community with contemporary architecture and high-end structural engineering. Perfect integration with the local nature.",
         "images": [
-          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (11).webp", "label": "Front View" },
-          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (12).webp", "label": "Social Area" },
-          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (13).webp", "label": "Garden" },
-          { "src": "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (14).webp", "label": "Pool" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (10).webp", "label": "Structure" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (11).webp", "label": "Foundation" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (12).webp", "label": "Execution" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (13).webp", "label": "Finishing" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (14).webp", "label": "Structural Details" },
-          { "src": "/images/imagens/ENG-COND-POTADOSOL-MARINQUE (15).webp", "label": "Final View" }
+          { "label": "Front View" },
+          { "label": "Social Area" },
+          { "label": "Garden" },
+          { "label": "Pool" },
+          { "label": "Structure" },
+          { "label": "Foundation" },
+          { "label": "Execution" },
+          { "label": "Finishing" },
+          { "label": "Structural Details" },
+          { "label": "Final View" }
         ]
       },
       {
@@ -806,48 +806,42 @@
         "location": "Sao Paulo - SP",
         "description": "Complete residential transformation with full renovation. A turn key project that shows the power of renewal: from before to after, a new story.",
         "images": [
-          { "src": "/images/imagens/01 Depois 01.webp", "label": "Final Result 1" },
-          { "src": "/images/imagens/02 Depois 02 .webp", "label": "Final Result 2" },
-          { "src": "/images/imagens/03 Depois .webp", "label": "Final Result 3" },
-          { "src": "/images/imagens/04 Depois.webp", "label": "Final Result 4" }
-        ],
-        "beforeAfter": [
-          { "before": "/images/imagens/01 Antes 01.webp", "after": "/images/imagens/01 Depois 01.webp", "label": "Environment 1" },
-          { "before": "/images/imagens/02 Antes 02.webp", "after": "/images/imagens/02 Depois 02 .webp", "label": "Environment 2" },
-          { "before": "/images/imagens/03 Antes.webp", "after": "/images/imagens/03 Depois .webp", "label": "Environment 3" },
-          { "before": "/images/imagens/04 Antes.webp", "after": "/images/imagens/04 Depois.webp", "label": "Environment 4" }
+          { "label": "Final Result 1" },
+          { "label": "Final Result 2" },
+          { "label": "Final Result 3" },
+          { "label": "Final Result 4" }
         ]
       },
       {
         "id": 5,
-        "title": "Itaim Project",
+        "title": "Perdizes Renovation in Progress",
         "category": "residential",
-        "tags": ["Engineering", "High-End"],
-        "area": "350m²",
-        "duration": "14 months",
-        "location": "Itaim Bibi, Sao Paulo - SP",
-        "description": "Engineering project in one of Sao Paulo's most exclusive regions. Execution with technical rigor and first-class finishes.",
+        "tags": ["Engineering", "Residential Renovation"],
+        "area": "127m²",
+        "duration": "In progress",
+        "location": "Perdizes, Sao Paulo - SP",
+        "description": "Residential work in progress in Perdizes, with engineering management, technical follow-up, and execution control for an apartment renovation with more predictability and organization.",
         "images": [
-          { "src": "/images/imagens/BANNERITTAIM-ENGENHARIA.webp", "label": "Project Banner" },
-          { "src": "/images/imagens/3.webp", "label": "Interior Detail" },
-          { "src": "/images/imagens/7.webp", "label": "Social Area" },
-          { "src": "/images/imagens/8.webp", "label": "Finishes" },
-          { "src": "/images/imagens/9.webp", "label": "Overall View" }
+          { "label": "Perdizes · Record 01" },
+          { "label": "Perdizes · Record 02" },
+          { "label": "Perdizes · Record 03" },
+          { "label": "Perdizes · Record 04" },
+          { "label": "Perdizes · Record 05" }
         ]
       },
       {
         "id": 6,
-        "title": "Premium Residence",
+        "title": "Morumbi Residence",
         "category": "residential",
-        "tags": ["Architecture", "Bespoke Joinery"],
-        "area": "480m²",
-        "duration": "20 months",
-        "location": "Sao Paulo - SP",
-        "description": "High-end residence with exclusive Bespoke Joinery and contemporary architecture. Every space is designed to provide comfort and sophistication.",
+        "tags": ["Engineering", "High-End Residential"],
+        "area": "160m²",
+        "duration": "Managed timeline",
+        "location": "Morumbi, Sao Paulo - SP",
+        "description": "Residential project in Morumbi with engineering-led execution, stage compatibility, and organized site coordination for a high-end property.",
         "images": [
-          { "src": "/images/imagens/10.webp", "label": "Living Room" },
-          { "src": "/images/imagens/11.webp", "label": "Dining Room" },
-          { "src": "/images/imagens/12.webp", "label": "Home Theater" }
+          { "label": "Morumbi · Record 01" },
+          { "label": "Morumbi · Record 02" },
+          { "label": "Morumbi · Record 03" }
         ]
       }
     ]
@@ -1756,7 +1750,7 @@
     "stages": {
       "whoWeAre": {
         "kicker": "Who We Are",
-        "line1": "For 14 years building",
+        "line1": "For 15 years building",
         "line2": "stories with excellence."
       },
       "ecosystem": {
