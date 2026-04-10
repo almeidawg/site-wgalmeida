@@ -48,7 +48,7 @@ const BuildTech = () => {
       />
 
       {/* Hero Tecnológico */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden hero-under-header">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -81,7 +81,7 @@ const BuildTech = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-wg-orange font-medium tracking-[0.3em] uppercase text-sm mb-4 block"
+            className="text-wg-orange tracking-[0.3em] uppercase text-sm mb-4 block"
           >
             A Próxima Fronteira da Construção
           </motion.span>
@@ -92,7 +92,7 @@ const BuildTech = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-inter font-light mb-6 tracking-tight"
           >
-            WG <span className="font-bold text-wg-orange">Build.tech</span>
+            WG <span className="text-wg-orange">Build.tech</span>
           </motion.h1>
 
           <motion.p
@@ -154,7 +154,7 @@ const BuildTech = () => {
             className="mt-20 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-wg-blue/20 to-wg-orange/10 border border-white/10 flex flex-col md:flex-row items-center gap-12"
           >
             <div className="flex-1">
-              <span className="text-wg-orange font-bold text-sm tracking-widest uppercase mb-4 block">Powered by WG Easy</span>
+              <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Powered by WG Easy</span>
               <h2 className="text-3xl md:text-5xl font-light mb-6 tracking-tight">O Sistema de Gestão das Maiores Obras de Luxo</h2>
               <p className="text-white/70 text-lg mb-8">
                 Utilize a mesma tecnologia que permitiu ao Grupo WG Almeida escalar sua operação para o nível Enterprise. Do CRM ao controle de suprimentos em um só lugar.
@@ -192,7 +192,7 @@ const BuildTech = () => {
                  <div className="absolute inset-0 bg-wg-blue/20 flex items-center justify-center">
                     <div className="p-4 bg-wg-black/80 backdrop-blur-md rounded-xl text-center">
                        <LayoutDashboard className="w-12 h-12 text-wg-orange mx-auto mb-2" />
-                       <span className="text-xs font-bold uppercase tracking-tighter">Dashboard Ativo</span>
+                       <span className="text-xs uppercase tracking-tighter">Dashboard Ativo</span>
                     </div>
                  </div>
               </div>

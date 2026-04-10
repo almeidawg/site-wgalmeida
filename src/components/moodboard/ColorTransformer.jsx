@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from '@/lib/motion-lite';
 import {
   ArrowLeftRight,
   Loader2,
-  Wand2,
   Check,
   Maximize2,
   X,
@@ -17,6 +16,8 @@ import {
   Copy,
   Image as ImageIcon,
 } from 'lucide-react';
+import { buildMoodboardSharePayload, buildMoodboardShareUrl } from '@/utils/moodboardShare';
+import { normalizeUnsplashImageUrl } from '@/lib/unsplash';
 
 // ============================================
 // CONFIGURAÇÃO DO CLOUDINARY
@@ -331,7 +332,11 @@ const DEMO_IMAGES = [
     thumbnail: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=300&h=200&fit=crop',
     suggestedElements: ['walls', 'floor', 'cabinets'],
   },
-];
+].map((image) => ({
+  ...image,
+  externalUrl: normalizeUnsplashImageUrl(image.externalUrl, { width: 800, height: 450, quality: 80 }),
+  thumbnail: normalizeUnsplashImageUrl(image.thumbnail, { width: 300, height: 200, quality: 70 }),
+}));
 
 /**
  * Gera URL do Cloudinary com Generative Recolor para múltiplos elementos
@@ -429,7 +434,7 @@ const ElementColorSelector = ({ element, selectedColor, onColorSelect, available
           <Icon className="w-5 h-5" />
         </div>
         <div className="flex-1 text-left">
-          <p className="font-medium text-gray-800">{element.name}</p>
+          <p className="font-light text-gray-800">{element.name}</p>
           {selectedColor ? (
             <p className="text-sm text-wg-orange">{selectedColor}</p>
           ) : (
@@ -604,14 +609,18 @@ const ColorTransformer = ({ externalColors = [] }) => {
 
   // Função para obter URL com marca d'água para compartilhamento
   const getShareableUrl = () => {
-    // Para compartilhamento, usamos a URL do Cloudinary com overlay
-    // Se a imagem está no Cloudinary, podemos adicionar o logo como overlay
-    if (transformedUrl && transformedUrl.includes('cloudinary.com')) {
-      // Adiciona overlay do logo no Cloudinary (requer logo uploadado no Cloudinary)
-      // Por enquanto retorna a URL original
-      return transformedUrl;
-    }
-    return transformedUrl;
+    if (!transformedUrl) return null;
+
+    const payload = buildMoodboardSharePayload({
+      transformedUrl,
+      originalUrl,
+      selectedImage,
+      elementColors,
+      paletteName: selectedPalette?.name,
+      availableColors,
+    });
+
+    return buildMoodboardShareUrl(payload) || transformedUrl;
   };
 
   // Cores disponíveis (externas ou da paleta)
@@ -819,10 +828,10 @@ const ColorTransformer = ({ externalColors = [] }) => {
         {externalColors.length === 0 && (
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="w-8 h-8 rounded-full bg-wg-orange text-white flex items-center justify-center font-bold text-sm">
+              <span className="w-8 h-8 rounded-full bg-wg-orange text-white flex items-center justify-center text-sm">
                 1
               </span>
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3 className="text-lg font-light text-gray-800">
                 Escolha um Estilo
               </h3>
             </div>
@@ -854,7 +863,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
                     ))}
                   </div>
                   {/* Nome do estilo */}
-                  <p className={`text-xs font-medium text-center truncate ${
+                  <p className={`text-xs font-light text-center truncate ${
                     selectedPalette.id === palette.id
                       ? 'text-wg-orange'
                       : 'text-gray-700'
@@ -876,10 +885,10 @@ const ColorTransformer = ({ externalColors = [] }) => {
         {/* ====== PASSO 2: PALETA DE CORES ====== */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <span className="w-8 h-8 rounded-full bg-wg-orange text-white flex items-center justify-center font-bold text-sm">
+            <span className="w-8 h-8 rounded-full bg-wg-orange text-white flex items-center justify-center text-sm">
               {externalColors.length === 0 ? '2' : '1'}
             </span>
-            <h3 className="text-lg font-semibold text-gray-800">
+            <h3 className="text-lg font-light text-gray-800">
               Paleta de Cores
             </h3>
             {externalColors.length === 0 && (
@@ -907,10 +916,10 @@ const ColorTransformer = ({ externalColors = [] }) => {
         {/* ====== PASSO 3: ESCOLHER ELEMENTOS E ATRIBUIR CORES ====== */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <span className="w-8 h-8 rounded-full bg-wg-orange text-white flex items-center justify-center font-bold text-sm">
+            <span className="w-8 h-8 rounded-full bg-wg-orange text-white flex items-center justify-center text-sm">
               {externalColors.length === 0 ? '3' : '2'}
             </span>
-            <h3 className="text-lg font-semibold text-gray-800">
+            <h3 className="text-lg font-light text-gray-800">
               Escolha Elementos para Recolorir
             </h3>
             <span className="ml-auto text-sm text-gray-500">
@@ -939,16 +948,16 @@ const ColorTransformer = ({ externalColors = [] }) => {
         <div>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <span className="w-8 h-8 rounded-full bg-wg-orange text-white flex items-center justify-center font-bold text-sm">
+              <span className="w-8 h-8 rounded-full bg-wg-orange text-white flex items-center justify-center text-sm">
                 {externalColors.length === 0 ? '4' : '3'}
               </span>
-              <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
+              <h3 className="text-lg font-light text-gray-800 flex items-center gap-2">
                 <ImageIcon className="w-5 h-5 text-wg-orange" />
                 Escolha um Ambiente
               </h3>
             </div>
             {selectedImage && (
-              <span className="text-sm text-wg-orange font-medium">
+              <span className="text-sm text-wg-orange font-light">
                 {selectedImage.name}
               </span>
             )}
@@ -960,7 +969,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                className={`px-4 py-2 rounded-full text-sm font-light transition-all ${
                   selectedCategory === cat.id
                     ? 'bg-wg-orange text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -992,7 +1001,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2">
-                  <p className="text-white text-[10px] font-medium truncate">{img.name}</p>
+                  <p className="text-white text-[10px] font-light truncate">{img.name}</p>
                 </div>
                 {selectedImage?.id === img.id && (
                   <div className="absolute inset-0 bg-wg-orange/30 flex items-center justify-center">
@@ -1021,7 +1030,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
           whileTap={{ scale: canApply ? 0.98 : 1 }}
           onClick={handleApplyTransformation}
           disabled={!canApply || isTransforming}
-          className={`w-full py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-3 transition-all ${
+          className={`w-full py-4 rounded-xl font-light text-lg flex items-center justify-center gap-3 transition-all ${
             canApply && !isTransforming
               ? 'bg-wg-orange text-white hover:bg-wg-orange/90 shadow-lg shadow-wg-orange/30'
               : 'bg-gray-200 text-gray-400 cursor-not-allowed'
@@ -1034,7 +1043,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
             </>
           ) : (
             <>
-              <Wand2 className="w-6 h-6" />
+              <Paintbrush className="w-6 h-6" />
               Aplicar Cores nos Elementos
             </>
           )}
@@ -1068,7 +1077,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
                   <span className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center">
                     <Check className="w-5 h-5" />
                   </span>
-                  <h3 className="text-lg font-semibold text-gray-800">
+                  <h3 className="text-lg font-light text-gray-800">
                     Resultado - Arraste para Comparar
                   </h3>
                 </div>
@@ -1126,17 +1135,17 @@ const ColorTransformer = ({ externalColors = [] }) => {
                 </div>
 
                 {/* Labels */}
-                <div className="absolute bottom-4 left-4 px-4 py-2 bg-black/70 text-white text-sm font-semibold rounded-lg backdrop-blur-sm">
+                <div className="absolute bottom-4 left-4 px-4 py-2 bg-black/70 text-white text-sm font-light rounded-lg backdrop-blur-sm">
                   ORIGINAL
                 </div>
-                <div className="absolute bottom-4 right-4 px-4 py-2 bg-wg-orange text-white text-sm font-semibold rounded-lg">
+                <div className="absolute bottom-4 right-4 px-4 py-2 bg-wg-orange text-white text-sm font-light rounded-lg">
                   TRANSFORMADO
                 </div>
               </div>
 
               {/* Cores aplicadas */}
               <div className="mt-4 p-4 bg-gray-50 rounded-xl">
-                <p className="text-sm font-medium text-gray-700 mb-2">Cores aplicadas:</p>
+                <p className="text-sm font-light text-gray-700 mb-2">Cores aplicadas:</p>
                 <div className="flex flex-wrap gap-3">
                   {Object.entries(elementColors).map(([elementId, color]) => {
                     const element = RECOLOR_ELEMENTS.find(e => e.id === elementId);
@@ -1156,7 +1165,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
 
               {/* Exportar & Compartilhar */}
               <div className="mt-6 p-4 bg-gradient-to-r from-wg-orange/10 to-orange-50 rounded-xl border border-wg-orange/20">
-                <p className="text-sm font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                <p className="text-sm font-light text-gray-800 mb-3 flex items-center gap-2">
                   <Share2 className="w-4 h-4 text-wg-orange" />
                   Exportar & Compartilhar
                 </p>
@@ -1164,7 +1173,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
                   <button
                     onClick={downloadWithWatermark}
                     disabled={isDownloading}
-                    className="flex items-center gap-2 px-4 py-2 bg-wg-orange text-white rounded-lg text-sm font-medium hover:bg-wg-orange/90 transition-colors disabled:opacity-50"
+                    className="flex items-center gap-2 px-4 py-2 bg-wg-orange text-white rounded-lg text-sm font-light hover:bg-wg-orange/90 transition-colors disabled:opacity-50"
                   >
                     {isDownloading ? (
                       <>
@@ -1184,7 +1193,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
                       const text = encodeURIComponent(`Confira minha transformação de ambiente com IA da WG Almeida!\n${shareUrl}`);
                       window.open(`https://wa.me/?text=${text}`, '_blank');
                     }}
-                    className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg text-sm font-medium hover:bg-green-600 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg text-sm font-light hover:bg-green-600 transition-colors"
                   >
                     <Share2 className="w-4 h-4" />
                     WhatsApp
@@ -1196,7 +1205,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
                       const body = encodeURIComponent(`Olá!\n\nConfira como ficou minha transformação de ambiente com IA:\n${shareUrl}\n\nCriado com a ferramenta WG Almeida Design de Interiores.\nAcesse: https://wgalmeida.com.br`);
                       window.open(`mailto:?subject=${subject}&body=${body}`);
                     }}
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg text-sm font-light hover:bg-blue-600 transition-colors"
                   >
                     <Mail className="w-4 h-4" />
                     Email
@@ -1207,7 +1216,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
                       await navigator.clipboard.writeText(shareUrl);
                       alert('Link copiado!');
                     }}
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg text-sm font-light hover:bg-gray-700 transition-colors"
                   >
                     <Copy className="w-4 h-4" />
                     Copiar Link
@@ -1270,10 +1279,10 @@ const ColorTransformer = ({ externalColors = [] }) => {
                 </div>
               </div>
 
-              <div className="absolute bottom-6 left-6 px-5 py-3 bg-black/70 text-white font-semibold rounded-lg">
+              <div className="absolute bottom-6 left-6 px-5 py-3 bg-black/70 text-white font-light rounded-lg">
                 ORIGINAL
               </div>
-              <div className="absolute bottom-6 right-6 px-5 py-3 bg-wg-orange text-white font-semibold rounded-lg">
+              <div className="absolute bottom-6 right-6 px-5 py-3 bg-wg-orange text-white font-light rounded-lg">
                 TRANSFORMADO
               </div>
             </div>

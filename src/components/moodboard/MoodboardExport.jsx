@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from '@/lib/motion-lite';
 import { Download, Share2, Link, Mail, Copy, Check, FileImage, FileText } from 'lucide-react';
+import { Link as RouterLink } from 'react-router-dom';
 
 const MoodboardExport = ({ colors, styles, onExport, moodboardId }) => {
   const [isSharing, setIsSharing] = useState(false);
@@ -168,12 +169,12 @@ const MoodboardExport = ({ colors, styles, onExport, moodboardId }) => {
           <p className="text-xs text-gray-600 mb-3">
             Use nossa ferramenta para visualizar seu ambiente com as cores e estilos que você escolheu!
           </p>
-          <a
-            href="/room-visualizer"
+          <RouterLink
+            to="/room-visualizer"
             className="inline-flex items-center gap-2 px-5 py-3 bg-wg-orange text-white rounded-xl text-sm font-semibold hover:bg-wg-orange/90 transition-colors shadow-lg"
           >
             Vivencie esta Experiência!
-          </a>
+          </RouterLink>
         </div>
       </div>
     </div>

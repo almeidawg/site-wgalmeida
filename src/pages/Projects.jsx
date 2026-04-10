@@ -7,6 +7,7 @@ import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
 import { resolvePortfolioProjectImages } from '@/utils/cloudinaryProjectPortfolio';
+import { withBasePath } from '@/utils/assetPaths';
 
 /**
  * Página de Projetos - Galeria Premium WG Almeida
@@ -40,7 +41,7 @@ const PhotoFrame = ({ image, onClick, index }) => (
             onError={(event) => {
               if (event.currentTarget.dataset.fallbackApplied === 'true') return;
               event.currentTarget.dataset.fallbackApplied = 'true';
-              event.currentTarget.src = '/images/banners/PROJETOS.webp';
+              event.currentTarget.src = withBasePath('/images/banners/PROJETOS.webp');
             }}
           />
 
@@ -97,7 +98,7 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => (
             onError={(event) => {
               if (event.currentTarget.dataset.fallbackApplied === 'true') return;
               event.currentTarget.dataset.fallbackApplied = 'true';
-              event.currentTarget.src = '/images/banners/PROJETOS.webp';
+              event.currentTarget.src = withBasePath('/images/banners/PROJETOS.webp');
             }}
           />
         </div>
@@ -162,7 +163,7 @@ const Projects = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt={t('projectsPage.hero.imageAlt')}
-            src="/images/banners/PROJETOS.webp"
+            src={withBasePath('/images/banners/PROJETOS.webp')}
             width="1920"
             height="1080"
             loading="eager"
@@ -324,4 +325,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

@@ -1,11 +1,12 @@
 import React from 'react';
 import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
-import { Hammer, Package, Sparkles, Ruler, ArrowRight } from 'lucide-react';
+import { Hammer, Package, Ruler, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
+import { PROJECT_SERVICE_HIGHLIGHTS } from '@/utils/cloudinaryProjectPortfolio';
 
 // Animações elegantes
 const fadeInUp = {
@@ -30,7 +31,7 @@ const Carpentry = () => {
       description: t('carpentryPage.services.1.description'),
     },
     {
-      icon: Sparkles,
+      icon: Package,
       title: t('carpentryPage.services.2.title'),
       description: t('carpentryPage.services.2.description'),
     },
@@ -49,7 +50,7 @@ const Carpentry = () => {
       />
 
       {/* Hero elegante com cor da unidade */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -64,30 +65,19 @@ const Carpentry = () => {
             height="1080"
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-wg-brown/50 via-wg-brown/60 to-wg-black/80"></div>
         </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4">
-          {/* Linha decorativa */}
-          <motion.div
-            className="flex items-center justify-center gap-4 mb-8"
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/50" />
-            <div className="w-2 h-2 bg-white rounded-full" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/50" />
-          </motion.div>
-
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-white/80 font-medium tracking-[0.3em] uppercase text-sm mb-4 block"
+            className="wg-page-hero-kicker"
           >
             {t('carpentryPage.hero.kicker')}
           </motion.span>
@@ -96,7 +86,7 @@ const Carpentry = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-inter font-light mb-6 tracking-tight"
+            className="wg-page-hero-title"
           >
             {t('carpentryPage.hero.title')}
           </motion.h1>
@@ -105,7 +95,7 @@ const Carpentry = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl font-light max-w-3xl mx-auto opacity-90"
+            className="wg-page-hero-subtitle max-w-3xl"
           >
             {t('carpentryPage.hero.subtitle')}
           </motion.p>
@@ -115,29 +105,18 @@ const Carpentry = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8"
+            className="mt-7"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm">
-              <Sparkles className="w-4 h-4" />
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-3.5 text-sm backdrop-blur-sm md:px-6">
+              <Package className="w-4 h-4" />
               {t('carpentryPage.hero.badge')}
             </span>
           </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1, repeat: Infinity, repeatType: "reverse" }}
-        >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2" />
           </div>
-        </motion.div>
+        </div>
       </section>
 
-      <section className="section-padding bg-white relative overflow-hidden">
+      <section className="section-padding-tight-top bg-white relative overflow-hidden">
         {/* Elementos decorativos */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 right-0 w-96 h-96 bg-wg-brown rounded-full blur-3xl" />
@@ -162,7 +141,7 @@ const Carpentry = () => {
               <div className="h-px w-12 bg-gradient-to-l from-transparent to-wg-brown" />
             </motion.div>
 
-            <span className="text-wg-brown font-medium tracking-[0.2em] uppercase text-sm mb-4 block">
+            <span className="text-wg-brown font-light tracking-[0.2em] uppercase text-sm mb-4 block">
               {t('carpentryPage.servicesKicker')}
             </span>
 
@@ -216,7 +195,7 @@ const Carpentry = () => {
               <img
                 className="relative w-full h-[500px] object-cover rounded-xl shadow-2xl"
                 alt={t('carpentryPage.commitment.imageAlt')}
-               src="/images/imagens/ARQ-ENG-MARC-BOORKLIN (5).webp" />
+               src={PROJECT_SERVICE_HIGHLIGHTS.carpentry} />
 
               {/* Badge flutuante */}
               <motion.div
@@ -226,7 +205,7 @@ const Carpentry = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="absolute -bottom-6 -right-6 bg-white p-5 rounded-xl shadow-xl max-w-[200px]"
               >
-                <p className="text-sm font-inter font-medium text-wg-brown italic leading-tight">{t('carpentryPage.commitment.badge')}</p>
+                <p className="text-sm font-inter font-light text-wg-brown italic leading-tight">{t('carpentryPage.commitment.badge')}</p>
               </motion.div>
             </motion.div>
 
@@ -236,7 +215,7 @@ const Carpentry = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span className="text-wg-brown font-medium tracking-[0.2em] uppercase text-sm mb-4 block">
+              <span className="text-wg-brown font-light tracking-[0.2em] uppercase text-sm mb-4 block">
                 {t('carpentryPage.commitment.kicker')}
               </span>
 
@@ -281,3 +260,4 @@ const Carpentry = () => {
 };
 
 export default Carpentry;
+

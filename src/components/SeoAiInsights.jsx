@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Command, Link, Sparkles } from 'lucide-react';
+import { Command, Link } from 'lucide-react';
 import { fetchSeoHighlights } from '@/lib/aiSeoInsights';
 import { useTranslation } from 'react-i18next';
 
 const iconMap = {
   intent: Command,
-  performance: Sparkles,
+  performance: Command,
   authority: Link,
 };
 
@@ -42,7 +42,7 @@ const SeoAiInsights = () => {
 
         <div className="grid gap-6 md:grid-cols-3">
           {insights.map((insight) => {
-            const Icon = iconMap[insight.id] ?? Sparkles;
+            const Icon = iconMap[insight.id] ?? Command;
             return (
               <article
                 key={insight.id}

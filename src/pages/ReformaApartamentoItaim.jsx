@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO, { schemas } from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
+import { withBasePath } from '@/utils/assetPaths';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -14,7 +15,6 @@ import {
   Phone,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import BrandStar from '@/components/BrandStar';
 
 const ReformaApartamentoItaim = () => {
   const pageUrl = 'https://wgalmeida.com.br/reforma-apartamento-itaim';
@@ -89,7 +89,7 @@ const ReformaApartamentoItaim = () => {
     "provider": {
       "@type": "Organization",
       "name": "Grupo WG Almeida",
-      "telephone": "+55-11-98465-0002",
+      "telephone": "+5511984650002",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "São Paulo",
@@ -115,6 +115,7 @@ const ReformaApartamentoItaim = () => {
   return (
     <>
       <SEO
+        pathname="/reforma-apartamento-itaim"
         title="Reforma Apartamento Itaim Bibi | Turn Key Premium SP"
         description="Reforma completa de apartamento no Itaim Bibi. Sistema Turn Key: projeto, obra e entrega integrados. Especialistas em apartamentos de 80m² a 300m². Orçamento grátis."
         keywords="reforma apartamento itaim, reforma apartamento itaim bibi, construtora itaim, arquitetura itaim, reforma turn key itaim, quanto custa reforma apartamento itaim"
@@ -123,10 +124,10 @@ const ReformaApartamentoItaim = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: 'url(/images/banners/PROJETOS.webp)' }}
+          style={{ backgroundImage: `url(${withBasePath('/images/banners/PROJETOS.webp')})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
@@ -288,7 +289,7 @@ const ReformaApartamentoItaim = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex items-start gap-3 p-4 bg-wg-gray-light rounded-xl"
               >
-                <BrandStar className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5 text-wg-green" />
                 <p className="text-wg-gray font-light">{item}</p>
               </motion.div>
             ))}
@@ -359,7 +360,7 @@ const ReformaApartamentoItaim = () => {
               </Link>
               <a href="tel:+5511984650002" className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
-                (11) 98465-0002
+                +55 (11) 98465-0002
               </a>
             </div>
           </motion.div>

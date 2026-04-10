@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from '@/lib/motion-lite';
 import { ArrowRight } from 'lucide-react';
 import { MoodboardProvider, useMoodboard } from '@/contexts/MoodboardContext';
@@ -23,7 +24,7 @@ const MoodboardContent = () => {
   } = useMoodboard();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 -mt-[var(--header-height)]">
       <SEO
         pathname="/moodboard"
         title="Moodboard | Crie sua Visão de Design de Interiores | WG Almeida"
@@ -32,7 +33,7 @@ const MoodboardContent = () => {
       />
 
       {/* Hero Section */}
-      <section className="hero-under-header bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white pt-28 pb-16">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white pt-[calc(var(--header-height)+2rem)] md:pt-[calc(var(--header-height)+2.75rem)] pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -136,13 +137,13 @@ const MoodboardContent = () => {
                 Use nossa ferramenta de IA para visualizar seu ambiente com as cores e
                 estilos que você escolheu!
               </p>
-              <a
-                href="/room-visualizer"
+              <Link
+                to="/room-visualizer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-white text-wg-black rounded-xl font-light text-lg hover:bg-gray-100 transition-colors shadow-lg"
               >
                 Experiência WG
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </Link>
             </motion.div>
           </div>
         </section>

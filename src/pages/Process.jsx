@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Calendar,
@@ -42,7 +43,7 @@ const TIMELINE_CONTENT = {
     stagePanelLabel: 'Detalhamento da etapa',
     estimatedDataLabel: 'Leitura estimativa',
     estimatedDataText:
-      'Os tempos desta tela são estimativas orientativas. Eles variam conforme metragem, escopo, disponibilidade das equipes, nível de definição do cliente e dinâmica da obra.',
+      'Os tempos desta tela são estimativas orientativas, calculadas localmente a partir da metodologia WG Almeida. Eles não representam leitura live do WG Easy e variam conforme metragem, escopo, disponibilidade das equipes, nível de definição do cliente e dinâmica da obra.',
     durationUnit: 'semanas',
     areaUnit: 'm²',
     ctaTitle: 'Quer transformar essa estimativa em um cronograma real para o seu imóvel?',
@@ -60,7 +61,7 @@ const TIMELINE_CONTENT = {
         detail:
           'Consolidamos necessidades, restrições do imóvel, orçamento e prioridades para definir o caminho da reforma com clareza.',
         tasks: [
-          { title: 'Levantamento e medição do imóvel', note: 'Base contratual do WGEasy: leitura física e normativa.', eta: '3 a 7 dias úteis' },
+          { title: 'Levantamento e medição do imóvel', note: 'Base contratual e leitura física do imóvel para enquadramento técnico inicial.', eta: '3 a 7 dias úteis' },
           { title: 'Briefing de necessidades e rotina', note: 'Mapeamento de prioridades, dores e nível de decisão do cliente.', eta: '3 a 5 dias úteis' },
           { title: 'Planta de situação inicial', note: 'Síntese técnica para orientar conceito, escopo e próximos estudos.', eta: '3 a 5 dias úteis' },
         ],
@@ -140,7 +141,7 @@ const TIMELINE_CONTENT = {
         accent: {
           card: 'bg-[#fbf6f2] shadow-[inset_0_0_0_1px_rgba(208,171,142,0.16)]',
           icon: 'bg-[#f3e8df] text-wg-orange-text',
-          active: 'bg-[#8f5238] text-white shadow-[0_16px_45px_rgba(18,18,18,0.14)]',
+          active: 'bg-[#8B5E3C] text-white shadow-[0_16px_45px_rgba(18,18,18,0.14)]',
         },
       },
       {
@@ -250,7 +251,7 @@ const TIMELINE_CONTENT = {
         accent: {
           card: 'bg-[#fbf6f2] shadow-[inset_0_0_0_1px_rgba(208,171,142,0.16)]',
           icon: 'bg-[#f3e8df] text-wg-orange-text',
-          active: 'bg-[#8f5238] text-white shadow-[0_16px_45px_rgba(18,18,18,0.14)]',
+          active: 'bg-[#8B5E3C] text-white shadow-[0_16px_45px_rgba(18,18,18,0.14)]',
         },
       },
       {
@@ -382,14 +383,14 @@ const Process = () => {
       `Duração estimada: ${formatWeeks(totalDuration)}`,
     ].join('\n');
 
-    return `https://wa.me/5511999999999?text=${encodeURIComponent(summary)}`;
+    return `https://wa.me/5511984650002?text=${encodeURIComponent(summary)}`;
   }, [area, copy.build, copy.reform, leadEmail, leadName, leadWhatsapp, projectType, totalDuration]);
 
   return (
     <>
       <SEO pathname="/processo" schema={SCHEMAS.breadcrumbProcess} />
 
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -404,53 +405,46 @@ const Process = () => {
             height="1080"
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-wg-black/40 via-wg-black/60 to-wg-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-wg-black/40 via-wg-black/58 to-wg-black/78"></div>
         </motion.div>
 
-        <div className="relative z-10 container-custom h-full px-4">
-          <div className="flex h-full flex-col justify-center text-center text-white">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.08 }}
-              className="mb-4 block text-[12px] md:text-[13px] uppercase tracking-[0.18em] text-white/74 font-light"
-            >
-              {copy.selectorKicker}
-            </motion.span>
-            <motion.div
-              className="mb-8 flex items-center justify-center gap-4"
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/70" />
-              <div className="h-2 w-2 rounded-full bg-white/80" />
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/70" />
-            </motion.div>
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-inter font-light tracking-tight"
-            >
-              {copy.heroTitle}
-            </motion.h1>
-          </div>
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
+
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.08 }}
+            className="wg-page-hero-kicker text-wg-orange"
+          >
+            {copy.selectorKicker}
+          </motion.span>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.18 }}
+            className="wg-page-hero-title"
+          >
+            {copy.heroTitle}
+          </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="absolute inset-x-4 bottom-1 md:bottom-2 text-center text-[17px] md:text-[19px] text-white font-light max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="wg-page-hero-subtitle max-w-3xl"
           >
             {copy.heroSubtitle}
           </motion.p>
+          </div>
         </div>
       </section>
 
-      <section className="section-padding bg-white border-t border-black/5">
+      <section className="section-padding-tight-top bg-white border-t border-black/5">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -459,7 +453,7 @@ const Process = () => {
             transition={{ duration: 0.6 }}
             className="mb-10 text-center"
           >
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-inter font-light text-wg-black mb-3 tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-inter font-light text-wg-black mb-3 tracking-tight">
               {copy.selectorTitle}
             </h2>
             <p className="text-sm md:text-base text-wg-gray max-w-3xl mx-auto font-light leading-relaxed">
@@ -578,6 +572,12 @@ const Process = () => {
             <div className="mt-4 flex items-center justify-end">
               <p className="text-xs text-wg-gray font-light max-w-xl text-right">
                 {copy.estimatedDataLabel}: {copy.estimatedDataText}
+              </p>
+            </div>
+
+            <div className="mt-4 rounded-[22px] bg-white/72 px-4 py-3 shadow-[inset_0_0_0_1px_rgba(46,46,46,0.06)]">
+              <p className="text-[12px] leading-relaxed text-wg-gray font-light">
+                Diagnóstico técnico: esta experiência mostra uma simulação editorial da sequência de obra. Hoje ela não consome métricas em tempo real do WG Easy; os dados live confirmados no ambiente atual estão na vitrine de produtos via Supabase, enquanto contratos, contatos e propostas vieram vazios na leitura com a chave pública atual.
               </p>
             </div>
 
@@ -785,12 +785,12 @@ const Process = () => {
                       Receber estudo no WhatsApp
                       <ArrowRight className="h-4 w-4" />
                     </a>
-                    <a
-                      href="/obraeasy"
+                    <Link
+                      to="/obraeasy"
                       className="inline-flex items-center justify-center rounded-full border border-black/10 bg-black/[0.02] px-6 py-3 text-sm text-wg-black transition-colors hover:bg-black/[0.04] font-light"
                     >
                       Iniciar EVF
-                    </a>
+                    </Link>
                   </div>
 
                   <p className="mt-4 text-[12px] leading-relaxed text-wg-gray font-light">
@@ -946,19 +946,19 @@ const Process = () => {
               {copy.ctaText}
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a
-                href="/solicite-proposta"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm text-wg-black transition-colors hover:bg-white/92 font-light"
+              <Link
+                to="/solicite-proposta"
+                className="wg-btn-pill-primary"
               >
                 {copy.ctaPrimary}
                 <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="/contato"
-                className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/[0.03] px-6 py-3 text-sm text-white/92 transition-colors hover:bg-white/[0.08] hover:border-white/20 font-light"
+              </Link>
+              <Link
+                to="/contato"
+                className="wg-btn-pill-outline-dark"
               >
                 {copy.ctaSecondary}
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -968,3 +968,4 @@ const Process = () => {
 };
 
 export default Process;
+

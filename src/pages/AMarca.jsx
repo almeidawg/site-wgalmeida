@@ -10,7 +10,9 @@ import {
 import { Button } from '@/components/ui/button';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { Trans, useTranslation } from 'react-i18next';
-import BrandStar from '@/components/BrandStar';
+import { withBasePath } from '@/utils/assetPaths';
+
+const BRAND_LOGO_SRC = withBasePath('/images/logo-192.webp');
 
 const AMarca = () => {
   const { t } = useTranslation();
@@ -19,7 +21,7 @@ const AMarca = () => {
   const nucleos = t('brandPage.nuclei.items', { returnObjects: true });
   const turnKeySteps = t('brandPage.turnKey.steps', { returnObjects: true });
 
-  const valueIcons = [Target, Heart, Zap, Users2, TrendingUp, Shield, Lightbulb, BrandStar];
+  const valueIcons = [Target, Heart, Zap, Users2, TrendingUp, Shield, Lightbulb, Award];
   const nucleusIcons = [Ruler, Building2, Hammer];
 
   return (
@@ -30,7 +32,7 @@ const AMarca = () => {
       />
 
       {/* Hero Banner com Imagem */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -45,40 +47,42 @@ const AMarca = () => {
             height="1080"
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-wg-black/35 via-wg-black/60 to-wg-black/80"></div>
         </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4">
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 uppercase tracking-wider">
+            <span className="wg-page-hero-kicker text-white/78">
               {t('brandPage.hero.kicker')}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-white mb-6 tracking-tight normal-case">
+            <h1 className="wg-page-hero-title">
               <Trans i18nKey="brandPage.hero.title">
                 A Marca <span className="text-white">WG Almeida</span>
               </Trans>
             </h1>
-            <p className="text-xl md:text-2xl text-white font-playfair italic mb-4">
+            <p className="wg-page-hero-subtitle max-w-3xl">
               {t('brandPage.hero.quote')}
             </p>
-            <p className="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="wg-page-hero-body max-w-3xl">
               {t('brandPage.hero.subtitle')}
             </p>
           </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Proposito Section */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="bg-white pb-12 pt-8 md:pb-16 md:pt-10">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -87,14 +91,14 @@ const AMarca = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-wg-orange/10 rounded-xl flex items-center justify-center">
-                  <BrandStar className="w-7 h-7" />
+                  <Palette className="w-7 h-7 text-wg-orange" />
                 </div>
-                <span className="text-sm font-medium text-wg-orange uppercase tracking-wider">{t('brandPage.purpose.kicker')}</span>
+                <span className="text-sm text-wg-orange uppercase tracking-wider">{t('brandPage.purpose.kicker')}</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-inter font-light tracking-tight text-wg-black mb-6">
                 {t('brandPage.purpose.title')}
               </h2>
-              <div className="space-y-4 text-wg-gray text-lg">
+              <div className="space-y-4 text-wg-gray text-lg leading-relaxed">
                 <p>{t('brandPage.purpose.paragraphs.0')}</p>
                 <p>{t('brandPage.purpose.paragraphs.1')}</p>
               </div>
@@ -105,11 +109,11 @@ const AMarca = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="relative h-full"
             >
-              <div className="rounded-2xl p-12 flex items-center justify-center">
+              <div className="rounded-2xl h-full min-h-[320px] bg-[#faf7f3] p-12 flex items-center justify-center shadow-sm">
                 <img
-                  src="/images/logo-192.webp"
+                  src={BRAND_LOGO_SRC}
                   alt="Logo Grupo WG Almeida"
                   className="max-w-[70%] h-auto mx-auto"
                 />
@@ -130,7 +134,7 @@ const AMarca = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-sm"
+              className="bg-white rounded-2xl p-8 shadow-sm h-full"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-14 h-14 bg-wg-green/10 rounded-xl flex items-center justify-center">
@@ -151,7 +155,7 @@ const AMarca = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-2xl p-8 shadow-sm"
+              className="bg-white rounded-2xl p-8 shadow-sm h-full"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-14 h-14 bg-wg-blue/10 rounded-xl flex items-center justify-center">
@@ -199,14 +203,14 @@ const AMarca = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-gray-50 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all group"
+                className="bg-gray-50 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all group h-full"
               >
                 <div className="w-12 h-12 bg-wg-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-wg-orange transition-colors">
                   {React.createElement(valueIcons[index], { className: 'w-6 h-6 text-wg-orange group-hover:text-white transition-colors' })}
                 </div>
-                <h3 className="font-poppins font-medium text-lg text-wg-black mb-2">
-                  {value.title}
-                </h3>
+                  <h3 className="font-inter text-lg font-light text-wg-black mb-2">
+                    {value.title}
+                  </h3>
                 <p className="text-sm text-wg-gray">
                   {value.description}
                 </p>
@@ -249,9 +253,9 @@ const AMarca = () => {
                   style={{ backgroundColor: color.hex }}
                 />
                 <div className="p-6">
-                  <h3 className="font-poppins font-medium text-wg-black mb-2">
-                    {color.name}
-                  </h3>
+                    <h3 className="font-inter font-light text-wg-black mb-2">
+                      {color.name}
+                    </h3>
                   <div className="space-y-1 text-sm text-wg-gray mb-4">
                     <p className="font-mono">{color.hex}</p>
                     <p className="font-mono text-xs">{color.rgb}</p>
@@ -289,7 +293,7 @@ const AMarca = () => {
 
               <div className="space-y-6">
                 <div className="p-6 bg-gray-50 rounded-xl">
-                  <p className="text-sm font-medium text-wg-gray mb-2">{t('brandPage.typography.titleLabel')}</p>
+                  <p className="text-sm text-wg-gray mb-2">{t('brandPage.typography.titleLabel')}</p>
                   <p className="text-3xl font-inter font-light tracking-tight text-wg-black">
                     Inter Light
                   </p>
@@ -299,7 +303,7 @@ const AMarca = () => {
                 </div>
 
                 <div className="p-6 bg-gray-50 rounded-xl">
-                  <p className="text-sm font-medium text-wg-gray mb-2">{t('brandPage.typography.bodyLabel')}</p>
+                  <p className="text-sm text-wg-gray mb-2">{t('brandPage.typography.bodyLabel')}</p>
                   <p className="text-xl font-inter text-wg-black">
                     Inter Regular
                   </p>
@@ -406,7 +410,7 @@ const AMarca = () => {
             className="max-w-4xl mx-auto"
           >
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-2 bg-wg-blue/10 text-wg-blue rounded-full text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-2 bg-wg-blue/10 text-wg-blue rounded-full text-sm mb-4 font-light">
                 {t('brandPage.turnKey.badge')}
               </span>
               <h2 className="text-3xl md:text-4xl font-inter font-light tracking-tight text-wg-black mb-4">
@@ -431,7 +435,7 @@ const AMarca = () => {
                     {fase.num}
                   </span>
                   <div>
-                    <p className="font-poppins font-semibold text-wg-black text-sm">{fase.title}</p>
+                    <p className="font-inter text-wg-black text-sm">{fase.title}</p>
                     <p className="text-xs text-wg-gray">{fase.desc}</p>
                   </div>
                 </motion.div>
@@ -459,13 +463,13 @@ const AMarca = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contato">
-                <Button className="bg-wg-orange text-white px-6 py-3 rounded-md font-poppins font-semibold hover:bg-wg-orange/90 transition-all duration-300 hover:shadow-lg">
+                <Button className="bg-wg-orange text-white px-6 py-3 rounded-md hover:bg-wg-orange/90 transition-all duration-300 hover:shadow-lg">
                   {t('brandPage.cta.primary')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/projetos">
-                <Button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-md font-poppins font-semibold hover:bg-white hover:text-wg-black transition-all duration-300">
+                <Button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-wg-black transition-all duration-300">
                   {t('brandPage.cta.secondary')}
                 </Button>
               </Link>
@@ -478,3 +482,4 @@ const AMarca = () => {
 };
 
 export default AMarca;
+

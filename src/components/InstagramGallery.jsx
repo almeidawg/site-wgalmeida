@@ -3,27 +3,20 @@ import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { ArrowLeft, ArrowRight, X, Instagram, ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-// Posts do Instagram - códigos reais do perfil institucional WG
-// Para adicionar novos: abrir post no Instagram > copiar URL > pegar o código após /p/ ou /reel/
 const instagramPosts = [
-  { id: 1, code: 'DQq6gjlkX2R', type: 'p' },
-  { id: 2, code: 'DQq6XsPEUa1', type: 'p' },
-  { id: 3, code: 'DQq6WXFkf0h', type: 'p' },
-  { id: 4, code: 'DQn0C2bjLWn', type: 'p' },
-  { id: 5, code: 'DQn0BU8DLdd', type: 'p' },
-  { id: 6, code: 'DQnz_PRDFcB', type: 'p' },
-  { id: 7, code: 'DQnz7IODL8m', type: 'p' },
-  { id: 8, code: 'DQnz41OjMvx', type: 'p' },
-  { id: 9, code: 'DQnz1hTDM6Y', type: 'p' },
-  { id: 10, code: 'C_Ovy8PCcQ-', type: 'reel' },
-  { id: 11, code: 'Cthl8uZsiip', type: 'reel' },
-  { id: 12, code: 'Ct-LaJdLgHH', type: 'reel' },
+  { id: 1, code: 'DQq6gjlkX2R', type: 'p', imageSrc: '/images/instagram/DQq6gjlkX2R.jpg' },
+  { id: 2, code: 'DQq6XsPEUa1', type: 'p', imageSrc: '/images/instagram/DQq6XsPEUa1.jpg' },
+  { id: 3, code: 'DQq6WXFkf0h', type: 'p', imageSrc: '/images/instagram/DQq6WXFkf0h.jpg' },
+  { id: 4, code: 'DQn0C2bjLWn', type: 'p', imageSrc: '/images/instagram/DQn0C2bjLWn.jpg' },
+  { id: 5, code: 'DQn0BU8DLdd', type: 'p', imageSrc: '/images/instagram/DQn0BU8DLdd.jpg' },
+  { id: 6, code: 'DQnz_PRDFcB', type: 'p', imageSrc: '/images/instagram/DQnz_PRDFcB.jpg' },
+  { id: 7, code: 'DQnz7IODL8m', type: 'p', imageSrc: '/images/instagram/DQnz7IODL8m.jpg' },
+  { id: 8, code: 'DQnz41OjMvx', type: 'p', imageSrc: '/images/instagram/DQnz41OjMvx.jpg' },
+  { id: 9, code: 'DQnz1hTDM6Y', type: 'p', imageSrc: '/images/instagram/DQnz1hTDM6Y.jpg' },
+  { id: 10, code: 'C_Ovy8PCcQ-', type: 'reel', imageSrc: '/images/instagram/C_Ovy8PCcQ-.jpg' },
+  { id: 11, code: 'Cthl8uZsiip', type: 'reel', imageSrc: '/images/instagram/Cthl8uZsiip.jpg' },
+  { id: 12, code: 'Ct-LaJdLgHH', type: 'reel', imageSrc: '/images/instagram/Ct-LaJdLgHH.jpg' },
 ];
-
-// Gerar URL da imagem do Instagram (thumbnail)
-const getInstagramImageUrl = (post) => {
-  return `https://www.instagram.com/p/${post.code}/media/?size=l`;
-};
 
 // Gerar URL do post
 const getInstagramPostUrl = (post) => {
@@ -111,12 +104,12 @@ const InstagramGallery = () => {
           {/* Header */}
           <div className="flex items-center justify-between gap-4 mb-8">
             <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-wg-apple-muted flex items-center gap-2">
+              <p className="text-xs uppercase tracking-[0.32em] text-wg-gray flex items-center gap-2">
                 <Instagram className="w-4 h-4" />
                 {t('instagramGallery.kicker')}
               </p>
-              <h2 className="text-3xl font-oswald text-wg-apple-accent">
-                @wgalmeida.arq
+              <h2 className="text-3xl font-light text-wg-black tracking-tight">
+                @grupowgalmeida
               </h2>
             </div>
             <div className="flex gap-3">
@@ -124,23 +117,23 @@ const InstagramGallery = () => {
                 type="button"
                 onClick={handlePrev}
                 disabled={startIndex === 0}
-                className={`rounded-full border border-wg-apple-highlight bg-white p-3 transition hover:border-wg-apple-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-wg-apple-accent ${
+                className={`rounded-full border border-wg-orange/20 bg-white p-3 transition hover:border-wg-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-wg-orange ${
                   startIndex === 0 ? 'opacity-40 cursor-not-allowed' : ''
                 }`}
                 aria-label={t('instagramGallery.previous')}
               >
-                <ArrowLeft className="h-5 w-5 text-wg-apple-accent" />
+                <ArrowLeft className="h-5 w-5 text-wg-orange" />
               </button>
               <button
                 type="button"
                 onClick={handleNext}
                 disabled={startIndex >= maxIndex}
-                className={`rounded-full border border-wg-apple-highlight bg-white p-3 transition hover:border-wg-apple-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-wg-apple-accent ${
+                className={`rounded-full border border-wg-orange/20 bg-white p-3 transition hover:border-wg-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-wg-orange ${
                   startIndex >= maxIndex ? 'opacity-40 cursor-not-allowed' : ''
                 }`}
                 aria-label={t('instagramGallery.next')}
               >
-                <ArrowRight className="h-5 w-5 text-wg-apple-accent" />
+                <ArrowRight className="h-5 w-5 text-wg-orange" />
               </button>
             </div>
           </div>
@@ -163,7 +156,7 @@ const InstagramGallery = () => {
               >
                 {!imageErrors[post.id] ? (
                   <img
-                    src={getInstagramImageUrl(post)}
+                    src={post.imageSrc}
                     alt={t('instagramGallery.postAlt', { id: post.id })}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     width={400}
@@ -174,7 +167,7 @@ const InstagramGallery = () => {
                   />
                 ) : (
                   // Fallback - mostrar placeholder com link para o post
-                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 text-white p-4">
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-wg-black via-wg-black/90 to-wg-orange text-white p-4">
                     <Instagram className="w-12 h-12 mb-2" />
                     <span className="text-sm font-light text-center">{t('instagramGallery.viewOnInstagram')}</span>
                   </div>
@@ -185,7 +178,7 @@ const InstagramGallery = () => {
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
                     <svg
-                      className="w-6 h-6 text-wg-apple-accent"
+                      className="w-6 h-6 text-wg-orange"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -216,8 +209,8 @@ const InstagramGallery = () => {
                 onClick={() => setStartIndex(idx)}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   idx === startIndex
-                    ? 'bg-wg-apple-accent w-8'
-                    : 'bg-wg-apple-highlight/50 w-2 hover:bg-wg-apple-highlight'
+                    ? 'bg-wg-orange w-8'
+                    : 'bg-wg-orange/20 w-2 hover:bg-wg-orange/40'
                 }`}
                 aria-label={t('instagramGallery.goToPage', { page: idx + 1 })}
               />
@@ -227,10 +220,10 @@ const InstagramGallery = () => {
           {/* Link para Instagram */}
           <div className="text-center mt-8">
             <a
-              href="https://www.instagram.com/wgalmeida.arq"
+              href="https://www.instagram.com/grupowgalmeida/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-wg-apple-accent hover:text-wg-orange transition-colors font-light"
+              className="inline-flex items-center gap-2 text-wg-black hover:text-wg-orange transition-colors font-light"
             >
               <Instagram className="w-5 h-5" />
               {t('instagramGallery.viewMore')}
@@ -304,7 +297,7 @@ const InstagramGallery = () => {
               <div className="relative aspect-square bg-gray-100">
                 {!imageErrors[selectedPost.id] ? (
                   <img
-                    src={getInstagramImageUrl(selectedPost)}
+                    src={selectedPost.imageSrc}
                     alt={t('instagramGallery.postAlt', { id: selectedPost.id })}
                     className="w-full h-full object-contain"
                     width={800}
@@ -328,7 +321,7 @@ const InstagramGallery = () => {
                     <Instagram className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-light text-gray-900">@wgalmeida.arq</p>
+                    <p className="font-light text-gray-900">@grupowgalmeida</p>
                     <p className="text-sm text-gray-600">Grupo WG Almeida</p>
                   </div>
                 </div>

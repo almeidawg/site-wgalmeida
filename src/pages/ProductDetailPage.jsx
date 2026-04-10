@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import SEO from '@/components/SEO'
 import { useToast } from '@/components/ui/use-toast'
 import { useCart } from '@/hooks/useCart'
 import { motion } from '@/lib/motion-lite'
@@ -300,6 +301,10 @@ function ProductDetailPage() {
     [product, selectedVariant]
   )
   const breadcrumbSchema = useMemo(() => generateBreadcrumbSchema(product), [product])
+  const seoSchemas = useMemo(
+    () => [productSchema, breadcrumbSchema].filter(Boolean),
+    [breadcrumbSchema, productSchema]
+  )
   const canonicalUrl = `https://wgalmeida.com.br/product/${id}`
   const imageUrl =
     product.images?.[0]?.url || product.image || 'https://wgalmeida.com.br/og-loja-1200x630.jpg'
@@ -322,44 +327,31 @@ function ProductDetailPage() {
 
   return (
     <>
+      <SEO
+        pathname={`/product/${id}`}
+        title={seoTitle}
+        description={seoDescription}
+        canonical={canonicalUrl}
+        url={canonicalUrl}
+        schema={seoSchemas}
+        og={{
+          image: imageUrl,
+          url: canonicalUrl,
+        }}
+        twitter={{
+          image: imageUrl,
+        }}
+      />
       <Helmet>
-        <title>{seoTitle}</title>
-        <meta name="description" content={seoDescription} />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <link rel="canonical" href={canonicalUrl} />
-
-        {/* Open Graph */}
         <meta property="og:type" content="product" />
-        <meta property="og:title" content={seoTitle} />
-        <meta property="og:description" content={seoDescription} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="Grupo WG Almeida" />
-        <meta property="og:locale" content="pt_BR" />
         <meta property="product:availability" content={hasStock ? 'in stock' : 'out of stock'} />
         {selectedPrice && <meta property="product:price:amount" content={selectedPrice} />}
         <meta property="product:price:currency" content="BRL" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seoTitle} />
-        <meta name="twitter:description" content={seoDescription} />
-        <meta name="twitter:image" content={imageUrl} />
-
-        {/* Product Schema JSON-LD */}
-        {productSchema && (
-          <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
-        )}
-
-        {/* Breadcrumb Schema JSON-LD */}
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
       <div className="container-custom section-padding">
         <Link
           to="/store"
-          className="inline-flex items-center gap-2 text-wg-black hover:text-wg-orange transition-colors mb-6 font-poppins"
+          className="inline-flex items-center gap-2 text-wg-black hover:text-wg-orange transition-colors mb-6 font-light"
         >
           <ArrowLeft size={16} />
           {t('storePage.productDetail.backToStore')}
@@ -398,7 +390,7 @@ function ProductDetailPage() {
               )}
 
               {product.ribbon_text && (
-                <div className="absolute top-4 left-4 bg-wg-orange text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
+                <div className="absolute top-4 left-4 bg-wg-orange text-white text-sm font-light px-4 py-2 rounded-full shadow-lg">
                   {product.ribbon_text}
                 </div>
               )}
@@ -427,10 +419,10 @@ function ProductDetailPage() {
             className="flex flex-col"
           >
             <h1 className="text-4xl font-oswald text-wg-black mb-2">{product.title}</h1>
-            <p className="text-lg text-wg-gray mb-4 font-poppins">{product.subtitle}</p>
+            <p className="text-lg text-wg-gray mb-4 font-light">{product.subtitle}</p>
 
             <div className="flex items-baseline gap-3 mb-6">
-              <span className="text-4xl font-bold text-wg-orange">{price}</span>
+              <span className="text-4xl font-light text-wg-orange">{price}</span>
               {originalPrice && (
                 <span className="text-2xl text-gray-400 line-through">{originalPrice}</span>
               )}
@@ -443,7 +435,7 @@ function ProductDetailPage() {
 
             {product.variants.length > 1 && (
               <div className="mb-6">
-                <h3 className="text-sm font-poppins text-wg-black mb-2">
+                <h3 className="text-sm font-light text-wg-black mb-2">
                   {t('storePage.productDetail.options')}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -471,7 +463,7 @@ function ProductDetailPage() {
                 >
                   <Minus size={16} />
                 </Button>
-                <span className="w-10 text-center text-wg-black font-bold">{quantity}</span>
+                <span className="w-10 text-center text-wg-black font-light">{quantity}</span>
                 <Button
                   onClick={() => handleQuantityChange(1)}
                   variant="ghost"

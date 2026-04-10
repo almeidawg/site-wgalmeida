@@ -1,12 +1,12 @@
 /**
  * Service Worker - Grupo WG Almeida
- * PWA com cache estratégico para performance
- * v2 - Corrigido erro de Cache.put()
+ * PWA com cache estrategico para performance
+ * v3 - rotacao de cache para liberar bundles/editorial atualizados
  */
 
-// const CACHE_NAME = 'wgalmeida-v2'; // eslint-disable-line no-unused-vars
-const STATIC_CACHE = "wgalmeida-static-v2";
-const DYNAMIC_CACHE = "wgalmeida-dynamic-v2";
+const CACHE_VERSION = "v3-2026-04-09-editorial";
+const STATIC_CACHE = `wgalmeida-static-${CACHE_VERSION}`;
+const DYNAMIC_CACHE = `wgalmeida-dynamic-${CACHE_VERSION}`;
 
 // Recursos estáticos críticos para cache imediato
 const STATIC_ASSETS = ["/", "/manifest.json", "/favicon.png"];

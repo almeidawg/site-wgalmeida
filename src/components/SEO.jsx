@@ -80,15 +80,28 @@ export function SEO({
   const resolvedPathname = normalizePathname(resolvePathname());
   const config = getSEOConfig(resolvedPathname);
   const resolvedCanonical = canonical || url || config.canonical || `https://wgalmeida.com.br${resolvedPathname}`;
+  const resolvedTitle = title || config.title;
+  const resolvedDescription = description || config.description;
 
   const meta = {
-    title: title || config.title,
-    description: description || config.description,
+    title: resolvedTitle,
+    description: resolvedDescription,
     keywords: Array.isArray(keywords) ? keywords.join(', ') : (keywords || ''),
     canonical: resolvedCanonical,
     robots: noindex ? 'noindex, nofollow' : robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
-    og: { ...config.og, url: resolvedCanonical, ...og },
-    twitter: { ...config.twitter, ...twitter }
+    og: {
+      ...config.og,
+      title: resolvedTitle,
+      description: resolvedDescription,
+      url: resolvedCanonical,
+      ...og,
+    },
+    twitter: {
+      ...config.twitter,
+      title: resolvedTitle,
+      description: resolvedDescription,
+      ...twitter,
+    }
   };
 
   const schemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
@@ -130,6 +143,7 @@ export function SEO({
       <meta property="og:title" content={meta.og.title} />
       <meta property="og:description" content={meta.og.description} />
       <meta property="og:image" content={meta.og.image} />
+      <meta property="og:image:alt" content={meta.og.title} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:type" content="image/jpeg" />
@@ -188,7 +202,7 @@ export const schemas = {
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase()
       .replace(/\s+/g, '-')}`,
-    telephone: '+55-11-98465-0002',
+    telephone: '+5511984650002',
     email: 'contato@wgalmeida.com.br',
     address: {
       '@type': 'PostalAddress',
@@ -218,7 +232,7 @@ export const schemas = {
     description,
     url,
     datePublished,
-    image,
+    image: Array.isArray(image) ? image.filter(Boolean) : image,
     author: {
       '@type': 'Organization',
       name: 'Grupo WG Almeida'

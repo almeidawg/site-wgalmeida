@@ -72,6 +72,7 @@ vite.config.js.timestamp-*
 debug_*.png
 screenshots/
 preview-3010.log
+preview-smoke*.log
 site-wglmeida-blog-imagens/
 video-sitemap.xml/
 
@@ -80,7 +81,7 @@ video-sitemap.xml/
 yarn.lock
 
 # Tools/scripts locais
-tools/
+tools/tmp/
 
 # ── ADICIONADO 24/03/2026 — exclusoes de arquivos pesados e temporarios ──
 
@@ -88,7 +89,8 @@ tools/
 public/images/imagens/
 public/images/projects/
 public/images/banners/
-public/images/estilos/
+public/images/estilos/*
+!public/images/estilos/*.webp
 public/images/blog/
 public/images/gallery/
 public/images/about/

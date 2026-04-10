@@ -11,7 +11,8 @@ const SoliciteProposta = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
+        pathname="/solicite-proposta"
         title="Solicite Proposta | Grupo WG Almeida"
         description="Obtenha um orçamento detalhado para seu projeto de arquitetura, engenharia ou marcenaria de luxo."
       />
@@ -23,13 +24,13 @@ const SoliciteProposta = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">
+            <span className="text-wg-orange text-[11px] tracking-[0.22em] uppercase mb-4 block font-light">
               Passo a Passo
             </span>
-            <h1 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-light text-wg-black mb-6 tracking-tight">
               Vamos construir seu orçamento.
             </h1>
-            <p className="text-wg-gray text-lg">
+            <p className="text-wg-gray text-lg font-light leading-relaxed">
               Responda a 4 perguntas rápidas e nossa inteligência artificial ajudará nossa equipe técnica a preparar a melhor proposta para o seu perfil.
             </p>
           </motion.div>

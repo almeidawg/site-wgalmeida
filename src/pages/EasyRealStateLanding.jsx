@@ -1,9 +1,10 @@
 import SEO from '@/components/SEO'
 import { Button } from '@/components/ui/button'
 import { motion } from '@/lib/motion-lite'
+import { withBasePath } from '@/utils/assetPaths'
 import {
   ArrowRight, CheckCircle, MapPin, TrendingUp, Users,
-  Shield, BarChart3, Building2, Phone, Zap, Star, Calculator, Link2
+  Shield, BarChart3, Building2, Phone, Zap, Calculator, Link2
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -180,6 +181,7 @@ const EasyRealStateLanding = () => {
   return (
     <>
       <SEO
+        pathname="/easy-real-state"
         title="EasyRealState · Calculadora de Valor de Imóvel para Corretores"
         description="Calcule o valor de mercado de imóveis em São Paulo com dados reais. Para corretores e imobiliárias. Integrado com estudo de reforma ObraEasy. Grátis para começar."
         keywords="calculadora valor imóvel, preço m² são paulo, avaliação imobiliária, ferramenta corretor, software imobiliário, EasyRealState, quanto vale meu imóvel"
@@ -188,16 +190,16 @@ const EasyRealStateLanding = () => {
       />
 
       {/* HERO */}
-      <section className="hero-under-header relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-wg-black">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-25"
-          style={{ backgroundImage: 'url(/images/banners/ARQ.webp)' }}
+          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/90 via-wg-black/70 to-wg-black" />
 
         <div className="relative z-10 container-custom text-center text-white px-4 py-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm font-medium uppercase tracking-wider mb-6">
+            <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm uppercase tracking-wider mb-6">
               Para Corretores e Imobiliárias
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 leading-tight">
@@ -220,7 +222,7 @@ const EasyRealStateLanding = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
-              <a href="tel:+5511984650002" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl font-medium hover:bg-white hover:text-wg-black transition-all text-lg">
+              <a href="tel:+5511984650002" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
                 Quero site + sistema
               </a>
             </div>
@@ -233,7 +235,7 @@ const EasyRealStateLanding = () => {
       <section className="section-padding bg-wg-gray-light">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">Duas formas de usar</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Duas formas de usar</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
               Só o sistema ou a solução completa
             </h2>
@@ -243,12 +245,12 @@ const EasyRealStateLanding = () => {
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
                 className={`rounded-2xl p-8 relative ${m.destaque ? 'bg-wg-black text-white ring-2 ring-wg-orange' : 'bg-white'}`}>
                 {m.destaque && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-wg-orange text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-wg-orange text-white text-xs px-4 py-1 rounded-full uppercase tracking-wider">
                     Solução completa
                   </span>
                 )}
-                <span className={`text-xs font-bold tracking-widest uppercase mb-2 block ${m.destaque ? 'text-wg-orange' : 'text-wg-orange'}`}>{m.subtitulo}</span>
-                <h3 className={`text-2xl font-inter font-medium mb-3 ${m.destaque ? 'text-white' : 'text-wg-black'}`}>{m.titulo}</h3>
+                <span className={`text-xs tracking-widest uppercase mb-2 block ${m.destaque ? 'text-wg-orange' : 'text-wg-orange'}`}>{m.subtitulo}</span>
+                <h3 className={`text-2xl font-inter mb-3 ${m.destaque ? 'text-white' : 'text-wg-black'}`}>{m.titulo}</h3>
                 <p className={`text-sm mb-6 leading-relaxed ${m.destaque ? 'text-white/60' : 'text-wg-gray'}`}>{m.desc}</p>
                 <ul className="space-y-3 mb-8">
                   {m.itens.map((item, j) => (
@@ -259,7 +261,7 @@ const EasyRealStateLanding = () => {
                   ))}
                 </ul>
                 <a href={m.href} target={m.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
-                  <Button className={`w-full rounded-2xl py-3 font-medium ${m.destaque ? 'bg-wg-orange text-white hover:bg-wg-orange/90' : 'bg-wg-gray-light text-wg-black hover:bg-wg-gray-light/80'}`}>
+                  <Button className={`w-full rounded-2xl py-3 ${m.destaque ? 'bg-wg-orange text-white hover:bg-wg-orange/90' : 'bg-wg-gray-light text-wg-black hover:bg-wg-gray-light/80'}`}>
                     {m.cta} <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </a>
@@ -267,7 +269,7 @@ const EasyRealStateLanding = () => {
             ))}
           </div>
           <p className="text-center text-wg-gray text-sm mt-8 max-w-2xl mx-auto">
-            <strong>Projeto de site personalizado</strong> desenvolvido pela WG BuildTech para corretoras e imobiliárias.
+            Projeto de site personalizado desenvolvido pela WG BuildTech para corretoras e imobiliárias.
             Baseado no projeto Capadócia Brokers · site de exclusividades imobiliárias premium em São Paulo.
           </p>
         </div>
@@ -277,7 +279,7 @@ const EasyRealStateLanding = () => {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">Como funciona</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Como funciona</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
               Do valor do imóvel ao custo da reforma · em um clique
             </h2>
@@ -287,13 +289,13 @@ const EasyRealStateLanding = () => {
               <motion.div key={i} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="bg-wg-gray-light rounded-2xl p-6 shadow-sm flex items-start gap-6">
                 <div className="flex-shrink-0 w-16 h-16 bg-wg-orange rounded-full flex items-center justify-center">
-                  <span className="text-white text-xl font-medium">{etapa.numero}</span>
+                  <span className="text-white text-xl">{etapa.numero}</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-inter font-medium text-wg-black mb-2">{etapa.titulo}</h3>
+                  <h3 className="text-xl font-inter text-wg-black mb-2">{etapa.titulo}</h3>
                   <p className="text-wg-gray font-light">{etapa.desc}</p>
                   {i === 3 && (
-                    <span className="inline-block mt-2 text-xs bg-wg-orange/10 text-wg-orange px-3 py-1 rounded-full font-medium">
+                    <span className="inline-block mt-2 text-xs bg-wg-orange/10 text-wg-orange px-3 py-1 rounded-full">
                       ✦ Integrado com ObraEasy · exclusivo
                     </span>
                   )}
@@ -308,7 +310,7 @@ const EasyRealStateLanding = () => {
       <section className="section-padding bg-wg-gray-light">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">Recursos da plataforma</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Recursos da plataforma</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
               Tudo que um corretor precisa para fechar mais negócios
             </h2>
@@ -318,7 +320,7 @@ const EasyRealStateLanding = () => {
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="bg-white rounded-2xl p-6">
                 <f.icon className="w-10 h-10 text-wg-orange mb-4" />
-                <h3 className="text-lg font-inter font-medium text-wg-black mb-2">{f.titulo}</h3>
+                <h3 className="text-lg font-inter text-wg-black mb-2">{f.titulo}</h3>
                 <p className="text-wg-gray font-light text-sm leading-relaxed">{f.desc}</p>
               </motion.div>
             ))}
@@ -330,14 +332,14 @@ const EasyRealStateLanding = () => {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">Cobertura atual</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Cobertura atual</span>
             <h2 className="text-3xl font-inter font-light text-wg-black mb-3">Bairros com dados reais de mercado</h2>
             <p className="text-wg-gray max-w-xl mx-auto">São Paulo · dados de transações reais atualizados continuamente</p>
           </motion.div>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
             {bairros.map((b, i) => (
               <motion.span key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-                className="inline-flex items-center gap-1 px-4 py-2 bg-wg-gray-light rounded-full text-sm text-wg-black font-medium">
+                className="inline-flex items-center gap-1 px-4 py-2 bg-wg-gray-light rounded-full text-sm text-wg-black">
                 <MapPin className="w-3 h-3 text-wg-orange" />
                 {b}
               </motion.span>
@@ -350,7 +352,7 @@ const EasyRealStateLanding = () => {
       <section className="section-padding bg-wg-gray-light">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">Planos</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Planos</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black mb-4">
               Do corretor autônomo à grande imobiliária
             </h2>
@@ -360,11 +362,11 @@ const EasyRealStateLanding = () => {
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
                 className={`rounded-2xl p-8 relative ${plano.destaque ? 'bg-wg-black text-white ring-2 ring-wg-orange' : 'bg-white'}`}>
                 {plano.destaque && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-wg-orange text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-wg-orange text-white text-xs px-4 py-1 rounded-full uppercase tracking-wider">
                     Mais popular
                   </span>
                 )}
-                <h3 className={`text-xl font-inter font-medium mb-1 ${plano.destaque ? 'text-white' : 'text-wg-black'}`}>{plano.label}</h3>
+                <h3 className={`text-xl font-inter mb-1 ${plano.destaque ? 'text-white' : 'text-wg-black'}`}>{plano.label}</h3>
                 <p className={`text-sm mb-4 ${plano.destaque ? 'text-white/60' : 'text-wg-gray'}`}>{plano.desc}</p>
                 <div className="flex items-baseline gap-1 mb-6">
                   <span className={`text-3xl font-light ${plano.destaque ? 'text-white' : 'text-wg-black'}`}>{plano.price}</span>
@@ -379,7 +381,7 @@ const EasyRealStateLanding = () => {
                   ))}
                 </ul>
                 <a href={plano.href} target={plano.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
-                  <Button className={`w-full rounded-2xl py-3 font-medium ${plano.destaque ? 'bg-wg-orange text-white hover:bg-wg-orange/90' : 'bg-wg-gray-light text-wg-black hover:bg-wg-gray-light/80'}`}>
+                  <Button className={`w-full rounded-2xl py-3 ${plano.destaque ? 'bg-wg-orange text-white hover:bg-wg-orange/90' : 'bg-wg-gray-light text-wg-black hover:bg-wg-gray-light/80'}`}>
                     {plano.cta}
                   </Button>
                 </a>
@@ -393,7 +395,7 @@ const EasyRealStateLanding = () => {
       <section className="section-padding bg-gradient-to-br from-wg-black to-wg-black/90 text-white">
         <div className="container-custom text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto">
-            <Star className="w-12 h-12 text-wg-orange mx-auto mb-6" />
+            <Zap className="w-12 h-12 mx-auto mb-6 text-wg-orange" />
             <h2 className="text-3xl md:text-4xl font-inter font-light mb-4">
               Feche mais negócios com dados reais
             </h2>
@@ -409,9 +411,9 @@ const EasyRealStateLanding = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
-              <a href="tel:+5511984650002" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl font-medium hover:bg-white hover:text-wg-black transition-all text-lg">
+              <a href="tel:+5511984650002" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
                 <Phone className="w-5 h-5" />
-                (11) 98465-0002
+                +55 (11) 98465-0002
               </a>
             </div>
           </motion.div>

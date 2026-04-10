@@ -1,12 +1,14 @@
 import React from 'react';
 import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
-import { ExternalLink, MapPin, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ExternalLink, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
 import { GOOGLE_WRITE_REVIEW_URL } from '@/constants/googleReviews';
 import useGoogleReviews from '@/hooks/useGoogleReviews';
+import { BrandRating } from '@/components/BrandStar';
 
 const GOOGLE_MAPS_URL = 'https://maps.google.com/?q=WG+Almeida+Arquitetura+São+Paulo';
 
@@ -45,7 +47,7 @@ const Testimonials = () => {
           "@type": "ProfessionalService",
           name: "Grupo WG Almeida",
           url: "https://wgalmeida.com.br",
-          telephone: "+55-11-98465-0002",
+          telephone: "+5511984650002",
           email: "contato@wgalmeida.com.br",
           address: {
             "@type": "PostalAddress",
@@ -64,7 +66,7 @@ const Testimonials = () => {
       />
 
       {/* Hero elegante */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -79,25 +81,13 @@ const Testimonials = () => {
             height="1080"
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-wg-black/40 via-wg-black/60 to-wg-black/80"></div>
         </motion.div>
 
         <div className="relative z-10 container-custom text-center text-white px-4">
-          {/* Linha decorativa */}
-          <motion.div
-            className="flex items-center justify-center gap-4 mb-8"
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-wg-orange" />
-            <div className="w-2 h-2 bg-wg-orange rounded-full" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-wg-orange" />
-          </motion.div>
-
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -171,11 +161,7 @@ const Testimonials = () => {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-6 h-6 text-wg-orange fill-wg-orange" />
-                    ))}
-                  </div>
+                  <BrandRating className="w-5 h-5" alt="" />
                   <span className="text-2xl font-light text-wg-black">{averageRating.toFixed(1)}</span>
                 </div>
               </div>
@@ -221,7 +207,6 @@ const Testimonials = () => {
                     variant="outline"
                     className="text-base px-8 py-4 border-2 border-wg-orange text-wg-orange hover:bg-wg-orange hover:text-white transition-colors w-full sm:w-auto"
                   >
-                    <Star className="w-5 h-5 mr-2" />
                     {t('testimonialsPage.google.ctaReview')}
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
@@ -273,19 +258,6 @@ const Testimonials = () => {
             {...fadeInUp}
             className="text-center mb-10"
           >
-            {/* Linha decorativa */}
-            <motion.div
-              className="flex items-center justify-center gap-4 mb-8"
-              initial={{ opacity: 0, scaleX: 0 }}
-              whileInView={{ opacity: 1, scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-wg-orange" />
-              <div className="w-2 h-2 bg-wg-orange rounded-full" />
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-wg-orange" />
-            </motion.div>
-
             <span className="text-wg-orange tracking-[0.2em] uppercase text-sm mb-4 block">
               {t('testimonialsPage.partners.kicker')}
             </span>
@@ -339,14 +311,14 @@ const Testimonials = () => {
                   {t('testimonialsPage.cta.whatsapp')}
                 </Button>
               </a>
-              <a href="/contato">
+              <Link to="/contato">
                 <Button
                   variant="outline"
                   className="text-lg px-8 py-4 border border-white/40 text-white bg-white/5 hover:bg-white/15 transition-all"
                 >
                   {t('testimonialsPage.cta.message')}
                 </Button>
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -356,3 +328,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+

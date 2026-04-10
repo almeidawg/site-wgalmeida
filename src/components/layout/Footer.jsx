@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container-custom py-12 md:py-16">
         <div className="border-t border-gray-800 pt-10" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_0.9fr_1.6fr_1.1fr] gap-8 lg:gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[0.92fr_0.96fr_1.6fr_1.02fr] gap-8 lg:gap-x-5 lg:gap-y-8 items-start">
           <div>
             <span className="font-suisse font-light text-lg mb-3 block text-gray-200">{t('footer.navigation')}</span>
             <nav className="space-y-2">
@@ -39,7 +39,7 @@ const Footer = () => {
             </nav>
           </div>
 
-          <div className="lg:mr-4">
+          <div className="lg:mr-2">
             <span className="font-suisse font-light text-lg mb-3 block text-gray-200">{t('footer.units')}</span>
             <nav className="space-y-2">
               <Link to="/arquitetura" className="block text-gray-400 hover:text-wg-green transition-colors text-sm">
@@ -67,13 +67,13 @@ const Footer = () => {
           </div>
 
           {/* Onde Atuamos - SEO Local */}
-          <div className="lg:mx-auto">
+          <div className="lg:-ml-10">
             <span className="font-suisse font-light text-lg mb-3 block text-gray-200">{t('footer.regions')}</span>
-            <nav className="grid grid-cols-3 gap-x-6 gap-y-2">
+            <nav className="grid max-w-[29rem] grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
               <Link to="/jardins" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm leading-snug whitespace-normal">
                 Jardins
               </Link>
-              <Link to="/vila-nova-conceicao" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm leading-snug whitespace-nowrap">
+              <Link to="/vila-nova-conceicao" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm leading-snug whitespace-normal">
                 Vila Nova Conceição
               </Link>
               <Link to="/itaim" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm leading-snug whitespace-normal">
@@ -88,7 +88,7 @@ const Footer = () => {
               <Link to="/cidade-jardim" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm leading-snug whitespace-normal">
                 Cidade Jardim
               </Link>
-              <Link to="/alto-de-pinheiros" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm leading-snug whitespace-nowrap">
+              <Link to="/alto-de-pinheiros" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm leading-snug whitespace-normal">
                 Alto de Pinheiros
               </Link>
               <Link to="/moema" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm leading-snug whitespace-normal">
@@ -126,7 +126,7 @@ const Footer = () => {
             <div className="space-y-3">
               <a href="tel:+5511984650002" className="flex items-start space-x-3 hover:text-wg-orange transition-colors group">
                 <Phone className="w-5 h-5 text-wg-orange mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400 text-sm group-hover:text-wg-orange">+55 11 98465-0002</span>
+                <span className="text-gray-400 text-sm group-hover:text-wg-orange">+55 (11) 98465-0002</span>
               </a>
               <a href="https://wa.me/5511984650002" target="_blank" rel="noopener noreferrer" className="flex items-start space-x-3 hover:text-wg-orange transition-colors group">
                 <svg viewBox="0 0 24 24" className="w-5 h-5 text-wg-orange mt-0.5 flex-shrink-0 fill-current">
@@ -167,19 +167,31 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center">
+        <div
+          className="border-t border-gray-800 pt-8 text-center font-suisse font-light"
+          style={{ fontFamily: "'Suisse Intl', 'Inter', sans-serif", fontWeight: 300 }}
+        >
            <div className="mb-6">
               <a 
                 href="https://easy.wgalmeida.com.br" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="inline-flex items-center gap-2 text-gray-300 hover:text-gray-300 transition-colors text-xs"
+                className="inline-flex items-center gap-2 text-gray-300 hover:text-gray-300 transition-colors text-xs font-suisse font-light tracking-[0.01em]"
+                style={{ fontFamily: "'Suisse Intl', 'Inter', sans-serif", fontWeight: 300 }}
               >
                   <KeyRound size={14} />
-                  <span>{t('footer.wgEasyAccess')}</span>
+                  <span
+                    className="font-suisse font-light tracking-[0.01em]"
+                    style={{ fontFamily: "'Suisse Intl', 'Inter', sans-serif", fontWeight: 300 }}
+                  >
+                    {t('footer.wgEasyAccess')}
+                  </span>
               </a>
            </div>
-          <p className="text-gray-300 text-sm">
+          <p
+            className="text-gray-300 text-sm font-suisse font-light tracking-[0.01em]"
+            style={{ fontFamily: "'Suisse Intl', 'Inter', sans-serif", fontWeight: 300 }}
+          >
             © {new Date().getFullYear()} Grupo WG Almeida. {t('footer.rights')}
           </p>
         </div>

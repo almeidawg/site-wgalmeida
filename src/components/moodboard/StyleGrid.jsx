@@ -70,7 +70,7 @@ const StyleGrid = ({ selectedStyles, onStylesChange, maxStyles = 3 }) => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <div>
-          <h3 className="text-lg font-semibold text-gray-800">
+          <h3 className="text-lg font-light text-gray-800">
             Escolha seus Estilos ({selectedStyles.length}/{maxStyles})
           </h3>
           <p className="text-sm text-gray-500">
@@ -116,7 +116,7 @@ const StyleGrid = ({ selectedStyles, onStylesChange, maxStyles = 3 }) => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-4 py-2 rounded-full whitespace-nowrap text-sm font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full whitespace-nowrap text-sm font-light transition-colors ${
                 activeCategory === category.id
                   ? 'bg-wg-orange text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -131,7 +131,7 @@ const StyleGrid = ({ selectedStyles, onStylesChange, maxStyles = 3 }) => {
       {/* Selected Styles Preview */}
       {selectedStyles.length > 0 && (
         <div className="bg-wg-orange/10 rounded-xl p-4">
-          <p className="text-sm font-medium text-gray-700 mb-2">Estilos selecionados:</p>
+          <p className="text-sm font-light text-gray-700 mb-2">Estilos selecionados:</p>
           <div className="flex flex-wrap gap-2">
             {selectedStyles.map((style) => (
               <span

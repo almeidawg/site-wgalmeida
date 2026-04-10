@@ -1,11 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from '@/lib/motion-lite';
 import { ArrowRight, Building2, Hammer, Ruler, MapPin, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
-import { schemas } from '@/components/SEO';
+import SEO, { schemas } from '@/components/SEO';
+import { buildUnsplashSrcSet, normalizeUnsplashImageUrl } from '@/lib/unsplash';
 
 const RegionTemplate = ({
   regionKey,
@@ -32,7 +32,20 @@ const RegionTemplate = ({
   const regionSlug = regionKey || toSlug(regionName);
   const resolvedTitle = title || regionContent?.title;
   const resolvedMetaDescription = metaDescription || regionContent?.metaDescription;
-  const resolvedHeroImage = heroImage || regionContent?.heroImage;
+  const canonicalUrl = `https://wgalmeida.com.br/${regionSlug}`;
+  const rawHeroImage = heroImage || regionContent?.heroImage || '/images/hero-region.webp';
+  const resolvedHeroImage = normalizeUnsplashImageUrl(rawHeroImage, {
+    width: 1920,
+    height: 1080,
+    quality: 80,
+  });
+  const resolvedHeroSrcSet = buildUnsplashSrcSet(rawHeroImage, [
+    { width: 640, height: 360, quality: 70, descriptor: '640w' },
+    { width: 960, height: 540, quality: 75, descriptor: '960w' },
+    { width: 1280, height: 720, quality: 80, descriptor: '1280w' },
+    { width: 1600, height: 900, quality: 80, descriptor: '1600w' },
+    { width: 1920, height: 1080, quality: 80, descriptor: '1920w' },
+  ]);
   const resolvedIntro = intro || regionContent?.intro || [];
   const resolvedHighlights = highlights || regionContent?.highlights || [];
   const resolvedCta = cta || regionContent?.cta || {};
@@ -40,28 +53,56 @@ const RegionTemplate = ({
   const defaultServices = t('regions.defaults.services', { returnObjects: true });
   const servicesData = services || regionContent?.services || defaultServices;
   const serviceIcons = [Ruler, Building2, Hammer];
+  const regionHighlightsTitle = (() => {
+    const regionLabel = (regionName || '').trim();
+
+    if (['Brooklin', 'Morumbi', 'Itaim', 'Paraiso'].includes(regionLabel)) {
+      return `Por que escolher a WG Almeida no ${regionLabel}?`;
+    }
+
+    if (['Aclimacao', 'Mooca', 'Moema', 'Vila Mariana', 'Vila Nova Conceição', 'Cidade Jardim'].includes(regionLabel)) {
+      return `Por que escolher a WG Almeida na ${regionLabel}?`;
+    }
+
+    if (['Jardins', 'Perdizes', 'Pinheiros'].includes(regionLabel)) {
+      return `Por que escolher a WG Almeida nos ${regionLabel}?`;
+    }
+
+    return t('regions.defaults.highlightsTitle', { region: regionLabel });
+  })();
 
   // Schema LocalBusiness para SEO local
   const localBusinessSchema = schemas.localBusiness(regionName);
 
   return (
     <>
-      <Helmet>
-        <title>{resolvedTitle} | Grupo WG Almeida</title>
-        <meta name="description" content={resolvedMetaDescription} />
-        <link rel="canonical" href={`https://wgalmeida.com.br/${regionSlug}`} />
-
-        {/* Schema.org JSON-LD para LocalBusiness */}
-        <script type="application/ld+json">
-          {JSON.stringify(localBusinessSchema)}
-        </script>
-      </Helmet>
+      <SEO
+        pathname={`/${regionSlug}`}
+        title={`${resolvedTitle} | Grupo WG Almeida`}
+        description={resolvedMetaDescription}
+        url={canonicalUrl}
+        schema={localBusinessSchema}
+        og={{
+          image: resolvedHeroImage || 'https://wgalmeida.com.br/images/og-home-1200x630.jpg',
+        }}
+        twitter={{
+          image: resolvedHeroImage || 'https://wgalmeida.com.br/images/og-home-1200x630.jpg',
+        }}
+      />
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden hero-under-header">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${resolvedHeroImage || '/images/hero-region.webp'})` }}
+      <section className="wg-page-hero hero-under-header bg-wg-black">
+        <img
+          className="absolute inset-0 h-full w-full object-cover"
+          src={resolvedHeroImage || '/images/hero-region.webp'}
+          srcSet={resolvedHeroSrcSet || undefined}
+          sizes="100vw"
+          alt={resolvedTitle}
+          width="1920"
+          height="1080"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black/80" />
 
@@ -163,7 +204,7 @@ const RegionTemplate = ({
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black normal-case tracking-tight">
-                {t('regions.defaults.highlightsTitle', { region: regionName })}
+                {regionHighlightsTitle}
               </h2>
             </motion.div>
 
@@ -227,7 +268,7 @@ const RegionTemplate = ({
                 </Button>
               </Link>
               <Link to="/projetos">
-                <Button variant="outline" className="border-wg-black text-wg-black hover:bg-wg-black hover:text-white transition-all rounded-2xl px-6 py-3">
+                <Button variant="outline" className="rounded-full border border-wg-black/12 bg-white/70 px-6 py-3 text-wg-black hover:border-wg-black/20 hover:bg-white">
                   {t('regions.defaults.ctaSecondary')}
                 </Button>
               </Link>

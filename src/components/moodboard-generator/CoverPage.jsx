@@ -1,5 +1,6 @@
 // Cover page template for moodboard
 import React from 'react';
+import { normalizeUnsplashImageUrl } from '@/lib/unsplash';
 
 export default function CoverPage({
   clientName,
@@ -7,7 +8,16 @@ export default function CoverPage({
   backgroundImage,
   pageNumber = 1
 }) {
-  const defaultBg = 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200';
+  const defaultBg = normalizeUnsplashImageUrl('https://images.unsplash.com/photo-1524758631624-e2822e304c36', {
+    width: 1600,
+    height: 1200,
+    quality: 80,
+  });
+  const resolvedBackgroundImage = normalizeUnsplashImageUrl(backgroundImage || defaultBg, {
+    width: 1600,
+    height: 1200,
+    quality: 80,
+  });
 
   return (
     <div className="moodboard-page cover-page" style={{
@@ -26,7 +36,7 @@ export default function CoverPage({
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundImage: `url(${backgroundImage || defaultBg})`,
+          backgroundImage: `url(${resolvedBackgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'brightness(0.7)'

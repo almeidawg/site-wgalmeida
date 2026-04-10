@@ -1,20 +1,19 @@
 import React from 'react';
 import SEO, { schemas } from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
+import { withBasePath } from '@/utils/assetPaths';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Ruler,
   CheckCircle,
   MapPin,
-  Sparkles,
   Clock,
   Award,
   Palette,
   Phone,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import BrandStar from '@/components/BrandStar';
 
 const MarcenariaSobMedidaMorumbi = () => {
   const pageUrl = 'https://wgalmeida.com.br/marcenaria-sob-medida-morumbi';
@@ -26,7 +25,7 @@ const MarcenariaSobMedidaMorumbi = () => {
       description: 'Projetos exclusivos desenvolvidos por arquitetos especializados.'
     },
     {
-      icon: Sparkles,
+      icon: Award,
       title: 'Materiais Premium',
       description: 'Curadoria de materiais nobres compatíveis com o padrão Morumbi.'
     },
@@ -86,7 +85,7 @@ const MarcenariaSobMedidaMorumbi = () => {
     "provider": {
       "@type": "Organization",
       "name": "Grupo WG Almeida",
-      "telephone": "+55-11-98465-0002"
+      "telephone": "+5511984650002"
     },
     "areaServed": {
       "@type": "Neighborhood",
@@ -101,6 +100,7 @@ const MarcenariaSobMedidaMorumbi = () => {
   return (
     <>
       <SEO
+        pathname="/marcenaria-sob-medida-morumbi"
         title="Marcenaria Sob Medida Morumbi SP | Design Premium"
         description="Marcenaria sob medida de alto padrão no Morumbi. Closets, cozinhas, estantes e ambientes integrados. Design autoral com materiais premium. Orçamento personalizado."
         keywords="marcenaria sob medida morumbi, closet morumbi, marcenaria morumbi, móveis planejados morumbi, marcenaria alto padrão morumbi"
@@ -109,10 +109,10 @@ const MarcenariaSobMedidaMorumbi = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: 'url(/images/banners/ARQ.webp)' }}
+          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
@@ -124,7 +124,7 @@ const MarcenariaSobMedidaMorumbi = () => {
           >
             <div className="flex items-center justify-center gap-2 mb-4">
               <MapPin className="w-6 h-6 text-wg-orange" />
-              <span className="text-wg-orange font-medium text-sm tracking-widest uppercase">
+              <span className="text-wg-orange font-light text-sm tracking-widest uppercase">
                 Morumbi, São Paulo
               </span>
             </div>
@@ -161,7 +161,7 @@ const MarcenariaSobMedidaMorumbi = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
+            <span className="text-wg-orange font-light text-sm tracking-widest uppercase mb-4 block">
               Marcenaria Premium Morumbi
             </span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
@@ -182,7 +182,7 @@ const MarcenariaSobMedidaMorumbi = () => {
                 <div className="w-16 h-16 bg-wg-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   {React.createElement(item.icon, { className: 'w-8 h-8 text-wg-orange' })}
                 </div>
-                <h3 className="text-xl font-inter font-medium text-wg-black mb-2">
+                <h3 className="text-xl font-inter font-light text-wg-black mb-2">
                   {item.title}
                 </h3>
                 <p className="text-wg-gray font-light">
@@ -219,7 +219,7 @@ const MarcenariaSobMedidaMorumbi = () => {
                 className="bg-white rounded-2xl p-8 shadow-lg"
               >
                 <Ruler className="w-10 h-10 text-wg-orange mb-4" />
-                <h3 className="text-xl font-inter font-medium text-wg-black mb-3">
+                <h3 className="text-xl font-inter font-light text-wg-black mb-3">
                   {ambiente.tipo}
                 </h3>
                 <p className="text-wg-gray mb-4 font-light">
@@ -248,7 +248,7 @@ const MarcenariaSobMedidaMorumbi = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <Sparkles className="w-12 h-12 text-wg-orange mx-auto mb-4" />
+            <Award className="w-12 h-12 text-wg-orange mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black mb-4">
               Marcenaria para o Padrão Morumbi
             </h2>
@@ -264,7 +264,7 @@ const MarcenariaSobMedidaMorumbi = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex items-start gap-3 p-4 bg-wg-gray-light rounded-xl"
               >
-                <BrandStar className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5 text-wg-green" />
                 <p className="text-wg-gray font-light">{item}</p>
               </motion.div>
             ))}
@@ -296,10 +296,10 @@ const MarcenariaSobMedidaMorumbi = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-6 text-center"
               >
-                <div className="w-12 h-12 bg-wg-orange text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                <div className="w-12 h-12 bg-wg-orange text-white rounded-full flex items-center justify-center font-light text-lg mx-auto mb-4">
                   {index + 1}
                 </div>
-                <h3 className="text-lg font-inter font-medium text-wg-black mb-2">
+                <h3 className="text-lg font-inter font-light text-wg-black mb-2">
                   {etapa.titulo}
                 </h3>
                 <p className="text-sm text-wg-gray font-light">
@@ -349,7 +349,7 @@ const MarcenariaSobMedidaMorumbi = () => {
               </Link>
               <a href="tel:+5511984650002" className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
-                (11) 98465-0002
+                +55 (11) 98465-0002
               </a>
             </div>
           </motion.div>

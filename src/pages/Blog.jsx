@@ -14,7 +14,7 @@ import {
   Hammer,
   TrendingUp,
   Lightbulb,
-  Sparkles,
+  Palette,
   Monitor,
   ChevronRight,
   ShoppingBag,
@@ -33,6 +33,11 @@ import { parseFrontmatter } from '@/utils/frontmatter';
 import { useTranslation } from 'react-i18next';
 import { getProducts } from '@/api/EcommerceApi';
 import { withBasePath } from '@/utils/assetPaths';
+import {
+  getBlogImageAttribution,
+  getBlogContextAssets,
+  getBlogImageUrl,
+} from '@/data/blogImageManifest';
 
 const rawPostsByLocale = {
   'pt-BR': import.meta.glob('/src/content/blog/*.md', { as: 'raw', eager: true }),
@@ -84,6 +89,9 @@ const stripDuplicateTocSection = (markdown) => markdown
   )
   .trim();
 
+const stripMarkdownStrongEmphasis = (markdown = '') => markdown
+  .replace(/\*\*(.*?)\*\*/g, '$1');
+
 const splitMarkdownByH2 = (markdown) => {
   const lines = markdown.split('\n');
   const introLines = [];
@@ -127,7 +135,7 @@ const splitMarkdownByH2 = (markdown) => {
 };
 
 const editorialScale = {
-  kicker: 'text-[11px] font-semibold uppercase tracking-[0.18em]',
+  kicker: 'text-[11px] font-light uppercase tracking-[0.18em]',
   title: 'text-[22px] leading-tight text-wg-black',
   body: 'text-[15px] leading-[1.65] text-[#4C4C4C]',
   bodyHero: 'text-[17px] md:text-[18px] leading-[1.65]',
@@ -164,22 +172,149 @@ const slugHashBanner = (slug) => {
   return withBasePath(ALL_BLOG_BANNERS[h % ALL_BLOG_BANNERS.length]);
 };
 
-const getBlogFallbackImage = (category, slug) => (
+const getLocalBlogFallbackImage = (category, slug) => (
   slug ? slugHashBanner(slug) : withBasePath(CATEGORY_BANNER[category] || '/images/banners/SOBRE.webp')
+);
+
+const isAbsoluteUrl = (value) => /^https?:\/\//i.test(value || '');
+
+const getBlogFallbackImage = (category, slug, variant = 'card') => (
+  getBlogImageUrl({ category, slug, variant }) || getLocalBlogFallbackImage(category, slug)
 );
 
 const isGenericBannerImage = (image) => image?.startsWith('/images/banners/');
 
-const resolveBlogImage = (image, category, slug) => {
+const resolveBlogImage = (image, category, slug, variant = 'card') => {
+  if (isAbsoluteUrl(image)) {
+    return image;
+  }
+
   if (!image || isGenericBannerImage(image)) {
-    return slug ? slugHashBanner(slug) : withBasePath(CATEGORY_BANNER[category] || '/images/banners/SOBRE.webp');
+    return getBlogFallbackImage(category, slug, variant);
   }
 
   if (image.startsWith('/images/blog/')) {
-    return withBasePath(image);
+    return getBlogImageUrl({ category, slug, variant }) || withBasePath(image);
   }
 
   return withBasePath(image);
+};
+
+const resolveBlogImageAttribution = (image, category, slug, variant = 'card') => {
+  if (isAbsoluteUrl(image) && !image.includes('unsplash.com')) {
+    return null;
+  }
+
+  return getBlogImageAttribution({ category, slug, variant });
+};
+
+const toAbsoluteSiteUrl = (value) => {
+  if (!value) return '';
+  if (isAbsoluteUrl(value)) return value;
+  return `https://wgalmeida.com.br${value.startsWith('/') ? value : `/${value}`}`;
+};
+
+const StableBlogImage = ({ src, fallbackSrc, alt, onError, ...props }) => {
+  const [currentSrc, setCurrentSrc] = useState(src || fallbackSrc || '');
+  const [fallbackApplied, setFallbackApplied] = useState(false);
+
+  useEffect(() => {
+    setCurrentSrc(src || fallbackSrc || '');
+    setFallbackApplied(false);
+  }, [src, fallbackSrc]);
+
+  return (
+    <img
+      {...props}
+      src={currentSrc}
+      alt={alt}
+      onError={(event) => {
+        if (!fallbackApplied && fallbackSrc && currentSrc !== fallbackSrc) {
+          setCurrentSrc(fallbackSrc);
+          setFallbackApplied(true);
+          return;
+        }
+
+        onError?.(event);
+      }}
+    />
+  );
+};
+
+const BlogImageCredit = ({ credit, className = '', tone = 'light' }) => {
+  if (!credit?.photographer || !credit?.photographerUrl || !credit?.photoPageUrl) return null;
+
+  const textColor = tone === 'dark' ? 'text-white/70' : 'text-[#6B7280]';
+  const linkColor = tone === 'dark' ? 'text-white' : 'text-wg-blue';
+
+  return (
+    <p className={`text-[11px] leading-relaxed ${textColor} ${className}`.trim()}>
+      Foto: <a href={credit.photographerUrl} target="_blank" rel="noreferrer" className={`underline underline-offset-2 ${linkColor}`}>{credit.photographer}</a>{' '}
+      via <a href={credit.photoPageUrl} target="_blank" rel="noreferrer" className={`underline underline-offset-2 ${linkColor}`}>{credit.sourceLabel || 'Unsplash'}</a>
+    </p>
+  );
+};
+
+const ContextImageBlock = ({ asset, fallbackSrc, fallbackAlt = '' }) => {
+  if (!asset?.src) return null;
+
+  return (
+    <figure className="my-8 overflow-hidden rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] shadow-sm">
+      <StableBlogImage
+        src={asset.src}
+        fallbackSrc={fallbackSrc}
+        alt={asset.alt || fallbackAlt}
+        className="h-auto w-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption className="space-y-2 px-5 py-4">
+        {asset.caption ? (
+          <p className="text-[13px] leading-relaxed text-[#4B5563]">
+            {asset.caption}
+          </p>
+        ) : null}
+        <BlogImageCredit
+          credit={asset.source === 'unsplash'
+            ? {
+              photographer: asset.photographer,
+              photographerUrl: asset.photographerUrl,
+              photoPageUrl: asset.photoPageUrl,
+              sourceLabel: asset.sourceLabel,
+            }
+            : null}
+        />
+      </figcaption>
+    </figure>
+  );
+};
+
+const buildSectionImageInsertions = (sectionsCount, images = []) => {
+  const insertionMap = new Map();
+  if (sectionsCount <= 0 || images.length === 0) return insertionMap;
+
+  const lastIndex = Math.max(0, sectionsCount - 1);
+  const usedIndexes = new Set();
+
+  images.forEach((image, index) => {
+    let targetIndex = Math.round(((index + 1) * sectionsCount) / (images.length + 1)) - 1;
+    targetIndex = Math.max(0, Math.min(lastIndex, targetIndex));
+
+    while (usedIndexes.has(targetIndex) && targetIndex < lastIndex) {
+      targetIndex += 1;
+    }
+
+    while (usedIndexes.has(targetIndex) && targetIndex > 0) {
+      targetIndex -= 1;
+    }
+
+    usedIndexes.add(targetIndex);
+    const bucket = insertionMap.get(targetIndex) || [];
+    bucket.push(image);
+    insertionMap.set(targetIndex, bucket);
+  });
+
+  return insertionMap;
 };
 
 // Componente de Compartilhamento Social
@@ -217,7 +352,7 @@ const ShareButtons = ({ title, url }) => {
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-sm text-wg-gray font-medium mr-2">Compartilhar:</span>
+      <span className="mr-2 text-sm font-light text-wg-gray">Compartilhar:</span>
 
       <motion.button
         whileHover={{ scale: 1.1 }}
@@ -229,7 +364,7 @@ const ShareButtons = ({ title, url }) => {
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
-        <span className="font-medium">WhatsApp</span>
+        <span className="font-light">WhatsApp</span>
       </motion.button>
 
       <motion.button
@@ -332,7 +467,7 @@ const RelatedProducts = ({ category }) => {
               </div>
 
               <div className="p-4">
-                <h4 className="font-inter font-semibold text-wg-black text-sm mb-2 line-clamp-2 group-hover:text-wg-blue transition-colors">
+                <h4 className="mb-2 line-clamp-2 text-sm font-inter font-light text-wg-black transition-colors group-hover:text-wg-blue">
                   {product.title}
                 </h4>
 
@@ -341,11 +476,11 @@ const RelatedProducts = ({ category }) => {
                 </p>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-lg font-bold text-wg-blue">
+                  <span className="text-lg font-light text-wg-blue">
                     {product.variants[0]?.price_formatted}
                   </span>
 
-                  <span className="inline-flex items-center gap-1 text-xs text-wg-blue font-medium">
+                  <span className="inline-flex items-center gap-1 text-xs font-light text-wg-blue">
                     {t('blogPage.relatedProducts.view', 'Ver')}
                     <ExternalLink className="w-3 h-3" />
                   </span>
@@ -359,7 +494,7 @@ const RelatedProducts = ({ category }) => {
       <div className="mt-8 text-center">
         <Link
           to="/store"
-        className="inline-flex items-center gap-2 px-6 py-3 bg-wg-blue text-white rounded-lg font-medium hover:bg-wg-blue/90 transition-all"
+        className="inline-flex items-center gap-2 rounded-lg bg-wg-blue px-6 py-3 font-light text-white transition-all hover:bg-wg-blue/90"
         >
           <ShoppingBag className="w-5 h-5" />
           {t('blogPage.relatedProducts.viewAll', 'Ver Todos os Produtos')}
@@ -380,6 +515,7 @@ const Blog = () => {
       try {
         const rawString = typeof raw === 'string' ? raw : (raw?.default || '');
         const { data, content } = parseFrontmatter(rawString);
+        const normalizedContent = stripMarkdownStrongEmphasis(content);
         const fallbackSlug = path.split('/').pop()?.replace('.md', '');
         const slugValue = data.slug || fallbackSlug;
 
@@ -388,15 +524,21 @@ const Blog = () => {
           slug: slugValue,
           subtitle: data.subtitle || '',
           excerpt: data.excerpt || '',
-          image: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue),
+          image: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'card'),
+          imageCard: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'card'),
+          imageHero: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'hero'),
+          imageSeo: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'seo'),
+          imageCardAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'card'),
+          imageHeroAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'hero'),
+          imageSeoAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'seo'),
           category: data.category || 'arquitetura',
           author: data.author || t('blogPage.fallback.author'),
           date: data.date || '2025-12-01',
           heroPosition: data.heroPosition || '50% 50%',
           featured: Boolean(data.featured),
           tags: Array.isArray(data.tags) ? data.tags : [],
-          content,
-          tempoLeitura: estimateReadingTime(content),
+          content: normalizedContent,
+          tempoLeitura: estimateReadingTime(normalizedContent),
         };
       } catch (err) {
         console.error('Error parsing blog post:', path, err);
@@ -409,8 +551,8 @@ const Blog = () => {
     { id: 'todos', label: t('blogPage.categories.all'), icon: BookOpen, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
     { id: 'arquitetura', label: t('blogPage.categories.architecture'), icon: Ruler, color: 'text-wg-green', bgColor: 'bg-wg-green' },
     { id: 'engenharia', label: t('blogPage.categories.engineering'), icon: Building2, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
-    { id: 'marcenaria', label: t('blogPage.categories.carpentry'), icon: Hammer, color: 'text-wg-brown', bgColor: 'bg-wg-brown' },
-    { id: 'design', label: t('blogPage.categories.design'), icon: Sparkles, color: 'text-wg-green', bgColor: 'bg-wg-green' },
+    { id: 'marcenaria', label: t('blogPage.categories.carpentry'), icon: Hammer, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
+    { id: 'design', label: t('blogPage.categories.design'), icon: Palette, color: 'text-wg-green', bgColor: 'bg-wg-green' },
     { id: 'tecnologia', label: t('blogPage.categories.technology'), icon: Monitor, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
     { id: 'tendencias', label: t('blogPage.categories.trends'), icon: TrendingUp, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
     { id: 'dicas', label: t('blogPage.categories.tips'), icon: Lightbulb, color: 'text-wg-green', bgColor: 'bg-wg-green' }
@@ -483,7 +625,7 @@ const Blog = () => {
             <p className="text-wg-gray mb-8">
               {t('blogPage.notFound.subtitle')}
             </p>
-            <Link to="/blog" className="text-wg-blue font-medium inline-flex items-center gap-2">
+            <Link to="/blog" className="inline-flex items-center gap-2 font-light text-wg-blue">
               {t('blogPage.notFound.cta')} <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -523,7 +665,7 @@ const Blog = () => {
     const categoryMeta = {
       arquitetura: { dotColor: 'bg-wg-green', bgColor: 'bg-wg-green' },
       engenharia: { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
-      marcenaria: { dotColor: 'bg-wg-brown', bgColor: 'bg-wg-brown' },
+      marcenaria: { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
       insights: { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
       design: { dotColor: 'bg-wg-green', bgColor: 'bg-wg-green' },
       tecnologia: { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
@@ -532,7 +674,19 @@ const Blog = () => {
     };
     const currentCategory = categorias.find(c => c.id === artigoAtual.category);
     const currentCategoryMeta = categoryMeta[artigoAtual.category] || { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' };
-    const articleFallbackImage = getBlogFallbackImage(artigoAtual.category, artigoAtual.slug);
+    const articleFallbackImage = getBlogFallbackImage(artigoAtual.category, artigoAtual.slug, 'hero');
+    const articleLocalFallbackImage = getLocalBlogFallbackImage(artigoAtual.category, artigoAtual.slug);
+    const articleHeroCredit = artigoAtual.imageHeroAttribution || artigoAtual.imageCardAttribution || null;
+    const articleContextImages = getBlogContextAssets({ slug: artigoAtual.slug });
+    const articleSchemaImages = [
+      toAbsoluteSiteUrl(artigoAtual.imageSeo || artigoAtual.imageHero || artigoAtual.imageCard || artigoAtual.image),
+      ...articleContextImages.map((asset) => toAbsoluteSiteUrl(asset?.src)).filter(Boolean),
+    ].filter(Boolean);
+    const articleLeadContextImage = articleContextImages[0] || null;
+    const articleSectionContextInsertions = buildSectionImageInsertions(
+      sectionedContent.sections.length,
+      articleContextImages.slice(1)
+    );
     const markdownComponents = {
       h2: ({ children, ...props }) => {
         const headingText = extractHeadingText(children);
@@ -550,6 +704,14 @@ const Blog = () => {
           </h3>
         );
       },
+      strong: ({ children, ...props }) => (
+        <span
+          className="font-suisse font-light text-inherit"
+          {...props}
+        >
+          {children}
+        </span>
+      ),
       blockquote: ({ children, ...props }) => {
         const text = extractHeadingText(children).trim();
         if (text.startsWith('DESTAQUE:') || text.startsWith('🎯 DESTAQUE:')) {
@@ -575,12 +737,12 @@ const Blog = () => {
         return <blockquote {...props}>{children}</blockquote>;
       },
       img: ({ src, alt = '', ...props }) => (
-        <img
+        <StableBlogImage
           src={src || articleFallbackImage}
+          fallbackSrc={articleLocalFallbackImage}
           alt={alt}
           loading="lazy"
           decoding="async"
-          onError={(e) => { e.currentTarget.src = articleFallbackImage; }}
           {...props}
         />
       ),
@@ -607,43 +769,44 @@ const Blog = () => {
           description={artigoAtual.excerpt}
           url={articleUrl}
           type="article"
-          image={`https://wgalmeida.com.br${artigoAtual.image}`}
+          image={articleSchemaImages[0]}
           schema={schemas.article(
             artigoAtual.title,
             artigoAtual.excerpt,
             articleUrl,
             artigoAtual.date,
-            `https://wgalmeida.com.br${artigoAtual.image}`
+            articleSchemaImages
           )}
           alternates={hreflangAlternates}
         />
 
-        <section className="hero-under-header relative h-[50vh] flex items-end overflow-hidden bg-wg-black">
+        <section className="wg-page-hero hero-under-header items-end bg-wg-black">
           <motion.div
             className="absolute inset-0"
             initial={{ scale: 1.05 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <img
-              src={artigoAtual.image}
+            <StableBlogImage
+              src={artigoAtual.imageHero || artigoAtual.imageCard || artigoAtual.image}
+              fallbackSrc={articleLocalFallbackImage}
               alt={artigoAtual.title}
               className="w-full h-full object-cover"
               style={{ objectPosition: artigoAtual.heroPosition }}
               loading="eager"
-              onError={(e) => { e.currentTarget.src = articleFallbackImage; }}
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-wg-black via-wg-black/60 to-transparent" />
           </motion.div>
 
-          <div className="relative z-10 container-custom pb-16 pt-32">
-            <div className="max-w-3xl">
-              <span className={`inline-flex items-center gap-2 px-4 py-2 ${currentCategoryMeta.bgColor} text-white rounded-full text-sm font-medium uppercase tracking-wider mb-6`}>
+          <div className="relative z-10 container-custom pb-16 pt-36 md:pb-20 md:pt-44 lg:pt-48">
+            <div className="max-w-4xl">
+              <span className={`inline-flex items-center gap-2 px-4 py-2 ${currentCategoryMeta.bgColor} text-sm font-light uppercase tracking-wider text-white rounded-full mb-6`}>
                 <span className={`inline-block w-2 h-2 rounded-full bg-white/90`} />
                 <span>{currentCategory?.label || t('blogPage.fallback.category')}</span>
               </span>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-white mb-6 leading-tight">
+              <h1 className="mb-6 text-4xl font-inter font-light leading-[0.95] tracking-[-0.03em] text-white md:text-5xl lg:text-[5rem]">
                 {artigoAtual.title}
               </h1>
 
@@ -661,6 +824,7 @@ const Blog = () => {
                   <span>{t('blogPage.readingTime', { minutes: artigoAtual.tempoLeitura })}</span>
                 </div>
               </div>
+              <BlogImageCredit credit={articleHeroCredit} tone="dark" className="mt-4" />
             </div>
           </div>
         </section>
@@ -676,17 +840,19 @@ const Blog = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-[220px_1fr]">
                 <div className="relative h-44 md:h-full">
-                  <img
-                    src={artigoAtual.image}
+                  <StableBlogImage
+                    src={artigoAtual.imageCard || artigoAtual.imageHero || artigoAtual.image}
+                    fallbackSrc={articleLocalFallbackImage}
                     alt={artigoAtual.title}
                     className="h-full w-full object-cover"
                     style={{ objectPosition: artigoAtual.heroPosition }}
                     loading="lazy"
-                    onError={(e) => { e.currentTarget.src = '/images/placeholder.webp'; }}
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/25 to-transparent md:bg-gradient-to-t" />
                 </div>
                 <div className="p-6 md:p-7">
+                  <BlogImageCredit credit={artigoAtual.imageCardAttribution || articleHeroCredit} className="mb-3" />
                   <p className={`mb-2 text-wg-gray ${editorialScale.kicker}`}>
                     {readerGuideLabel}
                   </p>
@@ -714,7 +880,7 @@ const Blog = () => {
 
             {tocHeadings.length >= 3 && (
               <nav className="mb-8 rounded-2xl border border-gray-200 bg-[#FAFAFA] p-5">
-                <h2 className="mb-4 text-base font-semibold text-wg-black">{tocTitleLabel}</h2>
+                <h2 className="mb-4 text-base font-light text-wg-black">{tocTitleLabel}</h2>
                 <ul className="space-y-2">
                   {tocHeadings.map((item) => (
                     <li key={item.id}>
@@ -734,7 +900,7 @@ const Blog = () => {
                         }`}>
                           {item.text}
                         </span>
-                        <span className={`ml-2 text-[10px] font-medium uppercase tracking-[0.12em] ${
+                        <span className={`ml-2 text-[10px] font-light uppercase tracking-[0.12em] ${
                           activeHeadingId === item.id ? 'text-wg-blue' : 'text-gray-400 group-hover:text-wg-blue/80'
                         }`}>
                           {readingLabel}
@@ -750,10 +916,10 @@ const Blog = () => {
             {sectionedContent.intro && (
               <div className="wg-prose mb-7 max-w-none
                 [&>h1]:text-[32px] [&>h1]:font-light [&>h1]:tracking-tight [&>h1]:text-[#1A1A1A] [&>h1]:mb-8 [&>h1]:mt-0
-                [&>h3]:text-[18px] [&>h3]:font-medium [&>h3]:text-[#1F2937] [&>h3]:mb-4 [&>h3]:mt-10
+                [&>h3]:text-[18px] [&>h3]:font-light [&>h3]:text-[#1F2937] [&>h3]:mb-4 [&>h3]:mt-10
                 [&>p]:text-[16px] [&>p]:text-[#334155] [&>p]:leading-[1.58] [&>p]:mb-5
-                [&_strong]:text-[#1A1A1A] [&_strong]:font-medium
-                [&_a]:text-[#2B4580] [&_a]:no-underline [&_a:hover]:underline [&_a]:font-medium
+                [&_strong]:text-[#1A1A1A] [&_strong]:font-light
+                [&_a]:text-[#2B4580] [&_a]:no-underline [&_a:hover]:underline [&_a]:font-light
                 [&>ul]:my-6 [&>ul]:space-y-3 [&>ul]:pl-0 [&>ul]:list-none
                 [&>ul>li]:text-[15px] [&>ul>li]:text-[#334155] [&>ul>li]:leading-[1.48] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[8px] [&>ul>li]:before:w-2 [&>ul>li]:before:h-2 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-wg-green
                 [&>ol]:my-6 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
@@ -765,47 +931,65 @@ const Blog = () => {
               </div>
             )}
 
+            {articleLeadContextImage ? (
+              <ContextImageBlock
+                asset={articleLeadContextImage}
+                fallbackSrc={articleLocalFallbackImage}
+                fallbackAlt={artigoAtual.title}
+              />
+            ) : null}
+
             <div className="space-y-5">
               {sectionedContent.sections.length > 0 ? sectionedContent.sections.map((section, index) => (
-                <motion.article
-                  key={section.id || index}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.35, delay: index * 0.03 }}
-                  className={`rounded-2xl border bg-white p-5 transition-all md:p-7 ${
-                    activeHeadingId === section.id
-                      ? 'border-wg-blue shadow-[0_0_0_1px_rgba(43,69,128,0.14)]'
-                      : 'border-gray-200 hover:border-wg-blue/60 hover:shadow-md'
-                  }`}
-                >
-                  <div className="wg-prose max-w-none
-                    [&>h2]:text-[24px] [&>h2]:font-light [&>h2]:tracking-tight [&>h2]:text-[#111827] [&>h2]:mb-5 [&>h2]:mt-0
-                    [&>h3]:text-[18px] [&>h3]:font-medium [&>h3]:text-[#1F2937] [&>h3]:mb-4 [&>h3]:mt-8
-                    [&>p]:text-[16px] [&>p]:text-[#334155] [&>p]:leading-[1.58] [&>p]:mb-5
-                    [&_strong]:text-[#1A1A1A] [&_strong]:font-medium
-                    [&_a]:text-[#2B4580] [&_a]:no-underline [&_a:hover]:underline [&_a]:font-medium
-                    [&>ul]:my-5 [&>ul]:space-y-2 [&>ul]:pl-0 [&>ul]:list-none
-                    [&>ul>li]:text-[15px] [&>ul>li]:text-[#334155] [&>ul>li]:leading-[1.48] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[8px] [&>ul>li]:before:w-2 [&>ul>li]:before:h-2 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-wg-green
-                    [&>ol]:my-5 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
-                    [&>ol>li]:text-[15px] [&>ol>li]:text-[#334155] [&>ol>li]:leading-[1.48]
-                    [&>ol>li::marker]:text-[#64748B]
-                    [&>blockquote]:border-l-4 [&>blockquote]:border-[#2B4580] [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[#4C4C4C] [&>blockquote]:bg-[#F9F9F9] [&>blockquote]:py-4 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-lg [&>blockquote]:my-8
-                    [&>table]:w-full [&>table]:my-8 [&>table]:rounded-xl [&>table]:overflow-hidden [&>table]:shadow-md [&>table]:border [&>table]:border-[#E5E5E5]
-                    [&>table>thead]:bg-[#F5F5F5]
-                    [&>table>thead>tr>th]:px-5 [&>table>thead>tr>th]:py-4 [&>table>thead>tr>th]:text-left [&>table>thead>tr>th]:text-[12px] [&>table>thead>tr>th]:font-medium [&>table>thead>tr>th]:uppercase [&>table>thead>tr>th]:tracking-wide [&>table>thead>tr>th]:text-[#2E2E2E] [&>table>thead>tr>th]:border-b [&>table>thead>tr>th]:border-[#E5E5E5]
-                    [&>table>tbody>tr>td]:px-5 [&>table>tbody>tr>td]:py-4 [&>table>tbody>tr>td]:text-[14px] [&>table>tbody>tr>td]:text-[#4C4C4C] [&>table>tbody>tr>td]:border-b [&>table>tbody>tr>td]:border-[#E5E5E5]
-                    [&>table>tbody>tr]:transition-colors [&>table>tbody>tr:hover]:bg-[#F9F9F9]
-                    [&>table>tbody>tr:last-child>td]:border-b-0
-                    [&_code]:bg-[#F5F5F5] [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-[13px] [&_code]:text-[#2B4580]
-                    [&>pre]:bg-[#1A1A1A] [&>pre]:text-white [&>pre]:p-6 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:my-8
-                    [&>img]:rounded-lg [&>img]:shadow-md [&>img]:my-8
-                    [&>hr]:border-[#E5E5E5] [&>hr]:my-10">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-                      {section.markdown}
-                    </ReactMarkdown>
-                  </div>
-                </motion.article>
+                <React.Fragment key={section.id || index}>
+                  <motion.article
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: index * 0.03 }}
+                    className={`rounded-2xl border bg-white p-5 transition-all md:p-7 ${
+                      activeHeadingId === section.id
+                        ? 'border-wg-blue shadow-[0_0_0_1px_rgba(43,69,128,0.14)]'
+                        : 'border-gray-200 hover:border-wg-blue/60 hover:shadow-md'
+                    }`}
+                  >
+                    <div className="wg-prose max-w-none
+                      [&>h2]:text-[24px] [&>h2]:font-light [&>h2]:tracking-tight [&>h2]:text-[#111827] [&>h2]:mb-5 [&>h2]:mt-0
+                      [&>h3]:text-[18px] [&>h3]:font-light [&>h3]:text-[#1F2937] [&>h3]:mb-4 [&>h3]:mt-8
+                      [&>p]:text-[16px] [&>p]:text-[#334155] [&>p]:leading-[1.58] [&>p]:mb-5
+                      [&_strong]:text-[#1A1A1A] [&_strong]:font-light
+                      [&_a]:text-[#2B4580] [&_a]:no-underline [&_a:hover]:underline [&_a]:font-light
+                      [&>ul]:my-5 [&>ul]:space-y-2 [&>ul]:pl-0 [&>ul]:list-none
+                      [&>ul>li]:text-[15px] [&>ul>li]:text-[#334155] [&>ul>li]:leading-[1.48] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[8px] [&>ul>li]:before:w-2 [&>ul>li]:before:h-2 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-wg-green
+                      [&>ol]:my-5 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
+                      [&>ol>li]:text-[15px] [&>ol>li]:text-[#334155] [&>ol>li]:leading-[1.48]
+                      [&>ol>li::marker]:text-[#64748B]
+                      [&>blockquote]:border-l-4 [&>blockquote]:border-[#2B4580] [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[#4C4C4C] [&>blockquote]:bg-[#F9F9F9] [&>blockquote]:py-4 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-lg [&>blockquote]:my-8
+                      [&>table]:w-full [&>table]:my-8 [&>table]:rounded-xl [&>table]:overflow-hidden [&>table]:shadow-md [&>table]:border [&>table]:border-[#E5E5E5]
+                      [&>table>thead]:bg-[#F5F5F5]
+                      [&>table>thead>tr>th]:px-5 [&>table>thead>tr>th]:py-4 [&>table>thead>tr>th]:text-left [&>table>thead>tr>th]:text-[12px] [&>table>thead>tr>th]:font-light [&>table>thead>tr>th]:uppercase [&>table>thead>tr>th]:tracking-wide [&>table>thead>tr>th]:text-[#2E2E2E] [&>table>thead>tr>th]:border-b [&>table>thead>tr>th]:border-[#E5E5E5]
+                      [&>table>tbody>tr>td]:px-5 [&>table>tbody>tr>td]:py-4 [&>table>tbody>tr>td]:text-[14px] [&>table>tbody>tr>td]:text-[#4C4C4C] [&>table>tbody>tr>td]:border-b [&>table>tbody>tr>td]:border-[#E5E5E5]
+                      [&>table>tbody>tr]:transition-colors [&>table>tbody>tr:hover]:bg-[#F9F9F9]
+                      [&>table>tbody>tr:last-child>td]:border-b-0
+                      [&_code]:bg-[#F5F5F5] [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-[13px] [&_code]:text-[#2B4580]
+                      [&>pre]:bg-[#1A1A1A] [&>pre]:text-white [&>pre]:p-6 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:my-8
+                      [&>img]:rounded-lg [&>img]:shadow-md [&>img]:my-8
+                      [&>hr]:border-[#E5E5E5] [&>hr]:my-10">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                        {section.markdown}
+                      </ReactMarkdown>
+                    </div>
+                  </motion.article>
+
+                  {(articleSectionContextInsertions.get(index) || []).map((asset, assetIndex) => (
+                    <ContextImageBlock
+                      key={`${section.id || index}-context-${assetIndex}`}
+                      asset={asset}
+                      fallbackSrc={articleLocalFallbackImage}
+                      fallbackAlt={artigoAtual.title}
+                    />
+                  ))}
+                </React.Fragment>
               )) : (
                 <div className="wg-prose max-w-none
                   [&>p]:text-[16px] [&>p]:text-[#4C4C4C] [&>p]:leading-[1.65] [&>p]:mb-5">
@@ -820,13 +1004,13 @@ const Blog = () => {
             <div className="mt-12 pt-8 border-t border-gray-200">
               <div className="flex items-center gap-2 mb-4">
                 <Tag className="w-4 h-4 text-wg-gray" />
-                <span className="text-sm font-medium text-wg-gray uppercase tracking-wider">Tags</span>
+                <span className="text-sm font-light uppercase tracking-wider text-wg-gray">Tags</span>
               </div>
               <div className="flex flex-wrap items-center gap-3">
                 {(artigoAtual.tags || []).map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-wg-blue/8 to-wg-green/8 text-wg-black border border-[#D8DEE8] hover:border-wg-blue/40 hover:shadow-sm transition-all"
+                    className="inline-flex items-center rounded-full border border-[#D8DEE8] bg-gradient-to-r from-wg-blue/8 to-wg-green/8 px-4 py-2 text-sm font-light text-wg-black transition-all hover:border-wg-blue/40 hover:shadow-sm"
                   >
                     #{tag}
                   </span>
@@ -838,7 +1022,7 @@ const Blog = () => {
             <div className="mt-8 pt-8 border-t border-gray-200">
               <div className="flex items-center gap-2 mb-4">
                 <Share2 className="w-4 h-4 text-wg-gray" />
-                <span className="text-sm font-medium text-wg-gray uppercase tracking-wider">Compartilhe</span>
+                <span className="text-sm font-light uppercase tracking-wider text-wg-gray">Compartilhe</span>
               </div>
               <ShareButtons
                 title={artigoAtual.title}
@@ -850,7 +1034,7 @@ const Blog = () => {
             <RelatedProducts category={artigoAtual.category} />
 
             <div className="mt-12">
-              <Link to="/blog" className="text-wg-blue font-medium inline-flex items-center gap-2">
+              <Link to="/blog" className="inline-flex items-center gap-2 font-light text-wg-blue">
                 {t('blogPage.backToBlog')} <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -870,7 +1054,7 @@ const Blog = () => {
       />
 
       {/* Hero Revista Style */}
-      <section className="relative h-[50vh] flex items-end overflow-hidden bg-wg-black hero-under-header">
+      <section className="wg-page-hero hero-under-header items-end bg-wg-black">
         {/* Imagem de Fundo */}
         <motion.div
           className="absolute inset-0"
@@ -878,19 +1062,20 @@ const Blog = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <img
-            src={artigoRecente?.image}
+          <StableBlogImage
+            src={artigoRecente?.imageHero || artigoRecente?.imageCard || artigoRecente?.image}
+            fallbackSrc={getLocalBlogFallbackImage(artigoRecente?.category, artigoRecente?.slug)}
             alt={artigoRecente?.title}
             className="w-full h-full object-cover"
             loading="eager"
-            onError={(e) => { e.currentTarget.src = getBlogFallbackImage(artigoRecente?.category, artigoRecente?.slug); }}
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-wg-black via-wg-black/60 to-transparent" />
         </motion.div>
 
         {/* Conteúdo Hero */}
-        <div className="relative z-10 container-custom pb-16 pt-32">
-          <div className="max-w-3xl">
+        <div className="relative z-10 container-custom pb-16 pt-36 md:pb-20 md:pt-44 lg:pt-48">
+          <div className="max-w-4xl">
             {/* Tag Categoria */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -898,7 +1083,7 @@ const Blog = () => {
               transition={{ duration: 0.6 }}
               className="mb-4"
             >
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium uppercase tracking-wider text-white backdrop-blur-sm">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-light uppercase tracking-wider text-white backdrop-blur-sm">
                 <Tag className="w-4 h-4" />
                 {t('blogPage.hero.featured')}
               </span>
@@ -909,7 +1094,7 @@ const Blog = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-inter font-light text-white mb-6 leading-tight"
+              className="mb-6 text-4xl font-inter font-light leading-[0.95] tracking-[-0.03em] text-white md:text-5xl lg:text-[5rem]"
             >
               {artigoRecente?.title}
             </motion.h1>
@@ -919,7 +1104,7 @@ const Blog = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className={`${editorialScale.bodyHero} text-white/80 mb-8 max-w-3xl`}
+              className={`${editorialScale.bodyHero} mb-8 max-w-[52rem] text-white/80`}
             >
               {artigoRecente?.excerpt}
             </motion.p>
@@ -929,7 +1114,7 @@ const Blog = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap items-center gap-6 text-white/60 mb-8"
+              className="flex flex-wrap items-center gap-6 text-white/60 mb-4"
             >
               <div className="flex items-center gap-2">
                 <User className="w-4 h-4" />
@@ -944,6 +1129,7 @@ const Blog = () => {
                 <span>{artigoRecente?.tempoLeitura ? t('blogPage.readingTime', { minutes: artigoRecente.tempoLeitura }) : ''}</span>
               </div>
             </motion.div>
+            <BlogImageCredit credit={artigoRecente?.imageHeroAttribution || artigoRecente?.imageCardAttribution} tone="dark" className="mb-8" />
 
             {/* CTA */}
             <motion.div
@@ -983,7 +1169,7 @@ const Blog = () => {
                   }`}
                 >
                   <Icon className={`w-4 h-4 ${categoriaAtiva === cat.id ? '' : cat.color || ''}`} />
-                  <span className="font-medium text-sm">{cat.label}</span>
+                  <span className="text-sm font-light">{cat.label}</span>
                 </button>
               );
             })}
@@ -1003,7 +1189,7 @@ const Blog = () => {
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="h-px flex-1 bg-gradient-to-r from-[#D5DBE4] to-transparent" />
-              <span className="text-wg-blue font-medium tracking-[0.2em] uppercase text-sm">
+              <span className="text-sm font-light uppercase tracking-[0.2em] text-wg-blue">
                 {categoriaAtiva === 'todos' ? t('blogPage.section.latest') : categorias.find(c => c.id === categoriaAtiva)?.label}
               </span>
               <div className="h-px flex-1 bg-gradient-to-l from-[#D5DBE4] to-transparent" />
@@ -1029,18 +1215,19 @@ const Blog = () => {
                 <Link to={`/blog/${artigo.slug}`} className="block">
                   {/* Imagem */}
                   <div className="relative overflow-hidden h-48">
-                    <img
-                      src={artigo.image}
+                    <StableBlogImage
+                      src={artigo.imageCard || artigo.imageHero || artigo.image}
+                      fallbackSrc={getLocalBlogFallbackImage(artigo.category, artigo.slug)}
                       alt={artigo.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
-                      onError={(e) => { e.currentTarget.src = getBlogFallbackImage(artigo.category, artigo.slug); }}
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
                     {/* Categoria Badge */}
                     <div className="absolute top-4 left-4">
-                      <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-white/90 backdrop-blur-sm ${
+                      <span className={`inline-flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-light backdrop-blur-sm ${
                         categorias.find(c => c.id === artigo.category)?.color || 'text-wg-gray'
                       }`}>
                         {categorias.find(c => c.id === artigo.category)?.label}
@@ -1063,7 +1250,7 @@ const Blog = () => {
                     </div>
 
                     {/* Título */}
-                    <h3 className={`font-inter font-semibold text-wg-black mb-3 group-hover:text-wg-blue transition-colors ${index === 0 && categoriaAtiva === 'todos' ? editorialScale.cardTitle : 'text-lg leading-[1.35]'}`}>
+                    <h3 className={`mb-3 font-inter font-light text-wg-black transition-colors group-hover:text-wg-blue ${index === 0 && categoriaAtiva === 'todos' ? editorialScale.cardTitle : 'text-lg leading-[1.35]'}`}>
                       {artigo.title}
                     </h3>
 
@@ -1082,12 +1269,15 @@ const Blog = () => {
                     </div>
 
                     {/* Ler Mais */}
-                    <div className="flex items-center gap-2 text-wg-blue font-medium text-sm group-hover:gap-3 transition-all">
+                    <div className="flex items-center gap-2 text-sm font-light text-wg-blue transition-all group-hover:gap-3">
                       <span>{t('blogPage.readMore')}</span>
                       <ChevronRight className="w-4 h-4" />
                     </div>
                   </div>
                 </Link>
+                <div className="px-6 pb-6 -mt-1">
+                  <BlogImageCredit credit={artigo.imageCardAttribution || artigo.imageHeroAttribution} />
+                </div>
               </motion.article>
             ))}
           </div>

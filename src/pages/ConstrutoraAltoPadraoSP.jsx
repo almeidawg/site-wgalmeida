@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO, { schemas } from '@/components/SEO';
+import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
 import { Link } from 'react-router-dom';
 import {
@@ -15,6 +15,21 @@ import {
   Phone
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { buildUnsplashSrcSet, normalizeUnsplashImageUrl } from '@/lib/unsplash';
+
+const HERO_IMAGE = normalizeUnsplashImageUrl('https://images.unsplash.com/photo-1486325212027-8081e485255e', {
+  width: 1920,
+  height: 1080,
+  quality: 80,
+});
+
+const HERO_IMAGE_SRC_SET = buildUnsplashSrcSet('https://images.unsplash.com/photo-1486325212027-8081e485255e', [
+  { width: 640, height: 360, quality: 70, descriptor: '640w' },
+  { width: 960, height: 540, quality: 75, descriptor: '960w' },
+  { width: 1280, height: 720, quality: 80, descriptor: '1280w' },
+  { width: 1600, height: 900, quality: 80, descriptor: '1600w' },
+  { width: 1920, height: 1080, quality: 80, descriptor: '1920w' },
+]);
 
 const ConstrutoraAltoPadraoSP = () => {
   const pageUrl = 'https://wgalmeida.com.br/construtora-alto-padrao-sp';
@@ -72,7 +87,7 @@ const ConstrutoraAltoPadraoSP = () => {
     "name": "Grupo WG Almeida - Construtora Alto Padrão São Paulo",
     "description": "Construtora especializada em obras de alto padrão em São Paulo. Sistema Turn Key Premium com arquitetura, engenharia e marcenaria integradas.",
     "url": pageUrl,
-    "telephone": "+55-11-98465-0002",
+    "telephone": "+5511984650002",
     "email": "contato@wgalmeida.com.br",
     "address": {
       "@type": "PostalAddress",
@@ -95,18 +110,27 @@ const ConstrutoraAltoPadraoSP = () => {
   return (
     <>
       <SEO
+        pathname="/construtora-alto-padrao-sp"
         title="Construtora Alto Padrão SP | Obras Turn Key Premium"
-        description="Construtora especializada em obras de alto padrão em São Paulo. Sistema Turn Key: arquitetura, engenharia e marcenaria integradas. 14 anos de experiência. Orçamento sem compromisso."
+        description="Construtora especializada em obras de alto padrão em São Paulo. Sistema Turn Key: arquitetura, engenharia e marcenaria integradas. 15 anos de experiência. Orçamento sem compromisso."
         keywords="construtora alto padrão são paulo, construtora sp, obra alto padrão, turn key são paulo, construtora jardins, construtora itaim, reforma alto padrão sp"
         url={pageUrl}
         schema={schema}
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black hero-under-header">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80)' }}
+      <section className="wg-page-hero hero-under-header bg-wg-black">
+        <img
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          src={HERO_IMAGE}
+          srcSet={HERO_IMAGE_SRC_SET}
+          sizes="100vw"
+          alt="Construtora de alto padrão em São Paulo"
+          width="1920"
+          height="1080"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
@@ -116,7 +140,7 @@ const ConstrutoraAltoPadraoSP = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm uppercase tracking-wider mb-6">
+            <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm font-light uppercase tracking-[0.18em] mb-6">
               Construtora Alto Padrão São Paulo
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 leading-tight">
@@ -124,7 +148,7 @@ const ConstrutoraAltoPadraoSP = () => {
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
               Arquitetura, engenharia e marcenaria integradas em um único ecossistema.
-              14 anos transformando projetos em realidade nos bairros mais exigentes de São Paulo.
+              15 anos transformando projetos em realidade nos bairros mais exigentes de São Paulo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/solicite-proposta">
@@ -152,7 +176,7 @@ const ConstrutoraAltoPadraoSP = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">
+            <span className="text-wg-orange text-sm font-light tracking-[0.18em] uppercase mb-4 block">
               Por que escolher o Grupo WG Almeida
             </span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
@@ -194,7 +218,7 @@ const ConstrutoraAltoPadraoSP = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">
+            <span className="text-wg-orange text-sm font-light tracking-[0.18em] uppercase mb-4 block">
               Nossos Serviços
             </span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
@@ -292,7 +316,7 @@ const ConstrutoraAltoPadraoSP = () => {
               </Link>
               <a href="tel:+5511984650002" className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
-                (11) 98465-0002
+                +55 (11) 98465-0002
               </a>
             </div>
           </motion.div>
@@ -303,3 +327,4 @@ const ConstrutoraAltoPadraoSP = () => {
 };
 
 export default ConstrutoraAltoPadraoSP;
+

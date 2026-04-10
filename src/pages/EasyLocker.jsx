@@ -48,7 +48,7 @@ const EasyLocker = () => {
       />
 
       {/* Hero Impactante */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden hero-under-header">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -159,30 +159,30 @@ const EasyLocker = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-wg-orange font-bold tracking-widest uppercase text-sm mb-4 block">Conveniência Total</span>
+              <span className="text-wg-orange font-light tracking-widest uppercase text-sm mb-4 block">Conveniência Total</span>
               <h2 className="text-4xl md:text-5xl font-inter font-light text-wg-black mb-8 tracking-tight">
-                Design que se integra ao seu <span className="font-bold">Lobby</span>
+                Design que se integra ao seu <span className="font-light">Lobby</span>
               </h2>
               
               <div className="space-y-6 mb-10">
                 <div className="flex gap-4">
                   <CheckCircle2 className="w-6 h-6 text-wg-orange flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-wg-black">Instalação Plug & Play</h4>
+                    <h4 className="font-light text-wg-black">Instalação Plug & Play</h4>
                     <p className="text-wg-gray text-sm">Conectividade Wi-Fi e alimentação bivolt simplificada.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <CheckCircle2 className="w-6 h-6 text-wg-orange flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-wg-black">Gestão via Nuvem</h4>
+                    <h4 className="font-light text-wg-black">Gestão via Nuvem</h4>
                     <p className="text-wg-gray text-sm">Relatórios completos de uso e ocupação para o síndico.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <CheckCircle2 className="w-6 h-6 text-wg-orange flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-wg-black">Notificações em Tempo Real</h4>
+                    <h4 className="font-light text-wg-black">Notificações em Tempo Real</h4>
                     <p className="text-wg-gray text-sm">Moradores recebem SMS/Push assim que a encomenda chega.</p>
                   </div>
                 </div>
@@ -190,7 +190,7 @@ const EasyLocker = () => {
 
               <Link
                 to="/solicite-proposta"
-                className="inline-flex items-center gap-2 text-wg-black font-bold border-b-2 border-wg-orange pb-1 hover:gap-4 transition-all"
+                className="inline-flex items-center gap-2 text-wg-black font-light border-b-2 border-wg-orange pb-1 hover:gap-4 transition-all"
               >
                 Quero Easy Locker no meu condomínio
                 <ArrowRight className="w-5 h-5 text-wg-orange" />

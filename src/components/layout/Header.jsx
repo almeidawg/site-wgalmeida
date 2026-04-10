@@ -1,13 +1,16 @@
 import React, { useState, useEffect, useMemo, Suspense, lazy } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, ShoppingCart as ShoppingCartIcon, Ruler, Building2, Hammer, Globe, Monitor } from 'lucide-react';
-// Removido Framer Motion para reduzir bundle e melhorar TBT
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from '@/components/LanguageSelector';
+import { withBasePath } from '@/utils/assetPaths';
 
 const ShoppingCart = lazy(() => import('@/components/ShoppingCart'));
+
+const SCROLL_THRESHOLD = 72;
+const HEADER_LOGO_SRC = withBasePath('/images/logo-192.webp');
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,11 +34,12 @@ const Header = () => {
       if (!ticking) {
         ticking = true;
         requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 20);
+          setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
           ticking = false;
         });
       }
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -63,7 +67,7 @@ const Header = () => {
       label: t('nav.architecture'),
       path: '/arquitetura',
       icon: Ruler,
-      image: '/images/banners/ARQ.webp',
+      image: withBasePath('/images/banners/ARQ.webp'),
       description: t('header.units.architecture'),
       tagline: 'Projetos, interiores e espaços com leitura autoral.',
       borderHoverClass: 'hover:border-wg-green',
@@ -76,7 +80,7 @@ const Header = () => {
       label: t('nav.engineering'),
       path: '/engenharia',
       icon: Building2,
-      image: '/images/banners/ENGENHARIA.webp',
+      image: withBasePath('/images/banners/ENGENHARIA.webp'),
       description: t('header.units.engineering'),
       tagline: 'Execução, planejamento e rigor técnico de obra.',
       borderHoverClass: 'hover:border-wg-blue',
@@ -89,7 +93,7 @@ const Header = () => {
       label: t('nav.carpentry'),
       path: '/marcenaria',
       icon: Hammer,
-      image: '/images/banners/MARCENARIA.webp',
+      image: withBasePath('/images/banners/MARCENARIA.webp'),
       description: t('header.units.carpentry'),
       tagline: 'Mobiliário sob medida, precisão e acabamento fino.',
       borderHoverClass: 'hover:border-wg-brown',
@@ -100,171 +104,197 @@ const Header = () => {
     },
   ], [t]);
 
+const navLinkClass = isScrolled
+    ? 'px-3 py-1.5 rounded-full text-sm text-wg-gray hover:text-wg-black hover:bg-black/[0.05]'
+    : 'px-3 py-2 rounded-full text-sm text-white/80 hover:text-white hover:bg-white/[0.08] backdrop-blur-sm';
+
+  const activeNavLinkClass = isScrolled
+    ? 'bg-black/[0.05] text-wg-black'
+    : 'bg-white/[0.12] text-white';
+
+const iconButtonClass = isScrolled
+    ? 'w-9 h-9 border-black/[0.08] bg-white/70 backdrop-blur-xl hover:bg-white hover:border-black/[0.14] shadow-[0_10px_26px_rgba(12,12,12,0.08)]'
+    : 'w-10 h-10 border-white/20 bg-white/[0.08] backdrop-blur-xl hover:bg-white/[0.16] hover:border-white/30 shadow-[0_14px_34px_rgba(10,10,10,0.16)]';
+
+  const iconColorClass = isScrolled ? 'text-wg-black' : 'text-white';
+
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[80] relative transition-all duration-300 bg-white ${
-          isScrolled ? 'shadow-md' : ''
-        }`}
+        className="fixed top-0 left-0 right-0 z-[80] bg-transparent transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
       >
-        <div className="container-custom">
-          <div className="flex items-center justify-between" style={{ height: 'var(--header-height)' }}>
-            <div className="flex-1 lg:flex-none">
+        <div className={`container-custom pt-3 md:pt-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]`}>
+          <div
+            className={`flex items-center justify-between rounded-[28px] px-3 md:px-5 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              isScrolled
+                ? 'border border-black/[0.06] bg-white/60 backdrop-blur-2xl shadow-[0_18px_45px_rgba(12,12,12,0.08)]'
+                : 'border border-white/10 bg-transparent backdrop-blur-0 shadow-none'
+            }`}
+            style={{ height: isScrolled ? '3.25rem' : 'var(--header-height)' }}
+          >
+            {/* Logo — some ao rolar */}
+            <div
+              className={`flex-1 lg:flex-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] overflow-hidden ${
+                isScrolled
+                  ? 'w-0 opacity-0 pointer-events-none flex-none'
+                  : 'w-auto opacity-100'
+              }`}
+            >
               <Link to="/" className="flex items-center space-x-3">
                 <img
                   className="h-12 w-12 object-contain"
                   alt="Logo Grupo WG Almeida"
-                  src="/images/logo-192.webp"
+                  src={HEADER_LOGO_SRC}
                   width="96"
                   height="96"
                   decoding="async"
-                  fetchPriority="low"
+                  fetchpriority="low"
                 />
               </Link>
             </div>
 
-            <nav className="hidden lg:flex items-center justify-center flex-1 space-x-6">
+            {/* Nav desktop */}
+            <nav className={`hidden lg:flex items-center justify-center flex-1 transition-all duration-500 ${
+              isScrolled ? 'gap-0.5' : 'space-x-6'
+            }`}>
               {navItems.slice(0, 3).map((item) => (
-                 <Link
-                    key={item.label}
-                    to={item.path}
-                    className={`text-wg-gray hover:text-wg-black transition-colors font-suisse font-light ${
-                      location.pathname === item.path ? 'text-wg-black' : ''
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  className={`transition-all duration-300 font-suisse font-light ${navLinkClass} ${
+                    location.pathname === item.path ? activeNavLinkClass : ''
+                  }`}
+                >
+                  {item.label}
+                </Link>
               ))}
 
-              {/* Mega Menu Trigger */}
+              {/* Mega Menu */}
               <div
                 className="relative"
                 onMouseEnter={() => setUnitsMenuOpen(true)}
                 onMouseLeave={() => setUnitsMenuOpen(false)}
               >
-                <button className="flex items-center space-x-1 text-wg-gray hover:text-wg-black transition-colors font-suisse font-light">
+                <button
+                  className={`flex items-center gap-1 transition-all duration-300 font-suisse font-light ${navLinkClass}`}
+                >
                   <span>{t('header.unitsLabel')}</span>
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className={`transition-all duration-300 ${isScrolled ? 'w-3 h-3' : 'w-4 h-4'}`} />
                 </button>
-                
-                  {isUnitsMenuOpen && (
-                    <div
-                      className="absolute top-full left-1/2 z-[90] mt-3 w-[min(92vw,60rem)] -translate-x-1/2"
-                    >
-                      <div className="overflow-hidden rounded-[2rem] border border-black/6 bg-white/96 p-3 shadow-[0_24px_80px_rgba(23,23,23,0.14)] backdrop-blur-xl">
-                        <div className="flex h-[26rem] gap-3">
-                          {unitsItems.map((subItem, index) => {
-                            const isActive = activeUnitsPanel === index;
-                            const Wrapper = subItem.external ? 'a' : Link;
-                            return (
-                              <Wrapper
-                                key={subItem.label}
-                                {...(subItem.external ? { href: subItem.path } : { to: subItem.path })}
-                                className="group relative min-w-0 overflow-hidden rounded-[1.55rem] transition-[flex] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+
+                {isUnitsMenuOpen && (
+                  <div className="absolute top-full left-1/2 z-[90] mt-3 w-[min(92vw,60rem)] -translate-x-1/2">
+                    <div className="overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white/[0.96] p-3 shadow-[0_24px_80px_rgba(23,23,23,0.14)] backdrop-blur-xl">
+                      <div className="flex h-[26rem] gap-3">
+                        {unitsItems.map((subItem, index) => {
+                          const isActive = activeUnitsPanel === index;
+                          const Wrapper = subItem.external ? 'a' : Link;
+                          return (
+                            <Wrapper
+                              key={subItem.label}
+                              {...(subItem.external ? { href: subItem.path } : { to: subItem.path })}
+                              className="group relative min-w-0 overflow-hidden rounded-[1.55rem] transition-[flex] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                              style={{
+                                flex: isActive ? 2.15 : 0.92,
+                                backgroundColor: '#0f0f10',
+                                boxShadow: isActive
+                                  ? '0 18px 48px rgba(20,20,20,0.16)'
+                                  : '0 10px 24px rgba(20,20,20,0.08)',
+                              }}
+                              onMouseEnter={() => setActiveUnitsPanel(index)}
+                              onFocus={() => setActiveUnitsPanel(index)}
+                            >
+                              <div
+                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
+                                style={{ backgroundImage: `url(${subItem.image})` }}
+                              />
+                              <div
+                                className="absolute inset-0"
                                 style={{
-                                  flex: isActive ? 2.15 : 0.92,
-                                  backgroundColor: '#0f0f10',
-                                  boxShadow: isActive
-                                    ? '0 18px 48px rgba(20,20,20,0.16)'
-                                    : '0 10px 24px rgba(20,20,20,0.08)',
+                                  background: isActive
+                                    ? `linear-gradient(180deg, rgba(16,16,17,0.10) 0%, rgba(16,16,17,0.34) 34%, rgba(16,16,17,0.88) 100%), radial-gradient(circle at top left, ${subItem.accentSoft} 0%, transparent 34%)`
+                                    : 'linear-gradient(180deg, rgba(16,16,17,0.18) 0%, rgba(16,16,17,0.55) 55%, rgba(16,16,17,0.88) 100%)',
                                 }}
-                                onMouseEnter={() => setActiveUnitsPanel(index)}
-                                onFocus={() => setActiveUnitsPanel(index)}
-                              >
-                                <div
-                                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
-                                  style={{ backgroundImage: `url(${subItem.image})` }}
-                                />
-                                <div
-                                  className="absolute inset-0"
-                                  style={{
-                                    background: isActive
-                                      ? `linear-gradient(180deg, rgba(16,16,17,0.10) 0%, rgba(16,16,17,0.34) 34%, rgba(16,16,17,0.88) 100%), radial-gradient(circle at top left, ${subItem.accentSoft} 0%, transparent 34%)`
-                                      : 'linear-gradient(180deg, rgba(16,16,17,0.18) 0%, rgba(16,16,17,0.55) 55%, rgba(16,16,17,0.88) 100%)',
-                                  }}
-                                />
-                                <div
-                                  className="absolute left-0 top-0 h-full w-[3px]"
-                                  style={{ backgroundColor: subItem.accent, opacity: isActive ? 1 : 0.6 }}
-                                />
+                              />
+                              <div
+                                className="absolute left-0 top-0 h-full w-[3px]"
+                                style={{ backgroundColor: subItem.accent, opacity: isActive ? 1 : 0.6 }}
+                              />
 
-                                {!isActive && (
-                                  <div className="absolute inset-0 z-10 flex items-end justify-center pb-8">
-                                    <div className="flex select-none flex-col items-center gap-3 [writing-mode:vertical-rl] [transform:rotate(180deg)]">
-                                      <span
-                                        className="text-[10px] uppercase tracking-[0.32em] text-white/55"
-                                      >
-                                        0{index + 1}
-                                      </span>
-                                      <span
-                                        className="font-playfair text-[1.18rem] tracking-[-0.03em] text-white"
-                                      >
-                                        {subItem.label}
-                                      </span>
-                                    </div>
-                                  </div>
-                                )}
-
-                                <div
-                                  className={`absolute inset-x-0 bottom-0 z-20 flex h-full flex-col justify-end p-6 transition-all duration-300 ${isActive ? 'opacity-100 translate-y-0' : 'pointer-events-none opacity-0 translate-y-4'}`}
-                                >
-                                  <div className="mb-5 flex items-center gap-3">
-                                    <span
-                                      className="font-playfair text-[3.25rem] italic leading-none tracking-[-0.08em]"
-                                      style={{ color: subItem.accent }}
-                                    >
+                              {!isActive && (
+                                <div className="absolute inset-0 z-10 flex items-end justify-center pb-8">
+                                  <div className="flex select-none flex-col items-center gap-3 [writing-mode:vertical-rl] [transform:rotate(180deg)]">
+                                    <span className="text-[10px] uppercase tracking-[0.32em] text-white/55">
                                       0{index + 1}
                                     </span>
-                                    <div className="h-px w-12" style={{ backgroundColor: subItem.accent }} />
-                                    <span className="text-[10px] uppercase tracking-[0.28em] text-white/52">
-                                      Núcleo
-                                    </span>
-                                  </div>
-
-                                  <div className="mb-3 flex items-center gap-3">
-                                    <subItem.icon className="h-5 w-5 text-white/88" />
-                                    <span className="font-suisse text-[1.05rem] font-light tracking-[0.02em] text-white">
+                                    <span className="font-playfair text-[1.18rem] tracking-[-0.03em] text-white">
                                       {subItem.label}
                                     </span>
                                   </div>
-
-                                  <p className="max-w-[25rem] font-playfair text-[1.7rem] font-light leading-[1.02] tracking-[-0.04em] text-white">
-                                    {subItem.tagline}
-                                  </p>
-
-                                  <p className="mt-3 max-w-[24rem] text-[0.92rem] leading-[1.75] text-white/72">
-                                    {subItem.description}
-                                  </p>
-
-                                  <div className="mt-6 inline-flex w-fit items-center rounded-full border border-white/14 bg-white/8 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-white/86 backdrop-blur-sm">
-                                    Explorar unidade
-                                  </div>
                                 </div>
-                              </Wrapper>
-                            );
-                          })}
-                        </div>
+                              )}
+
+                              <div
+                                className={`absolute inset-x-0 bottom-0 z-20 flex h-full flex-col justify-end p-6 transition-all duration-300 ${isActive ? 'opacity-100 translate-y-0' : 'pointer-events-none opacity-0 translate-y-4'}`}
+                              >
+                                <div className="mb-5 flex items-center gap-3">
+                                  <span
+                                    className="font-playfair text-[3.25rem] italic leading-none tracking-[-0.08em]"
+                                    style={{ color: subItem.accent }}
+                                  >
+                                    0{index + 1}
+                                  </span>
+                                  <div className="h-px w-12" style={{ backgroundColor: subItem.accent }} />
+                                  <span className="text-[10px] uppercase tracking-[0.28em] text-white/52">
+                                    Núcleo
+                                  </span>
+                                </div>
+
+                                <div className="mb-3 flex items-center gap-3">
+                                  <subItem.icon className="h-5 w-5 text-white/88" />
+                                  <span className="font-suisse text-[1.05rem] font-light tracking-[0.02em] text-white">
+                                    {subItem.label}
+                                  </span>
+                                </div>
+
+                                <p className="max-w-[25rem] font-playfair text-[1.7rem] font-light leading-[1.02] tracking-[-0.04em] text-white">
+                                  {subItem.tagline}
+                                </p>
+
+                                <p className="mt-3 max-w-[24rem] text-[0.92rem] leading-[1.75] text-white/72">
+                                  {subItem.description}
+                                </p>
+
+                                <div className="mt-6 inline-flex w-fit items-center rounded-full border border-white/[0.14] bg-white/[0.08] px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-white/[0.86] backdrop-blur-sm">
+                                  Explorar unidade
+                                </div>
+                              </div>
+                            </Wrapper>
+                          );
+                        })}
                       </div>
                     </div>
-                  )}
-                
+                  </div>
+                )}
               </div>
 
               {navItems.slice(3).map((item) => (
-                 <Link
-                    key={item.label}
-                    to={item.path}
-                    className={`text-wg-gray hover:text-wg-black transition-colors font-suisse font-light ${
-                      location.pathname === item.path ? 'text-wg-black' : ''
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  className={`transition-all duration-300 font-suisse font-light ${navLinkClass} ${
+                    location.pathname === item.path ? activeNavLinkClass : ''
+                  }`}
+                >
+                  {item.label}
+                </Link>
               ))}
             </nav>
 
-            <div className="flex items-center justify-end gap-2 md:gap-3 flex-1 lg:flex-none">
-              {/* Seletor de Idioma */}
+            {/* Ações à direita */}
+            <div className={`flex items-center justify-end gap-2 md:gap-3 transition-all duration-500 ${
+              isScrolled ? 'flex-none' : 'flex-1 lg:flex-none'
+            }`}>
               <div className="hidden md:block">
                 <LanguageSelector />
               </div>
@@ -273,40 +303,42 @@ const Header = () => {
               <button
                 onClick={() => setIsCartOpen(true)}
                 aria-label={t('header.cartAria')}
-                className="relative flex items-center justify-center w-10 h-10 bg-white border border-gray-200 rounded-full shadow-sm hover:border-wg-orange hover:shadow-md transition-all"
+                className={`relative flex items-center justify-center rounded-full border transition-all ${iconButtonClass}`}
               >
-                <ShoppingCartIcon className="h-5 w-5 text-wg-black" />
+                <ShoppingCartIcon className={`${iconColorClass} transition-all ${isScrolled ? 'h-4 w-4' : 'h-5 w-5'}`} />
                 {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-wg-black text-white text-xs font-light">
+                  <span className={`absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full text-xs font-light ${
+                    isScrolled ? 'bg-wg-black text-white' : 'bg-white text-wg-black'
+                  }`}>
                     {totalItems}
                   </span>
                 )}
               </button>
 
-              {/* Botão Acesso à Gestão */}
-              <a
-                href={MANAGEMENT_URL}
+              {/* Gestão */}
+              <Link
+                to={MANAGEMENT_URL}
                 aria-label="Acessar área de gestão"
                 title="Acessar área de gestão"
-                className="hidden md:flex items-center justify-center w-10 h-10 bg-white border border-gray-200 rounded-full shadow-sm hover:border-wg-orange hover:shadow-md transition-all"
+                className={`hidden md:flex items-center justify-center rounded-full border transition-all ${iconButtonClass}`}
               >
-                <Globe className="h-4 w-4 text-wg-gray" />
-              </a>
+                <Globe className={`${iconColorClass} transition-all ${isScrolled ? 'h-3.5 w-3.5' : 'h-4 w-4'}`} />
+              </Link>
 
-              {/* Botão WG Easy - Acesso direto ao sistema */}
+              {/* WG Easy */}
               <a
                 href={WG_EASY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t('header.wgEasyAccess')}
                 title={t('header.wgEasyAccess')}
-                className="hidden md:flex items-center justify-center w-10 h-10 bg-white border border-gray-200 rounded-full shadow-sm hover:border-wg-orange hover:shadow-md transition-all"
+                className={`hidden md:flex items-center justify-center rounded-full border transition-all ${iconButtonClass}`}
               >
-                <Monitor className="h-5 w-5 text-wg-black" />
+                <Monitor className={`${iconColorClass} transition-all ${isScrolled ? 'h-4 w-4' : 'h-5 w-5'}`} />
               </a>
 
               <button
-                className="lg:hidden text-wg-black"
+                className={`lg:hidden transition-colors ${isScrolled ? 'text-wg-black' : 'text-white'}`}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label={isMobileMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
                 aria-expanded={isMobileMenuOpen}
@@ -317,78 +349,69 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Neon divider between white header and hero/content */}
-        <div className="wg-neon-divider" aria-hidden="true" />
-
-        
-          {isMobileMenuOpen && (
-            <div
-              
-              
-              
-              className="lg:hidden bg-white border-t animate-slideDown z-[90] relative"
-            >
-              <nav className="container-custom py-4 space-y-2">
-                {[...navItems.slice(0,3), {label: t('header.unitsLabel'), dropdown: unitsItems}, ...navItems.slice(3)].map((item, index) => (
-                  <div key={index}>
-                    {item.dropdown ? (
-                      <div className="pl-4 space-y-1">
-                        {item.dropdown.map((subItem) => {
-                          const className = "block px-4 py-2 text-wg-gray hover:text-wg-black transition-colors text-sm font-suisse font-light";
-                          return subItem.external ? (
-                            <a key={subItem.label} href={subItem.path} className={className}>
-                              {subItem.label}
-                            </a>
-                          ) : (
-                            <Link key={subItem.label} to={subItem.path} className={className}>
-                              {subItem.label}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    ) : (
-                      <Link
-                        to={item.path}
-                        className={`block px-4 py-3 text-wg-gray hover:text-wg-black transition-colors font-suisse font-light ${
-                          location.pathname === item.path ? 'text-wg-black' : ''
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                    )}
-                  </div>
-                ))}
-                <div className="px-4 pt-4 space-y-3">
-                  {/* Seletor de Idioma Mobile */}
-                  <div className="flex items-center justify-center gap-2 py-2">
-                    <span className="text-sm text-wg-gray">{t('header.languageLabel')}</span>
-                    <LanguageSelector variant="compact" />
-                  </div>
-                  <a
-                    href={MANAGEMENT_URL}
-                    className="flex items-center justify-center gap-2 w-full px-4 py-3 border border-wg-orange text-wg-orange rounded-lg font-light hover:bg-wg-orange/10 transition-all"
-                  >
-                    <Globe className="h-4 w-4" />
-                    <span>Área de Gestão</span>
-                  </a>
-                  <a
-                    href={WG_EASY_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-wg-orange text-white rounded-lg font-light hover:bg-wg-brown transition-all"
-                  >
-                    <Monitor className="h-5 w-5 text-white" />
-                    <span>{t('header.wgEasyAccess')}</span>
-                  </a>
-                  <Link to="/contato" className="block">
-                    <Button className="btn-primary w-full">{t('header.ctaSpecialist')}</Button>
-                  </Link>
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="relative z-[90] animate-slideDown border-t border-white/[0.12] bg-[rgba(12,16,22,0.76)] backdrop-blur-2xl lg:hidden">
+            <nav className="container-custom py-4 space-y-2">
+              {[...navItems.slice(0,3), {label: t('header.unitsLabel'), dropdown: unitsItems}, ...navItems.slice(3)].map((item, index) => (
+                <div key={index}>
+                  {item.dropdown ? (
+                    <div className="pl-4 space-y-1">
+                      {item.dropdown.map((subItem) => {
+                        const className = "block px-4 py-2 text-white/70 hover:text-white transition-colors text-sm font-suisse font-light";
+                        return subItem.external ? (
+                          <a key={subItem.label} href={subItem.path} className={className}>
+                            {subItem.label}
+                          </a>
+                        ) : (
+                          <Link key={subItem.label} to={subItem.path} className={className}>
+                            {subItem.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      className={`block px-4 py-3 transition-colors font-suisse font-light ${
+                        location.pathname === item.path ? 'text-white' : 'text-white/70 hover:text-white'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </div>
-              </nav>
-            </div>
-          )}
-        
+              ))}
+              <div className="px-4 pt-4 space-y-3">
+                <div className="flex items-center justify-center gap-2 py-2">
+                  <span className="text-sm text-white/70">{t('header.languageLabel')}</span>
+                  <LanguageSelector variant="compact" />
+                </div>
+                <Link
+                  to={MANAGEMENT_URL}
+                  className="flex items-center justify-center gap-2 w-full px-4 py-3 border border-white/[0.18] text-white rounded-lg font-light hover:bg-white/10 transition-all"
+                >
+                  <Globe className="h-4 w-4" />
+                  <span>Área de Gestão</span>
+                </Link>
+                <a
+                  href={WG_EASY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-white text-wg-black rounded-lg font-light hover:bg-white/90 transition-all"
+                >
+                  <Monitor className="h-5 w-5 text-wg-black" />
+                  <span>{t('header.wgEasyAccess')}</span>
+                </a>
+                <Link to="/contato" className="block">
+                  <Button className="btn-primary w-full">{t('header.ctaSpecialist')}</Button>
+                </Link>
+              </div>
+            </nav>
+          </div>
+        )}
       </header>
+
       {isCartOpen && (
         <Suspense fallback={null}>
           <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
@@ -399,13 +422,4 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
-
-
-
-
-
-
 

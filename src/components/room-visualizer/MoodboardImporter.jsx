@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from '@/lib/motion-lite';
 import { Palette, Import, Check, Plus, RefreshCw } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const MoodboardImporter = ({
   importedColors,
@@ -121,13 +122,13 @@ const MoodboardImporter = ({
               <p className="text-sm text-gray-500 mb-4">
                 Crie um moodboard primeiro para poder usá-lo aqui
               </p>
-              <a
-                href="/moodboard"
+              <Link
+                to="/moodboard"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg text-sm hover:bg-gray-700 transition-colors"
               >
                 <Plus className="w-4 h-4" />
                 Criar Moodboard
-              </a>
+              </Link>
             </div>
           )}
         </>

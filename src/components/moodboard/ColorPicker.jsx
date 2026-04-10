@@ -128,7 +128,7 @@ const ColorPicker = ({
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 space-y-6 h-full w-full flex flex-col">
       <div>
-        <h3 className="text-lg font-semibold text-gray-800 mb-3">
+        <h3 className="text-lg font-light text-gray-800 mb-3">
           Suas Cores Selecionadas ({selectedColors.length}/{maxColors})
         </h3>
         <div className="flex flex-wrap gap-3 min-h-[60px] p-3 bg-gray-50 rounded-lg">
@@ -150,13 +150,13 @@ const ColorPicker = ({
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold text-gray-800 mb-3">Paletas Predefinidas</h3>
+        <h3 className="text-lg font-light text-gray-800 mb-3">Paletas Predefinidas</h3>
         <div className="flex flex-wrap gap-2 mb-4">
           {Object.keys(PRESET_PALETTES).map((palette) => (
             <button
               key={palette}
               onClick={() => setActiveCategory(palette)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full text-sm font-light transition-colors ${
                 activeCategory === palette
                   ? 'bg-wg-orange text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -180,7 +180,7 @@ const ColorPicker = ({
           </div>
           <button
             onClick={() => handleApplyPalette(activeCategory)}
-            className="ml-4 px-4 py-2 bg-wg-orange text-white rounded-lg text-sm font-medium hover:bg-wg-orange/90 transition-colors"
+            className="ml-4 px-4 py-2 bg-wg-orange text-white rounded-lg text-sm font-light hover:bg-wg-orange/90 transition-colors"
           >
             Aplicar Paleta
           </button>
@@ -188,7 +188,7 @@ const ColorPicker = ({
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold text-gray-800 mb-3">Cor Personalizada</h3>
+        <h3 className="text-lg font-light text-gray-800 mb-3">Cor Personalizada</h3>
         <div className="flex items-center gap-4">
           <input
             type="color"
@@ -206,7 +206,7 @@ const ColorPicker = ({
           <button
             onClick={handleAddCustomColor}
             disabled={selectedColors.length >= maxColors}
-            className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg text-sm font-light hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Plus className="w-4 h-4" />
             Adicionar
@@ -218,7 +218,7 @@ const ColorPicker = ({
       {onImagesAdd && (
         <div className="pt-4 border-t border-gray-100">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
+            <h3 className="text-lg font-light text-gray-800 flex items-center gap-2">
               <ImageIcon className="w-5 h-5 text-wg-orange" />
               Minhas Referências
             </h3>

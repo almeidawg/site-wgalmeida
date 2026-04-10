@@ -1,7 +1,8 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from '@/lib/motion-lite';
-import { ArrowLeftRight, Check, Sparkles } from 'lucide-react';
+import { ArrowLeftRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { normalizeUnsplashImageUrl } from '@/lib/unsplash';
 
 // Configuração do Cloudinary
 const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'demo';
@@ -52,7 +53,11 @@ const DEMO_IMAGES = [
     externalUrl: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=640&h=360&q=55&fm=webp',
     thumbnail: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=96&h=72&q=45&fm=webp',
   },
-];
+].map((image) => ({
+  ...image,
+  externalUrl: normalizeUnsplashImageUrl(image.externalUrl, { width: 640, height: 360, quality: 55 }),
+  thumbnail: normalizeUnsplashImageUrl(image.thumbnail, { width: 96, height: 72, quality: 45 }),
+}));
 
 // Gera URL com transformação Cloudinary
 const generateTransformUrl = (publicId, color, cloudName) => {
@@ -241,11 +246,11 @@ const HomeColorTransformer = () => {
             </div>
 
             {/* Labels */}
-            <div className="absolute top-3 left-3 px-3 py-1 bg-black/60 text-white text-xs font-medium rounded-lg backdrop-blur-sm">
+            <div className="absolute top-3 left-3 px-3 py-1 bg-black/60 text-white text-xs rounded-lg backdrop-blur-sm">
               ORIGINAL
             </div>
-            <div className="absolute top-3 right-3 px-3 py-1 bg-wg-orange text-white text-xs font-medium rounded-lg flex items-center gap-1">
-              <Sparkles className="w-3 h-3" />
+            <div className="absolute top-3 right-3 px-3 py-1 bg-wg-orange text-white text-xs rounded-lg flex items-center gap-1.5">
+              <Check className="w-3 h-3" />
               TRANSFORMADO
             </div>
           </>
@@ -298,7 +303,7 @@ const HomeColorTransformer = () => {
                 />
               ))}
             </div>
-            <span className="text-xs text-white font-medium hidden sm:inline">{palette.name}</span>
+            <span className="text-xs text-white hidden sm:inline">{palette.name}</span>
             {selectedPalette.id === palette.id && (
               <Check className="w-3 h-3 text-wg-orange" />
             )}
@@ -338,7 +343,7 @@ const HomeColorTransformer = () => {
 
         <Link
           to="/moodboard"
-          className="inline-flex items-center gap-2 px-5 py-3 h-12 bg-wg-orange text-white rounded-xl font-semibold hover:bg-wg-orange/90 transition-colors shadow-lg whitespace-nowrap"
+          className="inline-flex items-center gap-2 px-5 py-3 h-12 bg-wg-orange text-white rounded-xl hover:bg-wg-orange/90 transition-colors shadow-lg whitespace-nowrap"
         >
           Explorar Mais Ambientes
           <ArrowLeftRight className="w-4 h-4" />

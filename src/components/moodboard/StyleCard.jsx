@@ -58,7 +58,7 @@ const StyleCard = ({
 
       {/* Content */}
       <div className="absolute bottom-0 left-0 right-0 p-4">
-        <h3 className="text-white font-semibold text-lg mb-1">{name}</h3>
+        <h3 className="text-white font-light text-lg mb-1">{name}</h3>
         <p className="text-white/80 text-sm line-clamp-2 mb-2">{description}</p>
 
         {/* Tags */}

@@ -8,8 +8,27 @@
  * - Image-to-Image: Transforma imagens existentes
  */
 
-const STABILITY_API_KEY = import.meta.env.VITE_STABILITY_API_KEY;
-const STABILITY_API_URL = 'https://api.stability.ai/v1';
+const STABILITY_API_URL = '/api/stability';
+
+const fileToBase64 = async (fileOrBlob) => {
+  const arrayBuffer = await fileOrBlob.arrayBuffer();
+  let binary = '';
+  const bytes = new Uint8Array(arrayBuffer);
+  const chunkSize = 0x8000;
+
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+  }
+
+  return btoa(binary);
+};
+
+const mapArtifacts = (data) =>
+  (data.artifacts || []).map((artifact) => ({
+    base64: artifact.base64,
+    seed: artifact.seed,
+    finishReason: artifact.finishReason,
+  }));
 
 /**
  * Estilos de interior para prompts
@@ -140,46 +159,30 @@ export const generateImage = async (prompt, options = {}) => {
   } = options;
 
   try {
-    const response = await fetch(`${STABILITY_API_URL}/generation/stable-diffusion-xl-1024-v1-0/text-to-image`, {
+    const response = await fetch(STABILITY_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${STABILITY_API_KEY}`,
-        'Accept': 'application/json',
       },
       body: JSON.stringify({
-        text_prompts: [
-          {
-            text: prompt,
-            weight: 1,
-          },
-          {
-            text: 'blurry, low quality, distorted, ugly, bad architecture, unrealistic',
-            weight: -1,
-          },
-        ],
-        cfg_scale: cfgScale,
+        action: 'generate',
+        prompt,
         width,
         height,
         samples,
         steps,
-        style_preset: style,
+        cfgScale,
+        style,
       }),
     });
 
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.message || 'Erro na geração da imagem');
+      const error = await response.json().catch(() => ({}));
+      throw new Error(error.message || error.error || 'Erro na geração da imagem');
     }
 
     const data = await response.json();
-
-    // Retorna as imagens em base64
-    return data.artifacts.map((artifact) => ({
-      base64: artifact.base64,
-      seed: artifact.seed,
-      finishReason: artifact.finishReason,
-    }));
+    return mapArtifacts(data);
   } catch (error) {
     console.error('Stability AI error:', error);
     throw error;
@@ -195,54 +198,49 @@ export const generateImage = async (prompt, options = {}) => {
  */
 export const transformImage = async (image, prompt, options = {}) => {
   const {
-    strength = 0.35, // Quanto manter da imagem original (0-1)
+    strength = 0.35,
     steps = 30,
     cfgScale = 7,
     style = 'photographic',
   } = options;
 
-  const formData = new FormData();
-
-  // Adiciona a imagem
-  if (typeof image === 'string' && image.startsWith('data:')) {
-    // Base64
-    const blob = await fetch(image).then((r) => r.blob());
-    formData.append('init_image', blob);
-  } else if (image instanceof File || image instanceof Blob) {
-    formData.append('init_image', image);
-  }
-
-  formData.append('text_prompts[0][text]', prompt);
-  formData.append('text_prompts[0][weight]', '1');
-  formData.append('text_prompts[1][text]', 'blurry, low quality, distorted, ugly');
-  formData.append('text_prompts[1][weight]', '-1');
-  formData.append('image_strength', String(1 - strength));
-  formData.append('cfg_scale', String(cfgScale));
-  formData.append('steps', String(steps));
-  formData.append('style_preset', style);
-
   try {
-    const response = await fetch(`${STABILITY_API_URL}/generation/stable-diffusion-xl-1024-v1-0/image-to-image`, {
+    let imageBlob = null;
+
+    if (typeof image === 'string' && image.startsWith('data:')) {
+      imageBlob = await fetch(image).then((r) => r.blob());
+    } else if (image instanceof File || image instanceof Blob) {
+      imageBlob = image;
+    }
+
+    if (!imageBlob) {
+      throw new Error('Imagem inválida para transformação');
+    }
+
+    const response = await fetch(STABILITY_API_URL, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${STABILITY_API_KEY}`,
-        'Accept': 'application/json',
+        'Content-Type': 'application/json',
       },
-      body: formData,
+      body: JSON.stringify({
+        action: 'transform',
+        prompt,
+        imageBase64: await fileToBase64(imageBlob),
+        mimeType: imageBlob.type || 'image/png',
+        strength,
+        steps,
+        cfgScale,
+        style,
+      }),
     });
 
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.message || 'Erro na transformação da imagem');
+      const error = await response.json().catch(() => ({}));
+      throw new Error(error.message || error.error || 'Erro na transformação da imagem');
     }
 
     const data = await response.json();
-
-    return data.artifacts.map((artifact) => ({
-      base64: artifact.base64,
-      seed: artifact.seed,
-      finishReason: artifact.finishReason,
-    }));
+    return mapArtifacts(data);
   } catch (error) {
     console.error('Stability AI transform error:', error);
     throw error;
@@ -260,7 +258,6 @@ export const generateRoomVisualization = async (roomPhoto, moodboard, roomInfo) 
   const { colors = [], styles = [] } = moodboard;
   const { roomType, customRoomName } = roomInfo;
 
-  // Monta o prompt
   const prompt = buildPrompt({
     roomType: roomType?.id || 'sala',
     styles: styles.map((s) => s.id || s),
@@ -269,9 +266,8 @@ export const generateRoomVisualization = async (roomPhoto, moodboard, roomInfo) 
     quality: 'photorealistic',
   });
 
-  // Transforma a imagem
   const results = await transformImage(roomPhoto, prompt, {
-    strength: 0.4, // Mantém 60% da estrutura original
+    strength: 0.4,
     steps: 40,
     cfgScale: 8,
     style: 'photographic',
@@ -291,11 +287,7 @@ export const generateRoomVisualization = async (roomPhoto, moodboard, roomInfo) 
  */
 export const checkAccountStatus = async () => {
   try {
-    const response = await fetch(`${STABILITY_API_URL}/user/balance`, {
-      headers: {
-        'Authorization': `Bearer ${STABILITY_API_KEY}`,
-      },
-    });
+    const response = await fetch(STABILITY_API_URL);
 
     if (!response.ok) {
       throw new Error('Erro ao verificar status');

@@ -1,6 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { PROJECT_CAROUSEL_IMAGES } from '@/utils/cloudinaryProjectPortfolio';
+
+const PROJECTS_FALLBACK_IMAGE = '/images/banners/PROJETOS.webp';
 
 const carouselProjects = [
   {
@@ -8,7 +11,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.acapulco.subtitle',
     descriptionKey: 'projectCarousel.projects.acapulco.description',
     statKey: 'projectCarousel.projects.acapulco.stat',
-    image: '/images/projects/casa-resort-acapulco/01_11---Photo.webp',
+    image: PROJECT_CAROUSEL_IMAGES[0],
     folder: 'casa-resort-acapulco',
   },
   {
@@ -16,7 +19,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.alameda.subtitle',
     descriptionKey: 'projectCarousel.projects.alameda.description',
     statKey: 'projectCarousel.projects.alameda.stat',
-    image: '/images/projects/apartamento-alameda-alphaville/10areaservio_01_27206612818_o.webp',
+    image: PROJECT_CAROUSEL_IMAGES[1],
     folder: 'apartamento-alameda-alphaville',
   },
   {
@@ -24,7 +27,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.lesChamps.subtitle',
     descriptionKey: 'projectCarousel.projects.lesChamps.description',
     statKey: 'projectCarousel.projects.lesChamps.stat',
-    image: '/images/projects/cobertura-les-champs-osasco/2022-03-11 13.30.30.webp',
+    image: PROJECT_CAROUSEL_IMAGES[2],
     folder: 'cobertura-les-champs-osasco',
   },
   {
@@ -32,7 +35,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.lumenit.subtitle',
     descriptionKey: 'projectCarousel.projects.lumenit.description',
     statKey: 'projectCarousel.projects.lumenit.stat',
-    image: '/images/projects/lumenit-corporativo/lumenit_27476900773_o.webp',
+    image: PROJECT_CAROUSEL_IMAGES[3],
     folder: 'lumenit-corporativo',
   },
   {
@@ -40,7 +43,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.grandPanamby.subtitle',
     descriptionKey: 'projectCarousel.projects.grandPanamby.description',
     statKey: 'projectCarousel.projects.grandPanamby.stat',
-    image: '/images/projects/apartamento-grand-panamby/2021-05-24 12.02.11.webp',
+    image: PROJECT_CAROUSEL_IMAGES[4],
     folder: 'apartamento-grand-panamby',
   },
   {
@@ -48,7 +51,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.square.subtitle',
     descriptionKey: 'projectCarousel.projects.square.description',
     statKey: 'projectCarousel.projects.square.stat',
-    image: '/images/projects/apartamento-square-santo-amaro/Humanizada.webp',
+    image: PROJECT_CAROUSEL_IMAGES[5],
     folder: 'apartamento-square-santo-amaro',
   },
   {
@@ -56,7 +59,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.gaivota.subtitle',
     descriptionKey: 'projectCarousel.projects.gaivota.description',
     statKey: 'projectCarousel.projects.gaivota.stat',
-    image: '/images/projects/casa-gaivota-moema/1.webp',
+    image: PROJECT_CAROUSEL_IMAGES[6],
     folder: 'casa-gaivota-moema',
   },
   {
@@ -64,7 +67,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.portaDoSol.subtitle',
     descriptionKey: 'projectCarousel.projects.portaDoSol.description',
     statKey: 'projectCarousel.projects.portaDoSol.stat',
-    image: '/images/projects/casa-porta-do-sol-mairinque/2021-12-10 12.53.24.webp',
+    image: PROJECT_CAROUSEL_IMAGES[7],
     folder: 'casa-porta-do-sol-mairinque',
   },
   {
@@ -72,7 +75,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.paulistano.subtitle',
     descriptionKey: 'projectCarousel.projects.paulistano.description',
     statKey: 'projectCarousel.projects.paulistano.stat',
-    image: '/images/projects/condominio-paulistano-monte-kemel/original100.webp',
+    image: PROJECT_CAROUSEL_IMAGES[8],
     folder: 'condominio-paulistano-monte-kemel',
   },
   {
@@ -80,7 +83,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.cureDent.subtitle',
     descriptionKey: 'projectCarousel.projects.cureDent.description',
     statKey: 'projectCarousel.projects.cureDent.stat',
-    image: '/images/projects/consultorio-cure-dent-cotia/2020-10-06 13.39.14.webp',
+    image: PROJECT_CAROUSEL_IMAGES[9],
     folder: 'consultorio-cure-dent-cotia',
   },
   {
@@ -88,7 +91,7 @@ const carouselProjects = [
     subtitleKey: 'projectCarousel.projects.surubiju.subtitle',
     descriptionKey: 'projectCarousel.projects.surubiju.description',
     statKey: 'projectCarousel.projects.surubiju.stat',
-    image: '/images/projects/galpao-surubiju-alphaville/1.webp',
+    image: PROJECT_CAROUSEL_IMAGES[10],
     folder: 'galpao-surubiju-alphaville',
   },
 ];
@@ -145,6 +148,11 @@ const ProjectCarousel = () => {
               loading="lazy"
               decoding="async"
               className="h-full w-full object-cover transition duration-700 ease-out hover:scale-[1.05]"
+              onError={(event) => {
+                if (event.currentTarget.dataset.fallbackApplied === 'true') return;
+                event.currentTarget.dataset.fallbackApplied = 'true';
+                event.currentTarget.src = PROJECTS_FALLBACK_IMAGE;
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-wg-apple-accent/80 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 space-y-3 text-white">

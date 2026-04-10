@@ -1,7 +1,7 @@
 const trimTrailingSlash = (value) => value.replace(/\/+$/, '');
 
 export const getBasePath = () => {
-  const baseUrl = import.meta.env.BASE_URL || '/';
+  const baseUrl = import.meta.env?.BASE_URL || '/';
   if (!baseUrl || baseUrl === '/') return '';
   return trimTrailingSlash(baseUrl);
 };

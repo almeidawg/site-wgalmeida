@@ -6,6 +6,10 @@
 		// Lazy load GTM e Pinterest apos interacao do usuario ou 3s de idle
 		// Reduz TBT (Total Blocking Time) significativamente
 		(function() {
+			var host = window.location.hostname || '';
+			var isLocalRuntime = host === 'localhost' || host === '127.0.0.1' || host === '::1' || window.location.protocol === 'file:';
+			if (isLocalRuntime) return;
+
 			var gtmLoaded = false;
 			var pinterestLoaded = false;
 

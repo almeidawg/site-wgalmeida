@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO, { schemas } from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
+import { withBasePath } from '@/utils/assetPaths';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -14,8 +15,7 @@ import {
     Phone
   } from 'lucide-react';
   import { Button } from '@/components/ui/button';
-  import BrandStar from '@/components/BrandStar';
-
+  
 const ConstrutoraBrooklin = () => {
   const pageUrl = 'https://wgalmeida.com.br/construtora-brooklin';
 
@@ -81,12 +81,12 @@ const ConstrutoraBrooklin = () => {
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
     "name": "Construtora Brooklin | Grupo WG Almeida",
-    "description": "Construtora especializada no Brooklin. Obras residenciais e comerciais Turn Key. Proximity to Berrini. Acabamento premium e prazo garantido.",
+    "description": "Construtora especializada no Brooklin. Obras residenciais e comerciais Turn Key. Atuação próxima à Berrini. Acabamento premium e prazo garantido.",
     "url": pageUrl,
     "provider": {
       "@type": "Organization",
       "name": "Grupo WG Almeida",
-      "telephone": "+55-11-98465-0002"
+      "telephone": "+5511984650002"
     },
     "areaServed": {
       "@type": "Neighborhood",
@@ -106,18 +106,19 @@ const ConstrutoraBrooklin = () => {
   return (
     <>
       <SEO
+        pathname="/construtora-brooklin"
         title="Construtora Brooklin SP | Obras Residenciais e Comerciais"
-        description="Construtora especializada no Brooklin. Obras residenciais e comerciais Turn Key. Proximity to Berrini. Acabamento premium e prazo garantido. Orçamento grátis."
+        description="Construtora especializada no Brooklin. Obras residenciais e comerciais Turn Key. Atuação próxima à Berrini. Acabamento premium e prazo garantido. Orçamento grátis."
         keywords="construtora brooklin, obra brooklin, construtora berrini, reforma brooklin, construção brooklin, quanto custa obra brooklin"
         url={pageUrl}
         schema={localBusinessSchema}
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black hero-under-header">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: 'url(/images/banners/ENGENHARIA.webp)' }}
+          style={{ backgroundImage: `url(${withBasePath('/images/banners/ENGENHARIA.webp')})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
@@ -269,7 +270,7 @@ const ConstrutoraBrooklin = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex items-start gap-3 p-4 bg-wg-gray-light rounded-xl"
               >
-                <BrandStar className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5 text-wg-green" />
                 <p className="text-wg-gray font-light">{item}</p>
               </motion.div>
             ))}
@@ -354,7 +355,7 @@ const ConstrutoraBrooklin = () => {
               </Link>
               <a href="tel:+5511984650002" className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
-                (11) 98465-0002
+                +55 (11) 98465-0002
               </a>
             </div>
           </motion.div>

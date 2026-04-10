@@ -36,7 +36,7 @@ export const SCHEMAS = {
     url: BASE_URL,
     logo: `${BASE_URL}/images/logo-96.webp`,
     email: "contato@wgalmeida.com.br",
-    telephone: "+55-11-98465-0002",
+    telephone: "+5511984650002",
   },
 
   localBusiness: {
@@ -44,7 +44,7 @@ export const SCHEMAS = {
     "@type": "ProfessionalService",
     name: "Grupo WG Almeida",
     url: BASE_URL,
-    telephone: "+55-11-98465-0002",
+    telephone: "+5511984650002",
     email: "contato@wgalmeida.com.br",
     address: {
       "@type": "PostalAddress",
@@ -113,11 +113,11 @@ export const SCHEMAS = {
     mainEntity: {
       "@type": "Organization",
       name: "Grupo WG Almeida",
-      telephone: "+55-11-98465-0002",
+      telephone: "+5511984650002",
       email: "contato@wgalmeida.com.br",
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+55-11-98465-0002",
+        telephone: "+5511984650002",
         contactType: "customer service",
         availableLanguage: "Portuguese",
         areaServed: "BR",
@@ -137,7 +137,7 @@ export const SCHEMAS = {
     name: "Grupo WG Almeida",
     url: BASE_URL,
     image: `${BASE_URL}/og-home-1200x630.jpg`,
-    telephone: "+55-11-98465-0002",
+    telephone: "+5511984650002",
     priceRange: "$$$",
     address: {
       "@type": "PostalAddress",

@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO, { schemas } from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
+import { withBasePath } from '@/utils/assetPaths';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -10,11 +11,9 @@ import {
   Palette,
   Clock,
   Award,
-  Sparkles,
   Phone,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import BrandStar from '@/components/BrandStar';
 
 const ArquiteturaInterioresVilaNovaConceicao = () => {
   const pageUrl = 'https://wgalmeida.com.br/arquitetura-interiores-vila-nova-conceicao';
@@ -26,7 +25,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
       description: 'Projetos de interiores assinados por arquitetos especializados em alto padrão.'
     },
     {
-      icon: Sparkles,
+      icon: Award,
       title: 'Curadoria Premium',
       description: 'Seleção de materiais nobres, acabamentos diferenciados e fornecedores exclusivos.'
     },
@@ -86,7 +85,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
     "provider": {
       "@type": "Organization",
       "name": "Grupo WG Almeida",
-      "telephone": "+55-11-98465-0002"
+      "telephone": "+5511984650002"
     },
     "areaServed": {
       "@type": "Neighborhood",
@@ -106,6 +105,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
   return (
     <>
       <SEO
+        pathname="/arquitetura-interiores-vila-nova-conceicao"
         title="Arquitetura Interiores Vila Nova Conceição SP | Design Premium"
         description="Arquitetura de interiores de alto padrão em Vila Nova Conceição. Design exclusivo, curadoria premium e projetos Turn Key completos. Ambientes únicos para residências de luxo."
         keywords="arquitetura interiores vila nova conceição, design interiores vila nova conceição, arquiteto vila nova conceição, decoração alto padrão vila nova conceição"
@@ -114,10 +114,10 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black hero-under-header">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: 'url(/images/banners/ARQ.webp)' }}
+          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
@@ -253,7 +253,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <Sparkles className="w-12 h-12 text-wg-orange mx-auto mb-4" />
+            <Award className="w-12 h-12 text-wg-orange mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black mb-4">
               Vila Nova Conceição e Seu Padrão Único
             </h2>
@@ -269,7 +269,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex items-start gap-3 p-4 bg-wg-gray-light rounded-xl"
               >
-                <BrandStar className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5 text-wg-green" />
                 <p className="text-wg-gray font-light">{item}</p>
               </motion.div>
             ))}
@@ -354,7 +354,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
               </Link>
               <a href="tel:+5511984650002" className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
-                (11) 98465-0002
+                +55 (11) 98465-0002
               </a>
             </div>
           </motion.div>

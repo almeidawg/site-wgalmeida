@@ -1,9 +1,10 @@
 import SEO from '@/components/SEO'
 import { Button } from '@/components/ui/button'
 import { motion } from '@/lib/motion-lite'
+import { withBasePath } from '@/utils/assetPaths'
 import {
   ArrowRight, CheckCircle, Calculator, TrendingUp, Users,
-  Shield, FileText, BarChart3, Building2, Phone, Zap, Star
+  Shield, FileText, BarChart3, Building2, Phone, Zap
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -162,6 +163,7 @@ const ObraEasyLanding = () => {
   return (
     <>
       <SEO
+        pathname="/obraeasy"
         title="ObraEasy · Gerencie sua Obra do Orçamento à Entrega"
         description="Plataforma de gestão de obras com EVF, cronograma, contratos e financeiro. Para clientes, corretores e construtoras. Grátis para começar."
         keywords="gestão de obras, estudo de viabilidade financeira, EVF, software para obras, orçamento de reforma, plataforma de obras, ObraEasy"
@@ -170,16 +172,16 @@ const ObraEasyLanding = () => {
       />
 
       {/* HERO */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-wg-black">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: 'url(/images/banners/ARQ.webp)' }}
+          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/90 via-wg-black/70 to-wg-black" />
 
         <div className="relative z-10 container-custom text-center text-white px-4 py-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm font-medium uppercase tracking-wider mb-6">
+            <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm uppercase tracking-wider mb-6">
               Plataforma de Gestão de Obras
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 leading-tight">
@@ -192,7 +194,7 @@ const ObraEasyLanding = () => {
               controle financeiro em uma plataforma simples e profissional.
             </p>
             <p className="text-sm text-white/50 mb-10">
-              Dados reais: SINAPI · CUB/SINDUSCON · FipeZAP · 15 anos de experiência em obra
+              Dados de referência: SINAPI · CUB/SINDUSCON · FipeZAP, combinados com curadoria operacional WG Almeida
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://obraeasy.wgalmeida.com.br/evf4" target="_blank" rel="noopener noreferrer">
@@ -217,7 +219,7 @@ const ObraEasyLanding = () => {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">Para quem é o ObraEasy</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Para quem é o ObraEasy</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
               Uma plataforma, três perfis de uso
             </h2>
@@ -227,7 +229,7 @@ const ObraEasyLanding = () => {
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
                 className="bg-wg-gray-light rounded-2xl p-8 text-center">
                 <p.icone className="w-12 h-12 text-wg-orange mx-auto mb-4" />
-                <h3 className="text-xl font-inter font-medium text-wg-black mb-3">{p.perfil}</h3>
+                <h3 className="text-xl font-inter text-wg-black mb-3">{p.perfil}</h3>
                 <p className="text-wg-gray font-light leading-relaxed">{p.desc}</p>
               </motion.div>
             ))}
@@ -239,7 +241,7 @@ const ObraEasyLanding = () => {
       <section className="section-padding bg-wg-gray-light">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">Como funciona</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Como funciona</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
               Do dado bruto ao estudo completo em minutos
             </h2>
@@ -249,10 +251,10 @@ const ObraEasyLanding = () => {
               <motion.div key={i} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="bg-white rounded-2xl p-6 shadow-sm flex items-start gap-6">
                 <div className="flex-shrink-0 w-16 h-16 bg-wg-orange rounded-full flex items-center justify-center">
-                  <span className="text-white text-xl font-medium">{etapa.numero}</span>
+                  <span className="text-white text-xl">{etapa.numero}</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-inter font-medium text-wg-black mb-2">{etapa.titulo}</h3>
+                  <h3 className="text-xl font-inter text-wg-black mb-2">{etapa.titulo}</h3>
                   <p className="text-wg-gray font-light">{etapa.desc}</p>
                 </div>
               </motion.div>
@@ -274,7 +276,7 @@ const ObraEasyLanding = () => {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">O que está incluso</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">O que está incluso</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
               Tudo que você precisa para controlar a obra
             </h2>
@@ -284,7 +286,7 @@ const ObraEasyLanding = () => {
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="bg-wg-gray-light rounded-2xl p-6">
                 <f.icon className="w-10 h-10 text-wg-orange mb-4" />
-                <h3 className="text-lg font-inter font-medium text-wg-black mb-2">{f.titulo}</h3>
+                <h3 className="text-lg font-inter text-wg-black mb-2">{f.titulo}</h3>
                 <p className="text-wg-gray font-light text-sm leading-relaxed">{f.desc}</p>
               </motion.div>
             ))}
@@ -296,7 +298,7 @@ const ObraEasyLanding = () => {
       <section className="section-padding bg-wg-gray-light">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">Planos e preços</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Planos e preços</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black mb-4">
               Escolha o plano ideal para sua obra
             </h2>
@@ -307,11 +309,11 @@ const ObraEasyLanding = () => {
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
                 className={`rounded-2xl p-8 relative ${plano.destaque ? 'bg-wg-black text-white ring-2 ring-wg-orange' : 'bg-white'}`}>
                 {plano.destaque && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-wg-orange text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-wg-orange text-white text-xs px-4 py-1 rounded-full uppercase tracking-wider">
                     Mais popular
                   </span>
                 )}
-                <h3 className={`text-xl font-inter font-medium mb-1 ${plano.destaque ? 'text-white' : 'text-wg-black'}`}>{plano.label}</h3>
+                <h3 className={`text-xl font-inter mb-1 ${plano.destaque ? 'text-white' : 'text-wg-black'}`}>{plano.label}</h3>
                 <p className={`text-sm mb-4 ${plano.destaque ? 'text-white/60' : 'text-wg-gray'}`}>{plano.desc}</p>
                 <div className="flex items-baseline gap-1 mb-6">
                   <span className={`text-3xl font-light ${plano.destaque ? 'text-white' : 'text-wg-black'}`}>{plano.price}</span>
@@ -326,7 +328,7 @@ const ObraEasyLanding = () => {
                   ))}
                 </ul>
                 <a href={plano.href} target="_blank" rel="noopener noreferrer">
-                  <Button className={`w-full rounded-2xl py-3 font-medium ${plano.destaque ? 'bg-wg-orange text-white hover:bg-wg-orange/90' : 'bg-wg-gray-light text-wg-black hover:bg-wg-gray-light/80'}`}>
+                  <Button className={`w-full rounded-2xl py-3 ${plano.destaque ? 'bg-wg-orange text-white hover:bg-wg-orange/90' : 'bg-wg-gray-light text-wg-black hover:bg-wg-gray-light/80'}`}>
                     {plano.cta}
                   </Button>
                 </a>
@@ -359,7 +361,7 @@ const ObraEasyLanding = () => {
       <section className="section-padding bg-gradient-to-br from-wg-black to-wg-black/90 text-white">
         <div className="container-custom text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto">
-            <Star className="w-12 h-12 text-wg-orange mx-auto mb-6" />
+            <Zap className="w-12 h-12 mx-auto mb-6 text-wg-orange" />
             <h2 className="text-3xl md:text-4xl font-inter font-light mb-6">
               Comece grátis hoje mesmo
             </h2>
@@ -374,9 +376,9 @@ const ObraEasyLanding = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
-              <a href="tel:+5511984650002" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl font-medium hover:bg-white hover:text-wg-black transition-all text-lg">
+              <a href="tel:+5511984650002" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
                 <Phone className="w-5 h-5" />
-                (11) 98465-0002
+                +55 (11) 98465-0002
               </a>
             </div>
           </motion.div>

@@ -807,6 +807,36 @@ export async function getProductQuantities({fields, product_ids}) {
  * // Use categories to filter products by checking product.collections[].collection_id
  */
 export async function getCategories() {
+	if (USE_SUPABASE) {
+		try {
+			const { data, error } = await supabase
+				.from("pricelist_categorias")
+				.select("id, nome")
+				.order("nome", { ascending: true });
+
+			if (error) {
+				console.error("Erro ao buscar categorias do Supabase:", error);
+				throw new Error(error.message);
+			}
+
+			return {
+				categories: (data || []).map((category) => ({
+					id: category.id,
+					title: category.nome,
+					image_url: null,
+					store_id: 'wg-easy',
+					created_at: null,
+					updated_at: null,
+					deleted_at: null,
+					metadata: null,
+				})),
+				count: (data || []).length,
+			};
+		} catch (err) {
+			console.error("Erro nas categorias Supabase, tentando Hostinger:", err);
+		}
+	}
+
 	const url = `${ECOMMERCE_API_URL}/store/${ECOMMERCE_STORE_ID}/collections`;
 
 	const response = await fetch(url, {

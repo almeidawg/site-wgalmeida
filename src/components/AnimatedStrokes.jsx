@@ -16,7 +16,10 @@ const wgColors = [
   '#F25C26', // wg-orange
   '#5E9B94', // wg-green
   '#2B4580', // wg-blue
-  '#8B5E3C', // wg-brown
+  '#5E9B94', // wg-green
+  '#2B4580', // wg-blue
+  '#F25C26', // wg-orange
+  '#8B5E3C', // wg-brown (uso reduzido)
 ];
 
 const AnimatedStrokes = ({
@@ -274,7 +277,7 @@ export const AnimatedBorder = ({ children, className = '' }) => {
         transition={{ duration: 1, ease: "easeOut" }}
       />
       <motion.div
-        className="absolute bottom-0 right-0 h-1 bg-gradient-to-l from-wg-orange via-wg-brown to-wg-blue"
+        className="absolute bottom-0 right-0 h-1 bg-gradient-to-l from-wg-orange via-wg-green to-wg-blue"
         initial={{ width: 0 }}
         whileInView={{ width: '100%' }}
         viewport={{ once: true }}

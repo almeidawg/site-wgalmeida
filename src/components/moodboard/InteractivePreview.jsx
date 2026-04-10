@@ -11,6 +11,7 @@ import {
   Palette,
   Sparkles,
 } from 'lucide-react';
+import { normalizeUnsplashImageUrl } from '@/lib/unsplash';
 
 // Imagens de ambientes de demonstração (Unsplash - alta qualidade)
 const DEMO_ROOMS = [
@@ -50,7 +51,14 @@ const DEMO_ROOMS = [
     image: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200',
     category: 'escritorio',
   },
-];
+].map((room) => ({
+  ...room,
+  image: normalizeUnsplashImageUrl(room.image, {
+    width: 1280,
+    height: 720,
+    quality: 80,
+  }),
+}));
 
 // Configuração do Cloudinary
 const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'demo';
@@ -167,7 +175,7 @@ const InteractivePreview = ({ colors = [], styles = [] }) => {
       {/* Header */}
       <div className="p-4 border-b border-gray-100">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
+          <h3 className="text-lg font-light text-gray-800 flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-wg-orange" />
             Preview Interativo
           </h3>
@@ -201,7 +209,7 @@ const InteractivePreview = ({ colors = [], styles = [] }) => {
                 <button
                   key={room.id}
                   onClick={() => setSelectedRoom(room)}
-                  className={`flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                  className={`flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-light transition-colors ${
                     selectedRoom.id === room.id
                       ? 'bg-wg-orange text-white'
                       : 'bg-white border border-gray-200 text-gray-600 hover:border-wg-orange'
@@ -228,7 +236,7 @@ const InteractivePreview = ({ colors = [], styles = [] }) => {
           /* Empty State */
           <div className="aspect-video bg-gray-100 flex flex-col items-center justify-center p-8 text-center">
             <Palette className="w-16 h-16 text-gray-300 mb-4" />
-            <h4 className="text-lg font-medium text-gray-600 mb-2">
+            <h4 className="text-lg font-light text-gray-600 mb-2">
               Selecione cores para ver o preview
             </h4>
             <p className="text-sm text-gray-500 max-w-sm">
@@ -299,10 +307,10 @@ const InteractivePreview = ({ colors = [], styles = [] }) => {
             </div>
 
             {/* Labels */}
-            <div className="absolute bottom-4 left-4 px-3 py-1.5 bg-black/60 text-white text-sm font-medium rounded-lg">
+            <div className="absolute bottom-4 left-4 px-3 py-1.5 bg-black/60 text-white text-sm font-light rounded-lg">
               Original
             </div>
-            <div className="absolute bottom-4 right-4 px-3 py-1.5 bg-wg-orange text-white text-sm font-medium rounded-lg">
+            <div className="absolute bottom-4 right-4 px-3 py-1.5 bg-wg-orange text-white text-sm font-light rounded-lg">
               Com suas cores
             </div>
 
@@ -325,11 +333,11 @@ const InteractivePreview = ({ colors = [], styles = [] }) => {
         <div className="px-4 py-3 bg-gray-50 border-t border-gray-100">
           <div className="flex items-center justify-between">
             <p className="text-sm text-gray-600">
-              <span className="font-medium">{colors.length}</span> cor(es) aplicada(s)
+              <span className="font-light">{colors.length}</span> cor(es) aplicada(s)
               {styles.length > 0 && (
                 <>
                   {' • '}
-                  <span className="font-medium">{styles.length}</span> estilo(s)
+                  <span className="font-light">{styles.length}</span> estilo(s)
                 </>
               )}
             </p>
@@ -413,10 +421,10 @@ const InteractivePreview = ({ colors = [], styles = [] }) => {
                 </div>
               </div>
 
-              <div className="absolute bottom-6 left-6 px-4 py-2 bg-black/60 text-white font-medium rounded-lg">
+              <div className="absolute bottom-6 left-6 px-4 py-2 bg-black/60 text-white font-light rounded-lg">
                 Original
               </div>
-              <div className="absolute bottom-6 right-6 px-4 py-2 bg-wg-orange text-white font-medium rounded-lg">
+              <div className="absolute bottom-6 right-6 px-4 py-2 bg-wg-orange text-white font-light rounded-lg">
                 Com suas cores
               </div>
             </div>

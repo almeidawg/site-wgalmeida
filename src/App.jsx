@@ -1,8 +1,7 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
-import { Suspense, lazy, useEffect } from 'react'
+import { Suspense, lazy, useEffect, useLayoutEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
-// import ClaudeAssistant from '@/components/ClaudeAssistant'; // DESATIVADO TEMPORARIAMENTE - Manter apenas WhatsApp
 import ProtectedRoute from '@/components/auth/ProtectedRoute'
 import { AuthProvider } from '@/contexts/SupabaseAuthContext'
 import { Loader2 } from 'lucide-react'
@@ -25,6 +24,7 @@ const Login = lazy(() => import('@/pages/Login'))
 const Register = lazy(() => import('@/pages/Register'))
 const Account = lazy(() => import('@/pages/Account'))
 const Admin = lazy(() => import('@/pages/Admin'))
+const AdminBlogEditorial = lazy(() => import('@/pages/AdminBlogEditorial'))
 
 // Region Pages (SEO)
 const Brooklin = lazy(() => import('@/pages/regions/Brooklin'))
@@ -47,6 +47,7 @@ const SoliciteProposta = lazy(() => import('@/pages/SoliciteProposta'))
 const Blog = lazy(() => import('@/pages/Blog'))
 const FAQ = lazy(() => import('@/pages/FAQ'))
 const Moodboard = lazy(() => import('@/pages/Moodboard'))
+const MoodboardShare = lazy(() => import('@/pages/MoodboardShare'))
 const MoodboardGenerator = lazy(() => import('@/pages/MoodboardGenerator'))
 const RoomVisualizer = lazy(() => import('@/pages/RoomVisualizer'))
 const RevistaEstilos = lazy(() => import('@/pages/RevistaEstilos'))
@@ -81,6 +82,67 @@ const LoadingFallback = () => (
     <Loader2 className="h-10 w-10 text-wg-orange animate-spin opacity-60" />
   </div>
 )
+
+const APP_BUILD_TAG = '2026-04-09-store-refresh-2'
+
+function RouteScrollManager() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      const previous = window.history.scrollRestoration
+      window.history.scrollRestoration = 'manual'
+
+      return () => {
+        window.history.scrollRestoration = previous
+      }
+    }
+
+    return undefined
+  }, [])
+
+  useLayoutEffect(() => {
+    const headerHeight = Number.parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--header-height'),
+      10
+    ) || 0
+
+    if (!location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+      return undefined
+    }
+
+    let cancelled = false
+    let attempts = 0
+    const maxAttempts = 24
+
+    const scrollToHashTarget = () => {
+      if (cancelled) return
+
+      const targetId = decodeURIComponent(location.hash.slice(1))
+      const target = targetId ? document.getElementById(targetId) : null
+
+      if (!target) {
+        if (attempts < maxAttempts) {
+          attempts += 1
+          window.requestAnimationFrame(scrollToHashTarget)
+        }
+        return
+      }
+
+      const top = window.scrollY + target.getBoundingClientRect().top - headerHeight - 24
+      window.scrollTo({ top: Math.max(0, top), left: 0, behavior: 'auto' })
+    }
+
+    window.requestAnimationFrame(scrollToHashTarget)
+
+    return () => {
+      cancelled = true
+    }
+  }, [location.pathname, location.hash])
+
+  return null
+}
 
 function App() {
   const location = useLocation()
@@ -151,7 +213,11 @@ function App() {
 
   return (
     <AuthProvider autoInit={shouldInitAuth}>
-      <div className="min-h-screen flex flex-col bg-white">
+      <RouteScrollManager />
+      <div
+        className="min-h-screen flex flex-col bg-white"
+        data-app-build={APP_BUILD_TAG}
+      >
         {!isStandaloneRoute && <Header />}
         <main
           className="flex-grow bg-white"
@@ -193,6 +259,7 @@ function App() {
 
               {/* Moodboard & Room Visualizer */}
               <Route path="/moodboard" element={<Moodboard />} />
+              <Route path="/moodboard/share" element={<MoodboardShare />} />
               <Route path="/moodboard-generator" element={<MoodboardGenerator />} />
               <Route
                 path="/gerador-moodboard"
@@ -271,17 +338,26 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route
+                path="/admin/blog-editorial"
+                element={
+                  <ProtectedRoute>
+                    <AdminBlogEditorial />
+                  </ProtectedRoute>
+                }
+              />
             </Routes>
           </Suspense>
         </main>
         {!isStandaloneRoute && <Footer />}
-        {/* <ClaudeAssistant /> */} {/* DESATIVADO - Manter apenas WhatsApp */}
       </div>
     </AuthProvider>
   )
 }
 
 export default App
+
+
 
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO, { schemas } from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
+import { withBasePath } from '@/utils/assetPaths';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -144,12 +145,12 @@ const ObraTurnKey = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Obra Turn Key São Paulo | Sistema Completo de Reforma",
-    "description": "Sistema Turn Key Premium em São Paulo. Projeto, execução e entrega integrados. Um único responsável, orçamento fechado e prazo garantido. 14 anos de experiência.",
+    "description": "Sistema Turn Key Premium em São Paulo. Projeto, execução e entrega integrados. Um único responsável, orçamento fechado e prazo garantido. 15 anos de experiência.",
     "url": pageUrl,
     "provider": {
       "@type": "Organization",
       "name": "Grupo WG Almeida",
-      "telephone": "+55-11-98465-0002"
+      "telephone": "+5511984650002"
     },
     "areaServed": {
       "@type": "City",
@@ -165,18 +166,19 @@ const ObraTurnKey = () => {
   return (
     <>
       <SEO
+        pathname="/obra-turn-key"
         title="Obra Turn Key SP | Sistema Completo de Reforma Premium"
-        description="Sistema Turn Key em São Paulo: projeto, obra e entrega integrados. Orçamento fechado, prazo garantido e qualidade controlada. 14 anos transformando projetos em realidade."
+        description="Sistema Turn Key em São Paulo: projeto, obra e entrega integrados. Orçamento fechado, prazo garantido e qualidade controlada. 15 anos transformando projetos em realidade."
         keywords="turn key sao paulo, obra turn key, sistema turn key, reforma turn key, turn key premium, obra completa sp"
         url={pageUrl}
         schema={schema}
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: 'url(/images/banners/ARQ.webp)' }}
+          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
@@ -423,7 +425,7 @@ const ObraTurnKey = () => {
               </Link>
               <a href="tel:+5511984650002" className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
-                (11) 98465-0002
+                +55 (11) 98465-0002
               </a>
             </div>
           </motion.div>
@@ -434,3 +436,4 @@ const ObraTurnKey = () => {
 };
 
 export default ObraTurnKey;
+

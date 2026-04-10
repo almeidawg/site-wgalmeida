@@ -1,5 +1,6 @@
 import BrandStar from '@/components/BrandStar'
 import SEO from '@/components/SEO'
+import editorialQueue from '@/data/blogEditorialQueue.generated.json'
 import { sendClaudePrompt } from '@/lib/claudeClient'
 import { motion } from '@/lib/motion-lite'
 import {
@@ -40,6 +41,7 @@ import {
 } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 // Injetar CSS para scrollbar-hide
 const scrollbarHideStyle = `
@@ -57,7 +59,7 @@ const WG_CONTEXT = `
 CONTEXTO DA EMPRESA - GRUPO WG ALMEIDA:
 
 SOBRE:
-- Empresa com 14 anos de atuação em São Paulo
+- Empresa com 15 anos de atuação em São Paulo
 - Ecossistema integrado: Arquitetura + Engenharia + Marcenaria
 - Sistema Turn Key Premium: um time, um contrato, um padrão
 - Segmento: Alto padrão residencial e corporativo
@@ -323,6 +325,13 @@ const BLOG_POSTS = Object.entries(BLOG_RAW)
     }
   })
   .sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'))
+
+const BLOG_EDITORIAL_SUMMARY = {
+  total: editorialQueue.length,
+  ready: editorialQueue.filter((record) => record.status?.readyForTwoSlotEditorial).length,
+  pending: editorialQueue.filter((record) => !record.status?.readyForTwoSlotEditorial).length,
+  needsCopyNormalization: editorialQueue.filter((record) => record.needsCopyNormalization).length,
+}
 
 // ─── Parser da resposta social do Claude ─────────────────────────────────────
 function parseSocialContent(raw) {
@@ -1005,14 +1014,24 @@ Responda como consultor experiente:
         <div className="container-custom">
           {/* Header */}
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 bg-wg-orange rounded-lg flex items-center justify-center">
-                <Lightbulb className="w-5 h-5 text-white" />
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div className="flex items-center gap-3 mb-2 md:mb-0">
+                <div className="w-10 h-10 bg-wg-orange rounded-lg flex items-center justify-center">
+                  <Lightbulb className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-semibold text-wg-black">{t('adminPage.title')}</h1>
+                  <p className="text-sm text-gray-500">{t('adminPage.subtitle')}</p>
+                </div>
               </div>
-              <div>
-                <h1 className="text-2xl font-semibold text-wg-black">{t('adminPage.title')}</h1>
-                <p className="text-sm text-gray-500">{t('adminPage.subtitle')}</p>
-              </div>
+
+              <a
+                href="/admin/blog-editorial"
+                className="inline-flex items-center gap-2 self-start rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+              >
+                <Search className="w-4 h-4 text-wg-orange" />
+                Curadoria Editorial do Blog
+              </a>
             </div>
           </div>
 
@@ -2525,6 +2544,71 @@ Responda como consultor experiente:
             )}
           </motion.div>
 
+          <div className="rounded-3xl border border-[#E7DCCA] bg-gradient-to-br from-[#FBF7EF] via-white to-[#F4EBDD] p-6 shadow-sm">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+              <div className="space-y-3">
+                <span className="inline-flex rounded-full bg-[#E8E0D1] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[#7A5B2F]">
+                  Curadoria editorial
+                </span>
+                <div>
+                  <h2 className="text-xl font-semibold text-[#1E2A3A]">
+                    Hero e card do blog agora tem painel proprio
+                  </h2>
+                  <p className="mt-2 max-w-3xl text-sm leading-6 text-[#5B6470]">
+                    A nova fila interna organiza a busca tematica, o upload no Cloudinary e o snippet
+                    pronto para o manifesto de imagens do blog.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 lg:min-w-[320px]">
+                <div className="rounded-2xl border border-[#D7D1C5] bg-white/80 p-4">
+                  <p className="text-xs uppercase tracking-[0.16em] text-[#7C7C7C]">Posts</p>
+                  <p className="mt-2 text-2xl font-semibold text-[#1E2A3A]">
+                    {BLOG_EDITORIAL_SUMMARY.total}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-[#D7D1C5] bg-[#F1F8F4] p-4">
+                  <p className="text-xs uppercase tracking-[0.16em] text-[#5E7F63]">Prontos</p>
+                  <p className="mt-2 text-2xl font-semibold text-[#244A35]">
+                    {BLOG_EDITORIAL_SUMMARY.ready}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-[#D7D1C5] bg-[#FFF8EC] p-4">
+                  <p className="text-xs uppercase tracking-[0.16em] text-[#A36B12]">Pendentes</p>
+                  <p className="mt-2 text-2xl font-semibold text-[#7A5415]">
+                    {BLOG_EDITORIAL_SUMMARY.pending}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-[#D7D1C5] bg-[#FFF2F2] p-4">
+                  <p className="text-xs uppercase tracking-[0.16em] text-[#A24A4A]">Texto pesado</p>
+                  <p className="mt-2 text-2xl font-semibold text-[#7B2D2D]">
+                    {BLOG_EDITORIAL_SUMMARY.needsCopyNormalization}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-5 flex flex-col gap-3 border-t border-[#E7DCCA] pt-5 md:flex-row md:items-center md:justify-between">
+              <p className="text-sm leading-6 text-[#5B6470]">
+                Use o painel para abrir Unsplash e Google Imagens com a query pronta, subir cada slot
+                no Cloudinary e copiar o bloco consolidado para
+                <code className="mx-1 rounded bg-white px-1.5 py-0.5 text-xs text-[#7A5B2F]">
+                  src/data/blogImageManifest.js
+                </code>
+                .
+              </p>
+
+              <Link
+                to="/admin/blog-editorial"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1E2A3A] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[#24354C]"
+              >
+                <BookOpen className="h-4 w-4" />
+                Abrir curadoria editorial
+              </Link>
+            </div>
+          </div>
+
           {/* Footer */}
           <div className="mt-6 text-center text-sm text-gray-400">
             <Globe className="w-4 h-4 inline mr-1" />
@@ -2537,3 +2621,4 @@ Responda como consultor experiente:
 }
 
 export default Admin
+

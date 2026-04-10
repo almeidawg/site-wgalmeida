@@ -6,7 +6,6 @@ import SEO from '@/components/SEO';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import {
   Palette,
-  Sparkles,
   ArrowRight,
   ChevronRight,
   Heart,
@@ -14,6 +13,7 @@ import {
   BookOpen
 } from 'lucide-react';
 import { styleCatalog } from '@/utils/styleCatalog';
+import { withBasePath } from '@/utils/assetPaths';
 
 // Component for Style Card
 const StyleCard = ({ estilo, index }) => {
@@ -42,8 +42,8 @@ const StyleCard = ({ estilo, index }) => {
 
           {/* Featured Badge */}
           {estilo.featured && (
-            <div className="absolute top-6 right-6 flex items-center gap-2 px-4 py-2 bg-wg-orange text-white rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg">
-              <Sparkles className="w-4 h-4" />
+            <div className="absolute top-6 right-6 flex items-center gap-2 rounded-full bg-wg-orange px-4 py-2 text-xs font-light uppercase tracking-wider text-white shadow-lg">
+              <BookOpen className="w-4 h-4" />
               <span>Destaque</span>
             </div>
           )}
@@ -103,7 +103,7 @@ const StyleCard = ({ estilo, index }) => {
           </div>
 
           {/* CTA */}
-          <div className="flex items-center gap-2 text-wg-orange font-semibold group-hover:gap-4 transition-all duration-300">
+          <div className="flex items-center gap-2 font-light text-white/88 transition-all duration-300 group-hover:gap-4">
             <span>Explorar Estilo</span>
             <ArrowRight className="w-5 h-5" />
           </div>
@@ -127,7 +127,7 @@ const RevistaEstilos = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <Palette className="w-16 h-16 text-wg-orange animate-spin mx-auto mb-4" />
+          <Palette className="w-16 h-16 text-wg-gray animate-spin mx-auto mb-4" />
           <p className="text-wg-gray">Carregando estilos...</p>
         </div>
       </div>
@@ -144,7 +144,7 @@ const RevistaEstilos = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-wg-black">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
@@ -152,7 +152,7 @@ const RevistaEstilos = () => {
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
           <ResponsiveWebpImage
-            src="/images/banners/MARCENARIA.webp"
+            src={withBasePath('/images/banners/MARCENARIA.webp')}
             alt="Revista de Estilos"
             className="w-full h-full object-cover"
             loading="eager"
@@ -168,8 +168,8 @@ const RevistaEstilos = () => {
             className="max-w-4xl mx-auto"
           >
             <div className="flex items-center justify-center gap-3 mb-6">
-              <Palette className="w-8 h-8 text-wg-orange" />
-              <span className="text-wg-orange font-semibold uppercase tracking-widest text-sm">
+              <Palette className="w-8 h-8 text-white/78" />
+              <span className="text-sm font-light uppercase tracking-widest text-white/78">
                 Revista de Estilos
               </span>
             </div>
@@ -253,7 +253,7 @@ const RevistaEstilos = () => {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <Sparkles className="w-12 h-12 text-wg-orange mx-auto mb-6" />
+            <Palette className="w-12 h-12 text-white/78 mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-inter font-light mb-6">
               Pronto para Transformar seu Espaço?
             </h2>
@@ -263,7 +263,7 @@ const RevistaEstilos = () => {
             </p>
             <Link
               to="/solicite-proposta"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-wg-orange text-white rounded-lg font-semibold hover:bg-wg-orange-dark transition-colors shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-3 rounded-lg bg-wg-orange px-8 py-4 font-light text-white shadow-lg transition-colors hover:bg-wg-orange-dark hover:shadow-xl"
             >
               <span>Solicite uma Consultoria Gratuita</span>
               <ArrowRight className="w-5 h-5" />

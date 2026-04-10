@@ -9,7 +9,8 @@ import SEO from '@/components/SEO'
 import { RoomVisualizerProvider, useRoomVisualizer } from '@/contexts/RoomVisualizerContext'
 import { useAuth } from '@/contexts/SupabaseAuthContext'
 import { motion } from '@/lib/motion-lite'
-import { ArrowLeft, Lock, Sparkles, Wand2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ArrowLeft, Lock, Wand2 } from 'lucide-react'
 
 const RoomVisualizerContent = () => {
   const { user } = useAuth()
@@ -90,6 +91,7 @@ const RoomVisualizerContent = () => {
     return (
       <div className="min-h-screen bg-gray-50">
         <SEO
+          pathname="/room-visualizer"
           title="Resultado | Visualizador de Ambientes - WG Almeida"
           description="Visualização gerada por IA do seu ambiente"
         />
@@ -252,7 +254,7 @@ const RoomVisualizerContent = () => {
                     : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                 }`}
               >
-                <Sparkles className="w-6 h-6" />
+                <Wand2 className="w-6 h-6" />
                 Gerar Visualização com IA
               </motion.button>
 
@@ -310,25 +312,25 @@ const RoomVisualizer = () => {
             Faça login ou crie sua conta gratuita para acessar.
           </p>
           <div className="space-y-3">
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="block w-full px-6 py-3 bg-wg-orange text-white rounded-lg font-medium hover:bg-wg-orange/90 transition-colors"
             >
               Fazer Login
-            </a>
-            <a
-              href="/register"
+            </Link>
+            <Link
+              to="/register"
               className="block w-full px-6 py-3 border border-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
             >
               Criar Conta Grátis
-            </a>
+            </Link>
           </div>
-          <a
-            href="/moodboard"
+          <Link
+            to="/moodboard"
             className="inline-block mt-6 text-sm text-gray-500 hover:text-wg-orange"
           >
             ← Voltar para o Moodboard (gratuito)
-          </a>
+          </Link>
         </motion.div>
       </div>
     )

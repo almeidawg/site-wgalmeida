@@ -1,0 +1,136 @@
+{
+  "collectionRef": "yU-ii4hFjlg",
+  "slugs": {
+    "arquitetura-barcelona-espanha": {
+      "hero": {
+        "id": "ChSZETOal-I",
+        "alt": "Vista urbana de Barcelona sob ceu azul com volumetria historica e escala monumental"
+      },
+      "card": {
+        "id": "ChSZETOal-I",
+        "alt": "Vista urbana de Barcelona com linguagem monumental e identidade catala"
+      }
+    },
+    "arquitetura-bruges-belgica": {
+      "hero": {
+        "id": "-e4vLFZV9QM",
+        "alt": "Canal de Bruges com embarcacao entre fachadas historicas da Belgica"
+      },
+      "card": {
+        "id": "APhwx25o_8Y",
+        "alt": "Barco em canal de Bruges com atmosfera historica da Belgica"
+      }
+    },
+    "arquitetura-bruxelas-belgica": {
+      "hero": {
+        "id": "TMKszuz-_BI",
+        "alt": "Cúpula envidraçada e monumentalidade europeia alinhadas à leitura Art Nouveau e institucional de Bruxelas"
+      },
+      "card": {
+        "id": "5eMuDNuM08o",
+        "alt": "Volume arquitetônico europeu com presença monumental e leitura urbana mais adequada a Bruxelas"
+      }
+    },
+    "arquitetura-haarlem-holanda": {
+      "hero": {
+        "id": "Vgr-_65__lw",
+        "alt": "Canal holandês com fachadas alinhadas e luz natural suave"
+      },
+      "card": {
+        "id": "_B-xgURSuJ4",
+        "alt": "Bicicleta urbana em contexto europeu, reforçando mobilidade e escala cotidiana holandesa"
+      }
+    },
+    "arquitetura-lisboa-portugal": {
+      "hero": {
+        "id": "BkgXKTz0nfQ",
+        "alt": "Fachada lisboeta com ritmo de janelas e leitura histórica"
+      },
+      "card": {
+        "id": "DcHsnPfPl-w",
+        "alt": "Azulejos e varandas compondo a identidade arquitetônica de Lisboa"
+      },
+      "context": [
+        {
+          "id": "xZugx-faJ-k",
+          "alt": "Elétrico amarelo percorrendo rua ensolarada em Lisboa",
+          "caption": "Elemento urbano que reforça o contexto lisboeta e a relação entre fachada, mobilidade e paisagem histórica."
+        }
+      ]
+    },
+    "arquitetura-paris-franca": {
+      "hero": {
+        "id": "MXH5fm6yNSE",
+        "alt": "Boulevard parisiense arborizado com fachadas clássicas e cafés"
+      },
+      "card": {
+        "id": "9_sNWCPc7Sc",
+        "alt": "Portão ornamental com bandeiras francesas diante de arquitetura clássica parisiense"
+      }
+    },
+    "marcas-luxo-internacionais-moveis-design": {
+      "hero": {
+        "id": "32Irzz8zFwk",
+        "alt": "Living sofisticado com estante generosa e mobiliário de alto padrão"
+      },
+      "card": {
+        "id": "3RfIi22Y97Y",
+        "alt": "Composição de showroom com madeira natural e mobiliário premium"
+      },
+      "context": [
+        {
+          "id": "1P1f8zPF4PM",
+          "alt": "Sala com sofá, luminária e styling refinado",
+          "caption": "Imagem complementar para reforçar repertório de curadoria, proporção e acabamento no design de interiores."
+        }
+      ]
+    },
+    "marcas-luxo-nacionais-moveis-decoracao": {
+      "hero": {
+        "id": "1ZP2kRS5kaw",
+        "alt": "Poltrona de madeira brasileira em interior luminoso com acabamento artesanal e linguagem autoral"
+      },
+      "card": {
+        "id": "Iju9y8bTNbE",
+        "alt": "Poltrona em composição neutra com leitura de design brasileiro, conforto e detalhe de mobiliário"
+      }
+    },
+    "paleta-cores-2026-cor-do-ano": {
+      "hero": {
+        "id": "4ep-LOyh6Cs",
+        "alt": "Living com paredes amarelas e composição cromática vibrante, alinhado às leituras de paleta para 2026"
+      },
+      "card": {
+        "id": "nGTe8-qfCdA",
+        "alt": "Poltrona amarela estampada reforçando contraste, acento de cor e repertório para paletas autorais"
+      }
+    },
+    "plantas-interiores-purificam-ar": {
+      "hero": {
+        "id": "OZyltB-p6zA",
+        "alt": "Sala acolhedora com plantas de interior integradas ao mobiliário e luz natural suave"
+      },
+      "card": {
+        "id": "XYWo8SecOVE",
+        "alt": "Living contemporâneo com vasos e vegetação de apoio, reforçando bem-estar e purificação visual do ambiente"
+      }
+    },
+    "williams-sonoma-cozinha-luxo": {
+      "hero": {
+        "id": "lR7Zi4bEw1o",
+        "alt": "Cozinha premium com bancada clara e marcenaria sofisticada"
+      },
+      "card": {
+        "id": "wScUenIFG-Q",
+        "alt": "Ilha de cozinha com tampo em mármore e bancos altos"
+      },
+      "context": [
+        {
+          "id": "a3WzizsPPgo",
+          "alt": "Equipamento de café em bancada de cozinha com acabamento premium",
+          "caption": "Recorte de bancada que ajuda a contextualizar utensílios, appliances e ritual de uso em cozinhas de alto padrão."
+        }
+      ]
+    }
+  }
+}

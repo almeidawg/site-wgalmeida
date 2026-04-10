@@ -115,11 +115,11 @@ const Contact = () => {
           mainEntity: {
             '@type': 'Organization',
             name: 'Grupo WG Almeida',
-            telephone: '+55-11-98465-0002',
+            telephone: '+5511984650002',
             email: 'contato@wgalmeida.com.br',
             contactPoint: {
               '@type': 'ContactPoint',
-              telephone: '+55-11-98465-0002',
+              telephone: '+5511984650002',
               contactType: 'customer service',
               availableLanguage: 'Portuguese',
               areaServed: 'BR',
@@ -129,7 +129,7 @@ const Contact = () => {
       />
 
       {/* Hero elegante */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -144,30 +144,19 @@ const Contact = () => {
             height="1080"
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-wg-black/40 via-wg-black/60 to-wg-black/80"></div>
         </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4">
-          {/* Linha decorativa */}
-          <motion.div
-            className="flex items-center justify-center gap-4 mb-8"
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-wg-orange" />
-            <div className="w-2 h-2 bg-wg-orange rounded-full" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-wg-orange" />
-          </motion.div>
-
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-wg-orange tracking-[0.3em] uppercase text-sm mb-4 block"
+            className="wg-page-hero-kicker text-wg-orange"
           >
             {t('contactPage.hero.kicker')}
           </motion.span>
@@ -176,7 +165,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-inter font-light mb-6 tracking-tight"
+            className="wg-page-hero-title"
           >
             {t('contactPage.hero.title')}
           </motion.h1>
@@ -185,14 +174,15 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl font-light max-w-3xl mx-auto opacity-90"
+            className="wg-page-hero-subtitle max-w-3xl"
           >
             {t('contactPage.hero.subtitle')}
           </motion.p>
+          </div>
         </div>
       </section>
 
-      <section className="section-padding bg-white relative overflow-hidden">
+      <section className="section-padding-tight-top bg-white relative overflow-hidden">
         {/* Elementos decorativos */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 right-0 w-96 h-96 bg-wg-orange rounded-full blur-3xl" />
@@ -200,56 +190,56 @@ const Contact = () => {
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[0.92fr_1.08fr]">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col"
             >
-              {/* Linha decorativa */}
               <motion.div
-                className="flex items-center gap-4 mb-8"
+                className="mb-8 flex items-center gap-4"
                 initial={{ opacity: 0, scaleX: 0 }}
                 whileInView={{ opacity: 1, scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
                 <div className="h-px w-12 bg-gradient-to-r from-wg-orange to-transparent" />
-                <div className="w-2 h-2 bg-wg-orange rounded-full" />
+                <div className="h-2 w-2 rounded-full bg-wg-orange" />
               </motion.div>
 
-              <span className="text-wg-orange tracking-[0.2em] uppercase text-sm mb-4 block">
+              <span className="mb-4 block text-sm uppercase tracking-[0.2em] text-wg-orange">
                 {t('contactPage.info.kicker')}
               </span>
 
-              <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black mb-6 tracking-tight">
+              <h2 className="mb-5 text-3xl font-inter font-light tracking-tight text-wg-black md:text-[2.35rem]">
                 {t('contactPage.info.title')}
               </h2>
-              <p className="text-lg text-wg-gray leading-relaxed mb-10">
+              <p className="mb-8 max-w-[34rem] text-[17px] leading-[1.8] text-wg-gray">
                 {t('contactPage.info.subtitle')}
               </p>
 
-              <div className="space-y-6 mb-10">
+              <div className="mb-8 grid gap-4 sm:grid-cols-2">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="flex items-start gap-4 p-4 bg-wg-gray-light rounded-xl hover:shadow-md transition-shadow"
+                  className="flex items-start gap-4 rounded-2xl border border-black/5 bg-[#f7f6f3] p-5 transition-all hover:border-black/10 hover:shadow-[0_14px_34px_rgba(20,20,20,0.05)]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-wg-orange/10 flex items-center justify-center flex-shrink-0">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-wg-orange/10">
                     <Phone className="w-5 h-5 text-wg-orange" />
                   </div>
                   <div>
-                    <p className="font-inter text-wg-black">{t('contactPage.info.phoneLabel')}</p>
+                    <p className="mb-1 text-base font-inter font-light text-wg-black">{t('contactPage.info.phoneLabel')}</p>
                     <a
                       href="https://wa.me/5511984650002"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-wg-gray hover:text-wg-orange transition-colors"
+                      className="text-[15px] leading-relaxed text-wg-gray transition-colors hover:text-wg-orange"
                     >
-                      +55 11 98465-0002
+                      +55 (11) 98465-0002
                     </a>
                   </div>
                 </motion.div>
@@ -259,14 +249,14 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="flex items-start gap-4 p-4 bg-wg-gray-light rounded-xl hover:shadow-md transition-shadow"
+                  className="flex items-start gap-4 rounded-2xl border border-black/5 bg-[#f7f6f3] p-5 transition-all hover:border-black/10 hover:shadow-[0_14px_34px_rgba(20,20,20,0.05)]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-wg-orange/10 flex items-center justify-center flex-shrink-0">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-wg-orange/10">
                     <Mail className="w-5 h-5 text-wg-orange" />
                   </div>
                   <div>
-                    <p className="font-inter text-wg-black">{t('contactPage.info.emailLabel')}</p>
-                    <p className="text-wg-gray">contato@wgalmeida.com.br</p>
+                    <p className="mb-1 text-base font-inter font-light text-wg-black">{t('contactPage.info.emailLabel')}</p>
+                    <p className="text-[15px] leading-relaxed text-wg-gray">contato@wgalmeida.com.br</p>
                   </div>
                 </motion.div>
 
@@ -275,14 +265,14 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="flex items-start gap-4 p-4 bg-wg-gray-light rounded-xl hover:shadow-md transition-shadow"
+                  className="flex items-start gap-4 rounded-2xl border border-black/5 bg-[#f7f6f3] p-5 transition-all hover:border-black/10 hover:shadow-[0_14px_34px_rgba(20,20,20,0.05)]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-wg-orange/10 flex items-center justify-center flex-shrink-0">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-wg-orange/10">
                     <MapPin className="w-5 h-5 text-wg-orange" />
                   </div>
                   <div>
-                    <p className="font-inter text-wg-black">{t('contactPage.info.addressLabel')}</p>
-                    <p className="text-wg-gray">{t('contactPage.info.addressValue')}</p>
+                    <p className="mb-1 text-base font-inter font-light text-wg-black">{t('contactPage.info.addressLabel')}</p>
+                    <p className="text-[15px] leading-relaxed text-wg-gray">{t('contactPage.info.addressValue')}</p>
                   </div>
                 </motion.div>
 
@@ -291,20 +281,20 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="flex items-start gap-4 p-4 bg-wg-gray-light rounded-xl hover:shadow-md transition-shadow"
+                  className="flex items-start gap-4 rounded-2xl border border-black/5 bg-[#f7f6f3] p-5 transition-all hover:border-black/10 hover:shadow-[0_14px_34px_rgba(20,20,20,0.05)]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-wg-orange/10 flex items-center justify-center flex-shrink-0">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-wg-orange/10">
                     <Clock className="w-5 h-5 text-wg-orange" />
                   </div>
                   <div>
-                    <p className="font-inter text-wg-black">{t('contactPage.info.hoursLabel')}</p>
-                    <p className="text-wg-gray">{t('contactPage.info.hoursValue')}</p>
+                    <p className="mb-1 text-base font-inter font-light text-wg-black">{t('contactPage.info.hoursLabel')}</p>
+                    <p className="text-[15px] leading-relaxed text-wg-gray">{t('contactPage.info.hoursValue')}</p>
                   </div>
                 </motion.div>
               </div>
 
-              <Button onClick={handleWhatsApp} className="btn-primary w-full md:w-auto group">
-                <MessageCircle className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+              <Button onClick={handleWhatsApp} className="wg-btn-pill-primary w-full group sm:w-auto">
+                <MessageCircle className="mr-2 w-5 h-5 transition-transform group-hover:scale-110" />
                 {t('contactPage.info.whatsappCta')}
               </Button>
             </motion.div>
@@ -317,89 +307,95 @@ const Contact = () => {
             >
               <form
                 onSubmit={handleSubmit}
-                className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100"
+                className="flex flex-col rounded-[28px] border border-black/6 bg-white p-6 shadow-[0_18px_50px_rgba(20,20,20,0.05)] md:p-7"
               >
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-wg-black font-light mb-2">
-                      {t('contactPage.form.name')}
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20 outline-none transition-all"
-                      disabled={loading}
-                    />
+                <div className="grid gap-4">
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <label className="mb-2 block text-sm font-light text-wg-black/88">
+                        {t('contactPage.form.name')}
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full rounded-2xl border border-gray-200 bg-[#fcfcfb] px-4 py-3 text-[15px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/15"
+                        disabled={loading}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="mb-2 block text-sm font-light text-wg-black/88">
+                        {t('contactPage.form.email')}
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full rounded-2xl border border-gray-200 bg-[#fcfcfb] px-4 py-3 text-[15px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/15"
+                        disabled={loading}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <label className="mb-2 block text-sm font-light text-wg-black/88">
+                        {t('contactPage.form.phone')}
+                      </label>
+                      <input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: formatPhone(e.target.value) })
+                        }
+                        placeholder={t('contactPage.form.phonePlaceholder')}
+                        maxLength={15}
+                        className="w-full rounded-2xl border border-gray-200 bg-[#fcfcfb] px-4 py-3 text-[15px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/15"
+                        disabled={loading}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="mb-2 block text-sm font-light text-wg-black/88">
+                        {t('contactPage.form.subject')}
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.subject}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        className="w-full rounded-2xl border border-gray-200 bg-[#fcfcfb] px-4 py-3 text-[15px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/15"
+                        disabled={loading}
+                      />
+                    </div>
                   </div>
 
                   <div>
-                    <label className="block text-wg-black font-light mb-2">
-                      {t('contactPage.form.email')}
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20 outline-none transition-all"
-                      disabled={loading}
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-wg-black font-light mb-2">
-                      {t('contactPage.form.phone')}
-                    </label>
-                    <input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) =>
-                        setFormData({ ...formData, phone: formatPhone(e.target.value) })
-                      }
-                      placeholder={t('contactPage.form.phonePlaceholder')}
-                      maxLength={15}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20 outline-none transition-all"
-                      disabled={loading}
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-wg-black font-light mb-2">
-                      {t('contactPage.form.subject')}
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20 outline-none transition-all"
-                      disabled={loading}
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-wg-black font-light mb-2">
+                    <label className="mb-2 block text-sm font-light text-wg-black/88">
                       {t('contactPage.form.message')}
                     </label>
                     <textarea
                       required
-                      rows={5}
+                      rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20 outline-none transition-all resize-none"
+                      className="min-h-[156px] w-full resize-none rounded-2xl border border-gray-200 bg-[#fcfcfb] px-4 py-3 text-[15px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/15"
                       disabled={loading}
                     />
                   </div>
 
-                  <Button type="submit" className="btn-primary w-full" disabled={loading}>
-                    {loading ? (
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    ) : (
-                      <Send className="mr-2 w-5 h-5" />
-                    )}
-                    {loading ? t('contactPage.form.sending') : t('contactPage.form.submit')}
-                  </Button>
+                  <div className="pt-2">
+                    <Button type="submit" className="wg-btn-pill-primary w-full" disabled={loading}>
+                      {loading ? (
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      ) : (
+                        <Send className="mr-2 w-5 h-5" />
+                      )}
+                      {loading ? t('contactPage.form.sending') : t('contactPage.form.submit')}
+                    </Button>
+                  </div>
                 </div>
               </form>
             </motion.div>
@@ -411,3 +407,4 @@ const Contact = () => {
 }
 
 export default Contact
+

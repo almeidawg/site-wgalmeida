@@ -28,7 +28,7 @@ const MoodboardCanvas = ({ colors, styles, customImages = [], onRemoveImage }) =
       {!hasContent ? (
         <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
           <Image className="w-16 h-16 mb-4 opacity-50" />
-          <h3 className="text-xl font-medium mb-2">Seu Moodboard está vazio</h3>
+          <h3 className="text-xl font-light mb-2">Seu Moodboard está vazio</h3>
           <p className="text-sm text-center max-w-sm">
             Selecione cores e estilos ao lado para começar a criar sua visão de
             design
@@ -50,7 +50,7 @@ const MoodboardCanvas = ({ colors, styles, customImages = [], onRemoveImage }) =
             >
               <div className="flex items-center gap-2 text-gray-700">
                 <Palette className="w-5 h-5" />
-                <h3 className="font-semibold">Paleta de Cores</h3>
+                <h3 className="font-light">Paleta de Cores</h3>
               </div>
               <div className="flex gap-4 flex-wrap">
                 {colors.map((color, index) => (
@@ -84,7 +84,7 @@ const MoodboardCanvas = ({ colors, styles, customImages = [], onRemoveImage }) =
             >
               <div className="flex items-center gap-2 text-gray-700">
                 <Type className="w-5 h-5" />
-                <h3 className="font-semibold">Estilos de Referência</h3>
+                <h3 className="font-light">Estilos de Referência</h3>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {styles.map((style, index) => (
@@ -102,7 +102,7 @@ const MoodboardCanvas = ({ colors, styles, customImages = [], onRemoveImage }) =
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-3">
-                      <h4 className="text-white font-medium">{style.name}</h4>
+                      <h4 className="text-white font-light">{style.name}</h4>
                       <div className="flex gap-1 mt-1">
                         {style.tags?.slice(0, 2).map((tag) => (
                           <span
@@ -130,7 +130,7 @@ const MoodboardCanvas = ({ colors, styles, customImages = [], onRemoveImage }) =
             >
               <div className="flex items-center gap-2 text-gray-700">
                 <Image className="w-5 h-5" />
-                <h3 className="font-semibold">Minhas Referências</h3>
+                <h3 className="font-light">Minhas Referências</h3>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {customImages.map((img, index) => (

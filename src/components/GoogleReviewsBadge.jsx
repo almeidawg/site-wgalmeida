@@ -1,11 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from '@/lib/motion-lite';
-import { ExternalLink, Star } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { GOOGLE_REVIEW_URL } from '@/constants/googleReviews';
 import useGoogleReviews from '@/hooks/useGoogleReviews';
-import AnimatedStrokes from '@/components/AnimatedStrokes';
+
+const ReviewStars = ({ count = 5, className = 'h-4 w-4' }) => (
+  <div className="flex items-center gap-1" aria-hidden="true">
+    {Array.from({ length: count }).map((_, index) => (
+      <svg
+        key={index}
+        viewBox="0 0 24 24"
+        className={className}
+        fill="currentColor"
+      >
+        <path d="M12 2.35l2.97 6.02 6.64.97-4.8 4.68 1.13 6.61L12 17.52l-5.94 3.11 1.13-6.61-4.8-4.68 6.64-.97L12 2.35z" />
+      </svg>
+    ))}
+  </div>
+);
 
 // Componente de Card de Avaliação - Versão Compacta
 const ReviewCard = ({ review, index }) => {
@@ -25,11 +39,7 @@ const ReviewCard = ({ review, index }) => {
         <div className="flex-1">
           <p className="font-light text-wg-black text-sm">{review.name}</p>
           <div className="flex items-center gap-2">
-            <div className="flex gap-1">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-5 w-5 text-wg-orange fill-wg-orange" />
-              ))}
-            </div>
+            <ReviewStars className="h-4 w-4 text-wg-orange" />
             <span className="text-xs text-wg-gray">{review.date}</span>
           </div>
         </div>
@@ -62,11 +72,7 @@ const SummaryCard = ({ averageRating, countLabel }) => {
 
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
-            <div className="flex gap-1">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-5 w-5 text-wg-orange fill-wg-orange" />
-              ))}
-            </div>
+            <ReviewStars className="h-5 w-5 text-wg-orange" />
             <span className="text-lg font-light text-wg-black">{ratingValue}</span>
           </div>
           <span className="text-sm text-wg-gray">{countLabel}</span>
@@ -122,13 +128,6 @@ const GoogleReviewsBadge = () => {
       </Helmet>
 
       <section className="py-12 bg-wg-gray-light relative overflow-hidden">
-        <AnimatedStrokes
-          variant="horizontal"
-          count={4}
-          strokeWidth={1}
-          opacity={0.12}
-          className="mix-blend-screen"
-        />
         <div className="container-custom">
           {/* Grid de avaliações + resumo (4 cards) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 max-w-5xl mx-auto">

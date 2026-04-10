@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO, { schemas } from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
+import { withBasePath } from '@/utils/assetPaths';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -112,7 +113,7 @@ const ArquiteturaCorporativa = () => {
     "provider": {
       "@type": "Organization",
       "name": "Grupo WG Almeida",
-      "telephone": "+55-11-98465-0002"
+      "telephone": "+5511984650002"
     },
     "areaServed": {
       "@type": "City",
@@ -123,6 +124,7 @@ const ArquiteturaCorporativa = () => {
   return (
     <>
       <SEO
+        pathname="/arquitetura-corporativa"
         title="Arquitetura Corporativa SP | Escritórios e Espaços Comerciais"
         description="Arquitetura corporativa em São Paulo. Projetos de escritórios, showrooms e espaços comerciais premium. Sistema turn key com design estratégico e execução profissional."
         keywords="arquitetura corporativa, arquiteto corporativo, projeto escritorio sp, arquitetura comercial, design corporativo, escritorio alto padrao"
@@ -131,10 +133,18 @@ const ArquiteturaCorporativa = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black hero-under-header">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: 'url(/images/banners/ARQ.webp)' }}
+      <section className="wg-page-hero hero-under-header bg-wg-black">
+        <img
+          className="absolute inset-0 h-full w-full object-cover opacity-30"
+          src={withBasePath('/images/banners/ARQ.webp')}
+          srcSet={`${withBasePath('/images/banners/ARQ-640.webp')} 640w, ${withBasePath('/images/banners/ARQ-960-opt.webp')} 960w, ${withBasePath('/images/banners/ARQ-1280.webp')} 1280w, ${withBasePath('/images/banners/ARQ.webp')} 1920w`}
+          sizes="100vw"
+          alt="Arquitetura corporativa e espaços comerciais"
+          width="1920"
+          height="1080"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
@@ -144,7 +154,7 @@ const ArquiteturaCorporativa = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm font-medium uppercase tracking-wider mb-6">
+            <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm font-light uppercase tracking-[0.18em] mb-6">
               Arquitetura Corporativa
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 leading-tight">
@@ -180,7 +190,7 @@ const ArquiteturaCorporativa = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
+            <span className="text-wg-orange font-light text-sm tracking-[0.18em] uppercase mb-4 block">
               Por que Investir em Arquitetura Corporativa
             </span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
@@ -201,7 +211,7 @@ const ArquiteturaCorporativa = () => {
                 <div className="w-16 h-16 bg-wg-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   {React.createElement(item.icon, { className: 'w-8 h-8 text-wg-orange' })}
                 </div>
-                <h3 className="text-xl font-inter font-medium text-wg-black mb-2">
+                <h3 className="text-xl font-inter font-light text-wg-black mb-2">
                   {item.title}
                 </h3>
                 <p className="text-wg-gray font-light">
@@ -222,7 +232,7 @@ const ArquiteturaCorporativa = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
+            <span className="text-wg-orange font-light text-sm tracking-[0.18em] uppercase mb-4 block">
               Soluções Corporativas
             </span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
@@ -241,7 +251,7 @@ const ArquiteturaCorporativa = () => {
                 className="bg-white rounded-2xl p-8 shadow-lg"
               >
                 <Building2 className="w-10 h-10 text-wg-orange mb-4" />
-                <h3 className="text-xl font-inter font-medium text-wg-black mb-3">
+                <h3 className="text-xl font-inter font-light text-wg-black mb-3">
                   {projeto.titulo}
                 </h3>
                 <p className="text-wg-gray mb-4 font-light">
@@ -303,7 +313,7 @@ const ArquiteturaCorporativa = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-wg-orange font-medium text-sm tracking-widest uppercase mb-4 block">
+            <span className="text-wg-orange font-light text-sm tracking-[0.18em] uppercase mb-4 block">
               Como Trabalhamos
             </span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
@@ -324,7 +334,7 @@ const ArquiteturaCorporativa = () => {
                 <div className="w-10 h-10 bg-wg-orange text-white rounded-full flex items-center justify-center font-bold mb-4">
                   {index + 1}
                 </div>
-                <h3 className="text-lg font-inter font-medium text-wg-black mb-3">
+                <h3 className="text-lg font-inter font-light text-wg-black mb-3">
                   {etapa.fase}
                 </h3>
                 <ul className="space-y-1">
@@ -364,7 +374,7 @@ const ArquiteturaCorporativa = () => {
               </Link>
               <a href="tel:+5511984650002" className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
-                (11) 98465-0002
+                +55 (11) 98465-0002
               </a>
             </div>
           </motion.div>

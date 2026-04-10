@@ -1,6 +1,7 @@
 import SEO from '@/components/SEO'
 import { Button } from '@/components/ui/button'
 import { motion } from '@/lib/motion-lite'
+import { withBasePath } from '@/utils/assetPaths'
 import { ArrowRight, CheckCircle, Clock, DollarSign, Home, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -105,7 +106,7 @@ const ReformaApartamentoSP = () => {
     provider: {
       '@type': 'Organization',
       name: 'Grupo WG Almeida',
-      telephone: '+55-11-98465-0002',
+      telephone: '+5511984650002',
     },
     areaServed: {
       '@type': 'City',
@@ -121,6 +122,7 @@ const ReformaApartamentoSP = () => {
   return (
     <>
       <SEO
+        pathname="/reforma-apartamento-sp"
         title="Reforma de Apartamento SP | Turn Key Premium"
         description="Reforma completa de apartamento em São Paulo. Sistema Turn Key: projeto, obra e entrega. Apartamentos novos, comprados e retrofit. Orçamento sem compromisso."
         keywords="reforma apartamento são paulo, reforma apartamento novo, reforma apartamento sp, quanto custa reforma apartamento, empresa reforma sp, reforma turn key"
@@ -129,10 +131,10 @@ const ReformaApartamentoSP = () => {
       />
 
       {/* Hero Section */}
-      <section className="hero-under-header relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-wg-black">
+      <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: 'url(/images/banners/ARQ.webp)' }}
+          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
@@ -348,7 +350,7 @@ const ReformaApartamentoSP = () => {
                 className="btn-hero-outline"
               >
                 <Phone className="w-5 h-5" />
-                (11) 98465-0002
+                +55 (11) 98465-0002
               </a>
             </div>
           </motion.div>

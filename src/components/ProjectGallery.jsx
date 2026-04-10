@@ -1,137 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { ArrowLeft, ArrowRight, X, ZoomIn, Instagram } from "lucide-react";
-import { LazyImage, OptimizedImage } from "./OptimizedImage";
+import { LazyImage } from "./OptimizedImage";
 import { useTranslation } from 'react-i18next';
+import { PROJECT_GALLERY_IMAGES } from '@/utils/cloudinaryProjectPortfolio';
 
-// Galeria de fotos dos projetos WG Almeida - Organizadas por projeto
-const galleryImages = [
-  // Brooklin - ARQ + ENG + MARC
-  {
-    id: 1,
-    src: "/images/imagens/ARQ-ENG-MARC-BOORKLIN (1).webp",
-    titleKey: "projectGallery.titles.apartmentBrooklin",
-    categoryKey: "projectGallery.categories.integratedLiving",
-  },
-  {
-    id: 2,
-    src: "/images/imagens/ARQ-ENG-MARC-BOORKLIN (2).webp",
-    titleKey: "projectGallery.titles.apartmentBrooklin",
-    categoryKey: "projectGallery.categories.livingRoom",
-  },
-  {
-    id: 3,
-    src: "/images/imagens/ARQ-ENG-MARC-BOORKLIN (3).webp",
-    titleKey: "projectGallery.titles.apartmentBrooklin",
-    categoryKey: "projectGallery.categories.kitchen",
-  },
-  {
-    id: 4,
-    src: "/images/imagens/ARQ-ENG-MARC-BOORKLIN (4).webp",
-    titleKey: "projectGallery.titles.apartmentBrooklin",
-    categoryKey: "projectGallery.categories.suite",
-  },
-  // Corporativo Alphaville
-  {
-    id: 5,
-    src: "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (1).webp",
-    titleKey: "projectGallery.titles.corporateAlphaville",
-    categoryKey: "projectGallery.categories.reception",
-  },
-  {
-    id: 6,
-    src: "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (2).webp",
-    titleKey: "projectGallery.titles.corporateAlphaville",
-    categoryKey: "projectGallery.categories.meetingRoom",
-  },
-  {
-    id: 7,
-    src: "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (3).webp",
-    titleKey: "projectGallery.titles.corporateAlphaville",
-    categoryKey: "projectGallery.categories.office",
-  },
-  {
-    id: 8,
-    src: "/images/imagens/ARQ-ENG-MARC-CORPORATIVO- ALPHAVILLE (4).webp",
-    titleKey: "projectGallery.titles.corporateAlphaville",
-    categoryKey: "projectGallery.categories.workspace",
-  },
-  // Vila Nova Conceição
-  {
-    id: 9,
-    src: "/images/imagens/ARQ-VILANOVACONCEICAO (1).webp",
-    titleKey: "projectGallery.titles.vilaNovaConceicao",
-    categoryKey: "projectGallery.categories.living",
-  },
-  {
-    id: 10,
-    src: "/images/imagens/ARQ-VILANOVACONCEICAO (2).webp",
-    titleKey: "projectGallery.titles.vilaNovaConceicao",
-    categoryKey: "projectGallery.categories.diningRoom",
-  },
-  {
-    id: 11,
-    src: "/images/imagens/ARQ-VILANOVACONCEICAO (3).webp",
-    titleKey: "projectGallery.titles.vilaNovaConceicao",
-    categoryKey: "projectGallery.categories.gourmetKitchen",
-  },
-  {
-    id: 12,
-    src: "/images/imagens/ARQ-VILANOVACONCEICAO (4).webp",
-    titleKey: "projectGallery.titles.vilaNovaConceicao",
-    categoryKey: "projectGallery.categories.masterSuite",
-  },
-  // Casa Home Resort Guarujá
-  {
-    id: 13,
-    src: "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (1).webp",
-    titleKey: "projectGallery.titles.guarujaHome",
-    categoryKey: "projectGallery.categories.facade",
-  },
-  {
-    id: 14,
-    src: "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (2).webp",
-    titleKey: "projectGallery.titles.guarujaHome",
-    categoryKey: "projectGallery.categories.outdoorArea",
-  },
-  {
-    id: 15,
-    src: "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (3).webp",
-    titleKey: "projectGallery.titles.guarujaHome",
-    categoryKey: "projectGallery.categories.pool",
-  },
-  {
-    id: 16,
-    src: "/images/imagens/CASAHOMERESORT-ACAPULCO-GURARUJA (4).webp",
-    titleKey: "projectGallery.titles.guarujaHome",
-    categoryKey: "projectGallery.categories.living",
-  },
-  // Condomínio Porta do Sol
-  {
-    id: 17,
-    src: "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (2).webp",
-    titleKey: "projectGallery.titles.portaDoSol",
-    categoryKey: "projectGallery.categories.facade",
-  },
-  {
-    id: 18,
-    src: "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (3).webp",
-    titleKey: "projectGallery.titles.portaDoSol",
-    categoryKey: "projectGallery.categories.commonArea",
-  },
-  {
-    id: 19,
-    src: "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (4).webp",
-    titleKey: "projectGallery.titles.portaDoSol",
-    categoryKey: "projectGallery.categories.leisure",
-  },
-  {
-    id: 20,
-    src: "/images/imagens/ARQ-COND-POTADOSOL-MARINQUE (5).webp",
-    titleKey: "projectGallery.titles.portaDoSol",
-    categoryKey: "projectGallery.categories.landscaping",
-  },
-];
+const galleryImages = PROJECT_GALLERY_IMAGES;
+const PROJECTS_FALLBACK_IMAGE = '/images/banners/PROJETOS.webp';
 
 const CARDS_PER_VIEW = 4;
 
@@ -257,11 +132,12 @@ const ProjectGallery = () => {
                 <div className="absolute inset-0 border-4 border-white/20 rounded-2xl z-10 pointer-events-none group-hover:border-wg-orange/40 transition-colors duration-300" />
 
                 <LazyImage
-                  src={image.src}
+                  src={image.thumbSrc}
                   alt={`${t(image.titleKey)} - ${t(image.categoryKey)}`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   width={400}
                   height={400}
+                  fallbackSrc={PROJECTS_FALLBACK_IMAGE}
                 />
 
                 {/* Overlay no hover */}
@@ -397,13 +273,18 @@ const ProjectGallery = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={selectedImage.src}
+                src={selectedImage.fullSrc}
                 alt={`${t(selectedImage.titleKey)} - ${t(selectedImage.categoryKey)}`}
                 className="w-full h-full object-contain rounded-lg"
                 width={1280}
                 height={720}
                 loading="lazy"
                 decoding="async"
+                onError={(event) => {
+                  if (event.currentTarget.dataset.fallbackApplied === 'true') return;
+                  event.currentTarget.dataset.fallbackApplied = 'true';
+                  event.currentTarget.src = PROJECTS_FALLBACK_IMAGE;
+                }}
               />
 
               {/* Info */}

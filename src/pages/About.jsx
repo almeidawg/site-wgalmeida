@@ -5,6 +5,7 @@ import { Target, Eye, Award, Users, Clock, CheckCircle, Building, Play, Pause, Q
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { Trans, useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
+import { withBasePath } from '@/utils/assetPaths';
 
 const valueStyles = {
   'wg-orange': {
@@ -46,6 +47,13 @@ const staggerContainer = {
   whileInView: { transition: { staggerChildren: 0.15 } },
   viewport: { once: true }
 };
+
+const ABOUT_FALLBACK_SRC = withBasePath('/images/banners/SOBRE.webp');
+const ABOUT_WILLIAM_IMAGE_SRC = withBasePath('/images/about/william-almeida-1200.webp');
+const ABOUT_WILLIAM_IMAGE_SRCSET = [
+  `${withBasePath('/images/about/william-almeida-800.webp')} 800w`,
+  `${ABOUT_WILLIAM_IMAGE_SRC} 1200w`,
+].join(', ');
 
 const About = () => {
   const { t } = useTranslation();
@@ -89,7 +97,7 @@ const About = () => {
       <SEO pathname="/sobre" schema={SCHEMAS.breadcrumbAbout} />
 
       {/* Hero com parallax sutil */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -104,30 +112,19 @@ const About = () => {
             height="1080"
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-wg-black/40 via-wg-black/60 to-wg-black/80"></div>
         </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4">
-          {/* Linha decorativa superior */}
-          <motion.div
-            className="flex items-center justify-center gap-4 mb-8"
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-wg-orange" />
-            <div className="w-2 h-2 bg-wg-orange rounded-full" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-wg-orange" />
-          </motion.div>
-
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-wg-orange font-medium tracking-[0.3em] uppercase text-sm mb-4 block"
+            className="wg-page-hero-kicker text-wg-orange"
           >
             {t('aboutPage.hero.kicker')}
           </motion.span>
@@ -136,7 +133,7 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-inter font-light mb-6 tracking-tight"
+            className="wg-page-hero-title"
           >
             {t('aboutPage.hero.title')}
           </motion.h1>
@@ -145,27 +142,16 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl font-light max-w-3xl mx-auto opacity-90"
+            className="wg-page-hero-subtitle max-w-3xl"
           >
             {t('aboutPage.hero.subtitle')}
           </motion.p>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1, repeat: Infinity, repeatType: "reverse" }}
-        >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2" />
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Estatísticas */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section className="section-padding-tight-top bg-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-wg-orange rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-wg-green rounded-full blur-3xl" />
@@ -206,7 +192,7 @@ const About = () => {
 
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch mb-20">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -232,12 +218,12 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative rounded-2xl overflow-hidden shadow-2xl"
+              className="relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[360px]"
             >
               <ResponsiveWebpImage
                 src="/images/hero-poster-1280.webp"
                 alt={t('aboutPage.hero.imageAlt')}
-                className="w-full h-[500px] object-cover"
+                className="w-full h-full min-h-[360px] object-cover"
                 loading="lazy"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
@@ -304,16 +290,27 @@ const About = () => {
 
                 {/* Foto */}
                 <div className="relative rounded-2xl overflow-hidden">
-                  <img
-                    src="/images/hero-poster-1280.webp"
-                    alt={t('aboutPage.ceo.imageAlt')}
-                    className="w-full h-[500px] lg:h-[600px] object-cover"
-                    onError={(event) => {
-                      if (event.currentTarget.dataset.fallbackApplied === 'true') return;
-                      event.currentTarget.dataset.fallbackApplied = 'true';
-                      event.currentTarget.src = '/images/banners/SOBRE.webp';
-                    }}
-                  />
+                  <picture>
+                    <source
+                      srcSet={ABOUT_WILLIAM_IMAGE_SRCSET}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      type="image/webp"
+                    />
+                    <img
+                      src={ABOUT_WILLIAM_IMAGE_SRC}
+                      alt={t('aboutPage.ceo.imageAlt')}
+                      className="w-full h-[500px] lg:h-[600px] object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      width="1200"
+                      height="1500"
+                      onError={(event) => {
+                        if (event.currentTarget.dataset.fallbackApplied === 'true') return;
+                        event.currentTarget.dataset.fallbackApplied = 'true';
+                        event.currentTarget.src = ABOUT_FALLBACK_SRC;
+                      }}
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-wg-black/60 via-transparent to-transparent" />
 
                   {/* Nome e cargo sobre a foto */}
@@ -457,3 +454,4 @@ const About = () => {
 };
 
 export default About;
+

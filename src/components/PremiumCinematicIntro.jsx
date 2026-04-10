@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { useTranslation, Trans } from 'react-i18next';
+import { withBasePath } from '@/utils/assetPaths';
+import { PREMIUM_INTRO_PORTFOLIO_IMAGES } from '@/utils/cloudinaryProjectPortfolio';
 
 /**
  * ABERTURA CINEMATOGRÁFICA PREMIUM - WG ALMEIDA
@@ -11,7 +13,8 @@ import { useTranslation, Trans } from 'react-i18next';
  * Duração: ~28 segundos
  */
 
-const WG_LOGO = "/images/logo-192.webp";
+const WG_LOGO = withBasePath('/images/logo-192.webp');
+const PROJECTS_FALLBACK_IMAGE = withBasePath('/images/banners/PROJETOS.webp');
 
 // Cores da marca WG
 const WG_COLORS = {
@@ -45,12 +48,7 @@ const STAGE_TIMES = [
 const TOTAL_DURATION = 45000; // 45 segundos total
 
 // Imagens do portfólio para o flash
-const portfolioImages = [
-  '/images/projects/galpao-surubiju-alphaville/1.webp',
-  '/images/projects/casa-gaivota-moema/1.webp',
-  '/images/projects/apartamento-alameda-alphaville/3sala_03_39270011980_o.webp',
-  '/images/projects/apartamento-square-santo-amaro/sala01.webp',
-];
+const portfolioImages = PREMIUM_INTRO_PORTFOLIO_IMAGES;
 
 // ============================================================
 // COMPONENTES DE EFEITOS VISUAIS
@@ -375,6 +373,11 @@ const LogoReveal = ({ show }) => (
             src={WG_LOGO}
             alt="Logo Grupo WG Almeida - Arquitetura, Engenharia e Marcenaria de Alto Padrão"
             className="h-28 md:h-40 w-auto relative z-10"
+            onError={(event) => {
+              if (event.currentTarget.dataset.fallbackApplied === 'true') return;
+              event.currentTarget.dataset.fallbackApplied = 'true';
+              event.currentTarget.src = PROJECTS_FALLBACK_IMAGE;
+            }}
           />
         </motion.div>
 
@@ -796,6 +799,11 @@ const PortfolioFlash = ({ show }) => (
               src={img}
               alt={`Projeto de Arquitetura e Engenharia de Luxo - Grupo WG Almeida ${i + 1}`}
               className="w-full h-full object-cover"
+              onError={(event) => {
+                if (event.currentTarget.dataset.fallbackApplied === 'true') return;
+                event.currentTarget.dataset.fallbackApplied = 'true';
+                event.currentTarget.src = PROJECTS_FALLBACK_IMAGE;
+              }}
             />
             <div className="absolute inset-0 bg-black/40" />
           </motion.div>
@@ -974,8 +982,8 @@ const PremiumCinematicIntro = ({ onComplete }) => {
           ref={videoRef}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-70 w-full h-full object-cover"
           src={isMobile
-            ? "/videos/hero/VERTICAL_compressed.mp4"
-            : "/videos/hero/HORIZONTAL_compressed.mp4"
+            ? "/videos/hero/hero-mobile.mp4"
+            : "/videos/hero/hero-desktop.mp4"
           }
           autoPlay
           muted
@@ -1025,6 +1033,11 @@ const PremiumCinematicIntro = ({ onComplete }) => {
               initial={{ filter: 'blur(20px)' }}
               animate={{ filter: 'blur(0px)' }}
               transition={{ duration: 1 }}
+              onError={(event) => {
+                if (event.currentTarget.dataset.fallbackApplied === 'true') return;
+                event.currentTarget.dataset.fallbackApplied = 'true';
+                event.currentTarget.src = PROJECTS_FALLBACK_IMAGE;
+              }}
             />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -1525,7 +1538,19 @@ const PremiumCinematicIntro = ({ onComplete }) => {
         animate={{ opacity: currentStage > 0 ? 0.5 : 0 }}
         className="absolute top-8 left-8"
       >
-        <img src={WG_LOGO} alt="WG" className="h-8 w-8 object-contain" width="568" height="568" decoding="async" />
+        <img
+          src={WG_LOGO}
+          alt="WG"
+          className="h-8 w-8 object-contain"
+          width="568"
+          height="568"
+          decoding="async"
+          onError={(event) => {
+            if (event.currentTarget.dataset.fallbackApplied === 'true') return;
+            event.currentTarget.dataset.fallbackApplied = 'true';
+            event.currentTarget.src = PROJECTS_FALLBACK_IMAGE;
+          }}
+        />
       </motion.div>
     </div>
   );

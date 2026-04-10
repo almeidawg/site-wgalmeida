@@ -8,16 +8,17 @@ import { useState, useEffect } from "react";
 // Data de fundação do primeiro CNPJ (para cálculo de horas)
 // Desde 28/10/2011
 const DATA_FUNDACAO = new Date("2011-10-28");
+const ANOS_MERCADO_BASE = 15;
 
 export function useEstatisticasWG(options = {}) {
   const { enabled = true } = options;
   // Valores fallback renderizam imediatamente (não bloqueia LCP)
   const [estatisticas, setEstatisticas] = useState(() => ({
-    clientesAtendidos: 270,
-    metrosRevestimentos: 3856,
+    clientesAtendidos: 400,
+    metrosRevestimentos: 3588,
     projetosAndamento: 7,
     horasProjetando: Math.floor((Date.now() - new Date("2011-10-28").getTime()) / 3600000),
-    anosExperiencia: Math.floor((Date.now() - new Date("2011-10-28").getTime()) / (365.25 * 86400000)),
+    anosExperiencia: Math.max(Math.floor((Date.now() - new Date("2011-10-28").getTime()) / (365.25 * 86400000)), ANOS_MERCADO_BASE),
     loading: false,
     error: null,
   }));
@@ -35,7 +36,7 @@ export function useEstatisticasWG(options = {}) {
     const agora = new Date();
     const diffMs = agora.getTime() - DATA_FUNDACAO.getTime();
     const diffAnos = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 365));
-    return diffAnos;
+    return Math.max(diffAnos, ANOS_MERCADO_BASE);
   };
 
   useEffect(() => {
@@ -71,10 +72,10 @@ export function useEstatisticasWG(options = {}) {
 
         // Calcular métricas
         const projetosAndamento = contratosAtivos?.length || 6;
-        const clientesAtendidos = todosContratos?.length || 270;
+        const clientesAtendidos = todosContratos?.length || 400;
 
         // Somar metros de revestimentos
-        let metrosRevestimentos = 3856; // Base historica
+        let metrosRevestimentos = 3588; // Base historica validada para a vitrine
         if (itensContratos && itensContratos.length > 0) {
           const somaMetros = itensContratos.reduce((acc, item) => {
             return acc + (item.quantidade || 0);
@@ -91,8 +92,8 @@ export function useEstatisticasWG(options = {}) {
         if (isCancelled) return;
 
         setEstatisticas({
-          clientesAtendidos: Math.max(clientesAtendidos, 270), // Mínimo 270 (histórico)
-          metrosRevestimentos: Math.max(metrosRevestimentos, 3856), // Mínimo histórico validado
+          clientesAtendidos: Math.max(clientesAtendidos, 400), // Mínimo vitrine homologado
+          metrosRevestimentos: Math.max(metrosRevestimentos, 3588), // Mínimo histórico validado
           projetosAndamento: projetosAndamento + 1, // +1 conforme solicitado
           horasProjetando,
           anosExperiencia,

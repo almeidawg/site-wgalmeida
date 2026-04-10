@@ -5,6 +5,7 @@ import { Wrench, ClipboardCheck, Zap, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
+import { normalizeUnsplashImageUrl } from '@/lib/unsplash';
 
 // Animações elegantes
 const fadeInUp = {
@@ -13,6 +14,12 @@ const fadeInUp = {
   viewport: { once: true },
   transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
 };
+
+const ENGINEERING_COMMITMENT_IMAGE = normalizeUnsplashImageUrl('https://images.unsplash.com/photo-1581093196867-ca3dba3c721b', {
+  width: 1280,
+  height: 900,
+  quality: 80,
+});
 
 const Engineering = () => {
   const { t } = useTranslation();
@@ -65,7 +72,7 @@ const Engineering = () => {
       />
 
       {/* Hero elegante com cor da unidade */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden hero-under-header">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -82,29 +89,18 @@ const Engineering = () => {
             height="1080"
             decoding="async"
             loading="eager"
-            fetchPriority="high"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-wg-blue/50 via-wg-blue/60 to-wg-black/80"></div>
         </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4">
-          {/* Linha decorativa */}
-          <motion.div
-            className="flex items-center justify-center gap-4 mb-8"
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/50" />
-            <div className="w-2 h-2 bg-white rounded-full" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/50" />
-          </motion.div>
-
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-white/80 font-medium tracking-[0.3em] uppercase text-sm mb-4 block"
+            className="wg-page-hero-kicker"
           >
             {t('engineeringPage.hero.kicker')}
           </motion.span>
@@ -113,7 +109,7 @@ const Engineering = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-inter font-light mb-6 tracking-tight"
+            className="wg-page-hero-title"
           >
             {t('engineeringPage.hero.title')}
           </motion.h1>
@@ -122,7 +118,7 @@ const Engineering = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl font-light max-w-3xl mx-auto opacity-90"
+            className="wg-page-hero-subtitle max-w-3xl"
           >
             {t('engineeringPage.hero.subtitle')}
           </motion.p>
@@ -132,36 +128,25 @@ const Engineering = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8"
+            className="mt-7"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-3.5 text-sm backdrop-blur-sm md:px-6">
               <Wrench className="w-4 h-4" />
               {t('engineeringPage.hero.badge')}
             </span>
           </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1, repeat: Infinity, repeatType: "reverse" }}
-        >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2" />
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Fluxo interativo de etapas */}
-      <section className="section-padding bg-wg-gray-light relative overflow-hidden">
+      <section className="section-padding-tight-top bg-wg-gray-light relative overflow-hidden">
         <div className="container-custom relative z-10">
           <motion.div
             {...fadeInUp}
             className="text-center mb-12"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm text-wg-blue font-medium shadow-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm text-wg-blue font-light shadow-sm">
               Turn Key · Sequência Técnica
             </span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black mt-4 mb-3 tracking-tight">
@@ -187,11 +172,11 @@ const Engineering = () => {
                   className={`group relative rounded-2xl border ${liberada ? 'border-wg-blue/30 bg-white' : 'border-gray-200 bg-white/70'} shadow-sm hover:shadow-lg transition-all duration-300`}
                 >
                   <div className="flex items-start gap-3 p-5">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-semibold ${liberada ? 'bg-wg-blue/10 text-wg-blue' : 'bg-gray-100 text-gray-400'}`}>
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-light ${liberada ? 'bg-wg-blue/10 text-wg-blue' : 'bg-gray-100 text-gray-400'}`}>
                       {String(numero).padStart(2, '0')}
                     </div>
                     <div className="flex-1">
-                      <p className={`text-base font-semibold ${liberada ? 'text-wg-black' : 'text-gray-500'}`}>{etapa.title}</p>
+                      <p className={`text-base font-light ${liberada ? 'text-wg-black' : 'text-gray-500'}`}>{etapa.title}</p>
                       <p className="text-sm text-wg-gray mt-1">{etapa.desc}</p>
                     </div>
                   </div>
@@ -202,7 +187,7 @@ const Engineering = () => {
                     <button
                       disabled={!ehAtual}
                       onClick={() => setEtapaLiberada((prev) => Math.min(prev + 1, etapas.length))}
-                      className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${ehAtual ? 'bg-wg-blue text-white hover:bg-wg-blue/90' : 'bg-gray-200 text-gray-500 cursor-not-allowed'}`}
+                      className={`px-3 py-1 rounded-full text-xs font-light transition-colors ${ehAtual ? 'bg-wg-blue text-white hover:bg-wg-blue/90' : 'bg-gray-200 text-gray-500 cursor-not-allowed'}`}
                     >
                       {ehAtual ? 'Aprovar etapa' : 'Aguarde etapa anterior'}
                     </button>
@@ -239,7 +224,7 @@ const Engineering = () => {
               <div className="h-px w-12 bg-gradient-to-l from-transparent to-wg-blue" />
             </motion.div>
 
-            <span className="text-wg-blue font-medium tracking-[0.2em] uppercase text-sm mb-4 block">
+            <span className="text-wg-blue font-light tracking-[0.2em] uppercase text-sm mb-4 block">
               {t('engineeringPage.servicesKicker')}
             </span>
 
@@ -287,7 +272,7 @@ const Engineering = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span className="text-wg-blue font-medium tracking-[0.2em] uppercase text-sm mb-4 block">
+              <span className="text-wg-blue font-light tracking-[0.2em] uppercase text-sm mb-4 block">
                 {t('engineeringPage.commitment.kicker')}
               </span>
 
@@ -337,7 +322,12 @@ const Engineering = () => {
               <img
                 className="relative w-full h-[500px] object-cover rounded-xl shadow-2xl"
                 alt={t('engineeringPage.commitment.imageAlt')}
-               src="https://images.unsplash.com/photo-1581093196867-ca3dba3c721b" />
+                src={ENGINEERING_COMMITMENT_IMAGE}
+                width="1280"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
 
               {/* Badge flutuante */}
               <motion.div
@@ -359,3 +349,4 @@ const Engineering = () => {
 };
 
 export default Engineering;
+
