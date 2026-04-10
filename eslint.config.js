@@ -57,6 +57,7 @@ export default [
       'react/prop-types': 'off',
       'react/display-name': 'off',
       'react/no-unescaped-entities': 'off',
+      'react/no-unknown-property': ['error', { ignore: ['fetchpriority'] }],
     },
   },
 ];

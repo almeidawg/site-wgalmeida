@@ -1,6 +1,6 @@
 # UI Bugs And Fixes
 
-Atualizado: 06/04/2026
+Atualizado: 10/04/2026
 
 ## Caso: contorno amarelo indevido na tela `/processo`
 
@@ -82,6 +82,64 @@ Atualizado: 06/04/2026
   - `npm run build`
   - validação visual em `http://127.0.0.1:3010/blog`
 
+## Caso: imagem de Bruxelas aplicada no card da materia de Barcelona
+
+- Contexto:
+  - pagina: `/blog/arquitetura-barcelona-espanha`
+  - ambiente de validacao: `http://localhost:3011` (vite preview)
+  - arquivos principais:
+    - `src/data/blogImageManifest.js`
+    - `src/data/blogUnsplashSelection.json`
+    - `tools/audit-blog-unsplash-selection.mjs`
+
+- Sintoma observado:
+  - hero de Barcelona correto
+  - card "Leitura Guiada" exibindo imagem ambigua (arco) associada ao erro editorial de cidade
+  - sensacao visual de "Bruxelas" na materia de "Barcelona"
+
+- Causa real identificada:
+  - o `preview` em `:3011` servia `dist` antigo em alguns ciclos, mesmo com alteracoes no codigo-fonte
+  - o mapeamento de Barcelona em Cloudinary ainda aceitava `.../card` separado
+  - a selecao editorial tinha alt pouco especifico para geografia em alguns slugs
+
+- Solucao aplicada:
+  - em `src/data/blogImageManifest.js`
+    - forcar Barcelona para usar `hero` tambem em `card/thumb/square`
+  - em `src/data/blogUnsplashSelection.json`
+    - ajustar alt de Barcelona e Bruges com referencia geografica explicita
+  - em `tools/audit-blog-unsplash-selection.mjs`
+    - manter checagem de duplicidade entre slugs
+    - adicionar regra de consistencia geografica minima em `hero/card alt`
+  - operacional:
+    - rebuild completo: `npm run build`
+    - reiniciar `preview` na porta de validacao
+    - revalidar no mesmo endpoint (`localhost:3011`)
+
+- Verificacao:
+  - em `localhost:3011`, card de Barcelona deve apontar para:
+    - `.../editorial/blog/arquitetura-barcelona-espanha/hero`
+  - creditos de hero e card devem convergir para:
+    - `Jorge Fernandez Salas` via Unsplash
+
+- Regra derivada:
+  - nunca aprovar ajuste de imagem no blog apenas por `dev` quando a homologacao usa `preview`
+  - sempre validar no mesmo endpoint que o time usa para revisao
+  - toda imagem de cidade no cluster "arquitetura-<cidade>-<pais>" precisa de alt com referencia geografica explicita
+  - quando houver ambiguidade editorial de imagem:
+    - congelar fallback no manifesto para evitar rotacao errada
+    - abrir tarefa separada para substituir asset definitivo no Cloudinary
+
+- Playbook rapido se voltar a acontecer:
+  1. confirmar no DOM de homologacao (`localhost:3011`) o `src` real do card e do hero
+  2. checar qual processo esta na porta (`Get-NetTCPConnection -LocalPort 3011`)
+  3. rebuildar (`npm run build`) e reiniciar `vite preview` na mesma porta
+  4. se persistir, corrigir `src/data/blogImageManifest.js` para fallback seguro no slug afetado
+  5. atualizar `src/data/blogUnsplashSelection.json` (alt + id) e rodar:
+     - `npm run blog:editorial:audit`
+     - `npm run unsplash:manifest:build`
+     - `npm run lint`
+  6. validar novamente no endpoint de homologacao e salvar evidencias em `.monitor-data/`
+
 ## Regra operacional para novos bugs visuais
 
 Sempre que um bug visual tiver causa confirmada:
@@ -93,3 +151,4 @@ Sempre que um bug visual tiver causa confirmada:
 5. registrar padrão para evitar recorrência
 
 Esse documento deve crescer como base viva de decisões visuais do projeto.
+Registro cronologico de incidentes: `docs/INCIDENT-LOG.md`.

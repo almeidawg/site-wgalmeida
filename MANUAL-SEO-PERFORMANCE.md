@@ -52,8 +52,9 @@
 | Ferramenta | Funcao | Script |
 |---|---|---|
 | `vite-plugin-compression2` | Gzip + Brotli de assets | Automatico no build |
-| `rollup-plugin-visualizer` | Analise visual do bundle | `yarn analyze` |
-| `sharp` (via script) | Compressao de imagens no dist | `yarn perf:images` |
+| `rollup-plugin-visualizer` | Analise visual do bundle | `npm run analyze` |
+| `sharp` (via script) | Geracao e recompressao de imagens | `npm run assets:prepare` / `npm run perf:images` |
+| `prune-unused-style-svg` | Remove SVGs redundantes dos estilos no `dist` | Automatico no build |
 
 ---
 
@@ -274,12 +275,20 @@ OK:   alt="" apenas para imagens puramente decorativas (icones, separadores)
 
 ### 4.5 Compressao Automatica no Build
 
-O script `tools/recompress-critical-images.mjs` roda automaticamente no build:
+Os scripts `tools/generate-style-webp-from-svg.mjs` e `tools/recompress-critical-images.mjs` tratam ativos pesados:
+- Geram `.webp` reais a partir de SVGs com imagem embutida em base64
 - Comprime JPG (mozjpeg quality 80)
 - Comprime PNG (palette, compression 9)
 - Comprime WebP (quality 80, effort 6)
 - Pula arquivos < 2 KB
 - So reescreve se economizar > 5%
+
+### 4.6 Regra para Frontmatter e Assets
+
+- Nunca publicar frontmatter com `image` apontando para arquivo inexistente
+- Validar assets com `npm run seo:audit` antes de concluir uma rodada
+- Quando um SVG carregar foto em base64, tratar como imagem raster e gerar ativo otimizado separado
+- Versionar os derivados otimizados necessários para produção sem abrir versionamento de fontes legadas desnecessárias
 
 ---
 
@@ -450,8 +459,10 @@ O projeto tem conteudo em 3 idiomas (`pt-BR`, `en`, `es`) mas falta implementar 
 
 ### Antes de Cada Deploy
 
-- [ ] Build sem erros (`yarn build`)
+- [ ] Build sem erros (`npm run build`)
+- [ ] `npm run seo:audit` sem arquivos ausentes
 - [ ] Zero erros no console do navegador
+- [ ] Smoke test em preview local do build concluído
 - [ ] Lighthouse Performance >= 90
 - [ ] Lighthouse Accessibility >= 90
 - [ ] Lighthouse SEO >= 95
@@ -493,24 +504,37 @@ O projeto tem conteudo em 3 idiomas (`pt-BR`, `en`, `es`) mas falta implementar 
 ## 11. Comandos Uteis
 
 ```bash
-# Build completo (OG images + Vite + Image compression + SEO routes)
-yarn build
+# Preparar assets de estilos (.webp a partir de SVG)
+npm run assets:prepare
 
-# Analise visual do bundle (abre stats.html no navegador)
-yarn analyze
+# Build completo (assets + OG images + Vite + image optimization + SEO routes)
+npm run build
 
-# Comprimir imagens manualmente
-yarn perf:images
+# Analise visual do bundle
+npm run analyze
 
 # Auditoria SEO
-yarn seo:audit
+npm run seo:audit
+
+# Validar dist após build
+npm run seo:validate:dist
+
+# Relatório de assets pesados
+npm run perf:assets
+
+# Recompressão manual da saída
+npm run perf:images
 
 # Preview local do build
-yarn preview
+npm run preview
 
 # Testes
-yarn test:run
+npm run test:run
 ```
+
+**Observação operacional:** `npm run perf:images` não faz parte do build obrigatório. Em Windows, a recompressão sobre `dist` pode sofrer lock/rename temporário; usar apenas como etapa manual e validada.
+
+**Observação operacional 2:** o build principal já executa a poda segura de SVGs redundantes em `dist/images/estilos/` quando existe `.webp` correspondente. Essa poda reduz peso de deploy sem apagar os arquivos-fonte em `public`.
 
 ---
 
@@ -551,8 +575,9 @@ yarn test:run
 | **ALTA** | BreadcrumbList dinamico por pagina (nao estatico) | Pendente |
 | **MEDIA** | Alt text vazio no HeroVideo e PremiumCinematicIntro | Pendente |
 | **MEDIA** | Remover `<meta name="keywords">` do index.html | Pendente |
-| **MEDIA** | Incluir todos os posts de blog no sitemap | Pendente |
+| **MEDIA** | Revisar peso dos vídeos do hero e trocar estratégia de entrega | Pendente |
 | **MEDIA** | Verificar pre-rendering ativo em producao | Verificar |
+| **MEDIA** | Reduzir dependência de SVGs com payload raster embutido | Pendente |
 | **BAIXA** | `lastmod` correto por pagina no sitemap | Pendente |
 | **BAIXA** | Auditoria completa de anchor texts internos | Pendente |
 

@@ -174,6 +174,26 @@ Aplicacao pratica:
 - evitar `strong`, `b`, `font-bold`, `font-extrabold` e `font-black` em blocos editoriais;
 - usar contraste, espacamento, composicao e peso moderado em vez de enfase agressiva.
 
+### Cores canonicas (manual oficial)
+
+Fonte: `20250111 - Manual de Identidade Visual _ Grupo WG Almeida (1).pdf` (paginas 1 e 7).
+
+- Laranja WG: `#F25C26` (base institucional)
+- Verde Mineral: `#5E9B94` (arquitetura)
+- Azul Tecnico: `#2B4580` (engenharia e interacao)
+- Marrom Carvalho: `#8B5E3C` (marcenaria)
+- Cinza WG: `#4C4C4C` (texto)
+- Preto WG: `#2E2E2E` (fundos escuros)
+- Cinza claro WG: `#F3F3F3` (fundos neutros)
+- Branco: `#FFFFFF`
+
+Regra de uso no site:
+
+- usar azul WG como cor primaria de estados interativos;
+- usar verde WG como acento editorial secundario;
+- usar laranja WG como acento de marca, sem dominancia estrutural;
+- usar marrom Carvalho de forma pontual (marcenaria), com baixa frequencia visual no layout geral.
+
 ### Midia
 
 O acervo mestre pode ficar em sync interno da operacao, mas o site deve consumir:
