@@ -312,10 +312,11 @@ const LANDING_PAGES = [
 const BLOG_RAW = import.meta.glob('/src/content/blog/*.md', { as: 'raw', eager: true })
 const BLOG_POSTS = Object.entries(BLOG_RAW)
   .map(([path, raw]) => {
-    const titleMatch = raw.match(/^title:\s*["']?(.+?)["']?\s*$/m)
-    const excerptMatch = raw.match(/^excerpt:\s*["']?(.+?)["']?\s*$/m)
-    const imageMatch = raw.match(/^image:\s*["']?(.+?)["']?\s*$/m)
-    const categoryMatch = raw.match(/^category:\s*["']?(.+?)["']?\s*$/m)
+    const rawString = typeof raw === 'string' ? raw : raw?.default || ''
+    const titleMatch = rawString.match(/^title:\s*["']?(.+?)["']?\s*$/m)
+    const excerptMatch = rawString.match(/^excerpt:\s*["']?(.+?)["']?\s*$/m)
+    const imageMatch = rawString.match(/^image:\s*["']?(.+?)["']?\s*$/m)
+    const categoryMatch = rawString.match(/^category:\s*["']?(.+?)["']?\s*$/m)
     return {
       slug: path.replace('/src/content/blog/', '').replace('.md', ''),
       title: titleMatch?.[1]?.replace(/^["']|["']$/g, '') || path,
