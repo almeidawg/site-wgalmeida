@@ -1,4 +1,5 @@
 import { BLOG_UNSPLASH_MANIFEST } from './blogUnsplashManifest.generated.js';
+import BLOG_IMAGE_OVERRIDES from './blogImageOverrides.generated.js';
 import { buildCloudinaryEditorialUrl } from '../utils/cloudinaryEditorial.js';
 import { withBasePath } from '../utils/assetPaths.js';
 
@@ -440,9 +441,13 @@ export const getBlogManifestEntry = (slug) => {
 
   const remoteEntry = BLOG_UNSPLASH_MANIFEST.slugs[slug] || null;
   const cloudinaryEntry = BLOG_IMAGE_MANIFEST.slugs[slug] || null;
+  const sourceOverrideEntry = BLOG_IMAGE_OVERRIDES?.slugs?.[slug] || null;
   const localUnsplashEntry = buildLocalUnsplashSelectionEntry(slug);
   const localUploadEntry = buildLocalUploadManifestEntry(slug);
-  const persistedEntry = mergeManifestEntries(cloudinaryEntry, remoteEntry);
+  const persistedEntry = mergeManifestEntries(
+    sourceOverrideEntry,
+    mergeManifestEntries(cloudinaryEntry, remoteEntry),
+  );
   const withLocalUnsplash = mergeManifestEntries(localUnsplashEntry, persistedEntry);
   return mergeManifestEntries(localUploadEntry, withLocalUnsplash);
 };
