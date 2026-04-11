@@ -292,6 +292,10 @@
       "destination": "/estilos/:slug/index.html"
     },
     {
+      "source": "/videos/:path*",
+      "destination": "/videos/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

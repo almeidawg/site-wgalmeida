@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import SEO, { schemas } from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
 import { Link, useParams } from 'react-router-dom';
@@ -27,11 +27,8 @@ import {
   Check
 } from 'lucide-react';
 // import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { parseFrontmatter } from '@/utils/frontmatter';
 import { useTranslation } from 'react-i18next';
-import { getProducts } from '@/api/EcommerceApi';
 import { withBasePath } from '@/utils/assetPaths';
 import {
   getBlogImageAttribution,
@@ -417,21 +414,31 @@ const RelatedProducts = ({ category }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let isMounted = true;
+
     const fetchProducts = async () => {
       try {
         setLoading(true);
+        const { getProducts } = await import('@/api/EcommerceApi');
         const response = await getProducts();
+        if (!isMounted) return;
         // Pega 3 produtos aleatórios
-        const shuffled = response.products.sort(() => 0.5 - Math.random());
+        const shuffled = [...response.products].sort(() => 0.5 - Math.random());
         setProducts(shuffled.slice(0, 3));
       } catch (error) {
         console.error('Erro ao carregar produtos:', error);
       } finally {
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
 
     fetchProducts();
+
+    return () => {
+      isMounted = false;
+    };
   }, [category]);
 
   if (loading || products.length === 0) return null;
@@ -510,43 +517,45 @@ const Blog = () => {
   const localeKey = i18n.language in rawPostsByLocale ? i18n.language : 'pt-BR';
   const rawPosts = rawPostsByLocale[localeKey] || {};
   const effectiveRawPosts = Object.keys(rawPosts).length ? rawPosts : rawPostsByLocale['pt-BR'];
-  const artigos = Object.entries(effectiveRawPosts)
-    .map(([path, raw]) => {
-      try {
-        const rawString = typeof raw === 'string' ? raw : (raw?.default || '');
-        const { data, content } = parseFrontmatter(rawString);
-        const normalizedContent = stripMarkdownStrongEmphasis(content);
-        const fallbackSlug = path.split('/').pop()?.replace('.md', '');
-        const slugValue = data.slug || fallbackSlug;
+  const artigos = useMemo(() => (
+    Object.entries(effectiveRawPosts)
+      .map(([path, raw]) => {
+        try {
+          const rawString = typeof raw === 'string' ? raw : (raw?.default || '');
+          const { data, content } = parseFrontmatter(rawString);
+          const normalizedContent = stripMarkdownStrongEmphasis(content);
+          const fallbackSlug = path.split('/').pop()?.replace('.md', '');
+          const slugValue = data.slug || fallbackSlug;
 
-        return {
-          title: data.title || t('blogPage.fallback.title'),
-          slug: slugValue,
-          subtitle: data.subtitle || '',
-          excerpt: data.excerpt || '',
-          image: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'card'),
-          imageCard: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'card'),
-          imageHero: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'hero'),
-          imageSeo: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'seo'),
-          imageCardAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'card'),
-          imageHeroAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'hero'),
-          imageSeoAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'seo'),
-          category: data.category || 'arquitetura',
-          author: data.author || t('blogPage.fallback.author'),
-          date: data.date || '2025-12-01',
-          heroPosition: data.heroPosition || '50% 50%',
-          featured: Boolean(data.featured),
-          tags: Array.isArray(data.tags) ? data.tags : [],
-          content: normalizedContent,
-          tempoLeitura: estimateReadingTime(normalizedContent),
-        };
-      } catch (err) {
-        console.error('Error parsing blog post:', path, err);
-        return null;
-      }
-    })
-    .filter(Boolean)
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
+          return {
+            title: data.title || t('blogPage.fallback.title'),
+            slug: slugValue,
+            subtitle: data.subtitle || '',
+            excerpt: data.excerpt || '',
+            image: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'card'),
+            imageCard: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'card'),
+            imageHero: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'hero'),
+            imageSeo: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'seo'),
+            imageCardAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'card'),
+            imageHeroAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'hero'),
+            imageSeoAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'seo'),
+            category: data.category || 'arquitetura',
+            author: data.author || t('blogPage.fallback.author'),
+            date: data.date || '2025-12-01',
+            heroPosition: data.heroPosition || '50% 50%',
+            featured: Boolean(data.featured),
+            tags: Array.isArray(data.tags) ? data.tags : [],
+            content: normalizedContent,
+            tempoLeitura: estimateReadingTime(normalizedContent),
+          };
+        } catch (err) {
+          console.error('Error parsing blog post:', path, err);
+          return null;
+        }
+      })
+      .filter(Boolean)
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+  ), [effectiveRawPosts, t]);
   const categorias = [
     { id: 'todos', label: t('blogPage.categories.all'), icon: BookOpen, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
     { id: 'arquitetura', label: t('blogPage.categories.architecture'), icon: Ruler, color: 'text-wg-green', bgColor: 'bg-wg-green' },
@@ -560,6 +569,37 @@ const Blog = () => {
   const [categoriaAtiva, setCategoriaAtiva] = useState('todos');
   const { slug } = useParams();
   const [activeHeadingId, setActiveHeadingId] = useState('');
+  const [markdownRuntime, setMarkdownRuntime] = useState(null);
+  const [markdownRuntimeError, setMarkdownRuntimeError] = useState(false);
+
+  useEffect(() => {
+    if (!slug) {
+      setMarkdownRuntime(null);
+      setMarkdownRuntimeError(false);
+      return undefined;
+    }
+
+    let cancelled = false;
+
+    Promise.all([import('react-markdown'), import('remark-gfm')])
+      .then(([reactMarkdownModule, remarkGfmModule]) => {
+        if (cancelled) return;
+        setMarkdownRuntime({
+          ReactMarkdown: reactMarkdownModule.default,
+          remarkGfm: remarkGfmModule.default,
+        });
+      })
+      .catch((error) => {
+        console.error('Erro ao carregar renderer de markdown:', error);
+        if (!cancelled) {
+          setMarkdownRuntimeError(true);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
 
   const artigosFiltrados = categoriaAtiva === 'todos'
     ? artigos
@@ -687,6 +727,9 @@ const Blog = () => {
       sectionedContent.sections.length,
       articleContextImages.slice(1)
     );
+    const MarkdownRenderer = markdownRuntime?.ReactMarkdown;
+    const markdownRemarkPlugins = markdownRuntime?.remarkGfm ? [markdownRuntime.remarkGfm] : [];
+    const markdownRuntimeReady = Boolean(MarkdownRenderer);
     const markdownComponents = {
       h2: ({ children, ...props }) => {
         const headingText = extractHeadingText(children);
@@ -794,6 +837,7 @@ const Blog = () => {
               className="w-full h-full object-cover"
               style={{ objectPosition: artigoAtual.heroPosition }}
               loading="eager"
+              fetchPriority="high"
               decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-wg-black via-wg-black/60 to-transparent" />
@@ -925,9 +969,17 @@ const Blog = () => {
                 [&>ol]:my-6 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
                 [&>ol>li]:text-[15px] [&>ol>li]:text-[#334155] [&>ol>li]:leading-[1.48]
                 [&>ol>li::marker]:text-[#64748B]">
-                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-                  {sectionedContent.intro}
-                </ReactMarkdown>
+                {markdownRuntimeReady ? (
+                  <MarkdownRenderer remarkPlugins={markdownRemarkPlugins} components={markdownComponents}>
+                    {sectionedContent.intro}
+                  </MarkdownRenderer>
+                ) : (
+                  <p className="text-[15px] leading-[1.65] text-[#4C4C4C]">
+                    {markdownRuntimeError
+                      ? t('blogPage.fallback.contentError', 'Conteudo temporariamente indisponivel.')
+                      : t('blogPage.fallback.loading', 'Carregando conteudo...')}
+                  </p>
+                )}
               </div>
             )}
 
@@ -975,9 +1027,17 @@ const Blog = () => {
                       [&>pre]:bg-[#1A1A1A] [&>pre]:text-white [&>pre]:p-6 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:my-8
                       [&>img]:rounded-lg [&>img]:shadow-md [&>img]:my-8
                       [&>hr]:border-[#E5E5E5] [&>hr]:my-10">
-                      <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-                        {section.markdown}
-                      </ReactMarkdown>
+                      {markdownRuntimeReady ? (
+                        <MarkdownRenderer remarkPlugins={markdownRemarkPlugins} components={markdownComponents}>
+                          {section.markdown}
+                        </MarkdownRenderer>
+                      ) : (
+                        <p className="text-[15px] leading-[1.65] text-[#4C4C4C]">
+                          {markdownRuntimeError
+                            ? t('blogPage.fallback.contentError', 'Conteudo temporariamente indisponivel.')
+                            : t('blogPage.fallback.loading', 'Carregando conteudo...')}
+                        </p>
+                      )}
                     </div>
                   </motion.article>
 
@@ -993,9 +1053,17 @@ const Blog = () => {
               )) : (
                 <div className="wg-prose max-w-none
                   [&>p]:text-[16px] [&>p]:text-[#4C4C4C] [&>p]:leading-[1.65] [&>p]:mb-5">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-                    {contentBody}
-                  </ReactMarkdown>
+                  {markdownRuntimeReady ? (
+                    <MarkdownRenderer remarkPlugins={markdownRemarkPlugins} components={markdownComponents}>
+                      {contentBody}
+                    </MarkdownRenderer>
+                  ) : (
+                    <p className="text-[15px] leading-[1.65] text-[#4C4C4C]">
+                      {markdownRuntimeError
+                        ? t('blogPage.fallback.contentError', 'Conteudo temporariamente indisponivel.')
+                        : t('blogPage.fallback.loading', 'Carregando conteudo...')}
+                    </p>
+                  )}
                 </div>
               )}
             </div>
@@ -1068,6 +1136,7 @@ const Blog = () => {
             alt={artigoRecente?.title}
             className="w-full h-full object-cover"
             loading="eager"
+            fetchPriority="high"
             decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-wg-black via-wg-black/60 to-transparent" />

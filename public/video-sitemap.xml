@@ -9,7 +9,7 @@
       <video:thumbnail_loc>https://wgalmeida.com.br/images/hero-poster-1280.webp</video:thumbnail_loc>
       <video:title>Grupo WG Almeida - Arquitetura, Engenharia e Marcenaria Premium</video:title>
       <video:description>Video institucional do Grupo WG Almeida apresentando projetos de arquitetura de alto padrao, engenharia turn key e marcenaria sob medida em Sao Paulo. 15 anos transformando sonhos em espacos de excelencia.</video:description>
-      <video:content_loc>https://res.cloudinary.com/dwukfmgrd/video/upload/q_auto,f_auto/wgalmeida/hero-horizontal.mp4</video:content_loc>
+      <video:content_loc>https://wgalmeida.com.br/videos/hero/hero-desktop.mp4</video:content_loc>
       <video:duration>45</video:duration>
       <video:publication_date>2026-01-15T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -32,7 +32,7 @@
       <video:thumbnail_loc>https://wgalmeida.com.br/images/hero-poster-1280.webp</video:thumbnail_loc>
       <video:title>Sobre o Grupo WG Almeida - Nossa Historia</video:title>
       <video:description>Conheca a trajetoria do Grupo WG Almeida. 15 anos de excelencia em arquitetura, engenharia e marcenaria de alto padrao em Sao Paulo. Mais de 270 projetos em andamento e 50 mil metros de revestimentos assentados.</video:description>
-      <video:content_loc>https://wgalmeida.com.br/videos/videosobrenos.mp4</video:content_loc>
+      <video:content_loc>https://wgalmeida.com.br/videos/hero/hero-desktop.mp4</video:content_loc>
       <video:duration>120</video:duration>
       <video:publication_date>2026-01-15T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -53,7 +53,7 @@
       <video:thumbnail_loc>https://wgalmeida.com.br/images/hero-poster-640.webp</video:thumbnail_loc>
       <video:title>WG Almeida - Arquitetura Premium SP (Mobile)</video:title>
       <video:description>Video institucional otimizado para dispositivos moveis do Grupo WG Almeida. Arquitetura, engenharia e marcenaria de alto padrao em Sao Paulo.</video:description>
-      <video:content_loc>https://res.cloudinary.com/dwukfmgrd/video/upload/q_auto,f_auto/wgalmeida/hero-vertical.mp4</video:content_loc>
+      <video:content_loc>https://wgalmeida.com.br/videos/hero/hero-mobile.mp4</video:content_loc>
       <video:duration>45</video:duration>
       <video:publication_date>2026-01-15T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
