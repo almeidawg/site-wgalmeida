@@ -263,6 +263,57 @@ const toAbsoluteSiteUrl = (value) => {
   return `https://wgalmeida.com.br${value.startsWith('/') ? value : `/${value}`}`;
 };
 
+const ICCRI_DATASET_SLUG = 'tabela-precos-reforma-2026-iccri';
+
+const buildIccriDatasetSchema = ({ articleUrl, datePublished }) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  '@id': `${articleUrl}#dataset-iccri-2026`,
+  name: 'ICCRI 2026 - Indice de Custo da Construcao e Reforma Inteligente',
+  description:
+    'Tabela de referencia tecnica do Grupo WG Almeida para custo de reforma e construcao em Sao Paulo, com faixas por padrao, categoria de servico e fatores de ajuste.',
+  url: articleUrl,
+  creator: {
+    '@type': 'Organization',
+    '@id': 'https://wgalmeida.com.br/#organization',
+    name: 'Grupo WG Almeida',
+    url: 'https://wgalmeida.com.br',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Grupo WG Almeida',
+    url: 'https://wgalmeida.com.br',
+  },
+  inLanguage: 'pt-BR',
+  isAccessibleForFree: true,
+  datePublished,
+  dateModified: datePublished,
+  temporalCoverage: '2020/2026',
+  spatialCoverage: {
+    '@type': 'City',
+    name: 'Sao Paulo',
+  },
+  keywords: [
+    'ICCRI',
+    'custo de reforma 2026',
+    'preco m2 reforma',
+    'tabela de custos construcao civil',
+    'Sao Paulo',
+  ],
+  variableMeasured: [
+    { '@type': 'PropertyValue', name: 'custo_base_m2_reforma_civil' },
+    { '@type': 'PropertyValue', name: 'custo_marcenaria_m2_linear' },
+    { '@type': 'PropertyValue', name: 'custo_infra_eletrica_hidraulica_m2' },
+    { '@type': 'PropertyValue', name: 'fator_localizacao_bairro' },
+    { '@type': 'PropertyValue', name: 'fator_complexidade_estrutural' },
+  ],
+  citation: [
+    'https://wgalmeida.com.br/obraeasy',
+    'https://wgalmeida.com.br/easy-real-state',
+    'https://wgalmeida.com.br/blog/calculadora-preco-m2-corretores-imobiliarias',
+  ],
+});
+
 const StableBlogImage = ({ src, fallbackSrc, alt, onError, ...props }) => {
   const [currentSrc, setCurrentSrc] = useState(src || fallbackSrc || '');
   const [fallbackApplied, setFallbackApplied] = useState(false);
@@ -775,6 +826,7 @@ const Blog = () => {
       ...articleContextImages.map((asset) => toAbsoluteSiteUrl(asset?.src)).filter(Boolean),
     ].filter(Boolean);
     const faqEntries = extractFaqFromMarkdown(contentBody);
+    const isIccriDatasetArticle = artigoAtual.slug === ICCRI_DATASET_SLUG;
     const articleSeoSchema = [
       schemas.article(
         artigoAtual.title,
@@ -784,6 +836,9 @@ const Blog = () => {
         articleSchemaImages
       ),
       ...(faqEntries.length ? [schemas.faq(faqEntries)] : []),
+      ...(isIccriDatasetArticle
+        ? [buildIccriDatasetSchema({ articleUrl, datePublished: artigoAtual.date })]
+        : []),
     ];
     const articleLeadContextImage = articleContextImages[0] || null;
     const articleSectionContextInsertions = buildSectionImageInsertions(

@@ -16,6 +16,12 @@ O mercado de reformas no Brasil sofre de um problema crônico: a ausência de um
 
 O ICCRI — Índice de Custo da Construção e Reforma Inteligente foi desenvolvido pelo Grupo WG Almeida a partir de 15 anos de dados reais de obra em São Paulo. É a nossa contribuição para normalizar a precificação do setor.
 
+## Resposta Direta (ICCRI 2026)
+
+Em São Paulo, o custo de reforma em 2026 varia de **R$ 900 a R$ 5.500+ por m²**, dependendo do padrão de acabamento, escopo técnico e localização. Em projetos de alto padrão, a faixa prática costuma ficar entre **R$ 3.000 e R$ 5.500 por m²** na reforma civil, com adicionais de marcenaria e infraestrutura.
+
+Use esta tabela como referência de validação de orçamento e, em seguida, rode a simulação nas ferramentas para obter um cenário aplicado ao seu imóvel.
+
 ---
 
 ## O que é o ICCRI?
@@ -138,6 +144,28 @@ Esta tabela é uma referência de mercado, não um orçamento. Para obter um or�
 4. Cronograma físico-financeiro — liberação de verbas por etapas, com marcos de entrega definidos
 
 O [ObraEasy](/obraeasy) foi desenvolvido exatamente para tornar esse processo transparente: você acompanha cada etapa em tempo real, com fotos do diário de obra, alertas de desvio e aprovação de pagamentos por fase.
+
+---
+
+## Aplicacao Pratica por Perfil (ICCRI + Ferramentas)
+
+### Cliente Final
+
+- [Simular custo da obra com EVF](https://obraeasy.wgalmeida.com.br/evf4)
+- [Conhecer a plataforma ObraEasy](/obraeasy)
+- [Solicitar proposta tecnica com levantamento](/solicite-proposta)
+
+### Corretor e Imobiliaria
+
+- [Calcular valor com AVM EasyRealState](https://easyrealstate.wgalmeida.com.br/calculo)
+- [Conhecer o EasyRealState](/easy-real-state)
+- [Guia tecnico para corretores](/blog/calculadora-preco-m2-corretores-imobiliarias)
+
+### Banco, Construtora e Parceiros B2B
+
+- [Cadastro de parceiro ObraEasy](https://obraeasy.wgalmeida.com.br/landing/parceiro)
+- [Ecossistema BuildTech](/buildtech)
+- [Referencia ICCRI + custos SINAPI 2026](/blog/custo-construcao-reforma-2026-guia-tecnico-completo)
 
 ---
 
