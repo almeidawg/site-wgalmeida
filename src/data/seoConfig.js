@@ -101,6 +101,12 @@ export const SEO_CONFIG = {
     "Conteudos sobre arquitetura, engenharia, marcenaria e obras.",
     `${BASE_URL}/og-home-1200x630.jpg`
   ),
+  "/iccri": page(
+    "/iccri",
+    "ICCRI 2026 | Indice de Custo de Construcao e Reforma Inteligente",
+    "Indice proprietario da WG Almeida para estimar custo de reforma por m2 com base em dados reais de obras e variacao de mercado.",
+    `${BASE_URL}/og-engenharia-1200x630.jpg`
+  ),
   "/faq": page(
     "/faq",
     "FAQ | Grupo WG Almeida",

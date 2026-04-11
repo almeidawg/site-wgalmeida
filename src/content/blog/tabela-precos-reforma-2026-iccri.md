@@ -22,6 +22,8 @@ Em São Paulo, o custo de reforma em 2026 varia de **R$ 900 a R$ 5.500+ por m²*
 
 Use esta tabela como referência de validação de orçamento e, em seguida, rode a simulação nas ferramentas para obter um cenário aplicado ao seu imóvel.
 
+👉 **[Calcule seu custo agora](https://obraeasy.wgalmeida.com.br/evf4)** com base no ICCRI.
+
 ---
 
 ## O que é o ICCRI?
@@ -166,6 +168,23 @@ O [ObraEasy](/obraeasy) foi desenvolvido exatamente para tornar esse processo tr
 - [Cadastro de parceiro ObraEasy](https://obraeasy.wgalmeida.com.br/landing/parceiro)
 - [Ecossistema BuildTech](/buildtech)
 - [Referencia ICCRI + custos SINAPI 2026](/blog/custo-construcao-reforma-2026-guia-tecnico-completo)
+
+---
+
+## Veja Tambem (ICCRI + Ferramentas)
+
+- [ICCRI · Indice oficial WG Almeida](/iccri)
+- [Custo de reforma por m2 em Sao Paulo](/blog/custo-reforma-m2-sao-paulo)
+- [Quanto custa reformar apartamento de 100m2](/blog/quanto-custa-reforma-apartamento-100m2)
+- [Como calcular custo de obra](/blog/como-calcular-custo-de-obra)
+- [Custo de marcenaria planejada](/blog/custo-marcenaria-planejada)
+- [Simulador EVF ObraEasy](https://obraeasy.wgalmeida.com.br/evf4)
+- [AVM EasyRealState](https://easyrealstate.wgalmeida.com.br/calculo)
+- [Servico de Arquitetura](/arquitetura)
+- [Servico de Engenharia](/engenharia)
+- [Obra Turn Key](/obra-turn-key)
+- [Tool: Moodboard Generator](/tools/moodboard-generator)
+- [Tool: Room Visualizer](/tools/room-visualizer)
 
 ---
 

@@ -73,6 +73,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://wgalmeida.com.br/iccri</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://wgalmeida.com.br/faq</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -283,6 +289,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://wgalmeida.com.br/blog/como-calcular-custo-de-obra</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://wgalmeida.com.br/blog/cronograma-obra-acompanhamento</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -295,7 +307,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://wgalmeida.com.br/blog/custo-marcenaria-planejada</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://wgalmeida.com.br/blog/custo-reforma-apartamento-alto-padrao-sp</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wgalmeida.com.br/blog/custo-reforma-m2-sao-paulo</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -488,6 +512,12 @@
   </url>
   <url>
     <loc>https://wgalmeida.com.br/blog/projeto-executivo-o-que-e</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wgalmeida.com.br/blog/quanto-custa-reforma-apartamento-100m2</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

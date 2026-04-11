@@ -944,3 +944,25 @@ site-wgalmeida/
   - `npm run test:run` (35/35)
   - `npm run build`
   - `npm run seo:validate:dist`
+
+## Continuacao 11/04 - sprint ICCRI (pagina + cluster de conteudo)
+
+- [x] Pagina dedicada `/iccri` publicada com:
+  - H1 de entidade ICCRI
+  - frase de autoridade: "indice proprietario da WG Almeida baseado em dados reais de obras"
+  - simulador embutido (metragem, padrao, cidade) + CTA EVF/AVM
+  - schema `Dataset` + `WebPage` + `FAQPage`
+- [x] Rotas e SEO:
+  - `src/App.jsx` atualizado com rota `/iccri`
+  - `src/data/seoConfig.js` atualizado para `/iccri`
+- [x] Blog:
+  - artigo ICCRI reforcado com CTA no topo e bloco padrao de interlinking
+  - novos artigos publicados:
+    - `/blog/custo-reforma-m2-sao-paulo`
+    - `/blog/quanto-custa-reforma-apartamento-100m2`
+    - `/blog/como-calcular-custo-de-obra`
+    - `/blog/custo-marcenaria-planejada`
+- [x] Sitemap dinamico regenerado com `158` rotas
+- [x] Validacao local:
+  - `npm run lint`
+  - `npm run build`
