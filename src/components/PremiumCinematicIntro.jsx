@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { useTranslation, Trans } from 'react-i18next';
 import { withBasePath } from '@/utils/assetPaths';
 import { PREMIUM_INTRO_PORTFOLIO_IMAGES } from '@/utils/cloudinaryProjectPortfolio';
+import { HERO_MEDIA } from '@/utils/cloudinaryMedia';
 
 /**
  * ABERTURA CINEMATOGRÁFICA PREMIUM - WG ALMEIDA
@@ -15,6 +16,8 @@ import { PREMIUM_INTRO_PORTFOLIO_IMAGES } from '@/utils/cloudinaryProjectPortfol
 
 const WG_LOGO = withBasePath('/images/logo-192.webp');
 const PROJECTS_FALLBACK_IMAGE = withBasePath('/images/banners/PROJETOS.webp');
+const INTRO_VIDEO_POSTER = withBasePath('/images/hero-poster-640.webp');
+const INTRO_VIDEO_CAPTIONS = withBasePath('/videos/hero/descricao.vtt');
 
 // Cores da marca WG
 const WG_COLORS = {
@@ -981,19 +984,16 @@ const PremiumCinematicIntro = ({ onComplete }) => {
         <video
           ref={videoRef}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-70 w-full h-full object-cover"
-          src={isMobile
-            ? "/videos/hero/hero-mobile.mp4"
-            : "/videos/hero/hero-desktop.mp4"
-          }
+          src={isMobile ? HERO_MEDIA.mobile : HERO_MEDIA.desktop}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          poster="/images/hero-poster-640.webp"
+          poster={INTRO_VIDEO_POSTER}
           aria-hidden="true"
         >
-          <track kind="captions" src="/videos/hero/descricao.vtt" srcLang="pt-BR" label="Português" default />
+          <track kind="captions" src={INTRO_VIDEO_CAPTIONS} srcLang="pt-BR" label="Português" default />
         </video>
 
         {/* Overlay gradiente - mais leve */}
