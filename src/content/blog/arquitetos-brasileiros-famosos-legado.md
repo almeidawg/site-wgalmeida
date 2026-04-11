@@ -28,7 +28,7 @@ Os arquitetos brasileiros famosos ajudaram a definir uma linguagem autoral recon
 ## Oscar Niemeyer (1907-2012)
 ### O Poeta do Concreto
 
-**"Não é o ângulo reto que me atrai. Nem a linha reta, dura, inflexível, criada pelo homem. O que me atrai é a curva livre e sensual."**
+"Não é o ângulo reto que me atrai. Nem a linha reta, dura, inflexível, criada pelo homem. O que me atrai é a curva livre e sensual."
 
 ### Biografia
 
@@ -40,16 +40,16 @@ Os arquitetos brasileiros famosos ajudaram a definir uma linguagem autoral recon
 
 ### Características do Estilo
 
-**Curvas Sensuais:**
+Curvas Sensuais:
 Influenciado pelas montanhas do Rio, pelo corpo feminino e pela liberdade formal do concreto armado.
 
-**Leveza Estrutural:**
+Leveza Estrutural:
 Edifícios que parecem desafiar a gravidade, suspensos por pilotis.
 
-**Integração com Arte:**
+Integração com Arte:
 Colaborações constantes com artistas como Burle Marx (paisagismo) e Athos Bulcão (azulejos).
 
-**Funcionalismo Poético:**
+Funcionalismo Poético:
 Não abre mão da função, mas acrescenta beleza e emoção.
 
 ### Obras Icônicas
@@ -61,7 +61,7 @@ Não abre mão da função, mas acrescenta beleza e emoção.
 - Catedral de Brasília
 - Supremo Tribunal Federal
 
-**Legado:** Brasília é Patrimônio da Humanidade (UNESCO)
+Legado: Brasília é Patrimônio da Humanidade (UNESCO)
 
 #### Conjunto da Pampulha (1940-1943)
 - Igreja de São Francisco de Assis
@@ -69,7 +69,7 @@ Não abre mão da função, mas acrescenta beleza e emoção.
 - Casa do Baile
 - Iate Clube
 
-**Inovação:** Primeira grande obra modernista no Brasil
+Inovação: Primeira grande obra modernista no Brasil
 
 #### Edifício Copan (1951)
 - 1.160 apartamentos
@@ -98,7 +98,7 @@ Não abre mão da função, mas acrescenta beleza e emoção.
 ## Paulo Mendes da Rocha (1928-2021)
 ### O Mestre do Brutalismo Brasileiro
 
-**"A arquitetura não é só construção, é transformação da natureza pelo trabalho humano."**
+"A arquitetura não é só construção, é transformação da natureza pelo trabalho humano."
 
 ### Biografia
 
@@ -110,16 +110,16 @@ Não abre mão da função, mas acrescenta beleza e emoção.
 
 ### Características do Estilo
 
-**Brutalismo Elegante:**
+Brutalismo Elegante:
 Concreto aparente com refinamento formal
 
-**Grandes Vãos:**
+Grandes Vãos:
 Estruturas ousadas com mínimos apoios
 
-**Relação com o Entorno:**
+Relação com o Entorno:
 Projetos que dialogam com a cidade
 
-**Funcionalidade Radical:**
+Funcionalidade Radical:
 Espaços democráticos e acessíveis
 
 ### Obras Icônicas
@@ -181,13 +181,13 @@ Espaços democráticos e acessíveis
 
 ### Obras Principais
 
-**MASP - Museu de Arte de São Paulo (1968):**
+MASP - Museu de Arte de São Paulo (1968):
 - Vão livre de 74 metros
 - Vidro suspenso sobre a Avenida Paulista
 - Cavaletes de vidro para expor obras
 - Ícone de São Paulo
 
-**SESC Pompeia (1977-1986):**
+SESC Pompeia (1977-1986):
 - Antiga fábrica transformada
 - Torres de concreto com janelas circulares
 - Espaços de convivência popular
@@ -218,7 +218,7 @@ Lina provou que arquitetura pode ser ao mesmo tempo popular, erudita, funcional 
 
 ### Obra Emblemática
 
-**FAU-USP (1961):**
+FAU-USP (1961):
 - Edifício-manifesto
 - Espaços integrados
 - Ensino democrático
@@ -238,7 +238,7 @@ Lina provou que arquitetura pode ser ao mesmo tempo popular, erudita, funcional 
 
 ### Legado
 
-**Plano Piloto de Brasília (1957):**
+Plano Piloto de Brasília (1957):
 - Forma de avião/pássaro
 - Setorização funcional
 - Superquadras
@@ -269,12 +269,12 @@ Trouxe cor e alegria para o brutalismo brasileiro.
 
 ### Obras Principais
 
-**Museu de Arte Moderna do Rio (MAM-RJ):**
+Museu de Arte Moderna do Rio (MAM-RJ):
 - Pilotis esbeltos
 - Integração com o Parque do Flamengo
 - Vista para a Baía de Guanabara
 
-**Conjunto Pedregulho:**
+Conjunto Pedregulho:
 - Habitação social de qualidade
 - Bloco sinuoso de 260m
 - Infraestrutura completa
@@ -311,10 +311,10 @@ Obras dos anos 1940-60 permanecem contemporâneas. Não envelheceram.
 
 Incorporamos lições desses mestres:
 
-✅ **De Niemeyer:** Ousadia formal e leveza
-✅ **De Paulo Mendes:** Materialidade honesta
-✅ **De Lina:** Respeito ao existente
-✅ **De Artigas:** Espaços democráticos e funcionais
+✅ De Niemeyer: Ousadia formal e leveza
+✅ De Paulo Mendes: Materialidade honesta
+✅ De Lina: Respeito ao existente
+✅ De Artigas: Espaços democráticos e funcionais
 
 ---
 
@@ -359,7 +359,7 @@ Seu legado inspira cada projeto que desenvolvemos na WG Almeida.
 
 Quer um projeto que combine a ousadia dos grandes arquitetos brasileiros com funcionalidade contemporânea?
 
-**Entre em Contato:**
+Entre em Contato:
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
@@ -368,12 +368,12 @@ Quer um projeto que combine a ousadia dos grandes arquitetos brasileiros com fun
 
 *Grupo WG Almeida, Honrando o legado da arquitetura brasileira*
 
-**Fontes:**
+Fontes:
 - [7 cases de arquitetos famosos para você conhecer](https://blog.belasartes.br/arquitetos-famosos/)
 - [10 arquitetos brasileiros mais famosos dos últimos anos](https://www.imoveispro.com.br/blog/arquitetos/)
 - [6 arquitetos brasileiros mais famosos e as suas principais obras](https://www.megacurioso.com.br/ciencia/118851-6-arquitetos-brasileiros-mais-famosos-e-as-suas-principais-obras.htm)
 
-**Tags**: arquitetos brasileiros, Oscar Niemeyer, Paulo Mendes da Rocha, Lina Bo Bardi, história arquitetura, modernismo brasileiro
+Tags: arquitetos brasileiros, Oscar Niemeyer, Paulo Mendes da Rocha, Lina Bo Bardi, história arquitetura, modernismo brasileiro
 
 ## Leitura recomendada
 

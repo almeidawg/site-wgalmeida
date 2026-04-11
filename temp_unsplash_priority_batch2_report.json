@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-04-10T21:37:42.763023+00:00",
+  "batchSize": 10,
+  "updatedSlugs": [
+    {
+      "slug": "custo-construcao-reforma-2026-guia-tecnico-completo",
+      "hero": "1648937743864-5156661870f9",
+      "card": "1751309245229-0c0f4f24f7b6"
+    },
+    {
+      "slug": "sustentabilidade-construcao-civil-2026",
+      "hero": "1577228336271-d1edca526d64",
+      "card": "1652303518372-79ad122e3181"
+    },
+    {
+      "slug": "varanda-gourmet-planejamento",
+      "hero": "1746032667302-ce2950df8ba6",
+      "card": "1740645581707-34e99ad574e4"
+    },
+    {
+      "slug": "erros-comuns-reforma-como-evitar",
+      "hero": "1740062450744-90c596cf6ae3",
+      "card": "1740062447116-3fa0e31879dc"
+    },
+    {
+      "slug": "steel-frame-vs-alvenaria-qual-escolher",
+      "hero": "1750557616137-4850b57bd4e9",
+      "card": "1749527306167-558c0c0907f1"
+    },
+    {
+      "slug": "calculadora-preco-m2-corretores-imobiliarias",
+      "hero": "1757256137041-0aab889db199",
+      "card": "1574607383077-47ddc2dc51c4"
+    }
+  ],
+  "failed": [
+    {
+      "slug": "casa-cor-2026-mente-coracao",
+      "heroQuery": "house cor 2026 tema",
+      "cardQuery": "house cor 2026 tema",
+      "heroFound": true,
+      "cardFound": false
+    },
+    {
+      "slug": "acapulco-club-house-residencia-luxo",
+      "heroQuery": "residencia contemporanea acapulco club",
+      "cardQuery": "residencia contemporanea acapulco club",
+      "heroFound": false,
+      "cardFound": false
+    },
+    {
+      "slug": "harman-kardon-som-ambientes",
+      "heroQuery": "harman kardon vale pena",
+      "cardQuery": "harman kardon vale pena",
+      "heroFound": true,
+      "cardFound": false
+    },
+    {
+      "slug": "evf-estudo-viabilidade-financeira",
+      "heroQuery": "evf construction validar custos",
+      "cardQuery": "evf construction validar custos",
+      "heroFound": false,
+      "cardFound": false
+    }
+  ]
+}

@@ -21,9 +21,9 @@ featured: true
 
 ## O Que É o EVF?
 
-O **Estudo de Viabilidade Financeira (EVF)** e uma analise tecnica e financeira que valida se o projeto arquitetonico proposto e executavel dentro do orcamento disponivel do cliente.
+O Estudo de Viabilidade Financeira (EVF) e uma analise tecnica e financeira que valida se o projeto arquitetonico proposto e executavel dentro do orcamento disponivel do cliente.
 
-Ele funciona como uma ponte entre o **sonho** (projeto arquitetônico) e a **realidade** (recursos disponíveis).
+Ele funciona como uma ponte entre o sonho (projeto arquitetônico) e a realidade (recursos disponíveis).
 
 Na pratica, o EVF antecipa custos, riscos e cenarios de ajuste antes da obra comecar, reduzindo retrabalho e paralisacoes por falta de caixa.
 
@@ -53,20 +53,20 @@ Com o EVF você sabe:
 
 No fluxo de projeto da WG Almeida, o EVF acontece:
 
-**Após:**
+Após:
 - Levantamento técnico
 - Briefing aprovado
 - Estudo preliminar definido
 - Projetos complementares integrados
 - Compatibilização finalizada
 
-**Antes de:**
+Antes de:
 - Projeto executivo detalhado
 - Orçamento oficial para obra
 - Aprovações legais
 - Início da construção
 
-**Prazo:** Até 10 dias úteis após a compatibilização dos projetos.
+Prazo: Até 10 dias úteis após a compatibilização dos projetos.
 
 ---
 
@@ -126,7 +126,7 @@ Reserva de 10-15% para:
 
 ### Exemplo: Reforma de Apartamento 120m²
 
-**Projeto Proposto:**
+Projeto Proposto:
 - Demolição de paredes
 - Cozinha integrada com ilha
 - Closet planejado no quarto
@@ -134,7 +134,7 @@ Reserva de 10-15% para:
 - Pisos em porcelanato grande formato
 - Marcenaria sob medida em toda sala
 
-**EVF Realizado:**
+EVF Realizado:
 
 | Item | Custo Estimado |
 |------|----------------|
@@ -147,15 +147,15 @@ Reserva de 10-15% para:
 | Louças e metais | R$ 22.000 |
 | Pintura | R$ 8.000 |
 | Limpeza e acabamentos | R$ 7.000 |
-| **Subtotal Obra** | **R$ 220.000** |
+| Subtotal Obra | R$ 220.000 |
 | Projeto e aprovações | R$ 25.000 |
 | Gerenciamento (15%) | R$ 33.000 |
 | Contingência (10%) | R$ 22.000 |
-| **TOTAL ESTIMADO** | **R$ 300.000** |
+| TOTAL ESTIMADO | R$ 300.000 |
 
-**Orçamento do Cliente:** R$ 280.000
+Orçamento do Cliente: R$ 280.000
 
-**Diagnóstico EVF:** ⚠️ Projeto excede orçamento em 7%
+Diagnóstico EVF: ⚠️ Projeto excede orçamento em 7%
 
 ---
 
@@ -175,7 +175,7 @@ Exemplo de ajustes:
 - Simplificar automação
 - Escolher porcelanato de linha regular
 
-**Economia estimada:** 5-15%
+Economia estimada: 5-15%
 
 ### Cenário 3: Revisão Significativa ⚠️
 
@@ -229,19 +229,19 @@ Quando a diferença é grande (>20%):
 
 Nossa metodologia garante:
 
-**1. Extração Automática**
+1. Extração Automática
 Quantitativos extraídos do modelo BIM 3D
 
-**2. Banco de Dados Atualizado**
+2. Banco de Dados Atualizado
 Preços de materiais e mão de obra atualizados mensalmente
 
-**3. Experiência de Mercado**
+3. Experiência de Mercado
 15+ anos executando obras similares
 
-**4. Transparência Total**
+4. Transparência Total
 EVF detalhado entregue ao cliente
 
-**5. Validação Conjunta**
+5. Validação Conjunta
 Reunião para apresentar cenários e alternativas
 
 ---
@@ -270,30 +270,30 @@ Não. O EVF é uma estimativa para validar viabilidade. O orçamento oficial vem
 
 ### Case 1: Apartamento Itaim Bibi - 180m²
 
-**Situação:** Cliente queria reforma completa com materiais premium
+Situação: Cliente queria reforma completa com materiais premium
 
-**EVF inicial:** R$ 580.000
-**Orçamento disponível:** R$ 450.000
-**Diferença:** 29%
+EVF inicial: R$ 580.000
+Orçamento disponível: R$ 450.000
+Diferença: 29%
 
-**Solução aplicada:**
+Solução aplicada:
 - Manteve mármore apenas nos banheiros
 - Substituiu madeira maciça por MDF premium
 - Iluminação inteligente apenas em áreas sociais
 - Manteve conceito e elegância
 
-**EVF ajustado:** R$ 445.000 ✅
-**Resultado:** Projeto executado com sucesso, cliente satisfeito
+EVF ajustado: R$ 445.000 ✅
+Resultado: Projeto executado com sucesso, cliente satisfeito
 
 ### Case 2: Casa Morumbi - 350m²
 
-**Situação:** Construção nova, orçamento bem definido
+Situação: Construção nova, orçamento bem definido
 
-**EVF:** R$ 1.850.000
-**Orçamento:** R$ 1.900.000
-**Diferença:** -2.6% (folga saudável)
+EVF: R$ 1.850.000
+Orçamento: R$ 1.900.000
+Diferença: -2.6% (folga saudável)
 
-**Resultado:** Obra seguiu sem alterações, finalizada no prazo e orçamento
+Resultado: Obra seguiu sem alterações, finalizada no prazo e orçamento
 
 ---
 
@@ -309,7 +309,7 @@ Investir 10 dias nesta etapa pode economizar meses de retrabalho e centenas de m
 
 Se você tem um projeto em mente e quer saber se é financeiramente viável:
 
-**Agende uma Consulta de EVF**
+Agende uma Consulta de EVF
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 (11) 98465-0002
@@ -319,7 +319,7 @@ Se você tem um projeto em mente e quer saber se é financeiramente viável:
 
 *Grupo WG Almeida, Transformando sonhos em realidade com planejamento e transparência*
 
-**Tags**: EVF, viabilidade financeira, orçamento obra, planejamento, construção civil, reforma
+Tags: EVF, viabilidade financeira, orçamento obra, planejamento, construção civil, reforma
 
 ## Leitura recomendada
 

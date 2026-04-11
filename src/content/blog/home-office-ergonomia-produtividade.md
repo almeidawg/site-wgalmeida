@@ -25,59 +25,59 @@ featured: false
 ✅ Porta (privacidade)
 
 ### Tamanho Mínimo
-- **Básico:** 2,5m² (1,5 x 1,7m)
-- **Confortável:** 4-6m²
-- **Ideal:** 8-12m²
+- Básico: 2,5m² (1,5 x 1,7m)
+- Confortável: 4-6m²
+- Ideal: 8-12m²
 
 ## Ergonomia Essencial
 
 ### Cadeira
-**Características obrigatórias:**
+Características obrigatórias:
 - Encosto regulável
 - Apoio lombar
 - Assento regulável em altura
 - Apoio de braços ajustável
 - Base giratória com rodízios
 
-**Ajustes corretos:**
+Ajustes corretos:
 - Pés apoiados no chão
 - Joelhos em 90°
 - Braços em 90° no teclado
 - Lombar apoiada
 
-**Investimento:** R$ 800-3.000
+Investimento: R$ 800-3.000
 
 ### Mesa
-**Dimensões ideais:**
+Dimensões ideais:
 - Largura: 1,20-1,60m
 - Profundidade: 60-80cm
 - Altura: 72-76cm
 
-**Tipos:**
+Tipos:
 - Fixa: R$ 600-2.500
 - Regulável: R$ 1.500-5.000
 - Standing desk: R$ 2.000-6.000
 
 ### Monitor
-**Posicionamento:**
+Posicionamento:
 - Distância: 50-70cm dos olhos
 - Topo do monitor na altura dos olhos
 - Perpendicular à janela (evita reflexos)
 - Suporte regulável: R$ 150-400
 
-**Configuração dual:**
+Configuração dual:
 - Monitores lado a lado
 - Principal à frente
 - Secundário 30° lateral
 
 ### Teclado e Mouse
-**Ergonomia:**
+Ergonomia:
 - Teclado na altura dos cotovelos
 - Pulsos retos (não dobrados)
 - Mouse próximo ao teclado
 - Apoio de pulso: R$ 50-150
 
-**Opções ergonômicas:**
+Opções ergonômicas:
 - Teclado split: R$ 300-800
 - Mouse vertical: R$ 150-400
 
@@ -89,12 +89,12 @@ featured: false
 ✅ Evitar reflexos na tela
 
 ### Artificial
-**Geral:**
+Geral:
 - 4000K (branca neutra)
 - 20W/m² em LED
 - Distribuída uniformemente
 
-**Tarefa:**
+Tarefa:
 - Luminária de mesa articulada
 - 15-20W LED
 - 4000-5000K
@@ -122,20 +122,20 @@ featured: false
 ## Organização
 
 ### Armazenamento
-**Essencial:**
+Essencial:
 - Gavetas para documentos
 - Nichos para livros
 - Organizadores de mesa
 - Caixas organizadoras
 
-**Layout:**
+Layout:
 - Itens diários: alcance imediato
 - Semanais: gavetas
 - Mensais: armário
 - Arquivo morto: storage externo
 
 ### Cabos
-**Gestão:**
+Gestão:
 - Calhas organizadoras
 - Velcros/presilhas
 - Identificação
@@ -157,22 +157,22 @@ featured: false
 ## Decoração Produtiva
 
 ### Cores
-**Estimulam foco:**
+Estimulam foco:
 - Azul (concentração)
 - Verde (equilíbrio)
 - Cinza (neutro profissional)
 
-**Evitar:**
+Evitar:
 - Vermelho (agitação)
 - Amarelo vibrante (distração)
 
 ### Plantas
-**Benefícios:**
+Benefícios:
 - Purificam ar
 - Reduzem estresse
 - Umidificam
 
-**Espécies ideais:**
+Espécies ideais:
 - Espada-de-são-jorge
 - Zamioculca
 - Jiboia
@@ -218,12 +218,12 @@ featured: false
 - Administrativo final do dia
 
 ### Rituais
-**Início do dia:**
+Início do dia:
 - Trocar de roupa
 - Café na cozinha
 - Ir ao escritório
 
-**Fim do dia:**
+Fim do dia:
 - Organizar mesa
 - Listar tarefas amanhã
 - Sair do escritório

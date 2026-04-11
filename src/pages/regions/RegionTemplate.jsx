@@ -118,7 +118,7 @@ const RegionTemplate = ({
                 {regionName}
               </span>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-inter font-light mb-6 leading-tight normal-case tracking-tight">
+            <h1 className="wg-page-hero-title mb-6 normal-case">
               {resolvedTitle}
             </h1>
           </motion.div>

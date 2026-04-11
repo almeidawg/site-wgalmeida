@@ -125,7 +125,8 @@ if (!fs.existsSync(reservedPortsPath)) {
   process.exit(2);
 }
 
-const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+const manifestRaw = fs.readFileSync(manifestPath, 'utf8').replace(/^\uFEFF/, '');
+const manifest = JSON.parse(manifestRaw);
 const reservedMarkdown = fs.readFileSync(reservedPortsPath, 'utf8');
 const reservedRows = parseReservedPorts(reservedMarkdown);
 const reservedByPort = new Map(reservedRows.map((row) => [row.port, row]));

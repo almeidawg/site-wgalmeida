@@ -31,25 +31,25 @@ Integração de tecnologia para controlar sistemas da casa:
 ## Níveis de Automação
 
 ### Nível 1: Básico (R$ 2.000-8.000)
-**O que inclui:**
+O que inclui:
 - Interruptores inteligentes (Alexa/Google)
 - Lâmpadas smart
 - Tomadas inteligentes
 - Fechaduras digitais
 - Câmeras WiFi
 
-**Prós:**
+Prós:
 ✅ Baixo custo
 ✅ Fácil instalação
 ✅ Sem obras
 
-**Contras:**
+Contras:
 ❌ Limitado
 ❌ Depende de WiFi
 ❌ Cada dispositivo um app
 
 ### Nível 2: Intermediário (R$ 15.000-40.000)
-**O que inclui:**
+O que inclui:
 - Sistema centralizado
 - Iluminação integrada
 - Ar condicionado controlado
@@ -58,17 +58,17 @@ Integração de tecnologia para controlar sistemas da casa:
 - Alarme integrado
 - Controle por app único
 
-**Prós:**
+Prós:
 ✅ Integração real
 ✅ Cenas programadas
 ✅ Mais confiável
 
-**Contras:**
+Contras:
 ❌ Precisa cabeamento
 ❌ Instalação profissional
 
 ### Nível 3: Avançado (R$ 50.000-200.000+)
-**O que inclui:**
+O que inclui:
 - Tudo do intermediário+
 - Áudio multiroom
 - Home theater integrado
@@ -81,35 +81,35 @@ Integração de tecnologia para controlar sistemas da casa:
 ## Sistemas Por Ambiente
 
 ### Sala de Estar
-**Automação recomendada:**
+Automação recomendada:
 - Iluminação com cenas
 - Controle de persianas
 - Ar condicionado
 - TV e som integrados
 - Controle remoto universal
 
-**Custo:** R$ 5.000-15.000
+Custo: R$ 5.000-15.000
 
 ### Quarto
-**Automação:**
+Automação:
 - Iluminação dimmerizada
 - Persianas blackout motorizadas
 - Ar condicionado programado
 - Despertar gradual (luz + som)
 
-**Custo:** R$ 3.000-8.000
+Custo: R$ 3.000-8.000
 
 ### Cozinha
-**Automação:**
+Automação:
 - Iluminação de tarefa
 - Exaustor automatizado
 - Torneira sensor (opcional)
 - Integração eletrodomésticos
 
-**Custo:** R$ 2.000-6.000
+Custo: R$ 2.000-6.000
 
 ### Segurança
-**Essencial:**
+Essencial:
 - Câmeras externas (4-8)
 - Câmera portão
 - Alarme integrado
@@ -117,7 +117,7 @@ Integração de tecnologia para controlar sistemas da casa:
 - Sensores de presença
 - App com notificações
 
-**Custo:** R$ 8.000-25.000
+Custo: R$ 8.000-25.000
 
 ## Benefícios
 
@@ -147,35 +147,35 @@ Integração de tecnologia para controlar sistemas da casa:
 ## Marcas e Sistemas
 
 ### Nacional
-**Intelbras:**
+Intelbras:
 - Custo-benefício
 - Suporte nacional
 - Integração com segurança
 - R$ 8.000-30.000 (sistema completo)
 
-**i9 Automação:**
+i9 Automação:
 - Brasileiro
 - Customizável
 - R$ 15.000-60.000
 
 ### Internacional
-**Lutron:**
+Lutron:
 - Referência mundial
 - Iluminação premium
 - R$ 40.000-150.000+
 
-**Control4:**
+Control4:
 - Sistema completo
 - Alto padrão
 - R$ 50.000-200.000+
 
-**KNX:**
+KNX:
 - Protocolo europeu
 - Máxima integração
 - R$ 80.000-300.000+
 
 ### DIY (Faça Você Mesmo)
-**Google Home / Alexa:**
+Google Home / Alexa:
 - Mais acessível
 - Limitado
 - R$ 2.000-10.000
@@ -183,13 +183,13 @@ Integração de tecnologia para controlar sistemas da casa:
 ## Planejamento
 
 ### Pré-Obra
-**Essencial definir:**
+Essencial definir:
 - Nível de automação
 - Orçamento disponível
 - Prioridades
 - Sistema a usar
 
-**Infraestrutura necessária:**
+Infraestrutura necessária:
 - Cabeamento estruturado
 - Pontos elétricos extras
 - Quadro de automação
@@ -209,25 +209,25 @@ Integração de tecnologia para controlar sistemas da casa:
 
 ## Cenas Úteis
 
-**"Bom Dia":**
+"Bom Dia":
 - Abre persianas
 - Liga luzes gradualmente
 - Liga ar condicionado
 - Inicia café (se integrado)
 
-**"Sair de Casa":**
+"Sair de Casa":
 - Apaga todas luzes
 - Desliga ar condicionado
 - Ativa alarme
 - Fecha persianas
 
-**"Cinema":**
+"Cinema":
 - Apaga luzes
 - Fecha persianas
 - Liga projetor
 - Ajusta som
 
-**"Dormir":**
+"Dormir":
 - Apaga luzes
 - Fecha persianas
 - Ajusta temperatura
@@ -244,13 +244,13 @@ Integração de tecnologia para controlar sistemas da casa:
 
 ## Vale a Pena?
 
-**Sim, se:**
+Sim, se:
 ✅ Projeto acima de R$ 500k
 ✅ Valoriza conforto
 ✅ Quer segurança integrada
 ✅ Orçamento R$ 15k+ para automação
 
-**Talvez não, se:**
+Talvez não, se:
 ❌ Orçamento muito apertado
 ❌ Imóvel pequeno
 ❌ Não se adapta a tecnologia
@@ -258,7 +258,7 @@ Integração de tecnologia para controlar sistemas da casa:
 
 ## Futuro da Automação
 
-**Tendências 2026-2030:**
+Tendências 2026-2030:
 - IA que aprende rotinas
 - Integração saúde (monitoramento)
 - Energia solar + automação

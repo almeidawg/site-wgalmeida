@@ -680,8 +680,8 @@
     },
     "info": {
       "kicker": "Vamos conversar",
-      "title": "Entre em Contato",
-      "subtitle": "Preencha o formulário ou utilize um de nossos canais de atendimento. Nossa equipe está pronta para entender seu momento, orientar os próximos passos e construir uma jornada mais segura para o projeto.",
+      "title": "Canais de Atendimento",
+      "subtitle": "Escolha o canal mais prático para você. Se preferir, envie o formulário e nossa equipe retorna com os próximos passos do seu projeto.",
       "phoneLabel": "Telefone",
       "emailLabel": "E-mail",
       "addressLabel": "Endereço",
@@ -691,14 +691,17 @@
       "whatsappCta": "Falar no WhatsApp"
     },
     "form": {
+      "introKicker": "Formulário rápido",
+      "introTitle": "Conte o que você precisa",
+      "introSubtitle": "Retornamos com uma orientação inicial em até 1 dia útil.",
       "name": "Nome *",
       "email": "E-mail *",
       "phone": "Telefone",
       "phonePlaceholder": "(11) 99999-9999",
-      "subject": "Assunto",
+      "subject": "Assunto do projeto",
       "message": "Mensagem *",
       "sending": "Enviando...",
-      "submit": "Enviar Mensagem"
+      "submit": "Enviar contato"
     },
     "toast": {
       "errorTitle": "Erro ao enviar mensagem!",

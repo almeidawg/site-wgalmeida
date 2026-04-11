@@ -16,17 +16,17 @@ featured: false
 ---
 # Harman Kardon Vale a Pena? Audio Premium para Ambientes Sofisticados
 
-Desde 1953, a **Harman Kardon** combina engenharia sonora e design para quem busca qualidade de som sem abrir mao da estetica. Neste guia, voce entende posicionamento da marca, linhas principais e onde ela entrega melhor resultado.
+Desde 1953, a Harman Kardon combina engenharia sonora e design para quem busca qualidade de som sem abrir mao da estetica. Neste guia, voce entende posicionamento da marca, linhas principais e onde ela entrega melhor resultado.
 
 ## Uma História de Pioneirismo
 
 A Harman Kardon foi a primeira empresa a introduzir o receptor de alta fidelidade, democratizando o áudio de qualidade. Ao longo de 70 anos, a marca continuou inovando:
 
-- **1953**: Primeiro receiver hi-fi integrado
-- **1958**: Primeiro receiver estéreo FM
-- **1970s**: Pioneira em áudio automotivo premium
-- **2000s**: Revolução em design com a linha SoundSticks
-- **2010s**: Integração com assistentes de voz e streaming
+- 1953: Primeiro receiver hi-fi integrado
+- 1958: Primeiro receiver estéreo FM
+- 1970s: Pioneira em áudio automotivo premium
+- 2000s: Revolução em design com a linha SoundSticks
+- 2010s: Integração com assistentes de voz e streaming
 
 > *"O melhor som deve ser sentido, não apenas ouvido. E o melhor design deve complementar, não competir com seu ambiente."*
 
@@ -36,9 +36,9 @@ A Harman Kardon foi a primeira empresa a introduzir o receptor de alta fidelidad
 
 O design icônico da Harman Kardon frequentemente utiliza materiais transparentes e formas orgânicas:
 
-- **SoundSticks**: Caixas translúcidas que se tornaram item do acervo do MoMA
-- **Aura Studio**: Cúpula de luz ambiente integrada ao som
-- **Onyx Studio**: Linhas fluidas e tecido premium
+- SoundSticks: Caixas translúcidas que se tornaram item do acervo do MoMA
+- Aura Studio: Cúpula de luz ambiente integrada ao som
+- Onyx Studio: Linhas fluidas e tecido premium
 
 ### Integração Arquitetônica
 
@@ -58,13 +58,13 @@ Produtos HK são projetados para complementar ambientes:
 
 A linha residencial premium com streaming integrado:
 
-- **Citation Tower**: Torres de som imersivo
-- **Citation Bar**: Soundbar cinematográfica
-- **Citation Sub S**: Subwoofer sem fio
-- **Citation Surround**: Sistema multiroom completo
-- **Citation One/300/500**: Caixas inteligentes escaláveis
+- Citation Tower: Torres de som imersivo
+- Citation Bar: Soundbar cinematográfica
+- Citation Sub S: Subwoofer sem fio
+- Citation Surround: Sistema multiroom completo
+- Citation One/300/500: Caixas inteligentes escaláveis
 
-**Recursos:**
+Recursos:
 - Google Chromecast integrado
 - AirPlay 2
 - Spotify Connect
@@ -72,27 +72,27 @@ A linha residencial premium com streaming integrado:
 
 ### Portáteis Premium
 
-- **Go + Play 3**: O portátil mais potente da categoria
-- **Onyx Studio 8**: Design escultural, som 360°
-- **Luna**: Compacto para viagens
+- Go + Play 3: O portátil mais potente da categoria
+- Onyx Studio 8: Design escultural, som 360°
+- Luna: Compacto para viagens
 
 ### Linha Clássica
 
-- **SoundSticks 4**: O clássico reinventado via Bluetooth
-- **Aura Studio 4**: Iluminação LED personalizável
+- SoundSticks 4: O clássico reinventado via Bluetooth
+- Aura Studio 4: Iluminação LED personalizável
 
 ## Harman Kardon em Projetos de Alto Padrão
 
-Na **WG Almeida**, especificamos Harman Kardon para clientes que buscam:
+Na WG Almeida, especificamos Harman Kardon para clientes que buscam:
 
 ### Sistemas Multiroom
 
 A linha Citation permite criar zonas de áudio sincronizadas:
 
-1. **Planejamento de zonas**: Living, quartos, varanda gourmet
-2. **Posicionamento acústico**: Análise do ambiente para melhor dispersão
-3. **Infraestrutura oculta**: Pontos de energia e dados embutidos
-4. **Controle centralizado**: Integração com sistemas de automação
+1. Planejamento de zonas: Living, quartos, varanda gourmet
+2. Posicionamento acústico: Análise do ambiente para melhor dispersão
+3. Infraestrutura oculta: Pontos de energia e dados embutidos
+4. Controle centralizado: Integração com sistemas de automação
 
 ### Home Theater Integrado
 
@@ -114,10 +114,10 @@ Para quem quer música de qualidade sem aparelhos evidentes:
 
 ### Tecnologia de Áudio
 
-- **Drivers de neodímio**: Alta eficiência e resposta precisa
-- **DSP avançado**: Processamento digital para otimização
-- **Bass radiators**: Graves profundos sem distorção
-- **Tweeter dome**: Agudos cristalinos
+- Drivers de neodímio: Alta eficiência e resposta precisa
+- DSP avançado: Processamento digital para otimização
+- Bass radiators: Graves profundos sem distorção
+- Tweeter dome: Agudos cristalinos
 
 ### Conectividade
 
@@ -130,29 +130,29 @@ Para quem quer música de qualidade sem aparelhos evidentes:
 
 A Harman Kardon faz parte do grupo Harman International (subsidiária da Samsung), que inclui:
 
-- **JBL**: Áudio profissional e consumer
-- **AKG**: Headphones e microfones de estúdio
-- **Mark Levinson**: Áudio ultra-premium
-- **Revel**: Caixas acústicas high-end
+- JBL: Áudio profissional e consumer
+- AKG: Headphones e microfones de estúdio
+- Mark Levinson: Áudio ultra-premium
+- Revel: Caixas acústicas high-end
 
 ## Onde Comprar
 
-**Site Oficial Brasil:** [harmankardon.com.br](https://www.harmankardon.com.br)
+Site Oficial Brasil: [harmankardon.com.br](https://www.harmankardon.com.br)
 
-**Revendedores Autorizados:**
+Revendedores Autorizados:
 - Fast Shop
 - Amazon Brasil
 - Lojas especializadas em áudio
 
-**Garantia:** 1 ano com assistência técnica autorizada
+Garantia: 1 ano com assistência técnica autorizada
 
 ## Dicas de Instalação
 
 ### Posicionamento
 
-- **Caixas de estante**: Altura do ouvido quando sentado
-- **Soundbars**: Abaixo ou acima da TV, não obstruídas
-- **Subwoofers**: Cantos amplificam graves, meio da parede é mais neutro
+- Caixas de estante: Altura do ouvido quando sentado
+- Soundbars: Abaixo ou acima da TV, não obstruídas
+- Subwoofers: Cantos amplificam graves, meio da parede é mais neutro
 
 ### Acústica do Ambiente
 
@@ -168,5 +168,5 @@ Harman Kardon representa o equilíbrio perfeito entre performance sonora e desig
 
 *Planejando um sistema de som para seu projeto? O Grupo WG Almeida integra soluções de áudio e automação em projetos residenciais completos.*
 
-**Solicite uma proposta:** [wgalmeida.com.br/solicite-proposta](https://wgalmeida.com.br/solicite-proposta)
+Solicite uma proposta: [wgalmeida.com.br/solicite-proposta](https://wgalmeida.com.br/solicite-proposta)
 

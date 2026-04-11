@@ -21,7 +21,7 @@ Se voce esta em duvida entre Steel Frame e alvenaria, este comparativo mostra cu
 
 Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchidos com materiais isolantes.
 
-**Características:**
+Características:
 - Estrutura metálica leve
 - Montagem a seco
 - Placas de fechamento (drywall/OSB)
@@ -32,24 +32,24 @@ Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchid
 
 ### Custo
 
-**Alvenaria:**
+Alvenaria:
 - R$ 1.500 - R$ 2.500/m² (médio padrão)
 - Custos mais previsíveis
 - Materiais disponíveis localmente
 
-**Steel Frame:**
+Steel Frame:
 - R$ 1.800 - R$ 3.000/m² (médio padrão)
 - Custo inicial maior
 - Economia no longo prazo (energia)
 
 ### Prazo de Construção
 
-**Alvenaria:**
+Alvenaria:
 - 12-18 meses (casa 200m²)
 - Depende de clima
 - Tempo de cura do concreto
 
-**Steel Frame:**
+Steel Frame:
 - 4-8 meses (casa 200m²)
 - 40-60% mais rápido
 - Independente do clima
@@ -57,12 +57,12 @@ Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchid
 
 ### Sustentabilidade
 
-**Alvenaria:**
+Alvenaria:
 - Alto consumo de água
 - Geração de entulho (30% dos resíduos urbanos)
 - Extração de recursos naturais
 
-**Steel Frame:**
+Steel Frame:
 - Até 80% menos resíduos
 - Aço 100% reciclável
 - Menor consumo de água
@@ -70,35 +70,35 @@ Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchid
 
 ### Isolamento Térmico
 
-**Alvenaria:**
+Alvenaria:
 - Bom isolamento com parede dupla
 - Acumula calor
 - Precisa de ar condicionado
 
-**Steel Frame:**
+Steel Frame:
 - Excelente isolamento com lã de rocha
 - Reduz até 40% custos com climatização
 - Conforto térmico superior
 
 ### Isolamento Acústico
 
-**Alvenaria:**
+Alvenaria:
 - Melhor isolamento acústico natural
 - Parede de 15cm bloqueia bem ruídos
 
-**Steel Frame:**
+Steel Frame:
 - Bom com isolamento adequado
 - Precisa lã de rocha de boa densidade
 - Pode ser igual à alvenaria com projeto correto
 
 ### Resistência e Durabilidade
 
-**Alvenaria:**
+Alvenaria:
 - Comprovada há séculos
 - Alta resistência
 - Pode fissurar com movimentação
 
-**Steel Frame:**
+Steel Frame:
 - Estrutura calculada
 - Resistente a abalos sísmicos
 - Não fissura
@@ -106,12 +106,12 @@ Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchid
 
 ### Flexibilidade
 
-**Alvenaria:**
+Alvenaria:
 - Difícil fazer alterações posteriores
 - Quebradeira para mudanças
 - Menos flexível
 
-**Steel Frame:**
+Steel Frame:
 - Fácil fazer alterações
 - Paredes não estruturais
 - Ampliações mais simples
@@ -119,12 +119,12 @@ Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchid
 
 ### Manutenção
 
-**Alvenaria:**
+Alvenaria:
 - Infiltrações podem ser graves
 - Trincas comuns
 - Manutenção tradicional conhecida
 
-**Steel Frame:**
+Steel Frame:
 - Menor incidência de problemas
 - Garantia estrutural
 - Precisa profissionais especializados
@@ -133,7 +133,7 @@ Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchid
 
 ### Steel Frame
 
-✅ **Vantagens:**
+✅ Vantagens:
 - Obra mais rápida
 - Menos desperdício
 - Mais sustentável
@@ -142,7 +142,7 @@ Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchid
 - Precisão dimensional
 - Leveza (fundação mais simples)
 
-❌ **Desvantagens:**
+❌ Desvantagens:
 - Mão de obra especializada necessária
 - Menor oferta de profissionais
 - Custo inicial pode ser maior
@@ -151,7 +151,7 @@ Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchid
 
 ### Alvenaria
 
-✅ **Vantagens:**
+✅ Vantagens:
 - Mão de obra abundante
 - Materiais disponíveis
 - Conhecimento difundido
@@ -159,7 +159,7 @@ Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchid
 - Melhor isolamento acústico natural
 - Aceita improvisações
 
-❌ **Desvantagens:**
+❌ Desvantagens:
 - Obra demorada
 - Muito desperdício
 - Depende do clima
@@ -186,17 +186,17 @@ Sistema construtivo que usa perfis de aço galvanizado como estrutura, preenchid
 
 ## Mitos Sobre Steel Frame
 
-**Mito:** "É menos resistente"
-**Verdade:** Estrutura calculada aguenta mais que alvenaria
+Mito: "É menos resistente"
+Verdade: Estrutura calculada aguenta mais que alvenaria
 
-**Mito:** "Esquenta muito"
-**Verdade:** Com isolamento adequado, é mais fresco
+Mito: "Esquenta muito"
+Verdade: Com isolamento adequado, é mais fresco
 
-**Mito:** "Não dura muito"
-**Verdade:** Durabilidade comprovada de 50-100 anos
+Mito: "Não dura muito"
+Verdade: Durabilidade comprovada de 50-100 anos
 
-**Mito:** "Não aguenta peso"
-**Verdade:** Aguenta armários, TVs, prateleiras com fixação correta
+Mito: "Não aguenta peso"
+Verdade: Aguenta armários, TVs, prateleiras com fixação correta
 
 ## Híbrido: Melhor dos Dois Mundos?
 
@@ -209,15 +209,15 @@ Alguns projetos combinam:
 
 Não existe "melhor" absoluto. A escolha depende de:
 
-1. **Orçamento disponível**
-2. **Prazo desejado**
-3. **Prioridades** (conforto, custo, sustentabilidade)
-4. **Disponibilidade de mão de obra**
-5. **Características do terreno**
+1. Orçamento disponível
+2. Prazo desejado
+3. Prioridades (conforto, custo, sustentabilidade)
+4. Disponibilidade de mão de obra
+5. Características do terreno
 
 Em 2026, o Steel Frame está se consolidando como padrão para quem busca agilidade e sustentabilidade, mas a alvenaria continua forte pela tradição e conhecimento difundido.
 
-**O Grupo WG Almeida trabalha com ambos os sistemas. Consulte-nos para avaliar qual é melhor para seu projeto!**
+O Grupo WG Almeida trabalha com ambos os sistemas. Consulte-nos para avaliar qual é melhor para seu projeto!
 
 ## Leitura recomendada
 

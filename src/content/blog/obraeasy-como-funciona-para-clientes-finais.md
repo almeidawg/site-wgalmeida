@@ -14,7 +14,7 @@ tags: ["ObraEasy", "gestão de obras", "cliente", "reforma", "construção", "ac
 
 Contratar uma obra de reforma ou construcao costuma ser uma das experiencias mais estressantes da vida de um proprietario. Cronograma descumprido, comunicacao deficiente, surpresas no orcamento, materiais errados aprovados sem sua ciencia... O ObraEasy nasceu para mudar essa realidade completamente.
 
-**ObraEasy** e a plataforma de gestao de obras da WG Almeida que conecta o cliente final, a equipe tecnica e todos os profissionais envolvidos em um ecossistema digital transparente, organizado e profissional.
+ObraEasy e a plataforma de gestao de obras da WG Almeida que conecta o cliente final, a equipe tecnica e todos os profissionais envolvidos em um ecossistema digital transparente, organizado e profissional.
 
 ---
 
@@ -48,9 +48,9 @@ Tudo muda. Voce tem controle completo da sua obra na palma da mao, com:
 
 ### Passo 1: Onboarding e Acesso
 
-Apos contratar os servicos da WG Almeida, voce recebe um **convite personalizado** para criar seu espaco no ObraEasy. Em menos de 5 minutos voce tem acesso completo ao seu projeto.
+Apos contratar os servicos da WG Almeida, voce recebe um convite personalizado para criar seu espaco no ObraEasy. Em menos de 5 minutos voce tem acesso completo ao seu projeto.
 
-**O que voce encontra no primeiro acesso:**
+O que voce encontra no primeiro acesso:
 - Dados completos do projeto (metragem, escopo, tipo de obra)
 - Equipe responsavel com contatos diretos
 - Cronograma geral aprovado
@@ -58,27 +58,27 @@ Apos contratar os servicos da WG Almeida, voce recebe um **convite personalizado
 
 ### Passo 2: Dashboard de Acompanhamento
 
-O **painel principal** do cliente mostra em tempo real:
+O painel principal do cliente mostra em tempo real:
 
 | Modulo | O Que Voce Ve |
 |--------|---------------|
-| **Progresso Geral** | % de conclusao por etapa da obra |
-| **Proximas Etapas** | O que acontece nas proximas 2 semanas |
-| **Pendencias** | Aprovacoes e decisoes aguardando sua resposta |
-| **Financeiro** | Cronograma de pagamentos e status |
-| **Alertas** | Desvios de prazo ou necessidade de decisao |
+| Progresso Geral | % de conclusao por etapa da obra |
+| Proximas Etapas | O que acontece nas proximas 2 semanas |
+| Pendencias | Aprovacoes e decisoes aguardando sua resposta |
+| Financeiro | Cronograma de pagamentos e status |
+| Alertas | Desvios de prazo ou necessidade de decisao |
 
 ### Passo 3: Aprovacao de Materiais
 
 Um dos momentos mais criticos da obra e a escolha e aprovacao de materiais. No ObraEasy:
 
 1. Sua equipe registra as opcoes de cada material (marca, modelo, especificacao tecnica, preco)
-2. Voce recebe uma **notificacao** para revisar e aprovar
+2. Voce recebe uma notificacao para revisar e aprovar
 3. Pode comparar opcoes lado a lado com ficha tecnica completa
 4. Aprova ou solicita ajuste, tudo documentado com data, hora e justificativa
 5. O material aprovado e automaticamente incluido no orcamento e cronograma
 
-**Nunca mais um material errado instalado sem sua autorizacao.**
+Nunca mais um material errado instalado sem sua autorizacao.
 
 ### Passo 4: Cronograma Interativo
 
@@ -89,7 +89,7 @@ O cronograma da sua obra e exibido em formato visual (Gantt simplificado), mostr
 - Alertas automaticos quando uma etapa atrasa mais de 3 dias
 - Impacto do atraso nas etapas subsequentes
 
-**Voce sabe antes do arquiteto quando uma etapa esta em risco.**
+Voce sabe antes do arquiteto quando uma etapa esta em risco.
 
 ### Passo 5: Diario de Obra Digital
 
@@ -100,13 +100,13 @@ Cada dia util, sua equipe registra no ObraEasy:
 - Presenca de equipe e subcontratados
 - Ocorrencias e observacoes tecnicas
 
-Voce recebe um **resumo semanal automatico** por email com as principais evolucoes.
+Voce recebe um resumo semanal automatico por email com as principais evolucoes.
 
 ### Passo 6: Financeiro Transparente
 
 O modulo financeiro do ObraEasy mostra:
 
-- **Orcamento aprovado** x **Realizado** em tempo real
+- Orcamento aprovado x Realizado em tempo real
 - Cronograma de medicoes e pagamentos
 - Historico de todos os pagamentos realizados
 - Documentos fiscais (notas, recibos) organizados por medicao
@@ -118,13 +118,13 @@ O modulo financeiro do ObraEasy mostra:
 
 ### Guia de Estilos Personalizado
 
-Acesse na plataforma um **guia completo de estilos arquitetonicos**, do moderno escandinavo ao classico contemporaneo, com referencias visuais, paletas de cores, materiais indicados e exemplos de projetos reais da WG Almeida.
+Acesse na plataforma um guia completo de estilos arquitetonicos, do moderno escandinavo ao classico contemporaneo, com referencias visuais, paletas de cores, materiais indicados e exemplos de projetos reais da WG Almeida.
 
 Ideal para quem ainda esta decidindo o estilo da reforma ou quer explorar novas possibilidades.
 
 ### Moodboard Interativo
 
-Crie e salve **moodboards personalizados** diretamente na plataforma:
+Crie e salve moodboards personalizados diretamente na plataforma:
 
 - Monte composicoes visuais com referencias de ambientes
 - Compartilhe com seu arquiteto ou designer de interiores
@@ -133,7 +133,7 @@ Crie e salve **moodboards personalizados** diretamente na plataforma:
 
 ### Manual do Cliente (Pós-Obra)
 
-Ao final da obra, voce recebe no ObraEasy o seu **Manual do Proprietario** completo:
+Ao final da obra, voce recebe no ObraEasy o seu Manual do Proprietario completo:
 
 - Especificacoes tecnicas de todos os materiais instalados
 - Garantias por fabricante e por servico
@@ -178,11 +178,11 @@ Voce recebe o convite de acesso em ate 24 horas apos a assinatura do contrato, j
 
 ## Comece Sua Obra com o ObraEasy
 
-Se voce esta planejando uma reforma ou construcao em Sao Paulo, a WG Almeida oferece uma **consultoria inicial gratuita** para entender seu projeto e apresentar como o ObraEasy vai transformar sua experiencia.
+Se voce esta planejando uma reforma ou construcao em Sao Paulo, a WG Almeida oferece uma consultoria inicial gratuita para entender seu projeto e apresentar como o ObraEasy vai transformar sua experiencia.
 
-**Solicite sua proposta:** [wgalmeida.com.br/solicite-sua-proposta](https://wgalmeida.com.br/solicite-sua-proposta)
+Solicite sua proposta: [wgalmeida.com.br/solicite-sua-proposta](https://wgalmeida.com.br/solicite-sua-proposta)
 
-**Acesse o ObraEasy:** [obraeasy.wgalmeida.com.br](https://obraeasy.wgalmeida.com.br)
+Acesse o ObraEasy: [obraeasy.wgalmeida.com.br](https://obraeasy.wgalmeida.com.br)
 
 ---
 

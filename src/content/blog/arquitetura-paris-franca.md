@@ -14,17 +14,17 @@ featured: true
 
 ## A Capital Mundial da Arquitetura
 
-**Paris** e a **"Cidade Luz"** e um dos maiores referenciais urbanos dos ultimos 200 anos. E a cidade dos **boulevards haussmannianos**, da **Torre Eiffel**, da **Notre-Dame** e do **Louvre**, com obras que definiram epocas inteiras da arquitetura.
+Paris e a "Cidade Luz" e um dos maiores referenciais urbanos dos ultimos 200 anos. E a cidade dos boulevards haussmannianos, da Torre Eiffel, da Notre-Dame e do Louvre, com obras que definiram epocas inteiras da arquitetura.
 
-Paris é onde a **arquitetura conta a história da civilização ocidental** - do **gótico medieval** (Notre-Dame, século XII) ao **neoclássico** (Arc de Triomphe, século XIX), do **Art Nouveau** (metrô Guimard, 1900) ao **high-tech** contemporâneo (Centre Pompidou, 1977).
+Paris é onde a arquitetura conta a história da civilização ocidental - do gótico medieval (Notre-Dame, século XII) ao neoclássico (Arc de Triomphe, século XIX), do Art Nouveau (metrô Guimard, 1900) ao high-tech contemporâneo (Centre Pompidou, 1977).
 
-Mas acima de tudo, Paris é a cidade da **renovação haussmanniana** - quando o Barão Haussmann, entre 1853-1870, **demoliu Paris medieval** e criou a **Paris moderna** que conhecemos: boulevards largos, fachadas uniformes, telhados mansard, praças monumentais.
+Mas acima de tudo, Paris é a cidade da renovação haussmanniana - quando o Barão Haussmann, entre 1853-1870, demoliu Paris medieval e criou a Paris moderna que conhecemos: boulevards largos, fachadas uniformes, telhados mansard, praças monumentais.
 
 ## A Renovação de Haussmann (1853-1870)
 
 ### O Homem que Criou Paris Moderna
 
-**Georges-Eugène Haussmann** (1809-1891) - Barão Haussmann - foi nomeado Prefeito do Sena por **Napoleão III** com uma missão: **modernizar Paris**.
+Georges-Eugène Haussmann (1809-1891) - Barão Haussmann - foi nomeado Prefeito do Sena por Napoleão III com uma missão: modernizar Paris.
 
 ### Problemas da Paris Medieval
 - Ruas estreitas e sujas (medievais)
@@ -64,7 +64,7 @@ Mas acima de tudo, Paris é a cidade da **renovação haussmanniana** - quando o
 
 ### Características Definidoras
 
-A **arquitetura haussmanniana** é o estilo mais **copiado** do mundo - define o que imaginamos quando pensamos em "cidade europeia elegante".
+A arquitetura haussmanniana é o estilo mais copiado do mundo - define o que imaginamos quando pensamos em "cidade europeia elegante".
 
 ### Regras Rígidas
 
@@ -144,7 +144,7 @@ A **arquitetura haussmanniana** é o estilo mais **copiado** do mundo - define o
 
 ### As Grandes Avenidas
 
-Os **boulevards** haussmannianos são a **inovação urbana** mais copiada da história.
+Os boulevards haussmannianos são a inovação urbana mais copiada da história.
 
 ### Características
 
@@ -405,7 +405,7 @@ Os **boulevards** haussmannianos são a **inovação urbana** mais copiada da hi
 
 ### Polêmica e Ícone
 
-**Arquiteto:** I.M. Pei (sino-americano, Pritzker 1983)
+Arquiteto: I.M. Pei (sino-americano, Pritzker 1983)
 
 ### Concepção
 - Encomenda: Presidente François Mitterrand
@@ -637,26 +637,26 @@ No Grupo WG Almeida, trazemos a elegância parisiense com fachadas clássicas, m
 
 ## Curiosidades de Paris
 
-🗼 **Torre Eiffel** - 7 milhões de visitantes/ano
-🎨 **127 museus** na cidade
-🌉 **37 pontes** sobre o Sena
-🚇 **Metrô** mais denso do mundo (1,4km entre estações)
-📚 **Shakespeare & Co.** - livraria mítica (1919/1951)
-☕ **Café de Flore** (1887) - intelectuais, existencialistas
-🍷 **5.000+ restaurantes**
-🌳 **Jardim du Luxembourg** - 25 hectares, 106 estátuas
-🎭 **Moulin Rouge** (1889) - cabaré lendário
-👑 **20 arrondissements** (distritos) em espiral
+🗼 Torre Eiffel - 7 milhões de visitantes/ano
+🎨 127 museus na cidade
+🌉 37 pontes sobre o Sena
+🚇 Metrô mais denso do mundo (1,4km entre estações)
+📚 Shakespeare & Co. - livraria mítica (1919/1951)
+☕ Café de Flore (1887) - intelectuais, existencialistas
+🍷 5.000+ restaurantes
+🌳 Jardim du Luxembourg - 25 hectares, 106 estátuas
+🎭 Moulin Rouge (1889) - cabaré lendário
+👑 20 arrondissements (distritos) em espiral
 
 ---
 
 ## Paris: A Cidade Luz que Iluminou o Mundo
 
-Paris é a cidade que **definiu** o que significa ser uma **metrópole moderna e elegante**. Haussmann criou o **modelo urbano** copiado por Buenos Aires, Barcelona, Bucareste, Washington DC.
+Paris é a cidade que definiu o que significa ser uma metrópole moderna e elegante. Haussmann criou o modelo urbano copiado por Buenos Aires, Barcelona, Bucareste, Washington DC.
 
-É onde **arquitetura clássica** convive com **ousadia contemporânea** (Pirâmide do Louvre, Centre Pompidou) sem perder identidade.
+É onde arquitetura clássica convive com ousadia contemporânea (Pirâmide do Louvre, Centre Pompidou) sem perder identidade.
 
-É a **Cidade Luz** - que iluminou e continua iluminando o mundo com sua beleza, elegância e inovação arquitetônica.
+É a Cidade Luz - que iluminou e continua iluminando o mundo com sua beleza, elegância e inovação arquitetônica.
 
 ---
 
@@ -681,4 +681,4 @@ O Grupo WG Almeida está pronto para criar seu projeto com fachadas clássicas, 
 
 *Paris: onde cada rua é um cenário, cada fachada um quadro, e cada boulevard uma obra-prima urbana.*
 
-**© 2026 Grupo WG Almeida - Arquitetura Internacional**
+© 2026 Grupo WG Almeida - Arquitetura Internacional

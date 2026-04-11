@@ -690,6 +690,9 @@
       "whatsappCta": "Hablar por WhatsApp"
     },
     "form": {
+      "introKicker": "Formulario rapido",
+      "introTitle": "Cuente lo que necesita",
+      "introSubtitle": "Respondemos con una orientacion inicial en hasta 1 dia habil.",
       "name": "Nombre *",
       "email": "Correo *",
       "phone": "Telefono",

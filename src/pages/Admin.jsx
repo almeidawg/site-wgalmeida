@@ -333,6 +333,8 @@ const BLOG_EDITORIAL_SUMMARY = {
   needsCopyNormalization: editorialQueue.filter((record) => record.needsCopyNormalization).length,
 }
 
+const DEFAULT_GOOGLE_PLACES_API_KEY = import.meta.env.VITE_GOOGLE_PLACES_API_KEY?.trim() || ''
+
 // ─── Parser da resposta social do Claude ─────────────────────────────────────
 function parseSocialContent(raw) {
   const result = {
@@ -477,7 +479,7 @@ const DEFAULT_PLATFORM_SETTINGS = {
     locationId: 'accounts/114942475148092797613/locations/8643261541893325725',
     placeId: 'ChIJA6dposNQzpQRNOLWlYgmF7c',
     profileUrl: 'https://business.google.com/dashboard/l/08643261541893325725',
-    apiKey: 'AIzaSyA8xFxv3eKrnek30EVLg2ZSwrCcl8CL0hc',
+    apiKey: DEFAULT_GOOGLE_PLACES_API_KEY,
   },
   linkedin: {
     handle: 'wgalmeida',
@@ -2621,4 +2623,3 @@ Responda como consultor experiente:
 }
 
 export default Admin
-

@@ -14,11 +14,11 @@ featured: true
 
 ## A Cidade que Parou no Tempo
 
-**Bruges** (Brugge em holandes) e uma das cidades medievais mais preservadas da Europa. Seus canais, torres goticas, casas de tijolos com frontoes em degraus e ruas de paralelepipedos mantem uma leitura historica rara no continente.
+Bruges (Brugge em holandes) e uma das cidades medievais mais preservadas da Europa. Seus canais, torres goticas, casas de tijolos com frontoes em degraus e ruas de paralelepipedos mantem uma leitura historica rara no continente.
 
-É **Patrimônio Mundial da UNESCO** (2000), apelidada de **"Veneza do Norte"** pelos canais que cortam a cidade, e considerada a **cidade medieval mais bem preservada da Europa**.
+É Patrimônio Mundial da UNESCO (2000), apelidada de "Veneza do Norte" pelos canais que cortam a cidade, e considerada a cidade medieval mais bem preservada da Europa.
 
-**Paradoxo histórico:** Bruges foi salva pela própria **decadência** - quando perdeu importância comercial no século XVI, ficou pobre demais para se modernizar. Essa "desgraça" preservou sua arquitetura medieval intacta até o século XIX, quando redescobriram sua beleza.
+Paradoxo histórico: Bruges foi salva pela própria decadência - quando perdeu importância comercial no século XVI, ficou pobre demais para se modernizar. Essa "desgraça" preservou sua arquitetura medieval intacta até o século XIX, quando redescobriram sua beleza.
 
 ## História Arquitetônica de Bruges
 
@@ -81,7 +81,7 @@ featured: true
 
 ### A Torre do Sino (Belfort)
 
-O **Beffroi de Bruges** é o símbolo maior da cidade e uma das **47 torres de sino belgas/francesas** UNESCO.
+O Beffroi de Bruges é o símbolo maior da cidade e uma das 47 torres de sino belgas/francesas UNESCO.
 
 ### Construção
 - 1240: Base quadrada
@@ -113,7 +113,7 @@ O **Beffroi de Bruges** é o símbolo maior da cidade e uma das **47 torres de s
 
 ### Praça do Mercado
 
-A **Grote Markt** (Markt) é o centro de Bruges desde o ano 1000.
+A Grote Markt (Markt) é o centro de Bruges desde o ano 1000.
 
 ### Características
 - 1 hectare de paralelepípedos
@@ -123,19 +123,19 @@ A **Grote Markt** (Markt) é o centro de Bruges desde o ano 1000.
 
 ### Casas Históricas
 
-**1. Provinciaal Hof (Palácio Provincial) - 1887-1921**
+1. Provinciaal Hof (Palácio Provincial) - 1887-1921
 - Neo-gótico flamengo
 - Arquiteto: Louis Delacenserie
 - Fachada elaborada em pedra + tijolo
 - Torres, pináculos, ameias
 - Única construção "moderna" da praça (mas em estilo histórico!)
 
-**2. Craenenburg - Século XV**
+2. Craenenburg - Século XV
 - Casa onde Maximiliano da Áustria foi preso (1488)
 - Frontão de degraus típico
 - Café histórico no térreo
 
-**3. Bouchoute - Século XV**
+3. Bouchoute - Século XV
 - Guildhouse dos pescadores de arenque
 - Fachada de tijolos + step gable
 - Cor amarela característica
@@ -149,7 +149,7 @@ A **Grote Markt** (Markt) é o centro de Bruges desde o ano 1000.
 
 ### Jóia Gótica Flamenga
 
-O **Stadhuis** (Prefeitura) de Bruges é uma das **prefeituras mais antigas e belas** da Europa.
+O Stadhuis (Prefeitura) de Bruges é uma das prefeituras mais antigas e belas da Europa.
 
 ### Construção
 - 1376-1421
@@ -183,7 +183,7 @@ O **Stadhuis** (Prefeitura) de Bruges é uma das **prefeituras mais antigas e be
 
 ### Rede Medieval de Água
 
-Os **canais** (Reien) são a essência de Bruges.
+Os canais (Reien) são a essência de Bruges.
 
 ### História
 - Originalmente conectavam ao Mar do Norte (porto)
@@ -194,18 +194,18 @@ Os **canais** (Reien) são a essência de Bruges.
 
 ### Canais Principais
 
-**1. Groenerei (Canal Verde)**
+1. Groenerei (Canal Verde)
 - Mais fotografado!
 - Casas com frontões refletidas na água
 - Ponte Meebrug
 - Árvores nas margens
 
-**2. Dijver**
+2. Dijver
 - Ao lado do Palácio Gruuthuse
 - Casas medievais
 - Vista para Onze-Lieve-Vrouwekerk
 
-**3. Rozenhoedkaai (Cais do Rosário)**
+3. Rozenhoedkaai (Cais do Rosário)
 - Vista postal clássica: canal + Beffroi ao fundo
 - Cisnes brancos (símbolo de Bruges)
 - Barcos turísticos
@@ -342,7 +342,7 @@ Os **canais** (Reien) são a essência de Bruges.
 
 ### Beaterio das Béguines
 
-O **Begijnhof Princely Ten Wijngaerde** (1245) é um **oásis de tranquilidade**.
+O Begijnhof Princely Ten Wijngaerde (1245) é um oásis de tranquilidade.
 
 ### Béguines
 - Mulheres leigas religiosas (não freiras!)
@@ -570,24 +570,24 @@ No Grupo WG Almeida, trazemos o charme medieval de Bruges com tijolos aparentes 
 
 ## Curiosidades de Bruges
 
-🦢 **Cisnes** nos canais - símbolo de Bruges (desde 1488)
-🍫 **Museu do Chocolate** - história do chocolate belga
-🍺 **De Halve Maan** - última cervejaria em centro histórico
-📜 **800+ edifícios** protegidos como monumentos
-🎨 **Jan van Eyck** morou e pintou aqui
-🎬 **"In Bruges"** (2008) - filme rodado na cidade
-🎭 **Colin Farrell** disse: "É como um conto de fadas!"
-🏰 Centro histórico: **1 km²** inteiro medieval
-🚫 **Carros** proibidos em várias ruas
-⛪ **Michelangelo** - única escultura fora Itália (em vida)
+🦢 Cisnes nos canais - símbolo de Bruges (desde 1488)
+🍫 Museu do Chocolate - história do chocolate belga
+🍺 De Halve Maan - última cervejaria em centro histórico
+📜 800+ edifícios protegidos como monumentos
+🎨 Jan van Eyck morou e pintou aqui
+🎬 "In Bruges" (2008) - filme rodado na cidade
+🎭 Colin Farrell disse: "É como um conto de fadas!"
+🏰 Centro histórico: 1 km² inteiro medieval
+🚫 Carros proibidos em várias ruas
+⛪ Michelangelo - única escultura fora Itália (em vida)
 
 ---
 
 ## Bruges: A Cidade que o Tempo Esqueceu (e Salvou)
 
-Bruges é uma **lição paradoxal** - foi salva pela **decadência** e **pobreza** que a impediu de se modernizar. Hoje é um **tesouro mundial** preservado graças à "desgraça" histórica.
+Bruges é uma lição paradoxal - foi salva pela decadência e pobreza que a impediu de se modernizar. Hoje é um tesouro mundial preservado graças à "desgraça" histórica.
 
-É onde você **viaja 600 anos no passado** simplesmente caminhando pelas ruas, onde cada pedra tem uma história, e onde o conceito de **autenticidade** é levado ao extremo.
+É onde você viaja 600 anos no passado simplesmente caminhando pelas ruas, onde cada pedra tem uma história, e onde o conceito de autenticidade é levado ao extremo.
 
 ---
 
@@ -612,4 +612,4 @@ O Grupo WG Almeida está pronto para criar seu projeto com tijolos aparentes, fr
 
 *Bruges: onde cada rua é um postal, cada canal um espelho do passado, e cada casa uma obra de arte medieval.*
 
-**© 2026 Grupo WG Almeida - Arquitetura Internacional**
+© 2026 Grupo WG Almeida - Arquitetura Internacional

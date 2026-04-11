@@ -2,6 +2,9 @@ import { BLOG_UNSPLASH_MANIFEST } from './blogUnsplashManifest.generated.js';
 import { buildCloudinaryEditorialUrl } from '../utils/cloudinaryEditorial.js';
 import { withBasePath } from '../utils/assetPaths.js';
 
+const STORAGE_KEY = 'wg_blog_editorial_uploads_v1';
+const UNSPLASH_STORAGE_KEY = 'wg_blog_editorial_unsplash_v1';
+
 export const BLOG_IMAGE_MANIFEST = {
   slugs: {
     'arquitetura-amsterdam-holanda': {
@@ -161,6 +164,52 @@ const REMOTE_VARIANT_SIZES = {
   context: { width: 1280, height: 720 },
 };
 
+const readLocalStorageJson = (key) => {
+  if (typeof window === 'undefined') return null;
+  try {
+    return JSON.parse(window.localStorage.getItem(key) || '{}');
+  } catch {
+    return null;
+  }
+};
+
+const normalizeUnsplashSelectionValue = (value) => {
+  if (!value) return { id: '', alt: '' };
+  if (typeof value === 'string') return { id: value.trim(), alt: '' };
+  if (typeof value === 'object') {
+    return {
+      id: typeof value.id === 'string' ? value.id.trim() : '',
+      alt: typeof value.alt === 'string' ? value.alt : '',
+    };
+  }
+  return { id: '', alt: '' };
+};
+
+const buildUnsplashPhotoPageUrl = (photoId) =>
+  photoId ? `https://unsplash.com/photos/${encodeURIComponent(photoId)}` : '';
+
+const buildUnsplashDownloadUrl = (photoId, variant = 'card') => {
+  if (!photoId) return '';
+  const size = REMOTE_VARIANT_SIZES[variant] || REMOTE_VARIANT_SIZES.card;
+  return `https://unsplash.com/photos/${encodeURIComponent(photoId)}/download?force=true&w=${size.width}&h=${size.height}&fit=crop`;
+};
+
+const assignSlotEntryValue = (entry, slotName, value) => {
+  if (!value) return;
+  if (slotName === 'hero') {
+    entry.hero = value;
+    entry.seo = value;
+  }
+  if (slotName === 'card') {
+    entry.card = value;
+    entry.thumb = value;
+    entry.square = value;
+  }
+  if (!entry.default) {
+    entry.default = value;
+  }
+};
+
 const getUnsplashUtmSource = () => {
   if (typeof import.meta !== 'undefined' && import.meta.env?.VITE_UNSPLASH_UTM_SOURCE) {
     return import.meta.env.VITE_UNSPLASH_UTM_SOURCE;
@@ -178,7 +227,8 @@ const isRemoteAsset = (value) =>
 
 const isUnsplashImageUrl = (value) => {
   try {
-    return new URL(value).hostname.includes('images.unsplash.com');
+    const host = new URL(value).hostname.toLowerCase();
+    return host === 'images.unsplash.com' || host === 'plus.unsplash.com';
   } catch {
     return false;
   }
@@ -218,7 +268,8 @@ const buildRemoteAssetUrl = (src, variant = 'card') => {
 const buildRemoteAsset = (value, variant = 'card') => {
   if (!isRemoteAsset(value)) return null;
 
-  const source = (value.source || (isUnsplashImageUrl(value.src) ? 'unsplash' : 'remote')).toLowerCase();
+  const rawSource = (value.source || (isUnsplashImageUrl(value.src) ? 'unsplash' : 'remote')).toLowerCase();
+  const source = rawSource === 'unsplash-image' ? 'unsplash' : rawSource;
   const src = source === 'unsplash'
     ? buildRemoteAssetUrl(value.src, variant)
     : source === 'local'
@@ -257,6 +308,85 @@ const mergeManifestEntries = (primaryEntry, secondaryEntry) => {
     ...primaryEntry,
     __fallback: secondaryEntry,
   };
+};
+
+const buildLocalUploadManifestEntry = (slug) => {
+  const localUploads = readLocalStorageJson(STORAGE_KEY);
+  const slotMap = localUploads?.[slug];
+  if (!slotMap || typeof slotMap !== 'object') return null;
+
+  const entry = {};
+
+  for (const slotName of ['hero', 'card']) {
+    const slotValue = slotMap?.[slotName];
+    if (!slotValue || typeof slotValue !== 'object') continue;
+
+    const publicId = typeof slotValue.publicId === 'string' ? slotValue.publicId.trim() : '';
+    if (publicId) {
+      assignSlotEntryValue(entry, slotName, publicId);
+      continue;
+    }
+
+    const src = typeof slotValue.src === 'string'
+      ? slotValue.src.trim()
+      : typeof slotValue.secureUrl === 'string'
+        ? slotValue.secureUrl.trim()
+        : '';
+    if (!src) continue;
+
+    const sourceRaw = String(slotValue.source || (isUnsplashImageUrl(src) ? 'unsplash' : 'remote')).toLowerCase();
+    const source = sourceRaw === 'unsplash-image' ? 'unsplash' : sourceRaw;
+    const unsplashPhotoId = typeof slotValue.unsplashPhotoId === 'string' ? slotValue.unsplashPhotoId.trim() : '';
+    const fallbackPageUrl = source === 'unsplash' && unsplashPhotoId
+      ? buildUnsplashPhotoPageUrl(unsplashPhotoId)
+      : '';
+    const pageUrl = typeof slotValue.pageUrl === 'string' ? slotValue.pageUrl : fallbackPageUrl;
+    const alt = typeof slotValue.alt === 'string' ? slotValue.alt : '';
+
+    assignSlotEntryValue(entry, slotName, {
+      source,
+      src,
+      alt,
+      page: pageUrl,
+      sourceLabel: source === 'unsplash' ? 'Unsplash (sessão local)' : 'URL local (sessão)',
+    });
+  }
+
+  return Object.keys(entry).length ? entry : null;
+};
+
+const buildLocalUnsplashSelectionEntry = (slug) => {
+  const localSelections = readLocalStorageJson(UNSPLASH_STORAGE_KEY);
+  const slotMap = localSelections?.[slug];
+  if (!slotMap || typeof slotMap !== 'object') return null;
+
+  const hero = normalizeUnsplashSelectionValue(slotMap.hero);
+  const card = normalizeUnsplashSelectionValue(slotMap.card);
+  const entry = {};
+
+  if (hero.id) {
+    const heroValue = {
+      source: 'unsplash',
+      src: buildUnsplashDownloadUrl(hero.id, 'hero'),
+      alt: hero.alt || '',
+      page: buildUnsplashPhotoPageUrl(hero.id),
+      sourceLabel: 'Unsplash (sessão local)',
+    };
+    assignSlotEntryValue(entry, 'hero', heroValue);
+  }
+
+  if (card.id) {
+    const cardValue = {
+      source: 'unsplash',
+      src: buildUnsplashDownloadUrl(card.id, 'card'),
+      alt: card.alt || '',
+      page: buildUnsplashPhotoPageUrl(card.id),
+      sourceLabel: 'Unsplash (sessão local)',
+    };
+    assignSlotEntryValue(entry, 'card', cardValue);
+  }
+
+  return Object.keys(entry).length ? entry : null;
 };
 
 const resolveBlogManifestValue = (entry, variant = 'card') => {
@@ -310,8 +440,11 @@ export const getBlogManifestEntry = (slug) => {
 
   const remoteEntry = BLOG_UNSPLASH_MANIFEST.slugs[slug] || null;
   const cloudinaryEntry = BLOG_IMAGE_MANIFEST.slugs[slug] || null;
-  // Official Cloudinary assets must override temporary editorial hotlinks.
-  return mergeManifestEntries(cloudinaryEntry, remoteEntry);
+  const localUnsplashEntry = buildLocalUnsplashSelectionEntry(slug);
+  const localUploadEntry = buildLocalUploadManifestEntry(slug);
+  const persistedEntry = mergeManifestEntries(cloudinaryEntry, remoteEntry);
+  const withLocalUnsplash = mergeManifestEntries(localUnsplashEntry, persistedEntry);
+  return mergeManifestEntries(localUploadEntry, withLocalUnsplash);
 };
 
 export const getBlogImageAsset = ({ slug, category, variant = 'card', allowCategoryFallback = true } = {}) => {

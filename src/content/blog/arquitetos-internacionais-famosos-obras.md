@@ -30,8 +30,8 @@ Este artigo apresenta os arquitetos internacionais mais influentes da história,
 ## Le Corbusier (1887-1965)
 ### O Pai do Modernismo
 
-**Nome completo:** Charles-Édouard Jeanneret-Gris
-**Nacionalidade:** Suíço-francês
+Nome completo: Charles-Édouard Jeanneret-Gris
+Nacionalidade: Suíço-francês
 
 ### Biografia
 
@@ -52,24 +52,24 @@ Le Corbusier revolucionou a arquitetura com seus princípios:
 
 ### Obras Icônicas
 
-**Villa Savoye (1931) - França**
+Villa Savoye (1931) - França
 - Manifesto do modernismo
 - Todos os 5 pontos aplicados
 - Patrimônio mundial UNESCO
 
-**Unité d'Habitation (1952) - Marselha**
+Unité d'Habitation (1952) - Marselha
 - Edifício habitacional autossuficiente
 - 337 apartamentos
 - Comércio, escola e terraço
 - Conceito de "vila vertical"
 
-**Capela de Ronchamp (1954)**
+Capela de Ronchamp (1954)
 - Obra prima escultórica
 - Concreto moldado livremente
 - Luz dramática
 - Considerada sua melhor obra
 
-**Chandigarh - Índia**
+Chandigarh - Índia
 - Cidade planejada completa
 - Capital de Punjab
 - Complexo governamental monumental
@@ -85,11 +85,11 @@ Influenciou diretamente Oscar Niemeyer e a arquitetura moderna brasileira.
 ## Frank Lloyd Wright (1867-1959)
 ### O Mestre da Arquitetura Orgânica
 
-**Nacionalidade:** Estadunidense
+Nacionalidade: Estadunidense
 
 ### Filosofia
 
-Arquitetura deve estar em **harmonia com a natureza** e o ser humano.
+Arquitetura deve estar em harmonia com a natureza e o ser humano.
 
 ### Princípios
 - Integração com o ambiente
@@ -100,32 +100,32 @@ Arquitetura deve estar em **harmonia com a natureza** e o ser humano.
 
 ### Obras Icônicas
 
-**Fallingwater / Casa da Cascata (1937)**
+Fallingwater / Casa da Cascata (1937)
 - Residência sobre cachoeira
 - Integração perfeita com natureza
 - Considerada melhor obra residencial de todos os tempos
 - Patrimônio mundial UNESCO
 
-**Museu Guggenheim Nova York (1959)**
+Museu Guggenheim Nova York (1959)
 - Espiral contínua
 - Revolucionou museus
 - Interior como experiência
 - Ícone de Manhattan
 
-**Robie House (1910)**
+Robie House (1910)
 - Exemplo de Prairie House
 - Horizontalidade extrema
 - Planta aberta
 - Influenciou arquitetura americana
 
-**Taliesin West (1937)**
+Taliesin West (1937)
 - Escola de arquitetura no deserto
 - Laboratório experimental
 - Construído por seus alunos
 
 ### Legado
 
-Projetou mais de **1.000 estruturas**, 532 executadas.
+Projetou mais de 1.000 estruturas, 532 executadas.
 
 *"A arquitetura é a mãe das artes."*
 
@@ -134,11 +134,11 @@ Projetou mais de **1.000 estruturas**, 532 executadas.
 ## Ludwig Mies van der Rohe (1886-1969)
 ### Menos é Mais
 
-**Nacionalidade:** Alemão-americano
+Nacionalidade: Alemão-americano
 
 ### Filosofia
 
-**"Less is more"** (Menos é mais)
+"Less is more" (Menos é mais)
 
 - Minimalismo estrutural
 - Clareza construtiva
@@ -148,25 +148,25 @@ Projetou mais de **1.000 estruturas**, 532 executadas.
 
 ### Obras Icônicas
 
-**Pavilhão de Barcelona (1929)**
+Pavilhão de Barcelona (1929)
 - Obra-prima do minimalismo
 - Estrutura de aço e vidro
 - Mármore e travertino
 - Reconstruído em 1986
 
-**Seagram Building (1958) - Nova York**
+Seagram Building (1958) - Nova York
 - Arranha-céu de bronze e vidro
 - 157 metros de altura
 - Definiu estética dos edifícios corporativos
 - Influenciou torres em todo mundo
 
-**Farnsworth House (1951)**
+Farnsworth House (1951)
 - Casa de vidro no bosque
 - Transparência radical
 - Apenas 140m²
 - Ícone do minimalismo
 
-**Crown Hall (1956) - Chicago**
+Crown Hall (1956) - Chicago
 - Edifício de arquitetura do IIT
 - Vão livre de 36x67m
 - Estrutura exposta
@@ -181,12 +181,12 @@ Diretor da Bauhaus e criador do International Style.
 ## Zaha Hadid (1950-2016)
 ### A Rainha das Curvas
 
-**Nacionalidade:** Iraquiana-britânica
-**Primeira mulher a ganhar o Pritzker (2004)**
+Nacionalidade: Iraquiana-britânica
+Primeira mulher a ganhar o Pritzker (2004)
 
 ### Filosofia
 
-Arquitetura **paramétrica e fluida**, rompendo com geometria tradicional.
+Arquitetura paramétrica e fluida, rompendo com geometria tradicional.
 
 ### Características
 - Formas orgânicas
@@ -197,30 +197,30 @@ Arquitetura **paramétrica e fluida**, rompendo com geometria tradicional.
 
 ### Obras Icônicas
 
-**Heydar Aliyev Center (2012) - Azerbaijão**
+Heydar Aliyev Center (2012) - Azerbaijão
 - Curvas contínuas impossíveis
 - Paredes que viram teto
 - Sem ângulos retos
 - 57.500m² fluidos
 
-**MAXXI (2010) - Roma**
+MAXXI (2010) - Roma
 - Museu de arte contemporânea
 - Volumes entrelaçados
 - Concreto fluido
 - Primeiro prêmio Stirling
 
-**Galaxy SOHO (2012) - Beijing**
+Galaxy SOHO (2012) - Beijing
 - 330.000m² comerciais
 - Formas planetárias interconectadas
 - Referência em arquitetura paramétrica
 
-**Centro Aquático Londres 2012**
+Centro Aquático Londres 2012
 - Olimpíadas de Londres
 - Teto ondulado de 160m
 - 17.500 lugares
 - Inspirado em água
 
-**Ópera de Guangzhou (2010)**
+Ópera de Guangzhou (2010)
 - Pedras de rio como conceito
 - 1.800 lugares
 - Acústica perfeita
@@ -237,12 +237,12 @@ Primeira e única mulher a ganhar Pritzker sozinha. Revolucionou o uso de tecnol
 ## Norman Foster (1935-)
 ### O High-Tech Humanista
 
-**Nacionalidade:** Britânico
-**Pritzker 1999**
+Nacionalidade: Britânico
+Pritzker 1999
 
 ### Filosofia
 
-Arquitetura **high-tech** com preocupação ambiental e humana.
+Arquitetura high-tech com preocupação ambiental e humana.
 
 ### Características
 - Tecnologia exposta
@@ -253,31 +253,31 @@ Arquitetura **high-tech** com preocupação ambiental e humana.
 
 ### Obras Icônicas
 
-**30 St Mary Axe / The Gherkin (2003) - Londres**
+30 St Mary Axe / The Gherkin (2003) - Londres
 - "Pepino" de 180m
 - 40% mais eficiente energeticamente
 - Ventilação natural
 - Ícone de Londres
 
-**Apple Park (2017) - Califórnia**
+Apple Park (2017) - Califórnia
 - Campus circular da Apple
 - 260.000m² de escritórios
 - 100% energia renovável
 - Maior painel de vidro curvo do mundo
 
-**Aeroporto de Hong Kong (1998)**
+Aeroporto de Hong Kong (1998)
 - Maior terminal do mundo na época
 - 80 milhões de passageiros/ano
 - Luz natural abundante
 - Eficiência operacional
 
-**Millau Viaduct (2004) - França**
+Millau Viaduct (2004) - França
 - Ponte mais alta do mundo (343m)
 - 2.460m de extensão
 - Pilares mais altos que Torre Eiffel
 - Obra de engenharia e arte
 
-**Reichstag / Parlamento Alemão (1999)**
+Reichstag / Parlamento Alemão (1999)
 - Reforma do edifício histórico
 - Cúpula de vidro icônica
 - Transparência democrática
@@ -292,12 +292,12 @@ Mais de 30 prêmios internacionais. Referência em sustentabilidade e high-tech.
 ## Renzo Piano (1937-)
 ### O Artesão High-Tech
 
-**Nacionalidade:** Italiano
-**Pritzker 1998**
+Nacionalidade: Italiano
+Pritzker 1998
 
 ### Filosofia
 
-Arquitetura **leve, transparente e sensível ao contexto**.
+Arquitetura leve, transparente e sensível ao contexto.
 
 ### Características
 - Detalhamento preciso
@@ -308,25 +308,25 @@ Arquitetura **leve, transparente e sensível ao contexto**.
 
 ### Obras Icônicas
 
-**Centro Pompidou (1977) - Paris**
+Centro Pompidou (1977) - Paris
 - Revolucionou museus
 - Estrutura e instalações expostas
 - Cores codificadas (azul=ar, verde=água, amarelo=elétrica)
 - Inicialmente controverso, hoje ícone
 
-**The Shard (2012) - Londres**
+The Shard (2012) - Londres
 - 310m de altura
 - Edifício mais alto da Europa Ocidental
 - Pirâmide de vidro
 - Uso misto (escritórios, hotel, residências)
 
-**Aeroporto Kansai (1994) - Japão**
+Aeroporto Kansai (1994) - Japão
 - Ilha artificial
 - Terminal de 1,7km
 - Estrutura ondulada
 - Resistente a terremotos
 
-**Whitney Museum (2015) - Nova York**
+Whitney Museum (2015) - Nova York
 - Museu de arte americana
 - Terraços externos em cada andar
 - Integração com High Line
@@ -343,12 +343,12 @@ Mestre do detalhamento e da engenharia precisa.
 ## Rem Koolhaas (1944-)
 ### O Teórico Provocador
 
-**Nacionalidade:** Holandês
-**Pritzker 2000**
+Nacionalidade: Holandês
+Pritzker 2000
 
 ### Filosofia
 
-Arquitetura **conceitual** que questiona convenções.
+Arquitetura conceitual que questiona convenções.
 
 ### Características
 - Análise teórica profunda
@@ -359,19 +359,19 @@ Arquitetura **conceitual** que questiona convenções.
 
 ### Obras Icônicas
 
-**CCTV Tower (2012) - Beijing**
+CCTV Tower (2012) - Beijing
 - Arranha-céu em loop
 - 234m de altura
 - Desafia gravidade visualmente
 - Ícone de Pequim
 
-**Casa da Música (2005) - Porto**
+Casa da Música (2005) - Porto
 - Poliedro irregular
 - Acústica perfeita
 - Espaço público integrado
 - Marco cultural português
 
-**Seattle Public Library (2004)**
+Seattle Public Library (2004)
 - Biblioteca como rede
 - Formas angulares
 - Transparência total
@@ -386,12 +386,12 @@ Fundador do OMA (Office for Metropolitan Architecture). Influente pensador urban
 ## Frank Gehry (1929-)
 ### O Desconstruti vista
 
-**Nacionalidade:** Canadense-americano
-**Pritzker 1989**
+Nacionalidade: Canadense-americano
+Pritzker 1989
 
 ### Filosofia
 
-Arquitetura **escultórica e desconstruída**.
+Arquitetura escultórica e desconstruída.
 
 ### Características
 - Formas orgânicas complexas
@@ -402,18 +402,18 @@ Arquitetura **escultórica e desconstruída**.
 
 ### Obras Icônicas
 
-**Museu Guggenheim Bilbao (1997)**
+Museu Guggenheim Bilbao (1997)
 - Titânio ondulado
 - 24.000m² de curvas
 - Revitalizou cidade inteira ("Efeito Bilbao")
 - Obra-prima do século XX
 
-**Walt Disney Concert Hall (2003) - Los Angeles**
+Walt Disney Concert Hall (2003) - Los Angeles
 - Aço inoxidável curvado
 - Acústica excepcional
 - Referência em salas de concerto
 
-**Fondation Louis Vuitton (2014) - Paris**
+Fondation Louis Vuitton (2014) - Paris
 - Velas de vidro
 - 12 "icebergs"
 - Estrutura de 19.000 painéis únicos
@@ -428,13 +428,13 @@ Revolucionou uso de computação no design arquitetônico.
 ## Tadao Ando (1941-)
 ### O Poeta do Concreto
 
-**Nacionalidade:** Japonês
-**Pritzker 1995**
-**Autodidata** (ex-boxeador)
+Nacionalidade: Japonês
+Pritzker 1995
+Autodidata (ex-boxeador)
 
 ### Filosofia
 
-Arquitetura **minimalista** com luz, sombra e natureza.
+Arquitetura minimalista com luz, sombra e natureza.
 
 ### Características
 - Concreto aparente perfeito
@@ -445,19 +445,19 @@ Arquitetura **minimalista** com luz, sombra e natureza.
 
 ### Obras Icônicas
 
-**Igreja da Luz (1989) - Osaka**
+Igreja da Luz (1989) - Osaka
 - Cruz de luz na parede
 - Concreto e vazio
 - Experiência espiritual
 - 113m² de pura emoção
 
-**Chichu Art Museum (2004)**
+Chichu Art Museum (2004)
 - Museu subterrâneo
 - Luz natural apenas
 - Integrado à ilha
 - Obras de Monet, Turrell, De Maria
 
-**Punta della Dogana (2009) - Veneza**
+Punta della Dogana (2009) - Veneza
 - Retrofit de alfândega histórica
 - Concreto dentro de tijolo antigo
 - Museu de arte contemporânea
@@ -473,11 +473,11 @@ Prova que arquitetura pode ser profundamente emocional com recursos mínimos.
 ## Santiago Calatrava (1951-)
 ### O Engenheiro-Artista
 
-**Nacionalidade:** Espanhol
+Nacionalidade: Espanhol
 
 ### Filosofia
 
-Arquitetura **estrutural-escultórica** inspirada na natureza.
+Arquitetura estrutural-escultórica inspirada na natureza.
 
 ### Características
 - Estruturas orgânicas
@@ -488,19 +488,19 @@ Arquitetura **estrutural-escultórica** inspirada na natureza.
 
 ### Obras Icônicas
 
-**Cidade das Artes e Ciências (1998-2005) - Valência**
+Cidade das Artes e Ciências (1998-2005) - Valência
 - Complexo cultural completo
 - Estruturas biomórficas
 - Referência mundial
 - Revitalizou Valência
 
-**Oculus / World Trade Center Transportation Hub (2016) - NYC**
+Oculus / World Trade Center Transportation Hub (2016) - NYC
 - Estação de trem como catedral
 - Asas de pássaro em aço
 - Homenagem ao 11 de setembro
 - 12 bilhões de dólares
 
-**Turning Torso (2005) - Suécia**
+Turning Torso (2005) - Suécia
 - Torre residencial de 190m
 - Gira 90° da base ao topo
 - Inspirada em escultura
@@ -515,12 +515,12 @@ Arquitetura **estrutural-escultórica** inspirada na natureza.
 ## Jean Nouvel (1945-)
 ### O Contextualista
 
-**Nacionalidade:** Francês
-**Pritzker 2008**
+Nacionalidade: Francês
+Pritzker 2008
 
 ### Filosofia
 
-Cada projeto é **único**, respondendo ao contexto.
+Cada projeto é único, respondendo ao contexto.
 
 ### Características
 - Contextualismo extremo
@@ -531,18 +531,18 @@ Cada projeto é **único**, respondendo ao contexto.
 
 ### Obras Icônicas
 
-**Instituto do Mundo Árabe (1987) - Paris**
+Instituto do Mundo Árabe (1987) - Paris
 - Diafragmas mecânicos como muxarabis
 - Luz controlada automaticamente
 - Fusão oriente-ocidente
 
-**Louvre Abu Dhabi (2017)**
+Louvre Abu Dhabi (2017)
 - Cúpula de 180m de rendilhado
 - "Chuva de luz"
 - 7.850 estrelas únicas
 - Museu universal
 
-**Torre Agbar (2005) - Barcelona**
+Torre Agbar (2005) - Barcelona
 - 145m de altura
 - 59.619 janelas coloridas
 - Iluminação LED noturna
@@ -576,15 +576,15 @@ Mestre da luz e da resposta contextual.
 
 Esses mestres influenciaram profundamente a arquitetura brasileira:
 
-**Le Corbusier → Oscar Niemeyer**
+Le Corbusier → Oscar Niemeyer
 - Modernismo tropical
 - Concreto moldado livremente
 
-**Mies van der Rohe → Paulo Mendes da Rocha**
+Mies van der Rohe → Paulo Mendes da Rocha
 - Brutalismo elegante
 - Grandes vãos
 
-**Frank Lloyd Wright → Arquitetura orgânica brasileira**
+Frank Lloyd Wright → Arquitetura orgânica brasileira
 - Integração com natureza
 - Materiais locais
 
@@ -615,7 +615,7 @@ Vencedores mencionados neste artigo:
 
 ## Conclusão
 
-Esses arquitetos não apenas projetaram edifícios, mas **transformaram nossa relação com o espaço construído**.
+Esses arquitetos não apenas projetaram edifícios, mas transformaram nossa relação com o espaço construído.
 
 Suas obras continuam inspirando novas gerações de arquitetos em todo o mundo, incluindo nossa equipe na WG Almeida.
 
@@ -634,7 +634,7 @@ Quer um projeto que incorpore a ousadia e inovação desses mestres?
 
 *Grupo WG Almeida, Inspirados pelos mestres, focados no seu projeto*
 
-**Tags**: arquitetos internacionais, arquitetura mundial, Le Corbusier, Zaha Hadid, Frank Gehry, Norman Foster, grandes arquitetos
+Tags: arquitetos internacionais, arquitetura mundial, Le Corbusier, Zaha Hadid, Frank Gehry, Norman Foster, grandes arquitetos
 
 ## Leitura recomendada
 

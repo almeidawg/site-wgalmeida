@@ -14,7 +14,7 @@ tags: ["tabela precos reforma 2026", "quanto custa reforma m2", "preco reforma a
 
 O mercado de reformas no Brasil sofre de um problema crônico: a ausência de um índice de referência confiável, transparente e atualizado. Clientes não sabem se o orçamento que receberam é justo. Arquitetos precisam justificar cada linha para o cliente. Engenheiros não têm base comparativa para precificar com precisão. Isso gera insegurança em todos os lados da negociação.
 
-O **ICCRI — Índice de Custo da Construção e Reforma Inteligente** foi desenvolvido pelo Grupo WG Almeida a partir de 15 anos de dados reais de obra em São Paulo. É a nossa contribuição para normalizar a precificação do setor.
+O ICCRI — Índice de Custo da Construção e Reforma Inteligente foi desenvolvido pelo Grupo WG Almeida a partir de 15 anos de dados reais de obra em São Paulo. É a nossa contribuição para normalizar a precificação do setor.
 
 ---
 
@@ -22,11 +22,11 @@ O **ICCRI — Índice de Custo da Construção e Reforma Inteligente** foi desen
 
 O ICCRI é uma tabela de referência técnica para precificação de serviços de reforma e construção, com base em:
 
-- **Custo real de execução** — dados de projetos entregues entre 2020 e 2026
-- **Fator de localização** — ajuste por bairro em São Paulo
-- **Fator de complexidade** — padrão econômico, médio, alto e luxo
-- **Fator de mão de obra** — diferenciação entre equipes genéricas e especialistas certificados
-- **Índice de atualização** — revisado trimestralmente com INCC e CUB-SP
+- Custo real de execução — dados de projetos entregues entre 2020 e 2026
+- Fator de localização — ajuste por bairro em São Paulo
+- Fator de complexidade — padrão econômico, médio, alto e luxo
+- Fator de mão de obra — diferenciação entre equipes genéricas e especialistas certificados
+- Índice de atualização — revisado trimestralmente com INCC e CUB-SP
 
 ---
 
@@ -40,7 +40,7 @@ O ICCRI é uma tabela de referência técnica para precificação de serviços d
 | Prazo médio (60m²) | 90–120 dias | 75–100 dias | 60–90 dias | 45–75 dias |
 | Garantia típica | 1 ano | 2 anos | 3–5 anos | 5+ anos |
 
-**O que inclui:** demolição, alvenaria, regularização, revestimentos, pintura, instalações elétricas e hidráulicas básicas.
+O que inclui: demolição, alvenaria, regularização, revestimentos, pintura, instalações elétricas e hidráulicas básicas.
 
 ---
 
@@ -95,9 +95,9 @@ O ICCRI é uma tabela de referência técnica para precificação de serviços d
 
 Este é o diferencial mais negligenciado do mercado. A diferença entre uma equipe genérica e um especialista certificado em materiais nobres pode representar:
 
-- **Desperdício de material:** 8–22% maior em equipes sem especialização
-- **Retrabalho:** 3x mais frequente em obras sem BIM ou compatibilização prévia
-- **Prazo:** atraso médio de 40% em obras com gestão informal vs. gestão profissional
+- Desperdício de material: 8–22% maior em equipes sem especialização
+- Retrabalho: 3x mais frequente em obras sem BIM ou compatibilização prévia
+- Prazo: atraso médio de 40% em obras com gestão informal vs. gestão profissional
 
 | Tipo de Equipe | Custo/hora | Produtividade | Retrabalho estimado |
 |----------------|------------|---------------|---------------------|
@@ -106,7 +106,7 @@ Este é o diferencial mais negligenciado do mercado. A diferença entre uma equi
 | Equipe especializada certificada | R$ 90–160 | Alta | <3% |
 | Empresa Turn Key integrada | R$ 120–200 | Muito alta | <1% |
 
-> **O barato sai caro.** Uma obra de R$ 150.000 com equipe barata que gera 20% de retrabalho custa, na prática, R$ 180.000 — além do tempo perdido e do stress acumulado.
+> O barato sai caro. Uma obra de R$ 150.000 com equipe barata que gera 20% de retrabalho custa, na prática, R$ 180.000 — além do tempo perdido e do stress acumulado.
 
 ---
 
@@ -114,28 +114,28 @@ Este é o diferencial mais negligenciado do mercado. A diferença entre uma equi
 
 ### Apartamento 60m² — Reforma Completa
 
-**Padrão Econômico**
+Padrão Econômico
 - Civil: R$ 1.200/m² × 60 = R$ 72.000
 - Marcenaria básica: R$ 700/m² × 15m = R$ 10.500
 - Elétrica + hidráulica: R$ 700/m² × 60 = R$ 42.000
-- **Total estimado: R$ 115.000–140.000**
+- Total estimado: R$ 115.000–140.000
 
-**Alto Padrão (ex: Itaim Bibi)**
+Alto Padrão (ex: Itaim Bibi)
 - Civil: R$ 4.000/m² × 60 × fator localização 1,15 = R$ 276.000
 - Marcenaria: R$ 4.200/m² × 20m = R$ 84.000
 - Elétrica + hidráulica + automação: R$ 2.000/m² × 60 = R$ 120.000
-- **Total estimado: R$ 450.000–580.000**
+- Total estimado: R$ 450.000–580.000
 
 ---
 
 ## Como Usar Esta Tabela Corretamente
 
-Esta tabela é uma **referência de mercado**, não um orçamento. Para obter um orçamento real:
+Esta tabela é uma referência de mercado, não um orçamento. Para obter um orçamento real:
 
-1. **Levantamento técnico em visita** — sem visita ao imóvel, qualquer número é chute
-2. **Memorial descritivo** — especificação exata de materiais e acabamentos
-3. **Compatibilização de projetos** — confrontar projeto arquitetônico, estrutural, elétrico e hidráulico antes de iniciar
-4. **Cronograma físico-financeiro** — liberação de verbas por etapas, com marcos de entrega definidos
+1. Levantamento técnico em visita — sem visita ao imóvel, qualquer número é chute
+2. Memorial descritivo — especificação exata de materiais e acabamentos
+3. Compatibilização de projetos — confrontar projeto arquitetônico, estrutural, elétrico e hidráulico antes de iniciar
+4. Cronograma físico-financeiro — liberação de verbas por etapas, com marcos de entrega definidos
 
 O [ObraEasy](/obraeasy) foi desenvolvido exatamente para tornar esse processo transparente: você acompanha cada etapa em tempo real, com fotos do diário de obra, alertas de desvio e aprovação de pagamentos por fase.
 
@@ -143,13 +143,13 @@ O [ObraEasy](/obraeasy) foi desenvolvido exatamente para tornar esse processo tr
 
 ## Perguntas Frequentes sobre Precos de Reforma
 
-**Posso usar esses valores para fechar contrato?**
+Posso usar esses valores para fechar contrato?
 Não diretamente. Use como referência para validar orçamentos recebidos. Valores 30%+ abaixo da tabela merecem investigação — podem indicar omissão de escopo, material inferior ou mão de obra desqualificada.
 
-**O ICCRI é atualizado com que frequência?**
+O ICCRI é atualizado com que frequência?
 Trimestralmente, com base no INCC (Índice Nacional da Construção Civil) e dados internos de obra.
 
-**Onde encontro o orçamento completo para meu projeto?**
+Onde encontro o orçamento completo para meu projeto?
 [Solicite uma proposta](/solicite-proposta) — nosso time faz o levantamento técnico gratuito em São Paulo e ABCD.
 
 ---
@@ -160,5 +160,5 @@ O setor de reformas e construção civil perde negócios todos os dias por falta
 
 O ICCRI é o começo de uma conversa diferente: onde o preço tem fundamento técnico, o cliente entende o que está pagando e o prestador é remunerado de forma justa pela qualidade que entrega.
 
-**Esta é a base do que construímos no Grupo WG Almeida.**
+Esta é a base do que construímos no Grupo WG Almeida.
 

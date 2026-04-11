@@ -780,7 +780,7 @@ const Blog = () => {
           alternates={hreflangAlternates}
         />
 
-        <section className="wg-page-hero hero-under-header items-end bg-wg-black">
+        <section className="wg-page-hero wg-page-hero--full hero-under-header items-end bg-wg-black">
           <motion.div
             className="absolute inset-0"
             initial={{ scale: 1.05 }}
@@ -806,7 +806,7 @@ const Blog = () => {
                 <span>{currentCategory?.label || t('blogPage.fallback.category')}</span>
               </span>
 
-              <h1 className="mb-6 text-4xl font-inter font-light leading-[0.95] tracking-[-0.03em] text-white md:text-5xl lg:text-[5rem]">
+              <h1 className="wg-page-hero-title mb-6">
                 {artigoAtual.title}
               </h1>
 
@@ -1054,7 +1054,7 @@ const Blog = () => {
       />
 
       {/* Hero Revista Style */}
-      <section className="wg-page-hero hero-under-header items-end bg-wg-black">
+      <section className="wg-page-hero wg-page-hero--full hero-under-header items-end bg-wg-black">
         {/* Imagem de Fundo */}
         <motion.div
           className="absolute inset-0"
@@ -1094,7 +1094,7 @@ const Blog = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-6 text-4xl font-inter font-light leading-[0.95] tracking-[-0.03em] text-white md:text-5xl lg:text-[5rem]"
+              className="wg-page-hero-title mb-6"
             >
               {artigoRecente?.title}
             </motion.h1>

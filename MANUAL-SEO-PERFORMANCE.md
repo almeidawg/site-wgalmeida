@@ -27,8 +27,8 @@
 
 | Ferramenta | Tipo | Chave / Observacao |
 |---|---|---|
-| Google Search / Search Console | API key | AIzaREVOKED_ROTATE_IMMEDIATELY |
-| Google Ads | API key (mesma) | AIzaREVOKED_ROTATE_IMMEDIATELY |
+| Google Search / Search Console | API key | [REVOKED_ROTATE_IMMEDIATELY] |
+| Google Ads | API key (mesma) | [REVOKED_ROTATE_IMMEDIATELY] |
 
 > Guardar esta chave com sigilo; nao compartilhar fora do time de marketing/SEO.
 

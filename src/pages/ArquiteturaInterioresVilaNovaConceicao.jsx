@@ -133,7 +133,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
                 Vila Nova Conceição, São Paulo
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 leading-tight">
+            <h1 className="wg-page-hero-title mb-6">
               Arquitetura de Interiores<br />Vila Nova Conceição
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">

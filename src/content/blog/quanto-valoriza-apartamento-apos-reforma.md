@@ -16,7 +16,7 @@ Esta é uma das perguntas mais frequentes de proprietários, investidores e corr
 
 A resposta intuitiva é: "uma reforma bem feita sempre valoriza". Mas quanto? E em quais condições o investimento realmente compensa?
 
-Desenvolvemos o **EVF — Estimativa de Valor Final** justamente para responder essa pergunta com metodologia, não com achismo.
+Desenvolvemos o EVF — Estimativa de Valor Final justamente para responder essa pergunta com metodologia, não com achismo.
 
 ---
 
@@ -34,7 +34,7 @@ O que falta é:
 
 ## A Metodologia EVF
 
-O EVF (Estimativa de Valor Final) foi desenvolvido pelo time de dados do **EasyRealEstate** com base em 4 variáveis principais:
+O EVF (Estimativa de Valor Final) foi desenvolvido pelo time de dados do EasyRealEstate com base em 4 variáveis principais:
 
 ### 1. Valor Base do Imóvel (pré-reforma)
 
@@ -76,22 +76,22 @@ Quanto tempo o mercado local leva para "absorver" o valor da reforma no preço d
 
 ## Exemplo Real: EVF em Ação
 
-**Apartamento:** 80m² em Pinheiros, SP
-**Valor pré-reforma:** R$ 950.000
-**Investimento em reforma alto padrão:** R$ 180.000
-**Custo total:** R$ 1.130.000
+Apartamento: 80m² em Pinheiros, SP
+Valor pré-reforma: R$ 950.000
+Investimento em reforma alto padrão: R$ 180.000
+Custo total: R$ 1.130.000
 
-**Aplicando EVF:**
+Aplicando EVF:
 - FA (alto padrão): +25%
 - FL (Pinheiros): 1.32
 - Valor base pós-reforma esperado: R$ 950.000 × 1.25 = R$ 1.187.500
 - Ajuste de localização: × 1.05 (prêmio de escassez em Pinheiros) = R$ 1.246.875
-- **EVF estimado: R$ 1.200.000–1.280.000**
+- EVF estimado: R$ 1.200.000–1.280.000
 
-**ROI da reforma:**
+ROI da reforma:
 - Investido: R$ 180.000
 - Valorização: R$ 250.000–330.000
-- **Retorno sobre o investimento: 139–183%**
+- Retorno sobre o investimento: 139–183%
 
 *Importante: este é o ROI na revenda. Para calcular o ROI considerando locação, o cálculo é diferente.*
 
@@ -101,28 +101,28 @@ Quanto tempo o mercado local leva para "absorver" o valor da reforma no preço d
 
 Existem situações onde o investimento em reforma não se converte em valorização:
 
-**1. Reforma acima do padrão do condomínio**
+1. Reforma acima do padrão do condomínio
 Um apartamento reformado em padrão luxo em um condomínio médio terá dificuldade para capturar o prêmio. O teto do imóvel é o padrão do condomínio.
 
-**2. Reforma sem compatibilização técnica**
+2. Reforma sem compatibilização técnica
 Obras mal executadas que geram problemas de infiltração, desnivelamento ou problemas estruturais destroem valor em vez de criar.
 
-**3. Personalização excessiva**
+3. Personalização excessiva
 Projetos muito específicos ao gosto do proprietário (cor incomum, layout atípico) reduzem o universo de potenciais compradores.
 
-**4. Mercado em queda**
+4. Mercado em queda
 Em períodos de alta de juros e queda de liquidez, mesmo reformas bem executadas podem não se converter em valorização imediata.
 
 ---
 
 ## Como Usar o EVF na Prática
 
-O EVF está disponível como funcionalidade do **EasyRealEstate**, nossa plataforma de inteligência imobiliária:
+O EVF está disponível como funcionalidade do EasyRealEstate, nossa plataforma de inteligência imobiliária:
 
-1. **Insira o endereço do imóvel** → o sistema busca os comparáveis automaticamente
-2. **Defina o padrão de reforma planejado** → econômico, médio, alto padrão ou retrofit total
-3. **Receba o EVF** → estimativa do valor final pós-reforma com range de confiança
-4. **Analise o ROI** → comparativo entre custo de reforma e incremento de valor esperado
+1. Insira o endereço do imóvel → o sistema busca os comparáveis automaticamente
+2. Defina o padrão de reforma planejado → econômico, médio, alto padrão ou retrofit total
+3. Receba o EVF → estimativa do valor final pós-reforma com range de confiança
+4. Analise o ROI → comparativo entre custo de reforma e incremento de valor esperado
 
 O EasyRealEstate foi desenvolvido pelo Grupo WG Almeida para corretores, investidores e proprietários que precisam tomar decisões de reforma com base em dados — não em intuição.
 
@@ -130,13 +130,13 @@ O EasyRealEstate foi desenvolvido pelo Grupo WG Almeida para corretores, investi
 
 ## Perguntas Frequentes
 
-**A valorização é garantida?**
+A valorização é garantida?
 Não. O EVF é uma estimativa baseada em dados históricos e modelos estatísticos. Fatores macroeconômicos, condições do mercado local e qualidade de execução da obra podem alterar o resultado real.
 
-**O EVF substitui uma avaliação de imóvel (laudo)?**
+O EVF substitui uma avaliação de imóvel (laudo)?
 Não. O EVF é uma ferramenta de apoio à decisão, não um laudo oficial. Para financiamentos e transações formais, utilize avaliação de engenheiro ou arquiteto habilitado pelo CREA/CAU.
 
-**Posso usar o EVF para negociar com compradores?**
+Posso usar o EVF para negociar com compradores?
 Sim. O EVF pode ser apresentado como referência técnica durante negociações para justificar o preço pedido pós-reforma, com base em comparáveis reais.
 
 ---
@@ -147,7 +147,7 @@ A valorização de um apartamento após reforma é real, mensurável e previsív
 
 O EVF transforma a pergunta "quanto vai valorizar?" de uma estimativa subjetiva em um cálculo técnico baseado em dados de mercado. Isso significa melhores decisões de investimento, negociações mais transparentes e reformas executadas com propósito estratégico.
 
-**Simule o EVF do seu imóvel:** [EasyRealEstate →](/easy-real-state)
+Simule o EVF do seu imóvel: [EasyRealEstate →](/easy-real-state)
 
 Ou se você quer reformar com qualidade e previsibilidade antes de calcular o valor final: [Solicite uma proposta do Grupo WG Almeida](/solicite-proposta)
 

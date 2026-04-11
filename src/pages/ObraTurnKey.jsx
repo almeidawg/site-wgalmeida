@@ -191,7 +191,7 @@ const ObraTurnKey = () => {
             <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm uppercase tracking-wider mb-6">
               Sistema Turn Key Premium
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 leading-tight">
+            <h1 className="wg-page-hero-title mb-6">
               O Que é Turn Key?<br />Entenda o Sistema Completo
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">

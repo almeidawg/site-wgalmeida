@@ -27,143 +27,143 @@ Selos que atestam que edificação atende critérios de sustentabilidade em:
 ## LEED (Leadership in Energy and Environmental Design)
 
 ### O Que É
-**Origem:** EUA (USGBC)
-**No Brasil:** GBC Brasil
-**Mais reconhecida mundialmente**
+Origem: EUA (USGBC)
+No Brasil: GBC Brasil
+Mais reconhecida mundialmente
 
 ### Categorias
-**BD+C (Building Design + Construction):**
+BD+C (Building Design + Construction):
 - Novas construções
 - Retrofit
 - Core & Shell
 
-**O+M (Operations + Maintenance):**
+O+M (Operations + Maintenance):
 - Edifícios existentes
 - Operação
 
-**ID+C (Interior Design + Construction):**
+ID+C (Interior Design + Construction):
 - Interiores comerciais
 - Varejo
 
 ### Níveis
-**Certified:** 40-49 pontos
-**Silver:** 50-59 pontos
-**Gold:** 60-79 pontos
-**Platinum:** 80+ pontos
+Certified: 40-49 pontos
+Silver: 50-59 pontos
+Gold: 60-79 pontos
+Platinum: 80+ pontos
 
 ### Categorias de Avaliação
 
-**1. Localização e Transporte (16 pontos)**
+1. Localização e Transporte (16 pontos)
 - Acesso transporte público
 - Bicicletário
 - Estacionamento reduzido
 - Carros elétricos
 
-**2. Terrenos Sustentáveis (10 pontos)**
+2. Terrenos Sustentáveis (10 pontos)
 - Proteção habitat
 - Espaços abertos
 - Gestão águas pluviais
 - Redução ilha de calor
 
-**3. Eficiência de Água (11 pontos)**
+3. Eficiência de Água (11 pontos)
 - Redução consumo (20-40%)
 - Reuso água
 - Paisagismo eficiente
 - Medição individual
 
-**4. Energia e Atmosfera (33 pontos)**
+4. Energia e Atmosfera (33 pontos)
 - Redução 10-50% energia
 - Energia renovável
 - Comissionamento
 - Gestão refrigerantes
 
-**5. Materiais e Recursos (13 pontos)**
+5. Materiais e Recursos (13 pontos)
 - Gestão resíduos construção
 - Materiais reciclados
 - Materiais regionais
 - Madeira certificada
 
-**6. Qualidade Ambiental Interna (16 pontos)**
+6. Qualidade Ambiental Interna (16 pontos)
 - Qualidade do ar
 - Iluminação natural
 - Vistas externas
 - Conforto térmico
 - Acústica
 
-**7. Inovação (6 pontos)**
+7. Inovação (6 pontos)
 - Desempenho exemplar
 - Estratégias inovadoras
 
-**8. Prioridade Regional (4 pontos)**
+8. Prioridade Regional (4 pontos)
 - Questões ambientais locais
 
-**Total:** 110 pontos possíveis
+Total: 110 pontos possíveis
 
 ### Processo de Certificação
 
-**1. Registro (R$ 5.000-15.000)**
+1. Registro (R$ 5.000-15.000)
 - Cadastro projeto
 - Taxas iniciais
 - Acesso plataforma
 
-**2. Projeto (6-12 meses)**
+2. Projeto (6-12 meses)
 - Consultoria especializada
 - Adequações projeto
 - Documentação
 
-**3. Construção (Duração da obra)**
+3. Construção (Duração da obra)
 - Implementação medidas
 - Registro evidências
 - Fotografias
 
-**4. Submissão (R$ 10.000-30.000)**
+4. Submissão (R$ 10.000-30.000)
 - Upload documentação
 - Taxas certificação
 - Revisão técnica
 
-**5. Avaliação (2-6 meses)**
+5. Avaliação (2-6 meses)
 - Análise GBC
 - Esclarecimentos
 - Ajustes
 
-**6. Certificação**
+6. Certificação
 - Emissão selo
 - Publicação
 - Placa
 
 ### Custos
 
-**Consultoria:**
+Consultoria:
 - Residencial: R$ 30.000-80.000
 - Comercial pequeno: R$ 50.000-150.000
 - Comercial grande: R$ 150.000-500.000
 
-**Adequações:**
+Adequações:
 - +5-15% custo obra
 - Varia por estratégias
 
-**Taxas:**
+Taxas:
 - Registro: R$ 5.000-15.000
 - Certificação: R$ 10.000-30.000
 
-**Total residencial 300m²:**
+Total residencial 300m²:
 R$ 50.000-120.000
 
 ### Benefícios
 
-**Econômicos:**
+Econômicos:
 - Redução 30-50% energia
 - Redução 20-40% água
 - Valorização 10-25%
 - Aluguel 5-15% maior
 - Venda 10-20% mais rápida
 
-**Ambientais:**
+Ambientais:
 - Menos CO2
 - Menos resíduos
 - Recursos preservados
 
-**Saúde:**
+Saúde:
 - Ar mais puro
 - Luz natural
 - Conforto térmico
@@ -172,72 +172,72 @@ R$ 50.000-120.000
 ## AQUA-HQE (Alta Qualidade Ambiental)
 
 ### O Que É
-**Origem:** França (HQE)
-**Brasil:** Fundação Vanzolini
-**Foco:** Qualidade ambiental e conforto
+Origem: França (HQE)
+Brasil: Fundação Vanzolini
+Foco: Qualidade ambiental e conforto
 
 ### Categorias
 
-**1. Eco-Construção (4 categorias)**
+1. Eco-Construção (4 categorias)
 - Relação edifício/terreno
 - Produtos e materiais
 - Canteiro de obras
 
-**2. Eco-Gestão (4 categorias)**
+2. Eco-Gestão (4 categorias)
 - Energia
 - Água
 - Resíduos
 - Manutenção
 
-**3. Conforto (4 categorias)**
+3. Conforto (4 categorias)
 - Higrotérmico
 - Acústico
 - Visual
 - Olfativo
 
-**4. Saúde (2 categorias)**
+4. Saúde (2 categorias)
 - Qualidade ar
 - Qualidade água
 
 ### Níveis
-**Base:** 3 categorias Excelentes
-**Bom:** 4 Excelentes
-**Muito Bom:** 5 Excelentes
-**Excelente:** 7 Excelentes
+Base: 3 categorias Excelentes
+Bom: 4 Excelentes
+Muito Bom: 5 Excelentes
+Excelente: 7 Excelentes
 
 ### Processo
 
-**1. Pré-Avaliação (projeto)**
+1. Pré-Avaliação (projeto)
 - Análise projeto
 - Pontuação prévia
 - Ajustes
 
-**2. Certificação Projeto**
+2. Certificação Projeto
 - Validação estratégias
 - Selo provisório
 
-**3. Pós-Execução**
+3. Pós-Execução
 - Vistoria obra
 - Validação implementação
 - Certificação final
 
 ### Custos
 
-**Consultoria:** R$ 40.000-100.000
-**Taxas:** R$ 15.000-40.000
-**Adequações:** +8-18% obra
+Consultoria: R$ 40.000-100.000
+Taxas: R$ 15.000-40.000
+Adequações: +8-18% obra
 
-**Total:** R$ 60.000-150.000
+Total: R$ 60.000-150.000
 
 ### Diferenças LEED vs AQUA
 
-**LEED:**
+LEED:
 - Mais conhecido
 - Internacional
 - Foco desempenho
 - Pontuação flexível
 
-**AQUA:**
+AQUA:
 - Francês adaptado
 - Foco qualidade
 - Categorias obrigatórias
@@ -246,46 +246,46 @@ R$ 50.000-120.000
 ## Selo Casa Azul (Caixa Econômica)
 
 ### O Que É
-**Origem:** Caixa Econômica Federal
-**Foco:** Habitação popular
-**Gratuito**
+Origem: Caixa Econômica Federal
+Foco: Habitação popular
+Gratuito
 
 ### Categorias (53 critérios)
 
-**1. Qualidade Urbana (7 critérios)**
+1. Qualidade Urbana (7 critérios)
 - Infraestrutura
 - Transporte
 - Comércio
 
-**2. Projeto e Conforto (9 critérios)**
+2. Projeto e Conforto (9 critérios)
 - Ventilação
 - Iluminação
 - Flexibilidade
 
-**3. Eficiência Energética (9 critérios)**
+3. Eficiência Energética (9 critérios)
 - Aquecimento solar
 - Lâmpadas eficientes
 - Eletrodomésticos
 
-**4. Conservação de Recursos (9 critérios)**
+4. Conservação de Recursos (9 critérios)
 - Madeira certificada
 - Materiais reciclados
 - Modulação
 
-**5. Gestão de Água (7 critérios)**
+5. Gestão de Água (7 critérios)
 - Medição individual
 - Dispositivos economizadores
 - Reuso
 
-**6. Práticas Sociais (12 critérios)**
+6. Práticas Sociais (12 critérios)
 - Educação ambiental
 - Capacitação
 - Desenvolvimento local
 
 ### Níveis
-**Bronze:** 19 critérios obrigatórios
-**Prata:** Bronze + 6 facultativos
-**Ouro:** Bronze + 12 facultativos
+Bronze: 19 critérios obrigatórios
+Prata: Bronze + 6 facultativos
+Ouro: Bronze + 12 facultativos
 
 ### Vantagens
 
@@ -303,20 +303,20 @@ R$ 50.000-120.000
 ## Outras Certificações
 
 ### EDGE (Excellence in Design for Greater Efficiencies)
-**Foco:** Países emergentes
-**Critério:** Mín. 20% economia (energia, água, materiais)
-**Custo:** Mais acessível
+Foco: Países emergentes
+Critério: Mín. 20% economia (energia, água, materiais)
+Custo: Mais acessível
 
 ### Procel Edifica
-**Origem:** Eletrobras
-**Foco:** Eficiência energética
-**Níveis:** A a E
-**Gratuito**
+Origem: Eletrobras
+Foco: Eficiência energética
+Níveis: A a E
+Gratuito
 
 ### BREEAM
-**Origem:** Inglaterra
-**Uso:** Raro no Brasil
-**Reconhecimento:** Internacional
+Origem: Inglaterra
+Uso: Raro no Brasil
+Reconhecimento: Internacional
 
 ## Comparativo
 
@@ -401,18 +401,18 @@ R$ 50.000-120.000
 
 ## ROI (Retorno Investimento)
 
-**Investimento certificação:**
+Investimento certificação:
 - +8-15% custo obra
 - Consultoria + taxas
 
-**Retorno:**
+Retorno:
 - Economia energia: 30-50%
 - Economia água: 20-40%
 - Valorização: 10-25%
 - Aluguel premium: 5-15%
 - Venda mais rápida: 20-30%
 
-**Payback:** 5-10 anos
+Payback: 5-10 anos
 
 ## Checklist
 
@@ -436,8 +436,8 @@ Certificação verde:
 ✅ Diferencial mercado
 ✅ Responsabilidade ambiental
 
-**Investimento:** +R$ 50.000-200.000
-**Retorno:** Valorização + economia operacional
-**Payback:** 5-10 anos
+Investimento: +R$ 50.000-200.000
+Retorno: Valorização + economia operacional
+Payback: 5-10 anos
 
-**Recomendado para:** Projetos R$ 500k+ onde sustentabilidade agrega valor
+Recomendado para: Projetos R$ 500k+ onde sustentabilidade agrega valor

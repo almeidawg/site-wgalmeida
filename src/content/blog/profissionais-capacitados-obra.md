@@ -22,7 +22,7 @@ featured: true
 
 ## Introdução
 
-Um projeto excepcional pode se tornar um pesadelo se executado por profissionais não capacitados. A **qualidade da mão de obra é tão importante quanto a qualidade do projeto**.
+Um projeto excepcional pode se tornar um pesadelo se executado por profissionais não capacitados. A qualidade da mão de obra é tão importante quanto a qualidade do projeto.
 
 Este artigo apresenta os profissionais essenciais em uma obra, suas funções, qualificações necessárias e como identificar bons profissionais.
 
@@ -32,7 +32,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### O Impacto da Mão de Obra Qualificada
 
-**Obra com profissionais capacitados:**
+Obra com profissionais capacitados:
 ✅ Prazo cumprido
 ✅ Qualidade superior
 ✅ Menos desperdício
@@ -40,7 +40,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 ✅ Resultado conforme projeto
 ✅ Durabilidade
 
-**Obra com profissionais não capacitados:**
+Obra com profissionais não capacitados:
 ❌ Atrasos constantes
 ❌ Retrabalho frequente (30-40%)
 ❌ Desperdício de material (20-30%)
@@ -50,12 +50,12 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Dados do Setor
 
-**Segundo estudo CBIC (Câmara Brasileira da Indústria da Construção):**
+Segundo estudo CBIC (Câmara Brasileira da Indústria da Construção):
 - 67% dos profissionais da construção não têm formação específica
 - 42% das obras têm problemas por mão de obra não qualificada
 - 35% do custo de retrabalho é por execução incorreta
 
-**Investir em profissionais capacitados economiza até 25% do custo total da obra.**
+Investir em profissionais capacitados economiza até 25% do custo total da obra.
 
 ---
 
@@ -64,7 +64,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 ### 1. Engenheiro Civil 👷‍♂️
 
 #### Função
-**Responsável técnico pela execução da obra.**
+Responsável técnico pela execução da obra.
 
 #### Responsabilidades
 - Coordenação geral da obra
@@ -85,7 +85,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Como Identificar um Bom Engenheiro
 
-**Verifique:**
+Verifique:
 - Número CREA (consultar no site)
 - Portfólio de obras
 - Referências de clientes
@@ -93,22 +93,22 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 - Disponibilidade
 - Proatividade
 
-**Perguntas importantes:**
+Perguntas importantes:
 - Quantas obras gerencia simultaneamente?
 - Com que frequência visita obras?
 - Como lida com imprevistos?
 - Tem equipe fixa ou terceiriza tudo?
 
 #### Custo Típico
-**Gerenciamento:** 12-15% do valor da obra
-**Visitas técnicas pontuais:** R$ 800-2.000/visita
+Gerenciamento: 12-15% do valor da obra
+Visitas técnicas pontuais: R$ 800-2.000/visita
 
 ---
 
 ### 2. Mestre de Obras 🔨
 
 #### Função
-**Líder operacional que executa e coordena no dia a dia.**
+Líder operacional que executa e coordena no dia a dia.
 
 #### Responsabilidades
 - Execução conforme projeto
@@ -128,7 +128,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Como Identificar um Bom Mestre
 
-**Sinais positivos:**
+Sinais positivos:
 - Experiência comprovada (pedir fotos de obras)
 - Referências de clientes anteriores
 - Comunicação clara
@@ -136,7 +136,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 - Proatividade em resolver problemas
 - Respeito pela equipe
 
-**Sinais de alerta:**
+Sinais de alerta:
 - Não tem portfólio
 - Não fornece referências
 - Desorganizado
@@ -144,15 +144,15 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 - Não sabe ler projeto
 
 #### Custo Típico
-**CLT:** R$ 4.000-8.000/mês + encargos (40%)
-**Autônomo:** R$ 5.000-12.000/mês
+CLT: R$ 4.000-8.000/mês + encargos (40%)
+Autônomo: R$ 5.000-12.000/mês
 
 ---
 
 ### 3. Pedreiro/Oficial 🧱
 
 #### Função
-**Execução de alvenaria, estrutura e revestimentos.**
+Execução de alvenaria, estrutura e revestimentos.
 
 #### Responsabilidades Principais
 - Construção de paredes
@@ -164,32 +164,32 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Níveis de Qualificação
 
-**Oficial (mais experiente):**
+Oficial (mais experiente):
 - 5+ anos de experiência
 - Trabalho independente
 - Orientação de serventes
 - R$ 250-400/dia ou R$ 5.000-10.000/mês
 
-**Meio-oficial:**
+Meio-oficial:
 - 2-5 anos experiência
 - Precisa supervisão
 - R$ 180-280/dia ou R$ 3.500-6.000/mês
 
-**Servente/Ajudante:**
+Servente/Ajudante:
 - Iniciante
 - Auxilia oficiais
 - R$ 120-180/dia ou R$ 2.500-3.800/mês
 
 #### O Que Diferencia um Bom Pedreiro
 
-**Competências técnicas:**
+Competências técnicas:
 ✅ Prumo e nível perfeitos
 ✅ Acabamento limpo
 ✅ Juntas regulares
 ✅ Uso correto de ferramentas
 ✅ Conhecimento de traços
 
-**Competências comportamentais:**
+Competências comportamentais:
 ✅ Pontualidade
 ✅ Organização
 ✅ Limpeza do canteiro
@@ -198,7 +198,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Como Testar
 
-**Peça:**
+Peça:
 - Teste prático (assentar 5m² de cerâmica)
 - Fotos de trabalhos anteriores
 - Contatos de clientes
@@ -209,7 +209,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 ### 4. Eletricista ⚡
 
 #### Função
-**Instalações elétricas residenciais e comerciais.**
+Instalações elétricas residenciais e comerciais.
 
 #### Responsabilidades
 - Passagem de eletrodutos
@@ -229,13 +229,13 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Especialidades
 
-**Eletricista residencial:**
+Eletricista residencial:
 - Instalações até 220V
 - Iluminação
 - Tomadas
 - R$ 200-350/dia ou R$ 4.000-7.500/mês
 
-**Eletricista industrial:**
+Eletricista industrial:
 - Trifásico
 - Quadros complexos
 - Automação
@@ -243,20 +243,20 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Segurança
 
-**Eletricista DEVE ter:**
+Eletricista DEVE ter:
 - Certificado NR-10 atualizado
 - EPIs (luvas isolantes, capacete, óculos)
 - Ferramentas isoladas
 - Multímetro e alicate amperímetro
 
-**NUNCA aceite eletricista sem NR-10!**
+NUNCA aceite eletricista sem NR-10!
 
 ---
 
 ### 5. Encanador/Hidráulico 🚰
 
 #### Função
-**Instalações hidráulicas e sanitárias.**
+Instalações hidráulicas e sanitárias.
 
 #### Responsabilidades
 - Água fria e quente
@@ -276,11 +276,11 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Especialidades
 
-**Hidráulico residencial:**
+Hidráulico residencial:
 - Água e esgoto básico
 - R$ 200-350/dia ou R$ 4.000-7.000/mês
 
-**Hidráulico industrial:**
+Hidráulico industrial:
 - Sistemas complexos
 - Bombeamento
 - Reuso de água
@@ -288,7 +288,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Como Avaliar
 
-**Teste de conhecimento:**
+Teste de conhecimento:
 - Explicar diferença entre água fria e quente
 - Calcular diâmetro de tubulação
 - Interpretar planta hidráulica
@@ -299,7 +299,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 ### 6. Pintor 🎨
 
 #### Função
-**Preparação e pintura de paredes, tetos e estruturas.**
+Preparação e pintura de paredes, tetos e estruturas.
 
 #### Responsabilidades
 - Lixamento e preparação
@@ -311,25 +311,25 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Níveis de Qualificação
 
-**Pintor profissional:**
+Pintor profissional:
 - Acabamento perfeito
 - Conhece técnicas especiais
 - R$ 180-320/dia ou R$ 3.800-6.500/mês
 
-**Ajudante de pintor:**
+Ajudante de pintor:
 - Preparação e pintura básica
 - R$ 120-180/dia ou R$ 2.500-3.800/mês
 
 #### O Que Diferencia
 
-**Pintor bom:**
+Pintor bom:
 ✅ Preparação meticulosa (80% do trabalho)
 ✅ Proteção adequada de áreas
 ✅ Acabamento sem marcas de rolo
 ✅ Cantos e rodapés perfeitos
 ✅ Limpeza impecável
 
-**Pintor ruim:**
+Pintor ruim:
 ❌ Pula etapas de preparação
 ❌ Marcas de rolo visíveis
 ❌ Cantos mal acabados
@@ -338,7 +338,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Custo Típico
 
-**Por m²:**
+Por m²:
 - Pintura simples: R$ 25-35/m²
 - Pintura premium (3 demãos): R$ 40-60/m²
 - Texturas: R$ 50-80/m²
@@ -349,7 +349,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 ### 7. Azulejista/Revestidor 📐
 
 #### Função
-**Aplicação de revestimentos cerâmicos e porcelanatos.**
+Aplicação de revestimentos cerâmicos e porcelanatos.
 
 #### Responsabilidades
 - Preparação de superfície
@@ -361,28 +361,28 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Qualificação
 
-**Azulejista profissional:**
+Azulejista profissional:
 ✅ 5+ anos experiência
 ✅ Domínio de laser de nível
 ✅ Cortes complexos
 ✅ Grandes formatos (120x120cm)
 ✅ Acabamento perfeito
 
-**Custo:**
+Custo:
 - Cerâmica padrão: R$ 45-65/m²
 - Porcelanato grande formato: R$ 80-120/m²
 - Mosaicos e detalhes: R$ 120-200/m²
 
 #### O Que Observar
 
-**Sinais de qualidade:**
+Sinais de qualidade:
 ✅ Usa espaçadores
 ✅ Verifica nível constantemente
 ✅ Juntas regulares (2-3mm)
 ✅ Cortes limpos
 ✅ Sem peças tortas
 
-**Teste prático:**
+Teste prático:
 - Peça para assentar 2-3m² de teste
 - Verifique nível com régua de alumínio
 - Observe regularidade de juntas
@@ -392,7 +392,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 ### 8. Marceneiro 🪵
 
 #### Função
-**Móveis sob medida e instalações.**
+Móveis sob medida e instalações.
 
 #### Responsabilidades
 - Marcenaria sob medida
@@ -403,17 +403,17 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 #### Especialidades
 
-**Marceneiro de obra:**
+Marceneiro de obra:
 - Formas para concreto
 - Estruturas
 - R$ 200-300/dia
 
-**Marceneiro de móveis:**
+Marceneiro de móveis:
 - Móveis sob medida
 - Acabamento fino
 - R$ 250-450/dia
 
-**Marceneiro de instalação:**
+Marceneiro de instalação:
 - Montagem de cozinhas planejadas
 - Closets
 - R$ 300-500/dia (especializado)
@@ -423,7 +423,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 ### 9. Gesseiro 🎭
 
 #### Função
-**Trabalhos em gesso (rebaixamento, molduras, divisórias).**
+Trabalhos em gesso (rebaixamento, molduras, divisórias).
 
 #### Responsabilidades
 - Forros de gesso
@@ -432,7 +432,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 - Divisórias dry wall
 - Acabamentos
 
-**Custo:**
+Custo:
 - Forro simples: R$ 35-50/m²
 - Sancas: R$ 50-80/m linear
 - Drywall: R$ 60-90/m²
@@ -442,7 +442,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 ### 10. Serralheiro 🔩
 
 #### Função
-**Estruturas metálicas, portões, grades, esquadrias.**
+Estruturas metálicas, portões, grades, esquadrias.
 
 #### Responsabilidades
 - Portões
@@ -451,7 +451,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 - Estruturas metálicas
 - Esquadrias de ferro
 
-**Custo:** Varia muito por projeto
+Custo: Varia muito por projeto
 - R$ 300-600/dia (profissional)
 
 ---
@@ -460,7 +460,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Passo 1: Defina Necessidades
 
-**Liste profissionais necessários:**
+Liste profissionais necessários:
 - Engenheiro (sempre)
 - Mestre de obras (sempre)
 - Pedreiro (quantos?)
@@ -471,13 +471,13 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Passo 2: Busque Referências
 
-**Fontes confiáveis:**
+Fontes confiáveis:
 ✅ Indicação de amigos/família
 ✅ Indicação de arquiteto/engenheiro
 ✅ Obras vizinhas bem executadas
 ✅ Plataformas especializadas (GetNinjas, Habitissimo)
 
-**Evite:**
+Evite:
 ❌ Aceitar primeira proposta
 ❌ Contratar só por preço baixo
 ❌ Profissionais sem referências
@@ -485,7 +485,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Passo 3: Verifique Qualificações
 
-**Documentos a solicitar:**
+Documentos a solicitar:
 - RG e CPF
 - Comprovante de residência
 - Certificados de cursos (NR-10, NR-35, etc.)
@@ -495,7 +495,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Passo 4: Faça Entrevistas
 
-**Perguntas essenciais:**
+Perguntas essenciais:
 1. Há quanto tempo trabalha na área?
 2. Já fez obras similares?
 3. Pode mostrar fotos de trabalhos?
@@ -509,7 +509,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Passo 5: Teste Prático
 
-**Se possível:**
+Se possível:
 - Peça demonstração prática
 - Teste pequeno serviço antes
 - Avalie qualidade do trabalho
@@ -521,16 +521,16 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Contratação
 
-**Formalize sempre:**
+Formalize sempre:
 
-**Para profissionais fixos:**
+Para profissionais fixos:
 - Contrato de trabalho (CLT ou PJ)
 - Especificação de funções
 - Horários
 - Valores
 - Prazos
 
-**Para profissionais por empreitada:**
+Para profissionais por empreitada:
 - Contrato de prestação de serviços
 - Escopo detalhado
 - Cronograma
@@ -539,12 +539,12 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Pagamentos
 
-**Nunca:**
+Nunca:
 ❌ Pague tudo adiantado
 ❌ Pague sem conferir etapa
 ❌ Pague sem nota/recibo
 
-**Sempre:**
+Sempre:
 ✅ Pague por etapas concluídas
 ✅ Retenha 10% para correções finais
 ✅ Exija nota fiscal ou recibo
@@ -552,7 +552,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Comunicação
 
-**Estabeleça:**
+Estabeleça:
 - Reuniões semanais de alinhamento
 - Grupo de WhatsApp da obra
 - Relatórios fotográficos diários
@@ -560,14 +560,14 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Segurança
 
-**Exija:**
+Exija:
 - EPIs adequados (capacete, luvas, óculos, botinas)
 - Andaimes seguros
 - Extintores de incêndio
 - Sinalização de segurança
 - Primeiros socorros básicos
 
-**NRs principais:**
+NRs principais:
 - NR-6: EPIs
 - NR-10: Eletricidade
 - NR-18: Construção civil
@@ -579,7 +579,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Profissionais Problemáticos
 
-**Fique atento:**
+Fique atento:
 🚨 Pede muito dinheiro adiantado
 🚨 Não fornece recibos
 🚨 Não aceita contrato formal
@@ -591,7 +591,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 🚨 Falta muito sem avisar
 🚨 Qualidade inconsistente
 
-**Ao identificar problemas:**
+Ao identificar problemas:
 1. Converse e documente
 2. Dê prazo para correção
 3. Se não resolver, rescinda contrato
@@ -603,17 +603,17 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Por Tipo de Obra
 
-**Reforma apartamento (120m²):**
+Reforma apartamento (120m²):
 - Mão de obra: 40-50% do custo total
 - Materiais: 50-60%
 
-**Construção casa (200m²):**
+Construção casa (200m²):
 - Mão de obra: 50-60% do custo total
 - Materiais: 40-50%
 
 ### Valores de Referência 2026
 
-**Mensalistas (CLT + encargos):**
+Mensalistas (CLT + encargos):
 - Engenheiro: R$ 8.000-15.000
 - Mestre de obras: R$ 5.000-10.000
 - Pedreiro oficial: R$ 4.000-8.000
@@ -622,7 +622,7 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 - Pintor: R$ 3.500-6.000
 - Servente: R$ 2.500-3.500
 
-**Diária:**
+Diária:
 - Pedreiro: R$ 250-400
 - Eletricista: R$ 200-350
 - Encanador: R$ 200-350
@@ -635,21 +635,21 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ### Nossa Diferença
 
-**Profissionais pré-qualificados:**
+Profissionais pré-qualificados:
 ✅ Todos com mínimo 5 anos de experiência
 ✅ Certificações obrigatórias (NR-10, NR-18, NR-35)
 ✅ Referências verificadas
 ✅ Teste prático aprovado
 ✅ Treinamento em qualidade WG Almeida
 
-**Gestão de equipe:**
+Gestão de equipe:
 ✅ Engenheiro responsável dedicado
 ✅ Mestre de obras fixo
 ✅ Profissionais especializados homologados
 ✅ Supervisão semanal
 ✅ Controle de qualidade rigoroso
 
-**Garantias:**
+Garantias:
 ✅ Responsabilidade técnica
 ✅ Seguro de obra
 ✅ Garantia de execução
@@ -659,16 +659,16 @@ Este artigo apresenta os profissionais essenciais em uma obra, suas funções, q
 
 ## Conclusão
 
-Profissionais capacitados são a diferença entre uma **obra de sucesso e um pesadelo interminável**.
+Profissionais capacitados são a diferença entre uma obra de sucesso e um pesadelo interminável.
 
-Investir em qualificação da mão de obra não é gasto, é **economia garantida** através de:
+Investir em qualificação da mão de obra não é gasto, é economia garantida através de:
 - Menos retrabalho
 - Prazo cumprido
 - Qualidade superior
 - Durabilidade
 - Segurança
 
-**Mão de obra representa 40-60% do custo da obra. Escolha com sabedoria.**
+Mão de obra representa 40-60% do custo da obra. Escolha com sabedoria.
 
 ---
 
@@ -676,7 +676,7 @@ Investir em qualificação da mão de obra não é gasto, é **economia garantid
 
 Quer a tranquilidade de uma equipe profissional, qualificada e supervisionada?
 
-**Entre em Contato:**
+Entre em Contato:
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
@@ -685,4 +685,4 @@ Quer a tranquilidade de uma equipe profissional, qualificada e supervisionada?
 
 *Grupo WG Almeida, Profissionais capacitados, resultado garantido*
 
-**Tags**: profissionais capacitados, mão de obra qualificada, equipe de obra, construção, engenheiro, pedreiro, eletricista, encanador
+Tags: profissionais capacitados, mão de obra qualificada, equipe de obra, construção, engenheiro, pedreiro, eletricista, encanador

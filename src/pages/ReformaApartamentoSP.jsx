@@ -147,7 +147,7 @@ const ReformaApartamentoSP = () => {
             <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm uppercase tracking-wider mb-6">
               Reforma de Apartamento São Paulo
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 leading-tight">
+            <h1 className="wg-page-hero-title mb-6">
               Reforma Completa de Apartamento
               <br />
               com Sistema Turn Key

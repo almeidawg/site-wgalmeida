@@ -19,9 +19,9 @@ O BIM deixou de ser uma promessa e se tornou padrao em projetos de medio e grand
 
 ## O Que É BIM?
 
-**BIM** (Building Information Modeling) é uma metodologia de trabalho que integra todas as disciplinas de um projeto em um modelo 3D inteligente.
+BIM (Building Information Modeling) é uma metodologia de trabalho que integra todas as disciplinas de um projeto em um modelo 3D inteligente.
 
-**Não é apenas um software, mas uma filosofia de trabalho colaborativo.**
+Não é apenas um software, mas uma filosofia de trabalho colaborativo.
 
 ## Como Funciona?
 
@@ -62,13 +62,13 @@ O software identifica automaticamente:
 
 ### 1. Redução de Erros e Retrabalho
 
-**Sem BIM:**
+Sem BIM:
 - Erros descobertos na obra
 - Quebradeira para corrigir
 - Aumento de custo (15-30%)
 - Atraso no cronograma
 
-**Com BIM:**
+Com BIM:
 - Erros detectados no projeto
 - Correção virtual (sem custo)
 - Economia de 15-25%
@@ -82,7 +82,7 @@ O modelo gera automaticamente:
 - Mão de obra necessária
 - Cronograma realista
 
-**Precisão:** 95-98% vs 70-80% do orçamento tradicional
+Precisão: 95-98% vs 70-80% do orçamento tradicional
 
 ### 3. Visualização Realista
 
@@ -124,13 +124,13 @@ BIM permite simular:
 - Modelo 3D completo
 - Compartilhamento de informações
 - Detecção de conflitos
-- **Padrão em 2026**
+- Padrão em 2026
 
 ### Nível 3: BIM Integrado
 - Integração total
 - Nuvem compartilhada
 - Tempo real
-- **Futuro próximo**
+- Futuro próximo
 
 ## Softwares BIM Mais Usados
 
@@ -185,17 +185,17 @@ BIM permite simular:
 
 ### Investimento Inicial
 
-**Software:**
+Software:
 - Revit: R$ 8.000-15.000/ano (licença)
 - Treinamento: R$ 3.000-8.000 por profissional
 
-**Retorno:**
+Retorno:
 - Economia de 15-25% na obra
 - Menos erros
 - Menos retrabalho
 - Orçamentos mais competitivos
 
-**ROI:** Geralmente em 2-3 projetos
+ROI: Geralmente em 2-3 projetos
 
 ## Desafios do BIM
 
@@ -217,26 +217,26 @@ No Brasil:
 
 Tendências para os próximos anos:
 
-🔮 **Realidade Aumentada (AR)**
+🔮 Realidade Aumentada (AR)
 Visualizar projeto no terreno via celular
 
-🔮 **Inteligência Artificial**
+🔮 Inteligência Artificial
 Otimização automática de projetos
 
-🔮 **Gêmeo Digital**
+🔮 Gêmeo Digital
 Modelo digital sincronizado com edifício real
 
-🔮 **Blockchain**
+🔮 Blockchain
 Rastreabilidade de materiais
 
-🔮 **IoT Integrado**
+🔮 IoT Integrado
 Sensores conectados ao modelo
 
 ## BIM para Reformas
 
 Não é só para obras novas!
 
-**Aplicações:**
+Aplicações:
 - Levantamento 3D do existente (scanner laser)
 - Planejamento de reforma
 - Visualização de antes/depois
@@ -253,7 +253,7 @@ Não é só para obras novas!
 ✅ As-built digital entregue
 ✅ Manual de manutenção integrado
 
-**Benefício para o cliente:**
+Benefício para o cliente:
 - Visualização real do resultado
 - Orçamento sem surpresas
 - Prazo cumprido
@@ -272,4 +272,4 @@ BIM não é mais futuro, é presente. Em 2026, trabalhar com BIM é sinônimo de
 
 Se você está planejando construir ou reformar, exija que sua construtora trabalhe com BIM. A diferença é visível no resultado final.
 
-**Solicite uma apresentação 3D do seu projeto com o Grupo WG Almeida!**
+Solicite uma apresentação 3D do seu projeto com o Grupo WG Almeida!

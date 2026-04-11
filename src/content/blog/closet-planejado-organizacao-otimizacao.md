@@ -20,93 +20,93 @@ Se o objetivo e aproveitar cada centimetro, um closet planejado bem setorizado r
 ## Tipos de Closet
 
 ### Walk-in (Entrar Dentro)
-**Espaço mínimo:** 4m² (2x2m)
-**Ideal:** 6-10m²
-**Circulação:** 80-100cm entre módulos
+Espaço mínimo: 4m² (2x2m)
+Ideal: 6-10m²
+Circulação: 80-100cm entre módulos
 
-**Vantagens:**
+Vantagens:
 ✅ Muito espaço
 ✅ Visualização completa
 ✅ Conforto ao vestir
 ✅ Status
 
-**Custo:** R$ 15.000-60.000
+Custo: R$ 15.000-60.000
 
 ### Walk-through (Passagem)
-**Localização:** Entre quarto e banheiro
-**Largura mínima:** 1,80m
-**Comprimento:** 2,50m+
+Localização: Entre quarto e banheiro
+Largura mínima: 1,80m
+Comprimento: 2,50m+
 
-**Vantagens:**
+Vantagens:
 ✅ Otimiza circulação
 ✅ Privacidade
 ✅ Valoriza suite
 
-**Custo:** R$ 12.000-50.000
+Custo: R$ 12.000-50.000
 
 ### Aberto no Quarto
-**Espaço:** Parte do quarto dedicada
-**Tamanho:** 2-4m²
+Espaço: Parte do quarto dedicada
+Tamanho: 2-4m²
 
-**Vantagens:**
+Vantagens:
 ✅ Econômico (sem parede)
 ✅ Integrado
 ✅ Flexível
 
-**Desvantagens:**
+Desvantagens:
 ❌ Menos privacidade
 ❌ Poeira visível
 
-**Custo:** R$ 8.000-30.000
+Custo: R$ 8.000-30.000
 
 ### Linear (Parede Inteira)
-**Formato:** Armário de parede completa
-**Profundidade:** 60-70cm
-**Largura:** 3-5m
+Formato: Armário de parede completa
+Profundidade: 60-70cm
+Largura: 3-5m
 
-**Vantagens:**
+Vantagens:
 ✅ Aproveita parede
 ✅ Organizado
 ✅ Portas escondem
 
-**Custo:** R$ 10.000-40.000
+Custo: R$ 10.000-40.000
 
 ## Dimensionamento
 
 ### Alturas Internas
 
-**Cabideiros:**
+Cabideiros:
 - Camisas: 1,00-1,10m
 - Vestidos curtos: 1,20m
 - Casacos: 1,30m
 - Vestidos longos: 1,70m
 - Calças dobradas: 1,10m
 
-**Prateleiras:**
+Prateleiras:
 - Espaçamento: 30-35cm
 - Profundidade: 35-50cm
 - Altura útil: 25-30cm
 
-**Gavetas:**
+Gavetas:
 - Altura interna: 8-15cm
 - Largura: 40-90cm
 - Profundidade: 45-50cm
 
 ### Larguras
 
-**Cabideiros:**
+Cabideiros:
 - Mínimo: 50cm
 - Confortável: 60-80cm
 - Ideal: 90-120cm
 
-**Gavetas:**
+Gavetas:
 - Pequenas: 40-50cm
 - Médias: 60-80cm
 - Grandes: 90-120cm
 
 ### Profundidades
 
-**Padrão:**
+Padrão:
 - Cabides: 55-60cm
 - Com porta: 65-70cm
 - Walk-in aberto: 50-55cm
@@ -115,19 +115,19 @@ Se o objetivo e aproveitar cada centimetro, um closet planejado bem setorizado r
 
 ### Zonas por Altura
 
-**Superior (acima 1,80m):**
+Superior (acima 1,80m):
 - Malas
 - Itens fora de estação
 - Cobertores extras
 - Caixas organizadoras
 
-**Média (80-180cm):**
+Média (80-180cm):
 - Roupas uso diário
 - Cabideiros principais
 - Gavetas de acessórios
 - Sapatos médio uso
 
-**Inferior (abaixo 80cm):**
+Inferior (abaixo 80cm):
 - Sapatos diários
 - Gavetas roupas íntimas
 - Cestos roupa suja
@@ -135,27 +135,27 @@ Se o objetivo e aproveitar cada centimetro, um closet planejado bem setorizado r
 
 ### Organização por Tipo
 
-**Setor Cabides:**
+Setor Cabides:
 - Camisas
 - Blusas
 - Vestidos
 - Casacos
 - Calças (se prefere pendurar)
 
-**Setor Gavetas:**
+Setor Gavetas:
 - Roupas íntimas
 - Meias
 - Camisetas
 - Roupas esportivas
 - Pijamas
 
-**Setor Prateleiras:**
+Setor Prateleiras:
 - Calças dobradas
 - Suéteres
 - Bolsas
 - Toalhas (se houver)
 
-**Setor Sapatos:**
+Setor Sapatos:
 - Prateleiras inclinadas
 - Nichos individuais
 - Araras inferiores
@@ -163,98 +163,98 @@ Se o objetivo e aproveitar cada centimetro, um closet planejado bem setorizado r
 ## Acessórios Essenciais
 
 ### Cabideiros
-**Tipos:**
+Tipos:
 - Tubo redondo (mais comum)
 - Oval (mais cabides)
 - Retrátil (economia espaço)
 - Calças (clipe ou barra)
 
-**Material:**
+Material:
 - Cromado: R$ 15-30/m
 - Alumínio: R$ 20-40/m
 - Inox: R$ 40-80/m
 
 ### Gavetas
-**Com divisórias:**
+Com divisórias:
 - Meias e cuecas/calcinhas
 - Cintos
 - Gravatas
 - Bijuterias
 - Relógios
 
-**Corrediças:**
+Corrediças:
 - Telescópica (abre total): +R$ 80-150/gaveta
 - Quadro (abre 75%): +R$ 40-80/gaveta
 
 ### Sapateiras
-**Opções:**
+Opções:
 - Prateleiras inclinadas: 15-20°
 - Nichos 25x35cm
 - Gavetas deslizantes
 - Araras giratórias
 
-**Capacidade:**
+Capacidade:
 - Mulher média: 20-40 pares
 - Homem médio: 10-20 pares
 - Reservar: 30-60 nichos
 
 ### Iluminação
-**Essencial:**
+Essencial:
 - Fita LED nos cabideiros
 - Spots direcionáveis
 - Sensor de presença
 - 4000K (ver cores reais)
 
-**Custo:** R$ 800-2.500
+Custo: R$ 800-2.500
 
 ### Espelhos
-**Tamanhos:**
+Tamanhos:
 - Corpo inteiro: 50x150cm (mínimo)
 - Ideal: 60x180cm
 - Localização: Porta ou parede
 
 ### Cestãos
-**Para:**
+Para:
 - Roupa suja
 - Roupa academia
 - Separação lavagem
 
-**Tipos:**
+Tipos:
 - Fixos: R$ 150-400
 - Deslizantes: R$ 300-700
 
 ## Materiais
 
 ### MDF/MDP
-**MDF:**
+MDF:
 - Acabamento superior
 - Aceita detalhes
 - +15-20% vs MDP
 
-**MDP:**
+MDP:
 - Custo-benefício
 - Resistente
 - Padrão mercado
 
-**Acabamentos:**
+Acabamentos:
 - BP (branco): mais econômico
 - Laminado madeira: nobre
 - Laca: premium (+30-40%)
 
 ### Ferragens
-**Invest em qualidade:**
+Invest em qualidade:
 - Blum (referência)
 - Hettich
 - Ferrari
 
-**Custo ferragens:**
+Custo ferragens:
 - Economia: +R$ 1.000
 - Premium: +R$ 3.000-5.000
 
 ## Otimização de Espaço
 
 ### Closet Pequeno (2-3m²)
-**Estratégias:**
+Estratégias:
 - Aproveitar altura (até teto)
 - Cabideiros duplos (curtos)
 - Gavetas deslizantes
@@ -267,7 +267,7 @@ Se o objetivo e aproveitar cada centimetro, um closet planejado bem setorizado r
 - Prateleiras angulares
 
 ### Portas
-**Opções:**
+Opções:
 - Correr (economiza 60cm)
 - Camarão (meio termo)
 - Abrir (precisa espaço)
@@ -316,25 +316,25 @@ Se o objetivo e aproveitar cada centimetro, um closet planejado bem setorizado r
 ## Custos 2026
 
 ### Por Metragem
-**MDP:**
+MDP:
 - R$ 2.500-4.000/m linear
 - Closet 3m: R$ 7.500-12.000
 
-**MDF:**
+MDF:
 - R$ 3.000-5.000/m linear
 - Closet 3m: R$ 9.000-15.000
 
-**Laca:**
+Laca:
 - R$ 4.500-7.000/m linear
 - Closet 3m: R$ 13.500-21.000
 
 ### Por Tipo
-**Linear 3m:**
+Linear 3m:
 - Básico: R$ 8.000-12.000
 - Completo: R$ 15.000-25.000
 - Premium: R$ 25.000-40.000
 
-**Walk-in 6m²:**
+Walk-in 6m²:
 - Básico: R$ 15.000-25.000
 - Completo: R$ 25.000-45.000
 - Premium: R$ 45.000-80.000
@@ -347,15 +347,15 @@ Se o objetivo e aproveitar cada centimetro, um closet planejado bem setorizado r
 
 ## Marcas Recomendadas
 
-**Premium:**
+Premium:
 - Ornare: R$ 20.000-80.000
 - Kitchens: R$ 25.000-100.000
 
-**Médio-alto:**
+Médio-alto:
 - Florense: R$ 15.000-50.000
 - Todeschini: R$ 12.000-45.000
 
-**Custo-benefício:**
+Custo-benefício:
 - Madesa: R$ 8.000-25.000
 - Henn: R$ 7.000-22.000
 - Marceneiro local: R$ 6.000-30.000
@@ -401,7 +401,7 @@ Closet planejado:
 Investimento: R$ 8.000-80.000
 Retorno: Organização diária + praticidade
 
-**Priorizar:**
+Priorizar:
 1. Boa marcenaria (durabilidade)
 2. Ferragens qualidade (uso diário)
 3. Iluminação adequada (funcionalidade)

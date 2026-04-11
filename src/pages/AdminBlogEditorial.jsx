@@ -14,16 +14,17 @@ import {
   CheckCircle2,
   Copy,
   ExternalLink,
-  FileText,
   ImagePlus,
   Loader2,
   Search,
+  Trash2,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const STORAGE_KEY = 'wg_blog_editorial_uploads_v1';
 const UNSPLASH_STORAGE_KEY = 'wg_blog_editorial_unsplash_v1';
+const EXTERNAL_IMAGES_STORAGE_KEY = 'wg_blog_editorial_external_images_v1';
 const CLOUDINARY_WIDGET_SRC = 'https://upload-widget.cloudinary.com/latest/global/all.js';
 
 const CATEGORY_LABELS = {
@@ -80,6 +81,21 @@ const writeLocalUnsplashSelections = (value) => {
   window.localStorage.setItem(UNSPLASH_STORAGE_KEY, JSON.stringify(value));
 };
 
+const readLocalExternalImages = () => {
+  if (typeof window === 'undefined') return {};
+
+  try {
+    return JSON.parse(window.localStorage.getItem(EXTERNAL_IMAGES_STORAGE_KEY) || '{}');
+  } catch {
+    return {};
+  }
+};
+
+const writeLocalExternalImages = (value) => {
+  if (typeof window === 'undefined') return;
+  window.localStorage.setItem(EXTERNAL_IMAGES_STORAGE_KEY, JSON.stringify(value));
+};
+
 const getLocalPublicPath = (targetLocalFile) => {
   if (!targetLocalFile) return null;
   const normalized = targetLocalFile.replace(/^public[\\/]/, '').replace(/\\/g, '/');
@@ -94,6 +110,122 @@ const buildGoogleImageSearchUrl = (query) =>
 
 const buildUnsplashPhotoPageUrl = (photoId) =>
   photoId ? `https://unsplash.com/photos/${encodeURIComponent(photoId)}` : '';
+
+const buildUnsplashThumbUrl = (photoId) => {
+  if (!photoId) return '';
+  return `https://unsplash.com/photos/${encodeURIComponent(photoId)}/download?force=true&w=720&h=480&fit=crop`;
+};
+
+const isUnsplashImageHost = (hostname = '') => {
+  const host = String(hostname).toLowerCase();
+  return host === 'images.unsplash.com' || host === 'plus.unsplash.com';
+};
+
+const normalizeUnsplashImageUrl = (url) => {
+  const nextUrl = new URL(url.toString());
+  nextUrl.searchParams.set('auto', 'format');
+  nextUrl.searchParams.set('fit', 'crop');
+  nextUrl.searchParams.set('w', '720');
+  nextUrl.searchParams.set('h', '480');
+  nextUrl.searchParams.set('q', '80');
+  return nextUrl.toString();
+};
+
+const normalizeImageInputValue = (value = '') => {
+  const trimmed = String(value).trim();
+  if (!trimmed) return '';
+  if (trimmed.startsWith('//')) return `https:${trimmed}`;
+  if (/^[a-zA-Z][a-zA-Z\d+.-]*:/.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
+};
+
+const parseUrlSafe = (value = '') => {
+  try {
+    return new URL(value);
+  } catch {
+    return null;
+  }
+};
+
+const extractUnsplashPhotoId = (input = '') => {
+  const raw = String(input).trim();
+  if (!raw) return '';
+
+  if (/^[A-Za-z0-9_-]{6,}$/.test(raw) && !raw.includes('/')) {
+    return raw;
+  }
+
+  const normalized = normalizeImageInputValue(raw);
+  const parsed = parseUrlSafe(normalized);
+  if (!parsed) return '';
+
+  const host = parsed.hostname.toLowerCase();
+  if (host !== 'unsplash.com' && host !== 'www.unsplash.com') {
+    return '';
+  }
+
+  const segments = parsed.pathname.split('/').filter(Boolean);
+  const photosIndex = segments.indexOf('photos');
+  const candidate = photosIndex >= 0 ? segments[photosIndex + 1] : segments[segments.length - 1];
+
+  if (!candidate) return '';
+
+  const parts = candidate.split('-').filter(Boolean);
+  if (parts.length >= 2) {
+    return parts[parts.length - 1];
+  }
+
+  return candidate;
+};
+
+const resolveImageUrlFromInput = (input = '') => {
+  const normalized = normalizeImageInputValue(input);
+  if (!normalized) {
+    return { error: 'Cole uma URL de imagem para adicionar.' };
+  }
+
+  const parsed = parseUrlSafe(normalized);
+  if (!parsed) {
+    return { error: 'URL inválida. Confira e tente novamente.' };
+  }
+
+  if (parsed.protocol === 'http:') {
+    parsed.protocol = 'https:';
+  }
+
+  if (parsed.hostname.includes('google.')) {
+    const forwardedImage = parsed.searchParams.get('imgurl') || parsed.searchParams.get('url');
+    if (forwardedImage) {
+      return resolveImageUrlFromInput(forwardedImage);
+    }
+  }
+
+  if (isUnsplashImageHost(parsed.hostname)) {
+    return {
+      source: 'unsplash-image',
+      src: normalizeUnsplashImageUrl(parsed),
+      unsplashPhotoId: '',
+      pageUrl: '',
+    };
+  }
+
+  const unsplashPhotoId = extractUnsplashPhotoId(normalized);
+  if (unsplashPhotoId) {
+    return {
+      source: 'unsplash',
+      src: buildUnsplashThumbUrl(unsplashPhotoId),
+      unsplashPhotoId,
+      pageUrl: buildUnsplashPhotoPageUrl(unsplashPhotoId),
+    };
+  }
+
+  return {
+    source: 'remote',
+    src: parsed.toString(),
+    unsplashPhotoId: '',
+    pageUrl: '',
+  };
+};
 
 const getManifestSlotPublicId = (slug, slot) => {
   const entry = getBlogManifestEntry(slug);
@@ -160,8 +292,16 @@ const buildUnsplashSelectionSnippet = (slug, heroSelection, cardSelection) => {
 
 const getEffectiveSlotState = (record, slot, uploads) => {
   const localUpload = uploads?.[record.slug]?.[slot.slot] || null;
-  const publicId = localUpload?.publicId || getManifestSlotPublicId(record.slug, slot.slot);
-  const remoteAsset = !localUpload && !publicId
+  const localSessionUrl = !localUpload?.publicId
+    ? (
+      (typeof localUpload?.src === 'string' && localUpload.src.trim()) ||
+      (typeof localUpload?.secureUrl === 'string' && localUpload.secureUrl.trim()) ||
+      ''
+    )
+    : '';
+  const localPublicId = typeof localUpload?.publicId === 'string' ? localUpload.publicId.trim() : '';
+  const publicId = localPublicId || (!localSessionUrl ? getManifestSlotPublicId(record.slug, slot.slot) : '');
+  const remoteAsset = !localUpload && !publicId && !localSessionUrl
     ? getBlogImageAsset({
         slug: record.slug,
         variant: slot.slot === 'hero' ? 'hero' : 'card',
@@ -170,13 +310,20 @@ const getEffectiveSlotState = (record, slot, uploads) => {
     : null;
   const previewUrl = publicId
     ? buildCloudinaryEditorialUrl(publicId, slot.slot === 'hero' ? 'hero' : 'card')
-    : remoteAsset?.src || getLocalPublicPath(slot.targetLocalFile);
+    : localSessionUrl || remoteAsset?.src || getLocalPublicPath(slot.targetLocalFile);
 
   return {
     publicId,
+    localSessionUrl,
     previewUrl,
     uploadedAt: localUpload?.uploadedAt || null,
-    source: localUpload ? 'local-session' : publicId ? 'manifest' : remoteAsset?.source || 'pending',
+    source: localUpload
+      ? localPublicId
+        ? 'local-session'
+        : 'local-session-url'
+      : publicId
+        ? 'manifest'
+        : remoteAsset?.source || 'pending',
   };
 };
 
@@ -206,13 +353,19 @@ const buildManifestEntrySnippet = (slug, heroPublicId, cardPublicId) => {
 };
 
 const getTwoSlotStatus = (record, uploads) => {
-  const heroPublicId = getEffectiveSlotState(record, record.slots[0], uploads).publicId;
-  const cardPublicId = getEffectiveSlotState(record, record.slots[1], uploads).publicId;
+  const heroState = getEffectiveSlotState(record, record.slots[0], uploads);
+  const cardState = getEffectiveSlotState(record, record.slots[1], uploads);
+  const heroPublicId = heroState.publicId;
+  const cardPublicId = cardState.publicId;
+  const heroExternalSrc = heroState.localSessionUrl || '';
+  const cardExternalSrc = cardState.localSessionUrl || '';
 
   return {
     heroPublicId,
     cardPublicId,
-    ready: Boolean(heroPublicId && cardPublicId),
+    heroExternalSrc,
+    cardExternalSrc,
+    ready: Boolean((heroPublicId || heroExternalSrc) && (cardPublicId || cardExternalSrc)),
     snippet: buildManifestEntrySnippet(record.slug, heroPublicId, cardPublicId),
   };
 };
@@ -232,17 +385,30 @@ const getUnsplashSelectionStatus = (record, unsplashSelections) => {
 const getEditorialCoverageStatus = (record, uploads, unsplashSelections) => {
   const editorial = getTwoSlotStatus(record, uploads);
   const unsplash = getUnsplashSelectionStatus(record, unsplashSelections);
-  const heroSource = editorial.heroPublicId ? 'cloudinary' : unsplash.heroSelection.id ? 'unsplash' : null;
-  const cardSource = editorial.cardPublicId ? 'cloudinary' : unsplash.cardSelection.id ? 'unsplash' : null;
+  const heroSource = editorial.heroPublicId
+    ? 'cloudinary'
+    : editorial.heroExternalSrc
+      ? 'url'
+      : unsplash.heroSelection.id
+        ? 'unsplash'
+        : null;
+  const cardSource = editorial.cardPublicId
+    ? 'cloudinary'
+    : editorial.cardExternalSrc
+      ? 'url'
+      : unsplash.cardSelection.id
+        ? 'unsplash'
+        : null;
   const ready = Boolean(heroSource && cardSource);
   const sourceSet = new Set([heroSource, cardSource].filter(Boolean));
-  const sourceLabel = sourceSet.size === 2
-    ? 'Cloudinary + Unsplash'
-    : heroSource === 'cloudinary' && cardSource === 'cloudinary'
-      ? 'Cloudinary'
-      : heroSource === 'unsplash' && cardSource === 'unsplash'
-        ? 'Unsplash'
-        : 'Pendente';
+  const sourceNameByType = {
+    cloudinary: 'Cloudinary',
+    unsplash: 'Unsplash',
+    url: 'URL local',
+  };
+  const sourceLabel = sourceSet.size
+    ? Array.from(sourceSet).map((value) => sourceNameByType[value] || value).join(' + ')
+    : 'Pendente';
 
   return {
     editorial,
@@ -257,10 +423,14 @@ const getEditorialCoverageStatus = (record, uploads, unsplashSelections) => {
 const AdminBlogEditorial = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('todos');
-  const [statusFilter, setStatusFilter] = useState('pendentes');
+  const [statusFilter, setStatusFilter] = useState('todos');
   const [copiedKey, setCopiedKey] = useState('');
   const [uploads, setUploads] = useState({});
   const [unsplashSelections, setUnsplashSelections] = useState({});
+  const [externalImages, setExternalImages] = useState({});
+  const [urlInputBySlug, setUrlInputBySlug] = useState({});
+  const [urlErrorBySlug, setUrlErrorBySlug] = useState({});
+  const [compactMode, setCompactMode] = useState(true);
   const [widgetReady, setWidgetReady] = useState(false);
   const [widgetError, setWidgetError] = useState('');
   const [activeUploadKey, setActiveUploadKey] = useState('');
@@ -272,6 +442,7 @@ const AdminBlogEditorial = () => {
   useEffect(() => {
     setUploads(readLocalUploads());
     setUnsplashSelections(readLocalUnsplashSelections());
+    setExternalImages(readLocalExternalImages());
   }, []);
 
   useEffect(() => {
@@ -343,6 +514,28 @@ const AdminBlogEditorial = () => {
     writeLocalUploads(nextUploads);
   };
 
+  const saveExternalSlotOverride = (record, slotName, image) => {
+    if (!image?.src) return;
+
+    const nextUploads = {
+      ...uploads,
+      [record.slug]: {
+        ...(uploads[record.slug] || {}),
+        [slotName]: {
+          src: image.src,
+          source: image.source || 'remote',
+          unsplashPhotoId: image.unsplashPhotoId || '',
+          pageUrl: image.pageUrl || '',
+          originalUrl: image.originalUrl || image.src,
+          uploadedAt: new Date().toISOString(),
+        },
+      },
+    };
+
+    setUploads(nextUploads);
+    writeLocalUploads(nextUploads);
+  };
+
   const clearLocalUpload = (slug, slotName) => {
     if (!uploads?.[slug]?.[slotName]) return;
 
@@ -383,6 +576,97 @@ const AdminBlogEditorial = () => {
 
     setUnsplashSelections(nextSelections);
     writeLocalUnsplashSelections(nextSelections);
+  };
+
+  const removeExternalImage = (slug, imageId) => {
+    if (!externalImages?.[slug]?.length) return;
+
+    const nextImages = { ...externalImages };
+    nextImages[slug] = nextImages[slug].filter((image) => image.id !== imageId);
+
+    if (!nextImages[slug].length) {
+      delete nextImages[slug];
+    }
+
+    setExternalImages(nextImages);
+    writeLocalExternalImages(nextImages);
+  };
+
+  const assignExternalImageToSlot = (record, slotName, image) => {
+    if (!image?.src) return;
+    saveExternalSlotOverride(record, slotName, image);
+    clearLocalUnsplashSelection(record.slug, slotName);
+  };
+
+  const clearAllLocalEditorialData = () => {
+    setUploads({});
+    setUnsplashSelections({});
+    setExternalImages({});
+    setUrlInputBySlug({});
+    setUrlErrorBySlug({});
+
+    if (typeof window !== 'undefined') {
+      window.localStorage.removeItem(STORAGE_KEY);
+      window.localStorage.removeItem(UNSPLASH_STORAGE_KEY);
+      window.localStorage.removeItem(EXTERNAL_IMAGES_STORAGE_KEY);
+    }
+  };
+
+  const addExternalImageFromInput = (record) => {
+    const rawInput = urlInputBySlug[record.slug] || '';
+    const resolved = resolveImageUrlFromInput(rawInput);
+
+    if (resolved.error) {
+      setUrlErrorBySlug((current) => ({
+        ...current,
+        [record.slug]: resolved.error,
+      }));
+      return;
+    }
+
+    const existing = externalImages?.[record.slug] || [];
+    const normalizedSrc = resolved.src;
+    const alreadyAdded = existing.some((image) => image.src === normalizedSrc);
+
+    if (alreadyAdded) {
+      setUrlErrorBySlug((current) => ({
+        ...current,
+        [record.slug]: 'Essa imagem já está na lista de thumbs deste post.',
+      }));
+      return;
+    }
+
+    const nextImages = {
+      ...externalImages,
+      [record.slug]: [
+        ...existing,
+        {
+          id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+          src: normalizedSrc,
+          source: resolved.source,
+          unsplashPhotoId: resolved.unsplashPhotoId || '',
+          pageUrl: resolved.pageUrl || '',
+          originalUrl: rawInput.trim(),
+          addedAt: new Date().toISOString(),
+        },
+      ],
+    };
+
+    setExternalImages(nextImages);
+    writeLocalExternalImages(nextImages);
+    setUrlInputBySlug((current) => ({ ...current, [record.slug]: '' }));
+    setUrlErrorBySlug((current) => ({ ...current, [record.slug]: '' }));
+
+    if (resolved.unsplashPhotoId) {
+      const heroCurrent = getEffectiveUnsplashSlotState(record.slug, 'hero', unsplashSelections).id;
+      const cardCurrent = getEffectiveUnsplashSlotState(record.slug, 'card', unsplashSelections).id;
+
+      if (!heroCurrent) {
+        updateUnsplashSelection(record.slug, 'hero', 'id', resolved.unsplashPhotoId);
+      } else if (!cardCurrent) {
+        updateUnsplashSelection(record.slug, 'card', 'id', resolved.unsplashPhotoId);
+      }
+    }
   };
 
   const openUploadWidget = (record, slot) => {
@@ -471,7 +755,6 @@ const AdminBlogEditorial = () => {
     ready: queueWithStatus.filter((record) => record.coverage.ready).length,
     pending: queueWithStatus.filter((record) => !record.coverage.ready).length,
     needsCopyNormalization: queueWithStatus.filter((record) => record.needsCopyNormalization).length,
-    priorityPending: queueWithStatus.filter((record) => !record.coverage.ready && record.needsCopyNormalization).length,
   };
 
   const categoryOptions = Array.from(
@@ -491,19 +774,6 @@ const AdminBlogEditorial = () => {
     .filter(Boolean)
     .join('\n');
 
-  const priorityQueue = [...queueWithStatus]
-    .filter((record) => !record.coverage.ready && record.needsCopyNormalization)
-    .sort((a, b) => b.boldCount - a.boldCount)
-    .slice(0, 10);
-
-  const copyPriority = [...queueWithStatus]
-    .filter((record) => record.needsCopyNormalization)
-    .sort((a, b) => b.boldCount - a.boldCount)
-    .slice(0, 8);
-
-  const prioritySlugBatch = priorityQueue
-    .map((record) => record.slug)
-    .join('\n');
 
   const filteredQueue = queueWithStatus.filter((record) => {
     const matchesSearch = !searchTerm || [record.title, record.slug, record.category]
@@ -516,9 +786,7 @@ const AdminBlogEditorial = () => {
     const matchesStatus = (
       statusFilter === 'todos' ||
       (statusFilter === 'pendentes' && !record.coverage.ready) ||
-      (statusFilter === 'prontos' && record.coverage.ready) ||
-      (statusFilter === 'texto' && record.needsCopyNormalization) ||
-      (statusFilter === 'prioritarios' && !record.coverage.ready && record.needsCopyNormalization)
+      (statusFilter === 'prontos' && record.coverage.ready)
     );
 
     return matchesSearch && matchesCategory && matchesStatus;
@@ -719,118 +987,61 @@ const AdminBlogEditorial = () => {
                     onChange={(event) => setStatusFilter(event.target.value)}
                     className="rounded-xl border border-[#D7D1C5] bg-[#FBF8F2] px-4 py-3 text-[#1E2A3A] outline-none transition focus:border-[#B89E73]"
                   >
-                    <option value="pendentes">Pendentes</option>
                     <option value="todos">Todos</option>
+                    <option value="pendentes">Pendentes</option>
                     <option value="prontos">Hero + card resolvidos</option>
-                    <option value="prioritarios">Pendentes + normalização</option>
-                    <option value="texto">Precisam normalizar texto</option>
                   </select>
                 </label>
               </div>
 
-              <div className="space-y-1 text-sm leading-6 text-[#5B6470]">
+              <div className="space-y-2 text-sm leading-6 text-[#5B6470]">
                 <p>{filteredQueue.length} posts na visualização atual</p>
-                <p>{summary.priorityPending} pendentes também precisam normalizar texto</p>
+                <p>{summary.pending} posts ainda pendentes de cobertura completa</p>
+                <Button
+                  variant="outline"
+                  onClick={clearAllLocalEditorialData}
+                  className="border-[#D7D1C5] bg-white text-[#1E2A3A] hover:bg-[#F7F3EB]"
+                >
+                  Limpar sessão local
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => setCompactMode((current) => !current)}
+                  className="border-[#D7D1C5] bg-white text-[#1E2A3A] hover:bg-[#F7F3EB]"
+                >
+                  {compactMode ? 'Modo detalhado' : 'Modo compacto'}
+                </Button>
               </div>
             </div>
           </section>
 
-          {priorityQueue.length > 0 && (
-            <section className="rounded-[28px] border border-[#D7D1C5] bg-white p-6 shadow-sm">
-              <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-                <div className="space-y-2">
-                  <h2 className="text-xl font-semibold text-[#1E2A3A]">Lote prioritário desta rodada</h2>
-                  <p className="max-w-3xl text-sm leading-6 text-[#5B6470]">
-                    Os 10 primeiros posts ainda pendentes que também carregam excesso de negrito.
-                    Esse é o lote mais eficiente para atacar P1 e normalização no mesmo ciclo.
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-3">
-                  <Button
-                    variant="outline"
-                    onClick={() => copyText(prioritySlugBatch, 'priority-slugs')}
-                    className="border-[#D7D1C5] bg-white text-[#1E2A3A] hover:bg-[#F7F3EB]"
-                  >
-                    <Copy className="mr-2 h-4 w-4" />
-                    {copiedKey === 'priority-slugs' ? 'Slugs copiados' : 'Copiar slugs'}
-                  </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      setSearchTerm('');
-                      setCategoryFilter('todos');
-                      setStatusFilter('prioritarios');
-                    }}
-                    className="border-[#D7D1C5] bg-white text-[#1E2A3A] hover:bg-[#F7F3EB]"
-                  >
-                    Ver só prioritários
-                  </Button>
-                </div>
-              </div>
-
-              <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
-                {priorityQueue.map((record, index) => (
-                  <a
-                    key={`priority-${record.slug}`}
-                    href={withBasePath(`/blog/${record.slug}`)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-2xl border border-[#E3DDCF] bg-[#FBF8F2] p-4 transition hover:border-[#C9B591] hover:bg-[#F7F1E6]"
-                  >
-                    <p className="text-xs uppercase tracking-[0.16em] text-[#A36B12]">
-                      #{index + 1} · {record.boldCount} negritos
-                    </p>
-                    <p className="mt-2 text-xs uppercase tracking-[0.16em] text-[#7C7C7C]">
-                      {record.categoryLabel}
-                    </p>
-                    <p className="mt-2 line-clamp-3 text-sm leading-6 text-[#1E2A3A]">
-                      {record.title}
-                    </p>
-                  </a>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {copyPriority.length > 0 && (
-            <section className="rounded-[28px] border border-[#D7D1C5] bg-white p-6 shadow-sm">
-              <div className="mb-4 flex items-center gap-3">
-                <FileText className="h-5 w-5 text-[#7A5B2F]" />
-                <div>
-                  <h2 className="text-xl font-semibold text-[#1E2A3A]">Prioridade de normalização de texto</h2>
-                  <p className="text-sm leading-6 text-[#5B6470]">
-                    Ranking das matérias com mais negritos, para a gente limpar o ritmo visual do blog.
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-                {copyPriority.map((record) => (
-                  <a
-                    key={`copy-${record.slug}`}
-                    href={withBasePath(`/blog/${record.slug}`)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-2xl border border-[#E3DDCF] bg-[#FBF8F2] p-4 transition hover:border-[#C9B591] hover:bg-[#F7F1E6]"
-                  >
-                    <p className="text-xs uppercase tracking-[0.16em] text-[#A36B12]">
-                      {record.boldCount} trechos em negrito
-                    </p>
-                    <p className="mt-2 line-clamp-3 text-sm leading-6 text-[#1E2A3A]">
-                      {record.title}
-                    </p>
-                  </a>
-                ))}
-              </div>
-            </section>
-          )}
 
           <section className="space-y-5">
-            {filteredQueue.map((record) => (
+            {filteredQueue.map((record) => {
+              const heroSlot = record.slots.find((slot) => slot.slot === 'hero') || record.slots[0];
+              const cardSlot = record.slots.find((slot) => slot.slot === 'card') || record.slots[1] || record.slots[0];
+              const heroSlotState = heroSlot ? getEffectiveSlotState(record, heroSlot, uploads) : null;
+              const cardSlotState = cardSlot ? getEffectiveSlotState(record, cardSlot, uploads) : null;
+              const recordExtraImages = externalImages?.[record.slug] || [];
+              const recordInputValue = urlInputBySlug?.[record.slug] || '';
+              const recordInputError = urlErrorBySlug?.[record.slug] || '';
+              const hasHeroLocalOverride = Boolean(
+                uploads?.[record.slug]?.hero || unsplashSelections?.[record.slug]?.hero
+              );
+              const hasCardLocalOverride = Boolean(
+                uploads?.[record.slug]?.card || unsplashSelections?.[record.slug]?.card
+              );
+              const heroLocalSrc = typeof uploads?.[record.slug]?.hero?.src === 'string'
+                ? uploads[record.slug].hero.src
+                : '';
+              const cardLocalSrc = typeof uploads?.[record.slug]?.card?.src === 'string'
+                ? uploads[record.slug].card.src
+                : '';
+
+              return (
               <article
                 key={record.slug}
-                className="rounded-[28px] border border-[#D7D1C5] bg-white p-6 shadow-sm"
+                className={`rounded-[24px] border border-[#D7D1C5] bg-white shadow-sm ${compactMode ? 'p-4' : 'p-6'}`}
               >
                 <div className="flex flex-col gap-4 border-b border-[#EEE8DD] pb-5 lg:flex-row lg:items-start lg:justify-between">
                   <div className="space-y-3">
@@ -849,7 +1060,7 @@ const AdminBlogEditorial = () => {
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[#1E2A3A]">
+                      <h2 className={`${compactMode ? 'text-xl md:text-2xl' : 'text-2xl'} font-semibold tracking-[-0.02em] text-[#1E2A3A]`}>
                         {record.title}
                       </h2>
                       <p className="mt-2 text-sm leading-6 text-[#5B6470]">
@@ -878,6 +1089,162 @@ const AdminBlogEditorial = () => {
                       <Copy className="mr-2 h-4 w-4" />
                       {copiedKey === `slug-${record.slug}` ? 'Slug copiado' : 'Copiar slug'}
                     </Button>
+                  </div>
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-[#E3DDCF] bg-[#FBF8F2] p-4">
+                  <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#7C7C7C]">
+                        Galeria rápida do post
+                      </h3>
+                      <p className="mt-1 text-sm leading-6 text-[#5B6470]">
+                        Cole um link de imagem (internet, Google Images, Unsplash etc.) e clique em adicionar.
+                        Depois use Hero/Card para aplicar no blog na sessão atual.
+                      </p>
+                    </div>
+
+                    <div className="flex w-full flex-col gap-2 lg:w-auto lg:min-w-[480px]">
+                      <div className="flex flex-col gap-2 sm:flex-row">
+                        <input
+                          value={recordInputValue}
+                          onChange={(event) => {
+                            setUrlInputBySlug((current) => ({
+                              ...current,
+                              [record.slug]: event.target.value,
+                            }));
+                            setUrlErrorBySlug((current) => ({
+                              ...current,
+                              [record.slug]: '',
+                            }));
+                          }}
+                          onKeyDown={(event) => {
+                            if (event.key === 'Enter') {
+                              event.preventDefault();
+                              addExternalImageFromInput(record);
+                            }
+                          }}
+                          placeholder="Cole a URL da imagem aqui"
+                          className="w-full rounded-xl border border-[#D7D1C5] bg-white px-4 py-2.5 text-sm text-[#1E2A3A] outline-none transition focus:border-[#B89E73]"
+                        />
+                        <Button
+                          type="button"
+                          onClick={() => addExternalImageFromInput(record)}
+                          className="bg-[#1E2A3A] text-white hover:bg-[#24354C]"
+                        >
+                          <ImagePlus className="mr-2 h-4 w-4" />
+                          Adicionar foto
+                        </Button>
+                      </div>
+
+                      {recordInputError && (
+                        <p className="text-xs text-[#A24A4A]">{recordInputError}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {heroSlotState?.previewUrl && (
+                      <div className={`relative overflow-hidden rounded-xl border border-[#DED7CA] bg-white ${compactMode ? 'w-28' : 'w-32'}`}>
+                        <img
+                          src={heroSlotState.previewUrl}
+                          alt={`${record.title} - principal`}
+                          className={`${compactMode ? 'h-16' : 'h-20'} w-full object-cover`}
+                          loading="lazy"
+                        />
+                        <p className="px-2 py-1 text-[11px] uppercase tracking-[0.14em] text-[#5B6470]">
+                          Principal
+                        </p>
+                        {hasHeroLocalOverride && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              clearLocalUpload(record.slug, 'hero');
+                              clearLocalUnsplashSelection(record.slug, 'hero');
+                            }}
+                            className="absolute right-1 top-1 rounded-full bg-white/95 p-1 text-[#7B2D2D] transition hover:bg-white"
+                            aria-label="Excluir override hero"
+                            title="Excluir override hero"
+                          >
+                            <Trash2 className="h-3.5 w-3.5" />
+                          </button>
+                        )}
+                      </div>
+                    )}
+
+                    {cardSlotState?.previewUrl && (
+                      <div className={`relative overflow-hidden rounded-xl border border-[#DED7CA] bg-white ${compactMode ? 'w-28' : 'w-32'}`}>
+                        <img
+                          src={cardSlotState.previewUrl}
+                          alt={`${record.title} - card`}
+                          className={`${compactMode ? 'h-16' : 'h-20'} w-full object-cover`}
+                          loading="lazy"
+                        />
+                        <p className="px-2 py-1 text-[11px] uppercase tracking-[0.14em] text-[#5B6470]">
+                          Card
+                        </p>
+                        {hasCardLocalOverride && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              clearLocalUpload(record.slug, 'card');
+                              clearLocalUnsplashSelection(record.slug, 'card');
+                            }}
+                            className="absolute right-1 top-1 rounded-full bg-white/95 p-1 text-[#7B2D2D] transition hover:bg-white"
+                            aria-label="Excluir override card"
+                            title="Excluir override card"
+                          >
+                            <Trash2 className="h-3.5 w-3.5" />
+                          </button>
+                        )}
+                      </div>
+                    )}
+
+                    {recordExtraImages.map((image) => (
+                      <div
+                        key={`${record.slug}-extra-${image.id}`}
+                        className={`relative overflow-hidden rounded-xl border border-[#DED7CA] bg-white ${compactMode ? 'w-28' : 'w-32'}`}
+                      >
+                        <a href={image.pageUrl || image.src} target="_blank" rel="noreferrer">
+                          <img
+                            src={image.src}
+                            alt={`${record.title} - imagem adicional`}
+                            className={`${compactMode ? 'h-16' : 'h-20'} w-full object-cover`}
+                            loading="lazy"
+                          />
+                        </a>
+                        <p className="px-2 py-1 text-[11px] uppercase tracking-[0.14em] text-[#5B6470]">
+                          Extra
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => removeExternalImage(record.slug, image.id)}
+                          className="absolute right-1 top-1 rounded-full bg-white/95 p-1 text-[#7B2D2D] transition hover:bg-white"
+                          aria-label="Excluir thumbnail"
+                          title="Excluir thumbnail"
+                        >
+                          <Trash2 className="h-3.5 w-3.5" />
+                        </button>
+                        <div className="grid grid-cols-2 border-t border-[#EFE8DC] text-[10px] uppercase tracking-[0.12em]">
+                          <button
+                            type="button"
+                            onClick={() => assignExternalImageToSlot(record, 'hero', image)}
+                            className={`px-1 py-1.5 transition ${heroLocalSrc === image.src ? 'bg-[#EEF4EF] text-[#2E7D5A]' : 'bg-white text-[#5B6470] hover:bg-[#F7F3EB]'}`}
+                            title="Aplicar como Hero"
+                          >
+                            Hero
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => assignExternalImageToSlot(record, 'card', image)}
+                            className={`px-1 py-1.5 transition ${cardLocalSrc === image.src ? 'bg-[#EEF4EF] text-[#2E7D5A]' : 'bg-white text-[#5B6470] hover:bg-[#F7F3EB]'}`}
+                            title="Aplicar como Card"
+                          >
+                            Card
+                          </button>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -917,7 +1284,7 @@ const AdminBlogEditorial = () => {
                   </div>
                 )}
 
-                <div className="mt-6 grid gap-5 xl:grid-cols-2">
+                <div className={`mt-6 grid ${compactMode ? 'gap-3' : 'gap-5'} xl:grid-cols-2`}>
                   {record.slots.map((slot) => {
                     const slotState = getEffectiveSlotState(record, slot, uploads);
                     const unsplashSlotState = getEffectiveUnsplashSlotState(record.slug, slot.slot, unsplashSelections);
@@ -927,7 +1294,7 @@ const AdminBlogEditorial = () => {
                     return (
                       <section
                         key={`${record.slug}-${slot.slot}`}
-                        className="rounded-3xl border border-[#E3DDCF] bg-[#FBF8F2] p-5"
+                        className={`rounded-3xl border border-[#E3DDCF] bg-[#FBF8F2] ${compactMode ? 'p-4' : 'p-5'}`}
                       >
                         <div className="flex flex-wrap items-center justify-between gap-3">
                           <div>
@@ -955,7 +1322,7 @@ const AdminBlogEditorial = () => {
                             <img
                               src={slotState.previewUrl}
                               alt={`${record.title} - ${slot.slot}`}
-                              className="h-52 w-full object-cover"
+                              className={`${compactMode ? 'h-40' : 'h-52'} w-full object-cover`}
                               loading="lazy"
                             />
                           </div>
@@ -1129,7 +1496,8 @@ const AdminBlogEditorial = () => {
                   })}
                 </div>
               </article>
-            ))}
+              );
+            })}
 
             {!filteredQueue.length && (
               <div className="rounded-[28px] border border-[#D7D1C5] bg-white p-10 text-center text-[#5B6470] shadow-sm">

@@ -182,15 +182,15 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="section-padding-tight-top bg-white relative overflow-hidden">
+      <section className="section-padding-tight-top relative overflow-hidden bg-[#fbfaf6]">
         {/* Elementos decorativos */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-[0.08]">
           <div className="absolute top-0 right-0 w-96 h-96 bg-wg-orange rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-wg-green rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-wg-blue rounded-full blur-3xl" />
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-12">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -213,26 +213,28 @@ const Contact = () => {
                 {t('contactPage.info.kicker')}
               </span>
 
-              <h2 className="mb-5 text-3xl font-inter font-light tracking-tight text-wg-black md:text-[2.35rem]">
+              <h2 className="mb-4 text-[2rem] font-inter font-light tracking-tight text-wg-black md:text-[2.2rem]">
                 {t('contactPage.info.title')}
               </h2>
-              <p className="mb-8 max-w-[34rem] text-[17px] leading-[1.8] text-wg-gray">
+              <p className="mb-8 max-w-[40rem] text-[16px] leading-[1.85] text-wg-gray/90">
                 {t('contactPage.info.subtitle')}
               </p>
 
-              <div className="mb-8 grid gap-4 sm:grid-cols-2">
+              <div className="mb-8 grid gap-4 md:grid-cols-2">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="flex items-start gap-4 rounded-2xl border border-black/5 bg-[#f7f6f3] p-5 transition-all hover:border-black/10 hover:shadow-[0_14px_34px_rgba(20,20,20,0.05)]"
+                  className="flex items-start gap-4 rounded-2xl border border-[#f3d8bf] bg-[#fff6ed] p-5 transition-all hover:shadow-[0_14px_30px_rgba(212,139,74,0.15)]"
                 >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-wg-orange/10">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#ffe7d3]">
                     <Phone className="w-5 h-5 text-wg-orange" />
                   </div>
                   <div>
-                    <p className="mb-1 text-base font-inter font-light text-wg-black">{t('contactPage.info.phoneLabel')}</p>
+                    <p className="mb-1 text-base font-inter font-light text-wg-black">
+                      {t('contactPage.info.phoneLabel')}
+                    </p>
                     <a
                       href="https://wa.me/5511984650002"
                       target="_blank"
@@ -241,6 +243,9 @@ const Contact = () => {
                     >
                       +55 (11) 98465-0002
                     </a>
+                    <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-wg-gray/65">
+                      WhatsApp e ligação
+                    </p>
                   </div>
                 </motion.div>
 
@@ -249,14 +254,24 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="flex items-start gap-4 rounded-2xl border border-black/5 bg-[#f7f6f3] p-5 transition-all hover:border-black/10 hover:shadow-[0_14px_34px_rgba(20,20,20,0.05)]"
+                  className="flex items-start gap-4 rounded-2xl border border-[#cfe2f8] bg-[#f3f8ff] p-5 transition-all hover:shadow-[0_14px_30px_rgba(60,110,180,0.14)]"
                 >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-wg-orange/10">
-                    <Mail className="w-5 h-5 text-wg-orange" />
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#e6f1ff]">
+                    <Mail className="w-5 h-5 text-wg-blue" />
                   </div>
                   <div>
-                    <p className="mb-1 text-base font-inter font-light text-wg-black">{t('contactPage.info.emailLabel')}</p>
-                    <p className="text-[15px] leading-relaxed text-wg-gray">contato@wgalmeida.com.br</p>
+                    <p className="mb-1 text-base font-inter font-light text-wg-black">
+                      {t('contactPage.info.emailLabel')}
+                    </p>
+                    <a
+                      href="mailto:contato@wgalmeida.com.br"
+                      className="text-[15px] leading-relaxed text-wg-gray transition-colors hover:text-wg-blue"
+                    >
+                      contato@wgalmeida.com.br
+                    </a>
+                    <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-wg-gray/65">
+                      Resposta por e-mail
+                    </p>
                   </div>
                 </motion.div>
 
@@ -265,14 +280,19 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="flex items-start gap-4 rounded-2xl border border-black/5 bg-[#f7f6f3] p-5 transition-all hover:border-black/10 hover:shadow-[0_14px_34px_rgba(20,20,20,0.05)]"
+                  className="flex items-start gap-4 rounded-2xl border border-[#d7eadf] bg-[#f2faf5] p-5 transition-all hover:shadow-[0_14px_30px_rgba(77,140,111,0.14)]"
                 >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-wg-orange/10">
-                    <MapPin className="w-5 h-5 text-wg-orange" />
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#e2f2e9]">
+                    <MapPin className="w-5 h-5 text-wg-green" />
                   </div>
                   <div>
-                    <p className="mb-1 text-base font-inter font-light text-wg-black">{t('contactPage.info.addressLabel')}</p>
+                    <p className="mb-1 text-base font-inter font-light text-wg-black">
+                      {t('contactPage.info.addressLabel')}
+                    </p>
                     <p className="text-[15px] leading-relaxed text-wg-gray">{t('contactPage.info.addressValue')}</p>
+                    <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-wg-gray/65">
+                      Atendimento com hora marcada
+                    </p>
                   </div>
                 </motion.div>
 
@@ -281,14 +301,19 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="flex items-start gap-4 rounded-2xl border border-black/5 bg-[#f7f6f3] p-5 transition-all hover:border-black/10 hover:shadow-[0_14px_34px_rgba(20,20,20,0.05)]"
+                  className="flex items-start gap-4 rounded-2xl border border-[#eadbc9] bg-[#fdf7ef] p-5 transition-all hover:shadow-[0_14px_30px_rgba(139,94,60,0.16)]"
                 >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-wg-orange/10">
-                    <Clock className="w-5 h-5 text-wg-orange" />
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#f4e9da]">
+                    <Clock className="w-5 h-5 text-wg-brown" />
                   </div>
                   <div>
-                    <p className="mb-1 text-base font-inter font-light text-wg-black">{t('contactPage.info.hoursLabel')}</p>
+                    <p className="mb-1 text-base font-inter font-light text-wg-black">
+                      {t('contactPage.info.hoursLabel')}
+                    </p>
                     <p className="text-[15px] leading-relaxed text-wg-gray">{t('contactPage.info.hoursValue')}</p>
+                    <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-wg-gray/65">
+                      Plantão digital no WhatsApp
+                    </p>
                   </div>
                 </motion.div>
               </div>
@@ -304,13 +329,26 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:pl-2"
             >
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col rounded-[28px] border border-black/6 bg-white p-6 shadow-[0_18px_50px_rgba(20,20,20,0.05)] md:p-7"
+                className="mx-auto flex w-full max-w-[34rem] flex-col rounded-[24px] border border-[#eadfce] bg-[#fffdfa] p-5 shadow-[0_16px_42px_rgba(46,34,20,0.08)] md:p-6"
               >
-                <div className="grid gap-4">
-                  <div className="grid gap-4 md:grid-cols-2">
+                <div className="mb-5">
+                  <span className="mb-2 block text-xs uppercase tracking-[0.2em] text-wg-orange/85">
+                    {t('contactPage.form.introKicker')}
+                  </span>
+                  <h3 className="text-[1.45rem] font-inter font-light tracking-tight text-wg-black">
+                    {t('contactPage.form.introTitle')}
+                  </h3>
+                  <p className="mt-2 text-[14px] leading-relaxed text-wg-gray/85">
+                    {t('contactPage.form.introSubtitle')}
+                  </p>
+                </div>
+
+                <div className="grid gap-3.5">
+                  <div className="grid gap-3.5 md:grid-cols-2">
                     <div>
                       <label className="mb-2 block text-sm font-light text-wg-black/88">
                         {t('contactPage.form.name')}
@@ -320,7 +358,7 @@ const Contact = () => {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full rounded-2xl border border-gray-200 bg-[#fcfcfb] px-4 py-3 text-[15px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/15"
+                        className="w-full rounded-xl border border-[#dfd7cc] bg-white px-3.5 py-2.5 text-[14px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20"
                         disabled={loading}
                       />
                     </div>
@@ -334,13 +372,13 @@ const Contact = () => {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full rounded-2xl border border-gray-200 bg-[#fcfcfb] px-4 py-3 text-[15px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/15"
+                        className="w-full rounded-xl border border-[#dfd7cc] bg-white px-3.5 py-2.5 text-[14px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20"
                         disabled={loading}
                       />
                     </div>
                   </div>
 
-                  <div className="grid gap-4 md:grid-cols-2">
+                  <div className="grid gap-3.5 md:grid-cols-2">
                     <div>
                       <label className="mb-2 block text-sm font-light text-wg-black/88">
                         {t('contactPage.form.phone')}
@@ -353,7 +391,7 @@ const Contact = () => {
                         }
                         placeholder={t('contactPage.form.phonePlaceholder')}
                         maxLength={15}
-                        className="w-full rounded-2xl border border-gray-200 bg-[#fcfcfb] px-4 py-3 text-[15px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/15"
+                        className="w-full rounded-xl border border-[#dfd7cc] bg-white px-3.5 py-2.5 text-[14px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20"
                         disabled={loading}
                       />
                     </div>
@@ -366,7 +404,7 @@ const Contact = () => {
                         type="text"
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full rounded-2xl border border-gray-200 bg-[#fcfcfb] px-4 py-3 text-[15px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/15"
+                        className="w-full rounded-xl border border-[#dfd7cc] bg-white px-3.5 py-2.5 text-[14px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20"
                         disabled={loading}
                       />
                     </div>
@@ -381,13 +419,17 @@ const Contact = () => {
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="min-h-[156px] w-full resize-none rounded-2xl border border-gray-200 bg-[#fcfcfb] px-4 py-3 text-[15px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/15"
+                      className="min-h-[132px] w-full resize-none rounded-xl border border-[#dfd7cc] bg-white px-3.5 py-2.5 text-[14px] outline-none transition-all focus:border-wg-orange focus:ring-2 focus:ring-wg-orange/20"
                       disabled={loading}
                     />
                   </div>
 
-                  <div className="pt-2">
-                    <Button type="submit" className="wg-btn-pill-primary w-full" disabled={loading}>
+                  <div className="pt-1 sm:flex sm:justify-end">
+                    <Button
+                      type="submit"
+                      className="wg-btn-pill-primary w-full sm:w-auto sm:min-w-[13rem]"
+                      disabled={loading}
+                    >
                       {loading ? (
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                       ) : (

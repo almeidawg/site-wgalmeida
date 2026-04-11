@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-04-10T21:40:08.300408+00:00",
+  "batchSize": 30,
+  "updatedSlugs": [
+    {
+      "slug": "obraeasy-para-parceiros-imobiliarias-corretores",
+      "hero": "1775156293060-41c944fadc47",
+      "card": "1775156293060-41c944fadc47",
+      "heroQueryUsed": "obraeasy para parceiros como imobiliarias e corretores geram receita com gest o de obras",
+      "cardQueryUsed": "obraeasy para parceiros como imobiliarias e corretores geram receita com gest o de obras"
+    },
+    {
+      "slug": "tabela-precos-reforma-2026-iccri",
+      "hero": "1509228468518-180dd4864904",
+      "card": "1560785472-2f186f554644",
+      "heroQueryUsed": "tabela de precos de reforma 2026 iccri o indice de referencia para obras em sao paulo",
+      "cardQueryUsed": "tabela de precos de reforma 2026 iccri o indice de referencia para obras em sao paulo"
+    },
+    {
+      "slug": "home-office-ergonomia-produtividade",
+      "hero": "1530114882489-195de89c0a7a",
+      "card": "1493859822928-d0ba2b85c80d",
+      "heroQueryUsed": "home office ergonomia produtividade",
+      "cardQueryUsed": "home office ergonomia produtividade"
+    },
+    {
+      "slug": "quanto-valoriza-apartamento-apos-reforma",
+      "hero": "1724220525947-483ac59c2242",
+      "card": "1712437372325-9459fbc59beb",
+      "heroQueryUsed": "quanto valoriza apartment apos",
+      "cardQueryUsed": "quanto valoriza apartment apos"
+    },
+    {
+      "slug": "dyson-tecnologia-design-residencial",
+      "hero": "1708529589690-00e2bbb7f327",
+      "card": "1697372080300-74a399941cd8",
+      "heroQueryUsed": "dyson vale a pena engenharia design residencial e custo beneficio",
+      "cardQueryUsed": "dyson vale a pena engenharia design residencial e custo beneficio"
+    },
+    {
+      "slug": "tendencias-decoracao-interiores-2026",
+      "hero": "1770983438689-1d1d662ce918",
+      "card": "1759496330246-c2f8d23ae83d",
+      "heroQueryUsed": "trends decor 2026 20",
+      "cardQueryUsed": "trends decor 2026 20"
+    }
+  ],
+  "failed": [
+    {
+      "slug": "obraeasy-como-funciona-para-clientes-finais",
+      "heroQueries": [
+        "obraeasy plataforma gestao construction",
+        "obraeasy como funciona a plataforma de gest o de obras para clientes finais",
+        "obraeasy como funciona para clientes finais"
+      ],
+      "cardQueries": [
+        "obraeasy plataforma gestao construction",
+        "obraeasy como funciona a plataforma de gest o de obras para clientes finais",
+        "obraeasy como funciona para clientes finais"
+      ],
+      "heroFound": false,
+      "cardFound": false
+    }
+  ]
+}

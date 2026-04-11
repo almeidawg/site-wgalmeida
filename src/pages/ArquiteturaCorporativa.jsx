@@ -157,7 +157,7 @@ const ArquiteturaCorporativa = () => {
             <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm font-light uppercase tracking-[0.18em] mb-6">
               Arquitetura Corporativa
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 leading-tight">
+            <h1 className="wg-page-hero-title mb-6">
               Projetos Corporativos<br />que Transformam Negócios
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">

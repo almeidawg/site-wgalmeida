@@ -14,17 +14,17 @@ featured: true
 
 ## A Capital da Europa e do Art Nouveau
 
-**Bruxelas** e uma cidade de **contrastes arquitetonicos**: de um lado, a **Grand Place** medieval dourada; de outro, o **Atomium** futurista. Entre esses marcos, o acervo Art Nouveau de Victor Horta coloca a cidade entre as referencias europeias do movimento.
+Bruxelas e uma cidade de contrastes arquitetonicos: de um lado, a Grand Place medieval dourada; de outro, o Atomium futurista. Entre esses marcos, o acervo Art Nouveau de Victor Horta coloca a cidade entre as referencias europeias do movimento.
 
-Como sede da **União Europeia e NATO**, Bruxelas também abriga arquitetura institucional moderna e contemporânea, criando uma cidade onde **mil anos de história coexistem** com o futuro.
+Como sede da União Europeia e NATO, Bruxelas também abriga arquitetura institucional moderna e contemporânea, criando uma cidade onde mil anos de história coexistem com o futuro.
 
-**Bilíngue** (francês + holandês/flamengo), Bruxelas reflete em sua arquitetura as influências **flamengas, francesas, burguesas e art nouveau** que a tornam única no mundo.
+Bilíngue (francês + holandês/flamengo), Bruxelas reflete em sua arquitetura as influências flamengas, francesas, burguesas e art nouveau que a tornam única no mundo.
 
 ## A Grand Place: A Praça Mais Bonita do Mundo
 
 ### Patrimônio Mundial da UNESCO
 
-A **Grand Place** (Grote Markt em holandês) é o **coração pulsante** de Bruxelas e uma das praças mais espetaculares da Europa. Victor Hugo a chamou de "a mais bela praça do mundo".
+A Grand Place (Grote Markt em holandês) é o coração pulsante de Bruxelas e uma das praças mais espetaculares da Europa. Victor Hugo a chamou de "a mais bela praça do mundo".
 
 ### História
 - Século XI: Mercado ao ar livre
@@ -54,7 +54,7 @@ A **Grand Place** (Grote Markt em holandês) é o **coração pulsante** de Brux
 - Interior: salões com tapeçarias flamengos
 - Escadaria gótica monumental
 
-**Curiosidade:** A torre é propositalmente **desalinhada** do centro da fachada - diz a lenda que o arquiteto se jogou da torre ao perceber o "erro" (mas era intencional!).
+Curiosidade: A torre é propositalmente desalinhada do centro da fachada - diz a lenda que o arquiteto se jogou da torre ao perceber o "erro" (mas era intencional!).
 
 ### Maison du Roi (Casa do Rei) - Século XVI
 
@@ -75,7 +75,7 @@ A **Grand Place** (Grote Markt em holandês) é o **coração pulsante** de Brux
 
 ### Casas das Guildas: Barroco Flamengo
 
-As **39 casas** que rodeiam a praça são antigas sedes das **corporações de ofício** (guildas) - cada uma mais elaborada que a outra!
+As 39 casas que rodeiam a praça são antigas sedes das corporações de ofício (guildas) - cada uma mais elaborada que a outra!
 
 ### Características do Barroco Flamengo
 - Frontões elaborados e decorados
@@ -86,34 +86,34 @@ As **39 casas** que rodeiam a praça são antigas sedes das **corporações de o
 
 ### Casas Mais Famosas
 
-**1. La Maison du Roi d'Espagne (Casa do Rei da Espanha)**
+1. La Maison du Roi d'Espagne (Casa do Rei da Espanha)
 - Guilda dos padeiros
 - Cúpula dourada octogonal
 - Estátua equestre no topo
 - Café desde 1910
 
-**2. Le Cornet (O Chifre)**
+2. Le Cornet (O Chifre)
 - Guilda dos barqueiros
 - Formato de popa de navio!
 - Frontão esculpido como barco
 - Detalhes marítimos
 
-**3. Le Renard (A Raposa)**
+3. Le Renard (A Raposa)
 - Guilda dos mercadores
 - Raposa dourada no topo
 - Fachada barroca clássica
 
-**4. Le Cygne (O Cisne)**
+4. Le Cygne (O Cisne)
 - Guilda dos açougueiros
 - Cisne branco no frontão
 - Karl Marx frequentava o café (1845)
 
-**5. La Louve (A Loba)**
+5. La Louve (A Loba)
 - Loba romana (Rômulo e Remo)
 - Guilda dos arqueiros
 - Frontão triangular
 
-**6. La Maison des Ducs de Brabant (Casa dos Duques de Brabante)**
+6. La Maison des Ducs de Brabant (Casa dos Duques de Brabante)
 - Na verdade seis casas com fachada unificada
 - Classicismo italiano
 - Pilastras coríntias
@@ -121,7 +121,7 @@ As **39 casas** que rodeiam a praça são antigas sedes das **corporações de o
 
 ### Tapete de Flores (Tapis de Fleurs)
 
-A cada **2 anos** (agosto), a Grand Place é coberta por um **tapete gigante de flores**:
+A cada 2 anos (agosto), a Grand Place é coberta por um tapete gigante de flores:
 - 1.800m² de begônias
 - 700.000 flores
 - Padrões tradicionais belgas
@@ -132,9 +132,9 @@ A cada **2 anos** (agosto), a Grand Place é coberta por um **tapete gigante de 
 
 ### A Revolução Arquitetônica (1890-1910)
 
-**Bruxelas = Berço do Art Nouveau!**
+Bruxelas = Berço do Art Nouveau!
 
-Entre 1890-1910, Bruxelas viveu uma **revolução arquitetônica** liderada por **Victor Horta**, que criou um estilo completamente novo: **Art Nouveau** (Arte Nova).
+Entre 1890-1910, Bruxelas viveu uma revolução arquitetônica liderada por Victor Horta, que criou um estilo completamente novo: Art Nouveau (Arte Nova).
 
 ### Características
 - Linhas curvas orgânicas (inspiradas na natureza)
@@ -144,7 +144,7 @@ Entre 1890-1910, Bruxelas viveu uma **revolução arquitetônica** liderada por 
 - Integração total: arquitetura + mobiliário + decoração
 - Whiplash (linha chicote) - curva característica
 
-**Por Que Bruxelas?**
+Por Que Bruxelas?
 - Prosperidade industrial
 - Burguesia progressista querendo se diferenciar
 - Liberdade criativa (menos academicismo)
@@ -156,7 +156,7 @@ Entre 1890-1910, Bruxelas viveu uma **revolução arquitetônica** liderada por 
 
 ### Obras-Primas
 
-**1. Hôtel Tassel (1893-1894)**
+1. Hôtel Tassel (1893-1894)
 - Primeira construção Art Nouveau do mundo!
 - UNESCO Patrimônio Mundial (2000)
 - Escadaria com ferro forjado curvilíneo exposto
@@ -164,7 +164,7 @@ Entre 1890-1910, Bruxelas viveu uma **revolução arquitetônica** liderada por 
 - Vitrais coloridos
 - Inovação: ferro estrutural visível como decoração!
 
-**2. Hôtel Solvay (1895-1900)**
+2. Hôtel Solvay (1895-1900)
 - Obra-prima absoluta de Horta
 - Casa do industrial Solvay (dinheiro ilimitado!)
 - Tudo desenhado por Horta: maçanetas, móveis, vitrais, carpetes
@@ -173,14 +173,14 @@ Entre 1890-1910, Bruxelas viveu uma **revolução arquitetônica** liderada por 
 - 33 tipos de mármore
 - Visitação limitada (ainda privada)
 
-**3. Hôtel Van Eetvelde (1895-1898)**
+3. Hôtel Van Eetvelde (1895-1898)
 - Fachada mais discreta
 - Interior explosivo: sala octogonal com cúpula de vidro
 - Ferro pintado em verde/dourado
 - Vitrais coloridos filtrando luz
 - UNESCO Patrimônio Mundial
 
-**4. Maison & Atelier Horta (1898-1901)**
+4. Maison & Atelier Horta (1898-1901)
 - Casa e ateliê do próprio Horta
 - Hoje: Museu Horta
 - Preservado perfeitamente
@@ -233,7 +233,7 @@ Entre 1890-1910, Bruxelas viveu uma **revolução arquitetônica** liderada por 
 
 ### A Estátua Mais Famosa (e Pequena!)
 
-**Manneken Pis** (Menino que Faz Xixi):
+Manneken Pis (Menino que Faz Xixi):
 
 ### História
 - Estátua de bronze 61cm
@@ -266,7 +266,7 @@ Entre 1890-1910, Bruxelas viveu uma **revolução arquitetônica** liderada por 
 
 ### Símbolo da Expo 58
 
-O **Atomium** é o monumento mais **futurista e surreal** de Bruxelas.
+O Atomium é o monumento mais futurista e surreal de Bruxelas.
 
 ### Construção
 - Expo 58 (Feira Mundial 1958)
@@ -300,24 +300,24 @@ O **Atomium** é o monumento mais **futurista e surreal** de Bruxelas.
 
 ### Capital da União Europeia
 
-Bruxelas abriga as **instituições europeias**, gerando arquitetura institucional moderna.
+Bruxelas abriga as instituições europeias, gerando arquitetura institucional moderna.
 
 ### Quartier Européen (Bairro Europeu)
 
-**1. Berlaymont (1967-2004)**
+1. Berlaymont (1967-2004)
 - Sede da Comissão Europeia
 - Formato de cruz (forma X)
 - Vidro + aço
 - Renovado (amianto removido)
 - Fachada de vidro curva
 
-**2. Justus Lipsius (1995)**
+2. Justus Lipsius (1995)
 - Conselho da União Europeia
 - Arquitetura pós-moderna
 - Granito cinza + vidro espelhado
 - Segurança máxima
 
-**3. Paul-Henri Spaak (1993)**
+3. Paul-Henri Spaak (1993)
 - Parlamento Europeu (Bruxelas)
 - Vidro + aço
 - Hemiciclo para plenárias
@@ -359,18 +359,18 @@ Bruxelas abriga as **instituições europeias**, gerando arquitetura institucion
 
 ### Arquitetura Moderna
 
-**1. Tour Madou (1965)**
+1. Tour Madou (1965)
 - Arranha-céu modernista
 - 27 andares
 - Vidro + concreto
 
-**2. Bozar (Palais des Beaux-Arts) - 1928**
+2. Bozar (Palais des Beaux-Arts) - 1928
 - Arquiteto: Victor Horta (fase art déco!)
 - Centro cultural
 - Art Déco geométrico
 - Auditório com acústica perfeita
 
-**3. Comic Strip Murals**
+3. Comic Strip Murals
 - 50+ murais gigantes pintados em fachadas
 - Tema: quadrinhos belgas (Tintim, Smurfs, Lucky Luke)
 - Transforma prédios cinzas em arte pública
@@ -522,24 +522,24 @@ No Grupo WG Almeida, trazemos a elegância do Art Nouveau belga com ferro forjad
 
 ## Curiosidades de Bruxelas
 
-🍫 **Capital do chocolate** - 2.000+ chocolateiros
-🍟 **Batata frita** nasceu aqui (não na França!)
-🍺 **800+ cervejas** belgas diferentes
-🎨 **Museus**: 80+ (Magritte, quadrinhos, instrumentos musicais)
-🗣️ **Bilíngue**: francês + holandês (flamengo)
-🏛️ **UNESCO**: 4 Patrimônios Mundiais na cidade
-🎭 **Tintim** nasceu aqui (Hergé era belga)
-💙 **Smurfs** também (Peyo era belga)
-🌸 **Tapete de Flores**: 700.000 begônias (a cada 2 anos)
-🚽 **Manneken Pis**: 1.000+ trajes diferentes!
+🍫 Capital do chocolate - 2.000+ chocolateiros
+🍟 Batata frita nasceu aqui (não na França!)
+🍺 800+ cervejas belgas diferentes
+🎨 Museus: 80+ (Magritte, quadrinhos, instrumentos musicais)
+🗣️ Bilíngue: francês + holandês (flamengo)
+🏛️ UNESCO: 4 Patrimônios Mundiais na cidade
+🎭 Tintim nasceu aqui (Hergé era belga)
+💙 Smurfs também (Peyo era belga)
+🌸 Tapete de Flores: 700.000 begônias (a cada 2 anos)
+🚽 Manneken Pis: 1.000+ trajes diferentes!
 
 ---
 
 ## Bruxelas: Onde o Passado Dourado Encontra o Futuro Atômico
 
-Bruxelas é uma cidade de **contradições harmoniosas** - medieval e futurista, flamenga e francesa, institucional e irreverente. É onde o **barroco mais exuberante** convive com o **Art Nouveau mais ousado**, e onde um **menino de bronze fazendo xixi** é o símbolo maior.
+Bruxelas é uma cidade de contradições harmoniosas - medieval e futurista, flamenga e francesa, institucional e irreverente. É onde o barroco mais exuberante convive com o Art Nouveau mais ousado, e onde um menino de bronze fazendo xixi é o símbolo maior.
 
-É uma lição de como **preservar o patrimônio** sem renunciar à inovação, e de como criar **beleza** em cada detalhe.
+É uma lição de como preservar o patrimônio sem renunciar à inovação, e de como criar beleza em cada detalhe.
 
 ---
 
@@ -564,4 +564,4 @@ O Grupo WG Almeida está pronto para criar seu projeto com a elegância curvilí
 
 *Bruxelas: onde cada fachada conta uma história, cada escada é uma escultura, e cada detalhe é arte.*
 
-**© 2026 Grupo WG Almeida - Arquitetura Internacional**
+© 2026 Grupo WG Almeida - Arquitetura Internacional

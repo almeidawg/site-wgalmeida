@@ -14,7 +14,7 @@ tags: ["custo construção", "custo reforma", "SINAPI", "preco m2 construção",
 
 Seja voce proprietario planejando uma reforma, arquiteto elaborando orcamentos, engenheiro validando propostas ou investidor avaliando viabilidade, esta guia foi criado para voce.
 
-Consolidamos **15 anos de dados do mercado de construcao civil**, combinando referencias do SINAPI, CUB regional, pesquisa de campo nacional e comparativos internacionais para entregar as tabelas de preco por m2 mais precisas disponiveis publicamente em 2026.
+Consolidamos 15 anos de dados do mercado de construcao civil, combinando referencias do SINAPI, CUB regional, pesquisa de campo nacional e comparativos internacionais para entregar as tabelas de preco por m2 mais precisas disponiveis publicamente em 2026.
 
 ---
 
@@ -36,7 +36,7 @@ Nossa base de custos e construida sobre 4 pilares independentes, que se compleme
 - Nao inclui: terreno, fundacoes especiais, projetos, taxas, incorporacao
 
 #### 3. Banco de Dados Proprio, 15 Anos de Mercado
-- **280+ obras executadas** entre 2011 e 2026
+- 280+ obras executadas entre 2011 e 2026
 - Medicoes reais de servicos executados por etapa
 - Separacao entre custo de material e mao de obra
 - Dados de producao (m2/dia, hh/unidade) por servico
@@ -52,12 +52,12 @@ Nossa base de custos e construida sobre 4 pilares independentes, que se compleme
 
 | Indice | Acumulado 12m | Fonte |
 |--------|--------------|-------|
-| **INCC** (Indice Nacional Custo Construcao) | +5,81% | FGV |
-| **CUB Nacional** | +5,43% | SINDUSCON Nacional |
-| **IPCA** (Inflacao Geral) | +4,83% | IBGE |
-| **IGPM** | +6,12% | FGV |
+| INCC (Indice Nacional Custo Construcao) | +5,81% | FGV |
+| CUB Nacional | +5,43% | SINDUSCON Nacional |
+| IPCA (Inflacao Geral) | +4,83% | IBGE |
+| IGPM | +6,12% | FGV |
 
-> Todos os valores neste guia estao em reais de **marco/2026**, corrigidos pelo INCC.
+> Todos os valores neste guia estao em reais de marco/2026, corrigidos pelo INCC.
 
 ---
 
@@ -67,12 +67,12 @@ Nossa base de custos e construida sobre 4 pilares independentes, que se compleme
 
 | Padrao | Custo M2 Minimo | Custo M2 Referencia | Custo M2 Maximo | CUB Equivalente |
 |--------|----------------|---------------------|-----------------|-----------------|
-| **Popular** | R$ 1.850 | R$ 2.200 | R$ 2.800 | R-1/PP4 |
-| **Medio** | R$ 2.600 | R$ 3.100 | R$ 3.800 | R-1/R4 |
-| **Alto Padrao** | R$ 3.800 | R$ 4.800 | R$ 6.200 | PP-4N |
-| **Luxo** | R$ 5.500 | R$ 7.200 | R$ 9.500 | Customizado |
+| Popular | R$ 1.850 | R$ 2.200 | R$ 2.800 | R-1/PP4 |
+| Medio | R$ 2.600 | R$ 3.100 | R$ 3.800 | R-1/R4 |
+| Alto Padrao | R$ 3.800 | R$ 4.800 | R$ 6.200 | PP-4N |
+| Luxo | R$ 5.500 | R$ 7.200 | R$ 9.500 | Customizado |
 
-**O que esta incluido:**
+O que esta incluido:
 - Fundacoes convencionais (sapata, radier, bloco)
 - Estrutura (concreto armado ou aco, conforme projeto)
 - Vedacao (alvenaria ou drywall)
@@ -82,7 +82,7 @@ Nossa base de custos e construida sobre 4 pilares independentes, que se compleme
 - Esquadrias (janelas e portas) conforme padrao
 - Acabamento final conforme padrao
 
-**O que NAO esta incluido:**
+O que NAO esta incluido:
 - Terreno
 - Projetos (arquitetonico, estrutural, hidrossanitario, eletrico)
 - Fundacoes especiais (estacas, radier reforado)
@@ -98,7 +98,7 @@ Nossa base de custos e construida sobre 4 pilares independentes, que se compleme
 | Materiais | 56% | R$ 1.736 |
 | Mao de obra | 38% | R$ 1.178 |
 | BDI (beneficios e despesas indiretas) | 6% | R$ 186 |
-| **Total** | **100%** | **R$ 3.100** |
+| Total | 100% | R$ 3.100 |
 
 ---
 
@@ -108,30 +108,30 @@ Nossa base de custos e construida sobre 4 pilares independentes, que se compleme
 
 | Nivel de Reforma | Custo M2 Minimo | Custo M2 Referencia | Custo M2 Maximo |
 |-----------------|----------------|---------------------|-----------------|
-| **Basica** | R$ 900 | R$ 1.400 | R$ 2.000 |
-| **Intermediaria** | R$ 1.800 | R$ 2.600 | R$ 3.500 |
-| **Completa** | R$ 3.000 | R$ 4.200 | R$ 5.800 |
-| **Premium Turn Key** | R$ 5.500 | R$ 7.500 | R$ 11.000 |
+| Basica | R$ 900 | R$ 1.400 | R$ 2.000 |
+| Intermediaria | R$ 1.800 | R$ 2.600 | R$ 3.500 |
+| Completa | R$ 3.000 | R$ 4.200 | R$ 5.800 |
+| Premium Turn Key | R$ 5.500 | R$ 7.500 | R$ 11.000 |
 
 ### O Que Cada Nivel Inclui
 
 | Nivel | Inclui |
 |-------|--------|
-| **Basica** | Pintura geral, troca de pisos laminados, pequenos reparos, iluminacao simples |
-| **Intermediaria** | Basica + revestimentos novos (cozinha e banheiro), eletrica parcial, marcenaria basica |
-| **Completa** | Intermediaria + hidraulica completa, layout parcial, marcenaria planejada completa, climatizacao |
-| **Turn Key** | Projeto executivo completo + execucao total + marcenaria premium + automacao + acompanhamento integral |
+| Basica | Pintura geral, troca de pisos laminados, pequenos reparos, iluminacao simples |
+| Intermediaria | Basica + revestimentos novos (cozinha e banheiro), eletrica parcial, marcenaria basica |
+| Completa | Intermediaria + hidraulica completa, layout parcial, marcenaria planejada completa, climatizacao |
+| Turn Key | Projeto executivo completo + execucao total + marcenaria premium + automacao + acompanhamento integral |
 
 ### Custo por Ambiente (Reforma Completa, Padrao Medio)
 
 | Ambiente | Custo Minimo | Custo Referencia | Custo Maximo |
 |----------|-------------|------------------|-------------|
-| **Sala de estar (30m2)** | R$ 28.000 | R$ 42.000 | R$ 65.000 |
-| **Cozinha (15m2)** | R$ 35.000 | R$ 65.000 | R$ 120.000 |
-| **Banheiro (6m2)** | R$ 22.000 | R$ 38.000 | R$ 75.000 |
-| **Suite (20m2 + BWC 8m2)** | R$ 45.000 | R$ 80.000 | R$ 150.000 |
-| **Quarto (15m2)** | R$ 15.000 | R$ 28.000 | R$ 55.000 |
-| **Varanda (12m2)** | R$ 18.000 | R$ 35.000 | R$ 65.000 |
+| Sala de estar (30m2) | R$ 28.000 | R$ 42.000 | R$ 65.000 |
+| Cozinha (15m2) | R$ 35.000 | R$ 65.000 | R$ 120.000 |
+| Banheiro (6m2) | R$ 22.000 | R$ 38.000 | R$ 75.000 |
+| Suite (20m2 + BWC 8m2) | R$ 45.000 | R$ 80.000 | R$ 150.000 |
+| Quarto (15m2) | R$ 15.000 | R$ 28.000 | R$ 55.000 |
+| Varanda (12m2) | R$ 18.000 | R$ 35.000 | R$ 65.000 |
 
 ---
 
@@ -187,14 +187,14 @@ Para ajustar os valores de referencia (base SP Capital) para outras regioes:
 
 | Regiao | Multiplicador | Observacao |
 |--------|-------------|-----------|
-| **Sao Paulo Capital** | 1,00 | Referencia base |
-| **Grande SP (outros municipios)** | 0,88 - 0,95 | Depende da distancia do centro |
-| **Interior SP (Campinas, Ribeirao)** | 0,82 - 0,90 | Mao de obra e materiais mais baratos |
-| **Rio de Janeiro Capital** | 0,92 - 1,08 | Varia muito por bairro |
-| **Brasilia** | 0,88 - 0,95 | |
-| **Sul (Curitiba, Porto Alegre)** | 0,80 - 0,88 | |
-| **Nordeste (Fortaleza, Recife, Salvador)** | 0,72 - 0,82 | |
-| **Norte (Manaus, Belem)** | 0,75 - 0,88 | Logistica adicional |
+| Sao Paulo Capital | 1,00 | Referencia base |
+| Grande SP (outros municipios) | 0,88 - 0,95 | Depende da distancia do centro |
+| Interior SP (Campinas, Ribeirao) | 0,82 - 0,90 | Mao de obra e materiais mais baratos |
+| Rio de Janeiro Capital | 0,92 - 1,08 | Varia muito por bairro |
+| Brasilia | 0,88 - 0,95 | |
+| Sul (Curitiba, Porto Alegre) | 0,80 - 0,88 | |
+| Nordeste (Fortaleza, Recife, Salvador) | 0,72 - 0,82 | |
+| Norte (Manaus, Belem) | 0,75 - 0,88 | Logistica adicional |
 
 ---
 
@@ -204,15 +204,15 @@ Para contextualizar os valores brasileiros no cenario global (convertidos para U
 
 | Cidade/Pais | Construcao Padrao Medio (USD/m2) | Equivalente BRL/m2 |
 |-------------|----------------------------------|-------------------|
-| **Sao Paulo, Brasil** | USD 560 | R$ 3.100 |
-| **Buenos Aires, Argentina** | USD 450 | R$ 2.480 |
-| **Lisboa, Portugal** | USD 1.800 | R$ 9.900 |
-| **Madrid, Espanha** | USD 1.600 | R$ 8.800 |
-| **Miami, EUA** | USD 2.200 | R$ 12.100 |
-| **Berlim, Alemanha** | USD 2.000 | R$ 11.000 |
-| **Dubai, EAU** | USD 1.400 | R$ 7.700 |
+| Sao Paulo, Brasil | USD 560 | R$ 3.100 |
+| Buenos Aires, Argentina | USD 450 | R$ 2.480 |
+| Lisboa, Portugal | USD 1.800 | R$ 9.900 |
+| Madrid, Espanha | USD 1.600 | R$ 8.800 |
+| Miami, EUA | USD 2.200 | R$ 12.100 |
+| Berlim, Alemanha | USD 2.000 | R$ 11.000 |
+| Dubai, EAU | USD 1.400 | R$ 7.700 |
 
-> **Conclusao:** O Brasil tem um dos custos de construcao mais competitivos do mundo para projetos de alto padrao, representando uma janela de oportunidade unica para investidores internacionais e para quem quer construir com qualidade global a custos acessiveis.
+> Conclusao: O Brasil tem um dos custos de construcao mais competitivos do mundo para projetos de alto padrao, representando uma janela de oportunidade unica para investidores internacionais e para quem quer construir com qualidade global a custos acessiveis.
 
 ---
 
@@ -262,9 +262,9 @@ Para uma estimativa rapida (acuracia de ±20%):
 Orcamento = Area (m2) × Custo M2 Referencia × Fator Regional × Fator Dificuldade
 ```
 
-**Exemplo:**
+Exemplo:
 - Reforma completa, 90m2, padrao medio, Sao Paulo Capital, sem restricoes
-- Orcamento = 90 × R$ 4.200 × 1,00 × 1,00 = **R$ 378.000**
+- Orcamento = 90 × R$ 4.200 × 1,00 × 1,00 = R$ 378.000
 
 ### Formula Avancada (Para Profissionais)
 
@@ -284,10 +284,10 @@ Para maior precisao, use a composicao por servicos:
 
 Desde 2011, a WG Almeida coleta e registra dados de todas as obras executadas:
 
-- **280+ projetos entregues** com medicoes reais
-- **R$ 280 milhoes** em obras gerenciadas
-- **850+ fornecedores** cadastrados e avaliados
-- **12.000+ servicos** com custo unitario rastreado
+- 280+ projetos entregues com medicoes reais
+- R$ 280 milhoes em obras gerenciadas
+- 850+ fornecedores cadastrados e avaliados
+- 12.000+ servicos com custo unitario rastreado
 
 ### Validacao por Multiplas Fontes
 
@@ -303,14 +303,14 @@ Nossa base e atualizada mensalmente, sempre que o SINAPI publica novos valores o
 
 Quer calcular o custo de construcao ou reforma da sua obra com os dados desta tabela?
 
-Acesse nossa **calculadora AVM e ICCRI integrada**:
+Acesse nossa calculadora AVM e ICCRI integrada:
 
 - Calculo de custo de construcao nova por padrao (Popular/Medio/Alto/Luxo)
 - Custo de reforma estimado por area e nivel
 - Comparativo de custo de construir x comprar pronto
 - Relatorio PDF com metodologia completa
 
-**Acesse:** [easyrealstate.wgalmeida.com.br/calculo](https://easyrealstate.wgalmeida.com.br/calculo)
+Acesse: [easyrealstate.wgalmeida.com.br/calculo](https://easyrealstate.wgalmeida.com.br/calculo)
 
 ---
 
@@ -320,7 +320,7 @@ O mercado de construcao civil brasileiro e frequentemente opaco. Donos de obras 
 
 Nosso compromisso e trazer transparencia e rigor tecnico para esse mercado. Estes dados sao atualizados regularmente e estao disponiveis publicamente porque acreditamos que um mercado bem informado e um mercado melhor para todos.
 
-**Proximas atualizacoes:** jun/2026 (base SINAPI jun/2026 + CUB 2o trim/2026).
+Proximas atualizacoes: jun/2026 (base SINAPI jun/2026 + CUB 2o trim/2026).
 
 ---
 
@@ -328,7 +328,7 @@ Nosso compromisso e trazer transparencia e rigor tecnico para esse mercado. Este
 
 ---
 
-**Referencias:**
+Referencias:
 - SINAPI Marco/2026, CEF/IBGE
 - CUB Marco/2026, SINDUSCON-SP
 - INCC Acumulado 12m, FGV

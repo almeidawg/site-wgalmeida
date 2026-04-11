@@ -21,9 +21,9 @@ featured: true
 
 ## O Que É o Sistema Easy?
 
-O **Sistema Easy** é a metodologia proprietária do Grupo WG Almeida que transforma projetos complexos de arquitetura e construção em processos **simples, transparentes e previsíveis**.
+O Sistema Easy é a metodologia proprietária do Grupo WG Almeida que transforma projetos complexos de arquitetura e construção em processos simples, transparentes e previsíveis.
 
-Desenvolvido ao longo de **15+ anos de experiência**, o Sistema Easy elimina as principais dores de clientes em projetos de construção e reforma:
+Desenvolvido ao longo de 15+ anos de experiência, o Sistema Easy elimina as principais dores de clientes em projetos de construção e reforma:
 
 ❌ Falta de clareza sobre custos
 ❌ Prazos imprevisíveis
@@ -37,14 +37,14 @@ Desenvolvido ao longo de **15+ anos de experiência**, o Sistema Easy elimina as
 
 ### 1. Transparência Total 🔍
 
-**O que significa:**
+O que significa:
 - Você sabe exatamente quanto vai gastar em cada etapa
 - Acesso ao cronograma atualizado em tempo real
 - Relatórios semanais de progresso
 - Fotos da obra diariamente
 - Custos abertos e justificados
 
-**Na prática:**
+Na prática:
 - Dashboard online com status do projeto
 - Orçamento detalhado por item
 - Sem custos escondidos
@@ -52,13 +52,13 @@ Desenvolvido ao longo de **15+ anos de experiência**, o Sistema Easy elimina as
 
 ### 2. Previsibilidade Financeira 💰
 
-**O que significa:**
+O que significa:
 - EVF (Estudo de Viabilidade Financeira) antes de executar
 - Orçamento fechado com margem de contingência
 - Cronograma financeiro realista
 - Parcelas definidas por etapas concluídas
 
-**Na prática:**
+Na prática:
 ```
 Exemplo Casa 200m²:
 - Estudo preliminar → R$ 25.000
@@ -73,14 +73,14 @@ TOTAL PREVISTO: R$ 918.000
 
 ### 3. Comunicação Constante 📱
 
-**O que significa:**
+O que significa:
 - Grupo de WhatsApp exclusivo do projeto
 - Arquiteto responsável sempre disponível
 - Respostas em até 24h
 - Decisões documentadas
 - Atas de reunião
 
-**Canais de comunicação:**
+Canais de comunicação:
 - WhatsApp para urgências
 - E-mail para documentação
 - Reuniões presenciais quinzenais
@@ -89,14 +89,14 @@ TOTAL PREVISTO: R$ 918.000
 
 ### 4. Tecnologia Integrada 🖥️
 
-**O que significa:**
+O que significa:
 - Projeto em BIM (Building Information Modeling)
 - Compatibilização automática
 - Extração de quantitativos precisa
 - Visualização 3D realista
 - Realidade virtual do projeto pronto
 
-**Ferramentas utilizadas:**
+Ferramentas utilizadas:
 - Revit para projetos BIM
 - Navisworks para compatibilização
 - Lumion para renderizações
@@ -105,14 +105,14 @@ TOTAL PREVISTO: R$ 918.000
 
 ### 5. Entrega Garantida ✅
 
-**O que significa:**
+O que significa:
 - Prazo definido e cumprido
 - Garantia de 5 anos em estrutura
 - Assistência técnica pós-obra
 - Manual do proprietário
 - Certificado de conclusão
 
-**Garantias incluídas:**
+Garantias incluídas:
 - Estrutura: 5 anos
 - Instalações: 2 anos
 - Acabamentos: 1 ano
@@ -125,28 +125,28 @@ TOTAL PREVISTO: R$ 918.000
 
 ### Fase 1: Descoberta (1-2 semanas)
 
-**Atividades:**
+Atividades:
 1. Reunião inicial presencial
 2. Visita técnica ao imóvel
 3. Briefing detalhado
 4. Levantamento fotográfico
 5. Medição e cadastro
 
-**Entrega:**
+Entrega:
 - Relatório de viabilidade técnica
 - Proposta comercial detalhada
 - Cronograma preliminar
 
 ### Fase 2: Conceito (2-4 semanas)
 
-**Atividades:**
+Atividades:
 1. Estudo preliminar 3D
 2. Apresentação de conceitos (mínimo 2 opções)
 3. Seleção de referências
 4. Ajustes e refinamentos
 5. Aprovação do conceito
 
-**Entrega:**
+Entrega:
 - Plantas humanizadas
 - Maquete eletrônica 3D
 - Perspectivas renderizadas
@@ -154,14 +154,14 @@ TOTAL PREVISTO: R$ 918.000
 
 ### Fase 3: Desenvolvimento (6-10 semanas)
 
-**Atividades:**
+Atividades:
 1. Projeto arquitetônico detalhado
 2. Projetos complementares (elétrica, hidráulica, estrutura)
 3. Compatibilização BIM
 4. EVF - Estudo de Viabilidade Financeira
 5. Ajustes finais
 
-**Entrega:**
+Entrega:
 - Projeto executivo completo
 - Memorial descritivo
 - Especificações técnicas
@@ -170,28 +170,28 @@ TOTAL PREVISTO: R$ 918.000
 
 ### Fase 4: Aprovação (4-8 semanas)
 
-**Atividades:**
+Atividades:
 1. Preparação de documentação
 2. Protocolo na prefeitura
 3. Acompanhamento de análise
 4. Correções se necessário
 5. Obtenção de alvará
 
-**Entrega:**
+Entrega:
 - Alvará de construção/reforma
 - ARTs registradas
 - Projeto aprovado carimbado
 
 ### Fase 5: Construção (Variável)
 
-**Atividades:**
+Atividades:
 1. Mobilização de obra
 2. Execução conforme cronograma
 3. Vistorias semanais
 4. Relatórios fotográficos diários
 5. Gestão de fornecedores
 
-**Acompanhamento:**
+Acompanhamento:
 - Engenheiro de obra in loco
 - Reuniões quinzenais de status
 - Fotos diárias no grupo WhatsApp
@@ -199,14 +199,14 @@ TOTAL PREVISTO: R$ 918.000
 
 ### Fase 6: Entrega (1-2 semanas)
 
-**Atividades:**
+Atividades:
 1. Limpeza final
 2. Vistoria técnica
 3. Correções finais (punch list)
 4. Entrega das chaves
 5. Manual do proprietário
 
-**Documentação entregue:**
+Documentação entregue:
 - Manual do proprietário
 - As-built (projeto como construído)
 - Certificados de garantia
@@ -267,7 +267,7 @@ TOTAL PREVISTO: R$ 918.000
 
 ### BIM - Building Information Modeling
 
-Todos os projetos são desenvolvidos em **Revit BIM**, garantindo:
+Todos os projetos são desenvolvidos em Revit BIM, garantindo:
 - Compatibilização automática entre disciplinas
 - Extração precisa de quantitativos
 - Simulações de iluminação e ventilação
@@ -276,10 +276,10 @@ Todos os projetos são desenvolvidos em **Revit BIM**, garantindo:
 ### Gestão de Projetos Digital
 
 Utilizamos ferramentas profissionais:
-- **Trello/Asana**: Gestão de tarefas
-- **Google Drive**: Compartilhamento de arquivos
-- **WhatsApp Business**: Comunicação rápida
-- **Portal do Cliente**: Dashboard personalizado
+- Trello/Asana: Gestão de tarefas
+- Google Drive: Compartilhamento de arquivos
+- WhatsApp Business: Comunicação rápida
+- Portal do Cliente: Dashboard personalizado
 
 ### Visualização Avançada
 
@@ -294,27 +294,27 @@ Utilizamos ferramentas profissionais:
 
 ### Case 1: Apartamento Jardins - 150m²
 
-**Desafio:** Cliente queria reforma completa mas tinha orçamento limitado de R$ 280.000
+Desafio: Cliente queria reforma completa mas tinha orçamento limitado de R$ 280.000
 
-**Solução Easy:**
+Solução Easy:
 1. EVF identificou que projeto inicial custaria R$ 340.000
 2. Ajustamos especificações mantendo conceito
 3. Faseamento: áreas sociais agora, quartos depois
 4. Obra concluída em R$ 275.000
 
-**Resultado:** Cliente economizou R$ 65.000 e ainda fez melhor que planejado
+Resultado: Cliente economizou R$ 65.000 e ainda fez melhor que planejado
 
 ### Case 2: Casa Morumbi - 280m²
 
-**Desafio:** Construção nova com prazo apertado (casamento da filha)
+Desafio: Construção nova com prazo apertado (casamento da filha)
 
-**Solução Easy:**
+Solução Easy:
 1. Cronograma reverso: começamos pela data final
 2. Tecnologia BIM acelerou projetos
 3. Pré-fabricação de elementos quando possível
 4. Gestão rigorosa de fornecedores
 
-**Resultado:** Entrega 2 semanas antes do prazo
+Resultado: Entrega 2 semanas antes do prazo
 
 ---
 
@@ -322,22 +322,22 @@ Utilizamos ferramentas profissionais:
 
 ### O Sistema Easy Tem Custo Adicional?
 
-**Não.** O Sistema Easy é nossa metodologia de trabalho padrão, incluída em todos os projetos.
+Não. O Sistema Easy é nossa metodologia de trabalho padrão, incluída em todos os projetos.
 
 ### Valores Típicos
 
 Os projetos WG Almeida seguem a tabela do CAU (Conselho de Arquitetura e Urbanismo):
 
-**Projeto Completo:**
+Projeto Completo:
 - 5-8% do valor da obra para projetos residenciais
 - 4-6% para projetos comerciais
 - Gerenciamento de obra: 12-15% do valor executado
 
-**Exemplo:**
+Exemplo:
 - Reforma apartamento 120m² = R$ 300.000
 - Projeto (6%) = R$ 18.000
 - Gerenciamento (15%) = R$ 45.000
-- **Total serviços WG Almeida: R$ 63.000**
+- Total serviços WG Almeida: R$ 63.000
 
 ---
 
@@ -370,7 +370,7 @@ Alterações são naturais. No Sistema Easy:
 
 ### Como sei que o prazo será cumprido?
 
-Nossos prazos têm **92% de cumprimento** porque:
+Nossos prazos têm 92% de cumprimento porque:
 - Cronograma realista desde o início
 - Margem de segurança embutida
 - Gestão proativa de riscos
@@ -383,38 +383,38 @@ Nossos prazos têm **92% de cumprimento** porque:
 
 O Sistema Easy foi desenvolvido com base em:
 
-✅ **PMI (Project Management Institute)** - Boas práticas de gestão
-✅ **Lean Construction** - Eliminação de desperdícios
-✅ **BIM Level 2** - Modelagem da informação
-✅ **ISO 9001** - Gestão da qualidade
-✅ **CAU/BR** - Normas do Conselho de Arquitetura
+✅ PMI (Project Management Institute) - Boas práticas de gestão
+✅ Lean Construction - Eliminação de desperdícios
+✅ BIM Level 2 - Modelagem da informação
+✅ ISO 9001 - Gestão da qualidade
+✅ CAU/BR - Normas do Conselho de Arquitetura
 
 ---
 
 ## Depoimentos
 
 > *"O Sistema Easy mudou minha percepção sobre obras. Sempre tive medo de reformar, mas com a WG Almeida, soube exatamente o que ia acontecer em cada etapa."*
-> **- Marina S., Itaim Bibi**
+> - Marina S., Itaim Bibi
 
 > *"A transparência é impressionante. Recebo fotos todos os dias e posso acompanhar cada centavo gasto. Recomendo!"*
-> **- Carlos M., Moema**
+> - Carlos M., Moema
 
 > *"Obra entregue no prazo e no orçamento. Achei que era impossível no Brasil!"*
-> **- Juliana R., Vila Nova Conceição**
+> - Juliana R., Vila Nova Conceição
 
 ---
 
 ## Conclusão
 
-O Sistema Easy não é apenas uma metodologia, é um **compromisso com a transparência, qualidade e satisfação do cliente**.
+O Sistema Easy não é apenas uma metodologia, é um compromisso com a transparência, qualidade e satisfação do cliente.
 
 Acreditamos que projetos de arquitetura e construção não precisam ser estressantes, imprevisíveis ou cheios de surpresas.
 
 Com o Sistema Easy, você tem:
-- **Clareza**: Sabe o que vai acontecer
-- **Controle**: Acompanha tudo em tempo real
-- **Confiança**: Garantias e assistência técnica
-- **Resultado**: O projeto dos seus sonhos, sem pesadelos
+- Clareza: Sabe o que vai acontecer
+- Controle: Acompanha tudo em tempo real
+- Confiança: Garantias e assistência técnica
+- Resultado: O projeto dos seus sonhos, sem pesadelos
 
 ---
 
@@ -422,9 +422,9 @@ Com o Sistema Easy, você tem:
 
 Quer construir ou reformar com tranquilidade?
 
-Agende uma **Consultoria Easy gratuita** e descubra como simplificar seu projeto.
+Agende uma Consultoria Easy gratuita e descubra como simplificar seu projeto.
 
-**Entre em Contato:**
+Entre em Contato:
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
@@ -433,4 +433,4 @@ Agende uma **Consultoria Easy gratuita** e descubra como simplificar seu projeto
 
 *Grupo WG Almeida, Transformando projetos complexos em experiências simples*
 
-**Tags**: Sistema Easy, metodologia, gestão de projetos, BIM, construção civil, reforma, transparência
+Tags: Sistema Easy, metodologia, gestão de projetos, BIM, construção civil, reforma, transparência

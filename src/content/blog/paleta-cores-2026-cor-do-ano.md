@@ -24,7 +24,7 @@ featured: true
 
 Quer escolher a Cor do Ano 2026 sem erro? Neste guia voce encontra as tonalidades de destaque (Pantone, Suvinil e Coral), paletas prontas por ambiente e combinacoes objetivas para projetos residenciais e corporativos.
 
-As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2026, as paletas refletem busca por **equilibrio emocional, conexao com a natureza e sofisticacao discreta**.
+As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2026, as paletas refletem busca por equilibrio emocional, conexao com a natureza e sofisticacao discreta.
 
 ---
 
@@ -32,113 +32,113 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Pantone Color of the Year 2026
 
-**🎨 "PANTONE 17-1230 Mocha Mousse"**
+🎨 "PANTONE 17-1230 Mocha Mousse"
 
-**Descrição:**
+Descrição:
 - Tom de marrom quente e envolvente
 - Inspirado em café, chocolate e terra
 - Transmite conforto e sofisticação
 - Equilibra modernidade e tradição
 
-**Significado:**
+Significado:
 > *"Mocha Mousse é uma cor que nutre e reconforta, evocando a riqueza dos sabores da natureza e a estabilidade de elementos terrosos. É uma cor que celebra o prazer dos pequenos luxos."*
 
-**Onde usar:**
+Onde usar:
 - Paredes de salas de estar
 - Quartos (parede de cabeceira)
 - Mobiliário (sofás, poltronas)
 - Detalhes em madeira
 - Têxteis (almofadas, mantas)
 
-**Combinações:**
+Combinações:
 - Com off-white: elegância discreta
 - Com verde oliva: natural e orgânico
 - Com dourado: luxo acolhedor
 - Com terracota: calor terroso
 
-**RGB:** 145, 106, 83
-**HEX:** #916A53
+RGB: 145, 106, 83
+HEX: #916A53
 
 ---
 
 ### Suvinil Cor do Ano 2026
 
-**🎨 "Terra Úmida"**
+🎨 "Terra Úmida"
 
-**Descrição:**
+Descrição:
 - Marrom profundo com sutileza acinzentada
 - Inspirado em solo fértil após a chuva
 - Conexão com a terra e natureza
 - Elegância rústica contemporânea
 
-**Significado:**
+Significado:
 > *"Terra Úmida representa o recomeço, a fertilidade e a conexão com nossas raízes. É uma cor que nos ancora e nos lembra da importância de nutrir o que plantamos."*
 
-**Onde usar:**
+Onde usar:
 - Home offices (concentração)
 - Bibliotecas e salas de leitura
 - Quartos de casal (intimidade)
 - Adegas (sofisticação)
 - Fachadas (modernidade)
 
-**Combinações:**
+Combinações:
 - Com bege rosado: delicadeza
 - Com verde musgo: natureza
 - Com off-white: contraste suave
 - Com cobre: elegância metálica
 
-**RGB:** 98, 82, 71
-**HEX:** #625247
+RGB: 98, 82, 71
+HEX: #625247
 
 ---
 
 ### Coral Cor do Ano 2026
 
-**🎨 "Âmbar Suave"**
+🎨 "Âmbar Suave"
 
-**Descrição:**
+Descrição:
 - Tom quente entre laranja e dourado
 - Inspirado em resina fossilizada
 - Luminosidade acolhedora
 - Sofisticação natural
 
-**Significado:**
+Significado:
 > *"Âmbar Suave ilumina espaços com calor e elegância, trazendo a preciosidade da natureza para dentro de casa."*
 
-**Onde usar:**
+Onde usar:
 - Salas de estar (parede de destaque)
 - Cozinhas (acabamentos)
 - Ambientes integrados
 - Iluminação noturna
 
-**Combinações:**
+Combinações:
 - Com cinza cimento: industrial chic
 - Com verde-água: frescor
 - Com branco gelo: luminosidade
 - Com madeira natural: orgânico
 
-**RGB:** 201, 152, 102
-**HEX:** #C99866
+RGB: 201, 152, 102
+HEX: #C99866
 
 ---
 
 ### Sherwin-Williams Color of the Year 2026
 
-**🎨 "Evergreen Fog SW 9130"**
+🎨 "Evergreen Fog SW 9130"
 
-**Descrição:**
+Descrição:
 - Verde acinzentado suave
 - Entre verde salva e cinza nevoeiro
 - Serenidade e sofisticação
 - Natureza urbana
 
-**Onde usar:**
+Onde usar:
 - Ambientes que precisam calma
 - Quartos e banheiros
 - Home offices zen
 - Áreas externas cobertas
 
-**Combinações:**
+Combinações:
 - Com branco neve: contraste suave
 - Com madeira clara: escandinavo
 - Com terracota: aquecimento
@@ -148,21 +148,21 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Benjamin Moore Color of the Year 2026
 
-**🎨 "Blue Nova 825"**
+🎨 "Blue Nova 825"
 
-**Descrição:**
+Descrição:
 - Azul profundo com toques de roxo
 - Inspira criatividade e introspecção
 - Sofisticação e mistério
 - Cor de transição dia/noite
 
-**Onde usar:**
+Onde usar:
 - Salas de jantar
 - Quartos principais
 - Escritórios criativos
 - Adegas e bares
 
-**Combinações:**
+Combinações:
 - Com dourado: luxo
 - Com rosa antigo: romantismo
 - Com branco puro: contraste dramático
@@ -174,21 +174,21 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Paleta 1: Terras Aquecidas
 
-**"Natureza Nutridora"**
+"Natureza Nutridora"
 
-🟤 **Mocha Mousse** (Pantone) - Principal
-🟤 **Terra Úmida** (Suvinil) - Secundária
-🟫 **Argila Queimada** - Acento
-🟨 **Mostarda Suave** - Complementar
-⬜ **Off-White Creme** - Base
+🟤 Mocha Mousse (Pantone) - Principal
+🟤 Terra Úmida (Suvinil) - Secundária
+🟫 Argila Queimada - Acento
+🟨 Mostarda Suave - Complementar
+⬜ Off-White Creme - Base
 
-**Aplicação:**
+Aplicação:
 - Salas de estar aconchegantes
 - Quartos de casal
 - Ambientes rústicos-contemporâneos
 - Casas de campo sofisticadas
 
-**Materiais compatíveis:**
+Materiais compatíveis:
 - Madeira de demolição
 - Linho natural
 - Couro envelhecido
@@ -199,21 +199,21 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Paleta 2: Verdes Naturais
 
-**"Refúgio Verde"**
+"Refúgio Verde"
 
-🟢 **Evergreen Fog** (Sherwin-Williams) - Principal
-🟢 **Verde Oliva** - Secundária
-🟢 **Sálvia Profunda** - Acento
-🟤 **Caramelo** - Complementar
-⬜ **Gelo** - Base
+🟢 Evergreen Fog (Sherwin-Williams) - Principal
+🟢 Verde Oliva - Secundária
+🟢 Sálvia Profunda - Acento
+🟤 Caramelo - Complementar
+⬜ Gelo - Base
 
-**Aplicação:**
+Aplicação:
 - Home offices biofílicos
 - Varandas integradas
 - Quartos zen
 - Áreas gourmet
 
-**Materiais compatíveis:**
+Materiais compatíveis:
 - Madeira clara (carvalho, freijó)
 - Fibras naturais
 - Pedras naturais
@@ -224,21 +224,21 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Paleta 3: Azuis Profundos
 
-**"Serenidade Noturna"**
+"Serenidade Noturna"
 
-🔵 **Blue Nova** (Benjamin Moore) - Principal
-🔵 **Azul Petróleo** - Secundária
-🔵 **Índigo Suave** - Acento
-🟡 **Dourado Fosco** - Complementar
-⬜ **Branco Puro** - Base
+🔵 Blue Nova (Benjamin Moore) - Principal
+🔵 Azul Petróleo - Secundária
+🔵 Índigo Suave - Acento
+🟡 Dourado Fosco - Complementar
+⬜ Branco Puro - Base
 
-**Aplicação:**
+Aplicação:
 - Salas de jantar elegantes
 - Quartos principais
 - Banheiros spa
 - Escritórios executivos
 
-**Materiais compatíveis:**
+Materiais compatíveis:
 - Mármore branco
 - Latão escovado
 - Veludo
@@ -249,21 +249,21 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Paleta 4: Neutros Sofisticados
 
-**"Minimalismo Quente"**
+"Minimalismo Quente"
 
-🟤 **Bege Caramelo** - Principal
-⬜ **Areia Branca** - Secundária
-🟤 **Cinza Aquecido** - Acento
-🟠 **Âmbar Suave** (Coral) - Complementar
-⬜ **Branco Gelo** - Base
+🟤 Bege Caramelo - Principal
+⬜ Areia Branca - Secundária
+🟤 Cinza Aquecido - Acento
+🟠 Âmbar Suave (Coral) - Complementar
+⬜ Branco Gelo - Base
 
-**Aplicação:**
+Aplicação:
 - Ambientes minimalistas
 - Apartamentos urbanos
 - Salas integradas
 - Cozinhas contemporâneas
 
-**Materiais compatíveis:**
+Materiais compatíveis:
 - Porcelanato grande formato
 - Madeira clara laqueada
 - Vidro temperado
@@ -274,21 +274,21 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Paleta 5: Terracota e Especiarias
 
-**"Calor Mediterrâneo"**
+"Calor Mediterrâneo"
 
-🟠 **Terracota** - Principal
-🟠 **Ferrugem** - Secundária
-🟤 **Tijolo Queimado** - Acento
-🟢 **Verde Pistache** - Complementar
-⬜ **Off-White Quente** - Base
+🟠 Terracota - Principal
+🟠 Ferrugem - Secundária
+🟤 Tijolo Queimado - Acento
+🟢 Verde Pistache - Complementar
+⬜ Off-White Quente - Base
 
-**Aplicação:**
+Aplicação:
 - Varandas gourmet
 - Cozinhas rústicas
 - Áreas externas
 - Casas de praia
 
-**Materiais compatíveis:**
+Materiais compatíveis:
 - Cerâmica artesanal
 - Madeira de demolição
 - Cimento queimado
@@ -301,12 +301,12 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Sala de Estar
 
-**Principais:**
+Principais:
 - Mocha Mousse (acolhimento)
 - Terra Úmida (sofisticação)
 - Evergreen Fog (serenidade)
 
-**Como usar:**
+Como usar:
 - Parede de TV: cor principal
 - Demais paredes: base clara
 - Móveis: neutros ou cor principal
@@ -316,12 +316,12 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Quarto de Casal
 
-**Principais:**
+Principais:
 - Blue Nova (intimidade)
 - Terra Úmida (aconchego)
 - Evergreen Fog (calma)
 
-**Como usar:**
+Como usar:
 - Parede de cabeceira: cor principal
 - Demais paredes: base clara
 - Roupa de cama: neutros e acentos
@@ -331,12 +331,12 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Cozinha
 
-**Principais:**
+Principais:
 - Âmbar Suave (luminosidade)
 - Off-white (amplitude)
 - Verde Oliva (frescor)
 
-**Como usar:**
+Como usar:
 - Marcenaria: neutros ou madeira
 - Parede de destaque: cor principal
 - Bancada: neutra (pedra/porcelanato)
@@ -346,12 +346,12 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Banheiro
 
-**Principais:**
+Principais:
 - Evergreen Fog (spa)
 - Blue Nova (relaxamento)
 - Neutros quentes (sofisticação)
 
-**Como usar:**
+Como usar:
 - Revestimento principal: cor
 - Box: vidro transparente
 - Metais: preto fosco ou dourado
@@ -361,12 +361,12 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Home Office
 
-**Principais:**
+Principais:
 - Evergreen Fog (concentração)
 - Terra Úmida (produtividade)
 - Neutros (profissionalismo)
 
-**Como usar:**
+Como usar:
 - Parede de fundo Zoom: neutra clara
 - Parede de foco: cor principal
 - Móveis: madeira clara
@@ -378,17 +378,17 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Tintas
 
-**Fosco:**
+Fosco:
 - Tendência principal
 - Sofisticação
 - Esconde imperfeições
 
-**Acetinado:**
+Acetinado:
 - Áreas de circulação
 - Cozinhas
 - Banheiros (lavável)
 
-**Alto brilho:**
+Alto brilho:
 - Detalhes e portas
 - Marcenaria premium
 
@@ -396,13 +396,13 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Combinação de Acabamentos
 
-**Exemplo 1: Sala de Estar**
+Exemplo 1: Sala de Estar
 - Paredes: Mocha Mousse fosco
 - Teto: Branco gelo fosco
 - Rodapés: Branco acetinado
 - Portas: Madeira natural
 
-**Exemplo 2: Quarto**
+Exemplo 2: Quarto
 - Cabeceira: Terra Úmida fosco
 - Demais: Off-white fosco
 - Teto: Branco fosco
@@ -414,13 +414,13 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Marrons (Mocha, Terra)
 
-**Sensações:**
+Sensações:
 - Estabilidade
 - Conforto
 - Sofisticação
 - Acolhimento
 
-**Ideal para:**
+Ideal para:
 - Salas de estar
 - Quartos
 - Ambientes sociais
@@ -429,13 +429,13 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Verdes (Oliva, Sálvia, Evergreen)
 
-**Sensações:**
+Sensações:
 - Calma
 - Equilíbrio
 - Natureza
 - Renovação
 
-**Ideal para:**
+Ideal para:
 - Home offices
 - Quartos
 - Banheiros
@@ -445,13 +445,13 @@ As cores definem o clima, a personalidade e a atemporalidade de um projeto. Em 2
 
 ### Azuis (Blue Nova, Petróleo)
 
-**Sensações:**
+Sensações:
 - Serenidade
 - Profundidade
 - Sofisticação
 - Introspecção
 
-**Ideal para:**
+Ideal para:
 - Quartos
 - Salas de jantar
 - Escritórios
@@ -467,7 +467,7 @@ Base: Bege/marrom
 Variações: 3-4 tons da mesma cor
 Resultado: Sofisticação discreta
 
-**Exemplo:**
+Exemplo:
 - Bege clarinho (paredes)
 - Bege médio (sofá)
 - Bege escuro (almofadas)
@@ -481,7 +481,7 @@ Base: Neutro claro
 Acento: Verde ou terracota
 Resultado: Natural e contemporâneo
 
-**Exemplo:**
+Exemplo:
 - Off-white (90%)
 - Verde oliva (8%)
 - Terracota (2%)
@@ -494,7 +494,7 @@ Base: Cor escura
 Acentos: Metálicos e brancos
 Resultado: Sofisticação máxima
 
-**Exemplo:**
+Exemplo:
 - Blue Nova (parede)
 - Branco puro (teto e rodapé)
 - Dourado fosco (metais)
@@ -513,11 +513,11 @@ Resultado: Sofisticação máxima
 
 ### Passo 2: Considere Iluminação
 
-**Ambientes com muita luz natural:**
+Ambientes com muita luz natural:
 - Aceita cores escuras
 - Cores se mantêm fiéis
 
-**Ambientes com pouca luz:**
+Ambientes com pouca luz:
 - Prefira cores claras
 - Cores escuras ficam mais escuras ainda
 
@@ -531,22 +531,22 @@ Resultado: Sofisticação máxima
 
 ### Passo 4: Regra 60-30-10
 
-- **60%** Cor dominante (paredes)
-- **30%** Cor secundária (móveis)
-- **10%** Cor de acento (decoração)
+- 60% Cor dominante (paredes)
+- 30% Cor secundária (móveis)
+- 10% Cor de acento (decoração)
 
 ---
 
 ## Cores que Nunca Saem de Moda
 
-**Neutros Intemporais:**
+Neutros Intemporais:
 - Branco gelo
 - Off-white
 - Bege claro
 - Cinza médio
 - Greige (cinza+bege)
 
-**Uso:**
+Uso:
 - Base de qualquer projeto
 - Facilita futuras mudanças
 - Valorização imobiliária
@@ -568,22 +568,22 @@ Resultado: Sofisticação máxima
 
 ### Nosso Processo
 
-1. **Briefing de cores**
+1. Briefing de cores
    - Preferências do cliente
    - Estilo de vida
    - Móveis existentes
 
-2. **Moodboard com paleta**
+2. Moodboard com paleta
    - 3 paletas sugeridas
    - Referências visuais
    - Materiais compatíveis
 
-3. **Teste físico**
+3. Teste físico
    - Pintura de teste
    - Avaliação in loco
    - Ajustes necessários
 
-4. **Especificação final**
+4. Especificação final
    - Códigos de cores
    - Marcas e acabamentos
    - Quantitativos
@@ -592,18 +592,18 @@ Resultado: Sofisticação máxima
 
 ## Marcas de Tinta Recomendadas
 
-**Premium:**
+Premium:
 - Suvinil Decora Fosco Completo
 - Coral Fosco Total
 - Sherwin-Williams Duration
 - Farrow & Ball (importada)
 
-**Custo-benefício:**
+Custo-benefício:
 - Suvinil Pérola
 - Coral Tradicional
 - Eucatex
 
-**Critérios de escolha:**
+Critérios de escolha:
 - Cobertura (quantas demãos)
 - Durabilidade
 - Lavabilidade
@@ -613,7 +613,7 @@ Resultado: Sofisticação máxima
 
 ## Conclusão
 
-As cores de 2026 refletem busca por **equilíbrio, natureza e sofisticação discreta**. Marrons quentes, verdes serenos e azuis profundos dominam as paletas, trazendo acolhimento e elegância aos projetos.
+As cores de 2026 refletem busca por equilíbrio, natureza e sofisticação discreta. Marrons quentes, verdes serenos e azuis profundos dominam as paletas, trazendo acolhimento e elegância aos projetos.
 
 A escolha certa de cores transforma ambientes e define a personalidade do seu espaço.
 
@@ -625,7 +625,7 @@ Quer escolher as cores ideais para sua casa ou empresa?
 
 Nossa equipe cria moodboards personalizados e testa cores in loco antes da execução.
 
-**Entre em Contato:**
+Entre em Contato:
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
@@ -640,5 +640,5 @@ Nossa equipe cria moodboards personalizados e testa cores in loco antes da execu
 
 *Grupo WG Almeida, Transformando cores em emocoes*
 
-**Tags**: cores 2026, cor do ano, Pantone, Suvinil, Coral, paleta de cores, tendências, decoração, design de interiores
+Tags: cores 2026, cor do ano, Pantone, Suvinil, Coral, paleta de cores, tendências, decoração, design de interiores
 

@@ -21,24 +21,24 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Impactos da Boa Iluminação
 
-✅ **Funcionalidade**
+✅ Funcionalidade
 - Permite executar tarefas com conforto
 - Segurança (evita acidentes)
 - Praticidade no dia a dia
 
-✅ **Estética**
+✅ Estética
 - Valoriza arquitetura
 - Destaca objetos decorativos
 - Cria atmosferas
 - Amplia visualmente espaços
 
-✅ **Bem-estar**
+✅ Bem-estar
 - Regula ciclo circadiano
 - Influencia humor
 - Reduz fadiga ocular
 - Melhora qualidade do sono
 
-✅ **Economia**
+✅ Economia
 - LED reduz consumo em 80%
 - Conta de luz menor
 - Menos manutenção
@@ -50,7 +50,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Temperatura de Cor (Kelvin)
 
-**2700K - Amarela Quente**
+2700K - Amarela Quente
 - Cor: Amarelo âmbar
 - Sensação: Aconchego, relaxamento
 - Onde usar:
@@ -59,7 +59,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
   - Salas de jantar
   - Ambientes de descanso
 
-**3000K - Branca Quente**
+3000K - Branca Quente
 - Cor: Branco levemente amarelado
 - Sensação: Confortável e acolhedor
 - Onde usar:
@@ -68,7 +68,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
   - Corredores
   - Uso geral residencial
 
-**4000K - Branca Neutra**
+4000K - Branca Neutra
 - Cor: Branco puro
 - Sensação: Alerta, clareza
 - Onde usar:
@@ -77,7 +77,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
   - Home offices
   - Áreas de trabalho
 
-**5000K-6500K - Branca Fria**
+5000K-6500K - Branca Fria
 - Cor: Branco azulado
 - Sensação: Máxima concentração
 - Onde usar:
@@ -88,9 +88,9 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Regra de Ouro
 
-**Ambientes sociais e íntimos:** 2700-3000K (quente)
-**Ambientes de trabalho:** 4000K (neutra)
-**Áreas técnicas:** 5000K+ (fria)
+Ambientes sociais e íntimos: 2700-3000K (quente)
+Ambientes de trabalho: 4000K (neutra)
+Áreas técnicas: 5000K+ (fria)
 
 ---
 
@@ -98,21 +98,21 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### 1. Iluminação Geral (Ambiente)
 
-**Função:** Iluminar todo o ambiente uniformemente
+Função: Iluminar todo o ambiente uniformemente
 
-**Onde:** Teto (plafons, spots, pendentes centrais)
+Onde: Teto (plafons, spots, pendentes centrais)
 
-**Características:**
+Características:
 - Distribui luz de forma homogênea
 - Permite circular e usar o ambiente
 - Não cria contrastes fortes
 
-**Cálculo:**
+Cálculo:
 - Sala/quarto: 15-20W/m² (LED)
 - Cozinha/banheiro: 20-25W/m² (LED)
 - Corredor: 10-15W/m² (LED)
 
-**Exemplo:**
+Exemplo:
 - Sala 20m² x 18W/m² = 360W total em LED
 - Distribuído em: 9 spots de 40W
 
@@ -120,21 +120,21 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### 2. Iluminação Focal (Tarefa)
 
-**Função:** Iluminar áreas específicas para tarefas
+Função: Iluminar áreas específicas para tarefas
 
-**Exemplos:**
+Exemplos:
 - Luminária de leitura
 - Arandela sobre pia do banheiro
 - Spots sobre bancada da cozinha
 - Luminária de escritório
 - Luz sobre espelho
 
-**Características:**
+Características:
 - Luz direta e intensa
 - Evita sombras no local de trabalho
 - 2-3x mais intensa que iluminação geral
 
-**Potência típica:**
+Potência típica:
 - Leitura: 15-25W (LED)
 - Bancada cozinha: 20-30W por ponto
 - Espelho banheiro: 20-40W total
@@ -143,9 +143,9 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### 3. Iluminação de Destaque (Acento)
 
-**Função:** Criar foco visual, destacar objetos
+Função: Criar foco visual, destacar objetos
 
-**O que iluminar:**
+O que iluminar:
 - Quadros e obras de arte
 - Esculturas
 - Nichos decorativos
@@ -153,22 +153,22 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 - Texturas de parede
 - Arquitetura (vigas, colunas)
 
-**Tipos:**
+Tipos:
 - Spots direcionáveis
 - Trilhos
 - Arandelas de parede
 - Fitas de LED em nichos
 - Projetores de arte
 
-**Dica:** Luz de destaque deve ser 3x mais intensa que iluminação geral
+Dica: Luz de destaque deve ser 3x mais intensa que iluminação geral
 
 ---
 
 ### 4. Iluminação Decorativa
 
-**Função:** Elemento decorativo, não necessariamente funcional
+Função: Elemento decorativo, não necessariamente funcional
 
-**Exemplos:**
+Exemplos:
 - Lustres imponentes
 - Pendentes escultóricos
 - Luminárias de design
@@ -181,20 +181,20 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Pendentes
 
-**O que são:** Luminárias suspensas por cabo/haste
+O que são: Luminárias suspensas por cabo/haste
 
-**Onde usar:**
+Onde usar:
 - Sobre mesa de jantar
 - Bancada de cozinha (ilha)
 - Cabeceira de cama
 - Hall de entrada
 
-**Alturas ideais:**
+Alturas ideais:
 - Sobre mesa: 70-80cm do tampo
 - Pé-direito livre: mínimo 2,10m do piso
 - Corredor: 2,10-2,30m do piso
 
-**Quantos usar:**
+Quantos usar:
 - Mesa até 1,50m: 1 pendente grande
 - Mesa 1,50-2,00m: 2 pendentes
 - Mesa 2,00-2,80m: 3 pendentes
@@ -204,42 +204,42 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Spots Embutidos
 
-**O que são:** Lâmpadas embutidas no forro de gesso
+O que são: Lâmpadas embutidas no forro de gesso
 
-**Tipos:**
+Tipos:
 - Fixos: Luz fixa para baixo
 - Direcionáveis: Permite direcionar o feixe
 - Quadrados, redondos
 
-**Onde usar:**
+Onde usar:
 - Salas (iluminação geral)
 - Quartos
 - Corredores
 - Cozinhas
 - Banheiros
 
-**Espaçamento:**
+Espaçamento:
 - Entre spots: 1,0-1,5m
 - Da parede: 50-70cm
 - Distribuição uniforme
 
-**Cálculo rápido:**
+Cálculo rápido:
 - 1 spot de 5-7W a cada 1,5-2,0m²
 
 ---
 
 ### Plafons
 
-**O que são:** Luminárias fixas no teto, sem pendentes
+O que são: Luminárias fixas no teto, sem pendentes
 
-**Onde usar:**
+Onde usar:
 - Corredores
 - Áreas com pé-direito baixo (<2,60m)
 - Banheiros
 - Quartos (como alternativa)
 - Varandas
 
-**Vantagens:**
+Vantagens:
 - Versáteis
 - Não ocupam espaço
 - Econômicos
@@ -249,9 +249,9 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Arandelas
 
-**O que são:** Luminárias fixadas na parede
+O que são: Luminárias fixadas na parede
 
-**Onde usar:**
+Onde usar:
 - Cabeceira de cama (leitura)
 - Laterais de espelhos
 - Corredores
@@ -259,7 +259,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 - Varandas
 - Fachadas
 
-**Altura ideal:**
+Altura ideal:
 - Cabeceira: 1,10-1,30m do piso
 - Espelho: 1,60-1,80m (lateral dos olhos)
 - Corredor: 1,80-2,00m
@@ -268,9 +268,9 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Fitas de LED
 
-**O que são:** Tiras flexíveis com LEDs
+O que são: Tiras flexíveis com LEDs
 
-**Onde usar:**
+Onde usar:
 - Sancas de gesso
 - Nichos
 - Embaixo de armários
@@ -278,14 +278,14 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 - Rodapés (balizadores)
 - Escadas
 
-**Tipos:**
+Tipos:
 - 3528: Menos potente, uso decorativo
 - 5050: Potência média
 - 5630: Alta potência, iluminação funcional
 - RGB: Coloridas (decoração)
 - 2700K, 3000K, 4000K: Luz branca
 
-**Dicas:**
+Dicas:
 - Use perfil de alumínio (dissipa calor)
 - Instale difusor (evita pontos de luz)
 - Dimensione fonte adequada
@@ -296,93 +296,93 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Sala de Estar
 
-**Camadas de Luz:**
+Camadas de Luz:
 
-**1. Geral:**
+1. Geral:
 - Spots embutidos distribuídos
 - OU Plafon central + spots periféricos
 - 15-18W/m² em LED
 - 2700-3000K (quente)
 
-**2. Focal:**
+2. Focal:
 - Arandela/luminária de piso para leitura
 - 20W LED
 - 2700K
 
-**3. Destaque:**
+3. Destaque:
 - Spots direcionáveis para quadros
 - Fita LED em nichos
 - Iluminação indireta em sancas
 
-**4. Decorativa:**
+4. Decorativa:
 - Abajures
 - Pendentes decorativos (se houver)
 
-**Controle:**
+Controle:
 - Circuitos independentes
 - Dimmers para ajustar intensidade
 - Mínimo 2 circuitos (geral + destaque)
 
-**Exemplo 25m²:**
+Exemplo 25m²:
 - 15 spots 5W (geral): 75W
 - 1 luminária leitura 20W
 - Fita LED 15W (nicho)
-- **Total instalado: 110W**
-- **Consumo típico: 40-60W** (nem tudo ligado sempre)
+- Total instalado: 110W
+- Consumo típico: 40-60W (nem tudo ligado sempre)
 
 ---
 
 ### Quarto de Casal
 
-**Camadas:**
+Camadas:
 
-**1. Geral:**
+1. Geral:
 - Spots ou plafon central
 - 12-15W/m²
 - 2700K (bem quente para relaxar)
 - Dimmer OBRIGATÓRIO
 
-**2. Focal:**
+2. Focal:
 - Arandelas cabeceira (1 de cada lado)
 - 7-12W cada
 - 2700K
 - Interruptores independentes
 
-**3. Destaque:**
+3. Destaque:
 - Fita LED atrás do painel da TV
 - Spots no closet (se houver)
 
-**Controles:**
+Controles:
 - Interruptor geral na entrada
 - Interruptores individuais cabeceira
 - Dimmer para geral
 - Ideal: Automação (liga tudo em 20%)
 
-**Dica:** Nunca luz branca fria (4000K+) em quarto! Atrapalha o sono.
+Dica: Nunca luz branca fria (4000K+) em quarto! Atrapalha o sono.
 
 ---
 
 ### Cozinha
 
-**Camadas:**
+Camadas:
 
-**1. Geral:**
+1. Geral:
 - Spots distribuídos
 - 20-25W/m²
 - 4000K (branca neutra)
 
-**2. Focal - ESSENCIAL:**
+2. Focal - ESSENCIAL:
 - Embaixo dos armários superiores
 - Ilumina bancada de trabalho
 - Fita LED 5630 ou calha com fluorescente LED
 - 15-20W por metro linear
 - 4000K
 
-**3. Decorativa:**
+3. Decorativa:
 - Pendentes sobre ilha (se houver)
 - 2700-3000K para criar clima
 
-**Distribuição típica:**
+Distribuição típica:
 - Spots gerais: espaçados 1,2-1,5m
 - Concentração sobre fogão
 - Iluminação da pia
@@ -392,14 +392,14 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Banheiro
 
-**Camadas:**
+Camadas:
 
-**1. Geral:**
+1. Geral:
 - Spots ou plafon
 - 20-25W/m²
 - 4000K (ver cores reais)
 
-**2. Focal - ESSENCIAL:**
+2. Focal - ESSENCIAL:
 - Espelho: Luz frontal (não de cima!)
 - Opções:
   - Arandelas laterais (1 de cada lado)
@@ -408,7 +408,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 - 25-40W total
 - 4000K (cores reais para maquiagem)
 
-**Erro comum:**
+Erro comum:
 ❌ Luz apenas no teto = sombra no rosto
 ✅ Luz na altura do rosto = iluminação uniforme
 
@@ -416,24 +416,24 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Home Office
 
-**Camadas:**
+Camadas:
 
-**1. Geral:**
+1. Geral:
 - Spots ou plafon
 - 20W/m²
 - 4000K (concentração)
 
-**2. Focal - ESSENCIAL:**
+2. Focal - ESSENCIAL:
 - Luminária de mesa
 - 12-20W
 - 4000K
 - Braço articulado ideal
 
-**3. Destaque:**
+3. Destaque:
 - Iluminação de estante
 - Fita LED em nichos
 
-**Dicas:**
+Dicas:
 - Evite reflexos na tela do computador
 - Luminária deve iluminar o teclado, não a tela
 - Posicione lateral ou atrás do monitor
@@ -442,20 +442,20 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Jantar
 
-**Protagonista: Pendente sobre a mesa**
+Protagonista: Pendente sobre a mesa
 
-**Especificações:**
+Especificações:
 - Altura: 70-80cm do tampo
 - Potência: 40-80W total (LED)
 - Temperatura: 2700-3000K
 - Dimmer OBRIGATÓRIO
 
-**Iluminação complementar:**
+Iluminação complementar:
 - Spots periféricos (parede)
 - Iluminação de aparador/buffet
 - Destaque para quadros
 
-**Atmosfera:**
+Atmosfera:
 - Jantar romântico: Pendente em 30% + velas
 - Jantar normal: Pendente em 70-80%
 - Limpeza/dia: Spots gerais
@@ -469,7 +469,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 ❌ 4000K ou mais
 ✅ 2700K máximo
 
-**Por quê:** Luz fria inibe melatonina = dificulta o sono
+Por quê: Luz fria inibe melatonina = dificulta o sono
 
 ---
 
@@ -478,7 +478,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 ❌ Spots a cada 50-80cm
 ✅ Spots a cada 1,2-1,5m
 
-**Por quê:** Desperdício de energia e estética ruim
+Por quê: Desperdício de energia e estética ruim
 
 ---
 
@@ -487,7 +487,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 ❌ Apenas spots no teto
 ✅ Camadas (geral + focal + destaque)
 
-**Por quê:** Ambiente sem personalidade e desconfortável
+Por quê: Ambiente sem personalidade e desconfortável
 
 ---
 
@@ -496,7 +496,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 ❌ Interruptor simples on/off
 ✅ Dimmer que regula intensidade
 
-**Por quê:** Controle de atmosfera e economia
+Por quê: Controle de atmosfera e economia
 
 ---
 
@@ -505,7 +505,7 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 ❌ Pendente muito alto ou baixo
 ✅ 70-80cm sobre mesa
 
-**Por quê:** Iluminação inadequada e estética comprometida
+Por quê: Iluminação inadequada e estética comprometida
 
 ---
 
@@ -513,25 +513,25 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Por Que Escolher LED?
 
-✅ **Economia:** 80-90% menos consumo que incandescente
-✅ **Durabilidade:** 25.000-50.000 horas vs 1.000h
-✅ **Não esquenta:** Muito menos calor
-✅ **Versátil:** Todas temperaturas de cor
-✅ **Ecológico:** Sem mercúrio
-✅ **Controle:** Funciona com dimmer (se especificado)
+✅ Economia: 80-90% menos consumo que incandescente
+✅ Durabilidade: 25.000-50.000 horas vs 1.000h
+✅ Não esquenta: Muito menos calor
+✅ Versátil: Todas temperaturas de cor
+✅ Ecológico: Sem mercúrio
+✅ Controle: Funciona com dimmer (se especificado)
 
 ### Comparação de Consumo
 
-**Para produzir 800 lumens (equivalente 60W incandescente):**
+Para produzir 800 lumens (equivalente 60W incandescente):
 - Incandescente: 60W
 - Halógena: 42W
 - Fluorescente: 15W
 - LED: 8-10W
 
-**Economia anual (5h/dia, R$0,80/kWh):**
+Economia anual (5h/dia, R$0,80/kWh):
 - Incandescente: R$ 87,60
 - LED: R$ 14,60
-- **Economia: R$ 73/ano por lâmpada**
+- Economia: R$ 73/ano por lâmpada
 
 ---
 
@@ -549,11 +549,11 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Custo
 
-**Projeto luminotécnico:**
+Projeto luminotécnico:
 - R$ 80-150/m² (residencial)
 - Apartamento 100m²: R$ 8.000-15.000
 
-**Retorno:**
+Retorno:
 - Economia de energia: 30-40%
 - Ambientes mais bonitos
 - Valorização do imóvel
@@ -581,16 +581,16 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Níveis de Automação
 
-**Básico: Dimmers convencionais**
+Básico: Dimmers convencionais
 - Custo: R$ 80-200/ponto
 - Controle manual local
 
-**Intermediário: Interruptores inteligentes**
+Intermediário: Interruptores inteligentes
 - Custo: R$ 300-600/ponto
 - Controle por app
 - Integração Alexa/Google
 
-**Avançado: Sistema completo**
+Avançado: Sistema completo
 - Custo: R$ 15.000-50.000+
 - Controle centralizado
 - Cenas programadas
@@ -599,20 +599,20 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ### Cenas Úteis
 
-**"Bom dia":**
+"Bom dia":
 - Acende luzes gradualmente
 - Simula nascer do sol
 
-**"Cinema":**
+"Cinema":
 - Apaga sala, acende leds indiretos em 10%
 
-**"Jantar romântico":**
+"Jantar romântico":
 - Pendente em 30%, spots apagados
 
-**"Sair de casa":**
+"Sair de casa":
 - Apaga tudo menos externo
 
-**"Chegando":**
+"Chegando":
 - Acende hall, sala, cozinha em 50%
 
 ---
@@ -650,16 +650,16 @@ A iluminação é um dos elementos mais importantes-e muitas vezes negligenciado
 
 ## Marcas Recomendadas
 
-**Luminárias:**
+Luminárias:
 - Nacional: Stella, Opus, Avant, Lumini
 - Importada: Flos, Artemide, Louis Poulsen
 
-**Lâmpadas LED:**
+Lâmpadas LED:
 - Premium: Philips, Osram
 - Custo-benefício: Stella, Opus, Luminatti
 - Evitar: Marcas desconhecidas muito baratas
 
-**Automação:**
+Automação:
 - Nacional: Intelbras, i9 Automação
 - Importada: Lutron, Philips Hue
 
@@ -674,12 +674,12 @@ Iluminação bem planejada:
 ✅ Aumenta conforto
 ✅ Melhora bem-estar
 
-**Investimento típico:**
+Investimento típico:
 - R$ 150-300/m² (luminárias + lâmpadas LED)
 - Apartamento 100m²: R$ 15.000-30.000
 - ROI: 30-40% economia energia + valorização estética
 
-**Priorize:**
+Priorize:
 1. Camadas de luz (geral + focal + destaque)
 2. Temperatura de cor adequada
 3. Dimmers em ambientes sociais e quartos
@@ -694,7 +694,7 @@ Quer um projeto de iluminação profissional?
 
 No Grupo WG Almeida, desenvolvemos projeto luminotécnico completo integrado ao projeto arquitetônico.
 
-**Entre em Contato:**
+Entre em Contato:
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br

@@ -14,11 +14,11 @@ featured: true
 
 ## A Cidade que Renasceu das Cinzas
 
-**Lisboa** e uma cidade de contrastes urbanos: bairros medievais nas colinas convivem com a ordem da Baixa Pombalina. Azulejos, miradouros e a relacao com o Tejo formam uma identidade arquitetonica unica em Portugal.
+Lisboa e uma cidade de contrastes urbanos: bairros medievais nas colinas convivem com a ordem da Baixa Pombalina. Azulejos, miradouros e a relacao com o Tejo formam uma identidade arquitetonica unica em Portugal.
 
-A arquitetura de Lisboa foi moldada por um **evento catastrófico**: o **Terremoto de 1755** (magnitude 8.5-9.0) destruiu 85% da cidade e matou 60.000 pessoas. Da tragédia nasceu uma **reconstrução visionária** - a **Baixa Pombalina**, primeiro bairro do mundo planejado com **estrutura anti-sísmica**.
+A arquitetura de Lisboa foi moldada por um evento catastrófico: o Terremoto de 1755 (magnitude 8.5-9.0) destruiu 85% da cidade e matou 60.000 pessoas. Da tragédia nasceu uma reconstrução visionária - a Baixa Pombalina, primeiro bairro do mundo planejado com estrutura anti-sísmica.
 
-É uma cidade onde o **Estilo Manuelino** (Gótico português) se mistura com **Pombalino**, **Azulejos** artísticos e arquitetura contemporânea ousada.
+É uma cidade onde o Estilo Manuelino (Gótico português) se mistura com Pombalino, Azulejos artísticos e arquitetura contemporânea ousada.
 
 ## O Terremoto de 1755 e a Reconstrução
 
@@ -39,7 +39,7 @@ A arquitetura de Lisboa foi moldada por um **evento catastrófico**: o **Terremo
 
 ### Marquês de Pombal: O Reconstrutor
 
-**Sebastião José de Carvalho e Melo** (Marquês de Pombal) - Primeiro-Ministro do Rei José I - liderou a **reconstrução mais ambiciosa da história**.
+Sebastião José de Carvalho e Melo (Marquês de Pombal) - Primeiro-Ministro do Rei José I - liderou a reconstrução mais ambiciosa da história.
 
 ### Frase Famosa
 *"E agora? Enterrar os mortos e cuidar dos vivos!"*
@@ -61,7 +61,7 @@ A arquitetura de Lisboa foi moldada por um **evento catastrófico**: o **Terremo
 
 ### Inovação Revolucionária
 
-A **Baixa Pombalina** (Baixa Chiado) é o **coração** de Lisboa reconstruído entre 1755-1775.
+A Baixa Pombalina (Baixa Chiado) é o coração de Lisboa reconstruído entre 1755-1775.
 
 ### Planejamento
 
@@ -209,7 +209,7 @@ A **Baixa Pombalina** (Baixa Chiado) é o **coração** de Lisboa reconstruído 
 
 ### Apogeu da Era dos Descobrimentos
 
-O **Estilo Manuelino** (1495-1521) é o **Gótico português** único - celebração das **Grandes Navegações**.
+O Estilo Manuelino (1495-1521) é o Gótico português único - celebração das Grandes Navegações.
 
 ### Características
 - Motivos marítimos: cordas, âncoras, corais, algas, ondas
@@ -296,7 +296,7 @@ O **Estilo Manuelino** (1495-1521) é o **Gótico português** único - celebra�
 
 ### Bairro Medieval Sobrevivente
 
-**Alfama** é o bairro **mais antigo** de Lisboa - sobreviveu ao terremoto por estar em rocha sólida.
+Alfama é o bairro mais antigo de Lisboa - sobreviveu ao terremoto por estar em rocha sólida.
 
 ### História
 - Ocupação moura (século VIII-XII)
@@ -422,7 +422,7 @@ O **Estilo Manuelino** (1495-1521) é o **Gótico português** único - celebra�
 
 ### Arquitetura Contemporânea (2016)
 
-**Arquiteta:** Amanda Levete (AL_A)
+Arquiteta: Amanda Levete (AL_A)
 
 ### Conceito
 - Edifício orgânico à beira do Tejo
@@ -572,24 +572,24 @@ No Grupo WG Almeida, trazemos a alegria de Lisboa com azulejos artísticos, core
 
 ## Curiosidades de Lisboa
 
-🎵 **Fado** - música tradicional (UNESCO 2011)
-🚋 **Elétrico 28** - bonde amarelo icônico
-🍰 **Pastéis de Belém** - receita secreta desde 1837
-🏔️ **7 Colinas**: São Jorge, São Vicente, Sant'Ana, Santo André, Chagas, Santa Catarina, São Roque
-🌊 **Rio Tejo** - maior rio da Península Ibérica
-🇵🇹 **Capital** desde 1255
-☀️ **290 dias** de sol/ano
-📚 **Livraria Bertrand** (1732) - mais antiga do mundo em funcionamento!
-🐟 **Sardinhas assadas** - tradição nas festas de Santo António
+🎵 Fado - música tradicional (UNESCO 2011)
+🚋 Elétrico 28 - bonde amarelo icônico
+🍰 Pastéis de Belém - receita secreta desde 1837
+🏔️ 7 Colinas: São Jorge, São Vicente, Sant'Ana, Santo André, Chagas, Santa Catarina, São Roque
+🌊 Rio Tejo - maior rio da Península Ibérica
+🇵🇹 Capital desde 1255
+☀️ 290 dias de sol/ano
+📚 Livraria Bertrand (1732) - mais antiga do mundo em funcionamento!
+🐟 Sardinhas assadas - tradição nas festas de Santo António
 🎬 Locações: "007 Ao Serviço de Sua Majestade", "Bourne Ultimatum"
 
 ---
 
 ## Lisboa: A Cidade que Renasceu Mais Forte
 
-Lisboa ensina que **tragédias podem gerar renascimento** - o terremoto de 1755 destruiu a cidade medieval mas criou a **Baixa Pombalina**, primeiro bairro anti-sísmico e planejado da história.
+Lisboa ensina que tragédias podem gerar renascimento - o terremoto de 1755 destruiu a cidade medieval mas criou a Baixa Pombalina, primeiro bairro anti-sísmico e planejado da história.
 
-É uma cidade de **resiliência, cor e luz** - onde azulejos azuis contam histórias, onde sete colinas oferecem vistas divinas, e onde o fado canta a **saudade** da alma portuguesa.
+É uma cidade de resiliência, cor e luz - onde azulejos azuis contam histórias, onde sete colinas oferecem vistas divinas, e onde o fado canta a saudade da alma portuguesa.
 
 ---
 
@@ -614,4 +614,4 @@ O Grupo WG Almeida está pronto para criar seu projeto com azulejos artísticos,
 
 *Lisboa: onde cada azulejo conta uma história, cada colina revela uma vista, e cada esquina canta um fado.*
 
-**© 2026 Grupo WG Almeida - Arquitetura Internacional**
+© 2026 Grupo WG Almeida - Arquitetura Internacional

@@ -22,24 +22,24 @@ featured: true
 
 ## A Casa Cor em 2026
 
-A **CASACOR Sao Paulo 2026** acontece de **2 de junho a 9 de agosto**, marcando a **39a edicao** da maior mostra de arquitetura, paisagismo, arte e design de interiores da America Latina.
+A CASACOR Sao Paulo 2026 acontece de 2 de junho a 9 de agosto, marcando a 39a edicao da maior mostra de arquitetura, paisagismo, arte e design de interiores da America Latina.
 
-Pelo segundo ano consecutivo, a mostra será realizada no **Parque da Água Branca**, com apoio do Governo do Estado de São Paulo.
+Pelo segundo ano consecutivo, a mostra será realizada no Parque da Água Branca, com apoio do Governo do Estado de São Paulo.
 
 ---
 
 ## Tema 2026: "Mente e Coração"
 
-O tema escolhido propõe um diálogo profundo entre **estética, sensibilidade e qualidade de vida**.
+O tema escolhido propõe um diálogo profundo entre estética, sensibilidade e qualidade de vida.
 
 ### O Conceito
 
 "Mente e Coração" convida arquitetos e designers a repensarem a casa como:
 
-- **Espaço de Cura**: Ambientes que promovem bem-estar físico e mental
-- **Refúgio Emocional**: Locais que acolhem e restauram
-- **Equilíbrio**: União entre razão (mente) e emoção (coração)
-- **Consciência**: Projetos que consideram impacto ambiental e social
+- Espaço de Cura: Ambientes que promovem bem-estar físico e mental
+- Refúgio Emocional: Locais que acolhem e restauram
+- Equilíbrio: União entre razão (mente) e emoção (coração)
+- Consciência: Projetos que consideram impacto ambiental e social
 
 ---
 
@@ -125,20 +125,20 @@ Baseado nas tendências e no tema, esperamos ver:
 
 ### Cores Principais
 
-**Terras e Neutros Aquecidos:**
+Terras e Neutros Aquecidos:
 - Argila queimada
 - Terracota
 - Ocres profundos
 - Marrons sofisticados
 - Bege caramelo
 
-**Verdes Naturais:**
+Verdes Naturais:
 - Verde oliva
 - Sálvia
 - Musgo
 - Folhagem profunda
 
-**Tons de Calma:**
+Tons de Calma:
 - Azul acinzentado
 - Lavanda suave
 - Rosa pó
@@ -205,23 +205,23 @@ A mostra sempre reserva espaço para novos profissionais, revelando tendências 
 
 ### Início
 
-- **1982**: Primeira edição em São Paulo
-- **Criadora**: Arquiteta Mara Gabrilli
-- **Objetivo**: Mostrar arquitetura brasileira de qualidade
+- 1982: Primeira edição em São Paulo
+- Criadora: Arquiteta Mara Gabrilli
+- Objetivo: Mostrar arquitetura brasileira de qualidade
 
 ### Evolução
 
-- **Anos 90**: Expansão para outras cidades
-- **Anos 2000**: Consolidação como maior mostra da América Latina
-- **2010+**: Foco em sustentabilidade
-- **2020+**: Integração com tecnologia e bem-estar
+- Anos 90: Expansão para outras cidades
+- Anos 2000: Consolidação como maior mostra da América Latina
+- 2010+: Foco em sustentabilidade
+- 2020+: Integração com tecnologia e bem-estar
 
 ### Números Impressionantes
 
-- **44 anos** de história
-- **20+ cidades** brasileiras
-- **300 mil** visitantes/ano (SP)
-- **80+** ambientes por edição
+- 44 anos de história
+- 20+ cidades brasileiras
+- 300 mil visitantes/ano (SP)
+- 80+ ambientes por edição
 
 ---
 
@@ -229,13 +229,13 @@ A mostra sempre reserva espaço para novos profissionais, revelando tendências 
 
 ### Para Clientes
 
-**Inspiração Direta:**
+Inspiração Direta:
 - Veem tendências em escala real
 - Testam materiais e texturas
 - Entendem possibilidades
 - Definem preferências
 
-**Referências Concretas:**
+Referências Concretas:
 - Fotografam soluções que gostam
 - Coletam ideias de layout
 - Identificam estilos
@@ -243,13 +243,13 @@ A mostra sempre reserva espaço para novos profissionais, revelando tendências 
 
 ### Para Arquitetos
 
-**Atualização Profissional:**
+Atualização Profissional:
 - Benchmark com pares
 - Descoberta de novos materiais
 - Networking com fornecedores
 - Inspiração criativa
 
-**Validação de Conceitos:**
+Validação de Conceitos:
 - Testar ideias antes de aplicar
 - Ver reações do público
 - Aprender com colegas
@@ -260,16 +260,16 @@ A mostra sempre reserva espaço para novos profissionais, revelando tendências 
 
 Nossa equipe visita a Casa Cor anualmente para:
 
-✅ **Captar Tendências**
+✅ Captar Tendências
 Identificar o que será destaque nos próximos meses
 
-✅ **Atualizar Fornecedores**
+✅ Atualizar Fornecedores
 Conhecer novos parceiros e materiais
 
-✅ **Refinar Conceitos**
+✅ Refinar Conceitos
 Trazer inspiração para projetos de clientes
 
-✅ **Benchmarking**
+✅ Benchmarking
 Avaliar padrão de qualidade e execução
 
 ---
@@ -278,8 +278,8 @@ Avaliar padrão de qualidade e execução
 
 ### Casa Cor 2025
 
-**Tema:** Raiz
-**Destaques:**
+Tema: Raiz
+Destaques:
 - Valorização da brasilidade
 - Materiais regionais
 - Artesanato local
@@ -287,8 +287,8 @@ Avaliar padrão de qualidade e execução
 
 ### Casa Cor 2024
 
-**Tema:** De Presente, O Agora
-**Destaques:**
+Tema: De Presente, O Agora
+Destaques:
 - Mindfulness
 - Slow living
 - Desaceleração
@@ -300,24 +300,24 @@ Avaliar padrão de qualidade e execução
 
 ### Informações Práticas
 
-**Datas:** 2 de junho a 9 de agosto de 2026
-**Local:** Parque da Água Branca - São Paulo
-**Horário:** Terça a domingo, 11h às 21h
+Datas: 2 de junho a 9 de agosto de 2026
+Local: Parque da Água Branca - São Paulo
+Horário: Terça a domingo, 11h às 21h
 
 ### Ingressos
 
-- **Online**: Compra antecipada com desconto
-- **Na entrada**: Valores inteiros
-- **Meia-entrada**: Estudantes, idosos, professores
+- Online: Compra antecipada com desconto
+- Na entrada: Valores inteiros
+- Meia-entrada: Estudantes, idosos, professores
 
 ### Dicas para Aproveitar
 
-1. **Reserve pelo menos 3-4 horas**
-2. **Vá em dia de semana** (menos lotado)
-3. **Leve uma garrafa de água**
-4. **Fotografe referências** (permitido sem flash)
-5. **Pegue material dos expositores**
-6. **Visite mais de uma vez** se possível
+1. Reserve pelo menos 3-4 horas
+2. Vá em dia de semana (menos lotado)
+3. Leve uma garrafa de água
+4. Fotografe referências (permitido sem flash)
+5. Pegue material dos expositores
+6. Visite mais de uma vez se possível
 
 ---
 
@@ -325,10 +325,10 @@ Avaliar padrão de qualidade e execução
 
 Historicamente, o que aparece na Casa Cor:
 
-- **3-6 meses depois**: Revistas de decoração
-- **6-12 meses**: Lojas de móveis
-- **1-2 anos**: Projetos residenciais
-- **2-3 anos**: Incorporadoras (médio padrão)
+- 3-6 meses depois: Revistas de decoração
+- 6-12 meses: Lojas de móveis
+- 1-2 anos: Projetos residenciais
+- 2-3 anos: Incorporadoras (médio padrão)
 
 ---
 
@@ -336,13 +336,13 @@ Historicamente, o que aparece na Casa Cor:
 
 Aplicamos conceitos da Casa Cor em:
 
-**Projetos Residenciais:**
+Projetos Residenciais:
 - Seleção de materiais premium
 - Combinações de cores
 - Soluções inovadoras
 - Layout de ambientes
 
-**Especificações:**
+Especificações:
 - Marcas apresentadas na mostra
 - Novos fornecedores
 - Materiais exclusivos
@@ -364,7 +364,7 @@ Quer trazer a elegância e sofisticação da Casa Cor para sua casa?
 
 Nossa equipe cria projetos exclusivos incorporando as melhores tendências da mostra.
 
-**Entre em Contato:**
+Entre em Contato:
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
@@ -373,8 +373,8 @@ Nossa equipe cria projetos exclusivos incorporando as melhores tendências da mo
 
 *Grupo WG Almeida, Transformando tendências em realidade*
 
-**Fontes:**
+Fontes:
 - [Casa Cor São Paulo divulga tema e data para edição 2026](https://abravidro.org.br/casa-cor-sao-paulo-divulga-tema-e-data-para-edicao-2026)
 - [CASACOR São Paulo 2026 propõe "Mente e Coração"](https://www.diariozonanorte.com.br/casacor-sao-paulo-2026-propoe-mente-e-coracao-e-convida-a-repensar-a-casa-como-espaco-de-cura/)
 
-**Tags**: Casa Cor, mostra arquitetura, design interiores, tendências 2026, São Paulo, decoração
+Tags: Casa Cor, mostra arquitetura, design interiores, tendências 2026, São Paulo, decoração

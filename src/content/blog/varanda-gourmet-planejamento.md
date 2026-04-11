@@ -18,26 +18,26 @@ featured: false
 ## Planejamento
 
 ### Tamanho Mínimo
-- **Básica:** 6m² (2x3m)
-- **Confortável:** 10-15m²
-- **Ideal:** 20m²+
+- Básica: 6m² (2x3m)
+- Confortável: 10-15m²
+- Ideal: 20m²+
 
 ### Setorização
-**Zona Cocção:**
+Zona Cocção:
 - Churrasqueira
 - Cooktop/fogão
 - Bancada preparo
 
-**Zona Apoio:**
+Zona Apoio:
 - Pia
 - Geladeira
 - Armazenamento
 
-**Zona Refeição:**
+Zona Refeição:
 - Mesa 6-8 lugares
 - Cadeiras confortáveis
 
-**Zona Lounge:**
+Zona Lounge:
 - Sofá/poltronas
 - Mesa centro
 - Decoração
@@ -45,24 +45,24 @@ featured: false
 ## Churrasqueira
 
 ### Tipos
-**Alvenaria:**
+Alvenaria:
 - Tradicional
 - Durável
 - Custo: R$ 2.000-8.000
 - Precisa chaminé
 
-**Pré-moldada:**
+Pré-moldada:
 - Rápida instalação
 - Custo: R$ 1.500-5.000
 - Modular
 
-**Elétrica:**
+Elétrica:
 - Sem fumaça
 - Condomínios
 - Custo: R$ 800-3.000
 - Menos sabor
 
-**Gás:**
+Gás:
 - Prática
 - Rápida
 - Custo: R$ 1.200-4.000
@@ -76,25 +76,25 @@ featured: false
 ## Bancada
 
 ### Materiais
-**Granito:**
+Granito:
 - Durável
 - Resiste calor
 - R$ 250-600/m²
 - Tradicional
 
-**Quartzo:**
+Quartzo:
 - Não poroso
 - Higiênico
 - R$ 600-1.200/m²
 - Moderno
 
-**Porcelanato:**
+Porcelanato:
 - Versátil
 - Fácil limpeza
 - R$ 400-900/m²
 - Contemporâneo
 
-**Concreto:**
+Concreto:
 - Industrial
 - Durável
 - R$ 300-700/m²
@@ -109,24 +109,24 @@ featured: false
 ## Cobertura
 
 ### Opções
-**Laje:**
+Laje:
 - Proteção total
 - Suporta peso
 - Pode ter jardim em cima
 - Custo: R$ 300-600/m²
 
-**Telhado:**
+Telhado:
 - Cerâmica: R$ 150-300/m²
 - Metálico: R$ 100-250/m²
 - Telha transparente: R$ 80-180/m²
 
-**Pergolado:**
+Pergolado:
 - Madeira: R$ 250-500/m²
 - Metal: R$ 200-400/m²
 - Meia sombra
 - Estética
 
-**Toldo:**
+Toldo:
 - Retrátil: R$ 300-800/m²
 - Fixo: R$ 150-400/m²
 - Flexível
@@ -134,12 +134,12 @@ featured: false
 ## Fechamento
 
 ### Vidro
-**Tipos:**
+Tipos:
 - Cortina vidro: R$ 600-1.000/m²
 - Esquadria: R$ 400-800/m²
 - Retrátil: R$ 800-1.500/m²
 
-**Benefícios:**
+Benefícios:
 ✅ Proteção vento
 ✅ Uso ano todo
 ✅ Acústica
@@ -154,23 +154,23 @@ featured: false
 ## Móveis
 
 ### Mesa Jantar
-**Materiais:**
+Materiais:
 - Madeira: R$ 2.000-8.000
 - Fibra sintética: R$ 1.500-6.000
 - Vidro + metal: R$ 1.800-7.000
 
-**Tamanhos:**
+Tamanhos:
 - 4 lugares: 1,20x80cm
 - 6 lugares: 1,60x90cm
 - 8 lugares: 2,00x100cm
 
 ### Cadeiras
-**Tipos:**
+Tipos:
 - Madeira: R$ 300-1.200/un
 - Fibra sintética: R$ 250-900/un
 - Metal: R$ 200-800/un
 
-**Quantidade:**
+Quantidade:
 - Sempre +2 que mesa
 - Mesa 6: comprar 8 cadeiras
 
@@ -181,7 +181,7 @@ featured: false
 - Quantidade: 3-4
 
 ### Sofá/Lounge
-**Materiais externos:**
+Materiais externos:
 - Fibra sintética: R$ 3.000-12.000
 - Alumínio: R$ 4.000-15.000
 - Madeira tratada: R$ 3.500-14.000
@@ -189,7 +189,7 @@ featured: false
 ## Eletrodomésticos
 
 ### Geladeira
-**Opções:**
+Opções:
 - Frigobar: R$ 800-1.500
 - Geladeira compacta: R$ 1.500-3.000
 - Cervejeira: R$ 1.200-4.000
@@ -227,31 +227,31 @@ featured: false
 - Cenas (jantar, festa, ambiente)
 - Automação (opcional)
 
-**Custo iluminação:** R$ 1.500-5.000
+Custo iluminação: R$ 1.500-5.000
 
 ## Instalações
 
 ### Elétrica
-**Essencial:**
+Essencial:
 - Circuito dedicado churrasqueira
 - Tomadas 220V (cooktop, geladeira)
 - Tomadas 110V (uso geral)
 - Iluminação
 - GFCI em áreas molhadas
 
-**Quantidade tomadas:**
+Quantidade tomadas:
 - Mínimo: 6
 - Ideal: 10-12
 - Espaçamento: cada 1,5m
 
 ### Hidráulica
-**Pia:**
+Pia:
 - Água fria
 - Água quente (opcional)
 - Esgoto
 - Sifão
 
-**Ponto gás:**
+Ponto gás:
 - GLP (botijão)
 - Encanado (se disponível)
 - Registro segurança
@@ -264,22 +264,22 @@ featured: false
 ## Piso
 
 ### Materiais
-**Porcelanato:**
+Porcelanato:
 - Antiderrapante obrigatório
 - Grande formato
 - R$ 70-250/m²
 
-**Deck:**
+Deck:
 - Madeira: R$ 120-400/m²
 - Composto (WPC): R$ 150-350/m²
 - Manutenção anual
 
-**Pedra:**
+Pedra:
 - São Tomé: R$ 80-150/m²
 - Miracema: R$ 100-200/m²
 - Antiderrapante natural
 
-**Cimento queimado:**
+Cimento queimado:
 - R$ 80-180/m²
 - Impermeabilizado
 - Moderno
@@ -287,13 +287,13 @@ featured: false
 ## Climatização
 
 ### Aquecimento
-**Inverno:**
+Inverno:
 - Aquecedor infravermelho: R$ 400-1.500
 - Lareira elétrica: R$ 800-3.000
 - Lareira bioetanol: R$ 1.500-5.000
 
 ### Ventilação
-**Verão:**
+Verão:
 - Ventiladores teto: R$ 300-1.200
 - Nebulizadores: R$ 800-3.000
 - Climatizador: R$ 600-2.000
@@ -306,19 +306,19 @@ featured: false
 ## Decoração
 
 ### Plantas
-**Espécies:**
+Espécies:
 - Palmeiras
 - Samambaias
 - Suculentas
 - Trepadeiras
 
-**Vasos:**
+Vasos:
 - Cerâmica: R$ 50-300
 - Concreto: R$ 80-500
 - Fibra: R$ 100-400
 
 ### Têxteis
-**Outdoor:**
+Outdoor:
 - Almofadas impermeáveis
 - Tapete externo
 - Cortinas resistentes

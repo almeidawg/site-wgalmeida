@@ -22,7 +22,7 @@ As tendencias de decoracao 2026 apontam para ambientes mais funcionais, acolhedo
 
 A nova tendência revela "uma nova forma de viver: mais afetiva, consciente e conectada com a experiência cotidiana".
 
-**Características:**
+Características:
 - Conexão imediata com os habitantes
 - Projetos que despertam emoções através de texturas
 - Iluminação estratégica
@@ -33,7 +33,7 @@ A nova tendência revela "uma nova forma de viver: mais afetiva, consciente e co
 
 Tons terrosos, bege quentes, verdes profundos e off-whites menos frios criam atmosfera de conforto e permanência.
 
-**Cores em alta:**
+Cores em alta:
 - 🟤 Terracota
 - 🟫 Argila
 - 🫒 Verde oliva
@@ -45,7 +45,7 @@ Tons terrosos, bege quentes, verdes profundos e off-whites menos frios criam atm
 
 Madeiras com veio visível, tecidos naturais como linho e algodão, e superfícies matte ajudam a criar ambientes visualmente calmos, funcionais e atemporais.
 
-**Em evidência:**
+Em evidência:
 - Madeira natural
 - Pedra bruta
 - Tecidos rústicos (linho, juta, algodão)
@@ -56,7 +56,7 @@ Madeiras com veio visível, tecidos naturais como linho e algodão, e superfíci
 
 Em 2026, sustentabilidade deixa de ser "algo a mais" e se torna parte intrínseca do design.
 
-**Práticas essenciais:**
+Práticas essenciais:
 - Uso de materiais reciclados e recicláveis
 - Madeira de reflorestamento certificada
 - Tintas de baixo VOC
@@ -67,7 +67,7 @@ Em 2026, sustentabilidade deixa de ser "algo a mais" e se torna parte intrínsec
 
 A decoração valoriza espaços que se adaptam a rotinas, fases da vida e até aos humores diários.
 
-**Soluções inteligentes:**
+Soluções inteligentes:
 - Móveis versáteis e transformáveis
 - Divisórias móveis
 - Layouts adaptáveis
@@ -78,7 +78,7 @@ A decoração valoriza espaços que se adaptam a rotinas, fases da vida e até a
 
 Incluir memórias afetivas nos espaços torna a casa um território emocional.
 
-**Exemplos:**
+Exemplos:
 - Filtro de barro da vovó
 - Cerâmicas antigas
 - Móveis restaurados
@@ -89,7 +89,7 @@ Incluir memórias afetivas nos espaços torna a casa um território emocional.
 
 Em 2026, bem-estar deixa de ser tendência e se torna premissa.
 
-**Elementos essenciais:**
+Elementos essenciais:
 - Ambientes integrados com natureza
 - Ventilação natural
 - Luz do dia abundante
@@ -101,7 +101,7 @@ Em 2026, bem-estar deixa de ser tendência e se torna premissa.
 
 A dureza dos ângulos retos dá lugar a curvas suaves.
 
-**Onde aplicar:**
+Onde aplicar:
 - Bancadas de cozinha
 - Sofás e poltronas
 - Mesas de jantar
@@ -113,7 +113,7 @@ A dureza dos ângulos retos dá lugar a curvas suaves.
 
 O maximalismo retorna, mas de forma mais pensada e intencional.
 
-**Características:**
+Características:
 - Mix de estampas e texturas
 - Cores vibrantes com propósito
 - Acúmulo organizado
@@ -124,7 +124,7 @@ O maximalismo retorna, mas de forma mais pensada e intencional.
 
 O minimalismo evolui para uma versão mais acolhedora.
 
-**Elementos:**
+Elementos:
 - Menos itens, mas com história
 - Texturas naturais
 - Cores quentes
@@ -135,7 +135,7 @@ O minimalismo evolui para uma versão mais acolhedora.
 
 A iluminação cria atmosferas e define o mood dos ambientes.
 
-**Tendências:**
+Tendências:
 - Luminárias com dimmer
 - Fitas de LED ocultas
 - Temperatura de cor variável
@@ -146,7 +146,7 @@ A iluminação cria atmosferas e define o mood dos ambientes.
 
 A cozinha como coração da casa se consolida.
 
-**Características:**
+Características:
 - Integração com sala
 - Ilha multifuncional
 - Adega climatizada
@@ -157,7 +157,7 @@ A cozinha como coração da casa se consolida.
 
 Banheiros se transformam em espaços de autocuidado.
 
-**Elementos:**
+Elementos:
 - Banheiras de imersão
 - Chuveiros de chuva
 - Pedras naturais
@@ -169,7 +169,7 @@ Banheiros se transformam em espaços de autocuidado.
 
 O escritório em casa se torna permanente.
 
-**Soluções:**
+Soluções:
 - Móveis escamoteáveis
 - Divisórias acústicas
 - Iluminação adequada
@@ -180,7 +180,7 @@ O escritório em casa se torna permanente.
 
 A natureza entra definitivamente para dentro de casa.
 
-**Opções:**
+Opções:
 - Jardins verticais
 - Vasos suspensos
 - Terrários
@@ -191,7 +191,7 @@ A natureza entra definitivamente para dentro de casa.
 
 A tecnologia se integra de forma discreta.
 
-**Exemplos:**
+Exemplos:
 - Tomadas e switches ocultos
 - TVs que viram quadros
 - Som ambiente embutido
@@ -202,7 +202,7 @@ A tecnologia se integra de forma discreta.
 
 Móveis e objetos vintage ganham nova vida.
 
-**Como fazer:**
+Como fazer:
 - Mix de épocas diferentes
 - Restauração consciente
 - Combinação com peças modernas
@@ -213,7 +213,7 @@ Móveis e objetos vintage ganham nova vida.
 
 Valo rização do feito à mão e do único.
 
-**Itens em alta:**
+Itens em alta:
 - Cerâmica artesanal
 - Macramê
 - Tapeçaria
@@ -224,7 +224,7 @@ Valo rização do feito à mão e do único.
 
 Metais brilhantes cedem espaço para acabamentos foscos.
 
-**Materiais:**
+Materiais:
 - Bronze escovado
 - Latão matte
 - Preto fosco
@@ -235,7 +235,7 @@ Metais brilhantes cedem espaço para acabamentos foscos.
 
 Cores vibrantes aparecem de forma pontual e intencional.
 
-**Aplicações:**
+Aplicações:
 - Parede de destaque
 - Móveis statement
 - Objetos decorativos
@@ -262,7 +262,7 @@ As tendências de 2026 apontam para ambientes mais humanos, sustentáveis e cone
 
 No Grupo WG Almeida, nossos projetos de arquitetura de interiores incorporam essas tendências de forma personalizada, respeitando o estilo e necessidades de cada cliente.
 
-**Fontes:**
+Fontes:
 - [20 tendências de arquitetura e decoração para 2026](https://blog.archtrends.com/tendencias-de-arquitetura-e-decoracao-para-2026/)
 - [Os estilos de decoração de interiores que serão tendência em 2026 - ELLE Brasil](https://elle.com.br/lifestyle/estilos-de-decoracao-de-interiores)
 - [Decoração 2026: 7 tendências - Biancogres](https://biancogres.com.br/pt_BR/blog/decoracao-2026-7-tendencias-que-merecem-toda-a-sua-atencao)

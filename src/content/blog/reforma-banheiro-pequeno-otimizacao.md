@@ -20,10 +20,10 @@ Se o banheiro e pequeno, o resultado depende de layout, escolha de revestimentos
 ## Entendendo Banheiro Pequeno
 
 ### Tamanhos
-**Muito pequeno:** <2,5m² (lavabo)
-**Pequeno:** 2,5-4m²
-**Médio:** 4-6m²
-**Grande:** 6m²+
+Muito pequeno: <2,5m² (lavabo)
+Pequeno: 2,5-4m²
+Médio: 4-6m²
+Grande: 6m²+
 
 ### Desafios
 ❌ Pouco espaço circulação
@@ -42,79 +42,79 @@ Se o banheiro e pequeno, o resultado depende de layout, escolha de revestimentos
 
 ### 1. Layout Otimizado
 
-**Regra de Ouro:**
+Regra de Ouro:
 - Pia próxima à porta
 - Vaso ao fundo
 - Box lateral
 - Circulação mínima 60cm
 
-**Distribuição:**
+Distribuição:
 - Porta abre para fora (economiza espaço)
 - Aproveitar cantos
 - Alinhamento estratégico
 
 ### 2. Louças Suspensas
 
-**Vaso suspenso:**
+Vaso suspenso:
 ✅ Facilita limpeza
 ✅ Sensação amplitude
 ✅ Modernidade
 + R$ 400-800 vs comum
 
-**Cuba suspensa:**
+Cuba suspensa:
 ✅ Mais espaço embaixo
 ✅ Limpa visualmente
 ✅ Contemporânea
 
 ### 3. Box Sem Perfil
 
-**Vidro incolor:**
+Vidro incolor:
 - 8mm temperado
 - Sem perfis (ou mínimos)
 - Transparência total
 - Amplia visualmente 40%
 
-**Custo:** R$ 800-1.500/m²
+Custo: R$ 800-1.500/m²
 
 ### 4. Cores Claras
 
-**Paredes:**
+Paredes:
 - Branco
 - Off-white
 - Bege clarinho
 - Cinza claro
 
-**Revestimentos:**
+Revestimentos:
 - Porcelanato branco
 - Mármore Carrara
 - Cimento claro
 
-**Evitar:**
+Evitar:
 ❌ Cores escuras (>30% área)
 ❌ Muitos padrões
 
 ### 5. Espelhos Grandes
 
-**Regra:**
+Regra:
 - Quanto maior, melhor
 - Parede inteira ideal
 - Mínimo: 80cm largura
 
-**Posicionamento:**
+Posicionamento:
 - Sobre pia (óbvio)
 - Parede lateral (duplica)
 - Atrás porta (amplia)
 
-**Ampliação visual:** +60-100%
+Ampliação visual: +60-100%
 
 ### 6. Iluminação Abundante
 
-**Natural:**
+Natural:
 - Janela máxima possível
 - Vidro jateado (privacidade)
 - Claraboia (se viável)
 
-**Artificial:**
+Artificial:
 - Spots distribuídos (20-25W/m²)
 - 4000K (branca neutra)
 - LED fita no espelho
@@ -122,179 +122,179 @@ Se o banheiro e pequeno, o resultado depende de layout, escolha de revestimentos
 
 ### 7. Nichos Embutidos
 
-**Onde:**
+Onde:
 - Parede box (produtos)
 - Sobre vaso (decoração)
 - Lateral pia (toalhas)
 
-**Dimensões:**
+Dimensões:
 - 30x30cm (padrão)
 - 15cm profundidade
 - LED integrado
 
 ### 8. Porta de Correr
 
-**Economia:**
+Economia:
 - 90cm espaço abertura
 - Permite pia maior
 - Moderniza
 
-**Tipos:**
+Tipos:
 - Externa (mais fácil)
 - Embutida (mais limpa)
 
-**Custo:** R$ 800-2.500
+Custo: R$ 800-2.500
 
 ### 9. Cuba Pequena
 
-**Opções:**
+Opções:
 - 30x30cm (mínimo)
 - 35x35cm (confortável)
 - Quadrada ou retangular
 - Suspensa ou semi-encaixe
 
-**Evitar:**
+Evitar:
 ❌ Cubas grandes (>45cm)
 ❌ Duplas (desperdício)
 
 ### 10. Marcenaria Sob Medida
 
-**Vantagens:**
+Vantagens:
 ✅ Aproveita cada cm
 ✅ Personalizada
 ✅ Gavetas otimizadas
 
-**Incluir:**
+Incluir:
 - Gaveta organizada
 - Nicho papel higiênico
 - Toalheiro integrado
 - Cesto embutido
 
-**Custo:** R$ 2.000-6.000
+Custo: R$ 2.000-6.000
 
 ### 11. Revestimento Grande Formato
 
-**Porcelanato:**
+Porcelanato:
 - 60x120cm
 - 90x90cm
 - Menos juntas
 - Continuidade visual
 
-**Evitar:**
+Evitar:
 ❌ Mosaicos pequenos
 ❌ Muitas cores
 ❌ Padrões complexos
 
 ### 12. Teto Alto (Amplitude Vertical)
 
-**Se pé-direito permite:**
+Se pé-direito permite:
 - Não rebaixar teto todo
 - Rebaixo apenas perímetro
 - Forro branco
 
-**Iluminação:**
+Iluminação:
 - Embutida no rebaixo
 - Iluminação indireta
 
 ### 13. Prateleiras de Vidro
 
-**Vantagens:**
+Vantagens:
 ✅ Não pesam visualmente
 ✅ Transparentes
 ✅ Modernas
 
-**Onde:**
+Onde:
 - Sobre pia
 - Cantos
 - Entre nichos
 
-**Custo:** R$ 100-300/peça
+Custo: R$ 100-300/peça
 
 ### 14. Chuveiro Teto
 
-**Benefícios:**
+Benefícios:
 ✅ Luxuoso
 ✅ Não ocupa parede
 ✅ Limpeza visual
 
-**Atenção:**
+Atenção:
 - Pressão adequada (20 mca)
 - Instalação teto
 - Manutenção complexa
 
-**Custo:** R$ 500-3.000
+Custo: R$ 500-3.000
 
 ### 15. Ventilação/Exaustão
 
-**Essencial:**
+Essencial:
 - Exaustor (se sem janela)
 - Extrai umidade
 - Evita mofo
 
-**Tipos:**
+Tipos:
 - Axial: R$ 150-400
 - Centrífugo: R$ 300-800
 - Silencioso: +50%
 
 ### 16. Porta Toalha Aquecida
 
-**Vantagens:**
+Vantagens:
 ✅ Toalha sempre seca
 ✅ Funcional + luxo
 ✅ Ocupa parede
 
-**Custo:** R$ 400-1.500
+Custo: R$ 400-1.500
 
 ### 17. Vaso Sanitário Compacto
 
-**Medidas especiais:**
+Medidas especiais:
 - Comprimento: 45-50cm (vs 55-60cm comum)
 - Economia: 10-15cm
 - Mesma funcionalidade
 
-**Marcas:**
+Marcas:
 - Deca: Linha Petit
 - Incepa: Compacto
 - Roca: Mini
 
-**Custo:** R$ 400-1.200
+Custo: R$ 400-1.200
 
 ### 18. Ralo Linear
 
-**Vantagens:**
+Vantagens:
 ✅ Drena melhor
 ✅ Estética limpa
 ✅ Instalação discreta
 
-**Onde:**
+Onde:
 - Box inteiro
 - Entrada box
 - Centro (se necessário)
 
-**Custo:** R$ 300-800
+Custo: R$ 300-800
 
 ### 19. Torneira Parede
 
-**Economia:**
+Economia:
 - Libera bancada
 - Limpeza mais fácil
 - Modernidade
 
-**Atenção:**
+Atenção:
 - Ponto hidráulico na parede
 - Planejar na obra
 
-**Custo:** +R$ 200-500 vs bancada
+Custo: +R$ 200-500 vs bancada
 
 ### 20. Decoração Minimalista
 
-**Menos é mais:**
+Menos é mais:
 ✅ Poucos objetos
 ✅ Cores neutras
 ✅ Linhas limpas
 ✅ Funcionalidade
 
-**Evitar:**
+Evitar:
 ❌ Muitos quadros
 ❌ Objetos decorativos
 ❌ Tapetes grandes
@@ -352,28 +352,28 @@ Se o banheiro e pequeno, o resultado depende de layout, escolha de revestimentos
 ## Materiais Recomendados
 
 ### Revestimentos
-**Porcelanato:**
+Porcelanato:
 - Branco Carrara
 - Cimento claro
 - Mármore branco
 - 60x120cm ou maior
 
-**Custo:** R$ 80-250/m²
+Custo: R$ 80-250/m²
 
 ### Louças
-**Marcas:**
+Marcas:
 - Deca (custo-benefício)
 - Deca Black (premium nacional)
 - Roca (importada)
 - Duravit (luxo)
 
-**Conjunto básico:**
+Conjunto básico:
 - Vaso: R$ 400-1.500
 - Cuba: R$ 300-1.200
 - Metais: R$ 600-2.500
 
 ### Metais
-**Acabamentos 2026:**
+Acabamentos 2026:
 - Preto fosco (tendência)
 - Dourado escovado
 - Inox escovado
@@ -383,7 +383,7 @@ Se o banheiro e pequeno, o resultado depende de layout, escolha de revestimentos
 
 ### Banheiro 3m²
 
-**Econômica (R$ 8.000-15.000):**
+Econômica (R$ 8.000-15.000):
 - Demolição: R$ 800
 - Instalações: R$ 2.500
 - Revestimentos: R$ 2.500
@@ -392,7 +392,7 @@ Se o banheiro e pequeno, o resultado depende de layout, escolha de revestimentos
 - Box: R$ 1.200
 - Mão de obra: R$ 3.000
 
-**Intermediária (R$ 18.000-30.000):**
+Intermediária (R$ 18.000-30.000):
 - Demolição: R$ 1.000
 - Instalações: R$ 3.500
 - Porcelanato premium: R$ 4.500
@@ -403,7 +403,7 @@ Se o banheiro e pequeno, o resultado depende de layout, escolha de revestimentos
 - Iluminação: R$ 1.500
 - Mão de obra: R$ 5.000
 
-**Premium (R$ 35.000-60.000):**
+Premium (R$ 35.000-60.000):
 - Demolição: R$ 1.200
 - Instalações completas: R$ 5.000
 - Mármore Carrara: R$ 10.000
@@ -416,7 +416,7 @@ Se o banheiro e pequeno, o resultado depende de layout, escolha de revestimentos
 
 ## Prazo
 
-**Banheiro 3-4m²:**
+Banheiro 3-4m²:
 - Demolição: 1 dia
 - Instalações: 5-7 dias
 - Contrapiso: 2 dias + 3 cura
@@ -426,7 +426,7 @@ Se o banheiro e pequeno, o resultado depende de layout, escolha de revestimentos
 - Instalações finais: 2 dias
 - Limpeza: 1 dia
 
-**Total:** 25-35 dias
+Total: 25-35 dias
 
 ## Checklist
 
@@ -449,8 +449,8 @@ Banheiro pequeno bem planejado:
 ✅ Confortável
 ✅ Valoriza imóvel
 
-**Investimento:** R$ 8.000-60.000 (3m²)
-**Priorizar:**
+Investimento: R$ 8.000-60.000 (3m²)
+Priorizar:
 1. Layout inteligente
 2. Cores claras
 3. Iluminação abundante

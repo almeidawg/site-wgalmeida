@@ -89,27 +89,27 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 (11) 98465-0002
 
-**Materiais:**
+Materiais:
 - Manta asfáltica
 - Argamassa polimérica
 - Impermeabilizante líquido
 
-**Importante:** A impermeabilização deve ser testada (48h de água parada) antes de revestir.
+Importante: A impermeabilização deve ser testada (48h de água parada) antes de revestir.
 
 ---
 
 ## Etapa 5: Acabamentos
 
-**Duração típica:** 3-6 semanas
+Duração típica: 3-6 semanas
 
 ### Revestimentos de Piso
 
-**Preparação:**
+Preparação:
 - Limpeza do contrapiso
 - Aplicação de primer (se necessário)
 - Definição de paginação
 
-**Assentamento:**
+Assentamento:
 - Argamassa colante adequada ao material
 - Espaçadores para juntas
 - Cortes e arremates
@@ -117,13 +117,13 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 
 ### Revestimentos de Parede
 
-**Cerâmicos:**
+Cerâmicos:
 - Preparação da superfície
 - Assentamento
 - Rejuntamento
 - Proteção de cantos
 
-**Pintura:**
+Pintura:
 - Fundo preparador
 - Massa corrida (se necessário)
 - Lixamento
@@ -131,13 +131,13 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 
 ### Gesso e Forros
 
-**Tipos:**
+Tipos:
 - Forro de gesso convencional
 - Forro de gesso acartonado
 - Sancas e tabicas
 - Rasgo de luz
 
-**Sequência:**
+Sequência:
 - Estrutura de apoio
 - Placas de gesso
 - Acabamento de juntas
@@ -145,13 +145,13 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 
 ### Esquadrias
 
-**Portas:**
+Portas:
 - Batentes e guarnições
 - Folhas de porta
 - Fechaduras e maçanetas
 - Regulagem
 
-**Janelas:**
+Janelas:
 - Contramarcos (se não existentes)
 - Montagem de esquadrias
 - Vedação
@@ -161,30 +161,30 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 
 ## Etapa 6: Finalização
 
-**Duração típica:** 2-3 semanas
+Duração típica: 2-3 semanas
 
 ### Louças e Metais
 
-**Banheiros:**
+Banheiros:
 - Vasos sanitários
 - Cubas (apoio ou embutir)
 - Torneiras e misturadores
 - Duchas e chuveiros
 - Acessórios (papeleira, saboneteira)
 
-**Cozinha:**
+Cozinha:
 - Cuba e torneira
 - Sifão e válvula
 
 ### Marcenaria
 
-**Instalação:**
+Instalação:
 - Montagem dos módulos
 - Fixação em parede
 - Regulagem de portas e gavetas
 - Instalação de puxadores
 
-**Conferência:**
+Conferência:
 - Alinhamento de portas
 - Funcionamento de gavetas
 - Acabamento de bordas
@@ -192,7 +192,7 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 
 ### Iluminação
 
-**Instalação:**
+Instalação:
 - Lustres e pendentes
 - Spots e plafons
 - Arandelas
@@ -201,7 +201,7 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 
 ### Vidros e Espelhos
 
-**Tipos:**
+Tipos:
 - Box de banheiro
 - Espelhos de bancada
 - Painéis decorativos
@@ -211,16 +211,16 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 
 ## Etapa 7: Entrega
 
-**Duração típica:** 1 semana
+Duração típica: 1 semana
 
 ### Limpeza
 
-**Limpeza Grossa:**
+Limpeza Grossa:
 - Remoção de entulho residual
 - Limpeza de rejunte
 - Remoção de etiquetas e proteções
 
-**Limpeza Fina:**
+Limpeza Fina:
 - Limpeza de vidros
 - Limpeza de metais
 - Limpeza de marcenaria
@@ -228,7 +228,7 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 
 ### Vistoria
 
-**O que verificar:**
+O que verificar:
 - Funcionamento de interruptores e tomadas
 - Funcionamento de torneiras e descargas
 - Abertura e fechamento de portas
@@ -238,7 +238,7 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 
 ### Documentação
 
-**Entregas:**
+Entregas:
 - Manual do proprietário
 - Notas fiscais de materiais
 - Garantias de equipamentos
@@ -257,7 +257,7 @@ Quer uma reforma completa com gestao integrada? Fale com o nosso time.
 | Vedação | 1 semana | 2 semanas | 2 semanas |
 | Acabamentos | 3 semanas | 4-5 semanas | 6 semanas |
 | Finalização | 2 semanas | 2-3 semanas | 3 semanas |
-| **TOTAL** | **13 semanas** | **18-21 semanas** | **25 semanas** |
+| TOTAL | 13 semanas | 18-21 semanas | 25 semanas |
 
 *Cronogramas de referência para reformas completas em regime normal*
 
@@ -286,18 +286,18 @@ Acompanhe o progresso e tire dúvidas na hora.
 
 Está planejando uma reforma?
 
-**Agende uma consulta** e receba uma análise completa do seu imóvel com estimativa de cronograma e investimento.
+Agende uma consulta e receba uma análise completa do seu imóvel com estimativa de cronograma e investimento.
 
 ---
 
 *Grupo WG Almeida, Gestão completa de reformas no sistema Turn Key*
 
-**Tags**: etapas reforma, cronograma obra, reforma apartamento, reforma completa, execução de obra
+Tags: etapas reforma, cronograma obra, reforma apartamento, reforma completa, execução de obra
 ---
 
 ## Conclusao
 
-Quando projeto, tecnica e sensibilidade caminham juntos, o resultado deixa de ser apenas bonito e passa a ser **memoravel**. Essa e a essencia da WG Almeida: transformar espacos em experiencias, com clareza, sofisticacao e performance.
+Quando projeto, tecnica e sensibilidade caminham juntos, o resultado deixa de ser apenas bonito e passa a ser memoravel. Essa e a essencia da WG Almeida: transformar espacos em experiencias, com clareza, sofisticacao e performance.
 
 ## Proximo passo
 

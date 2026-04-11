@@ -336,7 +336,7 @@ const Home = () => {
       )}
 
       {/* ========== HERO SECTION COM VÍDEO ========== */}
-      <section className="wg-page-hero hero-under-header bg-wg-black">
+      <section className="wg-page-hero wg-page-hero--full hero-under-header bg-wg-black">
         <HeroVideo />
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-wg-black/40 via-wg-black/60 to-wg-black/80"></div>
 

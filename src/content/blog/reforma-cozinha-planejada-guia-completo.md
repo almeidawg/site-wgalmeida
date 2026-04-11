@@ -96,43 +96,43 @@ Vai reformar a cozinha e quer evitar estouro de prazo e orcamento? Este guia mos
 ## Materiais para Bancada
 
 ### Granito
-**Prós:** Resistente, durável, variedade de cores
-**Contras:** Pode manchar, precisa impermeabilização
-**Custo:** R$ 200-600/m²
+Prós: Resistente, durável, variedade de cores
+Contras: Pode manchar, precisa impermeabilização
+Custo: R$ 200-600/m²
 
 ### Quartzo
-**Prós:** Não poroso, não mancha, alta resistência
-**Contras:** Custo mais alto
-**Custo:** R$ 600-1.500/m²
+Prós: Não poroso, não mancha, alta resistência
+Contras: Custo mais alto
+Custo: R$ 600-1.500/m²
 
 ### Mármore
-**Prós:** Beleza incomparável, elegância
-**Contras:** Mancha fácil, manutenção constante
-**Custo:** R$ 400-2.000/m²
+Prós: Beleza incomparável, elegância
+Contras: Mancha fácil, manutenção constante
+Custo: R$ 400-2.000/m²
 
 ### Porcelanato
-**Prós:** Higiênico, variedade, bom custo-benefício
-**Contras:** Emendas visíveis
-**Custo:** R$ 150-500/m²
+Prós: Higiênico, variedade, bom custo-benefício
+Contras: Emendas visíveis
+Custo: R$ 150-500/m²
 
 ## Tendências 2026 para Cozinhas
 
-✨ **Cozinhas Integradas**
+✨ Cozinhas Integradas
 Espaço aberto para sala, ilha como ponto focal
 
-✨ **Cores Neutras com Pontos de Cor**
+✨ Cores Neutras com Pontos de Cor
 Armários claros com ilha colorida ou bancada marcante
 
-✨ **Metais Pretos ou Dourados Foscos**
+✨ Metais Pretos ou Dourados Foscos
 Torneiras e puxadores em acabamento matte
 
-✨ **Iluminação Linear**
+✨ Iluminação Linear
 Fitas LED sob armários e nichos
 
-✨ **Horta Integrada**
+✨ Horta Integrada
 Espaço para temperos frescos
 
-✨ **Tecnologia**
+✨ Tecnologia
 Torneiras touch, lixeiras com sensor, tomadas USB
 
 ## Erros Comuns a Evitar
@@ -146,24 +146,24 @@ Torneiras touch, lixeiras com sensor, tomadas USB
 
 ## Dicas de Ouro
 
-💡 **Triângulo de Trabalho**
+💡 Triângulo de Trabalho
 Posicione pia, fogão e geladeira formando um triângulo eficiente
 
-💡 **Iluminação Funcional**
+💡 Iluminação Funcional
 Luz geral + luz de tarefa + luz de destaque
 
-💡 **Armazenamento Inteligente**
+💡 Armazenamento Inteligente
 Use cantos com gavetas mágicas, cestões, divisórias
 
-💡 **Tomadas Estratégicas**
+💡 Tomadas Estratégicas
 No mínimo 8 tomadas em posições variadas
 
-💡 **Revestimentos Práticos**
+💡 Revestimentos Práticos
 Escolha materiais fáceis de limpar atrás do fogão
 
 ## Prazo Total
 
-Reforma completa: **6 a 12 semanas**
+Reforma completa: 6 a 12 semanas
 - Planejamento: 2-4 semanas
 - Execução: 4-8 semanas
 
@@ -176,7 +176,7 @@ Reforma completa: **6 a 12 semanas**
 ✅ Garantia de 5 anos
 ✅ Acompanhamento diário
 
-**Solicite seu orçamento gratuito!**
+Solicite seu orçamento gratuito!
 
 ## Leitura recomendada
 

@@ -19,11 +19,11 @@ featured: true
 
 # Residência Contemporânea Acapulco Club House: Quando Arquitetura Encontra Lifestyle Premium
 
-Localizada no prestigiado **Acapulco Club House**, uma residência contemporânea redefine o conceito de morar com exclusividade e sofisticação. Com **2000 m² de área construída** em um terreno de **2600 m²**, este projeto representa muito mais que uma moradia, é um verdadeiro **resort residencial privativo** onde cada detalhe foi planejado para proporcionar experiências memoráveis.
+Localizada no prestigiado Acapulco Club House, uma residência contemporânea redefine o conceito de morar com exclusividade e sofisticação. Com 2000 m² de área construída em um terreno de 2600 m², este projeto representa muito mais que uma moradia, é um verdadeiro resort residencial privativo onde cada detalhe foi planejado para proporcionar experiências memoráveis.
 
 ## Filosofia do Projeto
 
-A residência foi concebida para oferecer amplitude, sofisticação e integração total entre ambientes internos e externos. Distribuída em **dois pavimentos mais rooftop técnico**, a casa combina:
+A residência foi concebida para oferecer amplitude, sofisticação e integração total entre ambientes internos e externos. Distribuída em dois pavimentos mais rooftop técnico, a casa combina:
 
 - Estética contemporânea refinada
 - Funcionalidade pensada para convivência
@@ -36,7 +36,7 @@ O resultado? Uma residência que ultrapassa o conceito tradicional de habitaçã
 
 ## A Chegada: Hall de Entrada Escultórico
 
-Com **45 m²**, o hall de entrada é uma declaração arquitetônica. Seu elemento protagonista é uma **escada helicoidal escultórica** em madeira maciça com estrutura metálica, uma peça que funciona simultaneamente como elemento funcional e artístico.
+Com 45 m², o hall de entrada é uma declaração arquitetônica. Seu elemento protagonista é uma escada helicoidal escultórica em madeira maciça com estrutura metálica, uma peça que funciona simultaneamente como elemento funcional e artístico.
 
 ### Destaques:
 
@@ -49,17 +49,17 @@ Com **45 m²**, o hall de entrada é uma declaração arquitetônica. Seu elemen
 
 ## Living Principal: 110 m² de Integração Espacial
 
-O coração da casa é um **living de 110 m²** projetado para destacar a relação entre arquitetura e paisagem natural.
+O coração da casa é um living de 110 m² projetado para destacar a relação entre arquitetura e paisagem natural.
 
 ### Características Principais:
 
 | Elemento | Especificação |
 |----------|---------------|
-| **Piso** | Porcelanato técnico de grande formato |
-| **Forro** | Amadeirado natural |
-| **Pé-direito** | 6,50 metros de verticalidade |
-| **Iluminação** | Linear embutida |
-| **Aberturas** | Amplas para integração exterior |
+| Piso | Porcelanato técnico de grande formato |
+| Forro | Amadeirado natural |
+| Pé-direito | 6,50 metros de verticalidade |
+| Iluminação | Linear embutida |
+| Aberturas | Amplas para integração exterior |
 
 A sensação de imponência coexiste com acolhimento, enquanto o espaço se conecta fluidamente à área gourmet, piscina e convivência externa, característica marcante da arquitetura contemporânea brasileira de alto padrão.
 
@@ -89,7 +89,7 @@ Sofisticado espaço social equipado com:
 
 ### Night Lounge Subterrâneo | 80 m²
 
-O diferencial exclusivo da residência: um **night lounge subterrâneo** criado para eventos privados com:
+O diferencial exclusivo da residência: um night lounge subterrâneo criado para eventos privados com:
 
 - Tratamento acústico profissional
 - Iluminação cênica personalizável
@@ -97,7 +97,7 @@ O diferencial exclusivo da residência: um **night lounge subterrâneo** criado 
 - Sistema de som high-performance
 - Privacidade total para celebrações
 
-Essa é uma verdadeira transformação da residência em um **hub de entretenimento residencial**.
+Essa é uma verdadeira transformação da residência em um hub de entretenimento residencial.
 
 ---
 
@@ -155,11 +155,11 @@ Concebida como um verdadeiro refúgio privativo, a suíte master oferece:
 
 | Ambiente | Área | Características |
 |----------|------|-----------------|
-| **Dormitório** | 55 m² | Espaço generoso e acolhedor |
-| **Closet** | 30 m² | Organização premium planejada |
-| **Banho** | 12 m² | Spa privativo |
+| Dormitório | 55 m² | Espaço generoso e acolhedor |
+| Closet | 30 m² | Organização premium planejada |
+| Banho | 12 m² | Spa privativo |
 
-**Banheiro Master, Inspiração Suíte 5 Estrelas:**
+Banheiro Master, Inspiração Suíte 5 Estrelas:
 
 - Banheira freestanding em destaque visual
 - Chuveiro rain no teto
@@ -223,38 +223,38 @@ A vista elevada complementa a experiência arquitetônica e amplia infinitamente
 
 | Item | Detalhe |
 |------|---------|
-| **Área Construída** | 2000 m² |
-| **Terreno** | 2600 m² |
-| **Pavimentos** | 2 + Rooftop |
-| **Suítes** | 4 |
-| **Ambientes Sociais** | 5+ (Living, Home Cinema, Sala de Jogos, Night Lounge, Área Gourmet) |
-| **Áreas de Bem-estar** | Academia + Spa |
-| **Vagas Cobertas** | 4+ (Garagem + Estacionamento) |
-| **Estilo Arquitetônico** | Contemporâneo Sofisticado |
+| Área Construída | 2000 m² |
+| Terreno | 2600 m² |
+| Pavimentos | 2 + Rooftop |
+| Suítes | 4 |
+| Ambientes Sociais | 5+ (Living, Home Cinema, Sala de Jogos, Night Lounge, Área Gourmet) |
+| Áreas de Bem-estar | Academia + Spa |
+| Vagas Cobertas | 4+ (Garagem + Estacionamento) |
+| Estilo Arquitetônico | Contemporâneo Sofisticado |
 
 ---
 
 ## Filosofia de Design
 
-Esta residência não é apenas sobre espaço, é sobre **experiência**. Cada ambiente foi cuidadosamente planejado para oferecer:
+Esta residência não é apenas sobre espaço, é sobre experiência. Cada ambiente foi cuidadosamente planejado para oferecer:
 
-→ **Integração Espacial**, Interior e exterior dialogam harmoniosamente
-→ **Conforto Absoluto**, Cada detalhe considera a qualidade de vida
-→ **Experiências de Lazer**, Entretenimento integrado ao cotidiano
-→ **Design Contemporâneo**, Estética refinada sem excessos
+→ Integração Espacial, Interior e exterior dialogam harmoniosamente
+→ Conforto Absoluto, Cada detalhe considera a qualidade de vida
+→ Experiências de Lazer, Entretenimento integrado ao cotidiano
+→ Design Contemporâneo, Estética refinada sem excessos
 
 ---
 
 ## Conclusão
 
-A Residência Contemporânea do Acapulco Club House é muito mais que uma casa. É uma **declaração de estilo**, um **espaço de bem-estar integrado** e uma **plataforma para experiências memoráveis**.
+A Residência Contemporânea do Acapulco Club House é muito mais que uma casa. É uma declaração de estilo, um espaço de bem-estar integrado e uma plataforma para experiências memoráveis.
 
 Quando arquitetura de excelência encontra um lifestyle premium, o resultado é uma residência que transcende a habitação convencional e se torna sinônimo de sofisticação, conforto e exclusividade.
 
 ---
 
-**Inspirado em projetos de verdadeiro luxo contemporâneo, o Grupo WG Almeida especializa-se em residências de alto padrão onde design, funcionalidade e bem-estar convergem.**
+Inspirado em projetos de verdadeiro luxo contemporâneo, o Grupo WG Almeida especializa-se em residências de alto padrão onde design, funcionalidade e bem-estar convergem.
 
 *Quer desenvolver um projeto residencial de impacto? Solicite uma consulta com nossos arquitetos especializados.*
 
-**[→ Solicite uma Proposta de Projeto](https://wgalmeida.com.br/solicite-proposta)**
+[→ Solicite uma Proposta de Projeto](https://wgalmeida.com.br/solicite-proposta)

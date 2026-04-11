@@ -22,9 +22,9 @@ featured: true
 
 ## Introdução
 
-Muitas pessoas questionam se realmente precisam contratar um arquiteto para construir ou reformar. **A resposta é: depende do resultado que você quer ter.**
+Muitas pessoas questionam se realmente precisam contratar um arquiteto para construir ou reformar. A resposta é: depende do resultado que você quer ter.
 
-Se você busca um projeto bem planejado, executado sem desperdícios, valorizado no mercado e que atenda suas necessidades por décadas, **sim, você precisa de um arquiteto**.
+Se você busca um projeto bem planejado, executado sem desperdícios, valorizado no mercado e que atenda suas necessidades por décadas, sim, você precisa de um arquiteto.
 
 Este artigo explica por que contratar um arquiteto é um investimento, não um gasto.
 
@@ -34,37 +34,37 @@ Este artigo explica por que contratar um arquiteto é um investimento, não um g
 
 ### Mais do Que Desenhar Plantas
 
-O arquiteto é um **profissional multidisciplinar** capacitado para:
+O arquiteto é um profissional multidisciplinar capacitado para:
 
-✅ **Analisar e interpretar necessidades**
+✅ Analisar e interpretar necessidades
 - Entende como você vive
 - Traduz desejos em espaços funcionais
 - Prevê necessidades futuras
 
-✅ **Criar soluções espaciais**
+✅ Criar soluções espaciais
 - Otimiza circulação
 - Maximiza aproveitamento de área
 - Integra ambientes de forma harmônica
 
-✅ **Especificar materiais e acabamentos**
+✅ Especificar materiais e acabamentos
 - Conhece performance de cada material
 - Escolhe produtos adequados ao uso
 - Equilibra estética e durabilidade
 
-✅ **Coordenar projetos complementares**
+✅ Coordenar projetos complementares
 - Estrutura
 - Instalações elétricas
 - Instalações hidráulicas
 - Climatização
 - Automação
 
-✅ **Gerenciar a obra**
+✅ Gerenciar a obra
 - Fiscaliza execução
 - Controla qualidade
 - Administra cronograma
 - Gerencia fornecedores
 
-✅ **Garantir conformidade legal**
+✅ Garantir conformidade legal
 - Aprova projetos em prefeituras
 - Obtém alvarás e licenças
 - Registra ARTs/RRTs
@@ -76,36 +76,36 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 
 ### 1. Economia Real de Dinheiro 💰
 
-**Parece contraditório, mas contratar um arquiteto ECONOMIZA dinheiro.**
+Parece contraditório, mas contratar um arquiteto ECONOMIZA dinheiro.
 
 #### Como?
 
-**Evita Desperdício:**
+Evita Desperdício:
 - Compra de materiais na quantidade exata
 - Redução de retrabalho em até 70%
 - Menos quebra de materiais
 
-**Exemplo real:**
+Exemplo real:
 - Reforma sem arquiteto: R$ 200.000 (real) vs R$ 150.000 (orçado)
 - Reforma com arquiteto: R$ 155.000 (real) vs R$ 150.000 (orçado)
 
-**Previne Erros Caros:**
+Previne Erros Caros:
 - Erro estrutural: R$ 50.000 - R$ 200.000
 - Erro hidráulico: R$ 10.000 - R$ 50.000
 - Erro elétrico: R$ 15.000 - R$ 80.000
 
-**Especificação Inteligente:**
+Especificação Inteligente:
 - Materiais certos para cada aplicação
 - Custo-benefício otimizado
 - Evita produtos inadequados
 
-**Economia média:** 15-25% do valor da obra
+Economia média: 15-25% do valor da obra
 
 ---
 
 ### 2. Valorização Imobiliária 📈
 
-**Imóveis com projeto de arquiteto valem mais.**
+Imóveis com projeto de arquiteto valem mais.
 
 #### Dados do Mercado:
 
@@ -121,43 +121,43 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 ✅ Estética profissional
 ✅ Conformidade legal documentada
 
-**Exemplo:**
+Exemplo:
 - Apartamento 120m² sem projeto: R$ 850.000
 - Mesmo apartamento com projeto profissional: R$ 980.000
-- **Diferença: R$ 130.000**
+- Diferença: R$ 130.000
 
 ---
 
 ### 3. Funcionalidade e Conforto 🏠
 
-**Arquitetos são treinados para criar espaços que FUNCIONAM.**
+Arquitetos são treinados para criar espaços que FUNCIONAM.
 
 #### Aspectos que leigos não consideram:
 
-**Circulação:**
+Circulação:
 - Largura adequada de corredores (mín. 90cm)
 - Raio de abertura de portas
 - Fluxo entre ambientes
 - Acessibilidade
 
-**Ergonomia:**
+Ergonomia:
 - Altura de bancadas (90-92cm cozinha, 75cm escritório)
 - Distância entre móveis
 - Alcance de prateleiras
 - Posicionamento de tomadas
 
-**Conforto Térmico:**
+Conforto Térmico:
 - Orientação solar
 - Ventilação cruzada
 - Posicionamento de janelas
 - Escolha de materiais isolantes
 
-**Conforto Acústico:**
+Conforto Acústico:
 - Isolamento entre ambientes
 - Materiais absorventes
 - Posicionamento de equipamentos ruidosos
 
-**Iluminação:**
+Iluminação:
 - Natural maximizada
 - Artificial complementar
 - Temperatura de cor adequada
@@ -167,21 +167,21 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 
 ### 4. Soluções Criativas e Personalizadas 💡
 
-**Arquitetos pensam "fora da caixa".**
+Arquitetos pensam "fora da caixa".
 
 #### Exemplos de soluções:
 
-**Problema:** Apartamento pequeno (45m²)
-**Solução leiga:** Dividir em 2 quartos minúsculos
-**Solução arquiteto:**
+Problema: Apartamento pequeno (45m²)
+Solução leiga: Dividir em 2 quartos minúsculos
+Solução arquiteto:
 - 1 quarto versátil (home office + quarto)
 - Cozinha integrada (sensação de amplitude)
 - Armários até o teto (30% mais armazenamento)
 - Resultado: Sensação de 60m²
 
-**Problema:** Terreno estreito e comprido
-**Solução leiga:** Casa túnel escura
-**Solução arquiteto:**
+Problema: Terreno estreito e comprido
+Solução leiga: Casa túnel escura
+Solução arquiteto:
 - Pátio interno (ilumina centro)
 - Pé-direito duplo (amplitude vertical)
 - Claraboias estratégicas
@@ -191,7 +191,7 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 
 ### 5. Compatibilização de Projetos 🔧
 
-**Construção envolve múltiplas disciplinas que precisam "conversar".**
+Construção envolve múltiplas disciplinas que precisam "conversar".
 
 #### Sem arquiteto:
 
@@ -207,37 +207,37 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 ✅ Conflitos resolvidos no papel
 ✅ Execução sem surpresas
 
-**Economia:** 20-30% do custo de retrabalho
+Economia: 20-30% do custo de retrabalho
 
 ---
 
 ### 6. Acompanhamento e Gestão 👷
 
-**Obra sem gestão = caos e estouro de orçamento**
+Obra sem gestão = caos e estouro de orçamento
 
 #### O que arquiteto faz:
 
-**Vistorias Regulares:**
+Vistorias Regulares:
 - Semanais ou quinzenais
 - Verifica conformidade com projeto
 - Identifica problemas precocemente
 
-**Controle de Qualidade:**
+Controle de Qualidade:
 - Fiscaliza materiais recebidos
 - Confere execução
 - Aprova etapas
 
-**Gestão de Cronograma:**
+Gestão de Cronograma:
 - Coordena equipes
 - Evita atrasos
 - Otimiza sequência de trabalhos
 
-**Administração Financeira:**
+Administração Financeira:
 - Controla pagamentos por etapas
 - Evita adiantamentos indevidos
 - Gerencia fornecedores
 
-**Resolução de Problemas:**
+Resolução de Problemas:
 - Toma decisões técnicas
 - Ajusta projeto se necessário
 - Negocia com fornecedores
@@ -246,29 +246,29 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 
 ### 7. Responsabilidade Técnica e Legal ⚖️
 
-**Construir exige responsabilidade legal.**
+Construir exige responsabilidade legal.
 
 #### Obrigações Legais:
 
-**Código de Obras Municipal:**
+Código de Obras Municipal:
 - Respeito a recuos
 - Altura máxima
 - Taxa de ocupação
 - Taxa de permeabilidade
 
-**Normas Técnicas ABNT:**
+Normas Técnicas ABNT:
 - NBR 15575 (Desempenho)
 - NBR 9050 (Acessibilidade)
 - NBR 5410 (Instalações elétricas)
 - E mais 40+ normas
 
-**Responsabilidade Civil:**
+Responsabilidade Civil:
 - Arquiteto responde tecnicamente
 - ART/RRT registrada
 - Seguro profissional
 - Garantia legal de 5 anos (estrutura)
 
-**Aprovações Necessárias:**
+Aprovações Necessárias:
 - Prefeitura (alvará)
 - Corpo de bombeiros
 - Vigilância sanitária (comercial)
@@ -278,35 +278,35 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 
 ### 8. Sustentabilidade e Eficiência 🌱
 
-**Arquitetos projetam pensando no futuro.**
+Arquitetos projetam pensando no futuro.
 
 #### Estratégias Sustentáveis:
 
-**Eficiência Energética:**
+Eficiência Energética:
 - Orientação solar adequada
 - Ventilação natural
 - Iluminação natural maximizada
 - Especificação de equipamentos eficientes
-- **Economia:** 30-50% na conta de luz
+- Economia: 30-50% na conta de luz
 
-**Gestão de Água:**
+Gestão de Água:
 - Captação de água de chuva
 - Reuso de águas cinzas
 - Torneiras com arejador
 - Descarga de duplo acionamento
-- **Economia:** 20-40% na conta de água
+- Economia: 20-40% na conta de água
 
-**Materiais Sustentáveis:**
+Materiais Sustentáveis:
 - Madeira certificada
 - Tintas baixo VOC
 - Isolantes ecológicos
 - Materiais reciclados
 
-**Conforto Térmico Passivo:**
+Conforto Térmico Passivo:
 - Reduz necessidade de ar condicionado
 - Ventilação cruzada
 - Proteção solar
-- **Economia:** R$ 300-800/mês
+- Economia: R$ 300-800/mês
 
 ---
 
@@ -342,25 +342,25 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 
 ### Tabela CAU (Conselho de Arquitetura e Urbanismo)
 
-**Projeto Completo:**
+Projeto Completo:
 - Residencial: 5-8% do valor da obra
 - Comercial: 4-6% do valor da obra
 
-**Gerenciamento de Obra:**
+Gerenciamento de Obra:
 - 12-15% do valor executado
 
-**Exemplo:**
+Exemplo:
 - Reforma de R$ 200.000
 - Projeto (6%): R$ 12.000
 - Gerenciamento (15%): R$ 30.000
-- **Total honorários: R$ 42.000**
+- Total honorários: R$ 42.000
 
-**Mas economiza:**
+Mas economiza:
 - 20% em desperdício: R$ 40.000
 - 10% em erros evitados: R$ 20.000
-- **Total economia: R$ 60.000**
+- Total economia: R$ 60.000
 
-**Resultado:** Economizou R$ 18.000 contratando arquiteto!
+Resultado: Economizou R$ 18.000 contratando arquiteto!
 
 ---
 
@@ -368,23 +368,23 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 
 ### ❌ Mito: "Arquiteto é caro demais"
 
-✅ **Realidade:** Arquiteto se paga pela economia que proporciona
+✅ Realidade: Arquiteto se paga pela economia que proporciona
 
 ### ❌ Mito: "Qualquer um desenha uma planta"
 
-✅ **Realidade:** Desenho é 10% do trabalho. Os outros 90% são conhecimento técnico.
+✅ Realidade: Desenho é 10% do trabalho. Os outros 90% são conhecimento técnico.
 
 ### ❌ Mito: "Mestre de obras experiente substitui arquiteto"
 
-✅ **Realidade:** Mestre executa, arquiteto concebe, planeja e coordena.
+✅ Realidade: Mestre executa, arquiteto concebe, planeja e coordena.
 
 ### ❌ Mito: "Posso pegar projeto pronto da internet"
 
-✅ **Realidade:** Cada terreno, cliente e contexto é único.
+✅ Realidade: Cada terreno, cliente e contexto é único.
 
 ### ❌ Mito: "Arquiteto só serve para luxo"
 
-✅ **Realidade:** Arquiteto otimiza QUALQUER orçamento, inclusive os menores.
+✅ Realidade: Arquiteto otimiza QUALQUER orçamento, inclusive os menores.
 
 ---
 
@@ -392,31 +392,31 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 
 ### Verifique:
 
-✅ **Registro no CAU**
+✅ Registro no CAU
 - Número CAU ativo
 - Situação regular
 
-✅ **Portfólio**
+✅ Portfólio
 - Projetos similares ao seu
 - Estilo compatível
 - Qualidade de execução
 
-✅ **Referências**
+✅ Referências
 - Clientes anteriores
 - Avaliações online
 - Recomendações
 
-✅ **Processo de Trabalho**
+✅ Processo de Trabalho
 - Metodologia clara
 - Prazos definidos
 - Entregáveis especificados
 
-✅ **Transparência**
+✅ Transparência
 - Contrato detalhado
 - Orçamento aberto
 - Cronograma realista
 
-✅ **Comunicação**
+✅ Comunicação
 - Disponibilidade
 - Clareza
 - Alinhamento de expectativas
@@ -474,19 +474,19 @@ O arquiteto é um **profissional multidisciplinar** capacitado para:
 ## Depoimentos
 
 > *"Achei que arquiteto era luxo. Depois de ver quanto economizei em material e retrabalho, percebi que foi o melhor investimento."*
-> **- Carlos M., Reforma Itaim**
+> - Carlos M., Reforma Itaim
 
 > *"Meu apartamento de 70m² parece ter 100m² depois do projeto. A arquiteta otimizou cada centímetro."*
-> **- Ana P., Projeto Pinheiros**
+> - Ana P., Projeto Pinheiros
 
 > *"A obra foi tranquila. Tudo planejado, sem surpresas. Valeu cada centavo do projeto."*
-> **- Roberto S., Casa Morumbi**
+> - Roberto S., Casa Morumbi
 
 ---
 
 ## Conclusão
 
-Contratar um arquiteto não é gasto, é **investimento** que se paga por:
+Contratar um arquiteto não é gasto, é investimento que se paga por:
 
 ✅ Economia em obra (15-25%)
 ✅ Valorização do imóvel (10-20%)
@@ -495,7 +495,7 @@ Contratar um arquiteto não é gasto, é **investimento** que se paga por:
 ✅ Tranquilidade e segurança
 ✅ Resultado profissional
 
-**Não contratar um arquiteto custa mais caro** a médio e longo prazo.
+Não contratar um arquiteto custa mais caro a médio e longo prazo.
 
 ---
 
@@ -505,7 +505,7 @@ Quer saber como um arquiteto pode transformar seu projeto?
 
 Oferecemos consulta inicial gratuita para avaliar seu caso.
 
-**Entre em Contato:**
+Entre em Contato:
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 (11) 98465-0002
 - E-mail: contato@wgalmeida.com.br
@@ -514,4 +514,4 @@ Oferecemos consulta inicial gratuita para avaliar seu caso.
 
 *Grupo WG Almeida, Transformando investimento em valor*
 
-**Tags**: importância arquiteto, contratar arquiteto, projeto arquitetônico, construção, reforma, profissional capacitado
+Tags: importância arquiteto, contratar arquiteto, projeto arquitetônico, construção, reforma, profissional capacitado

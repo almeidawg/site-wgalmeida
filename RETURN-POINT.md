@@ -855,3 +855,64 @@ site-wgalmeida/
     - `/blog/arquitetura-barcelona-espanha` == `/blog/arquitetura-barcelona-espanha/` (mesmo `<title>`)
 - documentacao sincronizada:
   - `docs/INCIDENT-LOG.md` com entrada `INC-20260410-02`
+
+## Continuacao 10/04 - lote prioritario de editorial (top 10) fechado
+
+- retomada executada no bloco recomendado de `/admin/blog-editorial` com criterio `pendentes + normalizacao`
+- os 10 slugs prioritarios da fila foram preenchidos com `hero/card` no selection do Unsplash:
+  - `iluminacao-residencial-guia-completo`
+  - `onboarding-processo-wg-almeida`
+  - `arquitetos-internacionais-famosos-obras`
+  - `arquitetura-sustentavel-certificacoes`
+  - `profissionais-capacitados-obra`
+  - `importancia-contratar-arquiteto`
+  - `quanto-tempo-dura-reforma-apartamento`
+  - `reforma-banheiro-pequeno-otimizacao`
+  - `closet-planejado-organizacao-otimizacao`
+  - `sistema-easy-metodologia-wg-almeida`
+- `src/data/blogUnsplashSelection.json` atualizado com os novos pares de slots
+- `unsplash-collection-yU-ii4hFjlg.json` expandido para incluir os novos assets usados no lote
+- `src/data/blogUnsplashManifest.generated.js` regenerado apos o preenchimento
+- evidencia da rodada salva em:
+  - `temp_unsplash_top10_fill_report.json`
+- validacao executada nesta continuacao:
+  - `npm run blog:editorial:audit` -> OK
+  - `npm run unsplash:manifest:build` -> OK
+  - `npm run lint` -> OK
+  - `npm run build` -> OK
+- impacto operacional da rodada:
+  - fila prioritaria caiu de `32` para `22` pendencias (`pendentes + normalizacao`)
+
+## Proximo passo recomendado (editorial)
+
+- fechar o proximo bloco de `10` slugs prioritarios restantes no mesmo fluxo
+- revisar visualmente os novos `hero/card` no front antes de publicar nova rodada de curadoria
+
+## Continuacao 10/04 - editorial prioritaria zerada (pendentes + normalizacao)
+
+- continuacao executada no mesmo fluxo de curadoria do `/admin/blog-editorial` para os blocos seguintes
+- criado utilitario reutilizavel:
+  - `tools/fill-unsplash-priority-batch.py`
+  - objetivo: preencher lotes de slugs prioritarios com `hero/card`, fallback por query semantica e relatorio da rodada
+- rodada concluida com preenchimento do restante da fila prioritaria, incluindo os slugs que tinham falha parcial no primeiro passe
+- status final da fila `pendentes + normalizacao`:
+  - antes: `22`
+  - depois: `0`
+- `src/data/blogUnsplashSelection.json` atualizado com os novos pares de slots
+- `unsplash-collection-yU-ii4hFjlg.json` expandido com os assets usados nesta rodada
+- `src/data/blogUnsplashManifest.generated.js` regenerado apos consolidacao
+- evidencias operacionais desta continuacao:
+  - `temp_unsplash_priority_batch2_report.json`
+  - `temp_unsplash_priority_batch2_retry_report.json`
+  - `temp_unsplash_priority_batch3_report.json`
+  - `temp_unsplash_priority_batch4_report.json`
+- validacao executada nesta continuacao:
+  - `npm run blog:editorial:audit` -> OK
+  - `npm run unsplash:manifest:build` -> OK
+  - `npm run lint` -> OK
+  - `npm run build` -> OK
+
+## Proximo passo recomendado (editorial)
+
+- iniciar revisao visual em `/admin/blog-editorial` com filtro `prontos` para validar aderencia dos novos `hero/card`
+- se houver ajustes finos de semantica visual por slug, aplicar override localizado no `blogUnsplashSelection.json` e regenerar manifesto

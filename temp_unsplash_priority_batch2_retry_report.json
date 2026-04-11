@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-04-10T21:39:13.475784+00:00",
+  "batchSize": 10,
+  "updatedSlugs": [
+    {
+      "slug": "casa-cor-2026-mente-coracao",
+      "hero": "1716796282379-92703f33e907",
+      "card": "1716796244767-7ba9d258b6cd",
+      "heroQueryUsed": "casa cor 2026 tema mente e coracao e tendencias da mostra de arquitetura",
+      "cardQueryUsed": "casa cor 2026 tema mente e coracao e tendencias da mostra de arquitetura"
+    },
+    {
+      "slug": "acapulco-club-house-residencia-luxo",
+      "hero": "1775813240698-00793501786b",
+      "card": "1617327924490-0aa3afeffa83",
+      "heroQueryUsed": "residencia contemporanea acapulco club",
+      "cardQueryUsed": "resid ncia contempor nea acapulco club house arquitetura de luxo e experi ncia residencial"
+    },
+    {
+      "slug": "harman-kardon-som-ambientes",
+      "hero": "1619581277861-9cfc7f41811b",
+      "card": "1590836948831-3046a82f27fd",
+      "heroQueryUsed": "harman kardon vale pena",
+      "cardQueryUsed": "harman kardon vale a pena audio premium e design para ambientes sofisticados"
+    },
+    {
+      "slug": "evf-estudo-viabilidade-financeira",
+      "hero": "1645874628632-4cb0b22bf6cd",
+      "card": "1740592910131-b604d790061a",
+      "heroQueryUsed": "evf na obra como validar custos e evitar estouro de or amento antes de construir",
+      "cardQueryUsed": "evf estudo viabilidade financeira"
+    },
+    {
+      "slug": "automacao-residencial-2026-guia",
+      "hero": "1707258115089-10f0bc0cf61c",
+      "card": "1762117360928-1548ff7ab5a2",
+      "heroQueryUsed": "automa o residencial em 2026 quanto custa e como montar uma smart home",
+      "cardQueryUsed": "automa o residencial em 2026 quanto custa e como montar uma smart home"
+    },
+    {
+      "slug": "le-creuset-panelas-design",
+      "hero": "1547570918-ae3a096d5839",
+      "card": "1695088224170-8d8670a19a16",
+      "heroQueryUsed": "le creuset vale pena 2026",
+      "cardQueryUsed": "le creuset vale pena 2026"
+    },
+    {
+      "slug": "arquitetos-brasileiros-famosos-legado",
+      "hero": "1666424449256-acd57e6b7337",
+      "card": "1638384142135-99bfd72a7737",
+      "heroQueryUsed": "arquitetos brasileiros famosos 12",
+      "cardQueryUsed": "arquitetos brasileiros famosos 12"
+    },
+    {
+      "slug": "scandia-home-roupa-cama-luxo",
+      "hero": "1667530056184-e30a20eb7f8f",
+      "card": "1765445666407-c8535808a4a0",
+      "heroQueryUsed": "scandia home vale a pena 50 anos de excelencia em roupa de cama de luxo",
+      "cardQueryUsed": "scandia home vale a pena 50 anos de excelencia em roupa de cama de luxo"
+    },
+    {
+      "slug": "reforma-cozinha-planejada-guia-completo",
+      "hero": "1721274503062-7b14f09a6ac9",
+      "card": "1741314671432-9bf925759052",
+      "heroQueryUsed": "reforma de cozinha planejada 2026 quanto custa etapas e como evitar erros",
+      "cardQueryUsed": "reforma de cozinha planejada 2026 quanto custa etapas e como evitar erros"
+    }
+  ],
+  "failed": [
+    {
+      "slug": "obraeasy-para-parceiros-imobiliarias-corretores",
+      "heroQueries": [
+        "obraeasy parceiros imobiliarias corretores",
+        "obraeasy para parceiros como imobiliarias e corretores geram receita com gest o de obras",
+        "obraeasy para parceiros imobiliarias corretores"
+      ],
+      "cardQueries": [
+        "obraeasy parceiros imobiliarias corretores",
+        "obraeasy para parceiros como imobiliarias e corretores geram receita com gest o de obras",
+        "obraeasy para parceiros imobiliarias corretores"
+      ],
+      "heroFound": true,
+      "cardFound": false
+    }
+  ]
+}

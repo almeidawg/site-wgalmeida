@@ -20,12 +20,12 @@ Se voce busca plantas para interiores que melhorem conforto e estetica, este gui
 ## Estudo NASA
 
 ### O Que Descobriram
-**1989:** NASA estudou plantas para estações espaciais
+1989: NASA estudou plantas para estações espaciais
 
-**Resultado:**
-Certas plantas removem até **87% dos poluentes** do ar em 24h
+Resultado:
+Certas plantas removem até 87% dos poluentes do ar em 24h
 
-**Poluentes removidos:**
+Poluentes removidos:
 - Formaldeído (móveis, tintas)
 - Benzeno (plásticos, detergentes)
 - Tricloroetileno (produtos limpeza)
@@ -42,214 +42,214 @@ Certas plantas removem até **87% dos poluentes** do ar em 24h
 ## Top 20 Plantas Purificadoras
 
 ### 1. Espada-de-São-Jorge
-**(Sansevieria trifasciata)**
+(Sansevieria trifasciata)
 
-**Por que é ótima:**
+Por que é ótima:
 - Campeã de purificação
 - Remove formaldehído
 - Produz O2 à noite
 - Indestrutível
 
-**Cuidados:**
+Cuidados:
 ✅ Pouca luz OK
 ✅ Rega 1x semana
 ✅ Sol direto ou sombra
 ❌ Não encharcar
 
-**Onde:** Quartos, banheiros, escritórios
+Onde: Quartos, banheiros, escritórios
 
-**Preço:** R$ 20-80
+Preço: R$ 20-80
 
 ---
 
 ### 2. Jiboia
-**(Epipremnum aureum)**
+(Epipremnum aureum)
 
-**Por que é ótima:**
+Por que é ótima:
 - Remove formaldeído, xileno, benzeno
 - Cresce rápido
 - Trepadeira bonita
 - Fácil propagar
 
-**Cuidados:**
+Cuidados:
 ✅ Meia sombra
 ✅ Rega 2x semana
 ✅ Terra úmida
 ❌ Sol direto queima
 
-**Onde:** Prateleiras altas, vasos suspensos
+Onde: Prateleiras altas, vasos suspensos
 
-**Preço:** R$ 15-50
+Preço: R$ 15-50
 
 ---
 
 ### 3. Lírio-da-Paz
-**(Spathiphyllum wallisii)**
+(Spathiphyllum wallisii)
 
-**Por que é ótima:**
+Por que é ótima:
 - Remove 5 tipos de poluentes
 - Flores brancas bonitas
 - Indica quando precisa água
 - Alta purificação
 
-**Cuidados:**
+Cuidados:
 ✅ Sombra ou meia sombra
 ✅ Terra sempre úmida
 ✅ Borrifar folhas
 ❌ Tóxica pets
 
-**Onde:** Sala, escritório, banheiro
+Onde: Sala, escritório, banheiro
 
-**Preço:** R$ 25-90
+Preço: R$ 25-90
 
 ---
 
 ### 4. Dracena
-**(Dracaena spp.)**
+(Dracaena spp.)
 
-**Espécies:**
+Espécies:
 - Dracaena marginata
 - Dracaena fragrans
 - Dracaena deremensis
 
-**Por que é ótima:**
+Por que é ótima:
 - Remove tricloroetileno, xileno
 - Elegante
 - Vários tamanhos
 
-**Cuidados:**
+Cuidados:
 ✅ Meia sombra
 ✅ Rega quando secar
 ✅ Limpar folhas
 ❌ Tóxica pets
 
-**Onde:** Sala, hall, escritório
+Onde: Sala, hall, escritório
 
-**Preço:** R$ 40-250
+Preço: R$ 40-250
 
 ---
 
 ### 5. Bambu-da-Sorte
-**(Dracaena sanderiana)**
+(Dracaena sanderiana)
 
-**Por que é ótima:**
+Por que é ótima:
 - Remove benzeno, formaldeído
 - Cresce em água
 - Decorativa
 - Feng Shui
 
-**Cuidados:**
+Cuidados:
 ✅ Água limpa (trocar semanal)
 ✅ Meia sombra
 ✅ Fácil manter
 ❌ Cloro prejudica (usar mineral)
 
-**Onde:** Escritório, sala, banheiro
+Onde: Escritório, sala, banheiro
 
-**Preço:** R$ 10-60
+Preço: R$ 10-60
 
 ---
 
 ### 6. Clorofito
-**(Chlorophytum comosum)**
+(Chlorophytum comosum)
 
-**Por que é ótima:**
+Por que é ótima:
 - Remove formaldeído, xileno
 - Produz filhotes
 - Cresce rápido
 - Indestrutível
 
-**Cuidados:**
+Cuidados:
 ✅ Sol indireto
 ✅ Rega regular
 ✅ Multiplica fácil
 ❌ Pontas marrons (água calcária)
 
-**Onde:** Vasos suspensos
+Onde: Vasos suspensos
 
-**Preço:** R$ 15-40
+Preço: R$ 15-40
 
 ---
 
 ### 7. Antúrio
-**(Anthurium andraeanum)**
+(Anthurium andraeanum)
 
-**Por que é ótima:**
+Por que é ótima:
 - Remove amônia, formaldeído
 - Flores vermelhas duráveis
 - Tropical elegante
 
-**Cuidados:**
+Cuidados:
 ✅ Meia sombra
 ✅ Terra úmida
 ✅ Borrifar folhas
 ❌ Tóxica
 
-**Onde:** Sala, escritório
+Onde: Sala, escritório
 
-**Preço:** R$ 30-100
+Preço: R$ 30-100
 
 ---
 
 ### 8. Palmeira-Areca
-**(Dypsis lutescens)**
+(Dypsis lutescens)
 
-**Por que é ótima:**
+Por que é ótima:
 - Melhor umidificadora
 - Remove xileno, tolueno
 - Elegante
 - Grande porte
 
-**Cuidados:**
+Cuidados:
 ✅ Luz indireta abundante
 ✅ Terra úmida
 ✅ Borrifar
 ❌ Cresce muito
 
-**Onde:** Salas amplas, halls
+Onde: Salas amplas, halls
 
-**Preço:** R$ 60-300
+Preço: R$ 60-300
 
 ---
 
 ### 9. Zamioculca
-**(Zamioculcas zamiifolia)**
+(Zamioculcas zamiifolia)
 
-**Por que é ótima:**
+Por que é ótima:
 - Remove xileno, tolueno
 - Sobrevive esquecimento
 - Moderna
 - Baixa manutenção
 
-**Cuidados:**
+Cuidados:
 ✅ Qualquer iluminação
 ✅ Rega 1x semana
 ✅ Resistente
 ❌ Não encharcar
 
-**Onde:** Qualquer ambiente
+Onde: Qualquer ambiente
 
-**Preço:** R$ 25-90
+Preço: R$ 25-90
 
 ---
 
 ### 10. Ficus
-**(Ficus benjamina)**
+(Ficus benjamina)
 
-**Por que é ótima:**
+Por que é ótima:
 - Remove formaldeído, benzeno
 - Árvore interior
 - Elegante
 
-**Cuidados:**
+Cuidados:
 ✅ Luz indireta
 ✅ Rega regular
 ✅ Não mover (perde folhas)
 ❌ Sensível mudanças
 
-**Onde:** Sala, escritório
+Onde: Sala, escritório
 
-**Preço:** R$ 50-250
+Preço: R$ 50-250
 
 ---
 
@@ -257,70 +257,70 @@ Certas plantas removem até **87% dos poluentes** do ar em 24h
 
 ### 11-20. Menções Honrosas
 
-11. **Samambaia** - Umidifica e purifica
-12. **Aglaonema** - Resistente, purifica
-13. **Pacová** - Tropical, eficaz
-14. **Costela-de-Adão** - Grande, decorativa
-15. **Hera Inglesa** - Trepadeira purificadora
-16. **Peperômia** - Compacta, fácil
-17. **Filodendro** - Resistente, versátil
-18. **Palmeira-Rafis** - Elegante, purifica
-19. **Singônio** - Decorativo, eficaz
-20. **Maranta** - Folhas móveis, bonita
+11. Samambaia - Umidifica e purifica
+12. Aglaonema - Resistente, purifica
+13. Pacová - Tropical, eficaz
+14. Costela-de-Adão - Grande, decorativa
+15. Hera Inglesa - Trepadeira purificadora
+16. Peperômia - Compacta, fácil
+17. Filodendro - Resistente, versátil
+18. Palmeira-Rafis - Elegante, purifica
+19. Singônio - Decorativo, eficaz
+20. Maranta - Folhas móveis, bonita
 
 ## Onde Colocar
 
 ### Quarto
-**Melhores:**
+Melhores:
 - Espada-de-São-Jorge (O2 noturno)
 - Lírio-da-paz
 - Lavanda (calmante)
 - Zamioculca
 
-**Quantidade:** 1-2 grandes ou 3-4 pequenas
+Quantidade: 1-2 grandes ou 3-4 pequenas
 
 ### Sala
-**Melhores:**
+Melhores:
 - Palmeira-Areca
 - Ficus
 - Dracena
 - Costela-de-Adão
 - Jiboia (suspensa)
 
-**Quantidade:** 2-4 plantas
+Quantidade: 2-4 plantas
 
 ### Banheiro
-**Melhores:**
+Melhores:
 - Espada-de-São-Jorge
 - Bambu-da-Sorte
 - Lírio-da-paz
 - Samambaia
 
-**Vantagem:** Umidade alta beneficia
+Vantagem: Umidade alta beneficia
 
 ### Cozinha
-**Melhores:**
+Melhores:
 - Jiboia
 - Clorofito
 - Ervas (manjericão, hortelã)
 
-**Atenção:** Longe do fogo
+Atenção: Longe do fogo
 
 ### Escritório/Home Office
-**Melhores:**
+Melhores:
 - Zamioculca
 - Espada-de-São-Jorge
 - Bambu-da-Sorte
 - Antúrio
 
-**Benefício:** +15% produtividade
+Benefício: +15% produtividade
 
 ## Quantidade Recomendada
 
 ### Por NASA
-**Regra:** 1 planta a cada 9m²
+Regra: 1 planta a cada 9m²
 
-**Apartamento 90m²:**
+Apartamento 90m²:
 - 10 plantas médias
 - ou 15-20 pequenas
 - ou 5-7 grandes
@@ -336,60 +336,60 @@ Certas plantas removem até **87% dos poluentes** do ar em 24h
 ## Cuidados Gerais
 
 ### Rega
-**Como saber:**
+Como saber:
 - Enfiar dedo 2cm na terra
 - Se seco = regar
 - Se úmido = esperar
 
-**Frequência média:**
+Frequência média:
 - Verão: 2-3x semana
 - Inverno: 1x semana
 
-**Dica:** Melhor pouco que muito
+Dica: Melhor pouco que muito
 
 ### Iluminação
 
-**Luz direta:** Poucas plantas
-**Luz indireta:** Maioria
-**Sombra:** Algumas tolerem
+Luz direta: Poucas plantas
+Luz indireta: Maioria
+Sombra: Algumas tolerem
 
-**Sinais luz insuficiente:**
+Sinais luz insuficiente:
 - Folhas amarelas
 - Crescimento lento
 - Caule esticado
 
 ### Adubação
 
-**Frequência:**
+Frequência:
 - Primavera/verão: 1x mês
 - Outono/inverno: 1x 2 meses
 
-**Tipo:**
+Tipo:
 - NPK 10-10-10
 - Orgânico (húmus)
 - Líquido (mais fácil)
 
-**Custo:** R$ 10-30/frasco
+Custo: R$ 10-30/frasco
 
 ### Limpeza Folhas
 
-**Por quê:**
+Por quê:
 - Poeira bloqueia fotossíntese
 - Reduz purificação
 
-**Como:**
+Como:
 - Pano úmido semanal
 - Borrifador
 - Banho folhas grandes
 
 ### Pragas
 
-**Comuns:**
+Comuns:
 - Cochonilha
 - Pulgão
 - Ácaro
 
-**Solução:**
+Solução:
 - Álcool 70% + água (1:3)
 - Sabão neutro
 - Óleo neem
@@ -397,27 +397,27 @@ Certas plantas removem até **87% dos poluentes** do ar em 24h
 ## Vasos e Suportes
 
 ### Tamanhos
-**Pequeno:** 15-20cm (mesa)
-**Médio:** 25-35cm (chão)
-**Grande:** 40cm+ (destaque)
+Pequeno: 15-20cm (mesa)
+Médio: 25-35cm (chão)
+Grande: 40cm+ (destaque)
 
 ### Materiais
-**Cerâmica:** Bonita, pesada
-**Plástico:** Leve, econômica
-**Fibra coco:** Natural, sustentável
-**Concreto:** Moderna, pesada
+Cerâmica: Bonita, pesada
+Plástico: Leve, econômica
+Fibra coco: Natural, sustentável
+Concreto: Moderna, pesada
 
-**Essencial:** Furo drenagem
+Essencial: Furo drenagem
 
 ### Suportes
-**Suspensos:** R$ 30-150
-**Chão (pedestal):** R$ 50-300
-**Parede:** R$ 40-200
-**Prateleira:** R$ 80-400
+Suspensos: R$ 30-150
+Chão (pedestal): R$ 50-300
+Parede: R$ 40-200
+Prateleira: R$ 80-400
 
 ## Plantas Tóxicas para Pets
 
-❌ **Evitar se tem cães/gatos:**
+❌ Evitar se tem cães/gatos:
 - Lírio-da-paz
 - Espada-de-São-Jorge
 - Jiboia
@@ -425,7 +425,7 @@ Certas plantas removem até **87% dos poluentes** do ar em 24h
 - Antúrio
 - Costela-de-Adão
 
-✅ **Seguras:**
+✅ Seguras:
 - Peperômia
 - Samambaia
 - Palmeira-Areca
@@ -435,37 +435,37 @@ Certas plantas removem até **87% dos poluentes** do ar em 24h
 ## Custos
 
 ### Plantas
-**Pequenas:** R$ 10-40
-**Médias:** R$ 40-120
-**Grandes:** R$ 120-400
+Pequenas: R$ 10-40
+Médias: R$ 40-120
+Grandes: R$ 120-400
 
 ### Vasos
-**Pequenos:** R$ 15-50
-**Médios:** R$ 40-150
-**Grandes:** R$ 100-400
+Pequenos: R$ 15-50
+Médios: R$ 40-150
+Grandes: R$ 100-400
 
 ### Manutenção Mensal
 - Adubo: R$ 5
 - Terra: R$ 10 (reposição)
 - Água: Incluso conta
 
-**Total apartamento 10 plantas:**
+Total apartamento 10 plantas:
 - Investimento inicial: R$ 400-1.500
 - Manutenção mensal: R$ 50-100
 
 ## Kit Iniciante
 
-**Sugestão 5 plantas fáceis:**
+Sugestão 5 plantas fáceis:
 
-1. **Espada-de-São-Jorge** (quarto) - R$ 30
-2. **Zamioculca** (sala) - R$ 40
-3. **Jiboia** (sala suspensa) - R$ 20
-4. **Bambu-da-Sorte** (escritório) - R$ 15
-5. **Clorofito** (cozinha) - R$ 20
+1. Espada-de-São-Jorge (quarto) - R$ 30
+2. Zamioculca (sala) - R$ 40
+3. Jiboia (sala suspensa) - R$ 20
+4. Bambu-da-Sorte (escritório) - R$ 15
+5. Clorofito (cozinha) - R$ 20
 
-**Total:** R$ 125
-**+ Vasos:** R$ 150
-**= R$ 275**
+Total: R$ 125
++ Vasos: R$ 150
+= R$ 275
 
 ## Benefícios Comprovados
 
@@ -491,22 +491,22 @@ Certas plantas removem até **87% dos poluentes** do ar em 24h
 
 ## Mitos e Verdades
 
-**"Plantas no quarto fazem mal"**
+"Plantas no quarto fazem mal"
 ❌ MITO
 ✅ Maioria produz O2 24h
 ✅ Espada-de-São-Jorge ideal quarto
 
-**"Precisa sol direto"**
+"Precisa sol direto"
 ❌ MITO (maioria)
 ✅ Luz indireta suficiente
 ✅ Algumas toleram sombra
 
-**"Dá muito trabalho"**
+"Dá muito trabalho"
 ❌ MITO
 ✅ 5-10min por semana
 ✅ Algumas quase indestrutíveis
 
-**"Purificam ar de verdade"**
+"Purificam ar de verdade"
 ✅ VERDADE
 ✅ Comprovado NASA
 ✅ Até 87% poluentes
@@ -534,11 +534,11 @@ Plantas de interior:
 ✅ Baixo custo
 ✅ Fácil manter
 
-**Investimento:** R$ 300-1.500
-**Manutenção:** R$ 50-100/mês
-**Retorno:** Ar puro + bem-estar + beleza
+Investimento: R$ 300-1.500
+Manutenção: R$ 50-100/mês
+Retorno: Ar puro + bem-estar + beleza
 
-**Comece com:** 3-5 plantas fáceis e vá aumentando!
+Comece com: 3-5 plantas fáceis e vá aumentando!
 
 ## Leitura recomendada
 

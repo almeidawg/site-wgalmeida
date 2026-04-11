@@ -12,9 +12,9 @@ tags: ["parceiros", "imobiliarias", "corretores", "ObraEasy", "receita recorrent
 
 # ObraEasy para Parceiros: A Oportunidade que Imobiliarias e Corretores Estavam Esperando
 
-O mercado imobiliario de Sao Paulo movimenta **R$ 42 bilhoes por ano**, e a maior parte desse volume e composto por transacoes onde o cliente **vai precisar reformar ou customizar o imovel** antes ou depois da compra.
+O mercado imobiliario de Sao Paulo movimenta R$ 42 bilhoes por ano, e a maior parte desse volume e composto por transacoes onde o cliente vai precisar reformar ou customizar o imovel antes ou depois da compra.
 
-Essa e a oportunidade que o **Programa de Parceiros ObraEasy** oferece: transformar a jornada pos-venda do seu cliente em uma nova fonte de receita recorrente, enquanto voce entrega mais valor e se diferencia da concorrencia.
+Essa e a oportunidade que o Programa de Parceiros ObraEasy oferece: transformar a jornada pos-venda do seu cliente em uma nova fonte de receita recorrente, enquanto voce entrega mais valor e se diferencia da concorrencia.
 
 ---
 
@@ -33,11 +33,11 @@ Enquanto isso:
 
 Com o Programa de Parceiros ObraEasy, voce:
 
-1. **Indica a WG Almeida** para gestao da reforma/construcao
-2. **Recebe comissao** pela indicacao (2% a 5% do valor da obra)
-3. **Oferece o ObraEasy** como diferencial exclusivo no seu servico
-4. **Mantem relacionamento** durante toda a obra (6 a 18 meses)
-5. **Ganha a preferencia** na proxima transacao imobiliaria
+1. Indica a WG Almeida para gestao da reforma/construcao
+2. Recebe comissao pela indicacao (2% a 5% do valor da obra)
+3. Oferece o ObraEasy como diferencial exclusivo no seu servico
+4. Mantem relacionamento durante toda a obra (6 a 18 meses)
+5. Ganha a preferencia na proxima transacao imobiliaria
 
 ---
 
@@ -47,9 +47,9 @@ Com o Programa de Parceiros ObraEasy, voce:
 
 | Nivel | Indicacoes/Ano | Comissao | Beneficios Extras |
 |-------|---------------|----------|-------------------|
-| **Parceiro** | 1 a 5 | 2% do valor da obra | Acesso ao ObraEasy + Calculadora AVM |
-| **Parceiro Premium** | 6 a 15 | 3% do valor da obra | Tudo anterior + Materiais de marketing |
-| **Master** | 16+ | 5% do valor da obra | Tudo anterior + Gerente dedicado + Co-branding |
+| Parceiro | 1 a 5 | 2% do valor da obra | Acesso ao ObraEasy + Calculadora AVM |
+| Parceiro Premium | 6 a 15 | 3% do valor da obra | Tudo anterior + Materiais de marketing |
+| Master | 16+ | 5% do valor da obra | Tudo anterior + Gerente dedicado + Co-branding |
 
 ### Calculadora de Ganhos
 
@@ -74,7 +74,7 @@ Acesse a ferramenta de avaliacao imobiliaria da WG Almeida com:
 - Fatores de ajuste por padrao, conservacao e diferenciais
 - Relatorio PDF personalizavel com sua marca
 
-**Link da ferramenta:** [easyrealstate.wgalmeida.com.br/calculo](https://easyrealstate.wgalmeida.com.br/calculo)
+Link da ferramenta: [easyrealstate.wgalmeida.com.br/calculo](https://easyrealstate.wgalmeida.com.br/calculo)
 
 ### 2. Simulador de Financiamento
 
@@ -110,10 +110,10 @@ Parceiros Premium e Master recebem:
 
 Uma imobiliaria boutique do Jardins implementou o modelo de parceria em Jan/2025. Resultado em 12 meses:
 
-- **14 clientes indicados** para obras e reformas
-- **Valor total de obras:** R$ 3,8 milhoes
-- **Comissao gerada:** R$ 114.000 (3%)
-- **Taxa de recompra:** 71% dos clientes voltaram para outra transacao imobiliaria
+- 14 clientes indicados para obras e reformas
+- Valor total de obras: R$ 3,8 milhoes
+- Comissao gerada: R$ 114.000 (3%)
+- Taxa de recompra: 71% dos clientes voltaram para outra transacao imobiliaria
 
 *"O ObraEasy nos deu um motivo para continuar em contato com o cliente durante a obra. Viramos parte do processo deles, nao apenas quem vendeu o apartamento."*
 
@@ -121,10 +121,10 @@ Uma imobiliaria boutique do Jardins implementou o modelo de parceria em Jan/2025
 
 Um corretor de alto padrao em Vila Nova Conceicao comecu a oferecer a WG Almeida como solucao de reforma para seus clientes em Mar/2025:
 
-- **5 indicacoes** no primeiro ano
-- **Valor medio das obras:** R$ 380.000
-- **Receita de comissao:** R$ 38.000 (2%)
-- **Novos clientes por indicacao dos anteriores:** 3 adicionais
+- 5 indicacoes no primeiro ano
+- Valor medio das obras: R$ 380.000
+- Receita de comissao: R$ 38.000 (2%)
+- Novos clientes por indicacao dos anteriores: 3 adicionais
 
 ---
 
@@ -134,12 +134,12 @@ Um corretor de alto padrao em Vila Nova Conceicao comecu a oferecer a WG Almeida
 
 | Diferencial | O que Significa na Pratica |
 |-------------|---------------------------|
-| **15 anos de mercado** | Portfolio de mais de 280 obras entregues |
-| **ObraEasy** | Acompanhamento digital em tempo real, sem surpresas |
-| **Equipe propria** | Nao depende de empreiteiros externos para o nucleo da obra |
-| **Garantia de obra** | 5 anos em estrutura, 2 anos em instalacoes |
-| **Orcamento fechado** | Sem surpresas de custo para obras Turn Key |
-| **NBR 16.280** | Documentacao completa para condominio |
+| 15 anos de mercado | Portfolio de mais de 280 obras entregues |
+| ObraEasy | Acompanhamento digital em tempo real, sem surpresas |
+| Equipe propria | Nao depende de empreiteiros externos para o nucleo da obra |
+| Garantia de obra | 5 anos em estrutura, 2 anos em instalacoes |
+| Orcamento fechado | Sem surpresas de custo para obras Turn Key |
+| NBR 16.280 | Documentacao completa para condominio |
 
 ### Tipos de Obras que Indicamos
 
@@ -157,15 +157,15 @@ Um corretor de alto padrao em Vila Nova Conceicao comecu a oferecer a WG Almeida
 
 O processo e simples e rapido:
 
-**Passo 1:** Acesse o portal de parceiros em [obraeasy.wgalmeida.com.br/parceiro/cadastro](https://obraeasy.wgalmeida.com.br/parceiro/cadastro)
+Passo 1: Acesse o portal de parceiros em [obraeasy.wgalmeida.com.br/parceiro/cadastro](https://obraeasy.wgalmeida.com.br/parceiro/cadastro)
 
-**Passo 2:** Preencha seu perfil profissional (CRECI, imobiliaria, historico)
+Passo 2: Preencha seu perfil profissional (CRECI, imobiliaria, historico)
 
-**Passo 3:** Assine o Termo de Parceria (digital, sem burocracia)
+Passo 3: Assine o Termo de Parceria (digital, sem burocracia)
 
-**Passo 4:** Receba acesso ao painel de parceiros e as ferramentas exclusivas
+Passo 4: Receba acesso ao painel de parceiros e as ferramentas exclusivas
 
-**Passo 5:** Comece a indicar, e a faturar
+Passo 5: Comece a indicar, e a faturar
 
 > O cadastro e gratuito. Sem mensalidade, sem taxa de entrada. Voce recebe somente quando a obra e contratada.
 
@@ -195,11 +195,11 @@ Sim. Como parceiro, voce tem uma visao limitada do andamento das obras dos seus 
 
 O mercado nao espera. Cada cliente que compra um imovel e uma oportunidade de fortalecer seu relacionamento e gerar receita adicional.
 
-**Cadastre-se como parceiro:** [obraeasy.wgalmeida.com.br/parceiro/cadastro](https://obraeasy.wgalmeida.com.br/parceiro/cadastro)
+Cadastre-se como parceiro: [obraeasy.wgalmeida.com.br/parceiro/cadastro](https://obraeasy.wgalmeida.com.br/parceiro/cadastro)
 
-**Fale com nosso time:** [wgalmeida.com.br/contato](https://wgalmeida.com.br/contato)
+Fale com nosso time: [wgalmeida.com.br/contato](https://wgalmeida.com.br/contato)
 
-**Calculadora AVM gratuita:** [easyrealstate.wgalmeida.com.br/calculo](https://easyrealstate.wgalmeida.com.br/calculo)
+Calculadora AVM gratuita: [easyrealstate.wgalmeida.com.br/calculo](https://easyrealstate.wgalmeida.com.br/calculo)
 
 ---
 

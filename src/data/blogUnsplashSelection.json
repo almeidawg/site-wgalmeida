@@ -131,6 +131,326 @@
           "caption": "Recorte de bancada que ajuda a contextualizar utensílios, appliances e ritual de uso em cozinhas de alto padrão."
         }
       ]
+    },
+    "iluminacao-residencial-guia-completo": {
+      "hero": {
+        "id": "1721052921257-f1ec18f80e0f",
+        "alt": "Imagem editorial para Iluminação Residencial: Guia Completo para Iluminar Sua Casa, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1775765478818-e1ba68e1e136",
+        "alt": "Recorte visual para Iluminação Residencial: Guia Completo para Iluminar Sua Casa, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "onboarding-processo-wg-almeida": {
+      "hero": {
+        "id": "1763705857736-2b4f16a33758",
+        "alt": "Imagem editorial para Onboarding WG Almeida: Como Funciona o Processo do Seu Projeto, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1642052503083-9b9f61e75710",
+        "alt": "Recorte visual para Onboarding WG Almeida: Como Funciona o Processo do Seu Projeto, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "arquitetos-internacionais-famosos-obras": {
+      "hero": {
+        "id": "1757035310133-0a2e010482bd",
+        "alt": "Imagem editorial para Arquitetos Internacionais Famosos: Obras Iconicas e Lições para 2026, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1775312766921-61f840e3d6f8",
+        "alt": "Recorte visual para Arquitetos Internacionais Famosos: Obras Iconicas e Lições para 2026, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "arquitetura-sustentavel-certificacoes": {
+      "hero": {
+        "id": "1563183193-ceaa9ee013e8",
+        "alt": "Imagem editorial para Arquitetura Sustentavel: Certificacoes LEED, AQUA e Casa Azul no Brasil, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1589984147139-7dba0331c60f",
+        "alt": "Recorte visual para Arquitetura Sustentavel: Certificacoes LEED, AQUA e Casa Azul no Brasil, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "profissionais-capacitados-obra": {
+      "hero": {
+        "id": "1754661656609-e53a3aa0417c",
+        "alt": "Imagem editorial para Profissionais Capacitados na Obra: A Importância de uma Equipe Qualificada, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1540723280715-17a9a3fa4a2d",
+        "alt": "Recorte visual para Profissionais Capacitados na Obra: A Importância de uma Equipe Qualificada, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "importancia-contratar-arquiteto": {
+      "hero": {
+        "id": "1690668058223-31b53a8b29e5",
+        "alt": "Imagem editorial para Por Que Contratar um Arquiteto? A Importância do Profissional Capacitado, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1669814368814-b5f10a03cc61",
+        "alt": "Recorte visual para Por Que Contratar um Arquiteto? A Importância do Profissional Capacitado, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "quanto-tempo-dura-reforma-apartamento": {
+      "hero": {
+        "id": "1740560051651-33f2fdd4fa19",
+        "alt": "Imagem editorial para Quanto Tempo Dura uma Reforma de Apartamento? Prazo Real por Etapa, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1740560051629-72ed4b99af18",
+        "alt": "Recorte visual para Quanto Tempo Dura uma Reforma de Apartamento? Prazo Real por Etapa, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "reforma-banheiro-pequeno-otimizacao": {
+      "hero": {
+        "id": "1722764372202-b8ae35e7d424",
+        "alt": "Imagem editorial para Reforma de Banheiro Pequeno 2026: 20 Soluções para Ganhar Espaco, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1761673271363-6efe71f08d18",
+        "alt": "Recorte visual para Reforma de Banheiro Pequeno 2026: 20 Soluções para Ganhar Espaco, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "closet-planejado-organizacao-otimizacao": {
+      "hero": {
+        "id": "1708397016786-8916880649b8",
+        "alt": "Imagem editorial para Closet Planejado: Medidas Certas para Organizar Melhor e Ganhar Espaco, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1672137233327-37b0c1049e77",
+        "alt": "Recorte visual para Closet Planejado: Medidas Certas para Organizar Melhor e Ganhar Espaco, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "sistema-easy-metodologia-wg-almeida": {
+      "hero": {
+        "id": "1770580684124-6e46da6f67b9",
+        "alt": "Imagem editorial para Sistema Easy: A Metodologia WG Almeida que Simplifica Seu Projeto, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1771349634632-1246e9518773",
+        "alt": "Recorte visual para Sistema Easy: A Metodologia WG Almeida que Simplifica Seu Projeto, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "custo-construcao-reforma-2026-guia-tecnico-completo": {
+      "hero": {
+        "id": "1648937743864-5156661870f9",
+        "alt": "Imagem editorial para Quanto Custa Construir e Reformar em 2026: Guia Técnico Completo com Tabelas de Precos SINAPI, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1751309245229-0c0f4f24f7b6",
+        "alt": "Recorte visual para Quanto Custa Construir e Reformar em 2026: Guia Técnico Completo com Tabelas de Precos SINAPI, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "sustentabilidade-construcao-civil-2026": {
+      "hero": {
+        "id": "1577228336271-d1edca526d64",
+        "alt": "Imagem editorial para Sustentabilidade na Construção Civil 2026: 15 Praticas para Reduzir Custo e Desperdicio, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1652303518372-79ad122e3181",
+        "alt": "Recorte visual para Sustentabilidade na Construção Civil 2026: 15 Praticas para Reduzir Custo e Desperdicio, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "varanda-gourmet-planejamento": {
+      "hero": {
+        "id": "1746032667302-ce2950df8ba6",
+        "alt": "Imagem editorial para Varanda Gourmet: Planejamento, Layout e Custos para Executar sem Erro, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1740645581707-34e99ad574e4",
+        "alt": "Recorte visual para Varanda Gourmet: Planejamento, Layout e Custos para Executar sem Erro, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "erros-comuns-reforma-como-evitar": {
+      "hero": {
+        "id": "1740062450744-90c596cf6ae3",
+        "alt": "Imagem editorial para 10 Erros Mais Comuns em Reformas e Como Evitá-los, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1740062447116-3fa0e31879dc",
+        "alt": "Recorte visual para 10 Erros Mais Comuns em Reformas e Como Evitá-los, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "steel-frame-vs-alvenaria-qual-escolher": {
+      "hero": {
+        "id": "1750557616137-4850b57bd4e9",
+        "alt": "Imagem editorial para Steel Frame vs Alvenaria 2026: Qual É Mais Barato, Mais Rápido e Mais Confortável?, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1749527306167-558c0c0907f1",
+        "alt": "Recorte visual para Steel Frame vs Alvenaria 2026: Qual É Mais Barato, Mais Rápido e Mais Confortável?, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "calculadora-preco-m2-corretores-imobiliarias": {
+      "hero": {
+        "id": "1757256137041-0aab889db199",
+        "alt": "Imagem editorial para Calculadora de Preço por m² para Corretores e Imobiliárias: Como Avaliar Imóveis com Precisão em 2026, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1574607383077-47ddc2dc51c4",
+        "alt": "Recorte visual para Calculadora de Preço por m² para Corretores e Imobiliárias: Como Avaliar Imóveis com Precisão em 2026, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "casa-cor-2026-mente-coracao": {
+      "hero": {
+        "id": "1716796282379-92703f33e907",
+        "alt": "Imagem editorial para Casa Cor 2026: Tema Mente e Coracao e Tendencias da Mostra de Arquitetura, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1716796244767-7ba9d258b6cd",
+        "alt": "Recorte visual para Casa Cor 2026: Tema Mente e Coracao e Tendencias da Mostra de Arquitetura, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "acapulco-club-house-residencia-luxo": {
+      "hero": {
+        "id": "1775813240698-00793501786b",
+        "alt": "Imagem editorial para Residência Contemporânea Acapulco Club House: Arquitetura de Luxo e Experiência Residencial, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1617327924490-0aa3afeffa83",
+        "alt": "Recorte visual para Residência Contemporânea Acapulco Club House: Arquitetura de Luxo e Experiência Residencial, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "harman-kardon-som-ambientes": {
+      "hero": {
+        "id": "1619581277861-9cfc7f41811b",
+        "alt": "Imagem editorial para Harman Kardon Vale a Pena? Audio Premium e Design para Ambientes Sofisticados, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1590836948831-3046a82f27fd",
+        "alt": "Recorte visual para Harman Kardon Vale a Pena? Audio Premium e Design para Ambientes Sofisticados, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "evf-estudo-viabilidade-financeira": {
+      "hero": {
+        "id": "1645874628632-4cb0b22bf6cd",
+        "alt": "Imagem editorial para EVF na Obra: Como Validar Custos e Evitar Estouro de Orçamento Antes de Construir, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1740592910131-b604d790061a",
+        "alt": "Recorte visual para EVF na Obra: Como Validar Custos e Evitar Estouro de Orçamento Antes de Construir, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "automacao-residencial-2026-guia": {
+      "hero": {
+        "id": "1707258115089-10f0bc0cf61c",
+        "alt": "Imagem editorial para Automação Residencial em 2026: Quanto Custa e Como Montar uma Smart Home, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1762117360928-1548ff7ab5a2",
+        "alt": "Recorte visual para Automação Residencial em 2026: Quanto Custa e Como Montar uma Smart Home, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "le-creuset-panelas-design": {
+      "hero": {
+        "id": "1547570918-ae3a096d5839",
+        "alt": "Imagem editorial para Le Creuset Vale a Pena em 2026? Design, Durabilidade e Custo-Beneficio, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1695088224170-8d8670a19a16",
+        "alt": "Recorte visual para Le Creuset Vale a Pena em 2026? Design, Durabilidade e Custo-Beneficio, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "arquitetos-brasileiros-famosos-legado": {
+      "hero": {
+        "id": "1666424449256-acd57e6b7337",
+        "alt": "Imagem editorial para Arquitetos Brasileiros Famosos: 12 Nomes, Obras e Lições para Projetos Atuais, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1638384142135-99bfd72a7737",
+        "alt": "Recorte visual para Arquitetos Brasileiros Famosos: 12 Nomes, Obras e Lições para Projetos Atuais, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "scandia-home-roupa-cama-luxo": {
+      "hero": {
+        "id": "1667530056184-e30a20eb7f8f",
+        "alt": "Imagem editorial para Scandia Home Vale a Pena? 50 Anos de Excelencia em Roupa de Cama de Luxo, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1765445666407-c8535808a4a0",
+        "alt": "Recorte visual para Scandia Home Vale a Pena? 50 Anos de Excelencia em Roupa de Cama de Luxo, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "reforma-cozinha-planejada-guia-completo": {
+      "hero": {
+        "id": "1721274503062-7b14f09a6ac9",
+        "alt": "Imagem editorial para Reforma de Cozinha Planejada 2026: Quanto Custa, Etapas e Como Evitar Erros, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1741314671432-9bf925759052",
+        "alt": "Recorte visual para Reforma de Cozinha Planejada 2026: Quanto Custa, Etapas e Como Evitar Erros, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "obraeasy-para-parceiros-imobiliarias-corretores": {
+      "hero": {
+        "id": "1775156293060-41c944fadc47",
+        "alt": "Imagem editorial para ObraEasy para Parceiros: Como Imobiliarias e Corretores Geram Receita com Gestão de Obras, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1775156293060-41c944fadc47",
+        "alt": "Recorte visual para ObraEasy para Parceiros: Como Imobiliarias e Corretores Geram Receita com Gestão de Obras, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "tabela-precos-reforma-2026-iccri": {
+      "hero": {
+        "id": "1509228468518-180dd4864904",
+        "alt": "Imagem editorial para Tabela de Precos de Reforma 2026 — ICCRI: O Indice de Referencia para Obras em Sao Paulo, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1560785472-2f186f554644",
+        "alt": "Recorte visual para Tabela de Precos de Reforma 2026 — ICCRI: O Indice de Referencia para Obras em Sao Paulo, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "home-office-ergonomia-produtividade": {
+      "hero": {
+        "id": "1530114882489-195de89c0a7a",
+        "alt": "Imagem editorial para Home Office: Guia de Ergonomia e Produtividade para Trabalhar Melhor em Casa, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1493859822928-d0ba2b85c80d",
+        "alt": "Recorte visual para Home Office: Guia de Ergonomia e Produtividade para Trabalhar Melhor em Casa, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "quanto-valoriza-apartamento-apos-reforma": {
+      "hero": {
+        "id": "1724220525947-483ac59c2242",
+        "alt": "Imagem editorial para Quanto Valoriza um Apartamento Apos Reforma? EVF — Estimativa de Valor Final, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1712437372325-9459fbc59beb",
+        "alt": "Recorte visual para Quanto Valoriza um Apartamento Apos Reforma? EVF — Estimativa de Valor Final, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "dyson-tecnologia-design-residencial": {
+      "hero": {
+        "id": "1708529589690-00e2bbb7f327",
+        "alt": "Imagem editorial para Dyson Vale a Pena? Engenharia, Design Residencial e Custo-Beneficio, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1697372080300-74a399941cd8",
+        "alt": "Recorte visual para Dyson Vale a Pena? Engenharia, Design Residencial e Custo-Beneficio, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "tendencias-decoracao-interiores-2026": {
+      "hero": {
+        "id": "1770983438689-1d1d662ce918",
+        "alt": "Imagem editorial para Tendencias de Decoração 2026: 20 Ideias Prontas para Sala, Quarto e Cozinha, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1759496330246-c2f8d23ae83d",
+        "alt": "Recorte visual para Tendencias de Decoração 2026: 20 Ideias Prontas para Sala, Quarto e Cozinha, reforcando detalhe material e atmosfera do tema"
+      }
+    },
+    "obraeasy-como-funciona-para-clientes-finais": {
+      "hero": {
+        "id": "1772551419789-8075b4055f9e",
+        "alt": "Imagem editorial para ObraEasy: Como Funciona a Plataforma de Gestão de Obras para Clientes Finais, com leitura contemporanea e composicao premium"
+      },
+      "card": {
+        "id": "1761078658647-1f6ac6f8e436",
+        "alt": "Recorte visual para ObraEasy: Como Funciona a Plataforma de Gestão de Obras para Clientes Finais, reforcando detalhe material e atmosfera do tema"
+      }
     }
   }
 }

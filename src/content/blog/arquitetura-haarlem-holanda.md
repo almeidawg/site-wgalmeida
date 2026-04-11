@@ -14,11 +14,11 @@ featured: true
 
 ## A Cidade que Deu Nome a Nova York
 
-**Haarlem** e a capital da provincia da Holanda do Norte e uma das cidades medievais mais preservadas da Holanda. Fundada no seculo X, e mais antiga que Amsterdam e mantem um conjunto urbano historico raro.
+Haarlem e a capital da provincia da Holanda do Norte e uma das cidades medievais mais preservadas da Holanda. Fundada no seculo X, e mais antiga que Amsterdam e mantem um conjunto urbano historico raro.
 
-**Curiosidade:** Quando os holandeses fundaram Nova Amsterdam (atual Nova York) em 1624, o bairro do Harlem foi nomeado em homenagem a esta cidade!
+Curiosidade: Quando os holandeses fundaram Nova Amsterdam (atual Nova York) em 1624, o bairro do Harlem foi nomeado em homenagem a esta cidade!
 
-A apenas **15 minutos de trem de Amsterdam**, Haarlem oferece tudo que Amsterdam tem - canais, casas estreitas, tijolos - mas com **menos turistas, mais autenticidade e 1.000 anos de história** visível a cada esquina.
+A apenas 15 minutos de trem de Amsterdam, Haarlem oferece tudo que Amsterdam tem - canais, casas estreitas, tijolos - mas com menos turistas, mais autenticidade e 1.000 anos de história visível a cada esquina.
 
 ## História Arquitetônica de Haarlem
 
@@ -62,7 +62,7 @@ A apenas **15 minutos de trem de Amsterdam**, Haarlem oferece tudo que Amsterdam
 
 ### Monumento Gótico Imponente
 
-A **Grote Kerk** (Igreja Grande de São Bavão) é o símbolo arquitetônico de Haarlem e uma das igrejas mais impressionantes da Holanda.
+A Grote Kerk (Igreja Grande de São Bavão) é o símbolo arquitetônico de Haarlem e uma das igrejas mais impressionantes da Holanda.
 
 ### Características
 - Construção: 1370-1520 (150 anos!)
@@ -98,7 +98,7 @@ A **Grote Kerk** (Igreja Grande de São Bavão) é o símbolo arquitetônico de 
 
 ### O Que São Hofjes?
 
-**Hofjes** (singular: hofje) são **pátios internos cercados de pequenas casas**, criados como **caridade** para viúvas e idosos pobres nos séculos XIV-XIX.
+Hofjes (singular: hofje) são pátios internos cercados de pequenas casas, criados como caridade para viúvas e idosos pobres nos séculos XIV-XIX.
 
 ### Conceito
 - Porta discreta na rua
@@ -115,31 +115,31 @@ A **Grote Kerk** (Igreja Grande de São Bavão) é o símbolo arquitetônico de 
 
 ### Hofjes Mais Importantes de Haarlem
 
-**1. Frans Loenenhofje (1395)**
+1. Frans Loenenhofje (1395)
 - Mais antigo hofje da Holanda
 - 600+ anos de história
 - Ainda habitado
 - Jardim medieval encantador
 
-**2. Hofje van Oorschot (1769)**
+2. Hofje van Oorschot (1769)
 - Portão rococó elaborado
 - Jardim formal
 - 24 casas pequenas
 - Porta vermelha icônica
 
-**3. Hofje van Bakenes (1395)**
+3. Hofje van Bakenes (1395)
 - Um dos mais antigos
 - Reformado século XVII
 - Tranquilidade absoluta
 - Entrada discreta (Bakenessergracht)
 
-**4. Hofje van Staats (1730)**
+4. Hofje van Staats (1730)
 - Grande e elegante
 - Arquitetura classicista
 - Jardim central com fonte
 - Melhor preservado
 
-**5. Teylers Hofje (1787)**
+5. Teylers Hofje (1787)
 - Fundado por Pieter Teyler (do museu)
 - Arquitetura neoclássica
 - Casas duplas (maior conforto)
@@ -180,7 +180,7 @@ A **Grote Kerk** (Igreja Grande de São Bavão) é o símbolo arquitetônico de 
 
 ### Diferenças de Amsterdam
 
-Embora similares, as casas de Haarlem têm **particularidades**:
+Embora similares, as casas de Haarlem têm particularidades:
 
 ### Semelhanças
 - Fachadas estreitas e altas
@@ -333,7 +333,7 @@ Embora similares, as casas de Haarlem têm **particularidades**:
 
 ### Influência Arquitetônica
 
-**Frans Hals** (1582-1666) - mestre do Século de Ouro - viveu e pintou em Haarlem.
+Frans Hals (1582-1666) - mestre do Século de Ouro - viveu e pintou em Haarlem.
 
 ### Frans Hals Museum
 - Dois locais:
@@ -352,19 +352,19 @@ Embora similares, as casas de Haarlem têm **particularidades**:
 
 ### Igrejas Históricas
 
-**1. Janskerk (Igreja de São João) - Século XIV**
+1. Janskerk (Igreja de São João) - Século XIV
 - Gótica em tijolo amarelo
 - Torre visível de toda cidade
 - Interior branco minimalista (protestante)
 
-**2. Bavokerk (Catedral Católica) - 1906**
+2. Bavokerk (Catedral Católica) - 1906
 - Neo-gótica
 - Construída após liberdade religiosa
 - Arquiteto: Joseph Cuypers (filho de Pierre Cuypers)
 - Tijolos vermelhos + pedra natural
 - Vitrais art nouveau
 
-**3. Waalse Kerk (Igreja Valã) - Século XIV**
+3. Waalse Kerk (Igreja Valã) - Século XIV
 - Originalmente parte de monastério
 - Gótica simples
 - Usada por comunidade francófona (huguenotes)
@@ -377,20 +377,20 @@ Haarlem conseguiu integrar modernidade sem destruir história.
 
 ### Projetos Contemporâneos
 
-**1. Verweyhal (1986)**
+1. Verweyhal (1986)
 - Museu de arte moderna
 - Arquiteto: Erick van Egeraat
 - Design brutalista suavizado
 - Concreto + vidro
 - Integração com entorno histórico
 
-**2. Raaks Shopping Area (2000s)**
+2. Raaks Shopping Area (2000s)
 - Renovação de centro comercial
 - Fachadas modernas respeitando escala histórica
 - Alturas limitadas
 - Materiais contemporâneos (vidro, alumínio) com tijolos
 
-**3. Stationsplein (2020)**
+3. Stationsplein (2020)
 - Praça da estação renovada
 - Paisagismo moderno
 - Preservação de edifício histórico da estação (1908)
@@ -544,24 +544,24 @@ No Grupo WG Almeida, trazemos o charme medieval de Haarlem com pátios tranquilo
 
 ## Curiosidades de Haarlem
 
-🎨 **Frans Hals** viveu e trabalhou toda sua vida aqui
-🍺 **Jopen Bier** - cervejaria histórica revivida
-🌷 **Tulipas** - região produtora famosa (Keukenhof próximo)
-🎵 **Órgão Müller** - Mozart tocou aos 10 anos (1766)
-🏛️ **Teylers** - museu mais antigo da Holanda (1784)
-🏰 **21 hofjes** - mais que qualquer cidade holandesa
-🚪 **Amsterdamse Poort** - único portão medieval preservado
-📐 **Centro histórico**: 80% dos prédios são monumentos protegidos!
-🌊 **Moinho de Adriaan** - reconstruído após incêndio em 1932
+🎨 Frans Hals viveu e trabalhou toda sua vida aqui
+🍺 Jopen Bier - cervejaria histórica revivida
+🌷 Tulipas - região produtora famosa (Keukenhof próximo)
+🎵 Órgão Müller - Mozart tocou aos 10 anos (1766)
+🏛️ Teylers - museu mais antigo da Holanda (1784)
+🏰 21 hofjes - mais que qualquer cidade holandesa
+🚪 Amsterdamse Poort - único portão medieval preservado
+📐 Centro histórico: 80% dos prédios são monumentos protegidos!
+🌊 Moinho de Adriaan - reconstruído após incêndio em 1932
 🎬 Locações de filmes: "Soldado de Laranja" (1977)
 
 ---
 
 ## Haarlem: Autenticidade Holandesa Preservada
 
-Haarlem é a **Holanda autêntica** - medieval, tranquila, preservada. Enquanto Amsterdam cresceu para metrópole turística, Haarlem manteve a **escala humana, os pátios secretos e o silêncio medieval**.
+Haarlem é a Holanda autêntica - medieval, tranquila, preservada. Enquanto Amsterdam cresceu para metrópole turística, Haarlem manteve a escala humana, os pátios secretos e o silêncio medieval.
 
-É uma lição de como **preservar patrimônio**, integrar modernidade com respeito e criar **espaços urbanos humanos e acolhedores**.
+É uma lição de como preservar patrimônio, integrar modernidade com respeito e criar espaços urbanos humanos e acolhedores.
 
 ---
 
@@ -586,4 +586,4 @@ O Grupo WG Almeida está pronto para criar seu refúgio tranquilo inspirado nos 
 
 *Haarlem: onde cada esquina conta 1.000 anos de história, e cada portão esconde um jardim secreto.*
 
-**© 2026 Grupo WG Almeida - Arquitetura Internacional**
+© 2026 Grupo WG Almeida - Arquitetura Internacional
