@@ -19,16 +19,6 @@
       "permanent": true
     },
     {
-      "source": "/videos/hero/hero-desktop.mp4",
-      "destination": "https://res.cloudinary.com/dwukfmgrd/video/upload/f_auto/q_auto:good/vc_auto/so_0/ar_16:9/c_fill/g_auto/w_1920/h6zftberxzqzf4mqpyyr",
-      "permanent": true
-    },
-    {
-      "source": "/videos/hero/hero-mobile.mp4",
-      "destination": "https://res.cloudinary.com/dwukfmgrd/video/upload/f_auto/q_auto:good/vc_auto/so_0/ar_16:9/c_fill/g_auto/w_1280/h6zftberxzqzf4mqpyyr",
-      "permanent": true
-    },
-    {
       "source": "/solicite-sua-proposta",
       "destination": "/solicite-proposta",
       "permanent": true
