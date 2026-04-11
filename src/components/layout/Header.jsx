@@ -16,7 +16,6 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUnitsMenuOpen, setUnitsMenuOpen] = useState(false);
-  const [activeUnitsPanel, setActiveUnitsPanel] = useState(0);
   const [isMobileUnitsOpen, setMobileUnitsOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { cartItems } = useCart();
@@ -185,24 +184,18 @@ const iconButtonClass = isScrolled
                 {isUnitsMenuOpen && (
                   <div className="absolute top-full left-1/2 z-[90] mt-3 w-[min(92vw,60rem)] -translate-x-1/2">
                     <div className="overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white/[0.96] p-3 shadow-[0_24px_80px_rgba(23,23,23,0.14)] backdrop-blur-xl">
-                      <div className="flex h-[26rem] gap-3">
+                      <div className="grid h-[26rem] grid-cols-3 gap-3">
                         {unitsItems.map((subItem, index) => {
-                          const isActive = activeUnitsPanel === index;
                           const Wrapper = subItem.external ? 'a' : Link;
                           return (
                             <Wrapper
                               key={subItem.label}
                               {...(subItem.external ? { href: subItem.path } : { to: subItem.path })}
-                              className="group relative min-w-0 overflow-hidden rounded-[1.55rem] transition-[flex] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                              className="group relative min-w-0 overflow-hidden rounded-[1.55rem] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 focus-visible:-translate-y-0.5"
                               style={{
-                                flex: isActive ? 2.15 : 0.92,
                                 backgroundColor: '#0f0f10',
-                                boxShadow: isActive
-                                  ? '0 18px 48px rgba(20,20,20,0.16)'
-                                  : '0 10px 24px rgba(20,20,20,0.08)',
+                                boxShadow: '0 14px 34px rgba(20,20,20,0.12)',
                               }}
-                              onMouseEnter={() => setActiveUnitsPanel(index)}
-                              onFocus={() => setActiveUnitsPanel(index)}
                             >
                               <div
                                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
@@ -211,31 +204,16 @@ const iconButtonClass = isScrolled
                               <div
                                 className="absolute inset-0"
                                 style={{
-                                  background: isActive
-                                    ? `linear-gradient(180deg, rgba(16,16,17,0.10) 0%, rgba(16,16,17,0.34) 34%, rgba(16,16,17,0.88) 100%), radial-gradient(circle at top left, ${subItem.accentSoft} 0%, transparent 34%)`
-                                    : 'linear-gradient(180deg, rgba(16,16,17,0.18) 0%, rgba(16,16,17,0.55) 55%, rgba(16,16,17,0.88) 100%)',
+                                  background: `linear-gradient(180deg, rgba(16,16,17,0.10) 0%, rgba(16,16,17,0.34) 34%, rgba(16,16,17,0.88) 100%), radial-gradient(circle at top left, ${subItem.accentSoft} 0%, transparent 34%)`,
                                 }}
                               />
                               <div
                                 className="absolute left-0 top-0 h-full w-[3px]"
-                                style={{ backgroundColor: subItem.accent, opacity: isActive ? 1 : 0.6 }}
+                                style={{ backgroundColor: subItem.accent, opacity: 0.9 }}
                               />
 
-                              {!isActive && (
-                                <div className="absolute inset-0 z-10 flex items-end justify-center pb-8">
-                                  <div className="flex select-none flex-col items-center gap-3 [writing-mode:vertical-rl] [transform:rotate(180deg)]">
-                                    <span className="text-[10px] uppercase tracking-[0.32em] text-white/55">
-                                      0{index + 1}
-                                    </span>
-                                    <span className="font-playfair text-[1.18rem] tracking-[-0.03em] text-white">
-                                      {subItem.label}
-                                    </span>
-                                  </div>
-                                </div>
-                              )}
-
                               <div
-                                className={`absolute inset-x-0 bottom-0 z-20 flex h-full flex-col justify-end p-6 transition-all duration-300 ${isActive ? 'opacity-100 translate-y-0' : 'pointer-events-none opacity-0 translate-y-4'}`}
+                                className="absolute inset-x-0 bottom-0 z-20 flex h-full flex-col justify-end p-6"
                               >
                                 <div className="mb-5 flex items-center gap-3">
                                   <span
