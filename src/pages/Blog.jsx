@@ -89,6 +89,58 @@ const stripDuplicateTocSection = (markdown) => markdown
 const stripMarkdownStrongEmphasis = (markdown = '') => markdown
   .replace(/\*\*(.*?)\*\*/g, '$1');
 
+const stripMarkdownToText = (markdown = '') => markdown
+  .replace(/!\[[^\]]*]\([^)]*\)/g, ' ')
+  .replace(/\[([^\]]+)]\([^)]*\)/g, '$1')
+  .replace(/[`*_>#-]/g, ' ')
+  .replace(/\s+/g, ' ')
+  .trim();
+
+const extractFaqFromMarkdown = (markdown = '') => {
+  const lines = markdown.split('\n');
+  const faqHeaderRegex = /^##\s+(perguntas frequentes|duvidas frequentes|dúvidas frequentes|faq)$/i;
+  const faqStartIndex = lines.findIndex((line) => faqHeaderRegex.test(line.trim()));
+
+  if (faqStartIndex === -1) return [];
+
+  const faq = [];
+  let currentQuestion = '';
+  let answerLines = [];
+
+  for (let i = faqStartIndex + 1; i < lines.length; i += 1) {
+    const line = lines[i].trim();
+
+    if (/^##\s+/.test(line)) break;
+
+    const questionMatch = line.match(/^###\s+(.+)$/);
+    if (questionMatch) {
+      if (currentQuestion && answerLines.length) {
+        faq.push({
+          question: stripMarkdownToText(currentQuestion),
+          answer: stripMarkdownToText(answerLines.join(' ')),
+        });
+      }
+      currentQuestion = questionMatch[1].trim();
+      answerLines = [];
+      continue;
+    }
+
+    if (!currentQuestion || !line || line === '---') continue;
+    answerLines.push(line);
+  }
+
+  if (currentQuestion && answerLines.length) {
+    faq.push({
+      question: stripMarkdownToText(currentQuestion),
+      answer: stripMarkdownToText(answerLines.join(' ')),
+    });
+  }
+
+  return faq
+    .filter((entry) => entry.question.endsWith('?') && entry.answer.length > 0)
+    .slice(0, 8);
+};
+
 const splitMarkdownByH2 = (markdown) => {
   const lines = markdown.split('\n');
   const introLines = [];
@@ -722,6 +774,17 @@ const Blog = () => {
       toAbsoluteSiteUrl(artigoAtual.imageSeo || artigoAtual.imageHero || artigoAtual.imageCard || artigoAtual.image),
       ...articleContextImages.map((asset) => toAbsoluteSiteUrl(asset?.src)).filter(Boolean),
     ].filter(Boolean);
+    const faqEntries = extractFaqFromMarkdown(contentBody);
+    const articleSeoSchema = [
+      schemas.article(
+        artigoAtual.title,
+        artigoAtual.excerpt,
+        articleUrl,
+        artigoAtual.date,
+        articleSchemaImages
+      ),
+      ...(faqEntries.length ? [schemas.faq(faqEntries)] : []),
+    ];
     const articleLeadContextImage = articleContextImages[0] || null;
     const articleSectionContextInsertions = buildSectionImageInsertions(
       sectionedContent.sections.length,
@@ -813,13 +876,7 @@ const Blog = () => {
           url={articleUrl}
           type="article"
           image={articleSchemaImages[0]}
-          schema={schemas.article(
-            artigoAtual.title,
-            artigoAtual.excerpt,
-            articleUrl,
-            artigoAtual.date,
-            articleSchemaImages
-          )}
+          schema={articleSeoSchema}
           alternates={hreflangAlternates}
         />
 

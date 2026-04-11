@@ -5,6 +5,7 @@ import { Bot, Cpu, Zap, BarChart, ArrowRight, ShieldCheck, Rocket, LayoutDashboa
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
+import { SCHEMAS } from '@/data/schemaConfig';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -45,6 +46,13 @@ const BuildTech = () => {
         pathname="/buildtech"
         title="WG Build.tech | Consultoria de IA e Tecnologia para Construção"
         description="Liderança mundial em arquitetura e tecnologia. Conheça as soluções de IA e o ecossistema WG Easy para o mercado imobiliário."
+        schema={[
+          SCHEMAS.knowledgeGraph,
+          SCHEMAS.softwareBuildTech,
+          SCHEMAS.softwareMoodboard,
+          SCHEMAS.softwareRoomVisualizer,
+          SCHEMAS.breadcrumbBuildTech,
+        ]}
       />
 
       {/* Hero Tecnológico */}

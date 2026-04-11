@@ -325,7 +325,7 @@ const Home = () => {
     <>
       <SEO
         pathname="/"
-        schema={[SCHEMAS.organization, SCHEMAS.localBusiness, SCHEMAS.breadcrumbHome]}
+        schema={[SCHEMAS.knowledgeGraph, SCHEMAS.website, SCHEMAS.localBusiness, SCHEMAS.breadcrumbHome]}
       />
 
       {/* ========== APRESENTAÇÃO CINEMATOGRÁFICA ========== */}

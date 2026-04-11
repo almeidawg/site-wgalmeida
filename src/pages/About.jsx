@@ -94,7 +94,10 @@ const About = () => {
 
   return (
     <>
-      <SEO pathname="/sobre" schema={SCHEMAS.breadcrumbAbout} />
+      <SEO
+        pathname="/sobre"
+        schema={[SCHEMAS.knowledgeGraph, SCHEMAS.personWilliam, SCHEMAS.breadcrumbAbout]}
+      />
 
       {/* Hero com parallax sutil */}
       <section className="wg-page-hero wg-page-hero--store hero-under-header">

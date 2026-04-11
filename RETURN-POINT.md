@@ -926,3 +926,21 @@ site-wgalmeida/
 - [x] Home e `/blog` com `canonical` e `meta robots=index, follow`
 - [x] PageSpeed API por CLI validada com chave Google atual (`11/04/2026`): `runPagespeed` retornando `200` para `https://wgalmeida.com.br` (mobile e desktop) e `https://wgalmeida.com.br/blog` (mobile)
 - [x] Endpoint legado `google.com/ping?sitemap=...` confirmado como obsoleto (`404`); validacao de indexacao mantida por sitemap/robots e Search Console
+
+## Continuacao 11/04 - sprint SGE + autoridade citavel por IA
+
+- [x] Grafo semantico conectado aplicado em `src/data/schemaConfig.js` com `Organization`, `Person`, `Service`, `SoftwareApplication`, `CreativeWorkSeries` e `WebSite` (`@graph`)
+- [x] Home (`/`), Sobre (`/sobre`) e BuildTech (`/buildtech`) atualizados para publicar schema de knowledge graph no HTML
+- [x] FAQ schema automatico ativado no blog: artigos com secao `## Perguntas frequentes` + blocos `###` agora geram `FAQPage` JSON-LD
+- [x] Estrutura estrategica adicionada sem quebrar canonical: rotas `/conteudo` e `/conteudo/:slug` redirecionando para `/blog`
+- [x] Estrutura de ferramentas adicionada: `/tools`, `/tools/moodboard-generator`, `/tools/room-visualizer` redirecionando para rotas canonicas
+- [x] 3 artigos SGE publicados com foco em intencao de busca:
+  - `custo-reforma-apartamento-alto-padrao-sp`
+  - `vale-a-pena-contratar-arquiteto-turn-key`
+  - `quanto-tempo-leva-reforma-completa-alto-padrao`
+- [x] `public/sitemap.xml` regenerado com os novos slugs de conteudo
+- [x] Validacao local completa:
+  - `npm run lint`
+  - `npm run test:run` (35/35)
+  - `npm run build`
+  - `npm run seo:validate:dist`

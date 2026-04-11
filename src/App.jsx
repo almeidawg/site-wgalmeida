@@ -1,7 +1,7 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import { Suspense, lazy, useEffect, useLayoutEffect } from 'react'
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import ProtectedRoute from '@/components/auth/ProtectedRoute'
 import { AuthProvider } from '@/contexts/SupabaseAuthContext'
 import { Loader2 } from 'lucide-react'
@@ -84,6 +84,11 @@ const LoadingFallback = () => (
 )
 
 const APP_BUILD_TAG = '2026-04-09-store-refresh-2'
+
+function ConteudoRedirect() {
+  const { slug } = useParams()
+  return <Navigate to={slug ? `/blog/${slug}` : '/blog'} replace />
+}
 
 function RouteScrollManager() {
   const location = useLocation()
@@ -253,6 +258,8 @@ function App() {
               />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<Blog />} />
+              <Route path="/conteudo" element={<ConteudoRedirect />} />
+              <Route path="/conteudo/:slug" element={<ConteudoRedirect />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/revista-estilos" element={<RevistaEstilos />} />
               <Route path="/estilos/:slug" element={<EstiloDetail />} />
@@ -266,6 +273,15 @@ function App() {
                 element={<Navigate to="/moodboard-generator" replace />}
               />
               <Route path="/room-visualizer" element={<RoomVisualizer />} />
+              <Route path="/tools" element={<Navigate to="/buildtech" replace />} />
+              <Route
+                path="/tools/moodboard-generator"
+                element={<Navigate to="/moodboard-generator" replace />}
+              />
+              <Route
+                path="/tools/room-visualizer"
+                element={<Navigate to="/room-visualizer" replace />}
+              />
               <Route
                 path="/visualizador-ambientes"
                 element={<Navigate to="/room-visualizer" replace />}
