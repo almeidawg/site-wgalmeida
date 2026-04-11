@@ -1,11 +1,18 @@
 #!/bin/sh
-# WG BuildTech — pre-commit hook (site-wgalmeida)
+# WG BuildTech pre-commit hook (site-wgalmeida)
 
-echo "🔍 [WG] Verificando secrets..."
-npx secretlint "**/*" --secretlintignore .secretlintignore 2>/dev/null || {
-  echo "🚨 [WG] COMMIT BLOQUEADO: credencial detectada!"
-  echo "   Cheque: API keys, JWT tokens, senhas hardcoded"
+echo "[WG] Verificando secrets..."
+
+if ! npx --no-install secretlint --version >/dev/null 2>&1; then
+  echo "[WG] COMMIT BLOQUEADO: secretlint nao instalado localmente."
+  echo "[WG] Rode: npm install"
+  exit 1
+fi
+
+npx --no-install secretlint "." --secretlintignore .secretlintignore || {
+  echo "[WG] COMMIT BLOQUEADO: credencial detectada."
+  echo "[WG] Cheque API keys, tokens e senhas hardcoded."
   exit 1
 }
 
-echo "✅ [WG] pre-commit OK"
+echo "[WG] pre-commit OK"

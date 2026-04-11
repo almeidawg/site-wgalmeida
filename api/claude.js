@@ -1,5 +1,12 @@
+import { applyRateLimitHeaders, checkRateLimit, getClientIp, isOriginAllowed } from './_requestGuard.js';
+
 const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
 const DEFAULT_MODEL = process.env.CLAUDE_MODEL?.trim() || 'claude-3-5-sonnet-latest';
+const PROMPT_MAX_LENGTH = 4000;
+const RATE_LIMIT = {
+  limit: 12,
+  windowMs: 60 * 1000,
+};
 
 function parseJsonBody(req) {
   if (!req.body) return {};
@@ -27,6 +34,21 @@ function ensureConfigured(res) {
 export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
 
+  if (!isOriginAllowed(req)) {
+    return res.status(403).json({ error: { message: 'Origin not allowed' } });
+  }
+
+  const ip = getClientIp(req);
+  const rate = checkRateLimit({
+    bucket: 'claude',
+    key: ip,
+    ...RATE_LIMIT,
+  });
+  applyRateLimitHeaders(res, rate);
+  if (!rate.ok) {
+    return res.status(429).json({ error: { message: 'Rate limit exceeded' } });
+  }
+
   if (!ensureConfigured(res)) {
     return;
   }
@@ -42,6 +64,9 @@ export default async function handler(req, res) {
 
   if (!prompt) {
     return res.status(400).json({ error: { message: 'prompt is required' } });
+  }
+  if (prompt.length > PROMPT_MAX_LENGTH) {
+    return res.status(400).json({ error: { message: `prompt exceeds ${PROMPT_MAX_LENGTH} characters` } });
   }
 
   try {

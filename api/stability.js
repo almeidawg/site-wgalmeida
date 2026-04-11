@@ -1,7 +1,15 @@
+import { applyRateLimitHeaders, checkRateLimit, getClientIp, isOriginAllowed } from './_requestGuard.js';
+
 const STABILITY_API_KEY = process.env.STABILITY_API_KEY;
 const STABILITY_API_URL = 'https://api.stability.ai/v1';
 
 const NEGATIVE_PROMPT = 'blurry, low quality, distorted, ugly, bad architecture, unrealistic';
+const PROMPT_MAX_LENGTH = 4000;
+const IMAGE_BASE64_MAX_LENGTH = 15 * 1024 * 1024;
+const RATE_LIMIT = {
+  limit: 20,
+  windowMs: 60 * 1000,
+};
 
 function parseJsonBody(req) {
   if (!req.body) return {};
@@ -69,6 +77,21 @@ async function proxyFormRequest(endpoint, formData) {
 export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
 
+  if (!isOriginAllowed(req)) {
+    return res.status(403).json({ error: 'Origin not allowed' });
+  }
+
+  const ip = getClientIp(req);
+  const rate = checkRateLimit({
+    bucket: 'stability',
+    key: ip,
+    ...RATE_LIMIT,
+  });
+  applyRateLimitHeaders(res, rate);
+  if (!rate.ok) {
+    return res.status(429).json({ error: 'Rate limit exceeded' });
+  }
+
   if (!ensureConfigured(res)) {
     return;
   }
@@ -115,6 +138,9 @@ export default async function handler(req, res) {
       if (!prompt) {
         return res.status(400).json({ error: 'prompt is required' });
       }
+      if (prompt.length > PROMPT_MAX_LENGTH) {
+        return res.status(400).json({ error: `prompt exceeds ${PROMPT_MAX_LENGTH} characters` });
+      }
 
       const data = await proxyJsonRequest(
         '/generation/stable-diffusion-xl-1024-v1-0/text-to-image',
@@ -148,6 +174,12 @@ export default async function handler(req, res) {
 
       if (!imageBase64 || !prompt) {
         return res.status(400).json({ error: 'imageBase64 and prompt are required' });
+      }
+      if (prompt.length > PROMPT_MAX_LENGTH) {
+        return res.status(400).json({ error: `prompt exceeds ${PROMPT_MAX_LENGTH} characters` });
+      }
+      if (imageBase64.length > IMAGE_BASE64_MAX_LENGTH) {
+        return res.status(413).json({ error: 'imageBase64 payload too large' });
       }
 
       const formData = new FormData();
