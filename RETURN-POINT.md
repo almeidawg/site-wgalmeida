@@ -916,3 +916,13 @@ site-wgalmeida/
 
 - iniciar revisao visual em `/admin/blog-editorial` com filtro `prontos` para validar aderencia dos novos `hero/card`
 - se houver ajustes finos de semantica visual por slug, aplicar override localizado no `blogUnsplashSelection.json` e regenerar manifesto
+
+## Fechamento 11/04 - deploy producao site-wgalmeida
+
+- [x] Deploy producao concluido na Vercel (`dpl_GcpD5CGemx5krydR6kCqbWrFtz1c`) em `11/04/2026`
+- [x] Alias ativo e validado: `https://wgalmeida.com.br`
+- [x] Runtime validado sem dependencia de `/videos/hero/*.mp4` local no intro
+- [x] `robots.txt`, `sitemap.xml`, `sitemap-index.xml`, `video-sitemap.xml` respondendo `200`
+- [x] Home e `/blog` com `canonical` e `meta robots=index, follow`
+- [x] PageSpeed API por CLI validada com chave Google atual (`11/04/2026`): `runPagespeed` retornando `200` para `https://wgalmeida.com.br` (mobile e desktop) e `https://wgalmeida.com.br/blog` (mobile)
+- [x] Endpoint legado `google.com/ping?sitemap=...` confirmado como obsoleto (`404`); validacao de indexacao mantida por sitemap/robots e Search Console
