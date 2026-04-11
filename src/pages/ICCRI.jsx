@@ -1,4 +1,6 @@
 import SEO from '@/components/SEO'
+import ICCRILinksBlock from '@/components/ICCRILinksBlock'
+import LizAssistant from '@/components/LizAssistant'
 import { motion } from '@/lib/motion-lite'
 import { ArrowRight, BarChart3, Building2, Calculator, Landmark, Users } from 'lucide-react'
 import { useMemo, useState } from 'react'
@@ -254,6 +256,9 @@ export default function ICCRI() {
                 <li>Complexidade tecnica dos projetos</li>
               </ul>
             </div>
+
+            <LizAssistant context="custo" />
+            <ICCRILinksBlock context="custo" />
           </article>
 
           <aside className="lg:col-span-4 space-y-5">

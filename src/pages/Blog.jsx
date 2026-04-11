@@ -35,11 +35,25 @@ import {
   getBlogContextAssets,
   getBlogImageUrl,
 } from '@/data/blogImageManifest';
+import ICCRILinksBlock from '@/components/ICCRILinksBlock';
+import LizAssistant from '@/components/LizAssistant';
 
 const rawPostsByLocale = {
   'pt-BR': import.meta.glob('/src/content/blog/*.md', { as: 'raw', eager: true }),
   en: import.meta.glob('/src/content/blog/en/*.md', { as: 'raw', eager: true }),
   es: import.meta.glob('/src/content/blog/es/*.md', { as: 'raw', eager: true }),
+};
+
+const toSafeRawString = (rawValue) => {
+  if (typeof rawValue === 'string') return rawValue;
+  if (typeof rawValue?.default === 'string') return rawValue.default;
+  if (rawValue == null) return '';
+
+  try {
+    return String(rawValue?.default ?? rawValue);
+  } catch {
+    return '';
+  }
 };
 
 const estimateReadingTime = (text) => {
@@ -139,6 +153,14 @@ const extractFaqFromMarkdown = (markdown = '') => {
   return faq
     .filter((entry) => entry.question.endsWith('?') && entry.answer.length > 0)
     .slice(0, 8);
+};
+
+const resolveArticleDecisionContext = (article) => {
+  const searchText = `${article?.slug || ''} ${article?.title || ''} ${article?.excerpt || ''}`.toLowerCase();
+
+  if (/tempo|cronograma|prazo|etapas/.test(searchText)) return 'tempo';
+  if (/invest|valoriza|valorizacao|imobili|corretor|banco|avm/.test(searchText)) return 'investimento';
+  return 'custo';
 };
 
 const splitMarkdownByH2 = (markdown) => {
@@ -624,11 +646,16 @@ const Blog = () => {
     Object.entries(effectiveRawPosts)
       .map(([path, raw]) => {
         try {
-          const rawString = typeof raw === 'string' ? raw : (raw?.default || '');
+          const rawString = toSafeRawString(raw);
           const { data, content } = parseFrontmatter(rawString);
           const normalizedContent = stripMarkdownStrongEmphasis(content);
           const fallbackSlug = path.split('/').pop()?.replace('.md', '');
           const slugValue = data.slug || fallbackSlug;
+          const normalizedTags = Array.isArray(data.tags)
+            ? data.tags.map((tag) => String(tag).trim()).filter(Boolean)
+            : typeof data.tags === 'string'
+              ? data.tags.split(',').map((tag) => tag.trim()).filter(Boolean)
+              : [];
 
           return {
             title: data.title || t('blogPage.fallback.title'),
@@ -647,7 +674,7 @@ const Blog = () => {
             date: data.date || '2025-12-01',
             heroPosition: data.heroPosition || '50% 50%',
             featured: Boolean(data.featured),
-            tags: Array.isArray(data.tags) ? data.tags : [],
+            tags: normalizedTags,
             content: normalizedContent,
             tempoLeitura: estimateReadingTime(normalizedContent),
           };
@@ -845,6 +872,7 @@ const Blog = () => {
       sectionedContent.sections.length,
       articleContextImages.slice(1)
     );
+    const lizContext = resolveArticleDecisionContext(artigoAtual);
     const MarkdownRenderer = markdownRuntime?.ReactMarkdown;
     const markdownRemarkPlugins = markdownRuntime?.remarkGfm ? [markdownRuntime.remarkGfm] : [];
     const markdownRuntimeReady = Boolean(MarkdownRenderer);
@@ -1179,6 +1207,9 @@ const Blog = () => {
                 </div>
               )}
             </div>
+
+            <LizAssistant context={lizContext} className="mt-10" />
+            <ICCRILinksBlock context={lizContext} className="mt-8" />
 
             {/* Tags Section */}
             <div className="mt-12 pt-8 border-t border-gray-200">

@@ -310,9 +310,22 @@ const LANDING_PAGES = [
 
 // ─── Blog posts para o publicador social ──────────────────────────────────────
 const BLOG_RAW = import.meta.glob('/src/content/blog/*.md', { as: 'raw', eager: true })
+
+const toSafeRawString = (rawValue) => {
+  if (typeof rawValue === 'string') return rawValue
+  if (typeof rawValue?.default === 'string') return rawValue.default
+  if (rawValue == null) return ''
+
+  try {
+    return String(rawValue?.default ?? rawValue)
+  } catch {
+    return ''
+  }
+}
+
 const BLOG_POSTS = Object.entries(BLOG_RAW)
   .map(([path, raw]) => {
-    const rawString = typeof raw === 'string' ? raw : raw?.default || ''
+    const rawString = toSafeRawString(raw)
     const titleMatch = rawString.match(/^title:\s*["']?(.+?)["']?\s*$/m)
     const excerptMatch = rawString.match(/^excerpt:\s*["']?(.+?)["']?\s*$/m)
     const imageMatch = rawString.match(/^image:\s*["']?(.+?)["']?\s*$/m)

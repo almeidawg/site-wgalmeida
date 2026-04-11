@@ -6,6 +6,20 @@ const DEFAULT_COUNT = 53;
 
 const unique = (items) => [...new Set(items.filter(Boolean))];
 
+const hasApiErrorShape = (payload) => {
+  if (!payload || typeof payload !== 'object') return false;
+
+  const directCode = Number(payload.code);
+  const nestedCode = Number(payload.error?.code);
+  const statusText = String(payload.status || payload.error?.status || '').toUpperCase();
+
+  return (
+    Number.isFinite(directCode) && directCode >= 400
+  ) || (
+    Number.isFinite(nestedCode) && nestedCode >= 400
+  ) || statusText.includes('PERMISSION_DENIED');
+};
+
 const formatDate = (value, locale) => {
   if (!value) return '';
   const parsed = new Date(value);
@@ -79,6 +93,8 @@ export const useGoogleReviews = () => {
           if (!response.ok) continue;
 
           const payload = await response.json();
+          if (hasApiErrorShape(payload)) continue;
+
           const parsed = parsePayload(payload, i18n.language);
           if (!parsed || !isMounted) continue;
 
