@@ -51,6 +51,106 @@ const normalizeReview = (review, index) => ({
   photoUrl: review.authorAttribution?.photoUri || null,
 });
 
+const normalizeLegacyReview = (review, index) => ({
+  id: review.author_url
+    ? review.author_url.split('/').pop().slice(0, 24)
+    : `legacy-review-${index + 1}`,
+  name: review.author_name || 'Cliente WG',
+  rating: Number(review.rating || 0),
+  date: review.relative_time_description || '',
+  text: review.text || '',
+  avatar: review.author_name
+    ? review.author_name.trim().slice(0, 1).toUpperCase()
+    : 'W',
+  photoUrl: review.profile_photo_url || null,
+});
+
+const extractErrorReason = (errorPayload) =>
+  errorPayload?.error?.details?.find((detail) => detail?.reason)?.reason || '';
+
+const shouldTryLegacyFallback = (status, errorPayload) => {
+  const reason = extractErrorReason(errorPayload);
+  return (
+    status === 403 &&
+    (reason === 'API_KEY_SERVICE_BLOCKED' || reason === 'SERVICE_DISABLED')
+  );
+};
+
+const fetchPlacesNew = async ({ placeId, apiKey }) => {
+  const endpoint = `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?languageCode=pt-BR`;
+  const response = await fetch(endpoint, {
+    headers: {
+      'X-Goog-Api-Key': apiKey,
+      'X-Goog-FieldMask': 'id,rating,userRatingCount,reviews,displayName',
+    },
+  });
+
+  const bodyText = await response.text();
+  let payload = null;
+  try {
+    payload = bodyText ? JSON.parse(bodyText) : null;
+  } catch {
+    payload = null;
+  }
+
+  if (!response.ok) {
+    return {
+      ok: false,
+      status: response.status,
+      payload,
+      bodyText,
+    };
+  }
+
+  const reviews = Array.isArray(payload?.reviews)
+    ? payload.reviews.map(normalizeReview).slice(0, 5)
+    : [];
+
+  if (!reviews.length) {
+    return { ok: false, status: 204, payload };
+  }
+
+  return {
+    ok: true,
+    source: 'google_places_new_api',
+    averageRating: Number(payload.rating || fallback.averageRating),
+    reviewCount: Number(payload.userRatingCount || reviews.length),
+    reviews,
+  };
+};
+
+const fetchPlacesLegacy = async ({ placeId, apiKey }) => {
+  const endpoint = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${encodeURIComponent(placeId)}&language=pt-BR&fields=rating,user_ratings_total,reviews,name&reviews_sort=newest&key=${encodeURIComponent(apiKey)}`;
+  const response = await fetch(endpoint);
+
+  const payload = await response.json().catch(() => null);
+
+  const status = payload?.status;
+  if (!response.ok || (status && status !== 'OK')) {
+    return {
+      ok: false,
+      status: response.status,
+      payload,
+    };
+  }
+
+  const reviews = Array.isArray(payload?.result?.reviews)
+    ? payload.result.reviews.map(normalizeLegacyReview).slice(0, 5)
+    : [];
+
+  if (!reviews.length) {
+    return { ok: false, status: 204, payload };
+  }
+
+  return {
+    ok: true,
+    source: 'google_places_legacy_api',
+    averageRating: Number(payload?.result?.rating || fallback.averageRating),
+    reviewCount: Number(payload?.result?.user_ratings_total || reviews.length),
+    reviews,
+  };
+};
+
 export default async function handler(req, res) {
   res.setHeader('Cache-Control', 's-maxage=1800, stale-while-revalidate=86400');
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -62,38 +162,46 @@ export default async function handler(req, res) {
     return res.status(200).json(fallback);
   }
 
-  const endpoint = `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?languageCode=pt-BR`;
-
   try {
-    const response = await fetch(endpoint, {
-      headers: {
-        'X-Goog-Api-Key': apiKey,
-        'X-Goog-FieldMask': 'id,rating,userRatingCount,reviews,displayName',
-      },
-    });
-
-    if (!response.ok) {
-      console.error('Places API error:', response.status, await response.text());
-      return res.status(200).json(fallback);
+    const placesNewResult = await fetchPlacesNew({ placeId, apiKey });
+    if (placesNewResult.ok) {
+      return res.status(200).json({
+        averageRating: placesNewResult.averageRating,
+        reviewCount: placesNewResult.reviewCount,
+        source: placesNewResult.source,
+        sourceUrl: GOOGLE_MAPS_URL,
+        reviews: placesNewResult.reviews,
+      });
     }
 
-    const data = await response.json();
+    if (
+      shouldTryLegacyFallback(placesNewResult.status, placesNewResult.payload)
+    ) {
+      const placesLegacyResult = await fetchPlacesLegacy({ placeId, apiKey });
+      if (placesLegacyResult.ok) {
+        return res.status(200).json({
+          averageRating: placesLegacyResult.averageRating,
+          reviewCount: placesLegacyResult.reviewCount,
+          source: placesLegacyResult.source,
+          sourceUrl: GOOGLE_MAPS_URL,
+          reviews: placesLegacyResult.reviews,
+        });
+      }
 
-    const reviews = Array.isArray(data.reviews)
-      ? data.reviews.map(normalizeReview).slice(0, 5)
-      : [];
-
-    if (!reviews.length) {
-      return res.status(200).json(fallback);
+      console.error(
+        'Places Legacy API error:',
+        placesLegacyResult.status,
+        JSON.stringify(placesLegacyResult.payload || {})
+      );
+    } else if (!placesNewResult.ok) {
+      console.error(
+        'Places API (New) error:',
+        placesNewResult.status,
+        placesNewResult.bodyText || JSON.stringify(placesNewResult.payload || {})
+      );
     }
 
-    return res.status(200).json({
-      averageRating: Number(data.rating || fallback.averageRating),
-      reviewCount: Number(data.userRatingCount || reviews.length),
-      source: 'google_places_new_api',
-      sourceUrl: GOOGLE_MAPS_URL,
-      reviews,
-    });
+    return res.status(200).json(fallback);
   } catch (err) {
     console.error('google-reviews handler error:', err);
     return res.status(200).json(fallback);
