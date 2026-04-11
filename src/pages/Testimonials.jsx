@@ -66,7 +66,7 @@ const Testimonials = () => {
       />
 
       {/* Hero elegante */}
-      <section className="wg-page-hero hero-under-header bg-wg-black">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -87,38 +87,40 @@ const Testimonials = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-wg-black/40 via-wg-black/60 to-wg-black/80"></div>
         </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-wg-orange tracking-[0.3em] uppercase text-sm mb-4 block"
-          >
-            {t('testimonialsPage.hero.kicker')}
-          </motion.span>
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="wg-page-hero-kicker text-wg-orange"
+            >
+              {t('testimonialsPage.hero.kicker')}
+            </motion.span>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-inter font-light mb-6 tracking-tight"
-          >
-            {t('testimonialsPage.hero.title')}
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="wg-page-hero-title"
+            >
+              {t('testimonialsPage.hero.title')}
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl font-light max-w-3xl mx-auto opacity-90"
-          >
-            {t('testimonialsPage.hero.subtitle')}
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="wg-page-hero-subtitle max-w-3xl"
+            >
+              {t('testimonialsPage.hero.subtitle')}
+            </motion.p>
+          </div>
         </div>
       </section>
 
       {/* Seção Google Reviews */}
-      <section className="section-padding bg-white relative overflow-hidden">
+      <section className="section-padding-tight-top bg-white relative overflow-hidden">
         {/* Elementos decorativos */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 right-0 w-96 h-96 bg-wg-orange rounded-full blur-3xl" />

@@ -190,49 +190,90 @@ const EasyRealStateLanding = () => {
       />
 
       {/* HERO */}
-      <section className="wg-page-hero hero-under-header bg-wg-black">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-25"
-          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-wg-black/90 via-wg-black/70 to-wg-black" />
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1.08 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-25"
+            style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-wg-black/90 via-wg-black/70 to-wg-black" />
+        </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4 py-16">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm uppercase tracking-wider mb-6">
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.08 }}
+              className="wg-page-hero-kicker text-wg-orange"
+            >
               Para Corretores e Imobiliárias
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 leading-tight">
-              Quanto vale o imóvel
-              <br />
-              <span className="text-wg-orange">do seu cliente?</span>
-            </h1>
-            <p className="text-xl text-white/80 mb-4 max-w-3xl mx-auto leading-relaxed">
-              Calculadora de valor de mercado por m² com dados reais de São Paulo.
-              Apresente avaliações profissionais em segundos · e ainda mostre o custo de reforma.
-            </p>
-            <p className="text-sm text-white/40 mb-10">
-              Dados: FipeZAP · DataZAP · QuintoAndar · 53+ transações reais em SP
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            </motion.span>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.18 }}
+              className="wg-page-hero-title"
+            >
+              Quanto vale o imóvel <span className="text-wg-orange">do seu cliente?</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="wg-page-hero-subtitle max-w-3xl"
+            >
+              Calculadora de valor de mercado por m² com dados reais de São Paulo. Apresente avaliações profissionais em segundos e ainda mostre o custo de reforma.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="wg-page-hero-body max-w-3xl"
+            >
+              Dados: FipeZAP · DataZAP · QuintoAndar · 53+ transações reais em SP.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="wg-page-hero-actions"
+            >
               <a href="https://easyrealstate.wgalmeida.com.br/calculo" target="_blank" rel="noopener noreferrer">
-                <Button className="btn-apple text-lg px-8 py-4">
-                  <Calculator className="mr-2 w-5 h-5" />
+                <Button className="btn-apple text-base px-6 py-3">
+                  <Calculator className="mr-2 w-4 h-4" />
                   Calcular agora · é grátis
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
-              <a href="tel:+5511984650002" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
+              <a href="tel:+5511984650002" className="inline-flex items-center justify-center rounded-2xl border border-white/45 bg-white/5 px-6 py-3 text-sm text-white transition-colors hover:bg-white hover:text-wg-black">
                 Quero site + sistema
               </a>
-            </div>
-            <p className="text-white/30 text-sm mt-6">Grátis para começar · Sem cartão de crédito</p>
-          </motion.div>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-xs text-white/40"
+            >
+              Grátis para começar · Sem cartão de crédito
+            </motion.p>
+          </div>
         </div>
       </section>
 
       {/* DUAS MODALIDADES */}
-      <section className="section-padding bg-wg-gray-light">
+      <section className="section-padding-tight-top bg-wg-gray-light">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Duas formas de usar</span>

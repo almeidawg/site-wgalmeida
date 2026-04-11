@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
-import { Box, Lock, Smartphone, Truck, ShieldCheck, CheckCircle2, ArrowRight, Package } from 'lucide-react';
+import { Box, Smartphone, Truck, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
@@ -48,7 +48,7 @@ const EasyLocker = () => {
       />
 
       {/* Hero Impactante */}
-      <section className="wg-page-hero hero-under-header bg-wg-black">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -65,52 +65,54 @@ const EasyLocker = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-wg-orange/40 via-wg-black/70 to-wg-black/90"></div>
         </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", duration: 1 }}
-            className="w-20 h-20 bg-wg-orange rounded-3xl mx-auto mb-8 flex items-center justify-center shadow-[0_0_30px_#F25C2660]"
-          >
-            <Lock className="w-10 h-10 text-white" />
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-inter font-light mb-6 tracking-tighter"
-          >
-            EASY <span className="text-wg-orange">LOCKER</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl font-light max-w-2xl mx-auto opacity-90"
-          >
-            A revolução na recepção de encomendas para condomínios inteligentes.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-10"
-          >
-            <Link
-              to="/solicite-proposta"
-              className="btn-primary px-10 py-4 text-lg rounded-full"
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="wg-page-hero-kicker text-white/78"
             >
-              Solicitar Orçamento
-            </Link>
-          </motion.div>
+              Armários Inteligentes Premium
+            </motion.span>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="wg-page-hero-title"
+            >
+              Easy <span className="text-wg-orange">Locker</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="wg-page-hero-subtitle max-w-3xl"
+            >
+              A revolução na recepção de encomendas para condomínios inteligentes.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="wg-page-hero-actions"
+            >
+              <Link
+                to="/solicite-proposta"
+                className="inline-flex items-center justify-center rounded-full bg-white/12 px-6 py-3 text-sm text-white transition-colors hover:bg-white/20"
+              >
+                Solicitar Orçamento
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Diferenciais */}
-      <section className="section-padding bg-white">
+      <section className="section-padding-tight-top bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((item, index) => (

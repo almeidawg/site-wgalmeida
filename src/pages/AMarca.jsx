@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { withBasePath } from '@/utils/assetPaths';
 
 const BRAND_LOGO_SRC = withBasePath('/images/logo-192.webp');
@@ -64,15 +64,10 @@ const AMarca = () => {
               {t('brandPage.hero.kicker')}
             </span>
             <h1 className="wg-page-hero-title">
-              <Trans i18nKey="brandPage.hero.title">
-                A Marca <span className="text-white">WG Almeida</span>
-              </Trans>
+              A Marca WG Almeida
             </h1>
             <p className="wg-page-hero-subtitle max-w-3xl">
-              {t('brandPage.hero.quote')}
-            </p>
-            <p className="wg-page-hero-body max-w-3xl">
-              {t('brandPage.hero.subtitle')}
+              Nossa marca traduz uma operação integrada entre arquitetura, engenharia e marcenaria, com mais previsibilidade, clareza e excelência na entrega.
             </p>
           </motion.div>
           </div>
@@ -80,7 +75,7 @@ const AMarca = () => {
       </section>
 
       {/* Proposito Section */}
-      <section className="bg-white pb-12 pt-8 md:pb-16 md:pt-10">
+      <section className="section-padding-tight-top bg-white">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
             <motion.div

@@ -48,7 +48,7 @@ const BuildTech = () => {
       />
 
       {/* Hero Tecnológico */}
-      <section className="wg-page-hero hero-under-header bg-wg-black">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
@@ -65,64 +65,55 @@ const BuildTech = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-wg-blue/60 via-wg-blue/80 to-wg-black/90"></div>
         </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4">
-          <motion.div
-            className="flex items-center justify-center gap-4 mb-8"
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-wg-orange" />
-            <div className="w-2 h-2 bg-wg-orange rounded-full shadow-[0_0_10px_#F25C26]" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-wg-orange" />
-          </motion.div>
-
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-wg-orange tracking-[0.3em] uppercase text-sm mb-4 block"
-          >
-            A Próxima Fronteira da Construção
-          </motion.span>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-inter font-light mb-6 tracking-tight"
-          >
-            WG <span className="text-wg-orange">Build.tech</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl font-light max-w-3xl mx-auto opacity-90"
-          >
-            Transformamos o canteiro de obras em um ecossistema inteligente orientado por dados e IA.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8"
-          >
-            <Link
-              to="/solicite-proposta"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-wg-orange text-white rounded-full hover:bg-wg-orange/90 transition-all shadow-lg hover:shadow-wg-orange/20"
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="wg-page-hero-kicker text-wg-orange"
             >
-              Falar com Especialista
-              <Zap className="w-4 h-4 fill-white" />
-            </Link>
-          </motion.div>
+              A Próxima Fronteira da Construção
+            </motion.span>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="wg-page-hero-title"
+            >
+              WG <span className="text-wg-orange">Build.tech</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="wg-page-hero-subtitle max-w-3xl"
+            >
+              Transformamos o canteiro de obras em um ecossistema inteligente orientado por dados e IA.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="wg-page-hero-actions"
+            >
+              <Link
+                to="/solicite-proposta"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white/12 px-6 py-3 text-sm text-white transition-colors hover:bg-white/20"
+              >
+                Falar com Especialista
+                <Zap className="w-4 h-4 fill-white" />
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Serviços Tech */}
-      <section className="section-padding bg-wg-black text-white relative overflow-hidden">
+      <section className="section-padding-tight-top bg-wg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-wg-blue rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-wg-orange rounded-full blur-3xl" />

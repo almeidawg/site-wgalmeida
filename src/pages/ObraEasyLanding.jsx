@@ -172,51 +172,92 @@ const ObraEasyLanding = () => {
       />
 
       {/* HERO */}
-      <section className="wg-page-hero hero-under-header bg-wg-black">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-wg-black/90 via-wg-black/70 to-wg-black" />
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1.08 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-30"
+            style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-wg-black/90 via-wg-black/70 to-wg-black" />
+        </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-4 py-16">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm uppercase tracking-wider mb-6">
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.08 }}
+              className="wg-page-hero-kicker text-wg-orange"
+            >
               Plataforma de Gestão de Obras
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light mb-6 leading-tight">
-              Gerencie sua obra do orçamento
-              <br />
-              <span className="text-wg-orange">à entrega</span>
-            </h1>
-            <p className="text-xl text-white/80 mb-4 max-w-3xl mx-auto leading-relaxed">
-              Estudo de Viabilidade Financeira, cronograma automático, contratos digitais e
-              controle financeiro em uma plataforma simples e profissional.
-            </p>
-            <p className="text-sm text-white/50 mb-10">
-              Dados de referência: SINAPI · CUB/SINDUSCON · FipeZAP, combinados com curadoria operacional WG Almeida
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            </motion.span>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.18 }}
+              className="wg-page-hero-title"
+            >
+              Gerencie sua obra do orçamento <span className="text-wg-orange">à entrega</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="wg-page-hero-subtitle max-w-3xl"
+            >
+              Estudo de Viabilidade Financeira, cronograma automático, contratos digitais e controle financeiro em uma plataforma simples e profissional.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="wg-page-hero-body max-w-3xl"
+            >
+              Dados de referência: SINAPI · CUB/SINDUSCON · FipeZAP, combinados com curadoria operacional WG Almeida.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="wg-page-hero-actions"
+            >
               <a href="https://obraeasy.wgalmeida.com.br/evf4" target="_blank" rel="noopener noreferrer">
-                <Button className="btn-apple text-lg px-8 py-4">
-                  <Calculator className="mr-2 w-5 h-5" />
+                <Button className="btn-apple text-base px-6 py-3">
+                  <Calculator className="mr-2 w-4 h-4" />
                   Calcular minha obra grátis
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
               <a href="https://obraeasy.wgalmeida.com.br/landing/parceiro" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-wg-black transition-all rounded-2xl px-6 py-4 text-lg">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-wg-black transition-all rounded-2xl px-6 py-3 text-sm">
                   Sou corretor ou parceiro
                 </Button>
               </a>
-            </div>
-            <p className="text-white/40 text-sm mt-6">Grátis para começar · Sem cartão de crédito · Cancele quando quiser</p>
-          </motion.div>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-xs text-white/50"
+            >
+              Grátis para começar · Sem cartão de crédito · Cancele quando quiser
+            </motion.p>
+          </div>
         </div>
       </section>
 
       {/* PARA QUEM É */}
-      <section className="section-padding bg-white">
+      <section className="section-padding-tight-top bg-white">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Para quem é o ObraEasy</span>

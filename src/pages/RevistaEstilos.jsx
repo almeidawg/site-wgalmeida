@@ -7,7 +7,6 @@ import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import {
   Palette,
   ArrowRight,
-  ChevronRight,
   Heart,
   Eye,
   BookOpen
@@ -144,9 +143,9 @@ const RevistaEstilos = () => {
       />
 
       {/* Hero Section */}
-      <section className="wg-page-hero hero-under-header bg-wg-black">
+      <section className="wg-page-hero wg-page-hero--store hero-under-header">
         <motion.div
-          className="absolute inset-0"
+          className="absolute inset-0 z-0"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -160,66 +159,62 @@ const RevistaEstilos = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-wg-black/60 via-wg-black/70 to-wg-black" />
         </motion.div>
 
-        <div className="relative z-10 container-custom text-center text-white px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Palette className="w-8 h-8 text-white/78" />
-              <span className="text-sm font-light uppercase tracking-widest text-white/78">
-                Revista de Estilos
-              </span>
-            </div>
+        <div className="container-custom">
+          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.08 }}
+              className="wg-page-hero-kicker text-white/78"
+            >
+              Revista de Estilos
+            </motion.span>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-inter font-light mb-6 leading-tight">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.18 }}
+              className="wg-page-hero-title"
+            >
               Qual é o Seu Estilo?
-            </h1>
+            </motion.h1>
 
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
-              Explore nossa curadoria de estilos para ambientes residenciais.
-              Descubra qual deles reflete sua personalidade e transforme seu espaço em um lar único.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="wg-page-hero-subtitle max-w-3xl"
+            >
+              Explore nossa curadoria de estilos para ambientes residenciais. Descubra qual deles reflete sua personalidade e transforme seu espaço em um lar único.
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="flex items-center justify-center gap-4"
+              className="wg-page-hero-actions text-xs text-white/72"
             >
-              <div className="flex items-center gap-2 text-white/70">
-                <BookOpen className="w-5 h-5" />
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-4 h-4" />
                 <span>{estilos.length} Estilos</span>
               </div>
-              <div className="w-px h-6 bg-white/30" />
-              <div className="flex items-center gap-2 text-white/70">
-                <Eye className="w-5 h-5" />
+              <div className="h-4 w-px bg-white/25" />
+              <div className="flex items-center gap-2">
+                <Eye className="w-4 h-4" />
                 <span>Guia Completo</span>
               </div>
-              <div className="w-px h-6 bg-white/30" />
-              <div className="flex items-center gap-2 text-white/70">
-                <Heart className="w-5 h-5" />
+              <div className="h-4 w-px bg-white/25" />
+              <div className="flex items-center gap-2">
+                <Heart className="w-4 h-4" />
                 <span>Inspiração</span>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <ChevronRight className="w-8 h-8 text-white rotate-90" />
-        </motion.div>
       </section>
 
       {/* Styles Grid */}
-      <section className="section-padding bg-gradient-to-b from-white to-gray-50">
+      <section className="section-padding-tight-top bg-gradient-to-b from-white to-gray-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

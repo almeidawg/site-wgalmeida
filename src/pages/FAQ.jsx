@@ -185,7 +185,7 @@ export default function FAQPage() {
       />
 
       <div className="faq-page">
-        <section className="relative faq-hero hero-under-header overflow-hidden">
+        <section className="relative wg-page-hero wg-page-hero--store faq-hero hero-under-header overflow-hidden">
           <motion.div
             className="absolute inset-0 z-0"
             initial={{ scale: 1.08 }}
@@ -208,37 +208,12 @@ export default function FAQPage() {
 
           <div className="relative z-10 container-custom faq-hero-grid">
             <div className="faq-hero-copy">
-              <span className="faq-kicker">FAQ Estratégico</span>
-              <h1>Perguntas que ajudam a entender processo, escopo e contratação</h1>
-              <p>
+              <span className="wg-page-hero-kicker text-wg-orange">FAQ Estratégico</span>
+              <h1 className="wg-page-hero-title">Perguntas que ajudam a entender processo, escopo e contratação</h1>
+              <p className="wg-page-hero-subtitle">
                 Reunimos aqui as dúvidas que mais ajudam quem está avaliando reforma, arquitetura,
                 marcenaria e jornada turn key. A ideia é deixar a leitura clara, objetiva e útil para a próxima decisão.
               </p>
-            </div>
-
-            <div className="faq-hero-panel">
-              <div className="faq-insight-card">
-                <span className="faq-card-label">O que você encontra aqui</span>
-                <p className="faq-insight-title">Respostas diretas para dúvidas reais de obra</p>
-                <p>
-                  O conteúdo foi organizado para explicar etapas, custos, documentação, tecnologia,
-                  bairros atendidos e como a jornada WG Almeida funciona na prática.
-                </p>
-              </div>
-              <div className="faq-insight-list">
-                <div>
-                  <span>01</span>
-                  <p>Ajuda a comparar cenários antes de pedir proposta.</p>
-                </div>
-                <div>
-                  <span>02</span>
-                  <p>Conecta leitura editorial com páginas de serviço e atendimento.</p>
-                </div>
-                <div>
-                  <span>03</span>
-                  <p>Evita ruído e concentra o que realmente importa para decisão.</p>
-                </div>
-              </div>
             </div>
           </div>
         </section>

@@ -241,6 +241,10 @@
     @apply py-12 md:py-16;
   }
 
+  .section-padding-tight-top {
+    @apply pt-8 pb-16 md:pt-8 md:pb-20;
+  }
+
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
@@ -439,6 +443,11 @@
     color: inherit;
   }
 
+  strong,
+  b {
+    font-weight: 300 !important;
+  }
+
   .wg-card-editorial {
     @apply overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-[#F8F8F8] shadow-sm;
   }
@@ -461,8 +470,8 @@
   .wg-page-hero {
     @apply relative flex items-center justify-center overflow-hidden;
     box-sizing: border-box;
-    --hero-min-height: 100vh;
-    --hero-min-height-mobile: 100dvh;
+    --hero-min-height: 34vh;
+    --hero-min-height-mobile: 34dvh;
     --hero-height: auto;
     --hero-padding-top: var(--header-height);
     --hero-padding-bottom: clamp(3rem, 6vw, 4.5rem);
@@ -473,18 +482,51 @@
 
   @supports (height: 100svh) {
     .wg-page-hero {
-      --hero-min-height: 100svh;
+      --hero-min-height: 34svh;
     }
   }
 
   @supports (height: 100dvh) {
     .wg-page-hero {
-      --hero-min-height: 100dvh;
+      --hero-min-height-mobile: 34dvh;
+    }
+  }
+
+  .wg-page-hero--full {
+    --hero-min-height: 100vh;
+    --hero-min-height-mobile: 100dvh;
+  }
+
+  @supports (height: 100svh) {
+    .wg-page-hero--full {
+      --hero-min-height: 100svh;
+    }
+  }
+
+  @supports (height: 100dvh) {
+    .wg-page-hero--full {
+      --hero-min-height-mobile: 100dvh;
     }
   }
 
   .wg-page-hero--store {
+    --hero-height: clamp(22rem, 34vh, 27rem);
+    --hero-min-height: var(--hero-height);
+    --hero-min-height-mobile: clamp(20rem, 34dvh, 23rem);
     --hero-padding-bottom: clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  @supports (height: 100svh) {
+    .wg-page-hero--store {
+      --hero-height: clamp(22rem, 34svh, 27rem);
+      --hero-min-height: var(--hero-height);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .wg-page-hero--store {
+      --hero-height: var(--hero-min-height-mobile);
+    }
   }
 
   .wg-page-hero-content {
@@ -503,12 +545,33 @@
 
   .wg-page-hero-title {
     font-family: 'Suisse Intl', 'Inter', sans-serif;
-    font-size: clamp(2.45rem, 5vw, 4.6rem);
-    line-height: 0.98;
-    letter-spacing: -0.04em;
+    font-size: clamp(2.55rem, 4.3vw, 4.5rem);
+    line-height: 0.94;
+    letter-spacing: -0.05em;
     font-weight: 300;
     color: #ffffff;
     text-wrap: balance;
+  }
+
+  @media (min-width: 1024px) {
+    .wg-page-hero-title {
+      font-size: clamp(2.15rem, 2.6vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.038em;
+    }
+  }
+
+  .wg-page-hero:not(.wg-page-hero--full) .wg-page-hero-title {
+    max-width: 26ch;
+    font-size: clamp(1.7rem, 2.5vw, 2.8rem);
+    line-height: 1.06;
+    letter-spacing: -0.034em;
+  }
+
+  .wg-page-hero:not(.wg-page-hero--full) .wg-page-hero-subtitle,
+  .wg-page-hero:not(.wg-page-hero--full) .wg-page-hero-body {
+    font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+    line-height: 1.62;
   }
 
   .wg-page-hero-subtitle {
