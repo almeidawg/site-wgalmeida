@@ -58,6 +58,7 @@ const Wnomas = lazy(() => import('@/pages/Wnomas'))
 const EasyLocker = lazy(() => import('@/pages/EasyLocker'))
 const BuildTech = lazy(() => import('@/pages/BuildTech'))
 const ICCRI = lazy(() => import('@/pages/ICCRI'))
+const ICCRIParaImobiliarias = lazy(() => import('@/pages/ICCRIParaImobiliarias'))
 
 // Landing Pages SaaS · ObraEasy e EasyRealState
 const ObraEasyLanding      = lazy(() => import('@/pages/ObraEasyLanding'))
@@ -243,6 +244,7 @@ function App() {
               <Route path="/easylocker" element={<EasyLocker />} />
               <Route path="/buildtech" element={<BuildTech />} />
               <Route path="/iccri" element={<ICCRI />} />
+              <Route path="/iccri-para-imobiliarias" element={<ICCRIParaImobiliarias />} />
               <Route path="/obraeasy" element={<ObraEasyLanding />} />
               <Route path="/easy-real-state" element={<EasyRealStateLanding />} />
               <Route

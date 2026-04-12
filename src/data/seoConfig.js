@@ -107,6 +107,12 @@ export const SEO_CONFIG = {
     "Indice proprietario da WG Almeida para estimar custo de reforma por m2 com base em dados reais de obras e variacao de mercado.",
     `${BASE_URL}/og-engenharia-1200x630.jpg`
   ),
+  "/iccri-para-imobiliarias": page(
+    "/iccri-para-imobiliarias",
+    "ICCRI para Imobiliarias, Corretores e Bancos | WG Almeida",
+    "Use o ICCRI como referencia tecnica para precificacao, analise de viabilidade e apoio comercial no mercado imobiliario.",
+    `${BASE_URL}/og-engenharia-1200x630.jpg`
+  ),
   "/faq": page(
     "/faq",
     "FAQ | Grupo WG Almeida",

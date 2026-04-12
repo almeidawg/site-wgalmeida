@@ -20,7 +20,8 @@ import {
   Camera,
   MessagesSquare,
   FolderOpen,
-  Palette
+  Palette,
+  TrendingUp
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AnimatedStrokes from '@/components/AnimatedStrokes';
@@ -36,6 +37,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
 import { buildUnsplashSrcSet, normalizeUnsplashImageUrl } from '@/lib/unsplash';
 import { withBasePath } from '@/utils/assetPaths';
+import { trackCtaClick } from '@/lib/analytics';
 
 const editorialScale = {
   kicker: 'text-[11px] font-light uppercase tracking-[0.18em]',
@@ -490,6 +492,92 @@ const Home = () => {
                 </Trans>
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== BLOCO ICCRI (AUTORIDADE + AQUISICAO) ========== */}
+      <section className="py-10 bg-white border-y border-[#ECEFF3]">
+        <div className="container-custom">
+          <div className="rounded-2xl border border-[#DCE3EE] bg-[#F8FAFC] p-6 md:p-8">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-8">
+                <span className="text-wg-blue font-light text-xs tracking-[0.2em] uppercase mb-3 block">
+                  ICCRI 2026
+                </span>
+                <h2 className="text-2xl md:text-3xl font-inter font-light text-wg-black mb-4 tracking-tight">
+                  Referencia tecnica para custo de reforma e decisao imobiliaria
+                </h2>
+                <p className="text-[15px] md:text-base leading-relaxed text-[#4C4C4C] mb-5">
+                  O ICCRI conecta dados reais de obra com simulacao de custo, EVF e AVM.
+                  Cliente final, corretor, imobiliaria e banco usam a mesma base para decidir com previsibilidade.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-[#334155]">
+                  <p className="flex items-center gap-2">
+                    <Calculator className="w-4 h-4 text-wg-orange" />
+                    Simulacao de custo por m2
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-wg-blue" />
+                    Uso profissional para mercado imobiliario
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-wg-green" />
+                    Base para viabilidade e valorizacao
+                  </p>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 space-y-3">
+                <Link
+                  to="/iccri"
+                  onClick={() => {
+                    trackCtaClick({
+                      ctaId: 'home_iccri_index',
+                      ctaLabel: 'Ver indice ICCRI',
+                      ctaContext: 'home_iccri_block',
+                      ctaDestination: '/iccri',
+                    });
+                  }}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-wg-orange px-4 py-3 text-sm text-white"
+                >
+                  Ver indice ICCRI
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/iccri-para-imobiliarias"
+                  onClick={() => {
+                    trackCtaClick({
+                      ctaId: 'home_iccri_b2b',
+                      ctaLabel: 'ICCRI para parceiros',
+                      ctaContext: 'home_iccri_block',
+                      ctaDestination: '/iccri-para-imobiliarias',
+                    });
+                  }}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-wg-blue px-4 py-3 text-sm text-wg-blue"
+                >
+                  ICCRI para parceiros
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="https://obraeasy.wgalmeida.com.br/evf4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    trackCtaClick({
+                      ctaId: 'home_iccri_obraeasy',
+                      ctaLabel: 'Simular EVF no Obra Easy',
+                      ctaContext: 'home_iccri_block',
+                      ctaDestination: 'https://obraeasy.wgalmeida.com.br/evf4',
+                    });
+                  }}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#D0D7E2] bg-white px-4 py-3 text-sm text-[#1F2937]"
+                >
+                  Simular EVF no Obra Easy
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

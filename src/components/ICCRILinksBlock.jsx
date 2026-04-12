@@ -1,5 +1,6 @@
 import { BarChart3, Calculator, ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { trackCtaClick } from '@/lib/analytics'
 
 const CONTEXT_LABEL = {
   custo: 'custo de reforma',
@@ -76,6 +77,14 @@ export default function ICCRILinksBlock({ context = 'custo', className = '' }) {
           href="https://obraeasy.wgalmeida.com.br/evf4"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            trackCtaClick({
+              ctaId: 'iccri_links_calculadora',
+              ctaLabel: 'Acessar calculadora',
+              ctaContext: `iccri_links_${context}`,
+              ctaDestination: 'https://obraeasy.wgalmeida.com.br/evf4',
+            })
+          }}
           className="inline-flex items-center gap-2 rounded-lg bg-wg-orange px-4 py-2 text-sm text-white"
         >
           Acessar calculadora
