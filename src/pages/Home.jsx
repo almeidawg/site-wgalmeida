@@ -38,6 +38,7 @@ import { SCHEMAS } from '@/data/schemaConfig';
 import { buildUnsplashSrcSet, normalizeUnsplashImageUrl } from '@/lib/unsplash';
 import { withBasePath } from '@/utils/assetPaths';
 import { trackCtaClick } from '@/lib/analytics';
+import { PRODUCT_URLS } from '@/data/company';
 
 const editorialScale = {
   kicker: 'text-[11px] font-light uppercase tracking-[0.18em]',
@@ -560,7 +561,7 @@ const Home = () => {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href="https://obraeasy.wgalmeida.com.br/evf4"
+                  href=`${PRODUCT_URLS.obraeasy}/evf4`
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
@@ -568,7 +569,7 @@ const Home = () => {
                       ctaId: 'home_iccri_obraeasy',
                       ctaLabel: 'Simular EVF no Obra Easy',
                       ctaContext: 'home_iccri_block',
-                      ctaDestination: 'https://obraeasy.wgalmeida.com.br/evf4',
+                      ctaDestination: `${PRODUCT_URLS.obraeasy}/evf4`,
                     });
                   }}
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#D0D7E2] bg-white px-4 py-3 text-sm text-[#1F2937]"

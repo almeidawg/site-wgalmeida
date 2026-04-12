@@ -16,6 +16,7 @@ import {
   Phone
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { COMPANY } from '@/data/company';
 
 const ArquiteturaCorporativa = () => {
   const pageUrl = 'https://wgalmeida.com.br/arquitetura-corporativa';
@@ -113,7 +114,7 @@ const ArquiteturaCorporativa = () => {
     "provider": {
       "@type": "Organization",
       "name": "Grupo WG Almeida",
-      "telephone": "+5511984650002"
+      "telephone": COMPANY.phoneRaw
     },
     "areaServed": {
       "@type": "City",
@@ -372,9 +373,9 @@ const ArquiteturaCorporativa = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <a href="tel:+5511984650002" className="btn-hero-outline">
+              <a href={`tel:${COMPANY.phoneRaw}`} className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
-                +55 (11) 98465-0002
+                {COMPANY.phone}
               </a>
             </div>
           </motion.div>

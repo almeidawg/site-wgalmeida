@@ -9,6 +9,7 @@ import { Clock, Loader2, Mail, MapPin, MessageCircle, Phone, Send } from 'lucide
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSearchParams } from 'react-router-dom'
+import { COMPANY } from '@/data/company';
 
 // Animações elegantes
 const fadeInUp = {
@@ -115,11 +116,11 @@ const Contact = () => {
           mainEntity: {
             '@type': 'Organization',
             name: 'Grupo WG Almeida',
-            telephone: '+5511984650002',
-            email: 'contato@wgalmeida.com.br',
+            telephone: COMPANY.phoneRaw,
+            email: COMPANY.email,
             contactPoint: {
               '@type': 'ContactPoint',
-              telephone: '+5511984650002',
+              telephone: COMPANY.phoneRaw,
               contactType: 'customer service',
               availableLanguage: 'Portuguese',
               areaServed: 'BR',
@@ -241,7 +242,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="text-[15px] leading-relaxed text-wg-gray transition-colors hover:text-wg-orange"
                     >
-                      +55 (11) 98465-0002
+                      {COMPANY.phone}
                     </a>
                     <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-wg-gray/65">
                       WhatsApp e ligação
@@ -264,7 +265,7 @@ const Contact = () => {
                       {t('contactPage.info.emailLabel')}
                     </p>
                     <a
-                      href="mailto:contato@wgalmeida.com.br"
+                      href={`mailto:${COMPANY.email}`}
                       className="text-[15px] leading-relaxed text-wg-gray transition-colors hover:text-wg-blue"
                     >
                       contato@wgalmeida.com.br

@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { GOOGLE_WRITE_REVIEW_URL } from '@/constants/googleReviews';
 import useGoogleReviews from '@/hooks/useGoogleReviews';
 import { BrandRating } from '@/components/BrandStar';
+import { COMPANY } from '@/data/company';
 
 const GOOGLE_MAPS_URL = 'https://maps.google.com/?q=WG+Almeida+Arquitetura+São+Paulo';
 
@@ -47,8 +48,8 @@ const Testimonials = () => {
           "@type": "ProfessionalService",
           name: "Grupo WG Almeida",
           url: "https://wgalmeida.com.br",
-          telephone: "+5511984650002",
-          email: "contato@wgalmeida.com.br",
+          telephone: COMPANY.phoneRaw,
+          email: COMPANY.email,
           address: {
             "@type": "PostalAddress",
             addressLocality: "Sao Paulo",

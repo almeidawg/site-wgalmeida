@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { getSEOConfig } from '@/data/seoConfig';
+import { COMPANY } from '@/data/company';
 
 /**
  * Componente SEO - gerencia meta tags, canonical e JSON-LD por rota.
@@ -134,7 +135,7 @@ export function SEO({
       <meta name="language" content="Portuguese" />
       <meta httpEquiv="content-language" content="pt-BR" />
       <meta name="author" content="Grupo WG Almeida" />
-      <meta name="contact" content="contato@wgalmeida.com.br" />
+      <meta name="contact" content={COMPANY.email} />
       <meta name="theme-color" content="#1a1a1a" />
 
       {/* Open Graph */}
@@ -202,8 +203,8 @@ export const schemas = {
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase()
       .replace(/\s+/g, '-')}`,
-    telephone: '+5511984650002',
-    email: 'contato@wgalmeida.com.br',
+    telephone: COMPANY.phoneRaw,
+    email: COMPANY.email,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'São Paulo',

@@ -6,6 +6,7 @@ import { useCart } from '@/hooks/useCart';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from '@/components/LanguageSelector';
 import { withBasePath } from '@/utils/assetPaths';
+import { PRODUCT_URLS } from '@/data/company';
 
 const ShoppingCart = lazy(() => import('@/components/ShoppingCart'));
 
@@ -21,8 +22,8 @@ const Header = () => {
   const { cartItems } = useCart();
   const { t } = useTranslation();
 
-  const WG_EASY_URL = 'https://easy.wgalmeida.com.br';
-  const OBRA_EASY_URL = 'https://obraeasy.wgalmeida.com.br';
+  const WG_EASY_URL = PRODUCT_URLS.wgeasy;
+  const OBRA_EASY_URL = PRODUCT_URLS.obraeasy;
   const MANAGEMENT_URL = '/admin';
   const location = useLocation();
 

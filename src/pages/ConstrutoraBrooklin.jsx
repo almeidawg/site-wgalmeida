@@ -4,6 +4,7 @@ import { motion } from '@/lib/motion-lite';
 import { withBasePath } from '@/utils/assetPaths';
 import { Link } from 'react-router-dom';
 import {
+import { COMPANY } from '@/data/company';
   ArrowRight,
   Building,
   CheckCircle,
@@ -86,7 +87,7 @@ const ConstrutoraBrooklin = () => {
     "provider": {
       "@type": "Organization",
       "name": "Grupo WG Almeida",
-      "telephone": "+5511984650002"
+      "telephone": COMPANY.phoneRaw
     },
     "areaServed": {
       "@type": "Neighborhood",
@@ -353,9 +354,9 @@ const ConstrutoraBrooklin = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <a href="tel:+5511984650002" className="btn-hero-outline">
+              <a href={`tel:${COMPANY.phoneRaw}`} className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
-                +55 (11) 98465-0002
+                {COMPANY.phone}
               </a>
             </div>
           </motion.div>

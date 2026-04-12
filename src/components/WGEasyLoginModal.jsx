@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { X, Mail, Lock, Loader2, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
+import { PRODUCT_URLS } from '@/data/company';
 
-const WG_EASY_URL = 'https://easy.wgalmeida.com.br';
+const WG_EASY_URL = PRODUCT_URLS.wgeasy;
 
 const WGEasyLoginModal = ({ isOpen, onClose }) => {
   const { t } = useTranslation();

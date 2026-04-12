@@ -1,13 +1,14 @@
 import { ArrowRight, Clock3, DollarSign, TrendingUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { trackCtaClick } from '@/lib/analytics'
+import { PRODUCT_URLS } from '@/data/company';
 
 const CONTEXT_VARIANTS = {
   custo: {
     title: 'Liz · assistente de decisao com base no ICCRI',
     description: 'Quer avancar no planejamento? Estas recomendacoes conectam custo, prazo e potencial de valorizacao.',
     links: [
-      { ctaId: 'liz_custo_calcular_reforma', label: 'Calcular custo da reforma', href: 'https://obraeasy.wgalmeida.com.br/evf4', external: true, icon: DollarSign },
+      { ctaId: 'liz_custo_calcular_reforma', label: 'Calcular custo da reforma', href: `${PRODUCT_URLS.obraeasy}/evf4`, external: true, icon: DollarSign },
       { ctaId: 'liz_custo_tempo_obra', label: 'Ver tempo estimado de obra', to: '/blog/quanto-tempo-leva-reforma-completa-alto-padrao', icon: Clock3 },
       { ctaId: 'liz_custo_avaliar_valorizacao', label: 'Avaliar valorizacao do imovel', href: 'https://easyrealstate.wgalmeida.com.br/calculo', external: true, icon: TrendingUp },
     ],
@@ -17,7 +18,7 @@ const CONTEXT_VARIANTS = {
     description: 'Ajuste seu cronograma com previsibilidade e conecte prazo com custo antes de iniciar a obra.',
     links: [
       { ctaId: 'liz_tempo_etapas_cronograma', label: 'Entender etapas e cronograma', to: '/blog/etapas-reforma-completa', icon: Clock3 },
-      { ctaId: 'liz_tempo_custo_reforma', label: 'Ver custo estimado da reforma', href: 'https://obraeasy.wgalmeida.com.br/evf4', external: true, icon: DollarSign },
+      { ctaId: 'liz_tempo_custo_reforma', label: 'Ver custo estimado da reforma', href: `${PRODUCT_URLS.obraeasy}/evf4`, external: true, icon: DollarSign },
       { ctaId: 'liz_tempo_impacto_valor', label: 'Avaliar impacto no valor do imovel', href: 'https://easyrealstate.wgalmeida.com.br/calculo', external: true, icon: TrendingUp },
     ],
   },
@@ -26,7 +27,7 @@ const CONTEXT_VARIANTS = {
     description: 'Use o ICCRI para comparar cenarios de compra, reforma e valorizacao com foco financeiro.',
     links: [
       { ctaId: 'liz_investimento_simular_investimento', label: 'Simular investimento imobiliario', to: '/easy-real-state', icon: TrendingUp },
-      { ctaId: 'liz_investimento_viabilidade_reforma', label: 'Calcular viabilidade de reforma', href: 'https://obraeasy.wgalmeida.com.br/evf4', external: true, icon: DollarSign },
+      { ctaId: 'liz_investimento_viabilidade_reforma', label: 'Calcular viabilidade de reforma', href: `${PRODUCT_URLS.obraeasy}/evf4`, external: true, icon: DollarSign },
       { ctaId: 'liz_investimento_prazos_decisao', label: 'Ver prazos para tomada de decisao', to: '/blog/quanto-tempo-leva-reforma-completa-alto-padrao', icon: Clock3 },
     ],
   },

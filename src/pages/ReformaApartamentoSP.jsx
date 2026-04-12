@@ -4,6 +4,7 @@ import { motion } from '@/lib/motion-lite'
 import { withBasePath } from '@/utils/assetPaths'
 import { ArrowRight, CheckCircle, Clock, DollarSign, Home, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { COMPANY } from '@/data/company';
 
 const ReformaApartamentoSP = () => {
   const pageUrl = 'https://wgalmeida.com.br/reforma-apartamento-sp'
@@ -106,7 +107,7 @@ const ReformaApartamentoSP = () => {
     provider: {
       '@type': 'Organization',
       name: 'Grupo WG Almeida',
-      telephone: '+5511984650002',
+      telephone: COMPANY.phoneRaw,
     },
     areaServed: {
       '@type': 'City',
@@ -346,11 +347,11 @@ const ReformaApartamentoSP = () => {
                 </Button>
               </Link>
               <a
-                href="tel:+5511984650002"
+                href={`tel:${COMPANY.phoneRaw}`}
                 className="btn-hero-outline"
               >
                 <Phone className="w-5 h-5" />
-                +55 (11) 98465-0002
+                {COMPANY.phone}
               </a>
             </div>
           </motion.div>

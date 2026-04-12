@@ -5,6 +5,7 @@ import { motion } from '@/lib/motion-lite'
 import { ArrowRight, BarChart3, Building2, Calculator, Landmark, Users } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { PRODUCT_URLS } from '@/data/company';
 
 const ICCRI_PAGE_URL = 'https://wgalmeida.com.br/iccri'
 
@@ -227,7 +228,7 @@ export default function ICCRI() {
 
               <div className="mt-5 flex flex-wrap gap-3">
                 <a
-                  href="https://obraeasy.wgalmeida.com.br/evf4"
+                  href=`${PRODUCT_URLS.obraeasy}/evf4`
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg bg-wg-orange px-4 py-2 text-white"
@@ -297,7 +298,7 @@ export default function ICCRI() {
                 <h3 className="text-lg font-inter font-light text-wg-black">Ferramentas</h3>
               </div>
               <ul className="space-y-2 text-sm">
-                <li><a className="text-wg-blue hover:underline" href="https://obraeasy.wgalmeida.com.br/evf4" target="_blank" rel="noopener noreferrer">Simulador de custo de obra (ObraEasy)</a></li>
+                <li><a className="text-wg-blue hover:underline" href=`${PRODUCT_URLS.obraeasy}/evf4` target="_blank" rel="noopener noreferrer">Simulador de custo de obra (ObraEasy)</a></li>
                 <li><a className="text-wg-blue hover:underline" href="https://easyrealstate.wgalmeida.com.br/calculo" target="_blank" rel="noopener noreferrer">Avaliacao imobiliaria (AVM)</a></li>
                 <li><Link className="text-wg-blue hover:underline" to="/easy-real-state">Calculadora EasyRealState</Link></li>
                 <li><Link className="text-wg-blue hover:underline" to="/buildtech">Ecossistema BuildTech</Link></li>

@@ -13,6 +13,7 @@ import {
   Wine,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { COMPANY } from '@/data/company';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 32 },
@@ -400,7 +401,7 @@ export default function Wnomas() {
                   Publicar Wno Mas
                   <ExternalLink size={16} />
                 </a>
-                <a href="mailto:contato@wgalmeida.com.br" className="wno-btn wno-btn-secondary">
+                <a href={`mailto:${COMPANY.email}`} className="wno-btn wno-btn-secondary">
                   contato@wgalmeida.com.br
                 </a>
               </div>

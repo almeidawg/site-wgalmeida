@@ -5,6 +5,7 @@ import { trackCtaClick } from '@/lib/analytics'
 import { motion } from '@/lib/motion-lite'
 import { ArrowRight, Building2, Landmark, LineChart, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { PRODUCT_URLS } from '@/data/company';
 
 const PAGE_URL = 'https://wgalmeida.com.br/iccri-para-imobiliarias'
 
@@ -116,7 +117,7 @@ export default function ICCRIParaImobiliarias() {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="https://obraeasy.wgalmeida.com.br/evf4"
+                  href=`${PRODUCT_URLS.obraeasy}/evf4`
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
@@ -124,7 +125,7 @@ export default function ICCRIParaImobiliarias() {
                       ctaId: 'iccri_b2b_obraeasy',
                       ctaLabel: 'Simular EVF no Obra Easy',
                       ctaContext: 'iccri_b2b',
-                      ctaDestination: 'https://obraeasy.wgalmeida.com.br/evf4',
+                      ctaDestination: `${PRODUCT_URLS.obraeasy}/evf4`,
                     })
                   }}
                   className="inline-flex items-center gap-2 rounded-lg bg-wg-orange px-4 py-2 text-white"

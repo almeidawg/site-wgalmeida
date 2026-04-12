@@ -5,6 +5,7 @@ import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-do
 import ProtectedRoute from '@/components/auth/ProtectedRoute'
 import { AuthProvider } from '@/contexts/SupabaseAuthContext'
 import { Loader2 } from 'lucide-react'
+import { PRODUCT_URLS } from '@/data/company';
 
 // Lazy load pages
 const Home = lazy(() => import('@/pages/Home'))
@@ -67,7 +68,7 @@ const EasyRealStateLanding = lazy(() => import('@/pages/EasyRealStateLanding'))
 // Redirect component para ObraEasy parceiros (externo)
 function ObraEasyParceiroRedirect() {
   useEffect(() => {
-    window.location.replace('https://obraeasy.wgalmeida.com.br/landing/corretor')
+    window.location.replace(`${PRODUCT_URLS.obraeasy}/landing/corretor`)
   }, [])
   return null
 }

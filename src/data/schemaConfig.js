@@ -1,3 +1,5 @@
+import { COMPANY } from './company';
+
 const BASE_URL = "https://wgalmeida.com.br";
 const ORG_ID = `${BASE_URL}/#organization`;
 const PERSON_WILLIAM_ID = `${BASE_URL}/sobre#william-almeida`;
@@ -45,8 +47,8 @@ export const SCHEMAS = {
     name: "Grupo WG Almeida",
     url: BASE_URL,
     logo: `${BASE_URL}/images/logo-96.webp`,
-    email: "contato@wgalmeida.com.br",
-    telephone: "+5511984650002",
+    email: COMPANY.email,
+    telephone: COMPANY.phoneRaw,
     founder: { "@id": PERSON_WILLIAM_ID },
     hasPart: [{ "@id": APP_BUILDTECH_ID }, { "@id": APP_MOODBOARD_ID }, { "@id": APP_ROOM_ID }],
     makesOffer: [
@@ -138,8 +140,8 @@ export const SCHEMAS = {
         name: "Grupo WG Almeida",
         url: BASE_URL,
         logo: `${BASE_URL}/images/logo-96.webp`,
-        email: "contato@wgalmeida.com.br",
-        telephone: "+5511984650002",
+        email: COMPANY.email,
+        telephone: COMPANY.phoneRaw,
         areaServed: { "@type": "City", name: "Sao Paulo" },
         founder: { "@id": PERSON_WILLIAM_ID },
         hasPart: [{ "@id": APP_BUILDTECH_ID }, { "@id": APP_MOODBOARD_ID }, { "@id": APP_ROOM_ID }],
@@ -240,8 +242,8 @@ export const SCHEMAS = {
     "@type": "ProfessionalService",
     name: "Grupo WG Almeida",
     url: BASE_URL,
-    telephone: "+5511984650002",
-    email: "contato@wgalmeida.com.br",
+    telephone: COMPANY.phoneRaw,
+    email: COMPANY.email,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Sao Paulo",
@@ -313,11 +315,11 @@ export const SCHEMAS = {
     mainEntity: {
       "@type": "Organization",
       name: "Grupo WG Almeida",
-      telephone: "+5511984650002",
-      email: "contato@wgalmeida.com.br",
+      telephone: COMPANY.phoneRaw,
+      email: COMPANY.email,
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+5511984650002",
+        telephone: COMPANY.phoneRaw,
         contactType: "customer service",
         availableLanguage: "Portuguese",
         areaServed: "BR",
@@ -337,7 +339,7 @@ export const SCHEMAS = {
     name: "Grupo WG Almeida",
     url: BASE_URL,
     image: `${BASE_URL}/og-home-1200x630.jpg`,
-    telephone: "+5511984650002",
+    telephone: COMPANY.phoneRaw,
     priceRange: "$$$",
     address: {
       "@type": "PostalAddress",

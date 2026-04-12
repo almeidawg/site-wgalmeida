@@ -1,6 +1,7 @@
 import { BarChart3, Calculator, ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { trackCtaClick } from '@/lib/analytics'
+import { PRODUCT_URLS } from '@/data/company';
 
 const CONTEXT_LABEL = {
   custo: 'custo de reforma',
@@ -18,7 +19,7 @@ const RELATED_CONTENT = [
 ]
 
 const TOOL_LINKS = [
-  { href: 'https://obraeasy.wgalmeida.com.br/evf4', label: 'Simulador de custo de obra (Obra Easy)', external: true },
+  { href: `${PRODUCT_URLS.obraeasy}/evf4`, label: 'Simulador de custo de obra (Obra Easy)', external: true },
   { href: 'https://easyrealstate.wgalmeida.com.br/calculo', label: 'Avaliacao imobiliaria (AVM)', external: true },
   { to: '/easy-real-state', label: 'Calculadora de investimento imobiliario (EasyRealState)' },
   { to: '/moodboard-generator', label: 'Gerador de moodboard (BuildTech)' },
@@ -74,7 +75,7 @@ export default function ICCRILinksBlock({ context = 'custo', className = '' }) {
           Simule valores considerando metragem, padrao de acabamento e localizacao.
         </p>
         <a
-          href="https://obraeasy.wgalmeida.com.br/evf4"
+          href=`${PRODUCT_URLS.obraeasy}/evf4`
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => {
@@ -82,7 +83,7 @@ export default function ICCRILinksBlock({ context = 'custo', className = '' }) {
               ctaId: 'iccri_links_calculadora',
               ctaLabel: 'Acessar calculadora',
               ctaContext: `iccri_links_${context}`,
-              ctaDestination: 'https://obraeasy.wgalmeida.com.br/evf4',
+              ctaDestination: `${PRODUCT_URLS.obraeasy}/evf4`,
             })
           }}
           className="inline-flex items-center gap-2 rounded-lg bg-wg-orange px-4 py-2 text-sm text-white"

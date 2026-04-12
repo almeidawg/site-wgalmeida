@@ -7,6 +7,7 @@ import {
   Shield, BarChart3, Building2, Phone, Zap, Calculator, Link2
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { COMPANY } from '@/data/company';
 
 const EasyRealStateLanding = () => {
   const pageUrl = 'https://wgalmeida.com.br/easy-real-state'
@@ -255,7 +256,7 @@ const EasyRealStateLanding = () => {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
-              <a href="tel:+5511984650002" className="inline-flex items-center justify-center rounded-2xl border border-white/45 bg-white/5 px-6 py-3 text-sm text-white transition-colors hover:bg-white hover:text-wg-black">
+              <a href={`tel:${COMPANY.phoneRaw}`} className="inline-flex items-center justify-center rounded-2xl border border-white/45 bg-white/5 px-6 py-3 text-sm text-white transition-colors hover:bg-white hover:text-wg-black">
                 Quero site + sistema
               </a>
             </motion.div>
@@ -452,9 +453,9 @@ const EasyRealStateLanding = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
-              <a href="tel:+5511984650002" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
+              <a href={`tel:${COMPANY.phoneRaw}`} className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
                 <Phone className="w-5 h-5" />
-                +55 (11) 98465-0002
+                {COMPANY.phone}
               </a>
             </div>
           </motion.div>

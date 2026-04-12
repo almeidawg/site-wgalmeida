@@ -31,6 +31,7 @@ import {
 import { useToast } from "@/components/ui/use-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useTranslation, Trans } from 'react-i18next';
+import { COMPANY, PRODUCT_URLS } from '@/data/company';
 
 const Account = () => {
   const { t, i18n } = useTranslation();
@@ -347,7 +348,7 @@ const Account = () => {
                 className="flex flex-col gap-3"
               >
                 <a
-                  href="https://easy.wgalmeida.com.br"
+                  href=PRODUCT_URLS.wgeasy
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-wg-orange text-white rounded-full font-medium text-sm hover:bg-wg-orange/90 hover:shadow-lg hover:shadow-wg-orange/25 transition-all"
@@ -678,7 +679,7 @@ const Account = () => {
                   <span className="font-medium text-sm">{t('accountPage.support.whatsapp')}</span>
                 </a>
                 <a
-                  href="mailto:contato@wgalmeida.com.br"
+                  href={`mailto:${COMPANY.email}`}
                   className="flex items-center gap-2 px-5 py-3 bg-white/10 border border-white/20 text-white rounded-full hover:bg-white/20 transition-all"
                 >
                   <Mail className="w-4 h-4" />

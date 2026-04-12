@@ -23,6 +23,8 @@ export const COMPANY = {
   linkedin:     'https://www.linkedin.com/company/wgalmeida',
   facebook:     'https://www.facebook.com/wgalmeidaarquitetura',
   houzz:        'https://www.houzz.com/user/wgalmeida',
+  pinterest:    'https://br.pinterest.com/wgalmeida',
+  homify:       'https://www.homify.com.br/profissionais/232168/grupo-wg-almeida-arquitetura-engenharia-e-marcenaria-de-alto-padrao',
   gtmId:        'GTM-PT885HFQ',
 }
 

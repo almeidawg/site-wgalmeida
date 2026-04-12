@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { buildUnsplashSrcSet, normalizeUnsplashImageUrl } from '@/lib/unsplash';
+import { COMPANY } from '@/data/company';
 
 const HERO_IMAGE = normalizeUnsplashImageUrl('https://images.unsplash.com/photo-1486325212027-8081e485255e', {
   width: 1920,
@@ -87,8 +88,8 @@ const ConstrutoraAltoPadraoSP = () => {
     "name": "Grupo WG Almeida - Construtora Alto Padrão São Paulo",
     "description": "Construtora especializada em obras de alto padrão em São Paulo. Sistema Turn Key Premium com arquitetura, engenharia e marcenaria integradas.",
     "url": pageUrl,
-    "telephone": "+5511984650002",
-    "email": "contato@wgalmeida.com.br",
+    "telephone": COMPANY.phoneRaw,
+    "email": COMPANY.email,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "São Paulo",
@@ -314,9 +315,9 @@ const ConstrutoraAltoPadraoSP = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <a href="tel:+5511984650002" className="btn-hero-outline">
+              <a href={`tel:${COMPANY.phoneRaw}`} className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
-                +55 (11) 98465-0002
+                {COMPANY.phone}
               </a>
             </div>
           </motion.div>
