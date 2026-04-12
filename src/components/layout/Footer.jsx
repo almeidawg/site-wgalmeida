@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin, KeyRound, Pin, Home, Building2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin, KeyRound, Pin, Home, Building2, HardHat, Cpu } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
@@ -164,6 +164,40 @@ const Footer = () => {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Ferramentas Digitais */}
+        <div className="border-t border-gray-800 mt-10 pt-8">
+          <span className="font-suisse font-light text-sm mb-4 block text-gray-400 uppercase tracking-widest">Ferramentas Digitais</span>
+          <div className="flex flex-wrap gap-6">
+            <a
+              href="https://obraeasy.wgalmeida.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-400 hover:text-wg-orange transition-colors text-sm group"
+            >
+              <HardHat size={14} className="group-hover:text-wg-orange" />
+              <span>ObraEasy — Gestão de obras inteligente</span>
+            </a>
+            <a
+              href="https://easy.wgalmeida.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-400 hover:text-wg-orange transition-colors text-sm group"
+            >
+              <Cpu size={14} className="group-hover:text-wg-orange" />
+              <span>WGEasy — ERP para escritórios de projetos</span>
+            </a>
+            <a
+              href="https://obraeasy.wgalmeida.com.br/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-400 hover:text-wg-orange transition-colors text-sm group"
+            >
+              <KeyRound size={14} className="group-hover:text-wg-orange" />
+              <span>Painel do Cliente — Acompanhe sua obra em tempo real</span>
+            </a>
           </div>
         </div>
 

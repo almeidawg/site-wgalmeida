@@ -305,6 +305,16 @@ Investir 10 dias nesta etapa pode economizar meses de retrabalho e centenas de m
 
 ---
 
+## Faça seu EVF agora com o ObraEasy
+
+O **ObraEasy** gera seu Estudo de Viabilidade Financeira completo em minutos — com base no CUB regional atualizado, dados reais de mercado e cronograma integrado.
+
+Sem planilha, sem cálculo manual. Planos a partir de **R$ 29,90/mês**.
+
+[**Quero fazer meu EVF no ObraEasy →**](https://obraeasy.wgalmeida.com.br)
+
+---
+
 ## Próximo Passo
 
 Se você tem um projeto em mente e quer saber se é financeiramente viável:
