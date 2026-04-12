@@ -56,6 +56,20 @@ git push origin main
 ```
 O rebase coloca os commits locais em cima dos commits remotos, preservando histórico limpo.
 
+### Branches com históricos não relacionados (unrelated histories)
+**Problema:** `git merge-base` retorna exit 1. Acontece quando o remoto foi recriado do zero (ex: "LIMPEZA TOTAL") enquanto o local continuou com feature work.
+**Diagnóstico:** `git log --oneline main | tail -5` vs `git log --oneline origin/main | tail -5` — sem commits em comum = históricos não relacionados.
+**Solução:**
+```bash
+# 1. Absorver histórico remoto mantendo nosso código
+git merge --allow-unrelated-histories -s ours origin/main -m "merge: absorver historico remoto..."
+# 2. Verificar fixes do remoto que não temos localmente e aplicar manualmente
+git show <hash> -- <arquivo>
+# 3. Push
+git push origin main
+```
+**Nunca usar** `git rebase` nesta situação — causa centenas de conflitos add/add.
+
 ### Padrões obrigatórios no .gitignore
 Sempre incluir (já adicionados):
 - `.monitor-data/` — dados do NOC/monitor local
