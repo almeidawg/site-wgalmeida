@@ -1,0 +1,4 @@
+date,corretor_codigo,corretor_nome,evf_enviados,evf_abertos,taxa_abertura_pct,cta_obraeasy_clicks,cta_avm_clicks,leads_gerados,status_dia,observacoes
+2026-04-12,corretor_ana,Ana,1,0,0,0,0,0,iniciado,aguardando abertura
+2026-04-12,corretor_bruno,Bruno,1,1,100,1,0,0,ativo_sem_conversao,cliente clicou no EVF
+2026-04-12,corretor_clara,Clara,1,1,100,1,1,1,ativo_com_conversao,lead gerado no mesmo dia

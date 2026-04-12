@@ -966,3 +966,17 @@ site-wgalmeida/
 - [x] Validacao local:
   - `npm run lint`
   - `npm run build`
+
+## Continuacao 12/04 - ativacao comercial (go-to-market)
+
+- [x] Kit operacional D0-D7 criado para ativacao de corretores e uso real do EVF:
+  - `docs/GO-TO-MARKET-ICCRI-EVF-D0-D7.md`
+- [x] Templates de mensagem prontos para execucao imediata:
+  - `docs/templates/WHATSAPP-ATIVACAO-CORRETOR-D0.md`
+  - `docs/templates/WHATSAPP-CORRETOR-PARA-CLIENTE-EVF.md`
+- [x] Planilha base de consolidacao diaria de metricas criada:
+  - `docs/templates/METRICAS-ATIVACAO-ICCRI-EVF.csv`
+- [x] Foco operacional definido sem nova feature:
+  - ativar distribuicao
+  - medir abertura/click/lead
+  - escalar somente apos validacao de conversao
