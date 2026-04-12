@@ -7,6 +7,7 @@ import {
   Shield, FileText, BarChart3, Building2, Phone, Zap
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { OBRAEASY_PRECOS, PRODUCT_URLS } from '@/data/company'
 
 const ObraEasyLanding = () => {
   const pageUrl = 'https://wgalmeida.com.br/obraeasy'
@@ -26,12 +27,12 @@ const ObraEasyLanding = () => {
         'Link público do EVF',
       ],
       cta: 'Começar grátis',
-      href: 'https://obraeasy.wgalmeida.com.br/cadastro',
+      href: `${PRODUCT_URLS.obraeasy}/cadastro`,
     },
     {
       id: 'pro',
-      label: 'Pro',
-      price: 'R$ 29,90',
+      label: OBRAEASY_PRECOS.pro.label,
+      price: OBRAEASY_PRECOS.pro.price,
       period: '/mês',
       desc: 'Para quem está reformando ou construindo',
       cor: '#f97316',
@@ -46,12 +47,12 @@ const ObraEasyLanding = () => {
         'Financeiro da obra',
       ],
       cta: 'Assinar Pro',
-      href: 'https://obraeasy.wgalmeida.com.br/planos',
+      href: `${PRODUCT_URLS.obraeasy}/planos`,
     },
     {
       id: 'business',
-      label: 'Business',
-      price: 'R$ 59,90',
+      label: OBRAEASY_PRECOS.business.label,
+      price: OBRAEASY_PRECOS.business.price,
       period: '/mês',
       desc: 'Para construtores e gestores de múltiplas obras',
       cor: '#a855f7',
@@ -66,12 +67,12 @@ const ObraEasyLanding = () => {
         'Suporte prioritário 24h',
       ],
       cta: 'Assinar Business',
-      href: 'https://obraeasy.wgalmeida.com.br/planos',
+      href: `${PRODUCT_URLS.obraeasy}/planos`,
     },
     {
       id: 'solo',
-      label: 'Solo · Parceiro',
-      price: 'R$ 79,90',
+      label: OBRAEASY_PRECOS.solo.label,
+      price: OBRAEASY_PRECOS.solo.price,
       period: '/mês',
       desc: 'Para corretores que indicam clientes e ganham comissão',
       cor: '#f97316',
@@ -85,12 +86,12 @@ const ObraEasyLanding = () => {
         'Relatório mensal de comissões',
       ],
       cta: 'Quero ser parceiro',
-      href: 'https://obraeasy.wgalmeida.com.br/landing/corretor',
+      href: PRODUCT_URLS.corretor,
     },
     {
       id: 'completo',
-      label: 'Completo · Parceiro',
-      price: 'R$ 149,90',
+      label: OBRAEASY_PRECOS.completo.label,
+      price: OBRAEASY_PRECOS.completo.price,
       period: '/mês',
       desc: 'Para imobiliárias e corretores de alto volume',
       cor: '#16a34a',
@@ -104,7 +105,7 @@ const ObraEasyLanding = () => {
         'Onboarding com especialista WG',
       ],
       cta: 'Assinar Completo',
-      href: 'https://obraeasy.wgalmeida.com.br/landing/corretor',
+      href: PRODUCT_URLS.corretor,
     },
   ]
 
@@ -208,8 +209,7 @@ const ObraEasyLanding = () => {
     operatingSystem: 'Web',
     offers: [
       { '@type': 'Offer', price: '0', priceCurrency: 'BRL', name: 'Gratuito' },
-      { '@type': 'Offer', price: '29.90', priceCurrency: 'BRL', name: 'Pro' },
-      { '@type': 'Offer', price: '59.90', priceCurrency: 'BRL', name: 'Business' },
+      ...Object.values(OBRAEASY_PRECOS).map(p => ({ '@type': 'Offer', price: p.price.replace('R$ ', '').replace(',', '.'), priceCurrency: 'BRL', name: p.label })),
     ],
   }
 
