@@ -1,6 +1,22 @@
 # RETURN-POINT — site-wgalmeida
-**Atualizado:** 10/04/2026 (sessao continuacao - Barcelona 3011 + correcoes SEO sem barra final em preview)
-**Deploy:** wgalmeida.com.br ✅ EM PRODUÇÃO — último deploy 08/04
+**Atualizado:** 12/04/2026 — Alinhamento ObraEasy + Header + Parceiros
+**Deploy:** wgalmeida.com.br ✅ EM PRODUÇÃO — último deploy 08/04 | **Pendente deploy das mudanças de 12/04**
+
+## O que foi feito (12/04/2026) ✅
+
+- [x] `src/pages/ObraEasyLanding.jsx`:
+  - Link parceiros corrigido: `/landing/parceiro` → `/landing/corretor`
+  - Planos atualizados: adicionados Solo (R$79,90) e Completo (R$149,90) — planos de parceiro
+  - Business atualizado: inclui Diário de Obra + Análise + Financeiro
+  - 3 funcionalidades novas: Diário de Obra, Módulo Financeiro, Análise de Viabilidade
+  - Grid de planos: `md:grid-cols-3 xl:grid-cols-5` para suportar 5 planos
+- [x] `src/components/layout/Header.jsx`:
+  - Adicionado botão ObraEasy (ícone HardHat) no header desktop e mobile
+  - URL: `https://obraeasy.wgalmeida.com.br`
+- [x] `src/App.jsx`:
+  - Adicionado `ObraEasyParceiroRedirect` (redirect externo para landing corretor)
+  - Rotas `/parceiros` e `/corretor` → redirect para obraeasy/landing/corretor
+- [x] Build: ✅ 0 erros, sitemap atualizado (159 rotas)
 
 ---
 

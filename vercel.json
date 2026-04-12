@@ -184,6 +184,16 @@
       "permanent": true
     },
     {
+      "source": "/parceiros",
+      "destination": "https://obraeasy.wgalmeida.com.br/landing/corretor",
+      "permanent": false
+    },
+    {
+      "source": "/corretor",
+      "destination": "https://obraeasy.wgalmeida.com.br/landing/corretor",
+      "permanent": false
+    },
+    {
       "source": "/modelo1",
       "destination": "/projetos",
       "permanent": true

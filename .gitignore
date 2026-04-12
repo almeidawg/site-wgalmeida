@@ -155,3 +155,27 @@ PADRAO-TIPOGRAFICO*.md
 
 # Subpasta aninhada — ignorar completamente
 site-wgalmeida/
+
+# NOC / monitor / codex — arquivos de operação local, nunca commitar
+.monitor-data/
+codex-dev.log
+codex-dev.err.log
+preview-*.log
+preview-*.err.log
+preview-*.out.log
+noc-tools/tmp/
+temp_unsplash_*.json
+temp-local-server.js
+temp-local-server.cjs
+*.smoke.log
+
+# Relatórios de auditoria gerados localmente (não versionados)
+AUDITORIA-*.md
+SCREENSITEWG-CHECKLIST-*.md
+CLOUDINARY-*.md
+LINK-AUDIT-*.md
+link-audit-*.json
+cloudinary-*.json
+blog-editorial-queue-*.json
+blog-editorial-status-*.json
+unsplash-collection-*.json

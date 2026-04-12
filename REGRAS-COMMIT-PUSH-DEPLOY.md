@@ -37,6 +37,40 @@
 ---
 
 Dúvidas? Consulte este documento antes de cada deploy.
+
+## LIÇÕES APRENDIDAS — Abril 2026
+
+### Branch tracking incorreto (divergência ahead/behind)
+**Problema:** `.git/config` apontava `merge = refs/heads/release/site-novo-2026-04-11` para o branch `main`, causando divergência silenciosa (local 30 commits à frente, remoto 13 commits à frente).
+**Como detectar:** `git status` mostra "ahead X, behind Y" — ou `cat .git/config` e verificar a linha `merge` em `[branch "main"]`.
+**Correção:** `git branch --set-upstream-to=origin/main main`
+**Regra:** Após qualquer operação de branch (merge, checkout de release), verificar `.git/config` para garantir que `merge = refs/heads/main`.
+
+### Resolução de divergência (ahead + behind)
+**Nunca usar** `git push --force` em main.
+**Usar rebase:**
+```bash
+git fetch origin
+git rebase origin/main
+git push origin main
+```
+O rebase coloca os commits locais em cima dos commits remotos, preservando histórico limpo.
+
+### Padrões obrigatórios no .gitignore
+Sempre incluir (já adicionados):
+- `.monitor-data/` — dados do NOC/monitor local
+- `codex-dev.log`, `codex-dev.err.log` — logs do Codex
+- `preview-*.log`, `preview-*.err.log`, `preview-*.out.log` — logs de preview
+- `noc-tools/tmp/` — temporários do NOC
+- `temp_unsplash_*.json`, `temp-local-server.*` — arquivos temporários locais
+- `AUDITORIA-*.md`, `LINK-AUDIT-*.md`, `CLOUDINARY-*.md` — relatórios locais gerados
+
+### Redirects externos em vercel.json
+Para rotas que devem redirecionar para outro domínio (ex: `/parceiros` → `obraeasy.wgalmeida.com.br`):
+- **Adicionar em vercel.json** (server-side): necessário para SEO bots e clientes sem JS
+- **Adicionar em App.jsx** (client-side): garante SPA redirect para usuários logados
+- Usar `"permanent": false` para redirects cross-domínio (status 302) — facilita mudanças futuras
+- Usar `"permanent": true` apenas para redirects internos definitivos (ex: `/wnomas` → `/wnomasvinho`)
 ## 7. BuildTech clientes no monodomain
 - O subdominio oficial de aprovacao e `https://buildtech.wgalmeida.com.br/clientes/<slug>/`.
 - Se tambem for necessario atender `https://wgalmeida.com.br/buildtech/clientes/<slug>/`, manter em `vercel.json` um redirect explicito de `/buildtech/clientes/:path*` para `https://buildtech.wgalmeida.com.br/clientes/:path*`.

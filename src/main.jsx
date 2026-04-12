@@ -114,6 +114,7 @@ if ('serviceWorker' in navigator && import.meta.env.PROD && !isLocalPreview) {
 }
 
 const rootElement = document.getElementById('root');
+const rootKey = '__wgAlmeidaReactRoot__';
 
 const app = (
   <AppErrorBoundary>
@@ -132,7 +133,10 @@ const app = (
 if (rootElement.hasChildNodes()) {
   rootElement.innerHTML = '';
 }
-ReactDOM.createRoot(rootElement).render(app);
+
+const root = window[rootKey] || ReactDOM.createRoot(rootElement);
+window[rootKey] = root;
+root.render(app);
 
 
 

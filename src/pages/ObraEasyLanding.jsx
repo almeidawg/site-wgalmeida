@@ -53,20 +53,58 @@ const ObraEasyLanding = () => {
       label: 'Business',
       price: 'R$ 59,90',
       period: '/mês',
-      desc: 'Para construtores, corretores e parceiros B2B',
+      desc: 'Para construtores e gestores de múltiplas obras',
       cor: '#a855f7',
       destaque: false,
       features: [
         'Tudo do Pro',
         'White-label (sua marca no EVF)',
         'Múltiplos clientes e obras',
+        'Diário de obra + análise de projeto',
+        'Módulo financeiro por projeto',
         'Relatórios mensais automáticos',
-        'API de integração',
         'Suporte prioritário 24h',
-        'Onboarding com especialista',
       ],
       cta: 'Assinar Business',
       href: 'https://obraeasy.wgalmeida.com.br/planos',
+    },
+    {
+      id: 'solo',
+      label: 'Solo · Parceiro',
+      price: 'R$ 79,90',
+      period: '/mês',
+      desc: 'Para corretores que indicam clientes e ganham comissão',
+      cor: '#f97316',
+      destaque: false,
+      features: [
+        'Tudo do Business',
+        'Painel de indicações rastreáveis',
+        'Link exclusivo de indicação',
+        'Comissão automática (5%) por cliente ativo',
+        'Até 20 clientes indicados',
+        'Relatório mensal de comissões',
+      ],
+      cta: 'Quero ser parceiro',
+      href: 'https://obraeasy.wgalmeida.com.br/landing/corretor',
+    },
+    {
+      id: 'completo',
+      label: 'Completo · Parceiro',
+      price: 'R$ 149,90',
+      period: '/mês',
+      desc: 'Para imobiliárias e corretores de alto volume',
+      cor: '#16a34a',
+      destaque: false,
+      features: [
+        'Tudo do Solo',
+        'Clientes ilimitados',
+        'Site profissional com portfólio',
+        'SEO local para sua região',
+        'Comissão 5% recorrente por cliente',
+        'Onboarding com especialista WG',
+      ],
+      cta: 'Assinar Completo',
+      href: 'https://obraeasy.wgalmeida.com.br/landing/corretor',
     },
   ]
 
@@ -100,6 +138,21 @@ const ObraEasyLanding = () => {
       icon: TrendingUp,
       titulo: 'Índices ICCRI e Dados de Mercado',
       desc: 'Preços atualizados mensalmente com base nos índices oficiais da construção civil. Sem achismo, sem surpresa.',
+    },
+    {
+      icon: FileText,
+      titulo: 'Diário de Obra',
+      desc: 'Registre fotos, medições, ocorrências e visitas por categoria. Timeline cronológica com exportação em PDF para o cliente.',
+    },
+    {
+      icon: BarChart3,
+      titulo: 'Módulo Financeiro por Projeto',
+      desc: 'DRE simplificado, lançamentos de receitas e despesas, fluxo de caixa previsto vs realizado por projeto.',
+    },
+    {
+      icon: Shield,
+      titulo: 'Análise de Viabilidade e Risco',
+      desc: '4 cenários (pessimista, base, otimista, stress), score de risco e alertas inteligentes sobre desvios de custo e prazo.',
     },
   ]
 
@@ -237,7 +290,7 @@ const ObraEasyLanding = () => {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
-              <a href="https://obraeasy.wgalmeida.com.br/landing/parceiro" target="_blank" rel="noopener noreferrer">
+                      <a href="https://obraeasy.wgalmeida.com.br/landing/corretor" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="border-white text-white hover:bg-white hover:text-wg-black transition-all rounded-2xl px-6 py-3 text-sm">
                   Sou corretor ou parceiro
                 </Button>
@@ -345,7 +398,7 @@ const ObraEasyLanding = () => {
             </h2>
             <p className="text-wg-gray max-w-xl mx-auto">Cancele a qualquer momento. Sem fidelidade, sem taxa de adesão.</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-6 max-w-6xl mx-auto">
             {planos.map((plano, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
                 className={`rounded-2xl p-8 relative ${plano.destaque ? 'bg-wg-black text-white ring-2 ring-wg-orange' : 'bg-white'}`}>

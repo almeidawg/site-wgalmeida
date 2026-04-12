@@ -64,6 +64,14 @@ const ICCRIParaImobiliarias = lazy(() => import('@/pages/ICCRIParaImobiliarias')
 const ObraEasyLanding      = lazy(() => import('@/pages/ObraEasyLanding'))
 const EasyRealStateLanding = lazy(() => import('@/pages/EasyRealStateLanding'))
 
+// Redirect component para ObraEasy parceiros (externo)
+function ObraEasyParceiroRedirect() {
+  useEffect(() => {
+    window.location.replace('https://obraeasy.wgalmeida.com.br/landing/corretor')
+  }, [])
+  return null
+}
+
 // Landing Pages Estratégicas (SEO)
 const ConstrutoraAltoPadraoSP = lazy(() => import('@/pages/ConstrutoraAltoPadraoSP'))
 const ReformaApartamentoSP = lazy(() => import('@/pages/ReformaApartamentoSP'))
@@ -246,6 +254,8 @@ function App() {
               <Route path="/iccri" element={<ICCRI />} />
               <Route path="/iccri-para-imobiliarias" element={<ICCRIParaImobiliarias />} />
               <Route path="/obraeasy" element={<ObraEasyLanding />} />
+              <Route path="/parceiros" element={<ObraEasyParceiroRedirect />} />
+              <Route path="/corretor" element={<ObraEasyParceiroRedirect />} />
               <Route path="/easy-real-state" element={<EasyRealStateLanding />} />
               <Route
                 path="/easyrealstate"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, Suspense, lazy } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, ShoppingCart as ShoppingCartIcon, Ruler, Building2, Hammer, Globe, Monitor } from 'lucide-react';
+import { Menu, X, ChevronDown, ShoppingCart as ShoppingCartIcon, Ruler, Building2, Hammer, Globe, Monitor, HardHat } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
 import { useTranslation } from 'react-i18next';
@@ -22,6 +22,7 @@ const Header = () => {
   const { t } = useTranslation();
 
   const WG_EASY_URL = 'https://easy.wgalmeida.com.br';
+  const OBRA_EASY_URL = 'https://obraeasy.wgalmeida.com.br';
   const MANAGEMENT_URL = '/admin';
   const location = useLocation();
 
@@ -303,6 +304,18 @@ const iconButtonClass = isScrolled
                 <Globe className={`${iconColorClass} transition-all ${isScrolled ? 'h-3.5 w-3.5' : 'h-4 w-4'}`} />
               </Link>
 
+              {/* ObraEasy */}
+              <a
+                href={OBRA_EASY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Acessar ObraEasy"
+                title="ObraEasy · Gestão de Obras"
+                className={`hidden md:flex items-center justify-center rounded-full border transition-all ${iconButtonClass}`}
+              >
+                <HardHat className={`${iconColorClass} transition-all ${isScrolled ? 'h-4 w-4' : 'h-5 w-5'}`} />
+              </a>
+
               {/* WG Easy */}
               <a
                 href={WG_EASY_URL}
@@ -372,6 +385,15 @@ const iconButtonClass = isScrolled
                   <Globe className="h-4 w-4" />
                   <span>Área de Gestão</span>
                 </Link>
+                <a
+                  href={OBRA_EASY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-3 border border-white/[0.18] text-white rounded-lg font-light hover:bg-white/10 transition-all"
+                >
+                  <HardHat className="h-5 w-5" />
+                  <span>ObraEasy · Gestão de Obras</span>
+                </a>
                 <a
                   href={WG_EASY_URL}
                   target="_blank"
