@@ -117,7 +117,7 @@ export default function ICCRIParaImobiliarias() {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href=`${PRODUCT_URLS.obraeasy}/evf4`
+                  href={`${PRODUCT_URLS.obraeasy}/evf4`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
@@ -134,7 +134,7 @@ export default function ICCRIParaImobiliarias() {
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://easyrealstate.wgalmeida.com.br/calculo"
+                  href={`${PRODUCT_URLS.easyrealstate}/calculo`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
@@ -142,7 +142,7 @@ export default function ICCRIParaImobiliarias() {
                       ctaId: 'iccri_b2b_avm',
                       ctaLabel: 'Rodar AVM no EasyRealState',
                       ctaContext: 'iccri_b2b',
-                      ctaDestination: 'https://easyrealstate.wgalmeida.com.br/calculo',
+                      ctaDestination: `${PRODUCT_URLS.easyrealstate}/calculo`,
                     })
                   }}
                   className="inline-flex items-center gap-2 rounded-lg border border-wg-blue px-4 py-2 text-wg-blue"

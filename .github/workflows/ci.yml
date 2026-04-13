@@ -29,6 +29,15 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
+      - name: Run Import Check
+        run: npm run check:imports
+
+      - name: Run Consistency Audit
+        run: npm run audit:consistency
+
+      - name: Run Consistency Audit (Strict)
+        run: npm run audit:consistency:strict
+
       - name: Run tests
         run: npm run test:run
 

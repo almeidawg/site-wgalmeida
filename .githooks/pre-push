@@ -1,2 +1,7 @@
-﻿#!/bin/sh
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$(dirname "$0")/pre-push.ps1"
+#!/usr/bin/env sh
+set -e
+
+echo "[pre-push] site-wgalmeida hard lock"
+npm run check:imports
+npm run audit:consistency:strict
+npm run build

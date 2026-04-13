@@ -1,4 +1,70 @@
 # RETURN-POINT — site-wgalmeida
+**Atualizado:** 12/04/2026 — SSoT 100% limpo, audit OK
+
+## Sessão 12/04/2026 (3) — SSoT completo: contato + URLs + redes sociais ✅
+
+### O que foi feito
+- `company.js` ampliado: adicionados `pinterest` e `homify`
+- `Footer.jsx`: todos os links (redes sociais, Ferramentas Digitais, bottom WGEasy) → SSoT
+- `Header.jsx`: WG_EASY_URL e OBRA_EASY_URL → `PRODUCT_URLS`
+- `SEO.jsx`: meta contact, telephone e email em localBusiness → `COMPANY`
+- `schemaConfig.js`: todos os emails e telefones → `COMPANY.email` / `COMPANY.phoneRaw`
+- 14 páginas SEO (ArquiteturaCorporativa, ConstrutoraBrooklin, Contact, etc.) → `COMPANY`
+- 8 componentes (App, ICCRILinksBlock, LizAssistant, WGEasyLoginModal, Home, ICCRI, etc.) → `PRODUCT_URLS`
+- **Audit limpo**: site-wgalmeida OK, ObraEasy OK, WGEasy OK — sem regressão
+- Commit `786852e`, push para https://github.com/almeidawg/site-wgalmeida
+
+### Arquivos criados/modificados
+| Arquivo | Caminho completo |
+|---------|-----------------|
+| company.js | `C:\...\site-wgalmeida\src\data\company.js` |
+| Footer.jsx | `C:\...\site-wgalmeida\src\components\layout\Footer.jsx` |
+| Header.jsx | `C:\...\site-wgalmeida\src\components\layout\Header.jsx` |
+| SEO.jsx | `C:\...\site-wgalmeida\src\components\SEO.jsx` |
+| schemaConfig.js | `C:\...\site-wgalmeida\src\data\schemaConfig.js` |
+| 22 arquivos | páginas e componentes — ver git diff 786852e |
+
+### Estado atual
+- SSoT 100% limpo — nenhum preço, email, telefone ou URL de produto hardcoded fora do SSoT
+- Audit passa OK nos 3 projetos
+- Produção: https://wgalmeida.com.br (Vercel autodeploy ativo)
+
+### Próximo passo
+- (2) Storage RLS — bucket `obraeasy` → Private + policies via CLI
+- (3) CI audit — adicionar `audit-consistency.mjs` no `.github/workflows/ci.yml`
+- (4) Landing `/landing/imobiliaria` — adaptar CorretorLandingPage para imobiliárias
+- (5) Cron mensal comissões parceiros (WGEasy)
+
+## Sessão 12/04/2026 (continuação) — SSoT site + Alinhamento ✅
+
+### O que foi feito
+- `ObraEasyLanding.jsx` migrado para usar `OBRAEASY_PRECOS` e `PRODUCT_URLS` do SSoT `company.js`
+- Schema.org offers gerado dinamicamente — nunca mais desatualiza
+- Push para GitHub, Vercel autodeploy ativo
+
+### Arquivos criados/modificados
+| Arquivo | Caminho completo | Descrição |
+|---------|-----------------|-----------|
+| `ObraEasyLanding.jsx` | `C:\...\site-wgalmeida\src\pages\ObraEasyLanding.jsx` | Preços e URLs via SSoT |
+
+### URLs e acessos
+| Recurso | URL |
+|---------|-----|
+| Produção | https://wgalmeida.com.br |
+| Página ObraEasy no site | https://wgalmeida.com.br/obraeasy |
+| GitHub | https://github.com/almeidawg/site-wgalmeida |
+| Vercel | https://vercel.com/william-almeidas-projects/site-wgalmeida-repo-fixed |
+
+### Estado atual
+- ✅ 0 preços hardcoded no site (audit confirmado)
+- ✅ Commits `bdb5ec2` → `a95855a` publicados
+- ⚠ URLs e contatos no Footer/SEO ainda hardcoded (130 avisos — baixo risco, revisão futura)
+
+### Checklist Ecossistema
+- [x] audit-consistency.mjs: 0 erros, 130 avisos (URLs/contato no footer — aceitável)
+- [x] SSoT company.js sendo usado em ObraEasyLanding.jsx
+
+---
 **Atualizado:** 12/04/2026 — Alinhamento ObraEasy + Header + Parceiros
 **Deploy:** wgalmeida.com.br ✅ EM PRODUÇÃO — último deploy 08/04 | **Pendente deploy das mudanças de 12/04**
 

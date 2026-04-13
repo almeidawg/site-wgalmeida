@@ -10,7 +10,7 @@ const CONTEXT_VARIANTS = {
     links: [
       { ctaId: 'liz_custo_calcular_reforma', label: 'Calcular custo da reforma', href: `${PRODUCT_URLS.obraeasy}/evf4`, external: true, icon: DollarSign },
       { ctaId: 'liz_custo_tempo_obra', label: 'Ver tempo estimado de obra', to: '/blog/quanto-tempo-leva-reforma-completa-alto-padrao', icon: Clock3 },
-      { ctaId: 'liz_custo_avaliar_valorizacao', label: 'Avaliar valorizacao do imovel', href: 'https://easyrealstate.wgalmeida.com.br/calculo', external: true, icon: TrendingUp },
+      { ctaId: 'liz_custo_avaliar_valorizacao', label: 'Avaliar valorizacao do imovel', href: `${PRODUCT_URLS.easyrealstate}/calculo`, external: true, icon: TrendingUp },
     ],
   },
   tempo: {
@@ -19,7 +19,7 @@ const CONTEXT_VARIANTS = {
     links: [
       { ctaId: 'liz_tempo_etapas_cronograma', label: 'Entender etapas e cronograma', to: '/blog/etapas-reforma-completa', icon: Clock3 },
       { ctaId: 'liz_tempo_custo_reforma', label: 'Ver custo estimado da reforma', href: `${PRODUCT_URLS.obraeasy}/evf4`, external: true, icon: DollarSign },
-      { ctaId: 'liz_tempo_impacto_valor', label: 'Avaliar impacto no valor do imovel', href: 'https://easyrealstate.wgalmeida.com.br/calculo', external: true, icon: TrendingUp },
+      { ctaId: 'liz_tempo_impacto_valor', label: 'Avaliar impacto no valor do imovel', href: `${PRODUCT_URLS.easyrealstate}/calculo`, external: true, icon: TrendingUp },
     ],
   },
   investimento: {

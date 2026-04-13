@@ -7,10 +7,10 @@ import {
   Shield, FileText, BarChart3, Building2, Phone, Zap
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { OBRAEASY_PRECOS, PRODUCT_URLS } from '@/data/company'
+import { COMPANY, OBRAEASY_PRECOS, PRODUCT_URLS } from '@/data/company'
 
 const ObraEasyLanding = () => {
-  const pageUrl = 'https://wgalmeida.com.br/obraeasy'
+  const pageUrl = `${PRODUCT_URLS.site}/obraeasy`
 
   const planos = [
     {
@@ -283,14 +283,14 @@ const ObraEasyLanding = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="wg-page-hero-actions"
             >
-              <a href="https://obraeasy.wgalmeida.com.br/evf4" target="_blank" rel="noopener noreferrer">
+              <a href={`${PRODUCT_URLS.obraeasy}/evf4`} target="_blank" rel="noopener noreferrer">
                 <Button className="btn-apple text-base px-6 py-3">
                   <Calculator className="mr-2 w-4 h-4" />
                   Calcular minha obra grátis
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
-                      <a href="https://obraeasy.wgalmeida.com.br/landing/corretor" target="_blank" rel="noopener noreferrer">
+                      <a href={PRODUCT_URLS.corretor} target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="border-white text-white hover:bg-white hover:text-wg-black transition-all rounded-2xl px-6 py-3 text-sm">
                   Sou corretor ou parceiro
                 </Button>
@@ -355,7 +355,7 @@ const ObraEasyLanding = () => {
             ))}
           </div>
           <div className="text-center mt-10">
-            <a href="https://obraeasy.wgalmeida.com.br/evf4" target="_blank" rel="noopener noreferrer">
+            <a href={`${PRODUCT_URLS.obraeasy}/evf4`} target="_blank" rel="noopener noreferrer">
               <Button className="btn-apple">
                 <Zap className="mr-2 w-5 h-5" />
                 Testar agora · é grátis
@@ -464,7 +464,7 @@ const ObraEasyLanding = () => {
               Financeira completo em menos de 3 minutos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://obraeasy.wgalmeida.com.br/cadastro" target="_blank" rel="noopener noreferrer">
+              <a href={`${PRODUCT_URLS.obraeasy}/cadastro`} target="_blank" rel="noopener noreferrer">
                 <Button className="btn-apple text-lg px-8 py-4">
                   Criar conta grátis
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -472,7 +472,7 @@ const ObraEasyLanding = () => {
               </a>
               <a href="tel:+5511984650002" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
                 <Phone className="w-5 h-5" />
-                +55 (11) 98465-0002
+                {COMPANY.phone}
               </a>
             </div>
           </motion.div>

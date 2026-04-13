@@ -402,7 +402,7 @@ export default function Wnomas() {
                   <ExternalLink size={16} />
                 </a>
                 <a href={`mailto:${COMPANY.email}`} className="wno-btn wno-btn-secondary">
-                  contato@wgalmeida.com.br
+                  {COMPANY.email}
                 </a>
               </div>
             </motion.div>

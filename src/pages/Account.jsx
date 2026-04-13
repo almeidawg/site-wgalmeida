@@ -241,7 +241,7 @@ const Account = () => {
       color: 'bg-blue-100',
       iconColor: 'text-blue-600',
       action: () => pessoa?.id
-        ? window.open(`https://easy.wgalmeida.com.br/area-cliente?cliente=${pessoa.id}`, '_blank')
+        ? window.open(`${PRODUCT_URLS.wgeasy}/area-cliente?cliente=${pessoa.id}`, '_blank')
         : handleNotImplemented(),
     },
     {
@@ -259,7 +259,7 @@ const Account = () => {
       color: 'bg-purple-100',
       iconColor: 'text-purple-600',
       action: () => pessoa?.id
-        ? window.open(`https://easy.wgalmeida.com.br/area-cliente?cliente=${pessoa.id}`, '_blank')
+        ? window.open(`${PRODUCT_URLS.wgeasy}/area-cliente?cliente=${pessoa.id}`, '_blank')
         : handleNotImplemented(),
     },
     {
@@ -348,7 +348,7 @@ const Account = () => {
                 className="flex flex-col gap-3"
               >
                 <a
-                  href=PRODUCT_URLS.wgeasy
+                  href={PRODUCT_URLS.wgeasy}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-wg-orange text-white rounded-full font-medium text-sm hover:bg-wg-orange/90 hover:shadow-lg hover:shadow-wg-orange/25 transition-all"
@@ -359,7 +359,7 @@ const Account = () => {
                 </a>
                 {pessoa?.id && (
                   <a
-                    href={`https://easy.wgalmeida.com.br/area-cliente?cliente=${pessoa.id}`}
+                    href={`${PRODUCT_URLS.wgeasy}/area-cliente?cliente=${pessoa.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-white/10 border border-white/20 text-white rounded-full text-sm hover:bg-white/20 transition-all"
@@ -431,7 +431,7 @@ const Account = () => {
                 </div>
                 {pessoa?.id && (
                   <a
-                    href={`https://easy.wgalmeida.com.br/area-cliente?cliente=${pessoa.id}`}
+                    href={`${PRODUCT_URLS.wgeasy}/area-cliente?cliente=${pessoa.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-wg-orange hover:underline text-sm flex items-center gap-1"
@@ -694,7 +694,7 @@ const Account = () => {
                 </Link>
                 {pessoa?.id && (
                   <a
-                    href={`https://easy.wgalmeida.com.br/area-cliente?cliente=${pessoa.id}`}
+                    href={`${PRODUCT_URLS.wgeasy}/area-cliente?cliente=${pessoa.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-5 py-3 bg-white text-wg-black rounded-full hover:shadow-lg transition-all"

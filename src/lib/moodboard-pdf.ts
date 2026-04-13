@@ -1,7 +1,11 @@
 // PDF generation utilities for moodboard export
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import type { PageSize } from './moodboard-types';
+
+export interface PageSize {
+  width: number;
+  height: number;
+}
 
 export interface PDFExportOptions {
   pageSize: PageSize;

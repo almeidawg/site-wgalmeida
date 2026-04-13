@@ -7,10 +7,10 @@ import {
   Shield, BarChart3, Building2, Phone, Zap, Calculator, Link2
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { COMPANY } from '@/data/company';
+import { COMPANY, EASYREALSTATE_PRECOS, PRODUCT_URLS } from '@/data/company';
 
 const EasyRealStateLanding = () => {
-  const pageUrl = 'https://wgalmeida.com.br/easy-real-state'
+  const pageUrl = `${PRODUCT_URLS.site}/easy-real-state`
 
   const planos = [
     {
@@ -26,7 +26,7 @@ const EasyRealStateLanding = () => {
         'Link para compartilhar',
       ],
       cta: 'Começar grátis',
-      href: 'https://easyrealstate.wgalmeida.com.br/calculo',
+      href: `${PRODUCT_URLS.easyrealstate}/calculo`,
     },
     {
       label: 'Pro Corretor',
@@ -44,11 +44,11 @@ const EasyRealStateLanding = () => {
         'Suporte por WhatsApp',
       ],
       cta: 'Assinar Pro',
-      href: 'https://easyrealstate.wgalmeida.com.br/calculo',
+      href: `${PRODUCT_URLS.easyrealstate}/calculo`,
     },
     {
       label: 'Imobiliária',
-      price: 'R$ 149',
+      price: EASYREALSTATE_PRECOS.imobiliaria.price,
       period: '/mês',
       desc: 'Para times e imobiliárias',
       cor: '#a855f7',
@@ -142,7 +142,7 @@ const EasyRealStateLanding = () => {
         'Planos a partir de R$0',
       ],
       cta: 'Criar conta grátis',
-      href: 'https://easyrealstate.wgalmeida.com.br/calculo',
+      href: `${PRODUCT_URLS.easyrealstate}/calculo`,
       destaque: false,
     },
     {
@@ -249,7 +249,7 @@ const EasyRealStateLanding = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="wg-page-hero-actions"
             >
-              <a href="https://easyrealstate.wgalmeida.com.br/calculo" target="_blank" rel="noopener noreferrer">
+              <a href={`${PRODUCT_URLS.easyrealstate}/calculo`} target="_blank" rel="noopener noreferrer">
                 <Button className="btn-apple text-base px-6 py-3">
                   <Calculator className="mr-2 w-4 h-4" />
                   Calcular agora · é grátis
@@ -446,7 +446,7 @@ const EasyRealStateLanding = () => {
               reforma do imóvel · tudo em uma só ferramenta.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://easyrealstate.wgalmeida.com.br/calculo" target="_blank" rel="noopener noreferrer">
+              <a href={`${PRODUCT_URLS.easyrealstate}/calculo`} target="_blank" rel="noopener noreferrer">
                 <Button className="btn-apple text-lg px-8 py-4">
                   <Zap className="mr-2 w-5 h-5" />
                   Calcular agora · grátis

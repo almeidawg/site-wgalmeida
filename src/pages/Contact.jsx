@@ -268,7 +268,7 @@ const Contact = () => {
                       href={`mailto:${COMPANY.email}`}
                       className="text-[15px] leading-relaxed text-wg-gray transition-colors hover:text-wg-blue"
                     >
-                      contato@wgalmeida.com.br
+                      {COMPANY.email}
                     </a>
                     <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-wg-gray/65">
                       Resposta por e-mail
