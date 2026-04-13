@@ -3,6 +3,7 @@
 ## Heranca obrigatoria WG
 Este AGENTS deve ser usado em conjunto com:
 - C:\Users\Atendimento\AGENTS.md
+- C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\IA-START-HERE-WG.md
 - C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\AGENTS-BOAS-PRATICAS-WG.md
 
 ## PROJETO
@@ -47,8 +48,9 @@ Este AGENTS deve ser usado em conjunto com:
 Site institucional e camada de aquisicao do ecossistema WG, integrado com produtos SaaS e SEO tecnico. Projeto com baseline zerado e governanca anti-drift ativa.
 
 ## FLUXO OPERACIONAL
-1. Ler `RETURN-POINT.md`.
-2. Definir alteracao por bloco.
-3. Implementar sem duplicar fonte de dados.
-4. Rodar check/imports + audit strict + build.
-5. Registrar evidencias no `RETURN-POINT.md`.
+1. Ler `IA-START-HERE-WG.md`.
+2. Ler `RETURN-POINT.md`.
+3. Definir alteracao por bloco.
+4. Implementar sem duplicar fonte de dados.
+5. Rodar check/imports + audit strict + build.
+6. Registrar evidencias no `RETURN-POINT.md`.
