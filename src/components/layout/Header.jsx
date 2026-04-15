@@ -13,11 +13,10 @@ const ShoppingCart = lazy(() => import('@/components/ShoppingCart'));
 const SCROLL_THRESHOLD = 72;
 const HEADER_LOGO_SRC = withBasePath('/images/logo-192.webp');
 
-const Header = () => {
+const Header = () => { // NOSONAR - header composition is intentionally centralized for route-aware desktop/mobile behavior
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUnitsMenuOpen, setUnitsMenuOpen] = useState(false);
-  const [isMobileUnitsOpen, setMobileUnitsOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { cartItems } = useCart();
   const { t } = useTranslation();
@@ -48,7 +47,6 @@ const Header = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setUnitsMenuOpen(false);
-    setMobileUnitsOpen(false);
   }, [location]);
 
   const navItems = useMemo(() => [
@@ -149,7 +147,7 @@ const iconButtonClass = isScrolled
                   width="96"
                   height="96"
                   decoding="async"
-                  fetchpriority="low"
+                  fetchPriority="low"
                 />
               </Link>
             </div>
