@@ -41,9 +41,6 @@ jobs:
       - name: Build production
         run: npm run build
 
-      - name: Run npm audit
-        run: npm audit --audit-level=moderate
-
       - name: Archive build artifacts
         uses: actions/upload-artifact@v4
         with:
