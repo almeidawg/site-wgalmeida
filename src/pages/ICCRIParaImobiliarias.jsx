@@ -117,7 +117,7 @@ export default function ICCRIParaImobiliarias() {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href=`${PRODUCT_URLS.obraeasy}/evf4`
+                  href={`${PRODUCT_URLS.obraeasy}/evf4`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {

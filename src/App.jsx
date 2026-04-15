@@ -364,7 +364,7 @@ function App() {
               <Route
                 path="/admin"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute requireAdmin>
                     <Admin />
                   </ProtectedRoute>
                 }
@@ -372,7 +372,7 @@ function App() {
               <Route
                 path="/admin/blog-editorial"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute requireAdmin>
                     <AdminBlogEditorial />
                   </ProtectedRoute>
                 }

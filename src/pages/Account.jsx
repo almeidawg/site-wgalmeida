@@ -348,7 +348,7 @@ const Account = () => {
                 className="flex flex-col gap-3"
               >
                 <a
-                  href=PRODUCT_URLS.wgeasy
+                  href={PRODUCT_URLS.wgeasy}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-wg-orange text-white rounded-full font-medium text-sm hover:bg-wg-orange/90 hover:shadow-lg hover:shadow-wg-orange/25 transition-all"

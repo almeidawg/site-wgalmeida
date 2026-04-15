@@ -13,11 +13,10 @@ const ShoppingCart = lazy(() => import('@/components/ShoppingCart'));
 const SCROLL_THRESHOLD = 72;
 const HEADER_LOGO_SRC = withBasePath('/images/logo-192.webp');
 
-const Header = () => {
+const Header = () => { // NOSONAR - header composition is intentionally centralized for route-aware desktop/mobile behavior
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUnitsMenuOpen, setUnitsMenuOpen] = useState(false);
-  const [isMobileUnitsOpen, setMobileUnitsOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { cartItems } = useCart();
   const { t } = useTranslation();
@@ -48,7 +47,6 @@ const Header = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setUnitsMenuOpen(false);
-    setMobileUnitsOpen(false);
   }, [location]);
 
   const navItems = useMemo(() => [
@@ -106,16 +104,16 @@ const Header = () => {
   ], [t]);
 
 const navLinkClass = isScrolled
-    ? 'px-3 py-1.5 rounded-full text-sm text-wg-gray hover:text-wg-black hover:bg-black/[0.05]'
-    : 'px-3 py-2 rounded-full text-sm text-white/80 hover:text-white hover:bg-white/[0.08] backdrop-blur-sm';
+    ? 'px-2.5 xl:px-3 py-1.5 rounded-full text-[13px] xl:text-sm text-wg-gray hover:text-wg-black hover:bg-black/[0.05]'
+    : 'px-2.5 xl:px-3 py-2 rounded-full text-[13px] xl:text-sm text-white/80 hover:text-white hover:bg-white/[0.08] backdrop-blur-sm';
 
   const activeNavLinkClass = isScrolled
     ? 'bg-black/[0.05] text-wg-black'
     : 'bg-white/[0.12] text-white';
 
 const iconButtonClass = isScrolled
-    ? 'w-9 h-9 border-black/[0.08] bg-white/70 backdrop-blur-xl hover:bg-white hover:border-black/[0.14] shadow-[0_10px_26px_rgba(12,12,12,0.08)]'
-    : 'w-10 h-10 border-white/20 bg-white/[0.08] backdrop-blur-xl hover:bg-white/[0.16] hover:border-white/30 shadow-[0_14px_34px_rgba(10,10,10,0.16)]';
+    ? 'w-8.5 h-8.5 xl:w-9 xl:h-9 border-black/[0.08] bg-white/70 backdrop-blur-xl hover:bg-white hover:border-black/[0.14] shadow-[0_10px_26px_rgba(12,12,12,0.08)]'
+    : 'w-9 h-9 xl:w-10 xl:h-10 border-white/20 bg-white/[0.08] backdrop-blur-xl hover:bg-white/[0.16] hover:border-white/30 shadow-[0_14px_34px_rgba(10,10,10,0.16)]';
 
   const iconColorClass = isScrolled ? 'text-wg-black' : 'text-white';
 
@@ -135,7 +133,7 @@ const iconButtonClass = isScrolled
           >
             {/* Logo — some ao rolar */}
             <div
-              className={`flex-1 lg:flex-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] overflow-hidden ${
+              className={`min-w-[4.5rem] xl:min-w-[5.5rem] flex-1 lg:flex-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] overflow-hidden ${
                 isScrolled
                   ? 'w-0 opacity-0 pointer-events-none flex-none'
                   : 'w-auto opacity-100'
@@ -149,14 +147,14 @@ const iconButtonClass = isScrolled
                   width="96"
                   height="96"
                   decoding="async"
-                  fetchpriority="low"
+                  fetchPriority="low"
                 />
               </Link>
             </div>
 
             {/* Nav desktop */}
-            <nav className={`hidden lg:flex items-center justify-center flex-1 transition-all duration-500 ${
-              isScrolled ? 'gap-0.5' : 'space-x-6'
+            <nav className={`hidden lg:flex min-w-0 items-center justify-center px-2 xl:px-4 flex-1 transition-all duration-500 ${
+              isScrolled ? 'gap-0.5' : 'gap-2 xl:gap-4'
             }`}>
               {navItems.slice(0, 3).map((item) => (
                 <Link
@@ -272,10 +270,10 @@ const iconButtonClass = isScrolled
             </nav>
 
             {/* Ações à direita */}
-            <div className={`flex items-center justify-end gap-2 md:gap-3 transition-all duration-500 ${
+            <div className={`shrink-0 flex items-center justify-end gap-1.5 md:gap-2 xl:gap-3 transition-all duration-500 ${
               isScrolled ? 'flex-none' : 'flex-1 lg:flex-none'
             }`}>
-              <div className="hidden md:block">
+              <div className="hidden xl:block">
                 <LanguageSelector />
               </div>
 
