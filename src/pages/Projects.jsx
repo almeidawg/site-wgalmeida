@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
-import { resolvePortfolioProjectImages } from '@/utils/cloudinaryProjectPortfolio';
+import { PROJECT_CAROUSEL_IMAGES, resolvePortfolioProjectImages } from '@/utils/cloudinaryProjectPortfolio';
 import { withBasePath } from '@/utils/assetPaths';
 
 /**
@@ -132,6 +132,10 @@ const Projects = () => {
     ...project,
     images: resolvePortfolioProjectImages(project),
   }));
+  const projectsHeroImage =
+    normalizedProjects[0]?.images?.[0]?.fullSrc ||
+    PROJECT_CAROUSEL_IMAGES[0] ||
+    withBasePath('/images/banners/PROJETOS.webp');
   const filteredProjects = normalizedProjects.filter((project) =>
     selectedFilter === 'all' || project.category === selectedFilter
   );
@@ -163,7 +167,7 @@ const Projects = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt={t('projectsPage.hero.imageAlt')}
-            src={withBasePath('/images/banners/PROJETOS.webp')}
+            src={projectsHeroImage}
             width="1920"
             height="1080"
             loading="eager"

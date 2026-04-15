@@ -747,6 +747,69 @@ const BLOG_IMAGE_OVERRIDES = {
         "source": "remote",
         "src": "https://swinerton.com/wp-content/uploads/2019/02/williamssonoma3-1030x623.jpg"
       }
+    },
+    "como-calcular-custo-de-obra": {
+      "default": {
+        "source": "local",
+        "src": "/images/blog/cronograma-obra-acompanhamento.webp",
+        "alt": "Planejamento de obra com cronograma e acompanhamento visual"
+      }
+    },
+    "custo-marcenaria-planejada": {
+      "default": {
+        "source": "local",
+        "src": "/images/blog/marcenaria-sob-medida.webp",
+        "alt": "Marcenaria sob medida com acabamento premium"
+      }
+    },
+    "custo-reforma-apartamento-alto-padrao-sp": {
+      "default": {
+        "source": "local",
+        "src": "/images/blog/etapas-reforma-completa.webp",
+        "alt": "Ambiente em reforma completa com acabamento de alto padrao"
+      }
+    },
+    "custo-reforma-m2-sao-paulo": {
+      "default": {
+        "source": "local",
+        "src": "/images/blog/documentacao-obra-condominio.webp",
+        "alt": "Documentacao tecnica e planejamento de reforma em Sao Paulo"
+      }
+    },
+    "liz-curadoria-wg-almeida": {
+      "default": {
+        "source": "local",
+        "src": "/images/blog/guia-estilos-decoracao.webp",
+        "alt": "Curadoria de materiais e composicao de interiores premium"
+      }
+    },
+    "marcenaria-sob-medida-tendencias-2026": {
+      "default": {
+        "source": "local",
+        "src": "/images/blog/marcenaria-sob-medida.webp",
+        "alt": "Detalhe de marcenaria sob medida com linhas contemporaneas"
+      }
+    },
+    "quanto-custa-reforma-apartamento-100m2": {
+      "default": {
+        "source": "local",
+        "src": "/images/blog/etapas-reforma-completa.webp",
+        "alt": "Apartamento em reforma completa usado como referencia de custo"
+      }
+    },
+    "quanto-tempo-leva-reforma-completa-alto-padrao": {
+      "default": {
+        "source": "local",
+        "src": "/images/blog/cronograma-obra-acompanhamento.webp",
+        "alt": "Cronograma executivo de reforma completa de alto padrao"
+      }
+    },
+    "vale-a-pena-contratar-arquiteto-turn-key": {
+      "default": {
+        "source": "local",
+        "src": "/images/blog/o-que-e-turn-key.webp",
+        "alt": "Projeto residencial integrado no modelo turn key"
+      }
     }
   }
 };
