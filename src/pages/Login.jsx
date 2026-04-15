@@ -42,7 +42,7 @@ const Login = () => {
           title: t('loginPage.toasts.adminSuccessTitle'),
           description: t('loginPage.toasts.adminSuccessDescription'),
         })
-        navigate('/admin', { replace: true })
+        navigate(from.startsWith('/admin') ? from : '/admin', { replace: true })
       } else {
         toast({
           title: t('loginPage.toasts.successTitle'),

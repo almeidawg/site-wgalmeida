@@ -3,9 +3,10 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
 import { Loader2 } from 'lucide-react';
 
-const ProtectedRoute = ({ children }) => {
-  const { user, loading } = useAuth();
+const ProtectedRoute = ({ children, requireAdmin = false }) => {
+  const { user, profile, loading } = useAuth();
   const location = useLocation();
+  const isAdmin = profile?.role === 'admin' || user?.email?.endsWith('@wgalmeida.com.br');
 
   if (loading) {
     return (
@@ -17,6 +18,10 @@ const ProtectedRoute = ({ children }) => {
 
   if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  if (requireAdmin && !isAdmin) {
+    return <Navigate to="/" replace />;
   }
 
   return children;
