@@ -20,7 +20,7 @@ const RELATED_CONTENT = [
 
 const TOOL_LINKS = [
   { href: `${PRODUCT_URLS.obraeasy}/evf4`, label: 'Simulador de custo de obra (Obra Easy)', external: true },
-  { href: 'https://easyrealstate.wgalmeida.com.br/calculo', label: 'Avaliacao imobiliaria (AVM)', external: true },
+  { href: `${PRODUCT_URLS.easyrealstate}/calculo`, label: 'Avaliacao imobiliaria (AVM)', external: true },
   { to: '/easy-real-state', label: 'Calculadora de investimento imobiliario (EasyRealState)' },
   { to: '/moodboard-generator', label: 'Gerador de moodboard (BuildTech)' },
   { to: '/room-visualizer', label: 'Visualizador de ambientes' },
@@ -75,7 +75,7 @@ export default function ICCRILinksBlock({ context = 'custo', className = '' }) {
           Simule valores considerando metragem, padrao de acabamento e localizacao.
         </p>
         <a
-          href=`${PRODUCT_URLS.obraeasy}/evf4`
+          href={`${PRODUCT_URLS.obraeasy}/evf4`}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => {

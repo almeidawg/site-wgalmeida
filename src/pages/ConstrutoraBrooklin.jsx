@@ -4,7 +4,6 @@ import { motion } from '@/lib/motion-lite';
 import { withBasePath } from '@/utils/assetPaths';
 import { Link } from 'react-router-dom';
 import {
-import { COMPANY } from '@/data/company';
   ArrowRight,
   Building,
   CheckCircle,
@@ -12,11 +11,12 @@ import { COMPANY } from '@/data/company';
   Building2,
   Clock,
   Award,
-    Target,
-    Phone
-  } from 'lucide-react';
-  import { Button } from '@/components/ui/button';
-  
+  Target,
+  Phone,
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { COMPANY } from '@/data/company';
+
 const ConstrutoraBrooklin = () => {
   const pageUrl = 'https://wgalmeida.com.br/construtora-brooklin';
 

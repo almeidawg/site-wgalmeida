@@ -561,7 +561,7 @@ const Home = () => {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href=`${PRODUCT_URLS.obraeasy}/evf4`
+                  href={`${PRODUCT_URLS.obraeasy}/evf4`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
