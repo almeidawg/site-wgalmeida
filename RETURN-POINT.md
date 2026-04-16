@@ -2932,3 +2932,44 @@ site-wgalmeida/
   - blog
   - about/institucional
   - sitemap
+
+## 2026-04-16 - ponto de retorno: indexacao e robots.txt
+
+### Validacao publicada
+
+- `https://wgalmeida.com.br/robots.txt` responde `200 OK`
+- `https://wgalmeida.com.br/sitemap-index.xml` responde `200 OK`
+- `https://wgalmeida.com.br/sitemap.xml` responde `200 OK`
+
+### Leitura do robots.txt
+
+- paginas publicas nao estao bloqueadas:
+  - `/blog`
+  - `/blog/*`
+  - `/estilos/*`
+  - paginas institucionais e comerciais publicas
+- bloqueios atuais sao restritos a areas privadas, tecnicas ou duplicadas:
+  - `/admin`
+  - `/account`
+  - `/login`
+  - `/register`
+  - `/api/`
+  - `/elementor-hf/`
+  - `/inicio`
+  - `/modelo2`
+  - `/coverage`
+
+### Acao de indexacao
+
+- sitemap recomendado para envio/acompanhamento no Google Search Console:
+  - `https://wgalmeida.com.br/sitemap-index.xml`
+- `https://wgalmeida.com.br/sitemap.xml` continua valido, mas nao precisa ser enviado manualmente se o `sitemap-index.xml` estiver cadastrado.
+- `https://wgalmeida.com.br/video-sitemap.xml` permanece declarado no `robots.txt` para descoberta automatica.
+
+### Proximo acompanhamento
+
+- acompanhar no Google Search Console:
+  - status de leitura do `sitemap-index.xml`
+  - paginas descobertas x indexadas
+  - eventuais URLs marcadas como "Bloqueada pelo robots.txt"
+- se aparecer bloqueio, validar a URL exata antes de alterar o `robots.txt`; pelas regras atuais, paginas publicas do blog, guias de estilos e institucionais nao devem ser bloqueadas.
