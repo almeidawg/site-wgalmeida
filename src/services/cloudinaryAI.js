@@ -12,6 +12,11 @@
 const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'demo';
 const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'wg_unsigned';
 
+const buildCloudinaryUploadUrl = (publicId, transformation = '') => {
+  const transformPath = transformation ? `${transformation}/` : '';
+  return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/${transformPath}${publicId}`;
+};
+
 /**
  * Upload de imagem para o Cloudinary
  * @param {File} file - Arquivo de imagem
@@ -24,30 +29,26 @@ export const uploadImage = async (file, options = {}) => {
   formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
   formData.append('folder', options.folder || 'room-visualizer');
 
-  try {
-    const response = await fetch(
-      `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
-      {
-        method: 'POST',
-        body: formData,
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error('Erro no upload da imagem');
+  const response = await fetch(
+    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
+    {
+      method: 'POST',
+      body: formData,
     }
+  );
 
-    const data = await response.json();
-    return {
-      publicId: data.public_id,
-      url: data.secure_url,
-      width: data.width,
-      height: data.height,
-    };
-  } catch (error) {
-    console.error('Cloudinary upload error:', error);
-    throw error;
+  const data = await response.json().catch(() => null);
+
+  if (!response.ok) {
+    throw new Error(data?.error?.message || 'Erro no upload da imagem');
   }
+
+  return {
+    publicId: data.public_id,
+    url: data.secure_url,
+    width: data.width,
+    height: data.height,
+  };
 };
 
 /**
@@ -71,7 +72,7 @@ export const generateRecolorUrl = (publicId, options = {}) => {
     .filter(Boolean)
     .join(';');
 
-  return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/${transformation}/${publicId}`;
+  return buildCloudinaryUploadUrl(publicId, transformation);
 };
 
 /**
@@ -86,7 +87,7 @@ export const applyMultipleRecolors = (publicId, colorMappings) => {
     return `e_gen_recolor:prompt_${encodeURIComponent(target)};to-color_${colorValue}`;
   });
 
-  return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/${transformations.join('/')}/${publicId}`;
+  return buildCloudinaryUploadUrl(publicId, transformations.join('/'));
 };
 
 /**
@@ -106,7 +107,7 @@ export const generateReplaceUrl = (publicId, options = {}) => {
     .filter(Boolean)
     .join(';');
 
-  return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/${transformation}/${publicId}`;
+  return buildCloudinaryUploadUrl(publicId, transformation);
 };
 
 /**
@@ -134,6 +135,14 @@ export const ROOM_ELEMENTS = {
 export const applyMoodboardStyle = async (publicId, moodboard) => {
   const { colors = [], primaryElements = ['walls'] } = moodboard;
 
+  if (!colors.length) {
+    return {
+      original: buildCloudinaryUploadUrl(publicId),
+      styled: buildCloudinaryUploadUrl(publicId),
+      colorMappings: [],
+    };
+  }
+
   // Cria mapeamento de cores para elementos
   const colorMappings = primaryElements.map((element, index) => ({
     target: ROOM_ELEMENTS[element]?.prompt || element,
@@ -144,7 +153,7 @@ export const applyMoodboardStyle = async (publicId, moodboard) => {
   const styledUrl = applyMultipleRecolors(publicId, colorMappings);
 
   return {
-    original: `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/${publicId}`,
+    original: buildCloudinaryUploadUrl(publicId),
     styled: styledUrl,
     colorMappings,
   };
@@ -158,8 +167,12 @@ export const applyMoodboardStyle = async (publicId, moodboard) => {
  */
 export const checkImageReady = async (url) => {
   try {
-    const response = await fetch(url, { method: 'HEAD' });
-    return response.ok;
+    const head = await fetch(url, { method: 'HEAD' });
+    if (head.ok) return true;
+    if (![403, 405].includes(head.status)) return false;
+
+    const get = await fetch(url, { method: 'GET' });
+    return get.ok;
   } catch {
     return false;
   }

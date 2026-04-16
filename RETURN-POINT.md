@@ -3132,3 +3132,50 @@ site-wgalmeida/
 
 - Bloco de normalizacao de imagens do site, blog, guias de estilos e admin editorial: fechado.
 - Proxima frente recomendada pelo usuario: modulo `moodboard`, que depende de Cloudinary para transformacoes de imagem.
+
+## 2026-04-16 - retomada: robustez Cloudinary no modulo moodboard
+
+### Contexto
+
+- Bloco editorial anterior foi mesclado na `main` via PR `#8`.
+- Pipeline pos-merge da `main` concluiu com `build-and-test` e `deploy` OK.
+- Inicio do bloco `moodboard`, com foco em imagens alimentadas por Cloudinary e efeitos de transformacao.
+
+### Acao executada
+
+- Validado ciclo real Cloudinary do moodboard:
+  - upload unsigned de imagem remota -> `200 OK`;
+  - URL `e_gen_recolor` -> pronta com `HEAD 200`;
+  - variaveis publicas necessarias presentes sem expor valores.
+- `ColorTransformer`:
+  - adicionada espera real por disponibilidade da imagem transformada antes de exibir o resultado;
+  - adicionado fallback estavel quando a transformacao Cloudinary demora ou falha;
+  - removidos logs de producao com `publicId`/URL de transformacao;
+  - centralizada pasta de upload `moodboard-ambientes`;
+  - melhorado erro de upload Cloudinary sem quebrar o fluxo demonstrativo.
+- `InteractivePreview`:
+  - corrigida limpeza dos listeners globais de drag/touch para evitar handlers acumulados.
+- `cloudinaryAI`:
+  - centralizado builder de URL Cloudinary;
+  - melhorado erro de upload com mensagem retornada pela API;
+  - `checkImageReady` agora usa `HEAD` com fallback `GET` para status que bloqueiam `HEAD`;
+  - `applyMoodboardStyle` agora trata moodboard sem cores sem gerar mapeamento invalido.
+
+### Validacao
+
+- `npm run lint` -> OK
+- `npm run check:imports` -> OK
+- `npm run audit:consistency:strict` -> OK
+- `npm run build` -> OK
+- `npm run smoke:console -- --routes=/moodboard,/moodboard-generator,/moodboard/share,/room-visualizer` -> OK, sem ocorrencias relevantes
+- Teste real Cloudinary de upload + transformacao `e_gen_recolor` -> OK
+
+### Evidencia
+
+- Smoke limpo:
+  - `.monitor-data/reports/console-smoke-2026-04-16T17-18-43-158Z.json`
+
+### Status para retomada
+
+- Modulo `moodboard` com fluxo Cloudinary mais resiliente.
+- Proximo passo: commit/PR/deploy deste bloco e, em seguida, aprofundar UX/funcionalidade do moodboard se necessario.

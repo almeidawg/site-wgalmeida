@@ -24,6 +24,9 @@ import { normalizeUnsplashImageUrl } from '@/lib/unsplash';
 // ============================================
 const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'demo';
 const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'moodboard_unsigned';
+const CLOUDINARY_UPLOAD_FOLDER = 'moodboard-ambientes';
+const CLOUDINARY_TRANSFORMATION_ATTEMPTS = 8;
+const CLOUDINARY_TRANSFORMATION_DELAY = 1500;
 
 // Modo demo - quando Cloudinary não está configurado corretamente
 const DEMO_MODE = !import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
@@ -369,6 +372,34 @@ const generateRecolorUrl = (publicId, elementColorMap, cloudName = CLOUDINARY_CL
   return `https://res.cloudinary.com/${cloudName}/image/upload/${transformationString}/${publicId}`;
 };
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const checkImageReady = async (url) => {
+  try {
+    const head = await fetch(url, { method: 'HEAD' });
+    if (head.ok) return true;
+    if (![403, 405].includes(head.status)) return false;
+
+    const get = await fetch(url, { method: 'GET' });
+    return get.ok;
+  } catch {
+    return false;
+  }
+};
+
+const waitForCloudinaryImage = async (
+  url,
+  attempts = CLOUDINARY_TRANSFORMATION_ATTEMPTS,
+  interval = CLOUDINARY_TRANSFORMATION_DELAY
+) => {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    if (await checkImageReady(url)) return true;
+    await delay(interval);
+  }
+
+  return false;
+};
+
 // ============================================
 // COMPONENTE: Círculo de Cor
 // ============================================
@@ -532,8 +563,10 @@ const ColorTransformer = ({ externalColors = [] }) => {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
 
-      // Carregar imagem transformada via fetch para evitar CORS
       const imgResponse = await fetch(transformedUrl);
+      if (!imgResponse.ok) {
+        throw new Error('Imagem transformada indisponível para download');
+      }
       const imgBlob = await imgResponse.blob();
       const imgBitmapUrl = URL.createObjectURL(imgBlob);
 
@@ -589,8 +622,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
         setIsDownloading(false);
       }, 'image/jpeg', 0.95);
 
-    } catch (err) {
-      console.error('Erro ao baixar imagem:', err);
+    } catch {
       // Fallback: baixar diretamente sem watermark
       try {
         const a = document.createElement('a');
@@ -648,7 +680,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
       const formData = new FormData();
       formData.append('file', demoImage.externalUrl);
       formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-      formData.append('folder', 'moodboard-ambientes');
+      formData.append('folder', CLOUDINARY_UPLOAD_FOLDER);
 
       const response = await fetch(
         `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
@@ -659,7 +691,8 @@ const ColorTransformer = ({ externalColors = [] }) => {
       );
 
       if (!response.ok) {
-        throw new Error('Erro ao carregar imagem');
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.error?.message || 'Erro ao carregar imagem no Cloudinary');
       }
 
       const data = await response.json();
@@ -683,9 +716,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
         setElementColors(autoColors);
       }
 
-    } catch (err) {
-      console.error('Cloudinary upload error:', err);
-
+    } catch {
       // Se falhar o upload, usar modo simulação
       setSelectedImage({
         ...demoImage,
@@ -706,7 +737,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
         setElementColors(autoColors);
       }
 
-      setError('Modo demonstração: Configure o Cloudinary para transformações com IA.');
+      setError('Nao foi possivel preparar esta imagem no Cloudinary. Mantivemos o preview em modo demonstracao para voce continuar.');
     } finally {
       setIsTransforming(false);
     }
@@ -719,21 +750,15 @@ const ColorTransformer = ({ externalColors = [] }) => {
     setIsTransforming(true);
     setError(null);
 
-    console.log('Aplicando transformação:', {
-      publicId: selectedImage.publicId,
-      isDemo: selectedImage.isDemo,
-      elementColors,
-    });
-
     try {
       // Verifica se está em modo demo (sem publicId do Cloudinary)
       if (!selectedImage.publicId || selectedImage.isDemo) {
         // Modo simulação - usa overlay visual
         setOriginalUrl(selectedImage.url || selectedImage.externalUrl);
         setTransformedUrl(selectedImage.url || selectedImage.externalUrl);
-        setError('Modo demonstração: Configure o Cloudinary Upload Preset "moodboard_unsigned" para transformações reais com IA.');
+        setError('Preview demonstrativo ativo para esta imagem. Selecione outro ambiente ou tente novamente para usar a transformacao Cloudinary.');
 
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        await delay(1500);
       } else {
         // Modo real - usa Cloudinary Generative Recolor
         const url = generateRecolorUrl(
@@ -742,19 +767,19 @@ const ColorTransformer = ({ externalColors = [] }) => {
           CLOUDINARY_CLOUD_NAME
         );
 
-        console.log('URL de transformação gerada:', url);
-
         setOriginalUrl(selectedImage.url);
-        setTransformedUrl(url);
 
-        // Aguarda para a transformação processar no Cloudinary
-        // O Generative Recolor pode levar alguns segundos
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        const isReady = await waitForCloudinaryImage(url);
+        if (!isReady) {
+          throw new Error('A transformacao Cloudinary ainda nao ficou disponivel');
+        }
+
+        setTransformedUrl(url);
       }
 
-    } catch (err) {
-      setError('Erro ao aplicar transformação. Tente novamente.');
-      console.error('Erro na transformação:', err);
+    } catch {
+      setTransformedUrl(selectedImage.url || selectedImage.externalUrl);
+      setError('A transformacao Cloudinary nao ficou pronta a tempo. Mantivemos a imagem original e voce pode tentar novamente.');
     } finally {
       setIsTransforming(false);
     }
@@ -1103,7 +1128,7 @@ const ColorTransformer = ({ externalColors = [] }) => {
                   className="absolute inset-0 w-full h-full object-cover"
                   onError={(e) => {
                     e.target.src = originalUrl;
-                    setError('A transformação pode levar alguns segundos. Tente novamente.');
+                    setError('A imagem transformada ficou indisponivel. Exibimos a original para manter a comparacao estavel.');
                   }}
                 />
 
