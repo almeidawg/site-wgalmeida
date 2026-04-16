@@ -85,15 +85,14 @@ tools/tmp/
 
 # ── ADICIONADO 24/03/2026 — exclusoes de arquivos pesados e temporarios ──
 
-# Imagens de projetos (pesadas — servidas via Vercel/CDN, nao versionadas)
+# Imagens de projetos pesadas ficam fora do repo.
+# Assets editoriais/publicos usados diretamente por rotas do site devem ser versionados,
+# para evitar deploy sem banners, fotos de blog ou imagens institucionais.
 public/images/imagens/
 public/images/projects/
-public/images/banners/
 public/images/estilos/*
 !public/images/estilos/*.webp
-public/images/blog/
 public/images/gallery/
-public/images/about/
 public/images/webp/
 public/videos/
 
