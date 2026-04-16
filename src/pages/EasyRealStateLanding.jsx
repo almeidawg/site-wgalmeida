@@ -11,6 +11,10 @@ import { COMPANY, EASYREALSTATE_PRECOS, PRODUCT_URLS, WG_PRODUCT_MESSAGES } from
 
 const EasyRealStateLanding = () => {
   const pageUrl = `${PRODUCT_URLS.site}/easy-real-state`
+  const primaryCtaClass = 'inline-flex min-h-[52px] w-full items-center justify-center rounded-2xl bg-wg-orange px-6 py-3 text-sm font-light text-white shadow-sm transition-all duration-300 hover:bg-wg-orange/90 sm:w-auto'
+  const secondaryCtaClass = 'inline-flex min-h-[52px] w-full items-center justify-center rounded-2xl border border-white/45 bg-white/5 px-6 py-3 text-sm font-light text-white transition-all duration-300 hover:bg-white hover:text-wg-black sm:w-auto'
+  const cardPrimaryCtaClass = 'inline-flex min-h-[52px] w-full items-center justify-center rounded-2xl bg-wg-orange px-5 py-3 text-sm font-light text-white transition-all duration-300 hover:bg-wg-orange/90'
+  const cardSecondaryCtaClass = 'inline-flex min-h-[52px] w-full items-center justify-center rounded-2xl border border-wg-black/10 bg-wg-gray-light px-5 py-3 text-sm font-light text-wg-black transition-all duration-300 hover:border-wg-orange/40 hover:bg-white'
 
   const planos = [
     {
@@ -191,7 +195,15 @@ const EasyRealStateLanding = () => {
       />
 
       {/* HERO */}
-      <section className="wg-page-hero wg-page-hero--store hero-under-header">
+      <section
+        className="wg-page-hero wg-page-hero--store hero-under-header"
+        style={{
+          '--hero-height': 'clamp(29rem, 46vh, 34rem)',
+          '--hero-min-height': 'var(--hero-height)',
+          '--hero-min-height-mobile': '34rem',
+          '--hero-padding-top': 'calc(var(--header-height) + 2.75rem)',
+        }}
+      >
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ scale: 1.08 }}
@@ -206,7 +218,7 @@ const EasyRealStateLanding = () => {
         </motion.div>
 
         <div className="container-custom">
-          <div className="wg-page-hero-content px-4 pt-8 md:pt-10">
+          <div className="wg-page-hero-content px-4 pt-32 md:pt-24">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -231,34 +243,7 @@ const EasyRealStateLanding = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="wg-page-hero-subtitle max-w-3xl"
             >
-              O Easy Real State cruza AVM, ITBI, contexto de mercado e potencial pós-obra para apoiar decisões imobiliárias de maior complexidade e ticket.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="wg-page-hero-body max-w-3xl"
-            >
-              {WG_PRODUCT_MESSAGES.easyRealStateB2B}
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.48 }}
-              className="wg-page-hero-body max-w-3xl"
-            >
-              {WG_PRODUCT_MESSAGES.wgExperienceCore}
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.54 }}
-              className="wg-page-hero-body max-w-3xl"
-            >
-              {WG_PRODUCT_MESSAGES.easyRealStateConfidence}
+              Inteligência imobiliária para defender valor, leitura de mercado e potencial de captura com mais clareza.
             </motion.p>
 
             <motion.div
@@ -268,13 +253,13 @@ const EasyRealStateLanding = () => {
               className="wg-page-hero-actions"
             >
               <a href={`${PRODUCT_URLS.easyrealstate}/calculo`} target="_blank" rel="noopener noreferrer">
-                <Button className="btn-apple text-base px-6 py-3">
+                <Button className={primaryCtaClass}>
                   <Calculator className="mr-2 w-4 h-4" />
                   Ver metodologia em ação
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
-              <a href={COMPANY.ceoWhatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-2xl border border-white/45 bg-white/5 px-6 py-3 text-sm text-white transition-colors hover:bg-white hover:text-wg-black">
+              <a href={COMPANY.ceoWhatsapp} target="_blank" rel="noopener noreferrer" className={secondaryCtaClass}>
                 Fale com o CEO
               </a>
             </motion.div>
@@ -293,32 +278,35 @@ const EasyRealStateLanding = () => {
 
       <section className="section-padding-tight-top bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-2xl border border-orange-100 bg-orange-50 p-6">
-              <span className="text-xs tracking-widest uppercase text-orange-700 block mb-2">Camada 1</span>
-              <h3 className="text-xl font-inter text-wg-black mb-2">AVM · valor atual</h3>
-              <p className="text-sm text-wg-gray font-light">
+          <p className="mx-auto mb-8 max-w-4xl text-center text-base font-light leading-relaxed text-wg-gray md:text-lg">
+            O Easy Real State cruza AVM, ITBI, contexto de mercado e potencial pós-obra para apoiar decisões imobiliárias de maior complexidade e ticket.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+            <div className="flex min-h-[178px] flex-col rounded-2xl border border-orange-100 bg-orange-50 p-5">
+              <span className="text-[11px] tracking-widest uppercase text-orange-700 block mb-3">Camada 1</span>
+              <h3 className="text-lg leading-tight font-inter text-wg-black mb-3">AVM · valor atual</h3>
+              <p className="text-[13px] leading-relaxed text-wg-gray font-light">
                 Preço por m², comparáveis, contexto de bairro e score de confiança.
               </p>
             </div>
-            <div className="rounded-2xl border border-sky-100 bg-sky-50 p-6">
-              <span className="text-xs tracking-widest uppercase text-sky-700 block mb-2">Camada 2</span>
-              <h3 className="text-xl font-inter text-wg-black mb-2">ITBI · fechamento real</h3>
-              <p className="text-sm text-wg-gray font-light">
+            <div className="flex min-h-[178px] flex-col rounded-2xl border border-sky-100 bg-sky-50 p-5">
+              <span className="text-[11px] tracking-widest uppercase text-sky-700 block mb-3">Camada 2</span>
+              <h3 className="text-lg leading-tight font-inter text-wg-black mb-3">ITBI · fechamento real</h3>
+              <p className="text-[13px] leading-relaxed text-wg-gray font-light">
                 Ticket real, liquidez e faixa observada de fechamento no bairro ou CEP.
               </p>
             </div>
-            <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-6">
-              <span className="text-xs tracking-widest uppercase text-emerald-700 block mb-2">Camada 3</span>
-              <h3 className="text-xl font-inter text-wg-black mb-2">Pós-obra · captura</h3>
-              <p className="text-sm text-wg-gray font-light">
+            <div className="flex min-h-[178px] flex-col rounded-2xl border border-emerald-100 bg-emerald-50 p-5">
+              <span className="text-[11px] tracking-widest uppercase text-emerald-700 block mb-3">Camada 3</span>
+              <h3 className="text-lg leading-tight font-inter text-wg-black mb-3">Pós-obra · captura</h3>
+              <p className="text-[13px] leading-relaxed text-wg-gray font-light">
                 Potencial pós-obra com base em custo real, escopo real e inteligência operacional WG.
               </p>
             </div>
-            <div className="rounded-2xl border border-fuchsia-100 bg-fuchsia-50 p-6">
-              <span className="text-xs tracking-widest uppercase text-fuchsia-700 block mb-2">Camada 4</span>
-              <h3 className="text-xl font-inter text-wg-black mb-2">Confiança da tese</h3>
-              <p className="text-sm text-wg-gray font-light">
+            <div className="flex min-h-[178px] flex-col rounded-2xl border border-fuchsia-100 bg-fuchsia-50 p-5">
+              <span className="text-[11px] tracking-widest uppercase text-fuchsia-700 block mb-3">Camada 4</span>
+              <h3 className="text-lg leading-tight font-inter text-wg-black mb-3">Confiança da tese</h3>
+              <p className="text-[13px] leading-relaxed text-wg-gray font-light">
                 A leitura não precisa fingir certeza. O motor indica quando a tese ainda é experimental, quando já está assistida por base real e quando começa a ficar defensável.
               </p>
             </div>
@@ -356,7 +344,7 @@ const EasyRealStateLanding = () => {
                   ))}
                 </ul>
                 <a href={m.href} target={m.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
-                  <Button className={`w-full rounded-2xl py-3 ${m.destaque ? 'bg-wg-orange text-white hover:bg-wg-orange/90' : 'bg-wg-gray-light text-wg-black hover:bg-wg-gray-light/80'}`}>
+                  <Button className={m.destaque ? cardPrimaryCtaClass : cardSecondaryCtaClass}>
                     {m.cta} <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </a>
@@ -508,8 +496,9 @@ const EasyRealStateLanding = () => {
                   ))}
                 </ul>
                 <a href={plano.href} target={plano.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
-                  <Button className={`w-full rounded-2xl py-3 ${plano.destaque ? 'bg-wg-orange text-white hover:bg-wg-orange/90' : 'bg-wg-gray-light text-wg-black hover:bg-wg-gray-light/80'}`}>
+                  <Button className={plano.destaque ? cardPrimaryCtaClass : cardSecondaryCtaClass}>
                     {plano.cta}
+                    <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </a>
               </motion.div>
@@ -531,14 +520,14 @@ const EasyRealStateLanding = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`${PRODUCT_URLS.easyrealstate}/calculo`} target="_blank" rel="noopener noreferrer">
-                <Button className="btn-apple text-lg px-8 py-4">
-                  <Zap className="mr-2 w-5 h-5" />
+                <Button className={primaryCtaClass}>
+                  <Zap className="mr-2 w-4 h-4" />
                   Ver metodologia em ação
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
-              <a href={`tel:${COMPANY.ceoPhoneRaw}`} className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
-                <Phone className="w-5 h-5" />
+              <a href={`tel:${COMPANY.ceoPhoneRaw}`} className={secondaryCtaClass}>
+                <Phone className="mr-2 w-4 h-4" />
                 Fale com o CEO · {COMPANY.ceoPhone}
               </a>
             </div>
