@@ -2863,3 +2863,72 @@ site-wgalmeida/
 ### Evidencia principal
 
 - `.monitor-data/reports/console-smoke-2026-04-16T03-10-49-556Z.json`
+
+## 2026-04-16 - fechamento de deploy: assets publicos e sitemap para indexacao
+
+### Incidente final encontrado em producao
+
+- apos merge da estabilizacao editorial, o smoke contra producao ainda encontrou `404` em:
+  - `/images/banners/*`
+  - `/images/blog/*`
+  - `/images/about/*`
+- causa raiz:
+  - esses diretorios existiam localmente e no `dist`, mas estavam ignorados pelo `.gitignore`
+  - o Vercel recebia o codigo, mas nao recebia os arquivos publicos usados pelo runtime
+
+### Correcao aplicada
+
+- commit `74f2fd4`:
+  - incluiu no Git os assets publicos usados diretamente pelo site:
+    - `public/images/banners`
+    - `public/images/blog`
+    - `public/images/about`
+  - ajustou `.gitignore` para nao esconder novamente assets editoriais/publicos necessarios ao deploy
+- PR `#4`:
+  - `Fix public editorial image assets deploy`
+  - checks remotos verdes:
+    - `build-and-test`
+    - `deploy-gate-final`
+    - `GitGuardian`
+    - `SonarCloud`
+    - `Vercel`
+
+### Deploy final
+
+- deploy manual de producao executado via Vercel CLI apos merge:
+  - production alias: `https://wgalmeida.com.br`
+  - deployment: `https://site-wgalmeida-ji138yoma-william-almeidas-projects.vercel.app`
+
+### Validacao em producao
+
+- assets criticos agora respondem `200`:
+  - `https://wgalmeida.com.br/images/banners/foto-obra-1.jpg`
+  - `https://wgalmeida.com.br/images/banners/ARQ.webp`
+  - `https://wgalmeida.com.br/images/blog/scandia-home-roupa-cama-luxo/hero.webp`
+  - `https://wgalmeida.com.br/images/about/william-almeida-1200.webp`
+- sitemap final para indexacao:
+  - `https://wgalmeida.com.br/sitemap-index.xml`
+  - `https://wgalmeida.com.br/sitemap.xml`
+- smoke contra producao:
+  - `/blog`
+  - `/blog/arquitetos-brasileiros-famosos-legado`
+  - `/blog/scandia-home-roupa-cama-luxo`
+  - `/blog/como-calcular-custo-de-obra`
+  - `/blog/custo-marcenaria-planejada`
+  - `/sobre`
+  - `/arquitetura-corporativa`
+  - `/sitemap.xml`
+  - `/sitemap-index.xml`
+- resultado:
+  - sem ocorrencias relevantes
+  - evidencia: `.monitor-data/reports/console-smoke-2026-04-16T03-32-46-807Z.json`
+
+### Regra preventiva
+
+- qualquer asset referenciado diretamente por `src`, manifesto, banner, card, hero ou pagina institucional deve estar versionado ou explicitamente servido por CDN estavel
+- diretorio ignorado pelo Git nao pode ser fonte de imagem publica do site em producao
+- antes de fechar deploy, validar pelo menos um asset de cada familia:
+  - banner
+  - blog
+  - about/institucional
+  - sitemap
