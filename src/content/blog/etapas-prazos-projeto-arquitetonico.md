@@ -22,6 +22,8 @@ featured: false
 
 Um projeto premium exige metodo, clareza e sequencia. Cada etapa tem uma funcao tecnica especifica e garante que o resultado final seja executavel, elegante e consistente.
 
+Mais importante do que decorar nomes de fase e entender o papel operacional de cada uma. Projeto arquitetonico bom reduz retrabalho porque antecipa decisoes que, se empurradas para a obra, explodem em custo e prazo.
+
 ---
 
 ## O que entra em um projeto arquitetonico completo
@@ -69,6 +71,14 @@ Os prazos variam conforme complexidade, aprovacoes e interacoes com terceiros. A
 | 9. Anteprojeto | 30 dias uteis apos etapa 4 |
 | 10. Projeto executivo | 30 dias uteis apos etapa 6 |
 
+Esses prazos sao referencias. O cronograma real depende de:
+
+- tempo de validacao do cliente;
+- terceiros envolvidos;
+- nivel de definicao do escopo;
+- necessidade de compatibilizacao mais profunda;
+- e do tipo de obra que vira na sequencia.
+
 ---
 
 ## Ponto critico: validacao do cliente
@@ -78,6 +88,14 @@ Os prazos dependem diretamente das validacoes do cliente. Em geral:
 - Ha uma revisao incluida no anteprojeto.
 - Consideracoes adicionais podem impactar o cronograma.
 - Apos a entrega do executivo, o projeto segue para a obra.
+
+Essa etapa e decisiva porque influencia:
+
+- EVF;
+- compras;
+- medicoes;
+- producao de itens sob medida;
+- e a qualidade do cronograma da obra.
 
 ---
 

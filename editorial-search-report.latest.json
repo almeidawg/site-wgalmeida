@@ -1,0 +1,696 @@
+{
+  "generatedAt": "2026-04-16T01:49:38.741Z",
+  "summary": {
+    "styles": 31,
+    "stylesWithCloudinary": 31,
+    "blogPosts": 78,
+    "blogNeedsSearch": 0,
+    "blogHeroUnsplashOrRemote": 0,
+    "blogCardUnsplashOrRemote": 0
+  },
+  "styles": [
+    {
+      "kind": "style",
+      "slug": "art-deco",
+      "title": "Art Deco",
+      "hasCloudinary": true,
+      "mainQuery": "art deco interior",
+      "searchTerms": [
+        "art deco interior",
+        "luxury geometric interior",
+        "brass marble interior",
+        "guia",
+        "prático",
+        "estilo",
+        "déco",
+        "referências",
+        "anos"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=art%20deco%20interior",
+        "unsplash": "https://unsplash.com/s/photos/art%20deco%20interior"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "art-nouveau",
+      "title": "Art Nouveau",
+      "hasCloudinary": true,
+      "mainQuery": "art nouveau interior",
+      "searchTerms": [
+        "art nouveau interior",
+        "organic curves interior",
+        "decorative floral interior",
+        "descubra",
+        "estilo",
+        "nouveau",
+        "curvas",
+        "orgânicas",
+        "vitrais"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=art%20nouveau%20interior",
+        "unsplash": "https://unsplash.com/s/photos/art%20nouveau%20interior"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "boho",
+      "title": "Boho",
+      "hasCloudinary": true,
+      "mainQuery": "boho chic interior",
+      "searchTerms": [
+        "boho chic interior",
+        "layered bohemian living room",
+        "natural textured boho interior",
+        "veja",
+        "como",
+        "aplicar",
+        "estilo",
+        "boho",
+        "texturas"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=boho%20chic%20interior",
+        "unsplash": "https://unsplash.com/s/photos/boho%20chic%20interior"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "classico",
+      "title": "Classico",
+      "hasCloudinary": true,
+      "mainQuery": "classic interior design",
+      "searchTerms": [
+        "classic interior design",
+        "timeless elegant living room",
+        "ornate moulding marble interior",
+        "como",
+        "decorar",
+        "estilo",
+        "clássico",
+        "molduras",
+        "mármore"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=classic%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/classic%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "coastal",
+      "title": "Coastal",
+      "hasCloudinary": true,
+      "mainQuery": "coastal interior design",
+      "searchTerms": [
+        "coastal interior design",
+        "light airy beach house interior",
+        "neutral coastal living room",
+        "aprenda",
+        "aplicar",
+        "estilo",
+        "coastal",
+        "paleta",
+        "azul"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=coastal%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/coastal%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "contemporaneo",
+      "title": "Contemporaneo",
+      "hasCloudinary": true,
+      "mainQuery": "contemporary interior design",
+      "searchTerms": [
+        "contemporary interior design",
+        "refined modern living room",
+        "clean sophisticated interior",
+        "entenda",
+        "como",
+        "aplicar",
+        "estilo",
+        "contemporâneo",
+        "materiais"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=contemporary%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/contemporary%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "cottage",
+      "title": "Cottage",
+      "hasCloudinary": true,
+      "mainQuery": "cottage interior design",
+      "searchTerms": [
+        "cottage interior design",
+        "cozy cottage living room",
+        "soft rustic cottage interior",
+        "descubra",
+        "como",
+        "decorar",
+        "estilo",
+        "cottage",
+        "florais"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=cottage%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/cottage%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "ecletico",
+      "title": "Ecletico",
+      "hasCloudinary": true,
+      "mainQuery": "eclectic interior design",
+      "searchTerms": [
+        "eclectic interior design",
+        "collected layered interior",
+        "mix and match luxury interior",
+        "aprenda",
+        "combinar",
+        "estilos",
+        "épocas",
+        "cores",
+        "estilo"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=eclectic%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/eclectic%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "escandinavo",
+      "title": "Escandinavo",
+      "hasCloudinary": true,
+      "mainQuery": "scandinavian interior design",
+      "searchTerms": [
+        "scandinavian interior design",
+        "minimal nordic living room",
+        "light wood neutral interior",
+        "aprenda",
+        "aplicar",
+        "estilo",
+        "escandinavo",
+        "paleta",
+        "clara"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=scandinavian%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/scandinavian%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "farmhouse",
+      "title": "Farmhouse",
+      "hasCloudinary": true,
+      "mainQuery": "farmhouse interior design",
+      "searchTerms": [
+        "farmhouse interior design",
+        "modern farmhouse living room",
+        "rustic refined farmhouse interior",
+        "aprenda",
+        "decorar",
+        "estilo",
+        "farmhouse",
+        "branco",
+        "madeira"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=farmhouse%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/farmhouse%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "glam",
+      "title": "Glam",
+      "hasCloudinary": true,
+      "mainQuery": "glam interior design",
+      "searchTerms": [
+        "glam interior design",
+        "luxury glamorous living room",
+        "gold velvet elegant interior",
+        "descubra",
+        "como",
+        "aplicar",
+        "estilo",
+        "glam",
+        "veludo"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=glam%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/glam%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "hampton",
+      "title": "Hampton",
+      "hasCloudinary": true,
+      "mainQuery": "hamptons interior design",
+      "searchTerms": [
+        "hamptons interior design",
+        "coastal luxury living room",
+        "bright elegant hamptons interior",
+        "aprenda",
+        "aplicar",
+        "estilo",
+        "hampton",
+        "branco",
+        "azul-marinho"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=hamptons%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/hamptons%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "hollywood-regency",
+      "title": "Hollywood Regency",
+      "hasCloudinary": true,
+      "mainQuery": "hollywood regency interior",
+      "searchTerms": [
+        "hollywood regency interior",
+        "bold glamorous interior",
+        "high contrast luxury room",
+        "aprenda",
+        "criar",
+        "ambientes",
+        "hollywood",
+        "regency",
+        "espelhos"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=hollywood%20regency%20interior",
+        "unsplash": "https://unsplash.com/s/photos/hollywood%20regency%20interior"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "industrial",
+      "title": "Industrial",
+      "hasCloudinary": true,
+      "mainQuery": "industrial interior design",
+      "searchTerms": [
+        "industrial interior design",
+        "loft concrete metal interior",
+        "urban industrial living room",
+        "como",
+        "decorar",
+        "estilo",
+        "industrial",
+        "tijolo",
+        "aparente"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=industrial%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/industrial%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "japandi",
+      "title": "Japandi",
+      "hasCloudinary": true,
+      "mainQuery": "japandi interior design",
+      "searchTerms": [
+        "japandi interior design",
+        "minimal warm wood interior",
+        "japanese scandinavian living room",
+        "estilo",
+        "japandi",
+        "minimalismo",
+        "japonês",
+        "funcionalidade",
+        "escandinava"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=japandi%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/japandi%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "maximalista",
+      "title": "Maximalista",
+      "hasCloudinary": true,
+      "mainQuery": "maximalist interior design",
+      "searchTerms": [
+        "maximalist interior design",
+        "bold layered luxury interior",
+        "colorful expressive living room",
+        "descubra",
+        "como",
+        "aplicar",
+        "estilo",
+        "maximalista",
+        "cores"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=maximalist%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/maximalist%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "mediterraneo",
+      "title": "Mediterraneo",
+      "hasCloudinary": true,
+      "mainQuery": "mediterranean interior design",
+      "searchTerms": [
+        "mediterranean interior design",
+        "warm plaster arch interior",
+        "sunlit mediterranean living room",
+        "veja",
+        "como",
+        "criar",
+        "ambientes",
+        "estilo",
+        "mediterrâneo"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=mediterranean%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/mediterranean%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "mid-century",
+      "title": "Mid Century",
+      "hasCloudinary": true,
+      "mainQuery": "mid century modern interior",
+      "searchTerms": [
+        "mid century modern interior",
+        "walnut vintage modern living room",
+        "retro modern interior",
+        "entenda",
+        "estilo",
+        "mid-century",
+        "modern",
+        "aprenda",
+        "usar"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=mid%20century%20modern%20interior",
+        "unsplash": "https://unsplash.com/s/photos/mid%20century%20modern%20interior"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "minimalismo",
+      "title": "Minimalismo",
+      "hasCloudinary": true,
+      "mainQuery": "minimalist interior design",
+      "searchTerms": [
+        "minimalist interior design",
+        "quiet neutral luxury interior",
+        "clean serene living room",
+        "veja",
+        "como",
+        "criar",
+        "ambientes",
+        "minimalistas",
+        "linhas"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=minimalist%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/minimalist%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "moderno",
+      "title": "Moderno",
+      "hasCloudinary": true,
+      "mainQuery": "modern interior design",
+      "searchTerms": [
+        "modern interior design",
+        "sleek contemporary living room",
+        "architectural modern interior",
+        "entenda",
+        "estilo",
+        "moderno",
+        "decoração",
+        "linhas",
+        "limpas"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=modern%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/modern%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "neoclassico",
+      "title": "Neoclassico",
+      "hasCloudinary": true,
+      "mainQuery": "neoclassical interior design",
+      "searchTerms": [
+        "neoclassical interior design",
+        "symmetrical refined interior",
+        "elegant moulding salon",
+        "descubra",
+        "como",
+        "aplicar",
+        "estilo",
+        "neoclássico",
+        "interiores"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=neoclassical%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/neoclassical%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "provencal",
+      "title": "Provencal",
+      "hasCloudinary": true,
+      "mainQuery": "provencal interior design",
+      "searchTerms": [
+        "provencal interior design",
+        "french country elegant interior",
+        "soft rustic chic living room",
+        "veja",
+        "como",
+        "aplicar",
+        "estilo",
+        "provençal",
+        "tons"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=provencal%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/provencal%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "rustico",
+      "title": "Rustico",
+      "hasCloudinary": true,
+      "mainQuery": "rustic interior design",
+      "searchTerms": [
+        "rustic interior design",
+        "natural wood stone living room",
+        "warm rustic luxury interior",
+        "descubra",
+        "como",
+        "aplicar",
+        "estilo",
+        "rústico",
+        "materiais"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=rustic%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/rustic%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "shabby-chic",
+      "title": "Shabby Chic",
+      "hasCloudinary": true,
+      "mainQuery": "shabby chic interior design",
+      "searchTerms": [
+        "shabby chic interior design",
+        "romantic distressed furniture interior",
+        "soft vintage chic room",
+        "aprenda",
+        "criar",
+        "ambientes",
+        "shabby",
+        "chic",
+        "móveis"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=shabby%20chic%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/shabby%20chic%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "southwest",
+      "title": "Southwest",
+      "hasCloudinary": true,
+      "mainQuery": "southwest interior design",
+      "searchTerms": [
+        "southwest interior design",
+        "desert warm earthy interior",
+        "terracotta southwestern living room",
+        "entenda",
+        "estilo",
+        "southwest",
+        "terracota",
+        "turquesa",
+        "artesanato"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=southwest%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/southwest%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "transitional",
+      "title": "Transitional",
+      "hasCloudinary": true,
+      "mainQuery": "transitional interior design",
+      "searchTerms": [
+        "transitional interior design",
+        "classic modern balanced interior",
+        "soft luxury transitional room",
+        "entenda",
+        "estilo",
+        "transitional",
+        "combine",
+        "referências",
+        "clássicas"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=transitional%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/transitional%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "tropical",
+      "title": "Tropical",
+      "hasCloudinary": true,
+      "mainQuery": "tropical interior design",
+      "searchTerms": [
+        "tropical interior design",
+        "lush natural airy interior",
+        "resort style living room",
+        "descubra",
+        "como",
+        "criar",
+        "ambientes",
+        "tropicais",
+        "folhagens"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=tropical%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/tropical%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "tulum",
+      "title": "Tulum",
+      "hasCloudinary": true,
+      "mainQuery": "tulum style interior",
+      "searchTerms": [
+        "tulum style interior",
+        "organic earthy luxury interior",
+        "boho mediterranean resort interior",
+        "veja",
+        "como",
+        "aplicar",
+        "estilo",
+        "tulum",
+        "cimento"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=tulum%20style%20interior",
+        "unsplash": "https://unsplash.com/s/photos/tulum%20style%20interior"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "urban-modern",
+      "title": "Urban Modern",
+      "hasCloudinary": true,
+      "mainQuery": "urban modern interior design",
+      "searchTerms": [
+        "urban modern interior design",
+        "city luxury apartment interior",
+        "modern metropolitan living room",
+        "veja",
+        "como",
+        "aplicar",
+        "urban",
+        "modern",
+        "design"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=urban%20modern%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/urban%20modern%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "vintage",
+      "title": "Vintage",
+      "hasCloudinary": true,
+      "mainQuery": "vintage interior design",
+      "searchTerms": [
+        "vintage interior design",
+        "nostalgic curated living room",
+        "retro elegant interior",
+        "descubra",
+        "como",
+        "aplicar",
+        "estilo",
+        "vintage",
+        "móveis"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=vintage%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/vintage%20interior%20design"
+      }
+    },
+    {
+      "kind": "style",
+      "slug": "wabi-sabi",
+      "title": "Wabi Sabi",
+      "hasCloudinary": true,
+      "mainQuery": "wabi sabi interior design",
+      "searchTerms": [
+        "wabi sabi interior design",
+        "organic imperfect serene interior",
+        "earthy minimalist textured room",
+        "entenda",
+        "estilo",
+        "wabi-sabi",
+        "aprenda",
+        "criar",
+        "ambientes"
+      ],
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=wabi%20sabi%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/wabi%20sabi%20interior%20design"
+      }
+    }
+  ],
+  "blogNeedsSearch": []
+}

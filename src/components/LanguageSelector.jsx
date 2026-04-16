@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { Globe, ChevronDown, Check } from 'lucide-react';
+import { normalizeLanguageTag } from '@/i18n';
 
 const languages = [
   { code: 'pt-BR', name: 'Português', flag: '🇧🇷' },
@@ -12,12 +13,21 @@ const languages = [
 const LanguageSelector = ({ variant = 'default' }) => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const activeLanguageCode = normalizeLanguageTag(i18n.resolvedLanguage || i18n.language);
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+  const currentLanguage = languages.find((lang) => lang.code === activeLanguageCode) || languages[0];
 
-  const changeLanguage = (langCode) => {
-    i18n.changeLanguage(langCode);
+  const changeLanguage = async (langCode) => {
+    const nextLanguage = normalizeLanguageTag(langCode);
+    await i18n.changeLanguage(nextLanguage);
     setIsOpen(false);
+
+    // React-i18next neste projeto nao recompõe toda a arvore com consistencia
+    // em todas as rotas; forçar reload preserva o idioma selecionado e evita
+    // header/blog mistos apos a troca.
+    if (typeof window !== 'undefined') {
+      window.location.reload();
+    }
   };
 
   // Variante compacta para mobile
@@ -30,7 +40,7 @@ const LanguageSelector = ({ variant = 'default' }) => {
             key={lang.code}
             onClick={() => changeLanguage(lang.code)}
             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm transition-all ${
-              i18n.language === lang.code
+              activeLanguageCode === lang.code
                 ? 'bg-wg-orange text-white'
                 : 'bg-gray-100 hover:bg-gray-200'
             }`}
@@ -80,18 +90,18 @@ const LanguageSelector = ({ variant = 'default' }) => {
             >
               {languages.map((lang) => (
                 <button
-                  type="button"
-                  key={lang.code}
-                  onClick={() => changeLanguage(lang.code)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors ${
-                    i18n.language === lang.code
+                type="button"
+                key={lang.code}
+                onClick={() => changeLanguage(lang.code)}
+                className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors ${
+                    activeLanguageCode === lang.code
                       ? 'bg-wg-orange/10 text-wg-orange'
                       : 'hover:bg-gray-50 text-wg-gray'
                   }`}
                 >
                   <span className="text-lg">{lang.flag}</span>
                   <span className="text-sm font-medium flex-1">{lang.name}</span>
-                  {i18n.language === lang.code && (
+                  {activeLanguageCode === lang.code && (
                     <Check className="w-4 h-4 text-wg-orange" />
                   )}
                 </button>

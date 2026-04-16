@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
+import { WG_PRODUCT_MESSAGES } from '@/data/company';
 import { PROJECT_SERVICE_HIGHLIGHTS } from '@/utils/cloudinaryProjectPortfolio';
 
 // Animações elegantes
@@ -181,6 +182,31 @@ const Carpentry = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            {...fadeInUp}
+            className="rounded-3xl border border-wg-brown/15 bg-gradient-to-br from-wg-brown/5 via-white to-white p-8 md:p-10 mb-20"
+          >
+            <div className="max-w-4xl">
+              <span className="text-wg-brown font-light tracking-[0.2em] uppercase text-sm mb-4 block">
+                Producao Paralela
+              </span>
+              <h3 className="text-2xl md:text-3xl font-inter font-light text-wg-black tracking-tight mb-4">
+                Marcenaria nao entra apenas no fim. Ela precisa ser medida, aprovada e produzida no tempo certo
+              </h3>
+              <div className="space-y-3 text-wg-gray leading-relaxed">
+                <p>
+                  Em obras bem coordenadas, marcenaria funciona como frente de producao, com janela propria de medicao, aprovacao, fabricacao e montagem.
+                </p>
+                <p>
+                  {WG_PRODUCT_MESSAGES.obraeasyPromise}
+                </p>
+                <p>
+                  {WG_PRODUCT_MESSAGES.iccriPositioning}
+                </p>
+              </div>
+            </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div

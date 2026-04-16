@@ -32,8 +32,11 @@ De forma clara e tecnica, o memorial deve registrar:
 - Mão de obra especializada e ferramentas envolvidas
 - Materiais necessarios para reforma ou adequacao
 - Limites do escopo aprovado
+- Dependencias, aprovacoes e interfaces criticas da obra
 
 Isso garante previsibilidade, reduz riscos e protege o investimento do cliente.
+
+Em obras mais complexas, o memorial tambem ajuda a responder o que entra em cada fase e o que precisa ser medido, aprovado ou produzido antes da instalacao final.
 
 ---
 
@@ -45,12 +48,19 @@ Para que a obra avance com eficiencia, o cliente precisa disponibilizar:
 - Memorial descritivo do imovel (quando houver)
 - Plantas, CDs de apresentacoes e documentos existentes
 - Informacoes tecnicas sobre estrutura, eletrica e hidraulica
+- Validacoes e aprovacoes no momento certo
 
 ---
 
 ## Por que esse documento e decisivo
 
 Um memorial bem construido evita interpretacoes diferentes durante a obra. Ele alinha expectativas, garante transparência e sustenta a qualidade final da entrega.
+
+Na pratica, ele protege a obra contra tres riscos comuns:
+
+- escopo mal interpretado;
+- compra e execucao fora de ordem;
+- conflito entre o que foi combinado e o que chegou ao campo.
 
 ---
 

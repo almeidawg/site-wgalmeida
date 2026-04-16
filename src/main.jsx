@@ -10,6 +10,7 @@ import { CartProvider } from '@/hooks/useCart';
 import { getBasePath, withBasePath } from '@/utils/assetPaths';
 
 const isLocalPreview = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+const disableServiceWorkerTemporarily = true;
 
 class AppErrorBoundary extends React.Component {
   constructor(props) {
@@ -81,8 +82,8 @@ const sendToAnalytics = (metric) => {
 // Ativar monitoramento em todos os ambientes (envio condicional via GTM)
 reportWebVitals(sendToAnalytics);
 
-// Em preview local, remove SW antigo para evitar cache fantasma de imagens/assets.
-if ('serviceWorker' in navigator && isLocalPreview) {
+// Em caso de regressao de midia/cache, removemos SW ativamente ate reestabilizar producao.
+if ('serviceWorker' in navigator && (isLocalPreview || disableServiceWorkerTemporarily)) {
   navigator.serviceWorker.getRegistrations()
     .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
     .catch(() => {
@@ -91,7 +92,7 @@ if ('serviceWorker' in navigator && isLocalPreview) {
 }
 
 // Registrar Service Worker para PWA
-if ('serviceWorker' in navigator && import.meta.env.PROD && !isLocalPreview) {
+if ('serviceWorker' in navigator && import.meta.env.PROD && !isLocalPreview && !disableServiceWorkerTemporarily) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register(withBasePath('/sw.js'))
       .then((registration) => {

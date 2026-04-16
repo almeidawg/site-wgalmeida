@@ -31,7 +31,6 @@ Subpastas:
 - `banners`
 - `blog`
 - `estilos`
-- `wno-mas`
 
 Assets base identificados:
 

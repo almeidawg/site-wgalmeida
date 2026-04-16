@@ -146,7 +146,6 @@ Subpastas localizadas:
 - `public/images/banners/`
 - `public/images/blog/`
 - `public/images/estilos/`
-- `public/images/wno-mas/`
 
 Assets base importantes:
 

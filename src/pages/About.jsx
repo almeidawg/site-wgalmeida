@@ -349,7 +349,7 @@ const About = () => {
               <div className="space-y-6">
                 <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed">
                   <Trans i18nKey="aboutPage.ceo.paragraphs.0">
-                    Antes de ser grupo, sistema ou metodo, existia um desafio comum: <span className="text-wg-orange">decisoes sem dados claros</span>.
+                    Antes de ser grupo, estrutura ou metodo, existia um desafio comum: <span className="text-wg-orange">decisoes sem dados claros</span>.
                   </Trans>
                 </p>
 

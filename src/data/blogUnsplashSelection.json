@@ -242,6 +242,33 @@
         "alt": "Recorte visual para Quanto Custa Construir e Reformar em 2026: Guia Técnico Completo com Tabelas de Precos SINAPI, reforcando detalhe material e atmosfera do tema"
       }
     },
+    "como-calcular-custo-de-obra": {
+      "hero": {
+        "id": "nAjEMryfXfM",
+        "alt": "Projeto arquitetonico com planilhas, calculadora e leitura tecnica para estimar custo de obra com mais criterio"
+      },
+      "card": {
+        "id": "KoTUF0mdHLw",
+        "alt": "Mesa de trabalho com amostras, caderno e calculadora reforcando planejamento, composicao de custo e tomada de decisao"
+      },
+      "context": [
+        {
+          "id": "DSKsx_GIqYc",
+          "alt": "Equipe analisando planta e cronograma em mesa tecnica de obra",
+          "caption": "Imagem de apoio para o trecho em que o numero sai do m2 isolado e entra na leitura por etapa, decisao e cronograma."
+        },
+        {
+          "id": "pqMG4axFz_o",
+          "alt": "Detalhe de medicao e organizacao de materiais para compor custo real de reforma",
+          "caption": "Recorte visual para reforcar infraestrutura, medicao e itens que mudam o custo final fora da faixa generica por m2."
+        },
+        {
+          "id": "dspKrJYp644",
+          "alt": "Profissional analisando plantas, custo e validacao tecnica antes de fechar orcamento",
+          "caption": "Apoio visual para a parte de validacao tecnica, reforcando que estimativa inicial nao substitui fechamento por escopo e etapa."
+        }
+      ]
+    },
     "sustentabilidade-construcao-civil-2026": {
       "hero": {
         "id": "1577228336271-d1edca526d64",

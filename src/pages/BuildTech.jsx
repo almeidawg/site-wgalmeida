@@ -26,7 +26,7 @@ const BuildTech = () => {
     {
       icon: LayoutDashboard,
       title: "Licenciamento WG Easy",
-      description: "Acesse a plataforma completa de gestão que utilizamos no Grupo WG Almeida para controlar leads, propostas e obras.",
+      description: "Acesse a experiência completa de gestão que utilizamos no Grupo WG Almeida para controlar leads, propostas e obras.",
     },
     {
       icon: Cpu,
@@ -45,7 +45,7 @@ const BuildTech = () => {
       <SEO
         pathname="/buildtech"
         title="WG Build.tech | Consultoria de IA e Tecnologia para Construção"
-        description="Liderança mundial em arquitetura e tecnologia. Conheça as soluções de IA e o ecossistema WG Easy para o mercado imobiliário."
+        description="Tecnologia, IA e inteligência operacional para construção. Conheça as soluções WG para o mercado imobiliário."
         schema={[
           SCHEMAS.knowledgeGraph,
           SCHEMAS.softwareBuildTech,
@@ -154,9 +154,9 @@ const BuildTech = () => {
           >
             <div className="flex-1">
               <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Powered by WG Easy</span>
-              <h2 className="text-3xl md:text-5xl font-light mb-6 tracking-tight">O Sistema de Gestão das Maiores Obras de Luxo</h2>
+              <h2 className="text-3xl md:text-5xl font-light mb-6 tracking-tight">A experiência de gestão por trás das obras mais exigentes</h2>
               <p className="text-white/70 text-lg mb-8">
-                Utilize a mesma tecnologia que permitiu ao Grupo WG Almeida escalar sua operação para o nível Enterprise. Do CRM ao controle de suprimentos em um só lugar.
+                Utilize a mesma inteligência operacional que permitiu ao Grupo WG Almeida escalar sua operação com mais clareza, automação útil e menos esforço manual. Do CRM ao controle de suprimentos em uma jornada conectada.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-white/80">

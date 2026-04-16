@@ -1,3 +1,5 @@
+/* eslint-disable no-dupe-keys */
+
 const BLOG_IMAGE_OVERRIDES = {
   "generatedAt": "2026-04-11T04:37:11.263449+00:00",
   "source": "admin-localstorage-import",
@@ -16,16 +18,28 @@ const BLOG_IMAGE_OVERRIDES = {
     },
     "arquitetura-bruges-belgica": {
       "hero": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1661971645582-eb406693b81e?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEJydWdlc3xlbnwwfHwwfHx8MA%3D%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruges-belgica/hero.webp"
       },
       "seo": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1661971645582-eb406693b81e?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEJydWdlc3xlbnwwfHwwfHx8MA%3D%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruges-belgica/hero.webp"
+      },
+      "card": {
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruges-belgica/card.webp"
+      },
+      "thumb": {
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruges-belgica/card.webp"
+      },
+      "square": {
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruges-belgica/card.webp"
       },
       "default": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1661971645582-eb406693b81e?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEJydWdlc3xlbnwwfHwwfHx8MA%3D%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruges-belgica/hero.webp"
       },
       "context": [
         {
@@ -40,28 +54,28 @@ const BLOG_IMAGE_OVERRIDES = {
     },
     "arquitetura-bruxelas-belgica": {
       "hero": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1582124534218-f7bf8b908f2d?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJydXhlbGFzfGVufDB8fDB8fHww&h=480"
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruxelas-belgica/hero.webp"
       },
       "seo": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1582124534218-f7bf8b908f2d?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJydXhlbGFzfGVufDB8fDB8fHww&h=480"
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruxelas-belgica/hero.webp"
       },
       "card": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1575659868234-aae7cc621f8f?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YnJ1eGVsYXN8ZW58MHx8MHx8fDA%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruxelas-belgica/card.webp"
       },
       "thumb": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1575659868234-aae7cc621f8f?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YnJ1eGVsYXN8ZW58MHx8MHx8fDA%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruxelas-belgica/card.webp"
       },
       "square": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1575659868234-aae7cc621f8f?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YnJ1eGVsYXN8ZW58MHx8MHx8fDA%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruxelas-belgica/card.webp"
       },
       "default": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1582124534218-f7bf8b908f2d?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJydXhlbGFzfGVufDB8fDB8fHww&h=480"
+        "source": "local",
+        "src": "/images/blog/arquitetura-bruxelas-belgica/hero.webp"
       },
       "context": [
         {
@@ -134,28 +148,28 @@ const BLOG_IMAGE_OVERRIDES = {
     },
     "briefing-projeto-dos-sonhos": {
       "hero": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1608303588026-884930af2559?q=80&w=720&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/briefing-projeto-dos-sonhos/hero.webp"
       },
       "seo": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1608303588026-884930af2559?q=80&w=720&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/briefing-projeto-dos-sonhos/hero.webp"
       },
       "card": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1605256585681-455837661b18?q=80&w=720&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/briefing-projeto-dos-sonhos/card.webp"
       },
       "thumb": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1605256585681-455837661b18?q=80&w=720&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/briefing-projeto-dos-sonhos/card.webp"
       },
       "square": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1605256585681-455837661b18?q=80&w=720&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/briefing-projeto-dos-sonhos/card.webp"
       },
       "default": {
-        "source": "unsplash",
-        "src": "https://images.unsplash.com/photo-1608303588026-884930af2559?q=80&w=720&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&h=480"
+        "source": "local",
+        "src": "/images/blog/briefing-projeto-dos-sonhos/hero.webp"
       },
       "context": [
         {
@@ -224,28 +238,184 @@ const BLOG_IMAGE_OVERRIDES = {
     },
     "o-que-e-turn-key": {
       "hero": {
-        "source": "unsplash",
-        "src": "https://plus.unsplash.com/premium_photo-1664908221855-fda2524126e5?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIwfHx0dXJua2V5fGVufDB8fDB8fHww&h=480"
+        "source": "local",
+        "src": "/images/blog/o-que-e-turn-key/hero.webp"
       },
       "seo": {
-        "source": "unsplash",
-        "src": "https://plus.unsplash.com/premium_photo-1664908221855-fda2524126e5?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIwfHx0dXJua2V5fGVufDB8fDB8fHww&h=480"
+        "source": "local",
+        "src": "/images/blog/o-que-e-turn-key/hero.webp"
       },
       "card": {
-        "source": "unsplash",
-        "src": "https://plus.unsplash.com/premium_photo-1726863173328-9437d391141a?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI0fHx0dXJua2V5fGVufDB8fDB8fHww&h=480"
+        "source": "local",
+        "src": "/images/blog/o-que-e-turn-key/card.webp"
       },
       "thumb": {
-        "source": "unsplash",
-        "src": "https://plus.unsplash.com/premium_photo-1726863173328-9437d391141a?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI0fHx0dXJua2V5fGVufDB8fDB8fHww&h=480"
+        "source": "local",
+        "src": "/images/blog/o-que-e-turn-key/card.webp"
       },
       "square": {
-        "source": "unsplash",
-        "src": "https://plus.unsplash.com/premium_photo-1726863173328-9437d391141a?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI0fHx0dXJua2V5fGVufDB8fDB8fHww&h=480"
+        "source": "local",
+        "src": "/images/blog/o-que-e-turn-key/card.webp"
       },
       "default": {
-        "source": "unsplash",
-        "src": "https://plus.unsplash.com/premium_photo-1664908221855-fda2524126e5?w=720&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIwfHx0dXJua2V5fGVufDB8fDB8fHww&h=480"
+        "source": "local",
+        "src": "/images/blog/o-que-e-turn-key/hero.webp"
+      }
+    },
+    "obraeasy-como-funciona-para-clientes-finais": {
+      "hero": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      },
+      "seo": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      },
+      "card": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      },
+      "thumb": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      },
+      "square": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      },
+      "default": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      }
+    },
+    "obraeasy-para-parceiros-imobiliarias-corretores": {
+      "hero": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      },
+      "seo": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      },
+      "card": {
+        "source": "local",
+        "src": "/og-projetos-1200x630.jpg"
+      },
+      "thumb": {
+        "source": "local",
+        "src": "/og-projetos-1200x630.jpg"
+      },
+      "square": {
+        "source": "local",
+        "src": "/og-projetos-1200x630.jpg"
+      },
+      "default": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      }
+    },
+    "onboarding-processo-wg-almeida": {
+      "hero": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      },
+      "seo": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      },
+      "card": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      },
+      "thumb": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      },
+      "square": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      },
+      "default": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      }
+    },
+    "sistema-easy-metodologia-wg-almeida": {
+      "hero": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      },
+      "seo": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      },
+      "card": {
+        "source": "local",
+        "src": "/images/og-image.webp"
+      },
+      "thumb": {
+        "source": "local",
+        "src": "/images/og-image.webp"
+      },
+      "square": {
+        "source": "local",
+        "src": "/images/og-image.webp"
+      },
+      "default": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      }
+    },
+    "evf-estudo-viabilidade-financeira": {
+      "hero": {
+        "source": "local",
+        "src": "/og-engenharia-1200x630.jpg"
+      },
+      "seo": {
+        "source": "local",
+        "src": "/og-engenharia-1200x630.jpg"
+      },
+      "card": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      },
+      "thumb": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      },
+      "square": {
+        "source": "local",
+        "src": "/og-processo-1200x630.jpg"
+      },
+      "default": {
+        "source": "local",
+        "src": "/og-engenharia-1200x630.jpg"
+      }
+    },
+    "tabela-precos-reforma-2026-iccri": {
+      "hero": {
+        "source": "local",
+        "src": "/og-engenharia-1200x630.jpg"
+      },
+      "seo": {
+        "source": "local",
+        "src": "/og-engenharia-1200x630.jpg"
+      },
+      "card": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      },
+      "thumb": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      },
+      "square": {
+        "source": "local",
+        "src": "/og-home-1200x630.jpg"
+      },
+      "default": {
+        "source": "local",
+        "src": "/og-engenharia-1200x630.jpg"
       }
     },
     "obraeasy-para-parceiros-imobiliarias-corretores": {
@@ -406,28 +576,28 @@ const BLOG_IMAGE_OVERRIDES = {
     },
     "ralo-linear-areas-molhadas": {
       "hero": {
-        "source": "remote",
-        "src": "https://pedraopvc.vteximg.com.br/arquivos/ids/200905-800-800/ralo-linear-versatile-tampa-oculta-75cm-saida-extremidade-vertical-elleve-1.2.jpg?v=638802542807800000"
+        "source": "local",
+        "src": "/images/blog/ralo-linear-areas-molhadas/hero.webp"
       },
       "seo": {
-        "source": "remote",
-        "src": "https://pedraopvc.vteximg.com.br/arquivos/ids/200905-800-800/ralo-linear-versatile-tampa-oculta-75cm-saida-extremidade-vertical-elleve-1.2.jpg?v=638802542807800000"
+        "source": "local",
+        "src": "/images/blog/ralo-linear-areas-molhadas/hero.webp"
       },
       "card": {
-        "source": "remote",
-        "src": "https://acdn-us.mitiendanube.com/stores/001/130/455/products/ralo-oculto-aplicado-361-70a455adddc33ed2ad16505427184294-1024-1024.webp"
+        "source": "local",
+        "src": "/images/blog/ralo-linear-areas-molhadas/card.webp"
       },
       "thumb": {
-        "source": "remote",
-        "src": "https://acdn-us.mitiendanube.com/stores/001/130/455/products/ralo-oculto-aplicado-361-70a455adddc33ed2ad16505427184294-1024-1024.webp"
+        "source": "local",
+        "src": "/images/blog/ralo-linear-areas-molhadas/card.webp"
       },
       "square": {
-        "source": "remote",
-        "src": "https://acdn-us.mitiendanube.com/stores/001/130/455/products/ralo-oculto-aplicado-361-70a455adddc33ed2ad16505427184294-1024-1024.webp"
+        "source": "local",
+        "src": "/images/blog/ralo-linear-areas-molhadas/card.webp"
       },
       "default": {
-        "source": "remote",
-        "src": "https://pedraopvc.vteximg.com.br/arquivos/ids/200905-800-800/ralo-linear-versatile-tampa-oculta-75cm-saida-extremidade-vertical-elleve-1.2.jpg?v=638802542807800000"
+        "source": "local",
+        "src": "/images/blog/ralo-linear-areas-molhadas/hero.webp"
       }
     },
     "reforma-banheiro-moderno-2026": {
@@ -698,28 +868,28 @@ const BLOG_IMAGE_OVERRIDES = {
     },
     "termo-responsabilidade-nbr16280": {
       "hero": {
-        "source": "remote",
-        "src": "https://sienge.com.br/wp-content/uploads/2024/12/nbr-16280-abnt.jpg"
+        "source": "local",
+        "src": "/images/blog/termo-responsabilidade-nbr16280/hero.webp"
       },
       "seo": {
-        "source": "remote",
-        "src": "https://sienge.com.br/wp-content/uploads/2024/12/nbr-16280-abnt.jpg"
+        "source": "local",
+        "src": "/images/blog/termo-responsabilidade-nbr16280/hero.webp"
       },
       "card": {
-        "source": "remote",
-        "src": "https://sienge.com.br/wp-content/uploads/2024/12/nbr-16280-abnt.jpg"
+        "source": "local",
+        "src": "/images/blog/termo-responsabilidade-nbr16280/card.webp"
       },
       "thumb": {
-        "source": "remote",
-        "src": "https://sienge.com.br/wp-content/uploads/2024/12/nbr-16280-abnt.jpg"
+        "source": "local",
+        "src": "/images/blog/termo-responsabilidade-nbr16280/card.webp"
       },
       "square": {
-        "source": "remote",
-        "src": "https://sienge.com.br/wp-content/uploads/2024/12/nbr-16280-abnt.jpg"
+        "source": "local",
+        "src": "/images/blog/termo-responsabilidade-nbr16280/card.webp"
       },
       "default": {
-        "source": "remote",
-        "src": "https://sienge.com.br/wp-content/uploads/2024/12/nbr-16280-abnt.jpg"
+        "source": "local",
+        "src": "/images/blog/termo-responsabilidade-nbr16280/hero.webp"
       }
     },
     "williams-sonoma-cozinha-luxo": {
@@ -810,6 +980,350 @@ const BLOG_IMAGE_OVERRIDES = {
         "src": "/images/blog/o-que-e-turn-key.webp",
         "alt": "Projeto residencial integrado no modelo turn key"
       }
+    },
+    "acapulco-club-house-residencia-luxo": {
+      "hero": { "source": "local", "src": "/og-projetos-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-projetos-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/PROJETOS.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/PROJETOS.webp" },
+      "square": { "source": "local", "src": "/images/banners/PROJETOS.webp" },
+      "default": { "source": "local", "src": "/og-projetos-1200x630.jpg" }
+    },
+    "arquitetos-brasileiros-famosos-legado": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "arquitetos-internacionais-famosos-obras": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "arquitetura-haarlem-holanda": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "arquitetura-lisboa-portugal": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "arquitetura-paris-franca": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "arquitetura-sustentavel-certificacoes": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "automacao-residencial-2026-guia": {
+      "hero": { "source": "local", "src": "/og-processo-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-processo-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "square": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "default": { "source": "local", "src": "/og-processo-1200x630.jpg" }
+    },
+    "bim-construcao-civil-como-funciona": {
+      "hero": { "source": "local", "src": "/og-processo-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-processo-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "square": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "default": { "source": "local", "src": "/og-processo-1200x630.jpg" }
+    },
+    "calculadora-preco-m2-corretores-imobiliarias": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "thumb": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "square": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "closet-planejado-organizacao-otimizacao": {
+      "hero": { "source": "local", "src": "/og-marcenaria-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-marcenaria-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/MARCENARIA.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/MARCENARIA.webp" },
+      "square": { "source": "local", "src": "/images/banners/MARCENARIA.webp" },
+      "default": { "source": "local", "src": "/og-marcenaria-1200x630.jpg" }
+    },
+    "custo-construcao-reforma-2026-guia-tecnico-completo": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "square": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "erros-comuns-reforma-como-evitar": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/foto-obra-2.jpg" },
+      "thumb": { "source": "local", "src": "/images/banners/foto-obra-2.jpg" },
+      "square": { "source": "local", "src": "/images/banners/foto-obra-2.jpg" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "harman-kardon-som-ambientes": {
+      "hero": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "square": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "default": { "source": "local", "src": "/og-home-1200x630.jpg" }
+    },
+    "home-office-ergonomia-produtividade": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "iluminacao-residencial-guia-completo": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "importancia-contratar-arquiteto": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "le-creuset-panelas-design": {
+      "hero": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "square": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "default": { "source": "local", "src": "/og-home-1200x630.jpg" }
+    },
+    "marcas-luxo-internacionais-moveis-design": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "square": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "marcas-luxo-nacionais-moveis-decoracao": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "square": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "plantas-interiores-purificam-ar": {
+      "hero": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "square": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "default": { "source": "local", "src": "/og-home-1200x630.jpg" }
+    },
+    "profissionais-capacitados-obra": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "square": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "projeto-executivo-o-que-e": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "square": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "quanto-custa-reformar-apartamento-2026": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/foto-obra-3.jpg" },
+      "thumb": { "source": "local", "src": "/images/banners/foto-obra-3.jpg" },
+      "square": { "source": "local", "src": "/images/banners/foto-obra-3.jpg" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "quanto-tempo-dura-reforma-apartamento": {
+      "hero": { "source": "local", "src": "/og-processo-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-processo-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/foto-obra-4.jpg" },
+      "thumb": { "source": "local", "src": "/images/banners/foto-obra-4.jpg" },
+      "square": { "source": "local", "src": "/images/banners/foto-obra-4.jpg" },
+      "default": { "source": "local", "src": "/og-processo-1200x630.jpg" }
+    },
+    "quanto-valoriza-apartamento-apos-reforma": {
+      "hero": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "card": { "source": "local", "src": "/og-projetos-1200x630.jpg" },
+      "thumb": { "source": "local", "src": "/og-projetos-1200x630.jpg" },
+      "square": { "source": "local", "src": "/og-projetos-1200x630.jpg" },
+      "default": { "source": "local", "src": "/og-home-1200x630.jpg" }
+    },
+    "reforma-banheiro-moderno-2026": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/foto-obra-5.jpg" },
+      "thumb": { "source": "local", "src": "/images/banners/foto-obra-5.jpg" },
+      "square": { "source": "local", "src": "/images/banners/foto-obra-5.jpg" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "reforma-banheiro-pequeno-otimizacao": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/foto-obra-6.jpg" },
+      "thumb": { "source": "local", "src": "/images/banners/foto-obra-6.jpg" },
+      "square": { "source": "local", "src": "/images/banners/foto-obra-6.jpg" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "reforma-cozinha-planejada-guia-completo": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/foto-obra-7.jpg" },
+      "thumb": { "source": "local", "src": "/images/banners/foto-obra-7.jpg" },
+      "square": { "source": "local", "src": "/images/banners/foto-obra-7.jpg" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "reforma-saiu-mais-caro-o-que-fazer": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "square": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "sistema-easy-metodologia-wg-almeida": {
+      "hero": { "source": "local", "src": "/og-processo-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-processo-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/og-image.webp" },
+      "thumb": { "source": "local", "src": "/images/og-image.webp" },
+      "square": { "source": "local", "src": "/images/og-image.webp" },
+      "default": { "source": "local", "src": "/og-processo-1200x630.jpg" }
+    },
+    "steel-frame-vs-alvenaria-qual-escolher": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "square": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "sustentabilidade-construcao-civil-2026": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/FALECONOSCO.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/FALECONOSCO.webp" },
+      "square": { "source": "local", "src": "/images/banners/FALECONOSCO.webp" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "tendencias-construcao-civil-2026": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "square": { "source": "local", "src": "/images/banners/ENGENHARIA.webp" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "tendencias-decoracao-interiores-2026": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "square": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "varanda-gourmet-planejamento": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "como-calcular-custo-de-obra": {
+      "hero": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-engenharia-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/blog/cronograma-obra-acompanhamento.webp" },
+      "thumb": { "source": "local", "src": "/images/blog/cronograma-obra-acompanhamento.webp" },
+      "square": { "source": "local", "src": "/images/blog/cronograma-obra-acompanhamento.webp" },
+      "default": { "source": "local", "src": "/og-engenharia-1200x630.jpg" }
+    },
+    "obraeasy-para-parceiros-imobiliarias-corretores": {
+      "hero": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "card": { "source": "local", "src": "/og-projetos-1200x630.jpg" },
+      "thumb": { "source": "local", "src": "/og-projetos-1200x630.jpg" },
+      "square": { "source": "local", "src": "/og-projetos-1200x630.jpg" },
+      "default": { "source": "local", "src": "/og-home-1200x630.jpg" }
+    },
+    "casa-cor-2026-mente-coracao": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "dyson-tecnologia-design-residencial": {
+      "hero": { "source": "local", "src": "/og-processo-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-processo-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "square": { "source": "local", "src": "/images/banners/PROCESSOS.webp" },
+      "default": { "source": "local", "src": "/og-processo-1200x630.jpg" }
+    },
+    "paleta-cores-2026-cor-do-ano": {
+      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "square": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
+    },
+    "scandia-home-roupa-cama-luxo": {
+      "hero": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "square": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "default": { "source": "local", "src": "/og-home-1200x630.jpg" }
+    },
+    "williams-sonoma-cozinha-luxo": {
+      "hero": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "seo": { "source": "local", "src": "/og-home-1200x630.jpg" },
+      "card": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "thumb": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "square": { "source": "local", "src": "/images/banners/SOBRE.webp" },
+      "default": { "source": "local", "src": "/og-home-1200x630.jpg" }
     }
   }
 };

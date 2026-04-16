@@ -55,7 +55,6 @@ const RevistaEstilos = lazy(() => import('@/pages/RevistaEstilos'))
 const EstiloDetail = lazy(() => import('@/pages/EstiloDetail'))
 
 // Empresas do Grupo WG Almeida
-const Wnomas = lazy(() => import('@/pages/Wnomas'))
 const EasyLocker = lazy(() => import('@/pages/EasyLocker'))
 const BuildTech = lazy(() => import('@/pages/BuildTech'))
 const ICCRI = lazy(() => import('@/pages/ICCRI'))
@@ -223,7 +222,7 @@ function App() {
 
   // Não mostrar header/footer em páginas standalone
   const isStandaloneRoute =
-    ['/login', '/admin', '/wnomasvinho', '/wnomas'].some((path) =>
+    ['/login', '/admin'].some((path) =>
       location.pathname.startsWith(path)
     )
 
@@ -248,8 +247,6 @@ function App() {
               <Route path="/engenharia" element={<Engineering />} />
               <Route path="/marcenaria" element={<Carpentry />} />
               {/* Outras empresas do Grupo WG Almeida */}
-              <Route path="/wnomasvinho" element={<Wnomas />} />
-              <Route path="/wnomas" element={<Navigate to="/wnomasvinho" replace />} />
               <Route path="/easylocker" element={<EasyLocker />} />
               <Route path="/buildtech" element={<BuildTech />} />
               <Route path="/iccri" element={<ICCRI />} />

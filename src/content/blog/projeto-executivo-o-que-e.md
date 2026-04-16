@@ -30,6 +30,13 @@ E o conjunto de documentos tecnicos que orienta a obra com clareza. Ele define *
 
 > Um projeto executivo de qualidade e claro, didatico e orientado para a sequencia real da obra.
 
+Quando o executivo e forte, ele nao mostra apenas desenho. Ele antecipa decisao:
+
+- o que precisa ser aprovado antes;
+- o que depende de medicao para ir a producao;
+- quais interfaces precisam de compatibilizacao;
+- e em que ordem a obra deve avancar.
+
 ---
 
 ## O que normalmente compoe o executivo
@@ -43,6 +50,7 @@ O conteudo varia conforme o escopo, mas costuma incluir:
 - Vistas de ambientes e marcenaria
 - Detalhes de marmoraria, esquadrias e vidracaria
 - Caderno de materiais e especificacoes
+- Indicacoes de etapas, gatilhos e dependencias de obra
 
 ---
 
@@ -52,6 +60,7 @@ O conteudo varia conforme o escopo, mas costuma incluir:
 - **Protege o investimento** com definicoes antecipadas
 - **Facilita orcamento e compras**
 - **Alinha equipe e cliente** em um unico documento
+- **Ajuda a organizar medicao e producao paralela**
 
 ---
 
@@ -64,6 +73,7 @@ O executivo e entregue com:
 - Detalhamento tecnicamente viavel
 - Materiais definidos com curadoria premium
 - Sequencia de obra clara para a equipe
+- Leitura mais forte das interfaces entre projeto, custo e execucao
 
 ---
 

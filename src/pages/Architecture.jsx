@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
+import { WG_PRODUCT_MESSAGES } from '@/data/company';
 import { PROJECT_SERVICE_HIGHLIGHTS } from '@/utils/cloudinaryProjectPortfolio';
 
 // Animações elegantes
@@ -181,6 +182,31 @@ const Architecture = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            {...fadeInUp}
+            className="rounded-3xl border border-wg-green/15 bg-gradient-to-br from-wg-green/5 via-white to-white p-8 md:p-10 mb-20"
+          >
+            <div className="max-w-4xl">
+              <span className="text-wg-green font-light tracking-[0.2em] uppercase text-sm mb-4 block">
+                Metodo Operacional
+              </span>
+              <h3 className="text-2xl md:text-3xl font-inter font-light text-wg-black tracking-tight mb-4">
+                Arquitetura premium precisa organizar decisao antes de organizar acabamento
+              </h3>
+              <div className="space-y-3 text-wg-gray leading-relaxed">
+                <p>
+                  {WG_PRODUCT_MESSAGES.obraeasyPromise}
+                </p>
+                <p>
+                  Em arquitetura, isso significa definir layout, materiais, interfaces tecnicas e frentes que dependem de aprovacao ou medicao antes de a obra pressionar prazo e custo.
+                </p>
+                <p>
+                  {WG_PRODUCT_MESSAGES.marketReferences}
+                </p>
+              </div>
+            </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div

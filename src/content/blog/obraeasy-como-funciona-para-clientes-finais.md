@@ -16,6 +16,8 @@ Contratar uma obra de reforma ou construcao costuma ser uma das experiencias mai
 
 ObraEasy e a plataforma de gestao de obras da WG Almeida que conecta o cliente final, a equipe tecnica e todos os profissionais envolvidos em um ecossistema digital transparente, organizado e profissional.
 
+Mais importante: ele nao mostra apenas status solto. O produto organiza a obra pela logica operacional WG, com etapas, aprovacoes, medicoes e decisoes importantes aparecendo em uma sequencia mais clara.
+
 ---
 
 ## O Problema Que o ObraEasy Resolve
@@ -41,6 +43,13 @@ Tudo muda. Voce tem controle completo da sua obra na palma da mao, com:
 - Comunicacao centralizada por modulo (cronograma, financeiro, materiais)
 - Diario de obra digital com fotos e relatorios automaticos
 - Acesso a toda documentacao tecnica do projeto
+
+E a leitura deixa de ser apenas “quanto foi gasto”. O cliente passa a entender:
+
+- qual etapa esta ativa;
+- o que precisa de decisao;
+- o que trava a proxima frente;
+- e como custo e prazo se conectam com a execucao real.
 
 ---
 
@@ -68,6 +77,8 @@ O painel principal do cliente mostra em tempo real:
 | Financeiro | Cronograma de pagamentos e status |
 | Alertas | Desvios de prazo ou necessidade de decisao |
 
+Essa leitura fica mais forte quando o cliente enxerga a obra por etapa operacional e nao apenas por lista de tarefas. Isso reduz ansiedade e melhora a qualidade das aprovacoes.
+
 ### Passo 3: Aprovacao de Materiais
 
 Um dos momentos mais criticos da obra e a escolha e aprovacao de materiais. No ObraEasy:
@@ -90,6 +101,8 @@ O cronograma da sua obra e exibido em formato visual (Gantt simplificado), mostr
 - Impacto do atraso nas etapas subsequentes
 
 Voce sabe antes do arquiteto quando uma etapa esta em risco.
+
+Na pratica, isso transforma o cronograma em ferramenta de decisao, e nao so em calendario bonito.
 
 ### Passo 5: Diario de Obra Digital
 
@@ -115,6 +128,8 @@ O modulo financeiro do ObraEasy mostra:
 ---
 
 ## Funcionalidades Especiais Para Clientes Finais
+
+Antes mesmo da obra ganhar velocidade, o ObraEasy tambem pode nascer a partir do EVF, que e a leitura inicial de viabilidade da obra. Assim, custo, prazo, categoria e caminho de execucao ja começam organizados antes da etapa fisica.
 
 ### Guia de Estilos Personalizado
 

@@ -28,6 +28,8 @@ Se você busca um projeto bem planejado, executado sem desperdícios, valorizado
 
 Este artigo explica por que contratar um arquiteto é um investimento, não um gasto.
 
+Mas vale um ajuste importante: o valor do arquiteto nao esta apenas em desenhar melhor. Esta em organizar decisao, compatibilizar frentes e proteger custo, prazo e qualidade da execucao.
+
 ---
 
 ## O Que Faz um Arquiteto?
@@ -50,6 +52,7 @@ O arquiteto é um profissional multidisciplinar capacitado para:
 - Conhece performance de cada material
 - Escolhe produtos adequados ao uso
 - Equilibra estética e durabilidade
+- Define o que precisa ser aprovado, medido ou comprado em cada momento
 
 ✅ Coordenar projetos complementares
 - Estrutura
@@ -63,6 +66,7 @@ O arquiteto é um profissional multidisciplinar capacitado para:
 - Controla qualidade
 - Administra cronograma
 - Gerencia fornecedores
+- Ajuda a ordenar frentes que entram em producao paralela
 
 ✅ Garantir conformidade legal
 - Aprova projetos em prefeituras
@@ -99,7 +103,7 @@ Especificação Inteligente:
 - Custo-benefício otimizado
 - Evita produtos inadequados
 
-Economia média: 15-25% do valor da obra
+Economia media nao vem de milagre. Vem de menos improviso, menos retrabalho e melhor sequencia entre projeto, compra e obra.
 
 ---
 
@@ -208,6 +212,8 @@ Construção envolve múltiplas disciplinas que precisam "conversar".
 ✅ Execução sem surpresas
 
 Economia: 20-30% do custo de retrabalho
+
+E mais do que isso: compatibilizacao boa protege o cronograma. Quando a equipe descobre conflito em campo, geralmente a conta vem em atraso, remobilizacao e compra fora de janela.
 
 ---
 

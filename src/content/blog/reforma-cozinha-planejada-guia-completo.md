@@ -5,7 +5,7 @@ date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "reforma"
 image: "/images/banners/PROCESSOS.webp"
-excerpt: "Veja custos atualizados de reforma de cozinha planejada, cronograma por etapa e checklist para evitar atraso e gasto extra."
+excerpt: "Veja custos atualizados de reforma de cozinha planejada, cronograma por etapa e checklist para evitar atraso, retrabalho e gasto extra."
 tags:
   - "cozinha"
   - "reforma"
@@ -16,6 +16,18 @@ featured: false
 # Reforma de Cozinha Planejada em 2026: Custos Reais, Cronograma e Materiais
 
 Vai reformar a cozinha e quer evitar estouro de prazo e orcamento? Este guia mostra investimento por faixa, etapas da obra e erros mais comuns para decidir com clareza antes de contratar.
+
+Na cozinha, o erro mais comum e subestimar a quantidade de frentes que precisam conversar:
+
+- hidraulica;
+- eletrica;
+- marcenaria;
+- bancada;
+- revestimentos;
+- eletrodomesticos;
+- iluminacao e exaustao.
+
+Por isso, cozinha planejada nao deve ser lida apenas como ambiente bonito. Ela precisa ser organizada como micro-obra com sequencia propria.
 
 ## Por Que Reformar a Cozinha?
 
@@ -33,6 +45,7 @@ Vai reformar a cozinha e quer evitar estouro de prazo e orcamento? Este guia mos
 - Projeto 3D
 - Seleção de materiais
 - Aprovação do condomínio
+- Definicao de eletrodomesticos e pontos tecnicos
 
 ### 2. Demolição (3-5 dias)
 - Remoção de móveis antigos
@@ -59,6 +72,13 @@ Vai reformar a cozinha e quer evitar estouro de prazo e orcamento? Este guia mos
 - Ilha (se houver)
 - Adega
 - Despensa
+
+Na pratica, marcenaria e bancada nao deveriam comecar apenas na instalacao. Elas dependem de:
+
+- definicao do projeto;
+- medicao em campo;
+- aprovacao final;
+- e janela de producao.
 
 ### 6. Acabamentos Finais (1 semana)
 - Instalação de eletrodomésticos
@@ -92,6 +112,14 @@ Vai reformar a cozinha e quer evitar estouro de prazo e orcamento? Este guia mos
 - Adega climatizada
 - Eletrodomésticos premium
 - Iluminação inteligente
+
+Essas faixas sao referencia inicial. O valor real costuma variar mais quando existe:
+
+- troca pesada de infraestrutura;
+- alto nivel de marcenaria;
+- bancada especial;
+- eletrodomesticos embutidos;
+- ou atraso de aprovacao e medicao.
 
 ## Materiais para Bancada
 
@@ -143,6 +171,8 @@ Torneiras touch, lixeiras com sensor, tomadas USB
 ❌ Não pensar na exaustão adequada
 ❌ Economizar em ferragens de qualidade
 ❌ Não considerar a ergonomia
+❌ Deixar bancada e marcenaria para decidir tarde demais
+❌ Comprar eletrodomesticos antes de validar o projeto final
 
 ## Dicas de Ouro
 
@@ -167,6 +197,8 @@ Reforma completa: 6 a 12 semanas
 - Planejamento: 2-4 semanas
 - Execução: 4-8 semanas
 
+Esse prazo e referencia. O cronograma real muda bastante quando marcenaria, marmoraria e eletrodomesticos entram atrasados ou quando a infraestrutura existente exige mais adequacao do que o previsto.
+
 ## Grupo WG Almeida - Reforma de Cozinhas
 
 ✅ Projeto 3D incluído
@@ -175,6 +207,7 @@ Reforma completa: 6 a 12 semanas
 ✅ Marcenaria própria
 ✅ Garantia de 5 anos
 ✅ Acompanhamento diário
+✅ Leitura por etapa, medicao e producao
 
 Solicite seu orçamento gratuito!
 

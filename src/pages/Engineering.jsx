@@ -5,6 +5,7 @@ import { Wrench, ClipboardCheck, Zap, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
+import { WG_PRODUCT_MESSAGES } from '@/data/company';
 import { normalizeUnsplashImageUrl } from '@/lib/unsplash';
 
 // Animações elegantes
@@ -196,6 +197,35 @@ const Engineering = () => {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="section-padding-tight-top bg-white">
+        <div className="container-custom">
+          <motion.div
+            {...fadeInUp}
+            className="rounded-3xl border border-wg-blue/15 bg-gradient-to-br from-wg-blue/5 via-white to-white p-8 md:p-10"
+          >
+            <div className="max-w-4xl">
+              <span className="text-wg-blue font-light tracking-[0.2em] uppercase text-sm mb-4 block">
+                Logica de Obra
+              </span>
+              <h2 className="text-2xl md:text-3xl font-inter font-light text-wg-black tracking-tight mb-4">
+                Engenharia forte nao e so execucao. E sequencia, liberacao e controle de frente
+              </h2>
+              <div className="space-y-3 text-wg-gray leading-relaxed">
+                <p>
+                  {WG_PRODUCT_MESSAGES.obraeasyPromise}
+                </p>
+                <p>
+                  Em campo, isso significa liberar a obra no momento certo, testar antes de fechar, acionar compras criticas com antecedencia e coordenar as frentes que vao para producao paralela.
+                </p>
+                <p>
+                  {WG_PRODUCT_MESSAGES.iccriPositioning}
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

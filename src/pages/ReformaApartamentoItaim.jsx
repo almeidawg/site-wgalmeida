@@ -29,12 +29,12 @@ const ReformaApartamentoItaim = () => {
     {
       icon: Clock,
       title: 'Cronograma Garantido',
-      description: 'Logística otimizada para o Itaim. Obra sem atrasos e com acompanhamento diário.'
+      description: 'Logística otimizada para o Itaim, com prazos mais claros, acompanhamento próximo e menos ruído na obra.'
     },
     {
       icon: Building2,
       title: 'Turn Key Premium',
-      description: 'Projeto, execução e entrega integrados. Um único responsável do início ao fim.'
+      description: 'Projeto, execução e entrega sob a mesma condução. Um único responsável do início ao fim.'
     },
     {
       icon: Award,
@@ -85,7 +85,7 @@ const ReformaApartamentoItaim = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Reforma de Apartamento no Itaim Bibi | Grupo WG Almeida",
-    "description": "Reforma completa de apartamento no Itaim Bibi. Sistema Turn Key Premium: projeto, execução e entrega. Apartamentos de 80m² a 300m². Orçamento sem compromisso.",
+    "description": "Reforma completa de apartamento no Itaim Bibi com projeto, execução e entrega integrados. Apartamentos de 80m² a 300m², com leitura guiada da obra e orçamento transparente.",
     "url": pageUrl,
     "provider": {
       "@type": "Organization",
@@ -118,7 +118,7 @@ const ReformaApartamentoItaim = () => {
       <SEO
         pathname="/reforma-apartamento-itaim"
         title="Reforma Apartamento Itaim Bibi | Turn Key Premium SP"
-        description="Reforma completa de apartamento no Itaim Bibi. Sistema Turn Key: projeto, obra e entrega integrados. Especialistas em apartamentos de 80m² a 300m². Orçamento grátis."
+        description="Reforma completa de apartamento no Itaim Bibi com projeto, obra e entrega integrados. Especialistas em apartamentos de 80m² a 300m², com leitura guiada da execução e orçamento transparente."
         keywords="reforma apartamento itaim, reforma apartamento itaim bibi, construtora itaim, arquitetura itaim, reforma turn key itaim, quanto custa reforma apartamento itaim"
         url={pageUrl}
         schema={localBusinessSchema}
@@ -148,13 +148,16 @@ const ReformaApartamentoItaim = () => {
               Reforma de Apartamento<br />no Itaim Bibi
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Transformamos apartamentos no Itaim com sistema Turn Key Premium.
-              Projeto, execução e entrega com prazo garantido e acabamento impecável.
+              Transformamos apartamentos no Itaim com condução integrada do início à entrega.
+              Projeto, execução e entrega com prazo mais claro, acabamento impecável e menos coordenação manual para o cliente.
+            </p>
+            <p className="text-base text-white/65 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Quando a reforma entra bem organizada, ela deixa de ser só obra e passa a reforçar a defesa do investimento, do uso e da valorização do ativo com base em execução real.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/solicite-proposta">
                 <Button className="btn-apple">
-                  Solicitar Orçamento Itaim
+                  Solicitar proposta no Itaim
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
@@ -350,12 +353,12 @@ const ReformaApartamentoItaim = () => {
               Pronto para Reformar Seu Apartamento no Itaim?
             </h2>
             <p className="text-white/80 mb-8 text-lg">
-              Receba um orçamento personalizado e descubra como transformamos seu apartamento com qualidade premium e prazo garantido.
+              Receba uma proposta personalizada e descubra como transformamos seu apartamento com qualidade premium, leitura guiada da obra e prazo mais previsível.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/solicite-proposta">
                 <Button className="btn-apple">
-                  Solicitar Orçamento Grátis
+                  Solicitar proposta grátis
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>

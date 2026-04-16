@@ -336,11 +336,11 @@
       "hasInlineImages": false,
       "hasManifestEntry": true,
       "isVariantEntry": true,
-      "hasCloudinaryHero": true,
+      "hasCloudinaryHero": false,
       "hasCloudinaryCard": true,
       "hasLocalHero": true,
       "hasLocalCard": true,
-      "readyForTwoSlotEditorial": true
+      "readyForTwoSlotEditorial": false
     },
     "slots": [
       {
@@ -390,11 +390,11 @@
       "hasInlineImages": false,
       "hasManifestEntry": true,
       "isVariantEntry": true,
-      "hasCloudinaryHero": true,
-      "hasCloudinaryCard": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
       "hasLocalHero": true,
       "hasLocalCard": true,
-      "readyForTwoSlotEditorial": true
+      "readyForTwoSlotEditorial": false
     },
     "slots": [
       {
@@ -757,7 +757,7 @@
   },
   {
     "slug": "bim-construcao-civil-como-funciona",
-    "title": "BIM na Construção Civil: Como Funciona e Como Reduz Erros e Custos",
+    "title": "BIM na Construcao Civil: Como Funciona e Como Reduz Erros e Custos",
     "category": "tecnologia",
     "currentImage": "/images/banners/PROCESSOS.webp",
     "boldCount": 0,
@@ -766,8 +766,8 @@
     "status": {
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
-      "hasManifestEntry": false,
-      "isVariantEntry": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
       "hasCloudinaryHero": false,
       "hasCloudinaryCard": false,
       "hasLocalHero": false,
@@ -814,16 +814,16 @@
     "title": "Briefing: Como Planejar o Projeto dos Seus Sonhos",
     "category": "dicas",
     "currentImage": "/images/blog/briefing-projeto-dos-sonhos.webp",
-    "boldCount": 14,
+    "boldCount": 11,
     "inlineImageCount": 0,
     "needsCopyNormalization": false,
     "status": {
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
       "hasManifestEntry": true,
-      "isVariantEntry": false,
-      "hasCloudinaryHero": true,
-      "hasCloudinaryCard": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
       "hasLocalHero": false,
       "hasLocalCard": false,
       "readyForTwoSlotEditorial": false
@@ -865,7 +865,7 @@
   },
   {
     "slug": "calculadora-preco-m2-corretores-imobiliarias",
-    "title": "Calculadora de Preço por m² para Corretores e Imobiliárias: Como Avaliar Imóveis com Precisão em 2026",
+    "title": "Calculadora de Preço por m² para Corretores e Imobiliárias: Como Avaliar Imóveis com Critério em 2026",
     "category": "mercado-imobiliario",
     "currentImage": "/images/banners/SOBRE.webp",
     "boldCount": 0,
@@ -1026,6 +1026,60 @@
     ]
   },
   {
+    "slug": "como-calcular-custo-de-obra",
+    "title": "Como Calcular o Custo de uma Obra ou Reforma: Metodo Pratico",
+    "category": "engenharia",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 10,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "calcular custo construction renovation",
+        "searchTerms": [
+          "modern renovation interior",
+          "calcular custo construction renovation site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "calcular custo construction renovation",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/como-calcular-custo-de-obra/hero.webp",
+        "targetCloudinaryId": "editorial/blog/como-calcular-custo-de-obra/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "calcular custo construction renovation",
+        "searchTerms": [
+          "construction material detail",
+          "calcular custo construction renovation detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "calcular custo construction renovation",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/como-calcular-custo-de-obra/card.webp",
+        "targetCloudinaryId": "editorial/blog/como-calcular-custo-de-obra/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
     "slug": "cronograma-obra-acompanhamento",
     "title": "Cronograma de obra: como acompanhar etapas e prazos com clareza",
     "category": "engenharia",
@@ -1081,10 +1135,10 @@
   },
   {
     "slug": "custo-construcao-reforma-2026-guia-tecnico-completo",
-    "title": "Quanto Custa Construir e Reformar em 2026: Guia Técnico Completo com Tabelas de Precos SINAPI",
+    "title": "Quanto Custa Construir e Reformar em 2026: Guia Tecnico Completo com Referencias SINAPI",
     "category": "engenharia",
     "currentImage": "/images/banners/ENGENHARIA.webp",
-    "boldCount": 0,
+    "boldCount": 1,
     "inlineImageCount": 0,
     "needsCopyNormalization": false,
     "status": {
@@ -1129,6 +1183,168 @@
         "intent": "construction",
         "targetLocalFile": "public/images/blog/custo-construcao-reforma-2026-guia-tecnico-completo/card.webp",
         "targetCloudinaryId": "editorial/blog/custo-construcao-reforma-2026-guia-tecnico-completo/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "custo-marcenaria-planejada",
+    "title": "Custo de Marcenaria Planejada em 2026: Faixas e Fatores Tecnicos",
+    "category": "marcenaria",
+    "currentImage": "/images/banners/MARCENARIA.webp",
+    "boldCount": 1,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "custo custom carpentry planejada 2026",
+        "searchTerms": [
+          "custom carpentry interior",
+          "custo custom carpentry planejada 2026 millwork design",
+          "neutral wood interior",
+          "luxury joinery interior",
+          "clean woodwork composition"
+        ],
+        "searchQuery": "custo custom carpentry planejada 2026",
+        "intent": "carpentry",
+        "targetLocalFile": "public/images/blog/custo-marcenaria-planejada/hero.webp",
+        "targetCloudinaryId": "editorial/blog/custo-marcenaria-planejada/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "custo custom carpentry planejada 2026",
+        "searchTerms": [
+          "woodwork detail craftsmanship",
+          "custo custom carpentry planejada 2026 joinery detail",
+          "wood texture interior",
+          "custom shelving detail",
+          "minimal millwork detail"
+        ],
+        "searchQuery": "custo custom carpentry planejada 2026",
+        "intent": "carpentry",
+        "targetLocalFile": "public/images/blog/custo-marcenaria-planejada/card.webp",
+        "targetCloudinaryId": "editorial/blog/custo-marcenaria-planejada/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "custo-reforma-apartamento-alto-padrao-sp",
+    "title": "Quanto custa reformar um apartamento de alto padrao em Sao Paulo?",
+    "category": "engenharia",
+    "currentImage": "/images/banners/ENGENHARIA.webp",
+    "boldCount": 4,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "quanto custa reformar apartment",
+        "searchTerms": [
+          "modern renovation interior",
+          "quanto custa reformar apartment site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "quanto custa reformar apartment",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/custo-reforma-apartamento-alto-padrao-sp/hero.webp",
+        "targetCloudinaryId": "editorial/blog/custo-reforma-apartamento-alto-padrao-sp/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "quanto custa reformar apartment",
+        "searchTerms": [
+          "construction material detail",
+          "quanto custa reformar apartment detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "quanto custa reformar apartment",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/custo-reforma-apartamento-alto-padrao-sp/card.webp",
+        "targetCloudinaryId": "editorial/blog/custo-reforma-apartamento-alto-padrao-sp/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "custo-reforma-m2-sao-paulo",
+    "title": "Custo de Reforma por m2 em Sao Paulo em 2026: Faixas Reais por Padrao",
+    "category": "engenharia",
+    "currentImage": "/images/banners/ENGENHARIA.webp",
+    "boldCount": 1,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "custo renovation m2 sao 2026",
+        "searchTerms": [
+          "modern renovation interior",
+          "custo renovation m2 sao site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "custo renovation m2 sao 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/custo-reforma-m2-sao-paulo/hero.webp",
+        "targetCloudinaryId": "editorial/blog/custo-reforma-m2-sao-paulo/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "custo renovation m2 sao 2026",
+        "searchTerms": [
+          "construction material detail",
+          "custo renovation m2 sao detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "custo renovation m2 sao 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/custo-reforma-m2-sao-paulo/card.webp",
+        "targetCloudinaryId": "editorial/blog/custo-reforma-m2-sao-paulo/card",
         "orientation": "landscape"
       }
     ]
@@ -1243,7 +1459,7 @@
   },
   {
     "slug": "erros-comuns-reforma-como-evitar",
-    "title": "10 Erros Mais Comuns em Reformas e Como Evitá-los",
+    "title": "10 Erros Mais Comuns em Reformas e Como Evita-los",
     "category": "reforma",
     "currentImage": "/images/banners/PROCESSOS.webp",
     "boldCount": 0,
@@ -1462,7 +1678,7 @@
     "title": "EVF na Obra: Como Validar Custos e Evitar Estouro de Orçamento Antes de Construir",
     "category": "planejamento",
     "currentImage": "/images/banners/PROCESSOS.webp",
-    "boldCount": 0,
+    "boldCount": 3,
     "inlineImageCount": 0,
     "needsCopyNormalization": false,
     "status": {
@@ -2008,8 +2224,8 @@
     "status": {
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
-      "hasManifestEntry": false,
-      "isVariantEntry": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
       "hasCloudinaryHero": false,
       "hasCloudinaryCard": false,
       "hasLocalHero": false,
@@ -2170,8 +2386,8 @@
     "status": {
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
-      "hasManifestEntry": false,
-      "isVariantEntry": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
       "hasCloudinaryHero": false,
       "hasCloudinaryCard": false,
       "hasLocalHero": false,
@@ -2380,7 +2596,7 @@
     "title": "Normas técnicas na representacao de projetos: NBR 6492 e NBR 10068",
     "category": "engenharia",
     "currentImage": "/images/blog/normas-tecnicas-representacao.webp",
-    "boldCount": 14,
+    "boldCount": 15,
     "inlineImageCount": 0,
     "needsCopyNormalization": false,
     "status": {
@@ -2434,16 +2650,16 @@
     "title": "O Que E Turn Key? O Sistema Completo de Reforma",
     "category": "engenharia",
     "currentImage": "/images/blog/o-que-e-turn-key.webp",
-    "boldCount": 8,
+    "boldCount": 9,
     "inlineImageCount": 0,
     "needsCopyNormalization": false,
     "status": {
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
       "hasManifestEntry": true,
-      "isVariantEntry": false,
-      "hasCloudinaryHero": true,
-      "hasCloudinaryCard": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
       "hasLocalHero": false,
       "hasLocalCard": false,
       "readyForTwoSlotEditorial": false
@@ -2812,16 +3028,16 @@
     "title": "Projeto Executivo: o que e, o que contem e por que evita retrabalho",
     "category": "engenharia",
     "currentImage": "/images/banners/ENGENHARIA.webp",
-    "boldCount": 6,
+    "boldCount": 7,
     "inlineImageCount": 0,
     "needsCopyNormalization": false,
     "status": {
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
       "hasManifestEntry": true,
-      "isVariantEntry": false,
-      "hasCloudinaryHero": true,
-      "hasCloudinaryCard": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
       "hasLocalHero": false,
       "hasLocalCard": false,
       "readyForTwoSlotEditorial": false
@@ -2862,6 +3078,60 @@
     ]
   },
   {
+    "slug": "quanto-custa-reforma-apartamento-100m2",
+    "title": "Quanto Custa Reformar um Apartamento de 100m2 em 2026",
+    "category": "engenharia",
+    "currentImage": "/images/banners/foto-obra-4.jpg",
+    "boldCount": 1,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "quanto custa reformar apartment 2026",
+        "searchTerms": [
+          "modern renovation interior",
+          "quanto custa reformar apartment site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "quanto custa reformar apartment 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/quanto-custa-reforma-apartamento-100m2/hero.webp",
+        "targetCloudinaryId": "editorial/blog/quanto-custa-reforma-apartamento-100m2/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "quanto custa reformar apartment 2026",
+        "searchTerms": [
+          "construction material detail",
+          "quanto custa reformar apartment detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "quanto custa reformar apartment 2026",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/quanto-custa-reforma-apartamento-100m2/card.webp",
+        "targetCloudinaryId": "editorial/blog/quanto-custa-reforma-apartamento-100m2/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
     "slug": "quanto-custa-reformar-apartamento-2026",
     "title": "Quanto Custa Reformar um Apartamento em 2026? Guia Completo de Precos",
     "category": "engenharia",
@@ -2872,8 +3142,8 @@
     "status": {
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
-      "hasManifestEntry": false,
-      "isVariantEntry": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
       "hasCloudinaryHero": false,
       "hasCloudinaryCard": false,
       "hasLocalHero": false,
@@ -2970,8 +3240,62 @@
     ]
   },
   {
+    "slug": "quanto-tempo-leva-reforma-completa-alto-padrao",
+    "title": "Quanto tempo leva uma reforma completa de alto padrao?",
+    "category": "engenharia",
+    "currentImage": "/images/banners/PROCESSOS.webp",
+    "boldCount": 4,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "quanto tempo leva renovation",
+        "searchTerms": [
+          "modern renovation interior",
+          "quanto tempo leva renovation site detail",
+          "architectural renovation",
+          "clean material palette",
+          "high-end construction"
+        ],
+        "searchQuery": "quanto tempo leva renovation",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/quanto-tempo-leva-reforma-completa-alto-padrao/hero.webp",
+        "targetCloudinaryId": "editorial/blog/quanto-tempo-leva-reforma-completa-alto-padrao/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "quanto tempo leva renovation",
+        "searchTerms": [
+          "construction material detail",
+          "quanto tempo leva renovation detail interior",
+          "architectural finish detail",
+          "clean building texture",
+          "engineering detail"
+        ],
+        "searchQuery": "quanto tempo leva renovation",
+        "intent": "construction",
+        "targetLocalFile": "public/images/blog/quanto-tempo-leva-reforma-completa-alto-padrao/card.webp",
+        "targetCloudinaryId": "editorial/blog/quanto-tempo-leva-reforma-completa-alto-padrao/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
     "slug": "quanto-valoriza-apartamento-apos-reforma",
-    "title": "Quanto Valoriza um Apartamento Apos Reforma? EVF — Estimativa de Valor Final",
+    "title": "Quanto Valoriza um Apartamento Após Reforma? Como Ler o EVF com Critério",
     "category": "mercado-imobiliario",
     "currentImage": "/images/banners/foto-obra-3.jpg",
     "boldCount": 0,
@@ -3035,9 +3359,9 @@
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
       "hasManifestEntry": true,
-      "isVariantEntry": false,
-      "hasCloudinaryHero": true,
-      "hasCloudinaryCard": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
       "hasLocalHero": false,
       "hasLocalCard": false,
       "readyForTwoSlotEditorial": false
@@ -3088,8 +3412,8 @@
     "status": {
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
-      "hasManifestEntry": false,
-      "isVariantEntry": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
       "hasCloudinaryHero": false,
       "hasCloudinaryCard": false,
       "hasLocalHero": false,
@@ -3244,14 +3568,14 @@
     "title": "A Reforma Saiu Mais Cara que o Orcamento: O que Aconteceu e Como Evitar",
     "category": "engenharia",
     "currentImage": "/images/banners/foto-obra-5.jpg",
-    "boldCount": 18,
+    "boldCount": 0,
     "inlineImageCount": 0,
     "needsCopyNormalization": false,
     "status": {
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
-      "hasManifestEntry": false,
-      "isVariantEntry": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
       "hasCloudinaryHero": false,
       "hasCloudinaryCard": false,
       "hasLocalHero": false,
@@ -3349,7 +3673,7 @@
   },
   {
     "slug": "sistema-easy-metodologia-wg-almeida",
-    "title": "Sistema Easy: A Metodologia WG Almeida que Simplifica Seu Projeto",
+    "title": "Sistema Easy: Como a Metodologia WG Almeida Organiza Projetos com Mais Clareza",
     "category": "metodologia",
     "currentImage": "/images/banners/PROCESSOS.webp",
     "boldCount": 0,
@@ -3369,15 +3693,15 @@
     "slots": [
       {
         "slot": "hero",
-        "mainQuery": "sistema easy metodologia simplifica",
+        "mainQuery": "sistema easy metodologia organiza",
         "searchTerms": [
           "minimalist interior design",
-          "sistema easy metodologia simplifica home aesthetic",
+          "sistema easy metodologia organiza home aesthetic",
           "neutral living room",
           "soft color decor",
           "modern furniture layout"
         ],
-        "searchQuery": "sistema easy metodologia simplifica",
+        "searchQuery": "sistema easy metodologia organiza",
         "intent": "decor",
         "targetLocalFile": "public/images/blog/sistema-easy-metodologia-wg-almeida/hero.webp",
         "targetCloudinaryId": "editorial/blog/sistema-easy-metodologia-wg-almeida/hero",
@@ -3385,15 +3709,15 @@
       },
       {
         "slot": "card",
-        "mainQuery": "sistema easy metodologia simplifica",
+        "mainQuery": "sistema easy metodologia organiza",
         "searchTerms": [
           "interior styling detail",
-          "sistema easy metodologia simplifica decor detail",
+          "sistema easy metodologia organiza decor detail",
           "minimalist furniture detail",
           "soft light interior detail",
           "clean home composition"
         ],
-        "searchQuery": "sistema easy metodologia simplifica",
+        "searchQuery": "sistema easy metodologia organiza",
         "intent": "decor",
         "targetLocalFile": "public/images/blog/sistema-easy-metodologia-wg-almeida/card.webp",
         "targetCloudinaryId": "editorial/blog/sistema-easy-metodologia-wg-almeida/card",
@@ -3403,8 +3727,8 @@
   },
   {
     "slug": "steel-frame-vs-alvenaria-qual-escolher",
-    "title": "Steel Frame vs Alvenaria 2026: Qual É Mais Barato, Mais Rápido e Mais Confortável?",
-    "category": "construção civil",
+    "title": "Steel Frame vs Alvenaria 2026: Qual Entrega Melhor Resultado?",
+    "category": "construcao civil",
     "currentImage": "/images/banners/ENGENHARIA.webp",
     "boldCount": 0,
     "inlineImageCount": 0,
@@ -3514,7 +3838,7 @@
     "title": "Tabela de Precos de Reforma 2026 — ICCRI: O Indice de Referencia para Obras em Sao Paulo",
     "category": "engenharia",
     "currentImage": "/images/banners/foto-obra-2.jpg",
-    "boldCount": 0,
+    "boldCount": 3,
     "inlineImageCount": 0,
     "needsCopyNormalization": false,
     "status": {
@@ -3574,8 +3898,8 @@
     "status": {
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
-      "hasManifestEntry": false,
-      "isVariantEntry": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
       "hasCloudinaryHero": false,
       "hasCloudinaryCard": false,
       "hasLocalHero": false,
@@ -3683,9 +4007,9 @@
       "hasFrontmatterImage": true,
       "hasInlineImages": false,
       "hasManifestEntry": true,
-      "isVariantEntry": false,
-      "hasCloudinaryHero": true,
-      "hasCloudinaryCard": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
       "hasLocalHero": false,
       "hasLocalCard": false,
       "readyForTwoSlotEditorial": false
@@ -3721,6 +4045,60 @@
         "intent": "construction",
         "targetLocalFile": "public/images/blog/termo-responsabilidade-nbr16280/card.webp",
         "targetCloudinaryId": "editorial/blog/termo-responsabilidade-nbr16280/card",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  {
+    "slug": "vale-a-pena-contratar-arquiteto-turn-key",
+    "title": "Vale a pena contratar arquiteto no modelo turn key?",
+    "category": "arquitetura",
+    "currentImage": "/images/banners/ARQ.webp",
+    "boldCount": 1,
+    "inlineImageCount": 0,
+    "needsCopyNormalization": false,
+    "status": {
+      "hasFrontmatterImage": true,
+      "hasInlineImages": false,
+      "hasManifestEntry": true,
+      "isVariantEntry": true,
+      "hasCloudinaryHero": false,
+      "hasCloudinaryCard": false,
+      "hasLocalHero": false,
+      "hasLocalCard": false,
+      "readyForTwoSlotEditorial": false
+    },
+    "slots": [
+      {
+        "slot": "hero",
+        "mainQuery": "vale pena contratar arquiteto",
+        "searchTerms": [
+          "modern architecture exterior",
+          "vale pena contratar arquiteto facade design",
+          "neutral architecture photography",
+          "clean residential facade",
+          "soft light exterior"
+        ],
+        "searchQuery": "vale pena contratar arquiteto",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/vale-a-pena-contratar-arquiteto-turn-key/hero.webp",
+        "targetCloudinaryId": "editorial/blog/vale-a-pena-contratar-arquiteto-turn-key/hero",
+        "orientation": "landscape"
+      },
+      {
+        "slot": "card",
+        "mainQuery": "vale pena contratar arquiteto",
+        "searchTerms": [
+          "architectural facade detail",
+          "vale pena contratar arquiteto facade material",
+          "clean geometry facade",
+          "neutral exterior detail",
+          "architectural lines detail"
+        ],
+        "searchQuery": "vale pena contratar arquiteto",
+        "intent": "architecture",
+        "targetLocalFile": "public/images/blog/vale-a-pena-contratar-arquiteto-turn-key/card.webp",
+        "targetCloudinaryId": "editorial/blog/vale-a-pena-contratar-arquiteto-turn-key/card",
         "orientation": "landscape"
       }
     ]

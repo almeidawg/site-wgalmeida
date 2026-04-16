@@ -5,14 +5,14 @@ import { motion } from '@/lib/motion-lite'
 import { ArrowRight, BarChart3, Building2, Calculator, Landmark, Users } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { PRODUCT_URLS } from '@/data/company';
+import { PRODUCT_URLS, WG_PRODUCT_MESSAGES } from '@/data/company';
 
 const ICCRI_PAGE_URL = 'https://wgalmeida.com.br/iccri'
 
 const BASE_RANGE_BY_STANDARD = {
-  economico: { min: 1500, max: 2500 },
-  medio: { min: 2500, max: 4500 },
-  alto: { min: 4500, max: 8000 },
+  essencial: { min: 1500, max: 2500 },
+  equilibrado: { min: 2500, max: 4500 },
+  exclusivo: { min: 4500, max: 8000 },
 }
 
 const CITY_FACTOR = {
@@ -36,14 +36,14 @@ const getCityFactor = (city) => {
 
 export default function ICCRI() {
   const [area, setArea] = useState('80')
-  const [standard, setStandard] = useState('medio')
+  const [standard, setStandard] = useState('equilibrado')
   const [city, setCity] = useState('Sao Paulo')
 
   const simulation = useMemo(() => {
     const parsedArea = Number.parseFloat(area)
     if (!Number.isFinite(parsedArea) || parsedArea <= 0) return null
 
-    const range = BASE_RANGE_BY_STANDARD[standard] || BASE_RANGE_BY_STANDARD.medio
+    const range = BASE_RANGE_BY_STANDARD[standard] || BASE_RANGE_BY_STANDARD.equilibrado
     const factor = getCityFactor(city)
     const min = parsedArea * range.min * factor
     const max = parsedArea * range.max * factor
@@ -64,7 +64,7 @@ export default function ICCRI() {
       url: ICCRI_PAGE_URL,
       name: 'ICCRI - Indice de Custo de Construcao e Reforma Inteligente',
       description:
-        'Indice proprietario da WG Almeida para estimativa de custo de reforma por m2, com simulador de faixa de investimento em 2026.',
+        'Motor proprietario da WG Almeida para conectar custo, categorias, servicos, composicoes e leitura operacional da obra, com simulador de faixa de investimento em 2026.',
       isPartOf: { '@id': 'https://wgalmeida.com.br/#website' },
       about: { '@id': `${ICCRI_PAGE_URL}#dataset-iccri` },
     },
@@ -74,7 +74,7 @@ export default function ICCRI() {
       '@id': `${ICCRI_PAGE_URL}#dataset-iccri`,
       name: 'ICCRI 2026 - Indice de Custo de Construcao e Reforma Inteligente',
       description:
-        'Dataset proprietario da WG Almeida com faixas de custo de reforma por m2 e fatores de ajuste de localizacao e complexidade.',
+        'Base proprietaria da WG Almeida com faixas de custo de reforma por m2, categorias operacionais, fatores de ajuste e leitura metodologica da obra.',
       url: ICCRI_PAGE_URL,
       creator: {
         '@type': 'Organization',
@@ -89,9 +89,9 @@ export default function ICCRI() {
       },
       isAccessibleForFree: true,
       variableMeasured: [
-        { '@type': 'PropertyValue', name: 'custo_reforma_m2_economico' },
-        { '@type': 'PropertyValue', name: 'custo_reforma_m2_medio' },
-        { '@type': 'PropertyValue', name: 'custo_reforma_m2_alto_padrao' },
+        { '@type': 'PropertyValue', name: 'custo_reforma_m2_essencial' },
+        { '@type': 'PropertyValue', name: 'custo_reforma_m2_equilibrado' },
+        { '@type': 'PropertyValue', name: 'custo_reforma_m2_exclusivo' },
       ],
     },
     {
@@ -123,7 +123,7 @@ export default function ICCRI() {
       <SEO
         pathname="/iccri"
         title="ICCRI 2026 | Indice de Custo de Construcao e Reforma Inteligente"
-        description="Indice proprietario da WG Almeida para estimar custo de reforma por m2, com simulador de faixa de investimento para cliente final, corretores e parceiros."
+        description="Motor proprietario da WG Almeida para estimar custo, organizar categorias operacionais da obra e simular faixa de investimento para cliente final, corretores e parceiros."
         keywords="iccri, custo reforma m2, tabela custo reforma 2026, simulador custo obra, evf, avm, easyrealstate, obraeasy"
         url={ICCRI_PAGE_URL}
         schema={schema}
@@ -146,7 +146,16 @@ export default function ICCRI() {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             O ICCRI e um indice proprietario da WG Almeida baseado em dados reais de obras.
-            Ele organiza faixas de custo por m2 para tomada de decisao com previsibilidade.
+            Ele organiza custo, categorias, servicos e composicoes em uma leitura operacional mais didatica para tomada de decisao com previsibilidade.
+          </motion.p>
+          <motion.p
+            className="mt-4 max-w-4xl text-base text-white/65"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.18 }}
+          >
+            Como referencia isolada, ele abre uma faixa. Quando entra no ecossistema WG, ele ajuda a
+            sustentar a confianca da tese do ativo com base em custo real, fechamento real e captura de valor.
           </motion.p>
         </div>
       </section>
@@ -157,12 +166,12 @@ export default function ICCRI() {
             <div className="rounded-2xl border border-gray-200 bg-wg-gray-light p-6">
               <h2 className="text-2xl font-inter font-light text-wg-black mb-3">Quanto custa reformar em 2026?</h2>
               <p className="text-wg-gray leading-relaxed mb-4">
-                Segundo o ICCRI 2026, o custo estimado por m2 varia por padrao de acabamento:
+                Segundo o ICCRI 2026, o custo estimado por m2 varia por padrao de acabamento. Essa e a camada de referencia; a metodologia WG organiza a obra pelas etapas e gatilhos operacionais:
               </p>
               <ul className="space-y-2 text-wg-black">
-                <li>Economico: R$ 1.500 a R$ 2.500/m2</li>
-                <li>Medio padrao: R$ 2.500 a R$ 4.500/m2</li>
-                <li>Alto padrao: R$ 4.500 a R$ 8.000/m2</li>
+                <li>Essencial: R$ 1.500 a R$ 2.500/m2</li>
+                <li>Equilibrado: R$ 2.500 a R$ 4.500/m2</li>
+                <li>Exclusivo: R$ 4.500 a R$ 8.000/m2</li>
               </ul>
             </div>
 
@@ -194,9 +203,9 @@ export default function ICCRI() {
                     onChange={(event) => setStandard(event.target.value)}
                     className="rounded-lg border border-gray-300 px-3 py-2 text-wg-black"
                   >
-                    <option value="economico">Economico</option>
-                    <option value="medio">Medio padrao</option>
-                    <option value="alto">Alto padrao</option>
+                    <option value="essencial">Essencial</option>
+                    <option value="equilibrado">Equilibrado</option>
+                    <option value="exclusivo">Exclusivo</option>
                   </select>
                 </label>
 
@@ -237,7 +246,7 @@ export default function ICCRI() {
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://easyrealstate.wgalmeida.com.br/calculo"
+                  href={`${PRODUCT_URLS.easyrealstate}/calculo`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-wg-blue px-4 py-2 text-wg-blue"
@@ -246,6 +255,12 @@ export default function ICCRI() {
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
+              <p className="mt-4 text-sm leading-relaxed text-wg-gray">
+                Esta simulacao e uma referencia editorial guiada. A leitura mais forte acontece quando
+                ela se conecta ao Easy Real State, ao EVF e ao realizado do ObraEasy para indicar se a
+                tese ainda esta experimental, se ja pode ser conduzida de forma assistida ou se comeca
+                a ficar mais defensavel com base real.
+              </p>
             </div>
 
             <div>
@@ -255,7 +270,13 @@ export default function ICCRI() {
                 <li>Dados historicos operacionais da WG Almeida</li>
                 <li>Variacao de materiais e mao de obra</li>
                 <li>Complexidade tecnica dos projetos</li>
+                <li>{WG_PRODUCT_MESSAGES.marketReferences}</li>
               </ul>
+              <p className="mt-4 text-sm leading-relaxed text-wg-gray">
+                O diferencial do ICCRI nao esta so em abrir faixas de custo. Ele esta em servir de
+                ponte entre custo, etapa operacional, execucao real e leitura de captura de valor
+                dentro do ecossistema WG.
+              </p>
             </div>
 
             <LizAssistant context="custo" />
@@ -299,7 +320,7 @@ export default function ICCRI() {
               </div>
               <ul className="space-y-2 text-sm">
                 <li><a className="text-wg-blue hover:underline" href={`${PRODUCT_URLS.obraeasy}/evf4`} target="_blank" rel="noopener noreferrer">Simulador de custo de obra (ObraEasy)</a></li>
-                <li><a className="text-wg-blue hover:underline" href="https://easyrealstate.wgalmeida.com.br/calculo" target="_blank" rel="noopener noreferrer">Avaliacao imobiliaria (AVM)</a></li>
+                <li><a className="text-wg-blue hover:underline" href={`${PRODUCT_URLS.easyrealstate}/calculo`} target="_blank" rel="noopener noreferrer">Avaliacao imobiliaria (AVM)</a></li>
                 <li><Link className="text-wg-blue hover:underline" to="/easy-real-state">Calculadora EasyRealState</Link></li>
                 <li><Link className="text-wg-blue hover:underline" to="/buildtech">Ecossistema BuildTech</Link></li>
                 <li><Link className="text-wg-blue hover:underline" to="/tools/moodboard-generator">Tool: Moodboard Generator</Link></li>

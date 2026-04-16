@@ -178,22 +178,22 @@ Com trabalho remoto consolidado, o home office exige móveis adequados.
 ### Valores Médios (2026)
 
 **Cozinha Completa:**
-- Básica: R$ 15.000 - R$ 25.000
-- Intermediária: R$ 25.000 - R$ 45.000
-- Alto Padrão: R$ 45.000 - R$ 100.000+
+- Essencial: R$ 15.000 - R$ 25.000
+- Equilibrado: R$ 25.000 - R$ 45.000
+- Exclusivo: R$ 45.000 - R$ 100.000+
 
 **Closet:**
-- Básico: R$ 8.000 - R$ 15.000
-- Intermediário: R$ 15.000 - R$ 30.000
-- Alto Padrão: R$ 30.000 - R$ 80.000+
+- Essencial: R$ 8.000 - R$ 15.000
+- Equilibrado: R$ 15.000 - R$ 30.000
+- Exclusivo: R$ 30.000 - R$ 80.000+
 
 **Home Office:**
-- Básico: R$ 5.000 - R$ 10.000
-- Completo: R$ 10.000 - R$ 25.000
+- Essencial: R$ 5.000 - R$ 10.000
+- Equilibrado a Exclusivo: R$ 10.000 - R$ 25.000
 
 **Sala (Painel + Estante):**
-- Básica: R$ 6.000 - R$ 12.000
-- Alto Padrão: R$ 12.000 - R$ 35.000
+- Essencial: R$ 6.000 - R$ 12.000
+- Exclusivo: R$ 12.000 - R$ 35.000
 
 ## Como Escolher uma Marcenaria de Qualidade
 

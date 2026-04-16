@@ -1,0 +1,32 @@
+name: DEPLOY GATE FINAL
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy-gate-final:
+    name: deploy-gate-final
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Check imports
+        run: npm run check:imports
+
+      - name: Audit strict
+        run: npm run audit:consistency:strict
+
+      - name: Build
+        run: npm run build

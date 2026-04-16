@@ -1,0 +1,384 @@
+{
+  "generatedAt": "2026-04-15T22:09:17.978Z",
+  "summary": {
+    "styles": 31,
+    "localWebp": 31,
+    "localSvg": 31,
+    "cloudinary": 31,
+    "missingCloudinary": 0
+  },
+  "report": [
+    {
+      "slug": "art-deco",
+      "title": "Art Deco",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/art-deco",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Art%20Deco%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Art%20Deco%20interior%20design"
+      }
+    },
+    {
+      "slug": "art-nouveau",
+      "title": "Art Nouveau",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/art-nouveau",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Art%20Nouveau%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Art%20Nouveau%20interior%20design"
+      }
+    },
+    {
+      "slug": "boho",
+      "title": "Boho",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/boho",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Boho%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Boho%20interior%20design"
+      }
+    },
+    {
+      "slug": "classico",
+      "title": "Classico",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/classico",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Classico%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Classico%20interior%20design"
+      }
+    },
+    {
+      "slug": "coastal",
+      "title": "Coastal",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/coastal",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Coastal%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Coastal%20interior%20design"
+      }
+    },
+    {
+      "slug": "contemporaneo",
+      "title": "Contemporaneo",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/contemporaneo",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Contemporaneo%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Contemporaneo%20interior%20design"
+      }
+    },
+    {
+      "slug": "cottage",
+      "title": "Cottage",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/cottage",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Cottage%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Cottage%20interior%20design"
+      }
+    },
+    {
+      "slug": "ecletico",
+      "title": "Ecletico",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/ecletico",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Ecletico%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Ecletico%20interior%20design"
+      }
+    },
+    {
+      "slug": "escandinavo",
+      "title": "Escandinavo",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/escandinavo",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Escandinavo%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Escandinavo%20interior%20design"
+      }
+    },
+    {
+      "slug": "farmhouse",
+      "title": "Farmhouse",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/farmhouse",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Farmhouse%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Farmhouse%20interior%20design"
+      }
+    },
+    {
+      "slug": "glam",
+      "title": "Glam",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/glam",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Glam%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Glam%20interior%20design"
+      }
+    },
+    {
+      "slug": "hampton",
+      "title": "Hampton",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/hampton",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Hampton%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Hampton%20interior%20design"
+      }
+    },
+    {
+      "slug": "hollywood-regency",
+      "title": "Hollywood Regency",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/hollywood-regency",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Hollywood%20Regency%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Hollywood%20Regency%20interior%20design"
+      }
+    },
+    {
+      "slug": "industrial",
+      "title": "Industrial",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/industrial",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Industrial%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Industrial%20interior%20design"
+      }
+    },
+    {
+      "slug": "japandi",
+      "title": "Japandi",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/japandi",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Japandi%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Japandi%20interior%20design"
+      }
+    },
+    {
+      "slug": "maximalista",
+      "title": "Maximalista",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/maximalista",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Maximalista%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Maximalista%20interior%20design"
+      }
+    },
+    {
+      "slug": "mediterraneo",
+      "title": "Mediterraneo",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/mediterraneo",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Mediterraneo%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Mediterraneo%20interior%20design"
+      }
+    },
+    {
+      "slug": "mid-century",
+      "title": "Mid Century",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/mid-century",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Mid%20Century%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Mid%20Century%20interior%20design"
+      }
+    },
+    {
+      "slug": "minimalismo",
+      "title": "Minimalismo",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/minimalismo",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Minimalismo%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Minimalismo%20interior%20design"
+      }
+    },
+    {
+      "slug": "moderno",
+      "title": "Moderno",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/moderno",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Moderno%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Moderno%20interior%20design"
+      }
+    },
+    {
+      "slug": "neoclassico",
+      "title": "Neoclassico",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/neoclassico",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Neoclassico%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Neoclassico%20interior%20design"
+      }
+    },
+    {
+      "slug": "provencal",
+      "title": "Provencal",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/provencal",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Provencal%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Provencal%20interior%20design"
+      }
+    },
+    {
+      "slug": "rustico",
+      "title": "Rustico",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/rustico",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Rustico%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Rustico%20interior%20design"
+      }
+    },
+    {
+      "slug": "shabby-chic",
+      "title": "Shabby Chic",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/shabby-chic",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Shabby%20Chic%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Shabby%20Chic%20interior%20design"
+      }
+    },
+    {
+      "slug": "southwest",
+      "title": "Southwest",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/southwest",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Southwest%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Southwest%20interior%20design"
+      }
+    },
+    {
+      "slug": "transitional",
+      "title": "Transitional",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/transitional",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Transitional%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Transitional%20interior%20design"
+      }
+    },
+    {
+      "slug": "tropical",
+      "title": "Tropical",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/tropical",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Tropical%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Tropical%20interior%20design"
+      }
+    },
+    {
+      "slug": "tulum",
+      "title": "Tulum",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/tulum",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Tulum%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Tulum%20interior%20design"
+      }
+    },
+    {
+      "slug": "urban-modern",
+      "title": "Urban Modern",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/urban-modern",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Urban%20Modern%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Urban%20Modern%20interior%20design"
+      }
+    },
+    {
+      "slug": "vintage",
+      "title": "Vintage",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/vintage",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Vintage%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Vintage%20interior%20design"
+      }
+    },
+    {
+      "slug": "wabi-sabi",
+      "title": "Wabi Sabi",
+      "hasLocalWebp": true,
+      "hasLocalSvg": true,
+      "cloudinaryPublicId": "editorial/estilos/wabi-sabi",
+      "hasCloudinary": true,
+      "search": {
+        "googleImages": "https://www.google.com/search?tbm=isch&q=Wabi%20Sabi%20interior%20design",
+        "unsplash": "https://unsplash.com/s/photos/Wabi%20Sabi%20interior%20design"
+      }
+    }
+  ]
+}

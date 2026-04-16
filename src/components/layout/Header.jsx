@@ -13,10 +13,11 @@ const ShoppingCart = lazy(() => import('@/components/ShoppingCart'));
 const SCROLL_THRESHOLD = 72;
 const HEADER_LOGO_SRC = withBasePath('/images/logo-192.webp');
 
-const Header = () => { // NOSONAR - header composition is intentionally centralized for route-aware desktop/mobile behavior
+const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUnitsMenuOpen, setUnitsMenuOpen] = useState(false);
+  const [isMobileUnitsOpen, setMobileUnitsOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { cartItems } = useCart();
   const { t } = useTranslation();
@@ -47,6 +48,7 @@ const Header = () => { // NOSONAR - header composition is intentionally centrali
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setUnitsMenuOpen(false);
+    setMobileUnitsOpen(false);
   }, [location]);
 
   const navItems = useMemo(() => [
@@ -104,8 +106,8 @@ const Header = () => { // NOSONAR - header composition is intentionally centrali
   ], [t]);
 
 const navLinkClass = isScrolled
-    ? 'px-2.5 xl:px-3 py-1.5 rounded-full text-[13px] xl:text-sm text-wg-gray hover:text-wg-black hover:bg-black/[0.05]'
-    : 'px-2.5 xl:px-3 py-2 rounded-full text-[13px] xl:text-sm text-white/80 hover:text-white hover:bg-white/[0.08] backdrop-blur-sm';
+    ? 'whitespace-nowrap px-2 xl:px-2.5 py-1.5 rounded-full text-[12px] xl:text-[13px] text-wg-gray hover:text-wg-black hover:bg-black/[0.05]'
+    : 'whitespace-nowrap px-2 xl:px-2.5 py-2 rounded-full text-[12px] xl:text-[13px] text-white/80 hover:text-white hover:bg-white/[0.08] backdrop-blur-sm';
 
   const activeNavLinkClass = isScrolled
     ? 'bg-black/[0.05] text-wg-black'
@@ -147,14 +149,14 @@ const iconButtonClass = isScrolled
                   width="96"
                   height="96"
                   decoding="async"
-                  fetchPriority="low"
+                  fetchpriority="low"
                 />
               </Link>
             </div>
 
             {/* Nav desktop */}
-            <nav className={`hidden lg:flex min-w-0 items-center justify-center px-2 xl:px-4 flex-1 transition-all duration-500 ${
-              isScrolled ? 'gap-0.5' : 'gap-2 xl:gap-4'
+            <nav className={`hidden xl:flex min-w-0 items-center justify-center px-2 xl:px-3 2xl:px-4 flex-1 transition-all duration-500 ${
+              isScrolled ? 'gap-0.5' : 'gap-1.5 xl:gap-2 2xl:gap-4'
             }`}>
               {navItems.slice(0, 3).map((item) => (
                 <Link
@@ -175,7 +177,7 @@ const iconButtonClass = isScrolled
                 onMouseLeave={() => setUnitsMenuOpen(false)}
               >
                 <button
-                  className={`flex items-center gap-1 transition-all duration-300 font-suisse font-light ${navLinkClass}`}
+                  className={`flex items-center gap-1 whitespace-nowrap transition-all duration-300 font-suisse font-light ${navLinkClass}`}
                 >
                   <span>{t('header.unitsLabel')}</span>
                   <ChevronDown className={`transition-all duration-300 ${isScrolled ? 'w-3 h-3' : 'w-4 h-4'}`} />
@@ -273,7 +275,7 @@ const iconButtonClass = isScrolled
             <div className={`shrink-0 flex items-center justify-end gap-1.5 md:gap-2 xl:gap-3 transition-all duration-500 ${
               isScrolled ? 'flex-none' : 'flex-1 lg:flex-none'
             }`}>
-              <div className="hidden xl:block">
+              <div className="hidden 2xl:block">
                 <LanguageSelector />
               </div>
 
@@ -328,7 +330,7 @@ const iconButtonClass = isScrolled
               </a>
 
               <button
-                className={`lg:hidden transition-colors ${isScrolled ? 'text-wg-black' : 'text-white'}`}
+                className={`xl:hidden transition-colors ${isScrolled ? 'text-wg-black' : 'text-white'}`}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label={isMobileMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
                 aria-expanded={isMobileMenuOpen}

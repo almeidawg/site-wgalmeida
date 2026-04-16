@@ -22,6 +22,14 @@ featured: true
 
 Turn Key e o modelo onde uma unica empresa responde por **projeto, execucao e entrega**. Voce recebe o espaco pronto, com qualidade controlada, prazos reais e orcamento transparente. Na pratica, e a forma mais elegante de conduzir uma obra complexa com previsibilidade.
 
+Mas o valor real do Turn Key nao esta apenas em concentrar fornecedores. Ele esta em organizar a obra por metodo:
+
+- escopo claro;
+- aprovacoes no momento certo;
+- medicao e producao sob medida;
+- compras tecnicas;
+- e controle de etapa.
+
 ---
 
 ## Como funciona o Turn Key
@@ -45,6 +53,8 @@ No Turn Key, **uma empresa assume toda a responsabilidade**:
 5. Instalacoes e automacao
 6. Finalizacao e entrega
 
+No modelo bem executado, essas etapas nao ficam soltas. Elas seguem uma logica operacional em que decisao, obra e producao conversam.
+
 ---
 
 ## Beneficios reais do Turn Key
@@ -54,6 +64,7 @@ No Turn Key, **uma empresa assume toda a responsabilidade**:
 - **Cronograma coerente** com o escopo
 - **Qualidade padronizada** em todas as etapas
 - **Menos desgaste** e mais tempo para o cliente
+- **Mais controle sobre medicao, aprovacao e frentes paralelas**
 
 ---
 
@@ -88,6 +99,8 @@ O valor varia conforme complexidade, acabamentos e nivel de personalizacao:
 
 *Valores de referencia para Sao Paulo em 2024/2025.*
 
+Essas faixas sao leitura inicial. Em Turn Key, o diferencial esta em reduzir variacao de custo causada por falta de coordenacao entre projeto, obra e producao.
+
 ---
 
 ## Para quem o Turn Key e ideal
@@ -104,6 +117,7 @@ O valor varia conforme complexidade, acabamentos e nivel de personalizacao:
 - Curadoria tecnica de materiais e detalhamento autoral
 - Relatorios e acompanhamentos com transparencia
 - Entrega com acabamento impecavel
+- Leitura operacional conectada a custo, prazo e execucao
 
 ---
 

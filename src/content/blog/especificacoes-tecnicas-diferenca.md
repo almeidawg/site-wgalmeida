@@ -22,6 +22,8 @@ featured: false
 
 O acabamento premium nasce nas especificacoes. Sao elas que determinam conforto, desempenho e longevidade do projeto. Quando o detalhe e bem definido, a obra flui e o resultado permanece impecavel.
 
+Na pratica, especificacao tecnica boa nao serve apenas para deixar o desenho bonito. Ela ajuda a orientar compra, sequencia de execucao, compatibilizacao e aprovacoes.
+
 ---
 
 ## Onde as especificacoes impactam mais
@@ -40,11 +42,17 @@ O acabamento premium nasce nas especificacoes. Sao elas que determinam conforto,
 - espessuras corretas
 - folgas tecnicas para funcionamento
 - ferragens de alto desempenho
+- medicao coerente com o momento real da obra
 
 ### Marmoraria
 - espessuras, chanfrados e acabamentos
 - cubas e ralos bem posicionados
 - juntas discretas e bem tratadas
+
+### Infraestrutura e interfaces
+- pontos eletricos, hidraulicos e de automacao compatibilizados
+- previsao de reforcos, nichos, esperas e folgas
+- definicao clara de quem entra antes e quem depende de medicao final
 
 ---
 
@@ -52,11 +60,13 @@ O acabamento premium nasce nas especificacoes. Sao elas que determinam conforto,
 
 Detalhamento tecnico reduz retrabalho, evita compras erradas e garante consistencia em todos os ambientes. E o que transforma conceito em obra sem improviso.
 
+Tambem protege o cronograma porque diminui o risco de descobrir conflito tecnico quando a frente ja esta em execucao ou quando uma producao paralela ja foi disparada.
+
 ---
 
 ## Conclusao
 
-Em projetos de alto padrao, o luxo esta na precisao. Especificacoes claras elevam a qualidade e tornam o resultado duradouro e coerente.
+Em projetos de alto padrao, o luxo esta na precisao. Especificacoes claras elevam a qualidade e tornam o resultado duradouro e coerente, porque alinham projeto, compra e execucao na mesma leitura operacional.
 
 ## Proximo passo
 

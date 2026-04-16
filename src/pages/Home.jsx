@@ -15,7 +15,6 @@ import {
   CheckCircle2,
   Monitor,
   Lock,
-  Wine,
   Calendar,
   Camera,
   MessagesSquare,
@@ -295,14 +294,6 @@ const Home = () => {
       highlight: 'IoT + Segurança',
       color: 'wg-orange',
     },
-    {
-      title: 'Wno Mas Vinhos & Cia',
-      path: '/wnomasvinho',
-      icon: Wine,
-      description: 'Curadoria de vinhos, clube de assinatura e experiências exclusivas.',
-      highlight: 'Vinhos + Experiências',
-      color: 'wg-brown',
-    },
   ];
 
   // Etapas do processo / Metodologia
@@ -367,6 +358,8 @@ const Home = () => {
           >
             {i18n.language?.startsWith('pt') ? (
               <>Arquitetura, Engenharia e Marcenaria de Alto Padrão.</>
+            ) : i18n.language?.startsWith('es') ? (
+              <>Arquitectura, Ingeniería y Carpintería Premium.</>
             ) : (
               <>Architecture, Engineering and Premium Carpentry.</>
             )}

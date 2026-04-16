@@ -39,17 +39,17 @@ const ConstrutoraAltoPadraoSP = () => {
     {
       icon: Shield,
       title: 'Turn Key Premium',
-      description: 'Sistema completo: projeto, obra e entrega. Um único responsável do início ao fim.'
+      description: 'Projeto, obra e entrega sob a mesma condução. Um único responsável do início ao fim.'
     },
     {
       icon: Clock,
       title: 'Cronograma Garantido',
-      description: 'Planejamento rigoroso com prazos reais e acompanhamento via sistema WG Easy.'
+      description: 'Planejamento rigoroso com prazos reais, leitura guiada do andamento e menos coordenação manual.'
     },
     {
       icon: Award,
-      title: '14 Anos de Experiência',
-      description: 'Mais de 200 projetos entregues nos bairros mais exigentes de São Paulo.'
+      title: 'Operação Integrada',
+      description: 'Arquitetura, engenharia e marcenaria atuando sob a mesma coordenação executiva.'
     },
     {
       icon: Users,
@@ -86,7 +86,7 @@ const ConstrutoraAltoPadraoSP = () => {
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
     "name": "Grupo WG Almeida - Construtora Alto Padrão São Paulo",
-    "description": "Construtora especializada em obras de alto padrão em São Paulo. Sistema Turn Key Premium com arquitetura, engenharia e marcenaria integradas.",
+    "description": "Construtora especializada em obras de alto padrão em São Paulo, com arquitetura, engenharia e marcenaria integradas em uma condução única do início à entrega.",
     "url": pageUrl,
     "telephone": COMPANY.phoneRaw,
     "email": COMPANY.email,
@@ -113,7 +113,7 @@ const ConstrutoraAltoPadraoSP = () => {
       <SEO
         pathname="/construtora-alto-padrao-sp"
         title="Construtora Alto Padrão SP | Obras Turn Key Premium"
-        description="Construtora especializada em obras de alto padrão em São Paulo. Sistema Turn Key: arquitetura, engenharia e marcenaria integradas. 15 anos de experiência. Orçamento sem compromisso."
+        description="Construtora especializada em obras de alto padrão em São Paulo. Arquitetura, engenharia e marcenaria integradas com leitura guiada da obra, prazos reais e orçamento transparente."
         keywords="construtora alto padrão são paulo, construtora sp, obra alto padrão, turn key são paulo, construtora jardins, construtora itaim, reforma alto padrão sp"
         url={pageUrl}
         schema={schema}
@@ -145,22 +145,25 @@ const ConstrutoraAltoPadraoSP = () => {
               Construtora Alto Padrão São Paulo
             </span>
             <h1 className="wg-page-hero-title mb-6">
-              Obras de Alto Padrão<br />com Sistema Turn Key Premium
+              Obras de Alto Padrão<br />com leitura integrada do início à entrega
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Arquitetura, engenharia e marcenaria integradas em um único ecossistema.
-              15 anos transformando projetos em realidade nos bairros mais exigentes de São Paulo.
+              Arquitetura, engenharia e marcenaria integradas em uma condução única.
+              A inteligência trabalha por trás para deixar a operação mais clara, previsível e leve nos bairros mais exigentes de São Paulo.
+            </p>
+            <p className="text-base text-white/65 mb-8 max-w-3xl mx-auto leading-relaxed">
+              O valor não está só em entregar a obra. Está em proteger a tese do ativo com execução real, governança técnica e uma leitura mais defensável do que está sendo criado ou preservado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/solicite-proposta">
                 <Button className="btn-apple">
-                  Solicitar Orçamento
+                  Solicitar proposta guiada
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/projetos">
                 <Button className="btn-hero-outline">
-                  Ver Projetos Realizados
+                  Ver projetos realizados
                 </Button>
               </Link>
             </div>
@@ -306,12 +309,12 @@ const ConstrutoraAltoPadraoSP = () => {
               Pronto para Iniciar Seu Projeto de Alto Padrão?
             </h2>
             <p className="text-white/80 mb-8 text-lg">
-              Solicite um orçamento sem compromisso e descubra como transformamos sua obra em uma experiência fluida e previsível.
+              Solicite uma proposta sem compromisso e descubra como transformamos sua obra em uma experiência mais fluida, guiada e previsível.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/solicite-proposta">
                 <Button className="btn-apple">
-                  Solicitar Orçamento Agora
+                  Solicitar proposta agora
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
@@ -328,4 +331,3 @@ const ConstrutoraAltoPadraoSP = () => {
 };
 
 export default ConstrutoraAltoPadraoSP;
-

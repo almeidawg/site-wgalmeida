@@ -4,13 +4,12 @@ import { motion } from '@/lib/motion-lite'
 import { withBasePath } from '@/utils/assetPaths'
 import {
   ArrowRight, CheckCircle, Calculator, TrendingUp, Users,
-  Shield, FileText, BarChart3, Building2, Phone, Zap
+  Shield, FileText, BarChart3, Building2, Phone, Zap, Layers3, Landmark
 } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { OBRAEASY_PRECOS, PRODUCT_URLS } from '@/data/company'
+import { COMPANY, OBRAEASY_PRECOS, PRODUCT_URLS, WG_PRODUCT_MESSAGES } from '@/data/company'
 
 const ObraEasyLanding = () => {
-  const pageUrl = 'https://wgalmeida.com.br/obraeasy'
+  const pageUrl = `${PRODUCT_URLS.site}/obraeasy`
 
   const planos = [
     {
@@ -18,7 +17,7 @@ const ObraEasyLanding = () => {
       label: 'Gratuito',
       price: 'R$ 0',
       period: '/sempre',
-      desc: 'Para conhecer a plataforma',
+      desc: 'Para conhecer a experiência',
       cor: '#60a5fa',
       destaque: false,
       features: [
@@ -64,7 +63,7 @@ const ObraEasyLanding = () => {
         'Diário de obra + análise de projeto',
         'Módulo financeiro por projeto',
         'Relatórios mensais automáticos',
-        'Suporte prioritário 24h',
+        'Suporte prioritário',
       ],
       cta: 'Assinar Business',
       href: `${PRODUCT_URLS.obraeasy}/planos`,
@@ -113,7 +112,7 @@ const ObraEasyLanding = () => {
     {
       icon: Calculator,
       titulo: 'Estudo de Viabilidade Financeira (EVF)',
-      desc: 'Calcule o custo real da obra em segundos. Baseado em dados reais de SINAPI, CUB/SINDUSCON e transações de mercado em São Paulo.',
+      desc: 'Calcule o custo real da obra em segundos. O EVF usa referências de mercado e organiza a obra por etapas operacionais, materiais, mão de obra e produtos sem complicar a tomada de decisão.',
     },
     {
       icon: BarChart3,
@@ -128,17 +127,17 @@ const ObraEasyLanding = () => {
     {
       icon: Users,
       titulo: 'Gestão de Equipes e Fornecedores',
-      desc: 'Cadastre empreiteiros, fornecedores e profissionais. Cada um sabe exatamente o que fazer e quando.',
+      desc: 'Cadastre empreiteiros, fornecedores e profissionais. Cada um sabe exatamente o que fazer e quando, com menos coordenação manual.',
     },
     {
       icon: Shield,
       titulo: 'Controle Total da Obra',
-      desc: 'Tudo passa pelo sistema: orçamentos, contratos, pagamentos, liberação de etapas e acompanhamento em tempo real.',
+      desc: 'Tudo passa pela mesma leitura operacional: orçamentos, contratos, pagamentos, liberação de etapas e acompanhamento em tempo real, com menos ruído e mais previsibilidade.',
     },
     {
       icon: TrendingUp,
-      titulo: 'Índices ICCRI e Dados de Mercado',
-      desc: 'Preços atualizados mensalmente com base nos índices oficiais da construção civil. Sem achismo, sem surpresa.',
+      titulo: 'ICCRI e Dados de Mercado',
+      desc: 'SINAPI, CUB/SINDUSCON e outras bases entram como referência. O ICCRI transforma isso em leitura operacional WG, sem achismo e sem surpresa.',
     },
     {
       icon: FileText,
@@ -179,12 +178,12 @@ const ObraEasyLanding = () => {
     {
       numero: '01',
       titulo: 'Informe os dados da obra',
-      desc: 'Tipo de imóvel, metragem, padrão de acabamento e cidade. Leva menos de 2 minutos.',
+      desc: 'Tipo de imóvel, metragem, padrão de acabamento e cidade em um fluxo direto e objetivo.',
     },
     {
       numero: '02',
       titulo: 'Receba o EVF completo',
-      desc: 'Estudo de Viabilidade Financeira com custo por etapa, materiais, mão de obra e cronograma.',
+      desc: 'Estudo de Viabilidade Financeira com custo por etapa operacional, materiais, mão de obra e cronograma.',
     },
     {
       numero: '03',
@@ -194,7 +193,7 @@ const ObraEasyLanding = () => {
     {
       numero: '04',
       titulo: 'Acompanhe a execução',
-      desc: 'Contratos, financeiro, equipes e etapas · tudo centralizado no sistema.',
+      desc: 'Contratos, financeiro, equipes e etapas · tudo centralizado na mesma leitura operacional.',
     },
   ]
 
@@ -202,8 +201,8 @@ const ObraEasyLanding = () => {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'ObraEasy · Plataforma de Gestão de Obras',
-    description:
-      'Sistema de gestão de obras com Estudo de Viabilidade Financeira (EVF), cronograma automático, contratos digitais e financeiro da obra. Para clientes finais, corretores e construtoras.',
+        description:
+      'Experiência digital de gestão de obras com Estudo de Viabilidade Financeira (EVF), cronograma automático, contratos digitais e financeiro da obra. Para clientes finais, corretores e construtoras.',
     url: pageUrl,
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
@@ -247,7 +246,7 @@ const ObraEasyLanding = () => {
               transition={{ duration: 0.7, delay: 0.08 }}
               className="wg-page-hero-kicker text-wg-orange"
             >
-              Plataforma de Gestão de Obras
+              B2B para retrofit, reforma, incorporação leve e operação imobiliária
             </motion.span>
 
             <motion.h1
@@ -256,7 +255,7 @@ const ObraEasyLanding = () => {
               transition={{ duration: 0.8, delay: 0.18 }}
               className="wg-page-hero-title"
             >
-              Gerencie sua obra do orçamento <span className="text-wg-orange">à entrega</span>
+              Custo real, etapa operacional e <span className="text-wg-orange">execução controlada</span> no mesmo fluxo.
             </motion.h1>
 
             <motion.p
@@ -265,7 +264,7 @@ const ObraEasyLanding = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="wg-page-hero-subtitle max-w-3xl"
             >
-              Estudo de Viabilidade Financeira, cronograma automático, contratos digitais e controle financeiro em uma plataforma simples e profissional.
+              O ObraEasy conecta EVF, ICCRI, cronograma, financeiro e execução real para apoiar decisões de obra com menos achismo, mais previsibilidade e leitura comercial mais forte.
             </motion.p>
 
             <motion.p
@@ -274,7 +273,25 @@ const ObraEasyLanding = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="wg-page-hero-body max-w-3xl"
             >
-              Dados de referência: SINAPI · CUB/SINDUSCON · FipeZAP, combinados com curadoria operacional WG Almeida.
+              {WG_PRODUCT_MESSAGES.obraeasyB2B}
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.48 }}
+              className="wg-page-hero-body max-w-3xl"
+            >
+              {WG_PRODUCT_MESSAGES.wgAutomationPromise}
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.56 }}
+              className="wg-page-hero-body max-w-3xl"
+            >
+              {WG_PRODUCT_MESSAGES.obraeasyCapture}
             </motion.p>
 
             <motion.div
@@ -283,16 +300,16 @@ const ObraEasyLanding = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="wg-page-hero-actions"
             >
-              <a href="https://obraeasy.wgalmeida.com.br/evf4" target="_blank" rel="noopener noreferrer">
+              <a href={`${PRODUCT_URLS.obraeasy}/evf4`} target="_blank" rel="noopener noreferrer">
                 <Button className="btn-apple text-base px-6 py-3">
                   <Calculator className="mr-2 w-4 h-4" />
-                  Calcular minha obra grátis
+                  Ver metodologia em ação
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
-                      <a href="https://obraeasy.wgalmeida.com.br/landing/corretor" target="_blank" rel="noopener noreferrer">
+              <a href={COMPANY.ceoWhatsapp} target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="border-white text-white hover:bg-white hover:text-wg-black transition-all rounded-2xl px-6 py-3 text-sm">
-                  Sou corretor ou parceiro
+                  Fale com o CEO
                 </Button>
               </a>
             </motion.div>
@@ -303,8 +320,45 @@ const ObraEasyLanding = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-xs text-white/50"
             >
-              Grátis para começar · Sem cartão de crédito · Cancele quando quiser
+              Entrada rápida para validação · leitura executiva para decisores · implantação consultiva quando fizer sentido
             </motion.p>
+          </div>
+        </div>
+      </section>
+
+      {/* MECANISMO */ }
+      <section className="section-padding-tight-top bg-white">
+        <div className="container-custom">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Mecanismo de decisão</span>
+            <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
+              Três camadas para sair do orçamento solto
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Calculator,
+                title: 'EVF',
+                desc: 'Leitura inicial de custo, prazo e sensibilidade para validar se a obra faz sentido antes de contratar no escuro.',
+              },
+              {
+                icon: Layers3,
+                title: 'ICCRI + Etapas WG',
+                desc: 'A obra deixa de ser lista de itens e passa a ser uma sequência operacional com medição, aprovação, produção paralela e execução.',
+              },
+              {
+                icon: Landmark,
+                title: 'Financeiro + captura de valor',
+                desc: 'A leitura conecta orçamento, contratação, realizado e potencial pós-obra para apoiar retrofit, revenda e obra de maior ticket.',
+              },
+            ].map((item, i) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12 }} className="rounded-2xl bg-wg-gray-light p-8">
+                <item.icon className="mb-4 h-10 w-10 text-wg-orange" />
+                <h3 className="mb-3 text-xl font-inter text-wg-black">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-wg-gray font-light">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -315,7 +369,7 @@ const ObraEasyLanding = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Para quem é o ObraEasy</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
-              Uma plataforma, três perfis de uso
+              Uma experiência, três perfis de uso
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -355,7 +409,7 @@ const ObraEasyLanding = () => {
             ))}
           </div>
           <div className="text-center mt-10">
-            <a href="https://obraeasy.wgalmeida.com.br/evf4" target="_blank" rel="noopener noreferrer">
+            <a href={`${PRODUCT_URLS.obraeasy}/evf4`} target="_blank" rel="noopener noreferrer">
               <Button className="btn-apple">
                 <Zap className="mr-2 w-5 h-5" />
                 Testar agora · é grátis
@@ -437,10 +491,10 @@ const ObraEasyLanding = () => {
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { num: '15+', label: 'anos de experiência em obra' },
-              { num: '200+', label: 'obras entregues em SP' },
+              { num: 'EVF', label: 'estudo estruturado para decisão inicial' },
+              { num: 'Cronograma', label: 'etapas e sequência operacional visíveis' },
               { num: 'SINAPI', label: 'base oficial de preços' },
-              { num: '100%', label: 'online, sem papel' },
+              { num: 'Digital', label: 'fluxo online, sem papelada operacional' },
             ].map((stat, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <div className="text-3xl md:text-4xl font-inter font-light text-wg-orange mb-2">{stat.num}</div>
@@ -451,28 +505,60 @@ const ObraEasyLanding = () => {
         </div>
       </section>
 
+      {/* BASE METODOLOGICA */}
+      <section className="section-padding bg-wg-gray-light">
+        <div className="container-custom">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mx-auto max-w-5xl rounded-[2rem] bg-white p-8 md:p-12">
+            <span className="mb-4 block text-center text-sm uppercase tracking-widest text-wg-orange">Base metodológica</span>
+            <h2 className="mb-4 text-center text-3xl font-inter font-light text-wg-black md:text-4xl">
+              Referência de mercado entra como base. A decisão nasce da metodologia WG.
+            </h2>
+            <p className="mx-auto mb-10 max-w-3xl text-center text-wg-gray font-light leading-relaxed">
+              {WG_PRODUCT_MESSAGES.obraeasyBenchmarks}
+            </p>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="rounded-2xl bg-wg-gray-light p-6">
+                <h3 className="mb-3 text-lg font-inter text-wg-black">Referências brasileiras</h3>
+                <ul className="space-y-2 text-sm font-light text-wg-gray">
+                  <li>SINAPI para composição oficial de custos</li>
+                  <li>CUB / SINDUSCON para referência setorial</li>
+                  <li>FipeZap para contexto de mercado imobiliário</li>
+                </ul>
+              </div>
+              <div className="rounded-2xl bg-wg-gray-light p-6">
+                <h3 className="mb-3 text-lg font-inter text-wg-black">Leitura proprietária WG</h3>
+                <ul className="space-y-2 text-sm font-light text-wg-gray">
+                  <li>ICCRI para categorias, serviços e composições</li>
+                  <li>Etapas operacionais WG para sequência real da obra</li>
+                  <li>Financeiro, medições e execução para validar o realizado</li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA FINAL */}
       <section className="section-padding bg-gradient-to-br from-wg-black to-wg-black/90 text-white">
         <div className="container-custom text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto">
             <Zap className="w-12 h-12 mx-auto mb-6 text-wg-orange" />
             <h2 className="text-3xl md:text-4xl font-inter font-light mb-6">
-              Comece grátis hoje mesmo
+              Coloque custo, etapa e execução na mesma conversa
             </h2>
             <p className="text-white/70 mb-10 text-lg leading-relaxed">
-              Crie sua conta, calcule o custo da sua obra e receba o Estudo de Viabilidade
-              Financeira completo em menos de 3 minutos.
+              Se a sua operação vende retrofit, reforma, implantação ou obra de maior ticket, a conversa certa não é só orçamento. É previsibilidade, método e execução controlada.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://obraeasy.wgalmeida.com.br/cadastro" target="_blank" rel="noopener noreferrer">
+              <a href={`${PRODUCT_URLS.obraeasy}/cadastro`} target="_blank" rel="noopener noreferrer">
                 <Button className="btn-apple text-lg px-8 py-4">
-                  Criar conta grátis
+                  Solicitar ativação
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
-              <a href="tel:+5511984650002" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
+              <a href={COMPANY.ceoWhatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
                 <Phone className="w-5 h-5" />
-                +55 (11) 98465-0002
+                Fale com o CEO · {COMPANY.ceoPhone}
               </a>
             </div>
           </motion.div>

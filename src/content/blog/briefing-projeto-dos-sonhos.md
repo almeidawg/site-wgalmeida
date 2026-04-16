@@ -22,6 +22,8 @@ featured: true
 
 O briefing e a etapa que define o sucesso do projeto. E quando traduzimos estilo de vida, prioridades e expectativas em diretrizes claras para uma arquitetura precisa e personalizada.
 
+Mas briefing bom nao fala apenas de gosto. Ele tambem organiza investimento, prazo, nivel de obra, complexidade tecnica e expectativas de operacao.
+
 ---
 
 ## Por que o briefing e decisivo
@@ -29,6 +31,7 @@ O briefing e a etapa que define o sucesso do projeto. E quando traduzimos estilo
 - Evita retrabalho e mudancas tardias
 - Direciona investimento para o que realmente importa
 - Garante coerencia entre conceito e execucao
+- Ajuda a separar desejo, prioridade e janela real de investimento
 
 ---
 
@@ -49,6 +52,7 @@ O briefing e a etapa que define o sucesso do projeto. E quando traduzimos estilo
 - Separe referencias confiaveis (Pinterest, revistas, imagens reais)
 - Alinhe expectativas com quem vai morar no espaco
 - Defina limites de investimento e prioridades
+- Liste restricoes tecnicas do imovel, do condominio e de prazo
 
 ---
 
@@ -58,81 +62,49 @@ O briefing e a etapa que define o sucesso do projeto. E quando traduzimos estilo
 2. Moodboard e direcao estetica
 3. Estudo de layout
 4. Apresentacao do conceito
+5. Leitura de escopo, custo e etapas para validar o que faz sentido seguir
 
----
+## O que um briefing forte evita
 
-## Conclusao
+- projeto bonito, mas desalinhado com o investimento real;
+- marcenaria e acabamentos definidos cedo demais, sem base tecnica;
+- cronograma prometido sem considerar aprovacoes e obra;
+- solucoes copiadas que nao respondem ao uso real da familia.
 
-Um briefing bem conduzido e o primeiro sinal de um projeto premium. Ele traz clareza, evita ruido e protege o investimento do cliente.
-
-## Proximo passo
-
-Quer um projeto sob medida com metodo e previsibilidade? Fale com o nosso time.
-
-- Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 (11) 98465-0002
-Ocultar o real valor disponível leva a projetos incompatíveis com a realidade.
-
-### 2. Copiar Projetos de Terceiros
-O que funciona para outros pode não funcionar para você. Busque inspiração, não cópia.
-
-### 3. Ignorar o Futuro
-Projete pensando nos próximos 5-10 anos, não apenas no momento atual.
-
-### 4. Não Envolver Todos os Moradores
-Decisões unilaterais geram conflitos durante o projeto.
-
-### 5. Focar Só na Estética
-Funcionalidade é tão importante quanto beleza.
-
----
-
-## Checklist de Briefing
+## Checklist de briefing
 
 Use esta lista para se preparar:
 
-**Sobre os Moradores**
+**Sobre os moradores**
 - [ ] Lista de todos os moradores
 - [ ] Necessidades especiais
 - [ ] Planos futuros
 
-**Sobre o Estilo**
-- [ ] Fotos de referência (mínimo 20)
+**Sobre o estilo**
+- [ ] Fotos de referencia
 - [ ] Cores preferidas
 - [ ] Materiais que gosta
 
-**Sobre a Função**
-- [ ] Lista de ambientes necessários
+**Sobre a funcao**
+- [ ] Lista de ambientes necessarios
 - [ ] Necessidades de armazenamento
 - [ ] Equipamentos especiais
 
-**Sobre o Investimento**
-- [ ] Orçamento definido
+**Sobre o investimento**
+- [ ] Orcamento definido
 - [ ] Prioridades claras
 - [ ] Prazo desejado
+- [ ] Nivel de reforma esperado
 
----
-
-## Próximo Passo: Agende Seu Briefing
-
-Nosso processo começa com uma **consulta gratuita** onde entendemos sua situação atual e explicamos como podemos ajudar.
-
-Agende sua visita e dê o primeiro passo para transformar seu sonho em realidade.
-
----
-
-*Grupo WG Almeida, Encantar pessoas, projetando, reformando e construindo espaços em alta performance*
-
-**Tags**: briefing projeto, planejamento reforma, arquiteto são paulo, projeto personalizado, como planejar reforma
 ---
 
 ## Conclusao
 
-Quando projeto, tecnica e sensibilidade caminham juntos, o resultado deixa de ser apenas bonito e passa a ser **memoravel**. Essa e a essencia da WG Almeida: transformar espacos em experiencias, com clareza, sofisticacao e performance.
+Um briefing bem conduzido e o primeiro sinal de um projeto premium. Ele traz clareza, evita ruido e protege o investimento do cliente porque organiza o que deve ser sonhado, o que deve ser priorizado e o que realmente pode ser executado.
 
 ## Proximo passo
 
-Se voce busca um projeto sob medida, com acompanhamento completo e acabamento premium, fale com o nosso time.
+Quer um projeto sob medida com metodo e previsibilidade? Fale com o nosso time.
 
 - Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
 - WhatsApp: +55 (11) 98465-0002

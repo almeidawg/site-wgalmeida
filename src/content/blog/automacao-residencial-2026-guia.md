@@ -17,6 +17,8 @@ featured: false
 
 Em 2026, automacao residencial deixou de ser luxo para se tornar um diferencial real em projetos residenciais. Neste guia, voce entende custos por nivel e como planejar a smart home com mais seguranca.
 
+O erro mais comum e tratar automacao como compra de equipamento no fim da obra. Em projetos bem estruturados, ela entra cedo porque depende de infraestrutura, compatibilizacao, pontos tecnicos e sequencia correta de liberacao.
+
 ## O Que É Automação Residencial?
 
 Integração de tecnologia para controlar sistemas da casa:
@@ -30,7 +32,7 @@ Integração de tecnologia para controlar sistemas da casa:
 
 ## Níveis de Automação
 
-### Nível 1: Básico (R$ 2.000-8.000)
+### Nível 1: Essencial (R$ 2.000-8.000)
 O que inclui:
 - Interruptores inteligentes (Alexa/Google)
 - Lâmpadas smart
@@ -48,7 +50,7 @@ Contras:
 ❌ Depende de WiFi
 ❌ Cada dispositivo um app
 
-### Nível 2: Intermediário (R$ 15.000-40.000)
+### Nível 2: Equilibrado (R$ 15.000-40.000)
 O que inclui:
 - Sistema centralizado
 - Iluminação integrada
@@ -66,8 +68,9 @@ Prós:
 Contras:
 ❌ Precisa cabeamento
 ❌ Instalação profissional
+❌ Exige compatibilizacao com eletrica, forro e marcenaria
 
-### Nível 3: Avançado (R$ 50.000-200.000+)
+### Nível 3: Exclusivo (R$ 50.000-200.000+)
 O que inclui:
 - Tudo do intermediário+
 - Áudio multiroom
@@ -188,12 +191,20 @@ Essencial definir:
 - Orçamento disponível
 - Prioridades
 - Sistema a usar
+- Ambientes que precisam de infraestrutura dedicada
 
 Infraestrutura necessária:
 - Cabeamento estruturado
 - Pontos elétricos extras
 - Quadro de automação
 - WiFi robusto (mesh)
+
+Essa fase tambem precisa responder:
+
+- o que depende de forro;
+- o que depende de marcenaria;
+- o que precisa ser comprado antes do fechamento de paredes;
+- e o que pode ficar para a etapa final sem gerar retrabalho.
 
 ### Durante Obra
 - Instalação de infraestrutura
@@ -238,6 +249,7 @@ Infraestrutura necessária:
 ❌ Não planejar na obra
 ❌ Misturar muitos sistemas
 ❌ WiFi insuficiente
+❌ Deixar automacao para depois de forro, marcenaria e pintura
 ❌ Esquecer backup de energia
 ❌ Não treinar usuários
 ❌ Automação sem necessidade

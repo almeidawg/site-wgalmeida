@@ -55,6 +55,9 @@ export const getStyleCoverPath = (slug) => {
   const cloudinaryImage = getCloudinaryStyleImage({ slug, variant: 'card' });
   if (cloudinaryImage) return cloudinaryImage;
 
+  const localStyleImage = withBasePath(`/images/estilos/${slug}.webp`);
+  if (slug) return localStyleImage;
+
   let h = 0;
   for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
   return withBasePath(STYLE_BANNERS[h % STYLE_BANNERS.length]);

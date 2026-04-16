@@ -174,7 +174,7 @@
 
   b,
   strong {
-    font-weight: 350 !important;
+    font-weight: 500 !important;
   }
 }
 
@@ -417,14 +417,17 @@
   }
 
   .font-medium {
-    font-weight: 350 !important;
+    font-weight: 500 !important;
   }
 
   .font-semibold,
-  .font-bold,
+  .font-bold {
+    font-weight: 500 !important;
+  }
+
   .font-extrabold,
   .font-black {
-    font-weight: 300 !important;
+    font-weight: 600 !important;
   }
 
   .wg-prose h1,
@@ -439,13 +442,13 @@
 
   .wg-prose strong,
   .wg-prose b {
-    font-weight: 300 !important;
+    font-weight: 500 !important;
     color: inherit;
   }
 
   strong,
   b {
-    font-weight: 300 !important;
+    font-weight: 500 !important;
   }
 
   .wg-card-editorial {
@@ -595,6 +598,21 @@
   .wg-page-hero-actions {
     @apply flex flex-col items-center justify-center gap-3 sm:flex-row;
     margin-top: clamp(0.5rem, 1.6vw, 1rem);
+  }
+
+  @keyframes wgHeroZoomIn {
+    from {
+      transform: scale(1.16);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .wg-hero-zoom-in {
+    animation: wgHeroZoomIn 2.1s ease-out both;
+    will-change: transform;
+    transform-origin: center center;
   }
 
   .home-hero-content {
@@ -874,4 +892,5 @@
       opacity: 1;
     }
   }
+
 }

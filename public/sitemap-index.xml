@@ -3,12 +3,12 @@
   <!-- Sitemap principal com todas as paginas -->
   <sitemap>
     <loc>https://wgalmeida.com.br/sitemap.xml</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-04-15</lastmod>
   </sitemap>
 
   <!-- Video Sitemap para indexacao de videos -->
   <sitemap>
     <loc>https://wgalmeida.com.br/video-sitemap.xml</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-04-15</lastmod>
   </sitemap>
 </sitemapindex>

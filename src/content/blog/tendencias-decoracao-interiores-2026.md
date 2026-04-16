@@ -18,6 +18,8 @@ featured: false
 
 As tendencias de decoracao 2026 apontam para ambientes mais funcionais, acolhedores e com identidade real de quem mora. Neste guia, voce encontra o que aplicar na pratica em sala, quarto, cozinha e home office para renovar com criterio tecnico e estetico.
 
+O cuidado aqui e nao transformar tendencia em compra impulsiva. Em projeto real, cada escolha precisa conversar com investimento, durabilidade, manutencao e sequencia de obra.
+
 ## 1. Design Sensorial e Emocional
 
 A nova tendência revela "uma nova forma de viver: mais afetiva, consciente e conectada com a experiência cotidiana".
@@ -62,6 +64,8 @@ Práticas essenciais:
 - Tintas de baixo VOC
 - Sistemas de economia de água e energia
 - Móveis de longa durabilidade
+
+Quando isso e decidido cedo, o resultado costuma ser melhor do que tentar "esverdear" o projeto na fase final de compra.
 
 ## 5. Espaços Flexíveis e Multifuncionais
 
@@ -142,6 +146,8 @@ Tendências:
 - Iluminação de destaque
 - Controle inteligente
 
+Esse tipo de decisao depende de compatibilizacao com forro, eletrica, automacao e marcenaria.
+
 ## 12. Cozinhas Integradas e Acolhedoras
 
 A cozinha como coração da casa se consolida.
@@ -197,6 +203,8 @@ Exemplos:
 - Som ambiente embutido
 - Automação via voz
 - Carregamento wireless
+
+Tecnologia invisivel quase sempre exige planejamento visivel antes: infraestrutura, pontos, forro e marcenaria precisam prever isso.
 
 ## 17. Vintage e Retrô com Twist Moderno
 

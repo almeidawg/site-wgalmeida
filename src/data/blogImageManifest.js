@@ -40,6 +40,73 @@ export const BLOG_IMAGE_MANIFEST = {
       square: 'editorial/blog/arquitetura-bruxelas-belgica/card',
       default: 'editorial/blog/arquitetura-bruxelas-belgica/hero',
     },
+    'arquitetos-brasileiros-famosos-legado': {
+      context: [
+        {
+          source: 'remote',
+          src: 'https://upload.wikimedia.org/wikipedia/commons/7/70/Oscar_Niemeyer_1968b.jpg',
+          page: 'https://pt.wikipedia.org/wiki/Oscar_Niemeyer',
+          sourceLabel: 'Wikipedia',
+          alt: 'Retrato de Oscar Niemeyer, arquiteto brasileiro reconhecido pelas curvas do concreto armado.',
+          caption: 'Imagem de apoio para o bloco de Oscar Niemeyer, conectando autoria, curvas e legado modernista brasileiro.',
+          sectionTitle: 'Oscar Niemeyer (1907-2012)',
+        },
+        {
+          source: 'remote',
+          src: 'https://static2.abitare.it/wp-content/uploads/2021/05/Paulo-Mendes-da-Rocha-ph-Andrea-Altemhuler-c-p-773x1024.jpg?v=461646',
+          page: 'https://www.abitare.it/en/news-en/2021/05/23/paulo-mendes-da-rocha-dead/',
+          sourceLabel: 'Abitare',
+          alt: 'Retrato de Paulo Mendes da Rocha, arquiteto brasileiro associado ao brutalismo e ao rigor estrutural.',
+          caption: 'Imagem de apoio para o bloco de Paulo Mendes da Rocha, reforçando materialidade, estrutura e presença autoral.',
+          sectionTitle: 'Paulo Mendes da Rocha (1928-2021)',
+        },
+        {
+          source: 'remote',
+          src: 'https://www.casatigallery.com/wp-content/uploads/2019/10/Lina-Bo-Bardi-on-the-ship-Almirante-Jaceguay-on-her-way-to-Brasil-in-1946.jpg',
+          page: 'https://www.casatigallery.com/design-designer-lina-bo-bardi/',
+          sourceLabel: 'Casati Gallery',
+          alt: 'Retrato de Lina Bo Bardi em sua viagem ao Brasil, reforçando a presença autoral da arquiteta ítalo-brasileira.',
+          caption: 'Imagem de apoio para o bloco de Lina Bo Bardi, conectando biografia, deslocamento cultural e leitura humanista da arquiteta.',
+          sectionTitle: 'Lina Bo Bardi (1914-1992)',
+        },
+        {
+          source: 'remote',
+          src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8xkNrAVYRpCgJHwY30bMuTuk_X8YGwIWdcBLcVRVmv8ZkozbeCKcbeoSLRGeyInNeUknddBIJM9bu1uakWt2yrJ3r-T-vYawY5EqBBg&s=10',
+          page: 'https://pt.wikipedia.org/wiki/Vilanova_Artigas',
+          sourceLabel: 'Referência externa',
+          alt: 'Retrato de Vilanova Artigas, arquiteto brasileiro ligado à Escola Paulista e à FAU-USP.',
+          caption: 'Imagem de apoio para o bloco de Vilanova Artigas, sustentando a leitura de ensino, espaço democrático e concreto aparente.',
+          sectionTitle: 'Vilanova Artigas (1915-1985)',
+        },
+        {
+          source: 'remote',
+          src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG4gDKDucrALzMf5Mz3eaijgnXf9nGCiwbzO-qI-FqD8r9qZyOoJvajJIAaXATH_eVRj31_Klpk6lluvbmb7hTJapIV9I04zrdszTS-g&s=10',
+          page: 'https://pt.wikipedia.org/wiki/L%C3%BAcio_Costa',
+          sourceLabel: 'Referência externa',
+          alt: 'Retrato de Lucio Costa, urbanista brasileiro responsável pelo Plano Piloto de Brasília.',
+          caption: 'Imagem de apoio para o bloco de Lucio Costa, conectando urbanismo, síntese moderna e visão territorial.',
+          sectionTitle: 'Lucio Costa (1902-1998)',
+        },
+        {
+          source: 'remote',
+          src: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Arquiteto_Ruy_Ohtake_%28cropped%29.jpg',
+          page: 'https://pt.wikipedia.org/wiki/Ruy_Ohtake',
+          sourceLabel: 'Wikipedia',
+          alt: 'Retrato de Ruy Ohtake, arquiteto brasileiro conhecido por cores vibrantes e formas orgânicas.',
+          caption: 'Imagem de apoio para o bloco de Ruy Ohtake, reforçando gesto plástico, cor e presença urbana.',
+          sectionTitle: 'Ruy Ohtake (1938-2021)',
+        },
+        {
+          source: 'remote',
+          src: 'https://arquitetura.vivadecora.com.br/wp-content/uploads/2018/11/Affonso-Eduardo-Reidy.jpeg',
+          page: 'https://arquitetura.vivadecora.com.br/arquitetos-brasileiros/',
+          sourceLabel: 'Viva Decora',
+          alt: 'Retrato de Affonso Eduardo Reidy, arquiteto modernista brasileiro ligado ao MAM-RJ e ao Pedregulho.',
+          caption: 'Imagem de apoio para o bloco de Affonso Eduardo Reidy, associando habitação moderna, paisagem e cultura pública.',
+          sectionTitle: 'Affonso Eduardo Reidy (1909-1964)',
+        },
+      ],
+    },
     'arquitetura-alto-padrao': 'editorial/blog/arquitetura-alto-padrao',
     'bancada-cozinha-ergonomia': 'editorial/blog/bancada-cozinha-ergonomia',
     'briefing-projeto-dos-sonhos': 'editorial/blog/briefing-projeto-dos-sonhos',
@@ -211,6 +278,14 @@ const assignSlotEntryValue = (entry, slotName, value) => {
   }
 };
 
+const assignContextEntryValue = (entry, slotIndex, value) => {
+  if (!value || slotIndex < 0) return;
+  if (!Array.isArray(entry.context)) {
+    entry.context = [];
+  }
+  entry.context[slotIndex] = value;
+};
+
 const getUnsplashUtmSource = () => {
   if (typeof import.meta !== 'undefined' && import.meta.env?.VITE_UNSPLASH_UTM_SOURCE) {
     return import.meta.env.VITE_UNSPLASH_UTM_SOURCE;
@@ -289,6 +364,8 @@ const buildRemoteAsset = (value, variant = 'card') => {
     src,
     alt: value.alt || value.description || '',
     caption: value.caption || '',
+    sectionTitle: value.sectionTitle || '',
+    sectionId: value.sectionId || '',
     photographer: value.photographer || '',
     photographerUrl,
     photoPageUrl,
@@ -318,12 +395,12 @@ const buildLocalUploadManifestEntry = (slug) => {
 
   const entry = {};
 
-  for (const slotName of ['hero', 'card']) {
+  for (const slotName of ['hero', 'card', 'context1', 'context2', 'context3', 'context4']) {
     const slotValue = slotMap?.[slotName];
     if (!slotValue || typeof slotValue !== 'object') continue;
 
     const publicId = typeof slotValue.publicId === 'string' ? slotValue.publicId.trim() : '';
-    if (publicId) {
+    if (publicId && !/^context\d+$/.test(slotName)) {
       assignSlotEntryValue(entry, slotName, publicId);
       continue;
     }
@@ -344,13 +421,23 @@ const buildLocalUploadManifestEntry = (slug) => {
     const pageUrl = typeof slotValue.pageUrl === 'string' ? slotValue.pageUrl : fallbackPageUrl;
     const alt = typeof slotValue.alt === 'string' ? slotValue.alt : '';
 
-    assignSlotEntryValue(entry, slotName, {
+    const remoteValue = {
       source,
       src,
       alt,
       page: pageUrl,
+      caption: typeof slotValue.caption === 'string' ? slotValue.caption : '',
+      sectionTitle: typeof slotValue.sectionTitle === 'string' ? slotValue.sectionTitle : '',
+      sectionId: typeof slotValue.sectionId === 'string' ? slotValue.sectionId : '',
       sourceLabel: source === 'unsplash' ? 'Unsplash (sessão local)' : 'URL local (sessão)',
-    });
+    };
+
+    if (/^context\d+$/.test(slotName)) {
+      const slotIndex = Number(slotName.replace('context', '')) - 1;
+      assignContextEntryValue(entry, slotIndex, remoteValue);
+    } else {
+      assignSlotEntryValue(entry, slotName, remoteValue);
+    }
   }
 
   return Object.keys(entry).length ? entry : null;
@@ -361,10 +448,10 @@ const buildLocalUnsplashSelectionEntry = (slug) => {
   const slotMap = localSelections?.[slug];
   if (!slotMap || typeof slotMap !== 'object') return null;
 
-  const hero = normalizeUnsplashSelectionValue(slotMap.hero);
-  const card = normalizeUnsplashSelectionValue(slotMap.card);
   const entry = {};
 
+  const hero = normalizeUnsplashSelectionValue(slotMap.hero);
+  const card = normalizeUnsplashSelectionValue(slotMap.card);
   if (hero.id) {
     const heroValue = {
       source: 'unsplash',
@@ -386,6 +473,19 @@ const buildLocalUnsplashSelectionEntry = (slug) => {
     };
     assignSlotEntryValue(entry, 'card', cardValue);
   }
+
+  ['context1', 'context2', 'context3', 'context4'].forEach((slotName, slotIndex) => {
+    const slotSelection = normalizeUnsplashSelectionValue(slotMap[slotName]);
+    if (!slotSelection.id) return;
+
+    assignContextEntryValue(entry, slotIndex, {
+      source: 'unsplash',
+      src: buildUnsplashDownloadUrl(slotSelection.id, 'context'),
+      alt: slotSelection.alt || '',
+      page: buildUnsplashPhotoPageUrl(slotSelection.id),
+      sourceLabel: 'Unsplash (sessão local)',
+    });
+  });
 
   return Object.keys(entry).length ? entry : null;
 };
@@ -457,8 +557,22 @@ export const getBlogImageAsset = ({ slug, category, variant = 'card', allowCateg
   const normalizedCategory = category?.trim();
   const slugEntry = normalizedSlug ? getBlogManifestEntry(normalizedSlug) : null;
   const categoryEntry = allowCategoryFallback && normalizedCategory && BLOG_IMAGE_MANIFEST.categories[normalizedCategory];
+  const categoryAsset = resolveBlogAsset(categoryEntry, variant);
+  const slugAsset = resolveBlogAsset(slugEntry, variant);
 
-  return resolveBlogAsset(slugEntry, variant) || resolveBlogAsset(categoryEntry, variant);
+  if (
+    slugEntry &&
+    slugAsset &&
+    categoryAsset &&
+    ['card', 'thumb', 'square'].includes(variant)
+  ) {
+    const heroAsset = resolveBlogAsset(slugEntry, 'hero');
+    if (heroAsset?.src && slugAsset?.src && heroAsset.src === slugAsset.src) {
+      return categoryAsset;
+    }
+  }
+
+  return slugAsset || categoryAsset;
 };
 
 export const getBlogImageUrl = ({ slug, category, variant = 'card', allowCategoryFallback = true } = {}) =>

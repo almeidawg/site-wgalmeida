@@ -109,7 +109,7 @@ const ArquiteturaCorporativa = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Arquitetura Corporativa São Paulo | Projetos Comerciais Premium",
-    "description": "Arquitetura corporativa e comercial em São Paulo. Escritórios, showrooms e espaços corporativos. Projeto e execução turn key com identidade empresarial.",
+    "description": "Arquitetura corporativa e comercial em São Paulo, com projeto e execução integrados, identidade empresarial e leitura guiada de cada etapa.",
     "url": pageUrl,
     "provider": {
       "@type": "Organization",
@@ -127,7 +127,7 @@ const ArquiteturaCorporativa = () => {
       <SEO
         pathname="/arquitetura-corporativa"
         title="Arquitetura Corporativa SP | Escritórios e Espaços Comerciais"
-        description="Arquitetura corporativa em São Paulo. Projetos de escritórios, showrooms e espaços comerciais premium. Sistema turn key com design estratégico e execução profissional."
+        description="Arquitetura corporativa em São Paulo para escritórios, showrooms e espaços comerciais premium, com design estratégico, execução integrada e leitura guiada da operação."
         keywords="arquitetura corporativa, arquiteto corporativo, projeto escritorio sp, arquitetura comercial, design corporativo, escritorio alto padrao"
         url={pageUrl}
         schema={schema}
@@ -318,7 +318,7 @@ const ArquiteturaCorporativa = () => {
               Como Trabalhamos
             </span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
-              Processo Executivo Turn Key
+              Processo executivo com leitura integrada
             </h2>
           </motion.div>
 

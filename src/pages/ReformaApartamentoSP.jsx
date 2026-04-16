@@ -102,7 +102,7 @@ const ReformaApartamentoSP = () => {
     '@type': 'Service',
     name: 'Reforma de Apartamento São Paulo | Turn Key Premium',
     description:
-      'Reforma completa de apartamentos em São Paulo. Sistema Turn Key: projeto, execução e entrega. Apartamentos novos e usados. Orçamento transparente e prazo garantido.',
+      'Reforma completa de apartamentos em São Paulo, com projeto, execução e entrega integrados. Apartamentos novos e usados, com orçamento transparente e leitura guiada da obra.',
     url: pageUrl,
     provider: {
       '@type': 'Organization',
@@ -125,7 +125,7 @@ const ReformaApartamentoSP = () => {
       <SEO
         pathname="/reforma-apartamento-sp"
         title="Reforma de Apartamento SP | Turn Key Premium"
-        description="Reforma completa de apartamento em São Paulo. Sistema Turn Key: projeto, obra e entrega. Apartamentos novos, comprados e retrofit. Orçamento sem compromisso."
+        description="Reforma completa de apartamento em São Paulo com projeto, obra e entrega integrados. Apartamentos novos, comprados e retrofit, com leitura guiada da execução e orçamento transparente."
         keywords="reforma apartamento são paulo, reforma apartamento novo, reforma apartamento sp, quanto custa reforma apartamento, empresa reforma sp, reforma turn key"
         url={pageUrl}
         schema={schema}
@@ -151,16 +151,16 @@ const ReformaApartamentoSP = () => {
             <h1 className="wg-page-hero-title mb-6">
               Reforma Completa de Apartamento
               <br />
-              com Sistema Turn Key
+              com condução integrada do início à entrega
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
               Transforme seu apartamento novo ou usado em um espaço único e personalizado. Projeto,
-              execução e entrega com prazo garantido e orçamento transparente.
+              execução e entrega com uma experiência mais simples, prazo mais claro e orçamento transparente.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/solicite-proposta">
                 <Button className="btn-apple">
-                  Solicitar Orçamento
+                  Solicitar proposta guiada
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
@@ -168,7 +168,7 @@ const ReformaApartamentoSP = () => {
                 <Button
                   className="btn-hero-outline"
                 >
-                  Ver Apartamentos Reformados
+                  Ver apartamentos reformados
                 </Button>
               </Link>
             </div>
@@ -238,7 +238,7 @@ const ReformaApartamentoSP = () => {
               As 5 Etapas da Reforma Turn Key
             </h2>
             <p className="text-wg-gray max-w-2xl mx-auto">
-              Do primeiro contato à entrega das chaves, você tem visibilidade completa de cada fase.
+              Do primeiro contato à entrega das chaves, você acompanha cada fase com leitura guiada e menos coordenação manual.
             </p>
           </motion.div>
 
@@ -336,13 +336,13 @@ const ReformaApartamentoSP = () => {
               Pronto para Reformar Seu Apartamento?
             </h2>
             <p className="text-white/80 mb-8 text-lg">
-              Receba um orçamento detalhado e descubra como transformamos seu apartamento com
-              qualidade e prazo garantidos.
+              Receba uma proposta detalhada e descubra como transformamos seu apartamento com
+              qualidade, leitura guiada da obra e prazo mais previsível.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/solicite-proposta">
                 <Button className="btn-apple">
-                  Solicitar Orçamento Grátis
+                  Solicitar proposta grátis
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>

@@ -167,6 +167,15 @@ const ROUTES = Array.from(
   ])
 );
 
+const GENERATED_HTML_KEEP = new Set([
+  "index.html",
+  "sitemap.xml",
+  ...ROUTES.filter((route) => route !== "/").flatMap((route) => {
+    const normalized = route.slice(1);
+    return [`${normalized}.html`, path.posix.join(normalized, "index.html")];
+  }),
+]);
+
 const replaceOne = (html, pattern, value) => {
   if (pattern.test(html)) {
     return html.replace(pattern, value);
@@ -270,12 +279,40 @@ function applySeo(template, route, config) {
   return html;
 }
 
+async function removeOrphanGeneratedHtml(currentRoot, currentDir = currentRoot) {
+  const entries = await fs.promises.readdir(currentDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const absolutePath = path.join(currentDir, entry.name);
+    const relativePath = path.relative(currentRoot, absolutePath).replaceAll("\\", "/");
+
+    if (entry.isDirectory()) {
+      if (entry.name === "assets" || entry.name === "images") continue;
+      await removeOrphanGeneratedHtml(currentRoot, absolutePath);
+
+      const remaining = await fs.promises.readdir(absolutePath);
+      if (remaining.length === 0) {
+        await fs.promises.rmdir(absolutePath);
+      }
+      continue;
+    }
+
+    if (!entry.isFile()) continue;
+    if (!relativePath.endsWith(".html")) continue;
+    if (GENERATED_HTML_KEEP.has(relativePath)) continue;
+
+    await fs.promises.unlink(absolutePath);
+  }
+}
+
 async function run() {
   if (!fs.existsSync(templatePath)) {
     throw new Error(`Template not found: ${templatePath}`);
   }
 
   const rootTemplate = await fs.promises.readFile(templatePath, "utf8");
+  await removeOrphanGeneratedHtml(outputRoot);
+
   for (const route of ROUTES) {
     const seo = resolveSEO(route);
     const routeDir = route === "/" ? outputRoot : path.join(outputRoot, route.slice(1));

@@ -1,5 +1,5 @@
 ---
-title: "EVF na Obra: Como Validar Custos e Evitar Estouro de Orçamento Antes de Construir"
+title: "EVF na Obra: Como validar custos e evitar estouro de orçamento antes de construir"
 slug: "evf-estudo-viabilidade-financeira"
 date: "2026-01-25"
 author: "Grupo WG Almeida"
@@ -13,13 +13,13 @@ tags:
   - "planejamento"
 featured: true
 ---
-# EVF na Obra: Como Validar a Viabilidade Financeira Antes da Execucao
+# EVF na Obra: Como validar a viabilidade financeira antes da execução
 
 *Por Grupo WG Almeida | Planejamento & Execução*
 
 ---
 
-## O Que É o EVF?
+## O que é o EVF?
 
 O Estudo de Viabilidade Financeira (EVF) e uma analise tecnica e financeira que valida se o projeto arquitetonico proposto e executavel dentro do orcamento disponivel do cliente.
 
@@ -27,9 +27,17 @@ Ele funciona como uma ponte entre o sonho (projeto arquitetônico) e a realidade
 
 Na pratica, o EVF antecipa custos, riscos e cenarios de ajuste antes da obra comecar, reduzindo retrabalho e paralisacoes por falta de caixa.
 
+No ecossistema WG, o EVF nao e apresentado apenas como um numero final. Ele abre a logica da obra:
+
+- o que comeca antes;
+- o que depende de medicao;
+- o que depende de aprovacao;
+- o que pode entrar em producao paralela;
+- e como custo e prazo passam a conversar com a execucao real.
+
 ---
 
-## Por Que o EVF É Essencial?
+## Por que o EVF é essencial?
 
 ### Evita Surpresas Desagradáveis
 
@@ -70,7 +78,9 @@ Prazo: Até 10 dias úteis após a compatibilização dos projetos.
 
 ---
 
-## O Que Inclui o EVF?
+## O que inclui o EVF?
+
+Antes de entrar em custo detalhado, a leitura precisa mostrar a estrutura da obra por etapas operacionais. Essa e a diferenca entre um estudo que so soma itens e um estudo que realmente ajuda a decidir.
 
 ### 1. Levantamento de Quantitativos
 
@@ -159,7 +169,21 @@ Diagnóstico EVF: ⚠️ Projeto excede orçamento em 7%
 
 ---
 
-## Possíveis Cenários Após o EVF
+## O que o EVF precisa mostrar além do número
+
+Uma leitura de viabilidade madura precisa responder pelo menos estas perguntas:
+
+- Quanto tende a custar?
+- Quanto tempo tende a levar?
+- Quais frentes pesam mais no investimento?
+- O que trava a obra se nao for resolvido cedo?
+- O que pode ser medido, aprovado e produzido em paralelo?
+
+Quando isso aparece com clareza, o cliente deixa de olhar apenas o total e passa a entender a obra como decisao.
+
+---
+
+## Possíveis cenários após o EVF
 
 ### Cenário 1: Projeto Dentro do Orçamento ✅
 
@@ -187,7 +211,7 @@ Quando a diferença é grande (>20%):
 
 ---
 
-## Diferença Entre EVF e Orçamento
+## Diferença entre EVF e orçamento
 
 ### EVF (Estudo de Viabilidade)
 - Estimativa preliminar
@@ -225,7 +249,7 @@ Quando a diferença é grande (>20%):
 
 ---
 
-## O EVF no Sistema WG Almeida
+## O EVF no sistema WG Almeida
 
 Nossa metodologia garante:
 
@@ -243,6 +267,9 @@ EVF detalhado entregue ao cliente
 
 5. Validação Conjunta
 Reunião para apresentar cenários e alternativas
+
+6. Leitura Operacional
+O EVF organiza a obra por etapas operacionais e nao apenas por grupos genéricos de custo.
 
 ---
 
@@ -266,7 +293,7 @@ Não. O EVF é uma estimativa para validar viabilidade. O orçamento oficial vem
 
 ---
 
-## Cases Reais
+## Casos reais
 
 ### Case 1: Apartamento Itaim Bibi - 180m²
 
@@ -305,7 +332,7 @@ Investir 10 dias nesta etapa pode economizar meses de retrabalho e centenas de m
 
 ---
 
-## Faça seu EVF agora com o ObraEasy
+## Faça seu EVF agora com o Obra Easy
 
 O **ObraEasy** gera seu Estudo de Viabilidade Financeira completo em minutos — com base no CUB regional atualizado, dados reais de mercado e cronograma integrado.
 
@@ -315,7 +342,7 @@ Sem planilha, sem cálculo manual. Planos a partir de **R$ 29,90/mês**.
 
 ---
 
-## Próximo Passo
+## Próximo passo
 
 Se você tem um projeto em mente e quer saber se é financeiramente viável:
 

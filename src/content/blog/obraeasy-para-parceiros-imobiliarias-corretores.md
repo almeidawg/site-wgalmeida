@@ -16,6 +16,8 @@ O mercado imobiliario de Sao Paulo movimenta R$ 42 bilhoes por ano, e a maior pa
 
 Essa e a oportunidade que o Programa de Parceiros ObraEasy oferece: transformar a jornada pos-venda do seu cliente em uma nova fonte de receita recorrente, enquanto voce entrega mais valor e se diferencia da concorrencia.
 
+O ponto forte nao e apenas indicar uma obra. E ajudar o cliente a entender custo, prazo e caminho da execucao com mais clareza, usando EVF, ICCRI e acompanhamento digital como argumento comercial.
+
 ---
 
 ## Por Que Parceiros da WG Almeida Estao Crescendo
@@ -38,6 +40,8 @@ Com o Programa de Parceiros ObraEasy, voce:
 3. Oferece o ObraEasy como diferencial exclusivo no seu servico
 4. Mantem relacionamento durante toda a obra (6 a 18 meses)
 5. Ganha a preferencia na proxima transacao imobiliaria
+
+Na pratica, o corretor ou a imobiliaria deixa de entregar so um imovel e passa a entregar uma leitura mais completa da jornada do cliente.
 
 ---
 
@@ -93,6 +97,13 @@ Acompanhe todas as suas indicacoes em tempo real:
 - Historico de todas as transacoes com a WG Almeida
 - Nota de satisfacao do cliente final
 
+Combinado com o EVF, isso cria um discurso mais forte:
+
+- valor do imovel;
+- potencial de reforma;
+- faixa de investimento;
+- e leitura inicial do caminho da obra.
+
 ### 4. Material de Marketing Co-branded
 
 Parceiros Premium e Master recebem:
@@ -135,7 +146,7 @@ Um corretor de alto padrao em Vila Nova Conceicao comecu a oferecer a WG Almeida
 | Diferencial | O que Significa na Pratica |
 |-------------|---------------------------|
 | 15 anos de mercado | Portfolio de mais de 280 obras entregues |
-| ObraEasy | Acompanhamento digital em tempo real, sem surpresas |
+| ObraEasy | Acompanhamento digital em tempo real, com etapas operacionais, alertas e menos surpresa |
 | Equipe propria | Nao depende de empreiteiros externos para o nucleo da obra |
 | Garantia de obra | 5 anos em estrutura, 2 anos em instalacoes |
 | Orcamento fechado | Sem surpresas de custo para obras Turn Key |
