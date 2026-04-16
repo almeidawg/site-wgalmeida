@@ -49,7 +49,10 @@
     "check:imports": "node ./scripts/check-imports.mjs",
     "audit:consistency": "node ./scripts/audit-consistency.mjs",
     "audit:consistency:strict": "node ./scripts/audit-consistency.mjs --strict",
-    "prepush": "npm run check:imports && npm run audit:consistency:strict && npm run audit:public:claims:strict && npm run build"
+    "verify:fast": "eslint src api *.js *.mjs *.cjs --report-unused-disable-directives --quiet && node ./scripts/check-imports.mjs && node ./scripts/audit-consistency.mjs && node ./scripts/audit-consistency.mjs --strict && vitest run",
+    "verify:full": "eslint src api *.js *.mjs *.cjs --report-unused-disable-directives --quiet && node ./scripts/check-imports.mjs && node ./scripts/audit-consistency.mjs && node ./scripts/audit-consistency.mjs --strict && vitest run && node ./tools/audit-public-claims.mjs --strict && node ./tools/generate-style-webp-from-svg.mjs && node ./tools/generate-about-webp.mjs && node ./build-seo-og.mjs && vite build && node ./tools/prune-unused-style-svg.mjs dist && node ./tools/prune-unused-public-media.mjs dist && node ./build-seo-routes.mjs dist",
+    "verify:deploy": "eslint src api *.js *.mjs *.cjs --report-unused-disable-directives --quiet && node ./scripts/check-imports.mjs && node ./scripts/audit-consistency.mjs && node ./scripts/audit-consistency.mjs --strict && vitest run && node ./tools/audit-public-claims.mjs --strict && node ./tools/generate-style-webp-from-svg.mjs && node ./tools/generate-about-webp.mjs && node ./build-seo-og.mjs && vite build && node ./tools/prune-unused-style-svg.mjs dist && node ./tools/prune-unused-public-media.mjs dist && node ./build-seo-routes.mjs dist && node ./tools/seo-audit.mjs && node ./tools/seo-validate-dist.mjs dist",
+    "prepush": "eslint src api *.js *.mjs *.cjs --report-unused-disable-directives --quiet && node ./scripts/check-imports.mjs && node ./scripts/audit-consistency.mjs && node ./scripts/audit-consistency.mjs --strict && vitest run && node ./tools/audit-public-claims.mjs --strict && node ./tools/generate-style-webp-from-svg.mjs && node ./tools/generate-about-webp.mjs && node ./build-seo-og.mjs && vite build && node ./tools/prune-unused-style-svg.mjs dist && node ./tools/prune-unused-public-media.mjs dist && node ./build-seo-routes.mjs dist"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.3.1",
