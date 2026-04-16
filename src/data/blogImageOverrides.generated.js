@@ -1,3 +1,5 @@
+/* eslint-disable no-dupe-keys */
+
 const BLOG_IMAGE_OVERRIDES = {
   "generatedAt": "2026-04-11T04:37:11.263449+00:00",
   "source": "admin-localstorage-import",

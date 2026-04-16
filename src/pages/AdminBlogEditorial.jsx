@@ -1758,7 +1758,10 @@ const AdminBlogEditorial = () => {
                       );
                       if (!slotState?.previewUrl) return null;
                       return (
-                      <div className={`relative overflow-hidden rounded-xl border border-[#DED7CA] bg-white ${compactMode ? 'w-28' : 'w-32'}`}>
+                      <div
+                        key={`${record.slug}-${slotName}`}
+                        className={`relative overflow-hidden rounded-xl border border-[#DED7CA] bg-white ${compactMode ? 'w-28' : 'w-32'}`}
+                      >
                         <img
                           src={slotState.previewUrl}
                           alt={`${record.title} - ${getSlotLabel(slotName)}`}

@@ -451,6 +451,7 @@ const buildLocalUnsplashSelectionEntry = (slug) => {
   const entry = {};
 
   const hero = normalizeUnsplashSelectionValue(slotMap.hero);
+  const card = normalizeUnsplashSelectionValue(slotMap.card);
   if (hero.id) {
     const heroValue = {
       source: 'unsplash',
