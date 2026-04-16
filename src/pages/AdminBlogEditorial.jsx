@@ -1174,6 +1174,20 @@ const AdminBlogEditorial = () => {
     return matchesSearch && matchesCategory && matchesContentType && matchesStatus;
   });
 
+  const hasActiveFilters = Boolean(
+    searchTerm ||
+    categoryFilter !== 'todos' ||
+    contentTypeFilter !== 'todos' ||
+    statusFilter !== 'todos'
+  );
+
+  const resetQueueFilters = () => {
+    setSearchTerm('');
+    setCategoryFilter('todos');
+    setContentTypeFilter('todos');
+    setStatusFilter('todos');
+  };
+
   return (
     <>
       <SEO
@@ -1210,22 +1224,38 @@ const AdminBlogEditorial = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-3 md:min-w-[320px]">
-              <div className="rounded-2xl border border-[#D7D1C5] bg-[#FBF8F2] p-4">
+              <button
+                type="button"
+                onClick={resetQueueFilters}
+                className="rounded-2xl border border-[#D7D1C5] bg-[#FBF8F2] p-4 text-left transition hover:-translate-y-0.5 hover:border-[#B89E73] hover:shadow-sm"
+              >
                 <p className="text-xs uppercase tracking-[0.16em] text-[#7C7C7C]">Total</p>
                 <p className="mt-2 text-3xl font-semibold text-[#1E2A3A]">{summary.total}</p>
-              </div>
-              <div className="rounded-2xl border border-[#D7D1C5] bg-[#F1F8F4] p-4">
+              </button>
+              <button
+                type="button"
+                onClick={() => setStatusFilter('prontos')}
+                className="rounded-2xl border border-[#D7D1C5] bg-[#F1F8F4] p-4 text-left transition hover:-translate-y-0.5 hover:border-[#8FB99B] hover:shadow-sm"
+              >
                 <p className="text-xs uppercase tracking-[0.16em] text-[#5E7F63]">Prontos</p>
                 <p className="mt-2 text-3xl font-semibold text-[#244A35]">{summary.ready}</p>
-              </div>
-              <div className="rounded-2xl border border-[#D7D1C5] bg-[#FFF8EC] p-4">
+              </button>
+              <button
+                type="button"
+                onClick={() => setContentTypeFilter('blog')}
+                className="rounded-2xl border border-[#D7D1C5] bg-[#FFF8EC] p-4 text-left transition hover:-translate-y-0.5 hover:border-[#D9B36A] hover:shadow-sm"
+              >
                 <p className="text-xs uppercase tracking-[0.16em] text-[#A36B12]">Blog</p>
                 <p className="mt-2 text-3xl font-semibold text-[#7A5415]">{summary.blog}</p>
-              </div>
-              <div className="rounded-2xl border border-[#D7D1C5] bg-[#EEF4EF] p-4">
+              </button>
+              <button
+                type="button"
+                onClick={() => setContentTypeFilter('style')}
+                className="rounded-2xl border border-[#D7D1C5] bg-[#EEF4EF] p-4 text-left transition hover:-translate-y-0.5 hover:border-[#8FB99B] hover:shadow-sm"
+              >
                 <p className="text-xs uppercase tracking-[0.16em] text-[#2E7D5A]">Estilos</p>
                 <p className="mt-2 text-3xl font-semibold text-[#244A35]">{summary.styles}</p>
-              </div>
+              </button>
             </div>
           </div>
 
@@ -1434,7 +1464,7 @@ const AdminBlogEditorial = () => {
                 <div className="rounded-2xl border border-[#D7D1C5] bg-[#EEF4EF] p-4">
                   <p className="text-xs uppercase tracking-[0.16em] text-[#2E7D5A]">Estilos mapeados</p>
                   <p className="mt-2 text-3xl font-semibold text-[#244A35]">
-                    {searchSummary.stylesWithCloudinary || 0}/{searchSummary.styles || 0}
+                    {editorialHealthStyles.publicReady || editorialHealthStyles.localWebp || 0}/{editorialHealthStyles.totalStyles || searchSummary.styles || 0}
                   </p>
                 </div>
                 <div className="rounded-2xl border border-[#D7D1C5] bg-[#EEF4EF] p-4">
@@ -1462,9 +1492,15 @@ const AdminBlogEditorial = () => {
                   </p>
                 </div>
                 <div className="rounded-2xl border border-[#D7D1C5] bg-[#EEF4EF] p-4">
-                  <p className="text-xs uppercase tracking-[0.16em] text-[#2E7D5A]">Guias cloudinary</p>
+                  <p className="text-xs uppercase tracking-[0.16em] text-[#2E7D5A]">Guias locais</p>
                   <p className="mt-2 text-3xl font-semibold text-[#244A35]">
-                    {editorialHealthStyles.cloudinary || 0}/{editorialHealthStyles.totalStyles || 0}
+                    {editorialHealthStyles.publicReady || editorialHealthStyles.localWebp || 0}/{editorialHealthStyles.totalStyles || 0}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-[#D7D1C5] bg-[#FFF2F2] p-4">
+                  <p className="text-xs uppercase tracking-[0.16em] text-[#A24A4A]">Cloudinary 404</p>
+                  <p className="mt-2 text-3xl font-semibold text-[#7B2D2D]">
+                    {editorialHealthStyles.cloudinaryBroken || 0}
                   </p>
                 </div>
               </div>
@@ -1600,9 +1636,35 @@ const AdminBlogEditorial = () => {
                 </label>
               </div>
 
-              <div className="space-y-2 text-sm leading-6 text-[#5B6470]">
-                <p>{filteredQueue.length} itens na visualização atual</p>
-                <p>{summary.pending} itens ainda pendentes de cobertura principal</p>
+              <div className="space-y-3 text-sm leading-6 text-[#5B6470]">
+                <div className="rounded-2xl border border-[#E3DDCF] bg-[#FBF8F2] p-4">
+                  <p className="font-medium text-[#1E2A3A]">
+                    {filteredQueue.length} itens na visualização atual
+                  </p>
+                  <p>{summary.pending} itens ainda pendentes de cobertura principal</p>
+                  {hasActiveFilters && (
+                    <p className="mt-2 text-xs uppercase tracking-[0.14em] text-[#7A5B2F]">
+                      Filtro ativo
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    variant="outline"
+                    onClick={() => setStatusFilter('pendentes')}
+                    className="border-[#D7D1C5] bg-white text-[#1E2A3A] hover:bg-[#F7F3EB]"
+                  >
+                    Ver pendentes
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={resetQueueFilters}
+                    disabled={!hasActiveFilters}
+                    className="border-[#D7D1C5] bg-white text-[#1E2A3A] hover:bg-[#F7F3EB] disabled:opacity-45"
+                  >
+                    Resetar filtros
+                  </Button>
+                </div>
                 <Button
                   variant="outline"
                   onClick={clearAllLocalEditorialData}

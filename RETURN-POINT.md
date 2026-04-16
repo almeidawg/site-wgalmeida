@@ -2973,3 +2973,162 @@ site-wgalmeida/
   - paginas descobertas x indexadas
   - eventuais URLs marcadas como "Bloqueada pelo robots.txt"
 - se aparecer bloqueio, validar a URL exata antes de alterar o `robots.txt`; pelas regras atuais, paginas publicas do blog, guias de estilos e institucionais nao devem ser bloqueadas.
+
+## 2026-04-16 - retomada: normalizacao de imagens e usabilidade do admin editorial
+
+### Diagnostico
+
+- Auditorias editoriais estruturais seguem fechadas:
+  - `blogStructuralClosed: true`
+  - `stylesStructuralClosed: true`
+  - `editorialStructuralClosed: true`
+- Smoke inicial contra `dist` encontrou 404 em `/revista-estilos` para asset Cloudinary de guia de estilos:
+  - `https://res.cloudinary.com/dwukfmgrd/image/upload/.../editorial/estilos/vintage`
+- Varredura manual por HEAD mostrou outros `public_id` de estilos declarados no manifesto com 404 no Cloudinary, apesar de existirem WebP locais versionados em `public/images/estilos/`.
+
+### Correcao aplicada
+
+- `src/utils/styleCatalog.js`
+  - capas publicas dos guias de estilos agora priorizam o WebP local versionado (`/images/estilos/<slug>.webp`)
+  - evita request 404 ao Cloudinary nas rotas publicas de estilos
+  - mantem fallback deterministico para slug ausente
+- `src/pages/AdminBlogEditorial.jsx`
+  - cards de resumo viraram atalhos de filtro
+  - adicionado reset explicito de filtros
+  - adicionado indicador de filtro ativo
+  - adicionado atalho direto para ver pendentes
+
+### Validacao
+
+- `npm run editorial:health` -> OK
+- `npm run lint` -> OK
+- `npm run build` -> OK
+- `npm run smoke:console -- --routes=/,/blog,/revista-estilos,/estilos/classico,/admin/blog-editorial` -> OK, sem ocorrencias relevantes
+- `npm run check:imports` -> OK
+- `npm run audit:consistency:strict` -> OK
+- `npm run blog:i18n:audit` -> OK como auditoria, mantendo baseline atual:
+  - `pt-BR: 78`
+  - `en: 20`
+  - `es: 20`
+
+### Evidencia
+
+- Smoke limpo:
+  - `.monitor-data/reports/console-smoke-2026-04-16T16-38-43-301Z.json`
+
+### Risco residual
+
+- `styleImageManifest.js` ainda declara `public_id` Cloudinary para estilos. Como parte desses assets retorna 404 no Cloudinary, o uso publico foi estabilizado com WebP local. Se o painel editorial precisar voltar a validar Cloudinary real, o proximo bloco deve evoluir `style:editorial:status` para checar HTTP real do asset, nao apenas existencia de chave no manifesto.
+
+## 2026-04-16 - melhoria: auditoria real de Cloudinary para guias de estilos
+
+### Correcao aplicada
+
+- `tools/style-editorial-status.mjs`
+  - passou a testar HTTP real dos assets Cloudinary dos guias de estilos
+  - separa `publicReady` de `cloudinaryReachable`
+  - registra `cloudinaryBroken` com status HTTP e URL resolvida
+- `tools/editorial-health-status.mjs`
+  - `stylesStructuralClosed` agora mede a saude publica baseada nos WebP locais versionados
+  - novo indicador `stylesCloudinaryClosed` expõe se o manifesto Cloudinary esta realmente alcançavel
+  - `editorialStructuralClosed` permanece ligado a saude publica do site, sem esconder o alerta CDN
+- `src/pages/AdminBlogEditorial.jsx`
+  - painel passou a mostrar guias locais prontos
+  - adicionou métrica visível de `Cloudinary 404`
+
+### Resultado diagnosticado
+
+- Guias publicos:
+  - `31/31` com WebP local
+  - `31/31` publicamente prontos
+- Cloudinary:
+  - `31/31` com chave no manifesto
+  - `14/31` alcançaveis
+  - `17/31` retornando `404`
+- Health final:
+  - `Blog structural closed: YES`
+  - `Styles structural closed: YES`
+  - `Styles Cloudinary closed: NO`
+  - `Editorial structural closed: YES`
+
+### Validacao
+
+- `npm run style:editorial:status` -> OK, com diagnostico real de Cloudinary
+- `npm run editorial:health` -> OK
+- `npm run lint` -> OK
+- `npm run build` -> OK
+- `npm run smoke:console -- --routes=/,/blog,/revista-estilos,/estilos/classico,/admin/blog-editorial` -> OK, sem ocorrencias relevantes
+- `npm run check:imports` -> OK
+- `npm run audit:consistency:strict` -> OK
+- `npm run seo:validate` -> OK
+
+### Evidencia
+
+- Smoke limpo:
+  - `.monitor-data/reports/console-smoke-2026-04-16T16-47-09-750Z.json`
+
+### Proximo bloco recomendado
+
+- Decidir entre:
+  - subir/recriar os `17` assets faltantes no Cloudinary, mantendo o manifesto atual; ou
+  - remover dependencia Cloudinary para guias de estilos no admin, mantendo WebP local como fonte canonica publica.
+
+## 2026-04-16 - fechamento: Cloudinary de guias de estilos normalizado
+
+### Acao executada
+
+- Recriados no Cloudinary os `17` assets de guias de estilos que retornavam `404`, usando os WebP locais versionados como fonte.
+- Mantidos os `public_id` canonicos ja existentes no manifesto:
+  - `editorial/estilos/art-deco`
+  - `editorial/estilos/art-nouveau`
+  - `editorial/estilos/coastal`
+  - `editorial/estilos/cottage`
+  - `editorial/estilos/ecletico`
+  - `editorial/estilos/escandinavo`
+  - `editorial/estilos/farmhouse`
+  - `editorial/estilos/mediterraneo`
+  - `editorial/estilos/neoclassico`
+  - `editorial/estilos/provencal`
+  - `editorial/estilos/rustico`
+  - `editorial/estilos/shabby-chic`
+  - `editorial/estilos/southwest`
+  - `editorial/estilos/transitional`
+  - `editorial/estilos/urban-modern`
+  - `editorial/estilos/vintage`
+  - `editorial/estilos/wabi-sabi`
+
+### Resultado final
+
+- `npm run style:editorial:status`:
+  - `Styles: 31`
+  - `Local WEBP: 31`
+  - `Public ready: 31`
+  - `Cloudinary manifest: 31`
+  - `Cloudinary reachable: 31`
+  - `Cloudinary broken: 0`
+  - `Missing Cloudinary manifest: 0`
+- `npm run editorial:health`:
+  - `Blog structural closed: YES`
+  - `Styles structural closed: YES`
+  - `Styles Cloudinary closed: YES`
+  - `Editorial structural closed: YES`
+
+### Validacao final
+
+- `npm run lint` -> OK
+- `npm run check:imports` -> OK
+- `npm run audit:consistency:strict` -> OK
+- `npm run build` -> OK
+- `npm run smoke:console -- --routes=/,/blog,/revista-estilos,/estilos/classico,/admin/blog-editorial` -> OK, sem ocorrencias relevantes
+- `npm run seo:validate` -> OK
+- `npm run blog:i18n:audit` -> OK como auditoria, mantendo baseline editorial atual de traducao parcial
+
+### Evidencia
+
+- Smoke limpo:
+  - `.monitor-data/reports/console-smoke-2026-04-16T16-58-23-007Z.json`
+
+### Status para retomada
+
+- Bloco de normalizacao de imagens do site, blog, guias de estilos e admin editorial: fechado.
+- Proxima frente recomendada pelo usuario: modulo `moodboard`, que depende de Cloudinary para transformacoes de imagem.

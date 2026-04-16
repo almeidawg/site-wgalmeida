@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-04-16T03:19:52.487Z",
+  "generatedAt": "2026-04-16T16:57:11.462Z",
   "summary": {
     "blogStructuralClosed": true,
     "stylesStructuralClosed": true,
+    "stylesCloudinaryClosed": true,
     "editorialStructuralClosed": true
   },
   "blog": {
@@ -20,7 +21,10 @@
     "totalStyles": 31,
     "localWebp": 31,
     "localSvg": 31,
-    "cloudinary": 31,
+    "publicReady": 31,
+    "cloudinaryManifest": 31,
+    "cloudinaryReachable": 31,
+    "cloudinaryBroken": 0,
     "missingCloudinary": 0
   },
   "evidence": {
