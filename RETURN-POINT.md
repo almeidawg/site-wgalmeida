@@ -2610,3 +2610,42 @@ site-wgalmeida/
 - `npm run editorial:health` -> OK
 - `npm run check:imports` -> OK
 - `npm run build` -> OK
+
+## 2026-04-16 - Merge final, baseline fechado e pronto para deploy
+
+- merge de `origin/main` resolvido preservando a malha homologada da branch editorial
+- conflitos resolvidos sem regressao em:
+  - `src/components/ICCRILinksBlock.jsx`
+  - `src/components/layout/Header.jsx`
+  - `src/data/blogImageOverrides.generated.js`
+  - `src/pages/ICCRI.jsx`
+- seguiram ativos os ajustes canonicos de:
+  - header endurecido
+  - governanca editorial unificada
+  - blog e guias estruturalmente fechados
+
+### Evidencias
+
+- `blog-editorial-status.latest.json`
+- `editorial-search-report.latest.json`
+- `blog-image-repetition-audit.latest.json`
+- `style-editorial-status.latest.json`
+- `editorial-health-status.latest.json`
+
+### Validacao
+
+- `npm run editorial:health` -> OK
+- `npm run check:imports` -> OK
+- `npm run audit:consistency:strict` -> OK
+- `npm run build` -> OK
+- `npm run blog:editorial:status` -> OK
+- `npm run style:editorial:status` -> OK
+- `npm run blog:i18n:audit` -> OK
+
+### Residual conhecido
+
+- cobertura de traducao do blog permanece parcial:
+  - `pt-BR: 78`
+  - `en: 20`
+  - `es: 20`
+- residual nao bloqueante; a navegacao segue coberta por fallback controlado
