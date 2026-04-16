@@ -1,6 +1,5 @@
 import { parseFrontmatter } from '@/utils/frontmatter';
 import { withBasePath } from '@/utils/assetPaths';
-import { getCloudinaryStyleImage } from '@/data/styleImageManifest';
 
 const estilosFiles = import.meta.glob('/src/content/estilos/*.md', { as: 'raw', eager: true });
 
@@ -52,14 +51,11 @@ const STYLE_BANNERS = [
 ];
 
 export const getStyleCoverPath = (slug) => {
-  const cloudinaryImage = getCloudinaryStyleImage({ slug, variant: 'card' });
-  if (cloudinaryImage) return cloudinaryImage;
-
-  const localStyleImage = withBasePath(`/images/estilos/${slug}.webp`);
-  if (slug) return localStyleImage;
+  if (slug) return withBasePath(`/images/estilos/${slug}.webp`);
 
   let h = 0;
-  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  const fallbackKey = String(slug || 'style');
+  for (let i = 0; i < fallbackKey.length; i++) h = (h * 31 + fallbackKey.charCodeAt(i)) >>> 0;
   return withBasePath(STYLE_BANNERS[h % STYLE_BANNERS.length]);
 };
 
