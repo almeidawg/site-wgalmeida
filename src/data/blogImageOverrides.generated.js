@@ -989,14 +989,6 @@ const BLOG_IMAGE_OVERRIDES = {
       "square": { "source": "local", "src": "/images/banners/PROJETOS.webp" },
       "default": { "source": "local", "src": "/og-projetos-1200x630.jpg" }
     },
-    "arquitetos-brasileiros-famosos-legado": {
-      "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
-      "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
-      "card": { "source": "local", "src": "/images/banners/ARQ.webp" },
-      "thumb": { "source": "local", "src": "/images/banners/ARQ.webp" },
-      "square": { "source": "local", "src": "/images/banners/ARQ.webp" },
-      "default": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" }
-    },
     "arquitetos-internacionais-famosos-obras": {
       "hero": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },
       "seo": { "source": "local", "src": "/og-arquitetura-1200x630.jpg" },

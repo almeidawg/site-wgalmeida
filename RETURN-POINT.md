@@ -2649,3 +2649,217 @@ site-wgalmeida/
   - `en: 20`
   - `es: 20`
 - residual nao bloqueante; a navegacao segue coberta por fallback controlado
+
+## 2026-04-16 - Registro canonico de falhas de deploy e prevencao
+
+- Objetivo deste bloco:
+  - registrar as falhas reais que bloquearam ou quase bloquearam a publicacao
+  - transformar o aprendizado em gate operacional para nao repetir no proximo deploy
+
+### Falhas reais observadas
+
+- branch com merge em andamento e conflito em arquivos editoriais centrais
+- CI remoto falhando em `lint` mesmo com `check:imports`, `audit:consistency:strict` e `build` locais verdes
+- `src/data/blogImageManifest.js` com variavel `card` nao inicializada
+- `src/pages/AdminBlogEditorial.jsx` com iteracao sem `key`
+- `src/data/blogImageOverrides.generated.js` com chaves duplicadas que precisaram estrategia explicita de controle
+- regra visual aplicada em apenas um renderer de imagem, deixando parte das paginas sem o efeito esperado
+- status editorial inicialmente lendo como pendencia algo que ja estava curado pela malha central
+
+### Causa raiz consolidada
+
+- houve diferenca entre baseline local e gate real de PR
+- parte da validacao estava forte em `build`, mas ainda insuficiente para capturar `lint` e variacoes de renderer
+- arquivos gerados/editoriais exigem leitura final do bloco canonico, nao apenas confianca no script
+- alteracoes de imagem precisam ser validadas em todos os caminhos de renderizacao
+
+### Regra preventiva obrigatoria daqui para frente
+
+- antes de abrir PR:
+  - `npm run check:imports`
+  - `npm run audit:consistency:strict`
+  - `npm run lint`
+  - `npm run build`
+- antes de considerar o deploy fechado:
+  - checks obrigatorios da PR verdes
+  - merge concluido
+  - validacao manual de `HTTP 200` nas rotas e assets criticos
+- ao tocar em imagem editorial:
+  - validar `ContextImageCard`
+  - validar renderer integrado por secao
+- ao tocar em arquivo gerado:
+  - revisar duplicidade
+  - revisar bloco final canonico
+  - garantir que override correto nao sera sobrescrito por entrada antiga
+- ao atualizar governanca editorial:
+  - alinhar `blog:editorial:status`
+  - alinhar `editorial:search:report`
+  - alinhar `editorial:health`
+
+### Status
+
+- registrado sem commit nesta rodada
+- passa a valer como regra operacional do projeto para proximos deploys
+
+## 2026-04-16 - Validacao estrutural anti-regressao de imagem
+
+- Regra promovida para o `AGENTS.md` local do projeto:
+  - `npm run lint` entra no gate obrigatorio
+  - `npm run editorial:health` entra como validacao canonica de saude estrutural de imagens/editorial
+  - toda alteracao de imagem editorial deve ser validada em:
+    - `ContextImageCard`
+    - renderer integrado por secao
+  - todo override/manifesto gerado deve ser revisado para evitar que bloco canonico final seja sobrescrito por entrada antiga
+
+### Objetivo desta rodada
+
+- confirmar que a documentacao operacional herdou a prevencao de falha de deploy
+- confirmar que nao existe regressao estrutural aberta de sumir imagem em blog ou guias
+
+### Resultado validado
+
+- `npm run editorial:health` -> OK
+  - `blogStructuralClosed: true`
+  - `stylesStructuralClosed: true`
+  - `editorialStructuralClosed: true`
+- `npm run lint` -> OK
+- `npm run check:imports` -> OK
+- `npm run audit:consistency:strict` -> OK
+- `npm run build` -> OK
+
+### Leitura operacional
+
+- blog:
+  - `78` posts
+  - `78` com manifesto
+  - `0` fallback generico
+  - `0` hero em `unsplash/remote`
+  - `0` card em `unsplash/remote`
+  - `0` duplicacao problematica
+- guias:
+  - `31` estilos
+  - `31` com `WEBP` local
+  - `31` com `SVG`
+  - `31` no manifesto Cloudinary
+  - `0` faltas no manifesto
+
+### Conclusao
+
+- nesta camada estrutural, nao ha indicio aberto de regressao de sumir imagens
+- o risco residual passa a ser de curadoria visual fina ou de alteracao futura sem seguir o gate canonico
+- para nao repetir, o health editorial passou a ser obrigatorio antes de considerar deploy seguro
+
+---
+
+## 2026-04-15 - varredura completa de regressao visual de imagens no blog
+
+### Contexto
+
+- usuario reportou nova regressao visual:
+  - postagens de arquitetura com cor errada
+  - hero/card voltando a repetir imagem generica
+  - `scandia-home-roupa-cama-luxo` sem imagens esperadas
+  - cards dentro de materias aparecendo sem imagem
+
+### Causa raiz validada
+
+- o site publico ainda podia herdar rascunhos do `admin/blog-editorial` via `localStorage`
+- isso permitia que selecoes locais antigas sobrescrevessem o manifesto canonico em navegadores que ja tinham usado o admin
+- alem disso, varios mini-cards de produto dentro das materias puxavam imagens do host `cdn.leroymerlin.com.br`, que o navegador bloqueia com `ERR_BLOCKED_BY_ORB`
+
+### Correcao aplicada
+
+- em `src/data/blogImageManifest.js`:
+  - overrides de sessao local passaram a valer apenas dentro de `/admin/blog-editorial`
+  - o site aberto deixou de herdar rascunhos locais do admin
+  - a leitura de selecao local da Unsplash foi endurecida para respeitar `src/page` quando existirem
+- em `src/pages/Blog.jsx`:
+  - mini-cards de produto agora usam placeholder local quando a imagem vier de host bloqueado
+  - isso elimina cards vazios nas materias mesmo quando o feed remoto trouxer imagem nao renderizavel no navegador
+
+### Validacao real
+
+- `npm run lint` -> OK
+- `npm run build` -> OK
+- `npm run editorial:health` -> OK execucao
+  - status estrutural continua aberto porque ainda existem `39` slugs em `remote/unsplash`
+  - isso nao invalida a correcao da regressao visual principal
+- validacao em navegador real com Playwright:
+  - `/blog` -> cards iniciais com imagem carregando
+  - `/blog/arquitetos-brasileiros-famosos-legado` -> hero e card inicial renderizando com assets corretos
+  - `/blog/scandia-home-roupa-cama-luxo` -> hero e card inicial renderizando; mini-cards bloqueados passaram a placeholder local
+- varredura completa dos `78` slugs:
+  - problemas restantes encontrados vieram de `ERR_BLOCKED_BY_ORB` em imagens de produto de terceiros
+  - nao restou caso validado de hero/card principal vazio nos slugs checados apos a correcao
+
+### Regra canonica adicionada
+
+- rascunho editorial salvo em `localStorage` nao pode interferir no site publico
+- selecao de admin vale apenas na rota do proprio admin
+- qualquer feed de produto/terceiro com host bloqueavel deve cair em placeholder local estavel
+
+## 2026-04-16 - estabilizacao completa da malha de imagens editoriais
+
+### Objetivo desta rodada
+
+- sair de vez da dependencia `remote/unsplash` para `hero/card` do blog
+- impedir que override antigo ou rascunho local volte a esmagar imagem aprovada
+- confirmar em navegador real que nao restou falha de request, sumico de imagem ou repeticao estrutural nas rotas criticas
+
+### Correcao aplicada
+
+- nova camada canonica em `src/data/blogImageOverrides.canonical.js`
+  - concentrando overrides locais estaveis para `hero/card/thumb/square/default`
+- `src/data/blogImageManifest.js`
+  - precedencia ajustada para:
+    - override canonico
+    - override gerado
+    - manifesto curado
+    - manifestos de apoio
+  - sanitizacao de override generico local para ele nao sobrescrever hero/card curado
+- `tools/stabilize-blog-remote-assets.mjs`
+  - criado para materializar localmente os slugs ainda presos em `remote/unsplash`
+  - baixa os assets aprovados e grava versoes locais em `public/images/blog/<slug>/`
+- `src/pages/Blog.jsx`
+  - feed de produto com host bloqueavel agora cai em placeholder local estavel
+
+### Resultado validado
+
+- `npm run editorial:search:report` -> OK
+  - `Blog posts queued for search: 0`
+  - `Blog hero still unsplash/remote: 0`
+  - `Blog card still unsplash/remote: 0`
+- `npm run editorial:health` -> OK
+  - `Published with manifest: 78`
+  - `Published with remote curated asset: 0`
+  - `Still using generic banner fallback: 0`
+  - `Blog structural closed: YES`
+  - `Styles structural closed: YES`
+  - `Editorial structural closed: YES`
+- `npm run lint` -> OK
+- `npm run build` -> OK
+
+### Varredura real de navegador
+
+- smoke ampliado em:
+  - `/`
+  - `/blog`
+  - `/sobre`
+  - `/arquitetura-corporativa`
+  - `/estilos/classico`
+  - `78` slugs de blog
+- resultado:
+  - `console-smoke` sem ocorrencias relevantes
+  - sem `requestfailed`
+  - sem `ERR_BLOCKED_BY_ORB` residual nas rotas auditadas
+
+### Leitura operacional
+
+- a regressao de hero/card voltar para imagem generica foi fechada na raiz
+- a regressao de card interno ficar sem imagem por host bloqueado foi fechada na raiz
+- a malha editorial agora esta estavel mesmo em navegador que ja usou o `admin/blog-editorial`
+- o risco residual deixou de ser estrutural; passa a ser apenas curadoria visual fina
+
+### Evidencia principal
+
+- `.monitor-data/reports/console-smoke-2026-04-16T03-10-49-556Z.json`

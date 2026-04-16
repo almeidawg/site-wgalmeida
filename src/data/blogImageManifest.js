@@ -1,5 +1,6 @@
 import { BLOG_UNSPLASH_MANIFEST } from './blogUnsplashManifest.generated.js';
 import BLOG_IMAGE_OVERRIDES from './blogImageOverrides.generated.js';
+import BLOG_IMAGE_OVERRIDES_CANONICAL from './blogImageOverrides.canonical.js';
 import { buildCloudinaryEditorialUrl } from '../utils/cloudinaryEditorial.js';
 import { withBasePath } from '../utils/assetPaths.js';
 
@@ -41,6 +42,48 @@ export const BLOG_IMAGE_MANIFEST = {
       default: 'editorial/blog/arquitetura-bruxelas-belgica/hero',
     },
     'arquitetos-brasileiros-famosos-legado': {
+      hero: {
+        source: 'remote',
+        src: 'https://upload.wikimedia.org/wikipedia/commons/7/70/Oscar_Niemeyer_1968b.jpg',
+        page: 'https://pt.wikipedia.org/wiki/Oscar_Niemeyer',
+        sourceLabel: 'Wikipedia',
+        alt: 'Retrato de Oscar Niemeyer, arquiteto brasileiro reconhecido pelas curvas do concreto armado.',
+      },
+      seo: {
+        source: 'remote',
+        src: 'https://upload.wikimedia.org/wikipedia/commons/7/70/Oscar_Niemeyer_1968b.jpg',
+        page: 'https://pt.wikipedia.org/wiki/Oscar_Niemeyer',
+        sourceLabel: 'Wikipedia',
+        alt: 'Retrato de Oscar Niemeyer, arquiteto brasileiro reconhecido pelas curvas do concreto armado.',
+      },
+      card: {
+        source: 'remote',
+        src: 'https://upload.wikimedia.org/wikipedia/pt/4/45/Jo%C3%A3o_Batista_Vilanova_Artigas.png',
+        page: 'https://pt.wikipedia.org/wiki/Vilanova_Artigas',
+        sourceLabel: 'Wikipedia',
+        alt: 'Retrato de Vilanova Artigas, arquiteto brasileiro ligado à Escola Paulista e à FAU-USP.',
+      },
+      thumb: {
+        source: 'remote',
+        src: 'https://upload.wikimedia.org/wikipedia/pt/4/45/Jo%C3%A3o_Batista_Vilanova_Artigas.png',
+        page: 'https://pt.wikipedia.org/wiki/Vilanova_Artigas',
+        sourceLabel: 'Wikipedia',
+        alt: 'Retrato de Vilanova Artigas, arquiteto brasileiro ligado à Escola Paulista e à FAU-USP.',
+      },
+      square: {
+        source: 'remote',
+        src: 'https://upload.wikimedia.org/wikipedia/pt/4/45/Jo%C3%A3o_Batista_Vilanova_Artigas.png',
+        page: 'https://pt.wikipedia.org/wiki/Vilanova_Artigas',
+        sourceLabel: 'Wikipedia',
+        alt: 'Retrato de Vilanova Artigas, arquiteto brasileiro ligado à Escola Paulista e à FAU-USP.',
+      },
+      default: {
+        source: 'remote',
+        src: 'https://upload.wikimedia.org/wikipedia/commons/7/70/Oscar_Niemeyer_1968b.jpg',
+        page: 'https://pt.wikipedia.org/wiki/Oscar_Niemeyer',
+        sourceLabel: 'Wikipedia',
+        alt: 'Retrato de Oscar Niemeyer, arquiteto brasileiro reconhecido pelas curvas do concreto armado.',
+      },
       context: [
         {
           source: 'remote',
@@ -71,18 +114,18 @@ export const BLOG_IMAGE_MANIFEST = {
         },
         {
           source: 'remote',
-          src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8xkNrAVYRpCgJHwY30bMuTuk_X8YGwIWdcBLcVRVmv8ZkozbeCKcbeoSLRGeyInNeUknddBIJM9bu1uakWt2yrJ3r-T-vYawY5EqBBg&s=10',
+          src: 'https://upload.wikimedia.org/wikipedia/pt/4/45/Jo%C3%A3o_Batista_Vilanova_Artigas.png',
           page: 'https://pt.wikipedia.org/wiki/Vilanova_Artigas',
-          sourceLabel: 'Referência externa',
+          sourceLabel: 'Wikipedia',
           alt: 'Retrato de Vilanova Artigas, arquiteto brasileiro ligado à Escola Paulista e à FAU-USP.',
           caption: 'Imagem de apoio para o bloco de Vilanova Artigas, sustentando a leitura de ensino, espaço democrático e concreto aparente.',
           sectionTitle: 'Vilanova Artigas (1915-1985)',
         },
         {
           source: 'remote',
-          src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG4gDKDucrALzMf5Mz3eaijgnXf9nGCiwbzO-qI-FqD8r9qZyOoJvajJIAaXATH_eVRj31_Klpk6lluvbmb7hTJapIV9I04zrdszTS-g&s=10',
+          src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/L%C3%BAcio_Costa%2C_1970.tif/lossy-page1-250px-L%C3%BAcio_Costa%2C_1970.tif.jpg',
           page: 'https://pt.wikipedia.org/wiki/L%C3%BAcio_Costa',
-          sourceLabel: 'Referência externa',
+          sourceLabel: 'Wikipedia',
           alt: 'Retrato de Lucio Costa, urbanista brasileiro responsável pelo Plano Piloto de Brasília.',
           caption: 'Imagem de apoio para o bloco de Lucio Costa, conectando urbanismo, síntese moderna e visão territorial.',
           sectionTitle: 'Lucio Costa (1902-1998)',
@@ -106,6 +149,50 @@ export const BLOG_IMAGE_MANIFEST = {
           sectionTitle: 'Affonso Eduardo Reidy (1909-1964)',
         },
       ],
+    },
+    'scandia-home-roupa-cama-luxo': {
+      hero: {
+        source: 'remote',
+        src: 'https://www.scandiahome.com/cdn/shop/files/042325_Lucea_Fawn_Lorenza_03_final_V2_1.jpg?v=1754075397&width=3648',
+        page: 'https://www.scandiahome.com/',
+        sourceLabel: 'Scandia Home',
+        alt: 'Quarto com roupa de cama Scandia Home em composição refinada e atmosfera editorial clara.',
+      },
+      seo: {
+        source: 'remote',
+        src: 'https://www.scandiahome.com/cdn/shop/files/042325_Lucea_Fawn_Lorenza_03_final_V2_1.jpg?v=1754075397&width=3648',
+        page: 'https://www.scandiahome.com/',
+        sourceLabel: 'Scandia Home',
+        alt: 'Quarto com roupa de cama Scandia Home em composição refinada e atmosfera editorial clara.',
+      },
+      card: {
+        source: 'remote',
+        src: 'https://d3k81ch9hvuctc.cloudfront.net/company/S5gRix/images/71633f7f-b7a0-4bab-9c6a-480a5a3d1870.png',
+        page: 'https://www.scandiahome.com/',
+        sourceLabel: 'Scandia Home',
+        alt: 'Detalhe editorial de cama posta da Scandia Home com leitura premium de roupa de cama.',
+      },
+      thumb: {
+        source: 'remote',
+        src: 'https://d3k81ch9hvuctc.cloudfront.net/company/S5gRix/images/71633f7f-b7a0-4bab-9c6a-480a5a3d1870.png',
+        page: 'https://www.scandiahome.com/',
+        sourceLabel: 'Scandia Home',
+        alt: 'Detalhe editorial de cama posta da Scandia Home com leitura premium de roupa de cama.',
+      },
+      square: {
+        source: 'remote',
+        src: 'https://d3k81ch9hvuctc.cloudfront.net/company/S5gRix/images/71633f7f-b7a0-4bab-9c6a-480a5a3d1870.png',
+        page: 'https://www.scandiahome.com/',
+        sourceLabel: 'Scandia Home',
+        alt: 'Detalhe editorial de cama posta da Scandia Home com leitura premium de roupa de cama.',
+      },
+      default: {
+        source: 'remote',
+        src: 'https://www.scandiahome.com/cdn/shop/files/042325_Lucea_Fawn_Lorenza_03_final_V2_1.jpg?v=1754075397&width=3648',
+        page: 'https://www.scandiahome.com/',
+        sourceLabel: 'Scandia Home',
+        alt: 'Quarto com roupa de cama Scandia Home em composição refinada e atmosfera editorial clara.',
+      },
     },
     'arquitetura-alto-padrao': 'editorial/blog/arquitetura-alto-padrao',
     'bancada-cozinha-ergonomia': 'editorial/blog/bancada-cozinha-ergonomia',
@@ -241,16 +328,33 @@ const readLocalStorageJson = (key) => {
   }
 };
 
+const shouldUseEditorialSessionOverrides = () => {
+  if (typeof window === 'undefined') return false;
+
+  const pathname = window.location?.pathname || '';
+  return pathname.startsWith('/admin/blog-editorial');
+};
+
 const normalizeUnsplashSelectionValue = (value) => {
   if (!value) return { id: '', alt: '' };
-  if (typeof value === 'string') return { id: value.trim(), alt: '' };
+  if (typeof value === 'string') return { id: value.trim(), alt: '', src: '', page: '' };
   if (typeof value === 'object') {
     return {
       id: typeof value.id === 'string' ? value.id.trim() : '',
       alt: typeof value.alt === 'string' ? value.alt : '',
+      src: typeof value.src === 'string'
+        ? value.src.trim()
+        : typeof value.downloadUrl === 'string'
+          ? value.downloadUrl.trim()
+          : '',
+      page: typeof value.page === 'string'
+        ? value.page
+        : typeof value.photoPage === 'string'
+          ? value.photoPage
+          : '',
     };
   }
-  return { id: '', alt: '' };
+  return { id: '', alt: '', src: '', page: '' };
 };
 
 const buildUnsplashPhotoPageUrl = (photoId) =>
@@ -388,7 +492,41 @@ const mergeManifestEntries = (primaryEntry, secondaryEntry) => {
   };
 };
 
+const GENERIC_LOCAL_PREFIXES = [
+  '/images/banners/',
+  '/og-',
+];
+
+const isGenericLocalAssetValue = (value) => Boolean(
+  value
+  && typeof value === 'object'
+  && value.source === 'local'
+  && typeof value.src === 'string'
+  && GENERIC_LOCAL_PREFIXES.some((prefix) => value.src.startsWith(prefix))
+);
+
+const sanitizeGenericOverrideEntry = (overrideEntry, curatedEntry) => {
+  if (!overrideEntry || typeof overrideEntry !== 'object' || !curatedEntry || typeof curatedEntry !== 'object') {
+    return overrideEntry;
+  }
+
+  const normalized = { ...overrideEntry };
+  let changed = false;
+
+  ['hero', 'seo', 'card', 'thumb', 'square', 'default'].forEach((slotName) => {
+    if (isGenericLocalAssetValue(normalized[slotName]) && resolveBlogManifestValue(curatedEntry, slotName)) {
+      delete normalized[slotName];
+      changed = true;
+    }
+  });
+
+  if (!changed) return overrideEntry;
+  return normalized;
+};
+
 const buildLocalUploadManifestEntry = (slug) => {
+  if (!shouldUseEditorialSessionOverrides()) return null;
+
   const localUploads = readLocalStorageJson(STORAGE_KEY);
   const slotMap = localUploads?.[slug];
   if (!slotMap || typeof slotMap !== 'object') return null;
@@ -444,6 +582,8 @@ const buildLocalUploadManifestEntry = (slug) => {
 };
 
 const buildLocalUnsplashSelectionEntry = (slug) => {
+  if (!shouldUseEditorialSessionOverrides()) return null;
+
   const localSelections = readLocalStorageJson(UNSPLASH_STORAGE_KEY);
   const slotMap = localSelections?.[slug];
   if (!slotMap || typeof slotMap !== 'object') return null;
@@ -455,9 +595,9 @@ const buildLocalUnsplashSelectionEntry = (slug) => {
   if (hero.id) {
     const heroValue = {
       source: 'unsplash',
-      src: buildUnsplashDownloadUrl(hero.id, 'hero'),
+      src: hero.src || buildUnsplashDownloadUrl(hero.id, 'hero'),
       alt: hero.alt || '',
-      page: buildUnsplashPhotoPageUrl(hero.id),
+      page: hero.page || buildUnsplashPhotoPageUrl(hero.id),
       sourceLabel: 'Unsplash (sessão local)',
     };
     assignSlotEntryValue(entry, 'hero', heroValue);
@@ -466,9 +606,9 @@ const buildLocalUnsplashSelectionEntry = (slug) => {
   if (card.id) {
     const cardValue = {
       source: 'unsplash',
-      src: buildUnsplashDownloadUrl(card.id, 'card'),
+      src: card.src || buildUnsplashDownloadUrl(card.id, 'card'),
       alt: card.alt || '',
-      page: buildUnsplashPhotoPageUrl(card.id),
+      page: card.page || buildUnsplashPhotoPageUrl(card.id),
       sourceLabel: 'Unsplash (sessão local)',
     };
     assignSlotEntryValue(entry, 'card', cardValue);
@@ -480,9 +620,9 @@ const buildLocalUnsplashSelectionEntry = (slug) => {
 
     assignContextEntryValue(entry, slotIndex, {
       source: 'unsplash',
-      src: buildUnsplashDownloadUrl(slotSelection.id, 'context'),
+      src: slotSelection.src || buildUnsplashDownloadUrl(slotSelection.id, 'context'),
       alt: slotSelection.alt || '',
-      page: buildUnsplashPhotoPageUrl(slotSelection.id),
+      page: slotSelection.page || buildUnsplashPhotoPageUrl(slotSelection.id),
       sourceLabel: 'Unsplash (sessão local)',
     });
   });
@@ -541,12 +681,17 @@ export const getBlogManifestEntry = (slug) => {
 
   const remoteEntry = BLOG_UNSPLASH_MANIFEST.slugs[slug] || null;
   const cloudinaryEntry = BLOG_IMAGE_MANIFEST.slugs[slug] || null;
-  const sourceOverrideEntry = BLOG_IMAGE_OVERRIDES?.slugs?.[slug] || null;
+  const curatedEntry = mergeManifestEntries(cloudinaryEntry, remoteEntry);
+  const sourceOverrideEntryRaw = mergeManifestEntries(
+    BLOG_IMAGE_OVERRIDES_CANONICAL?.slugs?.[slug] || null,
+    BLOG_IMAGE_OVERRIDES?.slugs?.[slug] || null,
+  );
+  const sourceOverrideEntry = sanitizeGenericOverrideEntry(sourceOverrideEntryRaw, curatedEntry);
   const localUnsplashEntry = buildLocalUnsplashSelectionEntry(slug);
   const localUploadEntry = buildLocalUploadManifestEntry(slug);
   const persistedEntry = mergeManifestEntries(
     sourceOverrideEntry,
-    mergeManifestEntries(cloudinaryEntry, remoteEntry),
+    curatedEntry,
   );
   const withLocalUnsplash = mergeManifestEntries(localUnsplashEntry, persistedEntry);
   return mergeManifestEntries(localUploadEntry, withLocalUnsplash);
@@ -559,18 +704,6 @@ export const getBlogImageAsset = ({ slug, category, variant = 'card', allowCateg
   const categoryEntry = allowCategoryFallback && normalizedCategory && BLOG_IMAGE_MANIFEST.categories[normalizedCategory];
   const categoryAsset = resolveBlogAsset(categoryEntry, variant);
   const slugAsset = resolveBlogAsset(slugEntry, variant);
-
-  if (
-    slugEntry &&
-    slugAsset &&
-    categoryAsset &&
-    ['card', 'thumb', 'square'].includes(variant)
-  ) {
-    const heroAsset = resolveBlogAsset(slugEntry, 'hero');
-    if (heroAsset?.src && slugAsset?.src && heroAsset.src === slugAsset.src) {
-      return categoryAsset;
-    }
-  }
 
   return slugAsset || categoryAsset;
 };

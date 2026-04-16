@@ -31,14 +31,30 @@ Este AGENTS deve ser usado em conjunto com:
 - `npm run check:imports`
 - `npm run audit:consistency`
 - `npm run audit:consistency:strict`
+- `npm run lint`
 - `npm run build`
 - Ao tocar em blog/conteudo editorial: `npm run blog:editorial:status`
 - Para rodada automatica da fila/editorial: `npm run blog:editorial:auto`
 - Ao tocar em i18n/blog/header responsivo: `npm run blog:i18n:audit`
+- Para fechar saude estrutural de imagens/editorial: `npm run editorial:health`
 
 ## REGRAS
 - Proibido hardcode de dominios de produtos (easy/obraeasy/easyrealstate/buildtech).
 - Contatos institucionais devem sair de `src/data/company.js`.
+- Nao considerar deploy seguro se `lint` local nao foi executado.
+- Ao tocar em imagem editorial do blog ou dos guias, validar sempre os dois caminhos:
+  - `ContextImageCard`
+  - renderer integrado por secao
+- Ao tocar em manifesto/override editorial gerado, revisar duplicidade e garantir que o bloco canonico final nao sera sobrescrito por entrada antiga.
+- Se a preocupacao for regressao de sumir imagem, a validacao obrigatoria minima e:
+  - `npm run editorial:health`
+  - `npm run blog:editorial:status`
+  - `npm run blog:editorial:repetition:audit`
+  - `npm run style:editorial:status`
+- So considerar a regressao estrutural de imagem fechada quando o health estiver com:
+  - `blogStructuralClosed: true`
+  - `stylesStructuralClosed: true`
+  - `editorialStructuralClosed: true`
 - Strict mode e build sao bloqueadores de deploy.
 - Antes de alterar conteudo tecnico, validar impacto em SEO + schema + rotas.
 - Remocao de rota, pagina, landing ou asset publico exige limpeza no mesmo bloco de codigo, sitemap, redirects e docs de inventario/mapeamento.

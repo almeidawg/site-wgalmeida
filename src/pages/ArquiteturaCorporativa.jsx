@@ -138,7 +138,7 @@ const ArquiteturaCorporativa = () => {
         <img
           className="absolute inset-0 h-full w-full object-cover opacity-30"
           src={withBasePath('/images/banners/ARQ.webp')}
-          srcSet={`${withBasePath('/images/banners/ARQ-640.webp')} 640w, ${withBasePath('/images/banners/ARQ-960-opt.webp')} 960w, ${withBasePath('/images/banners/ARQ-1280.webp')} 1280w, ${withBasePath('/images/banners/ARQ.webp')} 1920w`}
+          srcSet={`${withBasePath('/images/banners/ARQ.webp')} 1920w`}
           sizes="100vw"
           alt="Arquitetura corporativa e espaços comerciais"
           width="1920"
