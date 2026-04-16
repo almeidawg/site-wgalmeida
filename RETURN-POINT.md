@@ -3248,3 +3248,18 @@ site-wgalmeida/
 
 - Governanca Git/CI ajustada sem enfraquecer a protecao da `main`.
 - Proximo passo: commit/PR/deploy deste bloco de governanca.
+
+## 2026-04-16 - ajuste fino: Codecov action sem aviso Node 20
+
+### Contexto
+
+- Apos merge do PR de governanca, o pipeline da `main` passou, mas ainda exibiu aviso de deprecacao Node 20 originado internamente pelo `codecov-action@v5` via `actions/github-script`.
+
+### Acao executada
+
+- Confirmada existencia da tag oficial `codecov/codecov-action@v6` via GitHub API.
+- Atualizado `ci.yml` de `codecov/codecov-action@v5` para `codecov/codecov-action@v6`.
+
+### Status para retomada
+
+- Proximo passo: validar em PR para confirmar se o aviso Node 20 desaparece no pipeline.
