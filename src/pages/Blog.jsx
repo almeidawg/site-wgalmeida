@@ -112,6 +112,27 @@ const stripMarkdownToText = (markdown = '') => stripMarkdownStrongEmphasis(markd
   .replace(/\s+/g, ' ')
   .trim();
 
+const PRODUCT_IMAGE_HOST_BLOCKLIST = [
+  'cdn.leroymerlin.com.br',
+];
+
+const getSafeRelatedProductImage = (src) => {
+  if (!src || typeof src !== 'string') {
+    return withBasePath('/images/placeholder-product.webp');
+  }
+
+  try {
+    const url = new URL(src);
+    if (PRODUCT_IMAGE_HOST_BLOCKLIST.includes(url.hostname.toLowerCase())) {
+      return withBasePath('/images/placeholder-product.webp');
+    }
+  } catch {
+    return src;
+  }
+
+  return src;
+};
+
 const extractFaqFromMarkdown = (markdown = '') => {
   const lines = markdown.split('\n');
   const faqHeaderRegex = /^##\s+(perguntas frequentes|duvidas frequentes|dúvidas frequentes|faq)$/i;
@@ -888,7 +909,7 @@ const RelatedProducts = ({ category }) => {
             <Link to={`/product/${product.id}`}>
               <div className="relative h-48 overflow-hidden">
                 <StableBlogImage
-                  src={product.image || '/images/placeholder-product.webp'}
+                  src={getSafeRelatedProductImage(product.image)}
                   fallbackSrc={withBasePath('/images/placeholder-product.webp')}
                   alt={product.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -955,7 +976,7 @@ const Blog = () => {
     { id: 'todos', label: t('blogPage.categories.all'), icon: BookOpen, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
     { id: 'arquitetura', label: t('blogPage.categories.architecture'), icon: Ruler, color: 'text-wg-green', bgColor: 'bg-wg-green' },
     { id: 'engenharia', label: t('blogPage.categories.engineering'), icon: Building2, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
-    { id: 'marcenaria', label: t('blogPage.categories.carpentry'), icon: Hammer, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
+    { id: 'marcenaria', label: t('blogPage.categories.carpentry'), icon: Hammer, color: 'text-wg-brown', bgColor: 'bg-wg-brown' },
     { id: 'design', label: t('blogPage.categories.design'), icon: Palette, color: 'text-wg-green', bgColor: 'bg-wg-green' },
     { id: 'tecnologia', label: t('blogPage.categories.technology'), icon: Monitor, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
     { id: 'tendencias', label: t('blogPage.categories.trends'), icon: TrendingUp, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
@@ -1130,6 +1151,12 @@ const Blog = () => {
         : currentCategoryMeta.bgColor === 'bg-wg-brown'
           ? 'border-wg-brown'
           : 'border-wg-blue';
+    const articleAccentLeftBorderClass =
+      currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? 'border-l-wg-green/45'
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? 'border-l-wg-brown/45'
+          : 'border-l-wg-blue/45';
     const articleAccentHoverBorderClass =
       currentCategoryMeta.bgColor === 'bg-wg-green'
         ? 'hover:border-wg-green/60'
@@ -1376,7 +1403,7 @@ const Blog = () => {
         if (text.startsWith('DESTAQUE:') || text.startsWith('🎯 DESTAQUE:')) {
           return (
             <div
-              className="my-8 rounded-xl border-l-[3px] border-l-wg-blue/45 bg-gradient-to-r from-[#E3EBF7] via-[#F3F7FC] to-[#FCFDFE] px-5 py-[14px] text-[#4C4C4C] [&>p]:m-0 [&>p]:font-suisse [&>p]:text-[14px] [&>p]:font-light [&>p]:leading-[1.6] [&_strong]:font-light"
+              className={`my-8 rounded-xl border-l-[3px] ${articleAccentLeftBorderClass} bg-gradient-to-r from-[#E3EBF7] via-[#F3F7FC] to-[#FCFDFE] px-5 py-[14px] text-[#4C4C4C] [&>p]:m-0 [&>p]:font-suisse [&>p]:text-[14px] [&>p]:font-light [&>p]:leading-[1.6] [&_strong]:font-light`}
               {...props}
             >
               {children}
@@ -1386,7 +1413,7 @@ const Blog = () => {
         if (text.startsWith('DICA:') || text.startsWith('💡 DICA:') || text.startsWith('CHECKLIST:') || text.startsWith('✅ CHECKLIST:')) {
           return (
             <div
-              className="my-8 rounded-xl border-l-[3px] border-l-wg-blue/45 bg-gradient-to-r from-[#E3EBF7] via-[#F3F7FC] to-[#FCFDFE] px-5 py-[14px] text-[#4C4C4C] [&>p]:m-0 [&>p]:font-suisse [&>p]:text-[14px] [&>p]:font-light [&>p]:leading-[1.6] [&_strong]:font-light"
+              className={`my-8 rounded-xl border-l-[3px] ${articleAccentLeftBorderClass} bg-gradient-to-r from-[#E3EBF7] via-[#F3F7FC] to-[#FCFDFE] px-5 py-[14px] text-[#4C4C4C] [&>p]:m-0 [&>p]:font-suisse [&>p]:text-[14px] [&>p]:font-light [&>p]:leading-[1.6] [&_strong]:font-light`}
               {...props}
             >
               {children}
@@ -2125,7 +2152,13 @@ const Blog = () => {
                     </div>
 
                     {/* Título */}
-                    <h3 className={`mb-3 font-inter font-light text-wg-black transition-colors group-hover:text-wg-blue ${index === 0 && categoriaAtiva === 'todos' ? editorialScale.cardTitle : 'text-lg leading-[1.35]'}`}>
+                    <h3 className={`mb-3 font-inter font-light text-wg-black transition-colors ${
+                      categorias.find(c => c.id === artigo.category)?.color === 'text-wg-green'
+                        ? 'group-hover:text-wg-green'
+                        : categorias.find(c => c.id === artigo.category)?.color === 'text-wg-brown'
+                          ? 'group-hover:text-wg-brown'
+                          : 'group-hover:text-wg-blue'
+                    } ${index === 0 && categoriaAtiva === 'todos' ? editorialScale.cardTitle : 'text-lg leading-[1.35]'}`}>
                       {artigo.title}
                     </h3>
 
@@ -2144,7 +2177,9 @@ const Blog = () => {
                     </div>
 
                     {/* Ler Mais */}
-                    <div className="flex items-center gap-2 text-sm font-light text-wg-blue transition-all group-hover:gap-3">
+                    <div className={`flex items-center gap-2 text-sm font-light ${
+                      categorias.find(c => c.id === artigo.category)?.color || 'text-wg-blue'
+                    } transition-all group-hover:gap-3`}>
                       <span>{t('blogPage.readMore')}</span>
                       <ChevronRight className="w-4 h-4" />
                     </div>

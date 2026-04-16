@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-16T01:49:38.800Z",
+  "generatedAt": "2026-04-16T03:19:52.393Z",
   "summary": {
-    "slugs": 25,
+    "slugs": 26,
     "missingHero": 0,
     "missingCard": 0,
     "missingThumb": 0,
     "heroEqualsCard": 0,
     "heroEqualsThumb": 0,
-    "cardEqualsThumb": 8,
+    "cardEqualsThumb": 9,
     "allThreeEqual": 0,
     "problematicDuplicates": 0
   },
@@ -336,6 +336,20 @@
     },
     {
       "slug": "ralo-linear-areas-molhadas",
+      "hasEntry": true,
+      "missingHero": false,
+      "missingCard": false,
+      "missingThumb": false,
+      "heroEqualsCard": false,
+      "heroEqualsThumb": false,
+      "cardEqualsThumb": true,
+      "allThreeEqual": false,
+      "heroSource": "local",
+      "cardSource": "local",
+      "thumbSource": "local"
+    },
+    {
+      "slug": "scandia-home-roupa-cama-luxo",
       "hasEntry": true,
       "missingHero": false,
       "missingCard": false,

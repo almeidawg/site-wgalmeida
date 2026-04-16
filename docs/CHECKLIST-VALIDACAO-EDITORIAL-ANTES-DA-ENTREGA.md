@@ -182,6 +182,7 @@ e da Fase 1 de rollout:
 
 - `npm run check:imports`
 - `npm run audit:consistency:strict`
+- `npm run lint`
 - `npm run build`
 
 Se o bloco envolver editorial e imagens:
@@ -202,6 +203,30 @@ Uma pagina so pode ser considerada pronta quando:
 - nao ha links gritantes
 - nao ha erro de escrita
 - dev local confirma leitura limpa
+
+## 16A. Gate de deploy e publicacao
+
+- validar se a branch local nao esta em merge incompleto antes de abrir PR ou publicar
+- validar se nao ha conflito residual em arquivos criticos:
+  - `src/pages/Blog.jsx`
+  - `src/data/blogImageManifest.js`
+  - `src/data/blogImageOverrides.generated.js`
+  - `src/pages/AdminBlogEditorial.jsx`
+- validar se arquivos gerados/editoriais nao introduziram:
+  - chaves duplicadas sem estrategia controlada
+  - variavel nao inicializada
+  - iterator sem `key`
+- validar PR com os checks obrigatorios do repo publico:
+  - `build-and-test`
+  - `deploy-gate-final`
+- nao considerar `build` local suficiente quando o CI remoto tambem roda `lint`
+- se a branch protection bloquear push direto, promover por PR e nunca forcar publicacao manual
+- validar URLs criticas em producao com `HTTP 200` apos merge:
+  - blog
+  - slugs prioritarios
+  - guias prioritarios
+  - assets de imagem
+  - sitemap
 
 ## 17. Estrategia de rollout
 
@@ -224,4 +249,13 @@ O caminho correto e:
 - identificacao do que e template
 - promocao da regra para a malha central sempre que possivel
 - uso do slug piloto como referencia obrigatoria
+
+## 19. Erros de deploy que nao podem se repetir
+
+- conflito de merge fechado sem revisar a malha homologada pode reintroduzir regressao visual e editorial
+- confiar so em `build` local pode deixar passar erro de `lint` que bloqueia PR
+- aplicar efeito ou regra visual em apenas um renderer de imagem deixa parte das paginas sem o comportamento esperado
+- override editorial duplicado em arquivo gerado pode sobrescrever a entrada correta no fim do pipeline
+- tratar asset remoto curado como pendencia indistinta gera leitura operacional falsa no admin
+- publicar sem validar `HTTP 200` nas rotas criticas deixa deploy aparentemente verde com regressao visivel ao usuario
 

@@ -50,10 +50,7 @@ const staggerContainer = {
 
 const ABOUT_FALLBACK_SRC = withBasePath('/images/banners/SOBRE.webp');
 const ABOUT_WILLIAM_IMAGE_SRC = withBasePath('/images/about/william-almeida-1200.webp');
-const ABOUT_WILLIAM_IMAGE_SRCSET = [
-  `${withBasePath('/images/about/william-almeida-800.webp')} 800w`,
-  `${ABOUT_WILLIAM_IMAGE_SRC} 1200w`,
-].join(', ');
+const ABOUT_WILLIAM_IMAGE_SRCSET = `${ABOUT_WILLIAM_IMAGE_SRC} 1200w`;
 
 const About = () => {
   const { t } = useTranslation();
