@@ -84,7 +84,7 @@ Para rotas que devem redirecionar para outro domínio (ex: `/parceiros` → `obr
 - **Adicionar em vercel.json** (server-side): necessário para SEO bots e clientes sem JS
 - **Adicionar em App.jsx** (client-side): garante SPA redirect para usuários logados
 - Usar `"permanent": false` para redirects cross-domínio (status 302) — facilita mudanças futuras
-- Usar `"permanent": true` apenas para redirects internos definitivos (ex: `/wnomas` → `/wnomasvinho`)
+- Usar `"permanent": true` apenas para redirects internos definitivos de rotas ativas do produto
 ## 7. BuildTech clientes no monodomain
 - O subdominio oficial de aprovacao e `https://buildtech.wgalmeida.com.br/clientes/<slug>/`.
 - Se tambem for necessario atender `https://wgalmeida.com.br/buildtech/clientes/<slug>/`, manter em `vercel.json` um redirect explicito de `/buildtech/clientes/:path*` para `https://buildtech.wgalmeida.com.br/clientes/:path*`.

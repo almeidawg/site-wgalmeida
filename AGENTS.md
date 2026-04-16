@@ -32,12 +32,20 @@ Este AGENTS deve ser usado em conjunto com:
 - `npm run audit:consistency`
 - `npm run audit:consistency:strict`
 - `npm run build`
+- Ao tocar em blog/conteudo editorial: `npm run blog:editorial:status`
+- Para rodada automatica da fila/editorial: `npm run blog:editorial:auto`
+- Ao tocar em i18n/blog/header responsivo: `npm run blog:i18n:audit`
 
 ## REGRAS
 - Proibido hardcode de dominios de produtos (easy/obraeasy/easyrealstate/buildtech).
 - Contatos institucionais devem sair de `src/data/company.js`.
 - Strict mode e build sao bloqueadores de deploy.
 - Antes de alterar conteudo tecnico, validar impacto em SEO + schema + rotas.
+- Remocao de rota, pagina, landing ou asset publico exige limpeza no mesmo bloco de codigo, sitemap, redirects e docs de inventario/mapeamento.
+- Conteudo publico com numeros, metodologia, benchmarks ou claims de produto deve ser validado contra a ferramenta e a metodologia ativa do ecossistema.
+- Blog, landing e pagina institucional nao podem descrever metodologia desatualizada em relacao ao produto ativo.
+- Quando houver diferenca entre benchmark externo e motor interno, registrar a diferenca e explicitar a natureza da fonte em vez de misturar os dados.
+- Revisoes de blog que envolvam AVM, EVF, ROI, valorizacao, prazo, faixa ou precisao devem consultar a auditoria editorial central do EasyRealState.
 
 ## ROLLBACK
 - Deploy: rollback pelo painel Vercel.
@@ -52,5 +60,6 @@ Site institucional e camada de aquisicao do ecossistema WG, integrado com produt
 2. Ler `RETURN-POINT.md`.
 3. Definir alteracao por bloco.
 4. Implementar sem duplicar fonte de dados.
-5. Rodar check/imports + audit strict + build.
-6. Registrar evidencias no `RETURN-POINT.md`.
+5. Em blog/i18n, validar `pt-BR`, `en` e `es` em listagem + detalhe e checar header responsivo.
+6. Rodar check/imports + audit strict + build.
+7. Registrar evidencias no `RETURN-POINT.md`.

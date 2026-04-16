@@ -22,6 +22,16 @@ featured: false
 
 Reformas em condominios exigem documentacao especifica para garantir seguranca, controle e conformidade com a NBR 16280. Organizar esses documentos evita atrasos e garante previsibilidade.
 
+Mas o ponto mais importante e este: documentacao nao e burocracia paralela. Ela e parte da logica operacional da obra.
+
+Quando o documento entra cedo e do jeito certo, ele ajuda a proteger:
+
+- inicio da obra;
+- cronograma;
+- acesso de equipe;
+- aprovacoes;
+- e responsabilidade tecnica.
+
 ---
 
 ## Informe de obra ou reforma
@@ -34,6 +44,8 @@ O informe registra dados essenciais:
 - Datas previstas de inicio e termino
 
 Esse documento formaliza o escopo junto a administracao.
+
+Tambem ajuda a alinhar o que foi comunicado ao condominio com o que realmente vai para o campo. Isso reduz ruído na etapa mais sensivel da liberacao inicial.
 
 ---
 
@@ -55,12 +67,22 @@ O termo declara que o proprietario assume responsabilidade pela obra e pelo aten
 - Projeto e plantas com ART/RRT
 - Declaracao tecnica sobre impacto estrutural
 - Relacao de profissionais autorizados
+- Termo de responsabilidade e regras de acesso
+
+Dependendo do condominio, tambem podem ser exigidos:
+
+- comprovacao de caçamba ou descarte;
+- lista de fornecedores;
+- seguro;
+- agendamento de elevador e areas comuns.
 
 ---
 
 ## Conclusao
 
 Documentacao correta reduz riscos legais e operacionais. Em obras premium, a excelencia comeca na etapa documental.
+
+Nao porque o papel resolve a obra, mas porque sem governanca documental a obra perde previsibilidade antes mesmo de começar.
 
 ## Proximo passo
 

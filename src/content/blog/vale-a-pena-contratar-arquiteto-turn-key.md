@@ -23,6 +23,8 @@ O motivo nao e apenas estético. E operacional: o modelo turn key reduz friccao 
 
 Em vez de varios fornecedores sem dono unico do resultado, existe uma estrutura integrada com responsabilidade de ponta a ponta.
 
+Na pratica, isso significa que as decisoes deixam de chegar como blocos soltos. Projeto, documentacao, aprovacoes, compras, obra civil, marcenaria e entrega passam a responder a uma mesma logica operacional.
+
 ### No modelo tradicional
 
 - Cliente coordena varios fornecedores.
@@ -34,6 +36,7 @@ Em vez de varios fornecedores sem dono unico do resultado, existe uma estrutura 
 - Escopo, cronograma e execucao seguem mesma estrategia.
 - Arquitetura, engenharia e marcenaria falam a mesma lingua.
 - O cliente ganha previsibilidade e menos desgaste de decisao.
+- Medicoes, aprovacoes e janelas de producao entram no cronograma antes de virarem urgencia.
 
 ## Quando turn key vale mais
 
@@ -49,12 +52,15 @@ Em vez de varios fornecedores sem dono unico do resultado, existe uma estrutura 
 - Menos risco de custo oculto no meio da obra.
 - Melhor padrao final, porque a entrega e tratada como sistema.
 
+Esse ganho aparece especialmente quando a obra tem varias frentes que precisam ser disparadas antes da instalacao final, como marcenaria, serralheria, marmoraria, esquadrias e automacao.
+
 ## Pontos de atencao antes de contratar
 
 - Verificar metodo de trabalho e governanca.
 - Exigir cronograma fisico-financeiro.
 - Validar portfolio com obras concluídas.
 - Confirmar quem responde por cada etapa.
+- Entender como a empresa trata medicao, aprovacao, compras criticas e producao paralela.
 
 ## Posicionamento WG Almeida
 
@@ -72,7 +78,7 @@ Isso aumenta previsibilidade e reduz a distancia entre proposta e entrega real.
 
 ### Turn key e mais caro que contratar tudo separado?
 
-Nem sempre. O valor unitario pode parecer maior, mas o custo total tende a cair quando reduz retrabalho, atraso e decisao improvisada.
+Nem sempre. O valor unitario pode parecer maior, mas o custo total tende a cair quando reduz retrabalho, atraso, compra fora de sequencia e decisao improvisada.
 
 ### O cliente perde controle no turn key?
 

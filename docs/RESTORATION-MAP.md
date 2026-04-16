@@ -76,8 +76,6 @@ Landings regionais:
 
 Produtos do ecossistema WG no mesmo site:
 
-- `/wnomasvinho`
-- `/wnomas`
 - `/easylocker`
 - `/buildtech`
 - `/obraeasy`
@@ -248,7 +246,6 @@ Subpastas:
 - `banners`
 - `blog`
 - `estilos`
-- `wno-mas`
 
 Assets base:
 

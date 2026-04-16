@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-04-16T01:39:58.161Z",
+  "summary": {
+    "blogStructuralClosed": true,
+    "stylesStructuralClosed": true,
+    "editorialStructuralClosed": true
+  },
+  "blog": {
+    "totalPosts": 78,
+    "publishedWithManifest": 78,
+    "publishedWithRemoteCuratedAsset": 0,
+    "genericBannerFallback": 0,
+    "needsSearch": 0,
+    "heroUnsplashOrRemote": 0,
+    "cardUnsplashOrRemote": 0,
+    "problematicDuplicates": 0,
+    "allThreeEqual": 0
+  },
+  "styles": {
+    "totalStyles": 31,
+    "localWebp": 31,
+    "localSvg": 31,
+    "cloudinary": 31,
+    "missingCloudinary": 0
+  },
+  "evidence": {
+    "blogStatus": "blog-editorial-status.latest.json",
+    "editorialSearch": "editorial-search-report.latest.json",
+    "blogRepetition": "blog-image-repetition-audit.latest.json",
+    "styleStatus": "style-editorial-status.latest.json"
+  }
+}

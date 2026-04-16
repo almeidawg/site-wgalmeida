@@ -33,14 +33,14 @@
   },
   "hero": {
     "title": "Transformando Sonhos em Espaços de Alto Padrão",
-    "subtitle": "15 anos de excelência em Arquitetura, Engenharia e Marcenaria integrados em um único ecossistema",
+    "subtitle": "Arquitetura, Engenharia e Marcenaria integrados em um único ecossistema de alto padrão",
     "cta": "Solicitar Proposta",
     "ctaSecondary": "Conhecer Projetos"
   },
   "about": {
     "title": "Sobre Nós",
     "subtitle": "Conheça o Grupo WG Almeida",
-    "description": "Há 15 anos transformando sonhos em realidade com projetos de arquitetura, engenharia e marcenaria de alto padrão em São Paulo.",
+    "description": "Transformamos sonhos em realidade com projetos de arquitetura, engenharia e marcenaria de alto padrão em São Paulo.",
     "years": "Anos de Experiência",
     "projects": "Projetos Entregues",
     "clients": "Clientes Satisfeitos",
@@ -149,12 +149,12 @@
   "seo": {
     "home": {
       "title": "Arquitetura, Engenharia e Marcenaria de Alto Padrão em São Paulo",
-      "description": "Ecossistema integrado de arquitetura, engenharia e marcenaria de alto padrão. Sistema turn key premium em São Paulo: Brooklin, Itaim, Jardins, Vila Nova Conceição. 15 anos de excelência.",
+      "description": "Ecossistema integrado de arquitetura, engenharia e marcenaria de alto padrão. Sistema turn key premium em São Paulo: Brooklin, Itaim, Jardins e Vila Nova Conceição.",
       "keywords": "arquitetura alto padrão são paulo, engenharia turn key, marcenaria sob medida, obras premium brooklin, reforma apartamento itaim, arquiteto jardins, construtora premium sp"
     },
     "about": {
       "title": "Sobre Nós - História e Valores",
-      "description": "Conheça a história, missão, visão e valores do Grupo WG Almeida. 15 anos integrando arquitetura, engenharia e marcenaria de alto padrão em São Paulo.",
+      "description": "Conheça a história, missão, visão e valores do Grupo WG Almeida. Operação integrada em arquitetura, engenharia e marcenaria de alto padrão em São Paulo.",
       "keywords": "sobre wg almeida, história grupo wg, valores empresa arquitetura, missão visão construtora são paulo"
     },
     "process": {
@@ -179,7 +179,7 @@
     },
     "testimonials": {
       "title": "Depoimentos - Avaliações de Clientes",
-      "description": "Veja as avaliações reais de nossos clientes no Google. 15 anos construindo sonhos com excelência em arquitetura, engenharia e marcenaria. Nota 5.0 no Google.",
+      "description": "Veja as avaliações reais de nossos clientes no Google sobre arquitetura, engenharia e marcenaria de alto padrão em São Paulo.",
       "keywords": "WG Almeida avaliações, depoimentos clientes arquitetura, reviews engenharia São Paulo, avaliação google construtora"
     },
     "contact": {
@@ -189,7 +189,7 @@
     },
     "projects": {
       "title": "Projetos - Portfólio de Arquitetura e Engenharia",
-      "description": "Conheça nosso portfólio de projetos residenciais e corporativos de alto padrão em São Paulo. Mais de 400 projetos entregues com arquitetura, engenharia e marcenaria integradas.",
+      "description": "Conheça nosso portfólio de projetos residenciais e corporativos de alto padrão em São Paulo, com arquitetura, engenharia e marcenaria integradas.",
       "keywords": "projetos arquitetura são paulo, portfólio construtora, obras alto padrão, reforma apartamento luxo, projetos residenciais"
     },
     "blog": {
@@ -1089,7 +1089,7 @@
     "jardins": {
       "name": "Jardins",
       "title": "Construtora Turn Key nos Jardins SP | Reforma Alto Padrão",
-      "metaDescription": "Construtora e arquitetura de alto padrão nos Jardins. Reforma de casas e apartamentos premium. Sistema Turn Key com projeto, obra e entrega. 15 anos de experiência.",
+      "metaDescription": "Construtora e arquitetura de alto padrão nos Jardins. Reforma de casas e apartamentos premium. Sistema Turn Key com projeto, obra e entrega.",
       "heroImage": "/images/regions/jardins.jpg",
       "intro": [
         "Os Jardins representam tradição, sofisticação e arquitetura de alto nível. Nossa atuação no bairro respeita essa história, aliando técnica contemporânea e acabamento refinado.",
@@ -1954,7 +1954,7 @@
     "stages": {
       "whoWeAre": {
         "kicker": "Quem Somos",
-        "line1": "Há 15 anos construindo",
+        "line1": "Construindo",
         "line2": "histórias com excelência."
       },
       "ecosystem": {
@@ -2111,7 +2111,7 @@
     },
     "success": {
       "title": "Solicitação <span>Enviada!</span>",
-      "description": "Obrigado pelo interesse! Nossa equipe entrará em contato em até <strong>48 horas</strong> para dar início ao seu projeto.",
+      "description": "Obrigado pelo interesse. Nossa equipe fará a análise inicial da sua solicitação e seguirá o contato para dar início ao seu projeto.",
       "instagram": "Siga no Instagram",
       "website": "Visite nosso Site",
       "backToStart": "Voltar ao início"

@@ -166,12 +166,7 @@ export const SEO_CONFIG = {
   "/easy-real-state": page(
     "/easy-real-state",
     "EasyRealState | Calculadora de Valor Imobiliário para Corretores",
-    "Avalie imóveis com dados reais de mercado em São Paulo e integre o estudo de reforma com o ecossistema Easy do Grupo WG Almeida."
-  ),
-  "/wnomasvinho": page(
-    "/wnomasvinho",
-    "Wno Mas Vinhos & Cia | Curadoria de Vinhos Premium",
-    "Wno Mas Vinhos & Cia com curadoria premium de vinhos, champagnes e experiências autorais em uma apresentação digital própria."
+    "Use o EasyRealState para ler valor de mercado com base real em São Paulo. AVM comercial, link compartilhável e trial assistido para corretores e imobiliárias."
   ),
   "/revista-estilos": page(
     "/revista-estilos",

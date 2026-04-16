@@ -92,7 +92,7 @@ const ObraTurnKey = () => {
       itens: [
         'Cronograma detalhado',
         'Acompanhamento diário',
-        'Relatórios via WG Easy',
+        'Leitura guiada do andamento',
         'Garantia 5 anos'
       ]
     }
@@ -137,7 +137,7 @@ const ObraTurnKey = () => {
     'Cronograma real e cumprido',
     'Qualidade controlada em todas as etapas',
     'Menos estresse e mais previsibilidade',
-    'Acompanhamento em tempo real via WG Easy',
+    'Leitura guiada do andamento em cada etapa',
     'Garantia estrutural de 5 anos',
     'Equipe especializada e integrada'
   ];
@@ -145,8 +145,8 @@ const ObraTurnKey = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Obra Turn Key São Paulo | Sistema Completo de Reforma",
-    "description": "Sistema Turn Key Premium em São Paulo. Projeto, execução e entrega integrados. Um único responsável, orçamento fechado e prazo garantido. 15 anos de experiência.",
+    "name": "Obra Turn Key São Paulo | Reforma Completa com leitura integrada",
+    "description": "Turn Key Premium em São Paulo com projeto, execução e entrega integrados. Um único responsável, orçamento fechado e uma experiência mais clara, guiada e previsível.",
     "url": pageUrl,
     "provider": {
       "@type": "Organization",
@@ -168,8 +168,8 @@ const ObraTurnKey = () => {
     <>
       <SEO
         pathname="/obra-turn-key"
-        title="Obra Turn Key SP | Sistema Completo de Reforma Premium"
-        description="Sistema Turn Key em São Paulo: projeto, obra e entrega integrados. Orçamento fechado, prazo garantido e qualidade controlada. 15 anos transformando projetos em realidade."
+        title="Obra Turn Key SP | Reforma Premium com leitura integrada"
+        description="Turn Key em São Paulo com projeto, obra e entrega integrados. Orçamento fechado, leitura guiada do andamento e qualidade controlada."
         keywords="turn key sao paulo, obra turn key, sistema turn key, reforma turn key, turn key premium, obra completa sp"
         url={pageUrl}
         schema={schema}
@@ -190,25 +190,28 @@ const ObraTurnKey = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-4 py-2 bg-wg-orange text-white rounded-full text-sm uppercase tracking-wider mb-6">
-              Sistema Turn Key Premium
+              Turn Key Premium
             </span>
             <h1 className="wg-page-hero-title mb-6">
-              O Que é Turn Key?<br />Entenda o Sistema Completo
+              O Que é Turn Key?<br />Entenda a experiência completa
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Turn Key é o modelo onde uma única empresa responde por projeto, execução e entrega.
-              Você recebe o espaço pronto com qualidade controlada, prazos reais e orçamento transparente.
+              Turn Key é o modelo em que uma única empresa conduz projeto, execução e entrega.
+              Você recebe o espaço pronto com qualidade controlada, prazos reais e uma experiência mais simples do início ao fim.
+            </p>
+            <p className="text-base text-white/65 mb-8 max-w-3xl mx-auto leading-relaxed">
+              No ecossistema WG, isso também significa transformar a obra em prova operacional da tese: menos ruído, mais controle e mais clareza sobre o valor que está sendo protegido ou destravado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/solicite-proposta">
                 <Button className="btn-apple">
-                  Solicitar Orçamento Turn Key
+                  Solicitar proposta turn key
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/projetos">
                 <Button className="btn-hero-outline">
-                  Ver Projetos Turn Key
+                  Ver projetos turn key
                 </Button>
               </Link>
             </div>
@@ -239,7 +242,7 @@ const ObraTurnKey = () => {
                 <tr className="border-b-2 border-wg-orange">
                   <th className="text-left p-4 font-inter font-light text-wg-black">Aspecto</th>
                   <th className="text-left p-4 font-inter font-light text-wg-gray">Modelo Tradicional</th>
-                  <th className="text-left p-4 font-inter font-light text-wg-orange">Sistema Turn Key</th>
+                  <th className="text-left p-4 font-inter font-light text-wg-orange">Modelo Turn Key</th>
                 </tr>
               </thead>
               <tbody>
@@ -415,12 +418,12 @@ const ObraTurnKey = () => {
               Pronto para uma Obra sem Estresse?
             </h2>
             <p className="text-white/80 mb-8 text-lg">
-              Descubra como o sistema Turn Key transforma sua reforma em uma experiência fluida e previsível.
+              Descubra como o modelo Turn Key transforma sua reforma em uma experiência mais fluida, guiada e previsível.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/solicite-proposta">
                 <Button className="btn-apple">
-                  Solicitar Orçamento Turn Key
+                  Solicitar proposta turn key
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
@@ -437,4 +440,3 @@ const ObraTurnKey = () => {
 };
 
 export default ObraTurnKey;
-

@@ -25,7 +25,7 @@ featured: false
 ✅ Porta (privacidade)
 
 ### Tamanho Mínimo
-- Básico: 2,5m² (1,5 x 1,7m)
+- Essencial: 2,5m² (1,5 x 1,7m)
 - Confortável: 4-6m²
 - Ideal: 8-12m²
 
@@ -248,7 +248,7 @@ Fim do dia:
 
 ## Investimento Total
 
-### Básico (R$ 3.000-6.000)
+### Essencial (R$ 3.000-6.000)
 - Cadeira básica: R$ 800
 - Mesa simples: R$ 600
 - Monitor: R$ 800
@@ -256,7 +256,7 @@ Fim do dia:
 - Organização: R$ 300
 - Headset: R$ 300
 
-### Intermediário (R$ 8.000-15.000)
+### Equilibrado (R$ 8.000-15.000)
 - Cadeira ergonômica: R$ 1.800
 - Mesa qualidade: R$ 1.500
 - 2 monitores: R$ 2.000
@@ -264,7 +264,7 @@ Fim do dia:
 - Webcam + headset: R$ 1.000
 - Decoração: R$ 1.000
 
-### Premium (R$ 20.000-40.000)
+### Exclusivo (R$ 20.000-40.000)
 - Cadeira top: R$ 3.000
 - Standing desk: R$ 3.500
 - Setup completo: R$ 8.000

@@ -41,7 +41,7 @@ const mapImagesToCloudinarySources = (images = [], publicIds = []) => {
         fullSrc: sources.fullSrc,
       };
     })
-    .filter(Boolean);
+    .filter((image) => Boolean(image?.src || image?.thumbSrc || image?.fullSrc));
 };
 
 const PROJECT_PORTFOLIO_PUBLIC_IDS = {

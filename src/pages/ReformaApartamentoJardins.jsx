@@ -73,7 +73,7 @@ const ReformaApartamentoJardins = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Reforma de Apartamento nos Jardins | Grupo WG Almeida",
-    "description": "Reforma completa de apartamento e casa nos Jardins. Projetos premium que respeitam a arquitetura histórica. Sistema Turn Key com curadoria exclusiva.",
+    "description": "Reforma completa de apartamento e casa nos Jardins, com curadoria exclusiva e condução integrada do projeto à entrega. Projetos premium que respeitam a arquitetura histórica.",
     "url": pageUrl,
     "provider": {
       "@type": "Organization",
@@ -100,7 +100,7 @@ const ReformaApartamentoJardins = () => {
       <SEO
         pathname="/reforma-apartamento-jardins"
         title="Reforma Apartamento Jardins SP | Construtora Alto Padrão"
-        description="Reforma de apartamento e casa nos Jardins. Projetos premium que respeitam a arquitetura histórica. Sistema Turn Key com tradição e excelência. Orçamento grátis."
+        description="Reforma de apartamento e casa nos Jardins com curadoria exclusiva, tradição construtiva e condução integrada do projeto à entrega. Proposta sem compromisso."
         keywords="reforma apartamento jardins, reforma casa jardins, construtora jardins, arquitetura jardins, reforma alto padrão jardins, quanto custa reforma jardins"
         url={pageUrl}
         schema={localBusinessSchema}

@@ -82,7 +82,7 @@ const ConstrutoraBrooklin = () => {
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
     "name": "Construtora Brooklin | Grupo WG Almeida",
-    "description": "Construtora especializada no Brooklin. Obras residenciais e comerciais Turn Key. Atuação próxima à Berrini. Acabamento premium e prazo garantido.",
+    "description": "Construtora especializada no Brooklin, com obras residenciais e comerciais conduzidas do projeto à entrega. Atuação próxima à Berrini, acabamento premium e leitura guiada da execução.",
     "url": pageUrl,
     "provider": {
       "@type": "Organization",
@@ -109,7 +109,7 @@ const ConstrutoraBrooklin = () => {
       <SEO
         pathname="/construtora-brooklin"
         title="Construtora Brooklin SP | Obras Residenciais e Comerciais"
-        description="Construtora especializada no Brooklin. Obras residenciais e comerciais Turn Key. Atuação próxima à Berrini. Acabamento premium e prazo garantido. Orçamento grátis."
+        description="Construtora especializada no Brooklin com obras residenciais e comerciais conduzidas do projeto à entrega. Atuação próxima à Berrini, acabamento premium, leitura guiada da obra e proposta sem compromisso."
         keywords="construtora brooklin, obra brooklin, construtora berrini, reforma brooklin, construção brooklin, quanto custa obra brooklin"
         url={pageUrl}
         schema={localBusinessSchema}
@@ -136,16 +136,16 @@ const ConstrutoraBrooklin = () => {
               </span>
             </div>
             <h1 className="wg-page-hero-title mb-6">
-              Construtora no Brooklin<br />Obras Premium Turn Key
+              Construtora no Brooklin<br />com condução premium do início à entrega
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
               Construção e reforma de alto padrão no Brooklin. Especialistas em obras residenciais
-              e comerciais próximas à Berrini. Sistema Turn Key com prazo garantido.
+              e comerciais próximas à Berrini, com leitura guiada da execução, prazo mais claro e menos coordenação manual.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/solicite-proposta">
                 <Button className="btn-apple">
-                  Solicitar Orçamento Brooklin
+                  Solicitar proposta Brooklin
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>

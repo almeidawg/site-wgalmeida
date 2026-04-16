@@ -53,10 +53,16 @@ const splitMarkdownByH2 = (markdown) => {
 const markdownComponents = {
   h1: () => null,
   strong: ({ node, className, ...props }) => (
-    <span className={`font-light text-inherit ${className || ''}`.trim()} {...props} />
+    <strong className={`font-suisse font-light text-inherit ${className || ''}`.trim()} {...props} />
   ),
   em: ({ node, className, ...props }) => (
     <em className={`font-light text-inherit ${className || ''}`.trim()} {...props} />
+  ),
+  a: ({ node, className, ...props }) => (
+    <a
+      className={`font-light text-wg-gray underline decoration-black/20 underline-offset-4 transition-colors hover:text-wg-black hover:decoration-black/40 ${className || ''}`.trim()}
+      {...props}
+    />
   ),
 };
 
@@ -273,8 +279,8 @@ const EstiloDetail = () => {
               transition={{ duration: 0.6 }}
               className="flex flex-wrap items-center gap-3 mb-6"
             >
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/8 px-4 py-2 text-white/78 font-light uppercase tracking-[0.22em] text-[11px] backdrop-blur-sm">
-                <Palette className="w-4 h-4 text-white/78" />
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/8 px-4 py-2 text-[rgba(255,255,255,0.78)] font-light uppercase tracking-[0.22em] text-[11px] backdrop-blur-sm">
+                <Palette className="h-4 w-4 text-[rgba(255,255,255,0.78)]" />
                 Guia de Estilo
               </span>
               <div className="flex gap-2">
@@ -304,10 +310,10 @@ const EstiloDetail = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="max-w-3xl text-lg md:text-[1.45rem] text-white/84 font-light leading-relaxed mb-4"
+                className="mb-4 max-w-3xl text-lg font-light leading-relaxed text-[rgba(255,255,255,0.84)] md:text-[1.45rem]"
               >
                 "{estilo.quote}"
-                {estilo.author && <cite className="block text-sm not-italic mt-3 uppercase tracking-[0.18em] text-white/60 font-light">- {estilo.author}</cite>}
+                {estilo.author && <cite className="mt-3 block text-sm font-light not-italic uppercase tracking-[0.18em] text-[rgba(255,255,255,0.6)]">- {estilo.author}</cite>}
               </motion.blockquote>
             )}
 
@@ -316,7 +322,7 @@ const EstiloDetail = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="max-w-2xl text-base md:text-xl text-white/78 leading-relaxed font-light"
+              className="max-w-2xl text-base font-light leading-relaxed text-[rgba(255,255,255,0.78)] md:text-xl"
             >
               {estilo.excerpt}
             </motion.p>
@@ -350,11 +356,11 @@ const EstiloDetail = () => {
                   <BookOpen className="inline w-3.5 h-3.5 mr-1" />Guia de Estilo
                 </p>
                 <h2 className="text-[20px] leading-tight text-wg-black mb-3 font-light">{estilo.title}</h2>
-                <p className="text-[15px] leading-[1.65] text-[#4C4C4C] mb-4">{estilo.excerpt}</p>
+                <p className="text-[15px] leading-[1.65] text-wg-gray mb-4">{estilo.excerpt}</p>
                 {tocHeadings.slice(0, 3).map((item) => (
                   <a key={item.id} href={`#${item.id}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 bg-white px-3 py-1 text-xs text-[#2E2E2E] mr-2 mb-2 hover:border-black/12 hover:text-[#2E2E2E] transition-colors">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#A9B1BC]" />{item.text}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-1 text-xs text-wg-black mr-2 mb-2 hover:border-black/20 hover:text-wg-black transition-colors">
+                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-wg-orange/60" />{item.text}
                   </a>
                 ))}
               </div>
@@ -374,8 +380,8 @@ const EstiloDetail = () => {
                           ? 'border-black/12 shadow-[0_0_0_1px_rgba(46,46,46,0.08)]'
                           : 'border-gray-200 hover:border-black/12 hover:shadow-sm'
                       }`}>
-                      <span className={`inline-block h-1.5 w-1.5 rounded-full ${activeHeadingId === item.id ? 'bg-[#8F98A5]' : 'bg-gray-400 group-hover:bg-[#8F98A5]'}`} />
-                      <span className={`flex-1 font-light ${activeHeadingId === item.id ? 'text-[#2E2E2E]' : 'text-wg-gray group-hover:text-[#2E2E2E]'}`}>{item.text}</span>
+                      <span className={`inline-block h-1.5 w-1.5 rounded-full ${activeHeadingId === item.id ? 'bg-wg-orange' : 'bg-gray-400 group-hover:bg-wg-orange/80'}`} />
+                      <span className={`flex-1 font-light ${activeHeadingId === item.id ? 'text-wg-black' : 'text-wg-gray group-hover:text-wg-black'}`}>{item.text}</span>
                     </a>
                   </li>
                 ))}
@@ -386,10 +392,11 @@ const EstiloDetail = () => {
           {/* Article sectioned */}
           {sectionedContent.intro && (
             <div className="wg-prose mb-7 max-w-none
-              [&>p]:text-[16px] [&>p]:font-light [&>p]:text-[#334155] [&>p]:leading-[1.62] [&>p]:mb-5
-              [&_strong]:text-inherit [&_strong]:font-light
+              [&>p]:text-[14px] [&>p]:font-light [&>p]:text-wg-gray [&>p]:leading-[1.58] [&>p]:mb-5
+              [&_strong]:text-wg-gray [&_strong]:font-light
+              [&_a]:text-wg-gray [&_a]:underline [&_a]:decoration-black/20 [&_a]:underline-offset-4 hover:[&_a]:text-wg-black hover:[&_a]:decoration-black/40
               [&>ul]:my-6 [&>ul]:space-y-3 [&>ul]:pl-0 [&>ul]:list-none
-              [&>ul>li]:text-[15px] [&>ul>li]:font-light [&>ul>li]:text-[#334155] [&>ul>li]:leading-[1.58] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[8px] [&>ul>li]:before:w-2 [&>ul>li]:before:h-2 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-[#A9B1BC]">
+              [&>ul>li]:text-[14px] [&>ul>li]:font-light [&>ul>li]:text-wg-gray [&>ul>li]:leading-[1.58] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[9px] [&>ul>li]:before:w-[6px] [&>ul>li]:before:h-[6px] [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-wg-orange/60">
               <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{sectionedContent.intro}</ReactMarkdown>
             </div>
           )}
@@ -404,18 +411,20 @@ const EstiloDetail = () => {
                 transition={{ duration: 0.35, delay: index * 0.03 }}
                 className="rounded-2xl border border-gray-200 bg-white p-5 md:p-7 hover:border-black/10 hover:shadow-md transition-all">
                 <div className="wg-prose max-w-none
-                  [&>h2]:text-[22px] [&>h2]:font-light [&>h2]:tracking-tight [&>h2]:text-[#111827] [&>h2]:mb-5 [&>h2]:mt-0
-                  [&>h3]:text-[17px] [&>h3]:font-light [&>h3]:text-[#1F2937] [&>h3]:mb-4 [&>h3]:mt-8
-                  [&>p]:text-[16px] [&>p]:font-light [&>p]:text-[#334155] [&>p]:leading-[1.62] [&>p]:mb-5
-                  [&_strong]:text-inherit [&_strong]:font-light
+                  [&>h2]:text-[22px] [&>h2]:font-light [&>h2]:tracking-tight [&>h2]:text-wg-black [&>h2]:mb-5 [&>h2]:mt-0
+                  [&>h3]:text-[16px] [&>h3]:font-light [&>h3]:text-wg-black [&>h3]:mb-4 [&>h3]:mt-8
+                  [&>h4]:text-[15px] [&>h4]:font-light [&>h4]:text-wg-gray [&>h4]:mb-3 [&>h4]:mt-6
+                  [&>p]:text-[14px] [&>p]:font-light [&>p]:text-wg-gray [&>p]:leading-[1.58] [&>p]:mb-5
+                  [&_strong]:text-wg-gray [&_strong]:font-light
+                  [&_a]:text-wg-gray [&_a]:underline [&_a]:decoration-black/20 [&_a]:underline-offset-4 hover:[&_a]:text-wg-black hover:[&_a]:decoration-black/40
                   [&>ul]:my-5 [&>ul]:space-y-2 [&>ul]:pl-0 [&>ul]:list-none
-                  [&>ul>li]:text-[15px] [&>ul>li]:font-light [&>ul>li]:text-[#334155] [&>ul>li]:leading-[1.58] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[8px] [&>ul>li]:before:w-2 [&>ul>li]:before:h-2 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-[#A9B1BC]
-                  [&>blockquote]:border-l-4 [&>blockquote]:border-black/10 [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:font-light [&>blockquote]:text-[#4C4C4C] [&>blockquote]:bg-[#F9F9F9] [&>blockquote]:py-4 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-lg [&>blockquote]:my-8">
+                  [&>ul>li]:text-[14px] [&>ul>li]:font-light [&>ul>li]:text-wg-gray [&>ul>li]:leading-[1.58] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[9px] [&>ul>li]:before:w-[6px] [&>ul>li]:before:h-[6px] [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-wg-orange/60
+                  [&>blockquote]:border-l-2 [&>blockquote]:border-wg-orange/25 [&>blockquote]:pl-5 [&>blockquote]:font-light [&>blockquote]:text-wg-gray [&>blockquote]:bg-gradient-to-r [&>blockquote]:from-[#f4efe8] [&>blockquote]:to-[#fcfbf9] [&>blockquote]:py-[14px] [&>blockquote]:pr-4 [&>blockquote]:rounded-r-lg [&>blockquote]:my-8">
                   <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{section.markdown}</ReactMarkdown>
                 </div>
               </motion.article>
             )) : (
-              <div className="wg-prose max-w-none [&>p]:text-[16px] [&>p]:text-[#4C4C4C] [&>p]:leading-[1.65] [&>p]:mb-5">
+              <div className="wg-prose max-w-none [&>p]:text-[14px] [&>p]:font-light [&>p]:text-wg-gray [&>p]:leading-[1.58] [&>p]:mb-5 [&_strong]:text-wg-gray [&_strong]:font-light [&_a]:text-wg-gray [&_a]:underline [&_a]:decoration-black/20 [&_a]:underline-offset-4 hover:[&_a]:text-wg-black hover:[&_a]:decoration-black/40">
                 <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{contentBody}</ReactMarkdown>
               </div>
             )}

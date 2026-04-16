@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import SEO, { schemas } from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
 import { Link, useParams } from 'react-router-dom';
@@ -37,6 +37,8 @@ import {
 } from '@/data/blogImageManifest';
 import ICCRILinksBlock from '@/components/ICCRILinksBlock';
 import LizAssistant from '@/components/LizAssistant';
+import { AnimatedBorder } from '@/components/AnimatedStrokes';
+import { normalizeLanguageTag } from '@/i18n';
 
 const rawPostsByLocale = {
   'pt-BR': import.meta.glob('/src/content/blog/*.md', { as: 'raw', eager: true }),
@@ -103,7 +105,7 @@ const stripDuplicateTocSection = (markdown) => markdown
 const stripMarkdownStrongEmphasis = (markdown = '') => markdown
   .replace(/\*\*(.*?)\*\*/g, '$1');
 
-const stripMarkdownToText = (markdown = '') => markdown
+const stripMarkdownToText = (markdown = '') => stripMarkdownStrongEmphasis(markdown)
   .replace(/!\[[^\]]*]\([^)]*\)/g, ' ')
   .replace(/\[([^\]]+)]\([^)]*\)/g, '$1')
   .replace(/[`*_>#-]/g, ' ')
@@ -205,6 +207,151 @@ const splitMarkdownByH2 = (markdown) => {
   };
 };
 
+const promoteIntroLeadParagraphToHeading = (markdown = '') => {
+  if (!markdown) return markdown;
+
+  const lines = markdown.split('\n');
+  const firstHeadingIndex = lines.findIndex((line) => /^#\s+/.test(line.trim()));
+  if (firstHeadingIndex === -1) return markdown;
+
+  let start = firstHeadingIndex + 1;
+  while (start < lines.length && !lines[start].trim()) start += 1;
+  if (start >= lines.length) return markdown;
+
+  const firstLine = lines[start].trim();
+  if (
+    /^#{2,}\s+/.test(firstLine)
+    || /^[-*]\s+/.test(firstLine)
+    || /^\d+\.\s+/.test(firstLine)
+    || /^>\s*/.test(firstLine)
+    || /^\|/.test(firstLine)
+  ) {
+    return markdown;
+  }
+
+  let end = start;
+  while (end < lines.length && lines[end].trim()) end += 1;
+
+  const paragraph = lines.slice(start, end).join(' ').replace(/\s+/g, ' ').trim();
+  if (!paragraph) return markdown;
+
+  const nextLines = [...lines];
+  nextLines.splice(start, end - start, `### ${paragraph}`);
+  return nextLines.join('\n');
+};
+
+const parseRawPostEntry = ([path, raw], t) => {
+  try {
+    const rawString = toSafeRawString(raw);
+    const { data, content } = parseFrontmatter(rawString);
+    const fallbackSlug = path.split('/').pop()?.replace('.md', '');
+    const slugValue = data.slug || fallbackSlug;
+    const rawTags = Array.isArray(data.tags)
+      ? data.tags
+      : typeof data.tags === 'string'
+        ? (() => {
+            const candidate = data.tags.trim();
+            if (candidate.startsWith('[') && candidate.endsWith(']')) {
+              try {
+                const parsed = JSON.parse(candidate);
+                return Array.isArray(parsed) ? parsed : [candidate];
+              } catch {
+                return [candidate];
+              }
+            }
+            return candidate.split(',');
+          })()
+        : [];
+    const normalizedTags = rawTags
+      .flatMap((tag) => {
+        const value = String(tag).trim();
+        if (!value) return [];
+        if (value.startsWith('[') && value.endsWith(']')) {
+          try {
+            const parsed = JSON.parse(value);
+            return Array.isArray(parsed) ? parsed : [value];
+          } catch {
+            return [value];
+          }
+        }
+        return [value];
+      })
+      .map((tag) => String(tag).replace(/^\[+|\]+$/g, '').replace(/^"+|"+$/g, '').trim())
+      .filter(Boolean);
+    const articleText = stripMarkdownToText(content);
+
+    return {
+      title: data.title || t('blogPage.fallback.title'),
+      slug: slugValue,
+      subtitle: data.subtitle || '',
+      excerpt: data.excerpt || '',
+      image: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'card'),
+      imageCard: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'card'),
+      imageHero: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'hero'),
+      imageSeo: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'seo'),
+      imageCardAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'card'),
+      imageHeroAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'hero'),
+      imageSeoAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'seo'),
+      category: data.category || 'arquitetura',
+      author: data.author || t('blogPage.fallback.author'),
+      date: data.date || '2025-12-01',
+      heroPosition: data.heroPosition || '50% 50%',
+      featured: Boolean(data.featured),
+      tags: normalizedTags,
+      content,
+      tempoLeitura: estimateReadingTime(articleText),
+    };
+  } catch (err) {
+    console.error('Error parsing blog post:', path, err);
+    return null;
+  }
+};
+
+const parseArticleCollection = (rawPosts, t) => new Map(
+  Object.entries(rawPosts || {})
+    .map((entry) => parseRawPostEntry(entry, t))
+    .filter(Boolean)
+    .map((article) => [article.slug, article])
+);
+
+const mergeArticleCollections = (primaryArticles, fallbackArticles) => {
+  const merged = new Map(fallbackArticles);
+
+  primaryArticles.forEach((article, slug) => {
+    const fallbackArticle = fallbackArticles.get(slug);
+    if (!fallbackArticle) {
+      merged.set(slug, article);
+      return;
+    }
+
+    const content = article.content || fallbackArticle.content;
+
+    merged.set(slug, {
+      ...fallbackArticle,
+      ...article,
+      title: article.title || fallbackArticle.title,
+      subtitle: article.subtitle || fallbackArticle.subtitle,
+      excerpt: article.excerpt || fallbackArticle.excerpt,
+      image: article.image || fallbackArticle.image,
+      imageCard: article.imageCard || fallbackArticle.imageCard,
+      imageHero: article.imageHero || fallbackArticle.imageHero,
+      imageSeo: article.imageSeo || fallbackArticle.imageSeo,
+      imageCardAttribution: article.imageCardAttribution || fallbackArticle.imageCardAttribution,
+      imageHeroAttribution: article.imageHeroAttribution || fallbackArticle.imageHeroAttribution,
+      imageSeoAttribution: article.imageSeoAttribution || fallbackArticle.imageSeoAttribution,
+      category: article.category || fallbackArticle.category,
+      author: article.author || fallbackArticle.author,
+      date: article.date || fallbackArticle.date,
+      heroPosition: article.heroPosition || fallbackArticle.heroPosition,
+      tags: article.tags?.length ? article.tags : fallbackArticle.tags,
+      content,
+      tempoLeitura: estimateReadingTime(stripMarkdownToText(content)),
+    });
+  });
+
+  return merged;
+};
+
 const editorialScale = {
   kicker: 'text-[11px] font-light uppercase tracking-[0.18em]',
   title: 'text-[22px] leading-tight text-wg-black',
@@ -286,6 +433,19 @@ const toAbsoluteSiteUrl = (value) => {
 };
 
 const ICCRI_DATASET_SLUG = 'tabela-precos-reforma-2026-iccri';
+const PHASE1_EDITORIAL_ROLLOUT_SLUGS = new Set([
+  'como-calcular-custo-de-obra',
+  'arquitetos-brasileiros-famosos-legado',
+  'custo-marcenaria-planejada',
+  'custo-reforma-m2-sao-paulo',
+  'quanto-custa-reforma-apartamento-100m2',
+  'quanto-tempo-leva-reforma-completa-alto-padrao',
+  'quanto-valoriza-apartamento-apos-reforma',
+  'evf-estudo-viabilidade-financeira',
+  'tabela-precos-reforma-2026-iccri',
+]);
+
+const HIDE_READER_CARD_SLUGS = new Set([]);
 
 const buildIccriDatasetSchema = ({ articleUrl, datePublished }) => ({
   '@context': 'https://schema.org',
@@ -339,21 +499,54 @@ const buildIccriDatasetSchema = ({ articleUrl, datePublished }) => ({
 const StableBlogImage = ({ src, fallbackSrc, alt, onError, ...props }) => {
   const [currentSrc, setCurrentSrc] = useState(src || fallbackSrc || '');
   const [fallbackApplied, setFallbackApplied] = useState(false);
+  const imageRef = useRef(null);
+
+  const applyFallback = () => {
+    if (!fallbackSrc || fallbackApplied || currentSrc === fallbackSrc) {
+      return false;
+    }
+
+    setCurrentSrc(fallbackSrc);
+    setFallbackApplied(true);
+    return true;
+  };
 
   useEffect(() => {
     setCurrentSrc(src || fallbackSrc || '');
     setFallbackApplied(false);
   }, [src, fallbackSrc]);
 
+  useEffect(() => {
+    if (!currentSrc || !fallbackSrc || currentSrc === fallbackSrc) {
+      return undefined;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      const imageElement = imageRef.current;
+      if (!imageElement) return;
+      if (imageElement.complete && imageElement.naturalWidth === 0) {
+        applyFallback();
+      }
+    }, 2500);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [currentSrc, fallbackSrc]);
+
   return (
     <img
       {...props}
+      ref={imageRef}
       src={currentSrc}
       alt={alt}
+      onLoad={(event) => {
+        if (event.currentTarget.naturalWidth === 0) {
+          applyFallback();
+        }
+
+        props.onLoad?.(event);
+      }}
       onError={(event) => {
-        if (!fallbackApplied && fallbackSrc && currentSrc !== fallbackSrc) {
-          setCurrentSrc(fallbackSrc);
-          setFallbackApplied(true);
+        if (applyFallback()) {
           return;
         }
 
@@ -377,19 +570,43 @@ const BlogImageCredit = ({ credit, className = '', tone = 'light' }) => {
   );
 };
 
-const ContextImageBlock = ({ asset, fallbackSrc, fallbackAlt = '' }) => {
+const MONOCHROME_CONTEXT_SECTION_TITLES = new Set([
+  'Lucio Costa (1902-1998)',
+  'Ruy Ohtake (1938-2021)',
+]);
+
+const ContextImageCard = ({
+  asset,
+  fallbackSrc,
+  fallbackAlt = '',
+  layout = 'single',
+  onOrientationChange,
+  imageIndex = 0,
+}) => {
   if (!asset?.src) return null;
 
+  const useMonochromeMask = MONOCHROME_CONTEXT_SECTION_TITLES.has(asset.sectionTitle || '');
+  const imageClass = layout === 'pair'
+    ? 'mx-auto h-auto max-h-[60vh] w-full object-contain'
+    : 'mx-auto h-auto max-h-[68vh] w-full object-contain';
+
   return (
-    <figure className="my-8 overflow-hidden rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] shadow-sm">
-      <StableBlogImage
-        src={asset.src}
-        fallbackSrc={fallbackSrc}
-        alt={asset.alt || fallbackAlt}
-        className="h-auto w-full object-cover"
-        loading="lazy"
-        decoding="async"
-      />
+    <figure className="overflow-hidden rounded-2xl border border-[#E3E3DE] bg-[#FAFAFA] shadow-sm">
+      <div className="bg-[#F2F2F0] px-3 py-3 md:px-5 md:py-5">
+        <StableBlogImage
+          src={asset.src}
+          fallbackSrc={fallbackSrc}
+          alt={asset.alt || fallbackAlt}
+          className={`${imageClass} ${useMonochromeMask ? 'grayscale contrast-[1.02] brightness-[0.98]' : ''}`.trim()}
+          loading="lazy"
+          decoding="async"
+          onLoad={(event) => {
+            const { naturalWidth, naturalHeight } = event.currentTarget;
+            if (!naturalWidth || !naturalHeight) return;
+            onOrientationChange?.(imageIndex, naturalHeight > naturalWidth ? 'portrait' : 'landscape');
+          }}
+        />
+      </div>
       <figcaption className="space-y-2 px-5 py-4">
         {asset.caption ? (
           <p className="text-[13px] leading-relaxed text-[#4B5563]">
@@ -411,15 +628,96 @@ const ContextImageBlock = ({ asset, fallbackSrc, fallbackAlt = '' }) => {
   );
 };
 
-const buildSectionImageInsertions = (sectionsCount, images = []) => {
+const ContextImageGallery = ({ assets = [], fallbackSrc, fallbackAlt = '' }) => {
+  const normalizedAssets = assets.filter((asset) => asset?.src);
+  const [orientations, setOrientations] = useState({});
+
+  if (!normalizedAssets.length) return null;
+
+  const handleOrientationChange = (index, nextOrientation) => {
+    setOrientations((current) => (
+      current[index] === nextOrientation
+        ? current
+        : { ...current, [index]: nextOrientation }
+    ));
+  };
+
+  const isPortraitPair = normalizedAssets.length === 2
+    && orientations[0] === 'portrait'
+    && orientations[1] === 'portrait';
+
+  return (
+    <div className="my-8 rounded-[28px] bg-[#F2F2F0] p-3 md:p-5">
+      <div className={isPortraitPair ? 'grid gap-4 md:grid-cols-2' : 'space-y-4'}>
+        {normalizedAssets.map((asset, index) => (
+          <ContextImageCard
+            key={`${asset.src}-${index}`}
+            asset={asset}
+            fallbackSrc={fallbackSrc}
+            fallbackAlt={fallbackAlt}
+            layout={isPortraitPair ? 'pair' : 'single'}
+            imageIndex={index}
+            onOrientationChange={handleOrientationChange}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const SINGLE_CONTEXT_IMAGE_SLUGS = new Set([
+  'arquitetos-brasileiros-famosos-legado',
+]);
+
+const groupContextImagesForLayout = (images = [], slug = '') => {
+  if (SINGLE_CONTEXT_IMAGE_SLUGS.has(slug)) {
+    return images.map((image) => [image]);
+  }
+
+  const groups = [];
+  for (let index = 0; index < images.length; index += 2) {
+    groups.push(images.slice(index, index + 2));
+  }
+  return groups;
+};
+
+const DEFAULT_CONTEXT_SECTION_TARGETS = {
+  'como-calcular-custo-de-obra': {
+    context2: 'onde-entra-o-evf',
+    context3: null,
+  },
+};
+
+const buildSectionImageInsertions = (sections = [], images = [], slug = '') => {
   const insertionMap = new Map();
-  if (sectionsCount <= 0 || images.length === 0) return insertionMap;
+  const imageGroups = groupContextImagesForLayout(images, slug);
+  const sectionsCount = sections.length;
+  if (sectionsCount <= 0 || imageGroups.length === 0) return insertionMap;
 
   const lastIndex = Math.max(0, sectionsCount - 1);
   const usedIndexes = new Set();
+  const defaultsBySlot = DEFAULT_CONTEXT_SECTION_TARGETS[slug] || {};
 
-  images.forEach((image, index) => {
-    let targetIndex = Math.round(((index + 1) * sectionsCount) / (images.length + 1)) - 1;
+  imageGroups.forEach((imageGroup, index) => {
+    const firstAsset = imageGroup[0] || null;
+    const slotKey = `context${index + 2}`;
+    const hasDefaultTarget = Object.prototype.hasOwnProperty.call(defaultsBySlot, slotKey);
+    const defaultTarget = hasDefaultTarget ? defaultsBySlot[slotKey] : '';
+    if (hasDefaultTarget && !defaultTarget && !firstAsset?.sectionId && !firstAsset?.sectionTitle) {
+      return;
+    }
+    const explicitTarget = firstAsset?.sectionId
+      || (firstAsset?.sectionTitle ? slugifyHeading(firstAsset.sectionTitle) : '')
+      || defaultTarget
+      || '';
+    let targetIndex = explicitTarget
+      ? sections.findIndex((section) => section?.id === explicitTarget)
+      : Math.round(((index + 1) * sectionsCount) / (imageGroups.length + 1)) - 1;
+
+    if (targetIndex < 0) {
+      targetIndex = Math.round(((index + 1) * sectionsCount) / (imageGroups.length + 1)) - 1;
+    }
+
     targetIndex = Math.max(0, Math.min(lastIndex, targetIndex));
 
     while (usedIndexes.has(targetIndex) && targetIndex < lastIndex) {
@@ -432,7 +730,7 @@ const buildSectionImageInsertions = (sectionsCount, images = []) => {
 
     usedIndexes.add(targetIndex);
     const bucket = insertionMap.get(targetIndex) || [];
-    bucket.push(image);
+    bucket.push(imageGroup);
     insertionMap.set(targetIndex, bucket);
   });
 
@@ -589,8 +887,9 @@ const RelatedProducts = ({ category }) => {
           >
             <Link to={`/product/${product.id}`}>
               <div className="relative h-48 overflow-hidden">
-                <img
+                <StableBlogImage
                   src={product.image || '/images/placeholder-product.webp'}
+                  fallbackSrc={withBasePath('/images/placeholder-product.webp')}
                   alt={product.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
@@ -639,53 +938,19 @@ const RelatedProducts = ({ category }) => {
 
 const Blog = () => {
   const { t, i18n } = useTranslation();
-  const localeKey = i18n.language in rawPostsByLocale ? i18n.language : 'pt-BR';
-  const rawPosts = rawPostsByLocale[localeKey] || {};
-  const effectiveRawPosts = Object.keys(rawPosts).length ? rawPosts : rawPostsByLocale['pt-BR'];
+  const activeLocale = normalizeLanguageTag(i18n.resolvedLanguage || i18n.language);
+  const localizedArticles = useMemo(
+    () => parseArticleCollection(rawPostsByLocale[activeLocale] || {}, t),
+    [activeLocale, t]
+  );
+  const fallbackArticles = useMemo(
+    () => parseArticleCollection(rawPostsByLocale['pt-BR'], t),
+    [t]
+  );
   const artigos = useMemo(() => (
-    Object.entries(effectiveRawPosts)
-      .map(([path, raw]) => {
-        try {
-          const rawString = toSafeRawString(raw);
-          const { data, content } = parseFrontmatter(rawString);
-          const normalizedContent = stripMarkdownStrongEmphasis(content);
-          const fallbackSlug = path.split('/').pop()?.replace('.md', '');
-          const slugValue = data.slug || fallbackSlug;
-          const normalizedTags = Array.isArray(data.tags)
-            ? data.tags.map((tag) => String(tag).trim()).filter(Boolean)
-            : typeof data.tags === 'string'
-              ? data.tags.split(',').map((tag) => tag.trim()).filter(Boolean)
-              : [];
-
-          return {
-            title: data.title || t('blogPage.fallback.title'),
-            slug: slugValue,
-            subtitle: data.subtitle || '',
-            excerpt: data.excerpt || '',
-            image: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'card'),
-            imageCard: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'card'),
-            imageHero: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'hero'),
-            imageSeo: resolveBlogImage(data.image, data.category || 'arquitetura', slugValue, 'seo'),
-            imageCardAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'card'),
-            imageHeroAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'hero'),
-            imageSeoAttribution: resolveBlogImageAttribution(data.image, data.category || 'arquitetura', slugValue, 'seo'),
-            category: data.category || 'arquitetura',
-            author: data.author || t('blogPage.fallback.author'),
-            date: data.date || '2025-12-01',
-            heroPosition: data.heroPosition || '50% 50%',
-            featured: Boolean(data.featured),
-            tags: normalizedTags,
-            content: normalizedContent,
-            tempoLeitura: estimateReadingTime(normalizedContent),
-          };
-        } catch (err) {
-          console.error('Error parsing blog post:', path, err);
-          return null;
-        }
-      })
-      .filter(Boolean)
+    Array.from(mergeArticleCollections(localizedArticles, fallbackArticles).values())
       .sort((a, b) => new Date(b.date) - new Date(a.date))
-  ), [effectiveRawPosts, t]);
+  ), [fallbackArticles, localizedArticles]);
   const categorias = [
     { id: 'todos', label: t('blogPage.categories.all'), icon: BookOpen, color: 'text-wg-blue', bgColor: 'bg-wg-blue' },
     { id: 'arquitetura', label: t('blogPage.categories.architecture'), icon: Ruler, color: 'text-wg-green', bgColor: 'bg-wg-green' },
@@ -774,9 +1039,16 @@ const Blog = () => {
     return () => observer.disconnect();
   }, [slug, artigoAtual?.slug]);
 
+  useEffect(() => {
+    if (!slug) return;
+    if (!window.location.hash) return;
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [slug, artigoAtual?.slug]);
+
   const formatDate = (dateStr) => {
     const localeMap = { 'pt-BR': 'pt-BR', en: 'en-US', es: 'es-ES' };
-    const locale = localeMap[i18n.language] || 'pt-BR';
+    const locale = localeMap[activeLocale] || 'pt-BR';
     return new Date(dateStr).toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
@@ -803,7 +1075,7 @@ const Blog = () => {
       );
     }
 
-    const rawBody = artigoAtual.content.replace(/^# .*?\\n+/, '').trim();
+    const rawBody = artigoAtual.content.replace(/^# .*?\n+/, '').trim();
     const contentBody = stripDuplicateTocSection(rawBody);
     const articleUrl = `https://wgalmeida.com.br/blog/${artigoAtual.slug}`;
     const tocHeadings = extractTocHeadings(contentBody);
@@ -827,7 +1099,7 @@ const Blog = () => {
 
     // og:locale mapping
     const localeToOg = { 'pt-BR': 'pt_BR', en: 'en_US', es: 'es_ES' };
-    const currentOgLocale = localeToOg[i18n.language] || 'pt_BR';
+    const currentOgLocale = localeToOg[activeLocale] || 'pt_BR';
 
     const readerGuideLabel = t('blogPage.readerGuide.title', 'Leitura Guiada');
     const tocTitleLabel = t('blogPage.readerGuide.tocTitle', 'Neste artigo');
@@ -835,7 +1107,9 @@ const Blog = () => {
     const categoryMeta = {
       arquitetura: { dotColor: 'bg-wg-green', bgColor: 'bg-wg-green' },
       engenharia: { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
-      marcenaria: { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
+      marcenaria: { dotColor: 'bg-wg-brown', bgColor: 'bg-wg-brown' },
+      planejamento: { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
+      'mercado-imobiliario': { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
       insights: { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
       design: { dotColor: 'bg-wg-green', bgColor: 'bg-wg-green' },
       tecnologia: { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' },
@@ -844,9 +1118,117 @@ const Blog = () => {
     };
     const currentCategory = categorias.find(c => c.id === artigoAtual.category);
     const currentCategoryMeta = categoryMeta[artigoAtual.category] || { dotColor: 'bg-wg-blue', bgColor: 'bg-wg-blue' };
+    const articleReaderGuideLabelClass =
+      currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? 'text-wg-green'
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? 'text-wg-brown'
+          : 'text-wg-blue';
+    const articleAccentBorderClass =
+      currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? 'border-wg-green'
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? 'border-wg-brown'
+          : 'border-wg-blue';
+    const articleAccentHoverBorderClass =
+      currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? 'hover:border-wg-green/60'
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? 'hover:border-wg-brown/60'
+          : 'hover:border-wg-blue/60';
+    const articleAccentTextClass =
+      currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? 'text-wg-green'
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? 'text-wg-brown'
+          : 'text-wg-blue';
+    const articleAccentHoverTextClass =
+      currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? 'group-hover:text-wg-green'
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? 'group-hover:text-wg-brown'
+          : 'group-hover:text-wg-blue';
+    const articleAccentHoverTextSoftClass =
+      currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? 'group-hover:text-wg-green/80'
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? 'group-hover:text-wg-brown/80'
+          : 'group-hover:text-wg-blue/80';
+    const articleAccentShadowClass =
+      currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? 'shadow-[0_0_0_1px_rgba(92,125,82,0.14)]'
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? 'shadow-[0_0_0_1px_rgba(140,98,57,0.16)]'
+          : 'shadow-[0_0_0_1px_rgba(43,69,128,0.14)]';
+    const articleContentBulletMarkerClass =
+      currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? "[&>ul>li]:before:bg-wg-green/70 [&>ol>li::marker]:text-wg-green/70"
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? "[&>ul>li]:before:bg-wg-brown/70 [&>ol>li::marker]:text-wg-brown/70"
+          : "[&>ul>li]:before:bg-wg-blue/70 [&>ol>li::marker]:text-wg-blue/70";
+    const articleReaderGuideDotClass =
+      currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? 'bg-wg-green'
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? 'bg-wg-brown'
+          : 'bg-wg-blue';
     const articleFallbackImage = getBlogFallbackImage(artigoAtual.category, artigoAtual.slug, 'hero');
     const articleLocalFallbackImage = getLocalBlogFallbackImage(artigoAtual.category, artigoAtual.slug);
     const articleHeroCredit = artigoAtual.imageHeroAttribution || artigoAtual.imageCardAttribution || null;
+    const articleHeroSummary = artigoAtual.subtitle || artigoAtual.excerpt;
+    const isComoCalcularCostArticle = artigoAtual.slug === 'como-calcular-custo-de-obra';
+    const usesApprovedEditorialLayout = PHASE1_EDITORIAL_ROLLOUT_SLUGS.has(artigoAtual.slug);
+    const articleReaderCardTitle =
+      isComoCalcularCostArticle
+        ? artigoAtual.excerpt
+        : (artigoAtual.subtitle || artigoAtual.excerpt);
+    const articleReaderCardDescription = isComoCalcularCostArticle
+      ? artigoAtual.subtitle
+      : (artigoAtual.subtitle && artigoAtual.subtitle !== artigoAtual.excerpt ? artigoAtual.excerpt : null);
+    const articleReaderTitleClass = editorialScale.title;
+    const articleReaderBodyClass = editorialScale.body;
+    const usesApprovedReaderCardLayout = usesApprovedEditorialLayout;
+    const articleReaderCardDescriptionClass = isComoCalcularCostArticle
+      ? 'font-suisse text-[15px] font-light leading-[1.6] text-[#6A6A6A]'
+      : articleReaderBodyClass;
+    const articleReaderCardTitleClass = usesApprovedReaderCardLayout
+      ? 'font-suisse text-[21px] font-light leading-[1.3] text-[#4C4C4C]'
+      : editorialScale.title;
+    const articleReaderCardShellClass = usesApprovedReaderCardLayout ? 'md:h-[228px]' : 'md:min-h-[188px]';
+    const articleReaderCardImageClass = usesApprovedReaderCardLayout ? 'md:h-[228px]' : 'md:h-full md:min-h-[188px]';
+    const articleReaderGuideClass = usesApprovedReaderCardLayout ? '-mt-0.5 mb-2' : 'mb-2';
+    const articleReaderMainBlockClass = usesApprovedReaderCardLayout
+      ? 'flex flex-1 flex-col justify-center pt-3'
+      : 'flex flex-1 flex-col justify-center';
+    const articleReaderTagsClass = usesApprovedReaderCardLayout
+      ? 'mt-auto flex flex-wrap items-center gap-3 pt-6'
+      : 'mt-auto flex flex-wrap items-center gap-3 pt-4';
+    const articleIntroHeadingClass = usesApprovedEditorialLayout
+      ? '[&>h1]:text-[24px] [&>h1]:font-light [&>h1]:tracking-tight [&>h1]:text-wg-black'
+      : '[&>h1]:text-[32px] [&>h1]:font-light [&>h1]:tracking-tight [&>h1]:text-wg-black';
+    const articleInlineStrongClass = usesApprovedEditorialLayout
+      ? '[&_strong]:font-suisse [&_strong]:font-light [&_strong]:text-wg-gray [&_em]:font-suisse [&_em]:font-light [&_em]:text-wg-gray [&_i]:font-suisse [&_i]:font-light [&_i]:text-wg-gray [&_span]:text-inherit [&_mark]:bg-transparent [&_mark]:text-wg-gray'
+      : '[&_strong]:font-suisse [&_strong]:font-light [&_strong]:text-wg-blue';
+    const articleInlineLinkClass = usesApprovedEditorialLayout
+      ? '[&_a]:font-suisse [&_a]:font-light [&_a]:text-[#4C4C4C] [&_a]:no-underline [&_a:hover]:underline [&_a:hover]:decoration-[#B8BEC8] [&_a:hover]:underline-offset-2 [&_a:hover]:text-[#2E2E2E]'
+      : '[&_a]:text-wg-blue [&_a]:no-underline [&_a:hover]:underline [&_a]:font-light';
+    const articleSectionBodyClass = usesApprovedEditorialLayout
+      ? '[&>p]:font-suisse [&>p]:text-[14px] [&>p]:font-light [&>p]:text-wg-gray [&>p]:leading-[1.58] [&>p]:mb-5'
+      : '[&>p]:font-suisse [&>p]:text-[16px] [&>p]:font-light [&>p]:text-wg-gray [&>p]:leading-[1.62] [&>p]:mb-5';
+    const articleInlineCodeClass = usesApprovedEditorialLayout
+      ? '[&_code]:bg-[#F5F5F5] [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-[13px] [&_code]:font-light [&_code]:text-[#4C4C4C]'
+      : '[&_code]:bg-[#F5F5F5] [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-[13px] [&_code]:text-wg-blue';
+    const articleListBodyClass = usesApprovedEditorialLayout
+      ? '[&>ul>li]:font-suisse [&>ul>li]:text-[14px] [&>ul>li]:font-light [&>ul>li]:text-wg-gray [&>ul>li]:leading-[1.58] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[\'\'] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[9px] [&>ul>li]:before:w-[6px] [&>ul>li]:before:h-[6px] [&>ul>li]:before:rounded-full [&>ul>li>*]:font-light [&>ul>li>*]:text-wg-gray [&>ul>li>p]:m-0 [&>ul>li>p]:font-light [&>ul>li>p]:text-[14px] [&>ul>li>p]:leading-[1.58] [&>ul>li>strong]:font-light [&>ul>li>strong]:text-wg-gray [&>ul>li>p>strong]:font-light [&>ul>li>p>strong]:text-wg-gray [&>ol>li]:font-suisse [&>ol>li]:text-[14px] [&>ol>li]:font-light [&>ol>li]:text-wg-gray [&>ol>li]:leading-[1.58] [&>ol>li>*]:font-light [&>ol>li>*]:text-wg-gray [&>ol>li>p]:m-0 [&>ol>li>p]:font-light [&>ol>li>p]:text-[14px] [&>ol>li>p]:leading-[1.58] [&>ol>li>strong]:font-light [&>ol>li>strong]:text-wg-gray [&>ol>li>p>strong]:font-light [&>ol>li>p>strong]:text-wg-gray'
+      : '[&>ul>li]:font-suisse [&>ul>li]:text-[14px] [&>ul>li]:font-light [&>ul>li]:text-wg-gray [&>ul>li]:leading-[1.58] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[\'\'] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[9px] [&>ul>li]:before:w-[6px] [&>ul>li]:before:h-[6px] [&>ul>li]:before:rounded-full [&>ol>li]:font-suisse [&>ol>li]:text-[14px] [&>ol>li]:font-light [&>ol>li]:text-wg-gray [&>ol>li]:leading-[1.58]';
+    const articleBlockquoteAccentClass =
+      usesApprovedEditorialLayout
+        ? '[&>blockquote]:border-[#D8DEE8]'
+        : currentCategoryMeta.bgColor === 'bg-wg-green'
+        ? '[&>blockquote]:border-wg-green'
+        : currentCategoryMeta.bgColor === 'bg-wg-brown'
+          ? '[&>blockquote]:border-wg-brown'
+          : '[&>blockquote]:border-wg-blue';
     const articleContextImages = getBlogContextAssets({ slug: artigoAtual.slug });
     const articleSchemaImages = [
       toAbsoluteSiteUrl(artigoAtual.imageSeo || artigoAtual.imageHero || artigoAtual.imageCard || artigoAtual.image),
@@ -868,14 +1250,41 @@ const Blog = () => {
         : []),
     ];
     const articleLeadContextImage = articleContextImages[0] || null;
-    const articleSectionContextInsertions = buildSectionImageInsertions(
-      sectionedContent.sections.length,
-      articleContextImages.slice(1)
+    const articlePrimarySection = sectionedContent.sections[0] || null;
+    const articleLeadContextTarget = articleLeadContextImage?.sectionId
+      || (articleLeadContextImage?.sectionTitle ? slugifyHeading(articleLeadContextImage.sectionTitle) : '');
+    const articleLeadTargetsPrimarySection = Boolean(
+      articleLeadContextImage
+      && articlePrimarySection
+      && (!articleLeadContextTarget || articleLeadContextTarget === articlePrimarySection.id)
     );
+    const articleSectionContextInsertions = buildSectionImageInsertions(
+      sectionedContent.sections,
+      articleLeadTargetsPrimarySection ? articleContextImages.slice(1) : articleContextImages,
+      artigoAtual.slug
+    );
+    const articleRemainingSections = articlePrimarySection
+      ? sectionedContent.sections.slice(1)
+      : [];
+    const articleIntroMarkdown = usesApprovedEditorialLayout
+      ? promoteIntroLeadParagraphToHeading(sectionedContent.intro)
+      : sectionedContent.intro;
+    const useSideBySideLeadLayout = usesApprovedEditorialLayout && articleLeadTargetsPrimarySection && articlePrimarySection;
+    const showReaderCard = !HIDE_READER_CARD_SLUGS.has(artigoAtual.slug);
     const lizContext = resolveArticleDecisionContext(artigoAtual);
     const MarkdownRenderer = markdownRuntime?.ReactMarkdown;
     const markdownRemarkPlugins = markdownRuntime?.remarkGfm ? [markdownRuntime.remarkGfm] : [];
     const markdownRuntimeReady = Boolean(MarkdownRenderer);
+    const handleArticleAnchorNavigation = (event, headingId) => {
+      if (!headingId) return;
+      event.preventDefault();
+      const target = document.getElementById(headingId);
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+      setActiveHeadingId(headingId);
+    };
+
     const markdownComponents = {
       h2: ({ children, ...props }) => {
         const headingText = extractHeadingText(children);
@@ -893,20 +1302,81 @@ const Blog = () => {
           </h3>
         );
       },
+      h4: ({ children, className = '', ...props }) => {
+        const headingText = extractHeadingText(children);
+        return (
+          <h4
+            id={slugifyHeading(headingText)}
+            className={`mb-3 mt-6 font-suisse text-[15px] font-light tracking-[0.01em] text-wg-gray ${className}`.trim()}
+            {...props}
+          >
+            {children}
+          </h4>
+        );
+      },
+      p: ({ children, className = '', ...props }) => {
+        const paragraphText = extractHeadingText(children).trim();
+        const isConfidenceNote = paragraphText === 'Se alguma dessas respostas ainda estiver aberta, o número deve ser lido como estimativa inicial, não como fechamento.';
+        const isCostWeightNote = paragraphText === 'Esses fatores quase nunca aparecem direito quando alguém tenta fechar o número apenas por faixa de mercado.';
+        const isDecisionRiskNote = paragraphText === 'Isso reduz o risco de o cliente tomar decisão com número solto e expectativa errada.';
+
+        return (
+          <p
+            className={(isConfidenceNote || isCostWeightNote || isDecisionRiskNote)
+              ? `font-suisse !text-[14px] font-light !leading-[1.58] text-[#5C5C5C] ${className}`.trim()
+              : className}
+            {...props}
+          >
+            {children}
+          </p>
+        );
+      },
       strong: ({ children, ...props }) => (
-        <span
-          className="font-suisse font-light text-inherit"
+        <strong
+          className={usesApprovedEditorialLayout ? 'font-suisse font-light text-wg-gray' : 'font-suisse font-light text-wg-blue'}
           {...props}
         >
           {children}
-        </span>
+        </strong>
+      ),
+      em: ({ children, ...props }) => (
+        <em
+          className="font-suisse font-light not-italic text-wg-gray"
+          {...props}
+        >
+          {children}
+        </em>
+      ),
+      i: ({ children, ...props }) => (
+        <i
+          className="font-suisse font-light not-italic text-wg-gray"
+          {...props}
+        >
+          {children}
+        </i>
+      ),
+      mark: ({ children, ...props }) => (
+        <mark
+          className="bg-transparent font-suisse font-light text-wg-gray"
+          {...props}
+        >
+          {children}
+        </mark>
+      ),
+      code: ({ children, className = '', ...props }) => (
+        <code
+          className={`rounded-md bg-[#F3F4F6] px-1.5 py-0.5 font-suisse text-[0.92em] font-light text-wg-gray ${className}`.trim()}
+          {...props}
+        >
+          {children}
+        </code>
       ),
       blockquote: ({ children, ...props }) => {
         const text = extractHeadingText(children).trim();
         if (text.startsWith('DESTAQUE:') || text.startsWith('🎯 DESTAQUE:')) {
           return (
             <div
-              className="my-8 rounded-lg border-l-4 border-wg-blue bg-wg-blue/10 p-5 text-[15px] leading-[1.65] text-[#2E2E2E]"
+              className="my-8 rounded-xl border-l-[3px] border-l-wg-blue/45 bg-gradient-to-r from-[#E3EBF7] via-[#F3F7FC] to-[#FCFDFE] px-5 py-[14px] text-[#4C4C4C] [&>p]:m-0 [&>p]:font-suisse [&>p]:text-[14px] [&>p]:font-light [&>p]:leading-[1.6] [&_strong]:font-light"
               {...props}
             >
               {children}
@@ -916,7 +1386,7 @@ const Blog = () => {
         if (text.startsWith('DICA:') || text.startsWith('💡 DICA:') || text.startsWith('CHECKLIST:') || text.startsWith('✅ CHECKLIST:')) {
           return (
             <div
-              className="my-8 rounded-lg border-l-4 border-wg-blue bg-wg-blue/10 p-5 text-[15px] leading-[1.65] text-[#2E2E2E]"
+              className="my-8 rounded-xl border-l-[3px] border-l-wg-blue/45 bg-gradient-to-r from-[#E3EBF7] via-[#F3F7FC] to-[#FCFDFE] px-5 py-[14px] text-[#4C4C4C] [&>p]:m-0 [&>p]:font-suisse [&>p]:text-[14px] [&>p]:font-light [&>p]:leading-[1.6] [&_strong]:font-light"
               {...props}
             >
               {children}
@@ -964,24 +1434,22 @@ const Blog = () => {
         />
 
         <section className="wg-page-hero wg-page-hero--full hero-under-header items-end bg-wg-black">
-          <motion.div
-            className="absolute inset-0"
-            initial={{ scale: 1.05 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+          <div
+            key={`article-hero-${artigoAtual.slug}`}
+            className="absolute inset-0 wg-hero-zoom-in"
           >
             <StableBlogImage
               src={artigoAtual.imageHero || artigoAtual.imageCard || artigoAtual.image}
               fallbackSrc={articleLocalFallbackImage}
               alt={artigoAtual.title}
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover will-change-transform"
               style={{ objectPosition: artigoAtual.heroPosition }}
               loading="eager"
               fetchPriority="high"
               decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-wg-black via-wg-black/60 to-transparent" />
-          </motion.div>
+          </div>
 
           <div className="relative z-10 container-custom pb-16 pt-36 md:pb-20 md:pt-44 lg:pt-48">
             <div className="max-w-4xl">
@@ -994,16 +1462,22 @@ const Blog = () => {
                 {artigoAtual.title}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-6 text-white/70">
-                <div className="flex items-center gap-2">
+              {articleHeroSummary ? (
+                <p className="mb-6 max-w-3xl font-suisse text-[16px] font-light leading-[1.62] text-white/80 md:text-[17px]">
+                  {articleHeroSummary}
+                </p>
+              ) : null}
+
+              <div className="flex flex-wrap items-center gap-6 text-sm font-light text-white/70">
+                <div className="flex items-center gap-2 font-light">
                   <User className="w-4 h-4" />
                   <span>{artigoAtual.author}</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 font-light">
                   <Calendar className="w-4 h-4" />
                   <span>{formatDate(artigoAtual.date)}</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 font-light">
                   <Clock className="w-4 h-4" />
                   <span>{t('blogPage.readingTime', { minutes: artigoAtual.tempoLeitura })}</span>
                 </div>
@@ -1015,45 +1489,57 @@ const Blog = () => {
 
         <section className="section-padding bg-white">
           <div className="container-custom max-w-3xl">
+            {showReaderCard ? (
             <motion.aside
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45 }}
-              className="-mt-8 mb-7 overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-[#F8F8F8] shadow-sm md:-mt-12 md:mb-8"
+              className={`group -mt-8 mb-7 overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-[#F8F8F8] shadow-sm md:-mt-12 md:mb-8 ${articleReaderCardShellClass}`}
             >
-              <div className="grid grid-cols-1 md:grid-cols-[220px_1fr]">
-                <div className="relative h-44 md:h-full">
+              <div className="grid grid-cols-1 md:grid-cols-[218px_1fr] md:items-stretch md:h-full">
+                <div className={`relative h-48 overflow-hidden ${articleReaderCardImageClass}`}>
                   <StableBlogImage
                     src={artigoAtual.imageCard || artigoAtual.imageHero || artigoAtual.image}
                     fallbackSrc={articleLocalFallbackImage}
                     alt={artigoAtual.title}
-                    className="h-full w-full object-cover"
+                    className="block h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     style={{ objectPosition: artigoAtual.heroPosition }}
                     loading="lazy"
                     decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/25 to-transparent md:bg-gradient-to-t" />
                 </div>
-                <div className="p-6 md:p-7">
-                  <BlogImageCredit credit={artigoAtual.imageCardAttribution || articleHeroCredit} className="mb-3" />
-                  <p className={`mb-2 text-wg-gray ${editorialScale.kicker}`}>
+                <div className="flex h-full flex-col overflow-hidden p-5 md:p-6">
+                  <BlogImageCredit credit={artigoAtual.imageCardAttribution || articleHeroCredit} className="mb-1" />
+                  <p className={`${articleReaderGuideClass} ${articleReaderGuideLabelClass} ${editorialScale.kicker}`}>
                     {readerGuideLabel}
                   </p>
-                  <h2 className={`mb-3 ${editorialScale.title}`}>
-                    {artigoAtual.subtitle || artigoAtual.excerpt}
-                  </h2>
-                  <p className={`mb-5 ${editorialScale.body}`}>
-                    {artigoAtual.excerpt}
-                  </p>
-                  <div className="flex flex-wrap items-center gap-3">
+                  <div className={articleReaderMainBlockClass}>
+                  {isComoCalcularCostArticle ? (
+                    <p className={`mb-3 line-clamp-2 ${articleReaderCardTitleClass}`}>
+                      {articleReaderCardTitle}
+                    </p>
+                  ) : (
+                    <h2 className={`mb-3 line-clamp-2 ${articleReaderCardTitleClass}`}>
+                      {articleReaderCardTitle}
+                    </h2>
+                  )}
+                  {articleReaderCardDescription ? (
+                    <p className={`mb-4 line-clamp-2 ${articleReaderCardDescriptionClass}`}>
+                      {articleReaderCardDescription}
+                    </p>
+                  ) : null}
+                  </div>
+                  <div className={articleReaderTagsClass}>
                     {tocHeadings.slice(0, 3).map((item) => (
                       <a
                         key={item.id}
                         href={`#${item.id}`}
-                        className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-3 py-1.5 text-xs text-[#2E2E2E] transition-colors hover:border-wg-blue/70 hover:text-wg-blue"
+                        onClick={(event) => handleArticleAnchorNavigation(event, item.id)}
+                        className={`inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-3 py-1.5 text-xs text-[#2E2E2E] transition-colors ${articleAccentHoverBorderClass} ${articleAccentHoverTextClass}`}
                       >
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-wg-blue" />
+                        <span className={`inline-block h-1.5 w-1.5 rounded-full ${articleReaderGuideDotClass}`} />
                         {item.text}
                       </a>
                     ))}
@@ -1061,6 +1547,7 @@ const Blog = () => {
                 </div>
               </div>
             </motion.aside>
+            ) : null}
 
             {tocHeadings.length >= 3 && (
               <nav className="mb-8 rounded-2xl border border-gray-200 bg-[#FAFAFA] p-5">
@@ -1070,22 +1557,23 @@ const Blog = () => {
                     <li key={item.id}>
                       <a
                         href={`#${item.id}`}
+                        onClick={(event) => handleArticleAnchorNavigation(event, item.id)}
                         className={`group flex items-center justify-between rounded-xl border bg-white px-3.5 py-2.5 text-[13px] transition-all ${
                           activeHeadingId === item.id
-                            ? 'border-wg-blue shadow-[0_0_0_1px_rgba(43,69,128,0.14)]'
-                            : 'border-gray-200 hover:border-wg-blue/60 hover:shadow-sm'
+                            ? `${articleAccentBorderClass} ${articleAccentShadowClass}`
+                            : `border-gray-200 ${articleAccentHoverBorderClass} hover:shadow-sm`
                         }`}
                       >
                         <span className={`inline-block h-1.5 w-1.5 rounded-full transition-colors ${
-                          activeHeadingId === item.id ? 'bg-wg-blue' : 'bg-gray-400 group-hover:bg-wg-blue'
+                          activeHeadingId === item.id ? articleReaderGuideDotClass : `bg-gray-400 ${articleReaderGuideDotClass.replace('bg-', 'group-hover:bg-')}`
                         }`} />
-                        <span className={`ml-3 flex-1 text-left ${
+                        <span className={`ml-3 flex-1 text-left font-light ${
                           activeHeadingId === item.id ? 'text-[#2E2E2E]' : 'text-wg-gray group-hover:text-[#2E2E2E]'
                         }`}>
                           {item.text}
                         </span>
                         <span className={`ml-2 text-[10px] font-light uppercase tracking-[0.12em] ${
-                          activeHeadingId === item.id ? 'text-wg-blue' : 'text-gray-400 group-hover:text-wg-blue/80'
+                          activeHeadingId === item.id ? articleAccentTextClass : `text-gray-400 ${articleAccentHoverTextSoftClass}`
                         }`}>
                           {readingLabel}
                         </span>
@@ -1098,107 +1586,282 @@ const Blog = () => {
 
             {/* Article Content - Padrao WG Easy 2026 */}
             {sectionedContent.intro && (
-              <div className="wg-prose mb-7 max-w-none
-                [&>h1]:text-[32px] [&>h1]:font-light [&>h1]:tracking-tight [&>h1]:text-[#1A1A1A] [&>h1]:mb-8 [&>h1]:mt-0
-                [&>h3]:text-[18px] [&>h3]:font-light [&>h3]:text-[#1F2937] [&>h3]:mb-4 [&>h3]:mt-10
-                [&>p]:text-[16px] [&>p]:text-[#334155] [&>p]:leading-[1.58] [&>p]:mb-5
-                [&_strong]:text-[#1A1A1A] [&_strong]:font-light
-                [&_a]:text-[#2B4580] [&_a]:no-underline [&_a:hover]:underline [&_a]:font-light
-                [&>ul]:my-6 [&>ul]:space-y-3 [&>ul]:pl-0 [&>ul]:list-none
-                [&>ul>li]:text-[15px] [&>ul>li]:text-[#334155] [&>ul>li]:leading-[1.48] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[8px] [&>ul>li]:before:w-2 [&>ul>li]:before:h-2 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-wg-green
-                [&>ol]:my-6 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
-                [&>ol>li]:text-[15px] [&>ol>li]:text-[#334155] [&>ol>li]:leading-[1.48]
-                [&>ol>li::marker]:text-[#64748B]">
-                {markdownRuntimeReady ? (
-                  <MarkdownRenderer remarkPlugins={markdownRemarkPlugins} components={markdownComponents}>
-                    {sectionedContent.intro}
-                  </MarkdownRenderer>
-                ) : (
-                  <p className="text-[15px] leading-[1.65] text-[#4C4C4C]">
-                    {markdownRuntimeError
-                      ? t('blogPage.fallback.contentError', 'Conteudo temporariamente indisponivel.')
-                      : t('blogPage.fallback.loading', 'Carregando conteudo...')}
-                  </p>
-                )}
-              </div>
+              <motion.article
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35 }}
+                className={`mb-7 rounded-2xl border border-gray-200 bg-white p-5 transition-all ${articleAccentHoverBorderClass} hover:shadow-md md:p-7`}
+              >
+                <div className={`wg-prose max-w-none
+                  ${articleIntroHeadingClass} [&>h1]:mb-8 [&>h1]:mt-0
+                  [&>h3]:font-suisse [&>h3]:text-[17px] [&>h3]:font-light [&>h3]:text-wg-black [&>h3]:mb-4 [&>h3]:mt-10 [&>h3:first-child]:mt-0
+                  [&>p]:font-suisse [&>p]:text-[14px] [&>p]:font-light [&>p]:text-wg-gray [&>p]:leading-[1.58] [&>p]:mb-5
+                  ${articleInlineStrongClass}
+                  ${articleInlineLinkClass}
+                  [&>ul]:my-6 [&>ul]:space-y-3 [&>ul]:pl-0 [&>ul]:list-none
+                  [&>ol]:my-6 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
+                  ${articleListBodyClass}
+                  ${articleContentBulletMarkerClass}`}>
+                  {markdownRuntimeReady ? (
+                    <MarkdownRenderer remarkPlugins={markdownRemarkPlugins} components={markdownComponents}>
+                      {articleIntroMarkdown}
+                    </MarkdownRenderer>
+                  ) : (
+                    <p className="text-[15px] leading-[1.65] text-wg-gray">
+                      {markdownRuntimeError
+                        ? t('blogPage.fallback.contentError', 'Conteudo temporariamente indisponivel.')
+                        : t('blogPage.fallback.loading', 'Carregando conteudo...')}
+                    </p>
+                  )}
+                </div>
+              </motion.article>
             )}
 
-            {articleLeadContextImage ? (
-              <ContextImageBlock
-                asset={articleLeadContextImage}
+            {useSideBySideLeadLayout ? (
+            <motion.aside
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+                transition={{ duration: 0.35 }}
+                className={`group mb-8 overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-[#F8F8F8] shadow-sm transition-all ${articleAccentHoverBorderClass} hover:shadow-md lg:min-h-[548px]`}
+              >
+                <div className="grid grid-cols-1 lg:min-h-[548px] lg:grid-cols-[320px_1fr] lg:items-stretch">
+                  <div className="relative min-h-[280px] overflow-hidden bg-[#ECECE8] lg:h-full lg:min-h-[548px]">
+                    <StableBlogImage
+                      src={articleLeadContextImage.src || articleLocalFallbackImage || artigoAtual.imageCard || artigoAtual.imageHero || artigoAtual.image}
+                      fallbackSrc={articleLocalFallbackImage}
+                      alt={articleLeadContextImage.alt || artigoAtual.title}
+                      className="block h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent lg:bg-gradient-to-t" />
+                  </div>
+
+                  <motion.article
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35 }}
+                  className={`flex h-full flex-col overflow-hidden rounded-r-2xl border-l border-transparent p-5 transition-all md:p-7 ${
+                    activeHeadingId === articlePrimarySection.id
+                      ? `${articleAccentBorderClass} ${articleAccentShadowClass}`
+                      : `${articleAccentHoverBorderClass} hover:shadow-md`
+                  }`}
+                >
+                  <div className={`wg-prose max-w-none flex-1
+                    [&>h2]:font-suisse [&>h2]:text-[22px] [&>h2]:font-light [&>h2]:tracking-tight [&>h2]:text-wg-black [&>h2]:mb-5 [&>h2]:mt-0
+                    [&>h3]:font-suisse [&>h3]:text-[17px] [&>h3]:font-light [&>h3]:text-wg-black [&>h3]:mb-4 [&>h3]:mt-8
+                    ${articleSectionBodyClass}
+                    ${articleInlineStrongClass}
+                    ${articleInlineLinkClass}
+                    [&>ul]:my-5 [&>ul]:space-y-2 [&>ul]:pl-0 [&>ul]:list-none
+                    [&>ol]:my-5 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
+                    ${articleListBodyClass}
+                    [&>blockquote]:border-l-4 ${articleBlockquoteAccentClass} [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:font-light [&>blockquote]:text-wg-gray [&>blockquote]:bg-[#F9F9F9] [&>blockquote]:py-4 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-lg [&>blockquote]:my-8
+                    [&>table]:w-full [&>table]:my-8 [&>table]:rounded-xl [&>table]:overflow-hidden [&>table]:shadow-md [&>table]:border [&>table]:border-[#E5E5E5]
+                    [&>table>thead]:bg-[#F5F5F5]
+                    [&>table>thead>tr>th]:px-5 [&>table>thead>tr>th]:py-4 [&>table>thead>tr>th]:text-left [&>table>thead>tr>th]:text-[12px] [&>table>thead>tr>th]:font-light [&>table>thead>tr>th]:uppercase [&>table>thead>tr>th]:tracking-wide [&>table>thead>tr>th]:text-wg-black [&>table>thead>tr>th]:border-b [&>table>thead>tr>th]:border-[#E5E5E5]
+                    [&>table>tbody>tr>td]:font-suisse [&>table>tbody>tr>td]:px-5 [&>table>tbody>tr>td]:py-4 [&>table>tbody>tr>td]:text-[14px] [&>table>tbody>tr>td]:font-light [&>table>tbody>tr>td]:text-wg-gray [&>table>tbody>tr>td]:border-b [&>table>tbody>tr>td]:border-[#E5E5E5]
+                    [&>table>tbody>tr]:transition-colors [&>table>tbody>tr:hover]:bg-[#F9F9F9]
+                    [&>table>tbody>tr:last-child>td]:border-b-0
+                    ${articleInlineCodeClass}
+                    [&>pre]:bg-[#1A1A1A] [&>pre]:text-white [&>pre]:p-6 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:my-8
+                    [&>img]:mx-auto [&>img]:my-8 [&>img]:max-h-[68vh] [&>img]:max-w-full [&>img]:rounded-lg [&>img]:shadow-md
+                    [&>hr]:border-[#E5E5E5] [&>hr]:my-10 ${articleContentBulletMarkerClass}`}>
+                    {markdownRuntimeReady ? (
+                      <MarkdownRenderer remarkPlugins={markdownRemarkPlugins} components={markdownComponents}>
+                        {articlePrimarySection.markdown}
+                      </MarkdownRenderer>
+                    ) : (
+                      <p className="text-[15px] leading-[1.65] text-wg-gray">
+                        {markdownRuntimeError
+                          ? t('blogPage.fallback.contentError', 'Conteudo temporariamente indisponivel.')
+                          : t('blogPage.fallback.loading', 'Carregando conteudo...')}
+                      </p>
+                    )}
+                  </div>
+                </motion.article>
+                </div>
+            </motion.aside>
+            ) : articleLeadContextImage ? (
+              <ContextImageGallery
+                assets={[articleLeadContextImage]}
                 fallbackSrc={articleLocalFallbackImage}
                 fallbackAlt={artigoAtual.title}
               />
             ) : null}
 
             <div className="space-y-5">
-              {sectionedContent.sections.length > 0 ? sectionedContent.sections.map((section, index) => (
-                <React.Fragment key={section.id || index}>
-                  <motion.article
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: index * 0.03 }}
-                    className={`rounded-2xl border bg-white p-5 transition-all md:p-7 ${
-                      activeHeadingId === section.id
-                        ? 'border-wg-blue shadow-[0_0_0_1px_rgba(43,69,128,0.14)]'
-                        : 'border-gray-200 hover:border-wg-blue/60 hover:shadow-md'
-                    }`}
-                  >
-                    <div className="wg-prose max-w-none
-                      [&>h2]:text-[24px] [&>h2]:font-light [&>h2]:tracking-tight [&>h2]:text-[#111827] [&>h2]:mb-5 [&>h2]:mt-0
-                      [&>h3]:text-[18px] [&>h3]:font-light [&>h3]:text-[#1F2937] [&>h3]:mb-4 [&>h3]:mt-8
-                      [&>p]:text-[16px] [&>p]:text-[#334155] [&>p]:leading-[1.58] [&>p]:mb-5
-                      [&_strong]:text-[#1A1A1A] [&_strong]:font-light
-                      [&_a]:text-[#2B4580] [&_a]:no-underline [&_a:hover]:underline [&_a]:font-light
-                      [&>ul]:my-5 [&>ul]:space-y-2 [&>ul]:pl-0 [&>ul]:list-none
-                      [&>ul>li]:text-[15px] [&>ul>li]:text-[#334155] [&>ul>li]:leading-[1.48] [&>ul>li]:pl-7 [&>ul>li]:relative [&>ul>li]:before:content-[''] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-[8px] [&>ul>li]:before:w-2 [&>ul>li]:before:h-2 [&>ul>li]:before:rounded-full [&>ul>li]:before:bg-wg-green
-                      [&>ol]:my-5 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
-                      [&>ol>li]:text-[15px] [&>ol>li]:text-[#334155] [&>ol>li]:leading-[1.48]
-                      [&>ol>li::marker]:text-[#64748B]
-                      [&>blockquote]:border-l-4 [&>blockquote]:border-[#2B4580] [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[#4C4C4C] [&>blockquote]:bg-[#F9F9F9] [&>blockquote]:py-4 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-lg [&>blockquote]:my-8
-                      [&>table]:w-full [&>table]:my-8 [&>table]:rounded-xl [&>table]:overflow-hidden [&>table]:shadow-md [&>table]:border [&>table]:border-[#E5E5E5]
-                      [&>table>thead]:bg-[#F5F5F5]
-                      [&>table>thead>tr>th]:px-5 [&>table>thead>tr>th]:py-4 [&>table>thead>tr>th]:text-left [&>table>thead>tr>th]:text-[12px] [&>table>thead>tr>th]:font-light [&>table>thead>tr>th]:uppercase [&>table>thead>tr>th]:tracking-wide [&>table>thead>tr>th]:text-[#2E2E2E] [&>table>thead>tr>th]:border-b [&>table>thead>tr>th]:border-[#E5E5E5]
-                      [&>table>tbody>tr>td]:px-5 [&>table>tbody>tr>td]:py-4 [&>table>tbody>tr>td]:text-[14px] [&>table>tbody>tr>td]:text-[#4C4C4C] [&>table>tbody>tr>td]:border-b [&>table>tbody>tr>td]:border-[#E5E5E5]
-                      [&>table>tbody>tr]:transition-colors [&>table>tbody>tr:hover]:bg-[#F9F9F9]
-                      [&>table>tbody>tr:last-child>td]:border-b-0
-                      [&_code]:bg-[#F5F5F5] [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-[13px] [&_code]:text-[#2B4580]
-                      [&>pre]:bg-[#1A1A1A] [&>pre]:text-white [&>pre]:p-6 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:my-8
-                      [&>img]:rounded-lg [&>img]:shadow-md [&>img]:my-8
-                      [&>hr]:border-[#E5E5E5] [&>hr]:my-10">
-                      {markdownRuntimeReady ? (
-                        <MarkdownRenderer remarkPlugins={markdownRemarkPlugins} components={markdownComponents}>
-                          {section.markdown}
-                        </MarkdownRenderer>
-                      ) : (
-                        <p className="text-[15px] leading-[1.65] text-[#4C4C4C]">
-                          {markdownRuntimeError
-                            ? t('blogPage.fallback.contentError', 'Conteudo temporariamente indisponivel.')
-                            : t('blogPage.fallback.loading', 'Carregando conteudo...')}
-                        </p>
-                      )}
-                    </div>
-                  </motion.article>
+              {(useSideBySideLeadLayout ? articleRemainingSections : sectionedContent.sections).length > 0 ? (() => {
+                const articleSections = useSideBySideLeadLayout ? articleRemainingSections : sectionedContent.sections;
+                const integratedSectionIndexes = articleSections.reduce((accumulator, _, sectionIndex) => {
+                  const insertionIndex = useSideBySideLeadLayout ? sectionIndex + 1 : sectionIndex;
+                  if ((articleSectionContextInsertions.get(insertionIndex) || []).length > 0) {
+                    accumulator.push(insertionIndex);
+                  }
+                  return accumulator;
+                }, []);
 
-                  {(articleSectionContextInsertions.get(index) || []).map((asset, assetIndex) => (
-                    <ContextImageBlock
+                return articleSections.map((section, index) => {
+                const sectionInsertionIndex = useSideBySideLeadLayout ? index + 1 : index;
+                const isFaqSection = section.id === 'perguntas-frequentes';
+                const sectionAssetGroups = articleSectionContextInsertions.get(sectionInsertionIndex) || [];
+                const useIntegratedSectionImage = usesApprovedEditorialLayout
+                  && sectionAssetGroups.length > 0;
+                const integratedSectionAssetGroup = useIntegratedSectionImage
+                  ? (Array.isArray(sectionAssetGroups[0]) ? sectionAssetGroups[0] : [sectionAssetGroups[0]])
+                  : [];
+                const integratedSectionAsset = integratedSectionAssetGroup[0] || null;
+                const integratedUseMonochromeMask = MONOCHROME_CONTEXT_SECTION_TITLES.has(
+                  integratedSectionAsset?.sectionTitle || ''
+                );
+                const integratedVisualOrder = useIntegratedSectionImage
+                  ? (useSideBySideLeadLayout ? 1 : 0) + integratedSectionIndexes.findIndex((value) => value === sectionInsertionIndex) + 1
+                  : 0;
+                const useImageOnRight = useIntegratedSectionImage && integratedVisualOrder % 2 === 0;
+                return (
+                <React.Fragment key={section.id || index}>
+                  {useIntegratedSectionImage ? (
+                    <motion.aside
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.35, delay: index * 0.03 }}
+                      className={`group overflow-hidden rounded-2xl border bg-gradient-to-br from-white to-[#F8F8F8] shadow-sm transition-all lg:min-h-[548px] ${
+                        activeHeadingId === section.id
+                          ? `${articleAccentBorderClass} ${articleAccentShadowClass}`
+                          : `border-gray-200 ${articleAccentHoverBorderClass} hover:shadow-md`
+                      }`}
+                    >
+                      <div className={`grid grid-cols-1 lg:min-h-[548px] lg:items-stretch ${useImageOnRight ? 'lg:grid-cols-[1fr_320px]' : 'lg:grid-cols-[320px_1fr]'}`}>
+                        <div className={`relative min-h-[280px] overflow-hidden bg-[#ECECE8] lg:row-start-1 lg:h-full lg:min-h-[548px] ${useImageOnRight ? 'lg:col-start-2' : ''}`}>
+                          <StableBlogImage
+                            src={integratedSectionAsset?.src || articleLocalFallbackImage}
+                            fallbackSrc={articleLocalFallbackImage}
+                            alt={integratedSectionAsset?.alt || artigoAtual.title}
+                            className={`block h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.035] ${integratedUseMonochromeMask ? 'grayscale contrast-[1.02] brightness-[0.98]' : ''}`.trim()}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent lg:bg-gradient-to-t" />
+                        </div>
+                        <motion.article
+                          initial={{ opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.35 }}
+                          className={`flex h-full flex-col overflow-hidden border-transparent p-5 transition-all md:p-7 ${
+                            useImageOnRight ? 'rounded-l-2xl border-r' : 'rounded-r-2xl border-l'
+                          } ${
+                            activeHeadingId === section.id
+                              ? `${articleAccentBorderClass} ${articleAccentShadowClass}`
+                              : `${articleAccentHoverBorderClass} hover:shadow-md`
+                          } ${useImageOnRight ? 'lg:col-start-1 lg:row-start-1' : 'lg:row-start-1'}`}
+                        >
+                          <div className={`wg-prose max-w-none flex-1
+                            [&>h2]:font-suisse [&>h2]:text-[22px] [&>h2]:font-light [&>h2]:tracking-tight [&>h2]:text-wg-black [&>h2]:mb-5 [&>h2]:mt-0
+                            [&>h3]:font-suisse [&>h3]:text-[17px] [&>h3]:font-light [&>h3]:text-wg-black [&>h3]:mb-4 [&>h3]:mt-8
+                            ${articleSectionBodyClass}
+                            ${articleInlineStrongClass}
+                            ${articleInlineLinkClass}
+                            [&>ul]:my-5 [&>ul]:space-y-2 [&>ul]:pl-0 [&>ul]:list-none
+                            [&>ol]:my-5 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
+                            ${articleListBodyClass}
+                            [&>blockquote]:border-l-4 ${articleBlockquoteAccentClass} [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:font-light [&>blockquote]:text-wg-gray [&>blockquote]:bg-[#F9F9F9] [&>blockquote]:py-4 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-lg [&>blockquote]:my-8
+                            [&>table]:w-full [&>table]:my-8 [&>table]:rounded-xl [&>table]:overflow-hidden [&>table]:shadow-md [&>table]:border [&>table]:border-[#E5E5E5]
+                            [&>table>thead]:bg-[#F5F5F5]
+                            [&>table>thead>tr>th]:px-5 [&>table>thead>tr>th]:py-4 [&>table>thead>tr>th]:text-left [&>table>thead>tr>th]:text-[12px] [&>table>thead>tr>th]:font-light [&>table>thead>tr>th]:uppercase [&>table>thead>tr>th]:tracking-wide [&>table>thead>tr>th]:text-wg-black [&>table>thead>tr>th]:border-b [&>table>thead>tr>th]:border-[#E5E5E5]
+                            [&>table>tbody>tr>td]:font-suisse [&>table>tbody>tr>td]:px-5 [&>table>tbody>tr>td]:py-4 [&>table>tbody>tr>td]:text-[14px] [&>table>tbody>tr>td]:font-light [&>table>tbody>tr>td]:text-wg-gray [&>table>tbody>tr>td]:border-b [&>table>tbody>tr>td]:border-[#E5E5E5]
+                            [&>table>tbody>tr]:transition-colors [&>table>tbody>tr:hover]:bg-[#F9F9F9]
+                            [&>table>tbody>tr:last-child>td]:border-b-0
+                            ${articleInlineCodeClass}
+                            [&>pre]:bg-[#1A1A1A] [&>pre]:text-white [&>pre]:p-6 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:my-8
+                            [&>img]:mx-auto [&>img]:my-8 [&>img]:max-h-[68vh] [&>img]:max-w-full [&>img]:rounded-lg [&>img]:shadow-md
+                            [&>hr]:border-[#E5E5E5] [&>hr]:my-10 ${articleContentBulletMarkerClass} ${isFaqSection ? `[&>h3]:rounded-xl [&>h3]:border [&>h3]:border-[#DDE4EE] [&>h3]:bg-gradient-to-r [&>h3]:from-white [&>h3]:to-[#F7F9FC] [&>h3]:px-5 [&>h3]:py-4 [&>h3]:mb-3 [&>h3]:mt-6 [&>p]:relative [&>p]:pl-6 [&>p]:text-[14px] [&>p]:leading-[1.58] [&>p]:mb-6 [&>p]:before:content-['↳'] [&>p]:before:absolute [&>p]:before:left-0 [&>p]:before:top-0 [&>p]:before:font-light ${currentCategoryMeta.bgColor === 'bg-wg-green' ? "[&>p]:before:text-wg-green" : currentCategoryMeta.bgColor === 'bg-wg-brown' ? "[&>p]:before:text-wg-brown" : "[&>p]:before:text-wg-blue"}` : ''}`}>
+                            {markdownRuntimeReady ? (
+                              <MarkdownRenderer remarkPlugins={markdownRemarkPlugins} components={markdownComponents}>
+                                {section.markdown}
+                              </MarkdownRenderer>
+                            ) : (
+                              <p className="text-[15px] leading-[1.65] text-wg-gray">
+                                {markdownRuntimeError
+                                  ? t('blogPage.fallback.contentError', 'Conteudo temporariamente indisponivel.')
+                                  : t('blogPage.fallback.loading', 'Carregando conteudo...')}
+                              </p>
+                            )}
+                          </div>
+                        </motion.article>
+                      </div>
+                    </motion.aside>
+                  ) : (
+                    <motion.article
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.35, delay: index * 0.03 }}
+                      className={`rounded-2xl border bg-white p-5 transition-all md:p-7 ${
+                        activeHeadingId === section.id
+                          ? `${articleAccentBorderClass} ${articleAccentShadowClass}`
+                          : `border-gray-200 ${articleAccentHoverBorderClass} hover:shadow-md`
+                      }`}
+                    >
+                      <div className={`wg-prose max-w-none
+                        [&>h2]:font-suisse [&>h2]:text-[22px] [&>h2]:font-light [&>h2]:tracking-tight [&>h2]:text-wg-black [&>h2]:mb-5 [&>h2]:mt-0
+                        [&>h3]:font-suisse [&>h3]:text-[17px] [&>h3]:font-light [&>h3]:text-wg-black [&>h3]:mb-4 [&>h3]:mt-8
+                        ${articleSectionBodyClass}
+                        ${articleInlineStrongClass}
+                        ${articleInlineLinkClass}
+                        [&>ul]:my-5 [&>ul]:space-y-2 [&>ul]:pl-0 [&>ul]:list-none
+                        [&>ol]:my-5 [&>ol]:space-y-2 [&>ol]:pl-6 [&>ol]:list-decimal
+                        ${articleListBodyClass}
+                        [&>blockquote]:border-l-4 ${articleBlockquoteAccentClass} [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:font-light [&>blockquote]:text-wg-gray [&>blockquote]:bg-[#F9F9F9] [&>blockquote]:py-4 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-lg [&>blockquote]:my-8
+                        [&>table]:w-full [&>table]:my-8 [&>table]:rounded-xl [&>table]:overflow-hidden [&>table]:shadow-md [&>table]:border [&>table]:border-[#E5E5E5]
+                        [&>table>thead]:bg-[#F5F5F5]
+                        [&>table>thead>tr>th]:px-5 [&>table>thead>tr>th]:py-4 [&>table>thead>tr>th]:text-left [&>table>thead>tr>th]:text-[12px] [&>table>thead>tr>th]:font-light [&>table>thead>tr>th]:uppercase [&>table>thead>tr>th]:tracking-wide [&>table>thead>tr>th]:text-wg-black [&>table>thead>tr>th]:border-b [&>table>thead>tr>th]:border-[#E5E5E5]
+                        [&>table>tbody>tr>td]:font-suisse [&>table>tbody>tr>td]:px-5 [&>table>tbody>tr>td]:py-4 [&>table>tbody>tr>td]:text-[14px] [&>table>tbody>tr>td]:font-light [&>table>tbody>tr>td]:text-wg-gray [&>table>tbody>tr>td]:border-b [&>table>tbody>tr>td]:border-[#E5E5E5]
+                        [&>table>tbody>tr]:transition-colors [&>table>tbody>tr:hover]:bg-[#F9F9F9]
+                        [&>table>tbody>tr:last-child>td]:border-b-0
+                        ${articleInlineCodeClass}
+                        [&>pre]:bg-[#1A1A1A] [&>pre]:text-white [&>pre]:p-6 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:my-8
+                        [&>img]:mx-auto [&>img]:my-8 [&>img]:max-h-[68vh] [&>img]:max-w-full [&>img]:rounded-lg [&>img]:shadow-md
+                        [&>hr]:border-[#E5E5E5] [&>hr]:my-10 ${articleContentBulletMarkerClass} ${isFaqSection ? `[&>h3]:rounded-xl [&>h3]:border [&>h3]:border-[#DDE4EE] [&>h3]:bg-gradient-to-r [&>h3]:from-white [&>h3]:to-[#F7F9FC] [&>h3]:px-5 [&>h3]:py-4 [&>h3]:mb-3 [&>h3]:mt-6 [&>p]:relative [&>p]:pl-6 [&>p]:text-[14px] [&>p]:leading-[1.58] [&>p]:mb-6 [&>p]:before:content-['↳'] [&>p]:before:absolute [&>p]:before:left-0 [&>p]:before:top-0 [&>p]:before:font-light ${currentCategoryMeta.bgColor === 'bg-wg-green' ? "[&>p]:before:text-wg-green" : currentCategoryMeta.bgColor === 'bg-wg-brown' ? "[&>p]:before:text-wg-brown" : "[&>p]:before:text-wg-blue"}` : ''}`}>
+                        {markdownRuntimeReady ? (
+                          <MarkdownRenderer remarkPlugins={markdownRemarkPlugins} components={markdownComponents}>
+                            {section.markdown}
+                          </MarkdownRenderer>
+                        ) : (
+                          <p className="text-[15px] leading-[1.65] text-wg-gray">
+                            {markdownRuntimeError
+                              ? t('blogPage.fallback.contentError', 'Conteudo temporariamente indisponivel.')
+                              : t('blogPage.fallback.loading', 'Carregando conteudo...')}
+                          </p>
+                        )}
+                      </div>
+                    </motion.article>
+                  )}
+
+                  {(useIntegratedSectionImage ? sectionAssetGroups.slice(1) : sectionAssetGroups).map((assetGroup, assetIndex) => (
+                    <ContextImageGallery
                       key={`${section.id || index}-context-${assetIndex}`}
-                      asset={asset}
+                      assets={Array.isArray(assetGroup) ? assetGroup : [assetGroup]}
                       fallbackSrc={articleLocalFallbackImage}
                       fallbackAlt={artigoAtual.title}
                     />
                   ))}
                 </React.Fragment>
-              )) : (
+              )});
+              })() : (
                 <div className="wg-prose max-w-none
-                  [&>p]:text-[16px] [&>p]:text-[#4C4C4C] [&>p]:leading-[1.65] [&>p]:mb-5">
+                  ${articleSectionBodyClass} ${articleInlineStrongClass}
+                  [&>img]:mx-auto [&>img]:my-8 [&>img]:max-h-[68vh] [&>img]:max-w-full [&>img]:rounded-lg [&>img]:shadow-md">
                   {markdownRuntimeReady ? (
                     <MarkdownRenderer remarkPlugins={markdownRemarkPlugins} components={markdownComponents}>
                       {contentBody}
                     </MarkdownRenderer>
                   ) : (
-                    <p className="text-[15px] leading-[1.65] text-[#4C4C4C]">
+                    <p className="text-[15px] leading-[1.65] text-wg-gray">
                       {markdownRuntimeError
                         ? t('blogPage.fallback.contentError', 'Conteudo temporariamente indisponivel.')
                         : t('blogPage.fallback.loading', 'Carregando conteudo...')}

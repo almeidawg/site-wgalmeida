@@ -49,14 +49,14 @@ Transforme seu banheiro em refúgio de autocuidado.
 
 ## Custos de Reforma
 
-### Banheiro Básico (R$ 8.000 - R$ 15.000)
+### Banheiro Essencial (R$ 8.000 - R$ 15.000)
 - Revestimento cerâmico
 - Louças brancas padrão
 - Metais cromados simples
 - Box de vidro temperado
 - Iluminação básica
 
-### Banheiro Intermediário (R$ 15.000 - R$ 35.000)
+### Banheiro Equilibrado (R$ 15.000 - R$ 35.000)
 - Porcelanato retificado
 - Louças de design
 - Metais com acabamento especial
@@ -64,7 +64,7 @@ Transforme seu banheiro em refúgio de autocuidado.
 - Iluminação indireta
 - Bancada de mármore ou quartzo
 
-### Banheiro Alto Padrão (R$ 35.000 - R$ 80.000+)
+### Banheiro Exclusivo (R$ 35.000 - R$ 80.000+)
 - Mármore ou pedras nobres
 - Louças premium (Deca, Roca)
 - Metais importados

@@ -19,6 +19,8 @@ Uma das perguntas mais frequentes e: "Quanto tempo vai levar minha reforma?"
 
 A resposta depende de alguns fatores tecnicos, mas neste guia voce encontra prazos reais por tipo de obra para planejar mudanca e orcamento com mais seguranca.
 
+O ponto principal e este: prazo de reforma nao deve ser lido apenas como total de meses. O que realmente importa e entender quais etapas dominam o cronograma e o que costuma travar a obra.
+
 ## Fatores Que Influenciam o Prazo
 
 ### 1. Tamanho do Apartamento
@@ -43,6 +45,8 @@ A resposta depende de alguns fatores tecnicos, mas neste guia voce encontra praz
 - Condomínio simples: +1 semana
 - Condomínio rigoroso: +2-4 semanas
 - Prefeitura: +4-12 semanas
+
+Muitas obras nao atrasam por execucao pura. Atrasam porque aprovacao, medicao e compra nao foram disparadas na hora certa.
 
 ### 5. Horário de Trabalho
 Condomínio permite barulho:
@@ -220,6 +224,8 @@ Mês 5: Instalações e Entrega
 - Semana 20: Luminárias, acabamentos finais
 - Semana 21: Limpeza profunda, entrega
 
+Importante: marcenaria, marmoraria, esquadrias e itens sob medida raramente começam apenas quando chegam na instalacao. Eles dependem de medicao e aprovacao anteriores para entrar em producao paralela.
+
 ---
 
 ## Reforma Estrutural
@@ -251,6 +257,8 @@ Durante a Obra:
 - +4-8 semanas vs reforma completa sem estrutura
 
 Total: 9-17 meses (projeto + aprovações + obra)
+
+Essa diferenca de prazo mostra por que leitura operacional e mais importante do que chute de calendario. O prazo real nasce da relacao entre projeto, aprovacao, infraestrutura, acabamentos e producao.
 
 ---
 

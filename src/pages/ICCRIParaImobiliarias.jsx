@@ -5,7 +5,7 @@ import { trackCtaClick } from '@/lib/analytics'
 import { motion } from '@/lib/motion-lite'
 import { ArrowRight, Building2, Landmark, LineChart, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { PRODUCT_URLS } from '@/data/company';
+import { PRODUCT_URLS, WG_PRODUCT_MESSAGES } from '@/data/company';
 
 const PAGE_URL = 'https://wgalmeida.com.br/iccri-para-imobiliarias'
 
@@ -72,7 +72,17 @@ export default function ICCRIParaImobiliarias() {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             Transforme custo de reforma em decisao comercial com metodo tecnico. O ICCRI conecta
-            dados reais de obra, simulacao de viabilidade e potencial de valorizacao.
+            dados reais de obra, simulacao de viabilidade, leitura operacional e potencial de valorizacao.
+          </motion.p>
+          <motion.p
+            className="mt-4 max-w-4xl text-base text-white/65"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.18 }}
+          >
+            No ecossistema WG, isso ajuda a separar quando a tese ainda esta em fase experimental,
+            quando ja pode ser conduzida de forma assistida e quando comeca a ficar mais defensavel
+            com base real de mercado, obra e execucao.
           </motion.p>
         </div>
       </section>
@@ -86,7 +96,7 @@ export default function ICCRIParaImobiliarias() {
               </h2>
               <p className="text-wg-gray leading-relaxed mb-5">
                 Use o ICCRI para criar previsibilidade em propostas, leitura de margem e argumento
-                de venda baseado em dados. O foco e reduzir incerteza no momento de decisao.
+                de venda baseado em dados. O foco e reduzir incerteza no momento de decisao e traduzir a complexidade da obra em uma leitura mais didatica.
               </p>
               <ul className="space-y-3 text-[#334155]">
                 <li className="flex items-start gap-2">
@@ -102,6 +112,11 @@ export default function ICCRIParaImobiliarias() {
                   Apoio a bancos e credito com leitura objetiva de investimento.
                 </li>
               </ul>
+              <p className="mt-5 text-sm leading-relaxed text-wg-gray">
+                O papel do ICCRI aqui nao e prometer certeza artificial. Ele ajuda a organizar custo,
+                etapas e escopo para que a tese do ativo possa evoluir com mais clareza para uma leitura
+                experimental, assistida ou mais defensavel conforme a base real cresce.
+              </p>
             </div>
 
             <div className="rounded-2xl border border-wg-orange/30 bg-wg-gray-light p-6">
@@ -109,11 +124,20 @@ export default function ICCRIParaImobiliarias() {
                 Fluxo recomendado para parceiros
               </h2>
               <ol className="list-decimal space-y-2 pl-5 text-[#334155]">
-                <li>Use o ICCRI para estimativa inicial por m2.</li>
+                <li>Use o ICCRI para estimativa inicial e leitura das etapas operacionais da obra.</li>
                 <li>Valide viabilidade com EVF no Obra Easy.</li>
                 <li>Projete valorizacao com AVM para orientar a decisao.</li>
                 <li>Encaminhe o cliente para proposta executiva integrada.</li>
               </ol>
+
+              <p className="mt-4 text-sm leading-relaxed text-wg-gray">
+                {WG_PRODUCT_MESSAGES.marketReferences}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-wg-gray">
+                Quando conectado ao Easy Real State e ao ObraEasy, o ICCRI deixa de ser so referencia
+                de custo e passa a apoiar a defesa da captura de valor com base em fechamento real,
+                custo executado e leitura operacional da obra.
+              </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <a

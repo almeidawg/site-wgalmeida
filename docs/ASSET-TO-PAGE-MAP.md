@@ -50,7 +50,6 @@ Assets confirmados no runtime:
 - `public/images/blog`: existe
 - `public/images/estilos`: existe
 - `public/images/banners`: existe
-- `public/images/wno-mas`: existe
 
 Assets referenciados no codigo mas ausentes no runtime:
 
@@ -296,27 +295,6 @@ Prioridade:
 
 - altissima, porque afeta prova visual de autoridade.
 
-### 8. Wno Mas
-
-Arquivos principais:
-
-- `src/pages/Wnomas.jsx`
-- `src/pages/Wnomas.css`
-
-Assets locais confirmados:
-
-- `/images/wno-mas/...`
-- poster local `/images/wno-mas/catalogo-visual-2024.jpg`
-
-Assets ausentes:
-
-- nao foi confirmada a existencia do video associado no runtime atual
-
-Leitura pratica:
-
-- a pagina parece mais sustentada localmente do que portfolio WG;
-- ainda vale validar o acervo de video separadamente.
-
 ## Rotas que ja estao melhores
 
 Areas com base local mais solida:
@@ -325,7 +303,6 @@ Areas com base local mais solida:
 - revista de estilos
 - banners institucionais
 - branding principal
-- Wno Mas
 
 ## Rotas que concentram o problema
 

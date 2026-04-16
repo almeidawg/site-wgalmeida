@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import SEO, { schemas } from '@/components/SEO';
 import { buildUnsplashSrcSet, normalizeUnsplashImageUrl } from '@/lib/unsplash';
+import SafeImage from '@/components/SafeImage';
+import { withBasePath } from '@/utils/assetPaths';
 
 const RegionTemplate = ({
   regionKey,
@@ -34,6 +36,7 @@ const RegionTemplate = ({
   const resolvedMetaDescription = metaDescription || regionContent?.metaDescription;
   const canonicalUrl = `https://wgalmeida.com.br/${regionSlug}`;
   const rawHeroImage = heroImage || regionContent?.heroImage || '/images/hero-region.webp';
+  const heroFallbackImage = withBasePath('/images/hero-region.webp');
   const resolvedHeroImage = normalizeUnsplashImageUrl(rawHeroImage, {
     width: 1920,
     height: 1080,
@@ -92,9 +95,10 @@ const RegionTemplate = ({
 
       {/* Hero Section */}
       <section className="wg-page-hero hero-under-header bg-wg-black">
-        <img
+        <SafeImage
           className="absolute inset-0 h-full w-full object-cover"
           src={resolvedHeroImage || '/images/hero-region.webp'}
+          fallbackSrc={heroFallbackImage}
           srcSet={resolvedHeroSrcSet || undefined}
           sizes="100vw"
           alt={resolvedTitle}
@@ -262,13 +266,19 @@ const RegionTemplate = ({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contato">
-                <Button className="btn-apple">
+                <Button
+                  variant="ghost"
+                  className="inline-flex min-w-[220px] items-center justify-center gap-2 rounded-2xl border border-wg-orange/20 bg-wg-orange px-6 py-3 font-light text-white shadow-[0_10px_24px_rgba(242,92,38,0.18)] transition-all hover:-translate-y-px hover:bg-[#e3521f] hover:text-white hover:shadow-[0_14px_28px_rgba(242,92,38,0.24)]"
+                >
                   {t('regions.defaults.ctaPrimary')}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/projetos">
-                <Button variant="outline" className="rounded-full border border-wg-black/12 bg-white/70 px-6 py-3 text-wg-black hover:border-wg-black/20 hover:bg-white">
+                <Button
+                  variant="ghost"
+                  className="inline-flex min-w-[220px] items-center justify-center rounded-2xl border border-wg-orange/30 bg-white px-6 py-3 font-light text-wg-black shadow-[0_10px_24px_rgba(15,15,15,0.08)] transition-all hover:-translate-y-px hover:border-wg-orange hover:bg-white hover:text-wg-orange"
+                >
                   {t('regions.defaults.ctaSecondary')}
                 </Button>
               </Link>

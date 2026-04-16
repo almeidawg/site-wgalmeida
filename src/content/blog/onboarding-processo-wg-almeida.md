@@ -25,6 +25,8 @@ Iniciar um projeto de arquitetura ou reforma pode parecer complexo. Na WG Almeid
 
 Este guia detalha cada etapa do seu projeto, do primeiro contato até a entrega das chaves.
 
+Mais importante: ele mostra que o processo nao e uma sequencia comercial solta. E uma linha de decisao que conecta briefing, EVF, projeto, aprovacoes, compras, producao e obra.
+
 ---
 
 ## Visão Geral do Processo
@@ -43,6 +45,8 @@ Este guia detalha cada etapa do seu projeto, do primeiro contato até a entrega 
 10. Execução e Entrega (Variável)
 
 Prazo total típico: 6-18 meses (dependendo do escopo)
+
+Dependendo do caso, algumas frentes caminham em paralelo. E isso precisa ser coordenado cedo para nao parecer atraso quando, na verdade, o problema e falta de sequencia.
 
 ---
 
@@ -125,6 +129,7 @@ Entrevista:
 ✅ Legal (prefeitura permite?)
 ✅ Financeira (cabe no orçamento?)
 ✅ Temporal (prazo é viável?)
+✅ Operacional (quais frentes dependem de aprovacao, medicao e producao)
 
 ### O Que Você Recebe
 
@@ -190,12 +195,14 @@ O que NÃO está incluído:
 - Ferramentas utilizadas
 - Pontos de validação
 - Entregas parciais
+- Gatilhos operacionais para compra, medicao e producao paralela
 
 #### 4. Cronograma
 - Duração de cada fase
 - Marcos importantes
 - Datas de apresentação
 - Prazos de validação
+- Janela de acionamento das frentes criticas
 
 #### 5. Investimento
 

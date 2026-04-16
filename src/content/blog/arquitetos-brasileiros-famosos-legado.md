@@ -5,7 +5,7 @@ date: "2026-01-25"
 author: "Grupo WG Almeida"
 category: "arquitetura"
 image: "/images/banners/ARQ.webp"
-excerpt: "Conheca 12 arquitetos brasileiros famosos, suas obras iconicas e lições praticas para aplicar em projetos residenciais e corporativos."
+excerpt: "Conheça 12 arquitetos brasileiros famosos, suas obras icônicas e lições práticas para aplicar em projetos residenciais e corporativos."
 tags:
   - "arquitetos brasileiros"
   - "Oscar Niemeyer"
@@ -13,17 +13,9 @@ tags:
   - "história da arquitetura"
 featured: true
 ---
-# Arquitetos Brasileiros Famosos: 12 Referencias e Licoes Praticas
+# Arquitetos Brasileiros Famosos: 12 Referências e Lições Práticas
 
-*Por Grupo WG Almeida | Arquitetura & História*
-
----
-
-## Introdução
-
-Os arquitetos brasileiros famosos ajudaram a definir uma linguagem autoral reconhecida no mundo todo. Nesta selecao, voce conhece obras-chave de cada nome e como aplicar esses principios em projetos contemporaneos.
-
----
+Os arquitetos brasileiros famosos ajudaram a definir uma linguagem autoral reconhecida no mundo todo. Nesta seleção, você conhece obras-chave de cada nome e como aplicar esses princípios em projetos contemporâneos.
 
 ## Oscar Niemeyer (1907-2012)
 ### O Poeta do Concreto
@@ -359,14 +351,14 @@ Seu legado inspira cada projeto que desenvolvemos na WG Almeida.
 
 Quer um projeto que combine a ousadia dos grandes arquitetos brasileiros com funcionalidade contemporânea?
 
-Entre em Contato:
-- Solicite uma proposta: https://wgalmeida.com.br/solicite-proposta
-- WhatsApp: +55 (11) 98465-0002
-- E-mail: contato@wgalmeida.com.br
+Entre em contato:
+- [Solicite uma proposta](https://wgalmeida.com.br/solicite-proposta)
+- [WhatsApp](https://wa.me/5511984650002)
+- [E-mail](mailto:contato@wgalmeida.com.br)
 
 ---
 
-*Grupo WG Almeida, Honrando o legado da arquitetura brasileira*
+*Grupo WG Almeida, honrando o legado da arquitetura brasileira*
 
 Fontes:
 - [7 cases de arquitetos famosos para você conhecer](https://blog.belasartes.br/arquitetos-famosos/)
@@ -377,7 +369,7 @@ Tags: arquitetos brasileiros, Oscar Niemeyer, Paulo Mendes da Rocha, Lina Bo Bar
 
 ## Leitura recomendada
 
-- [Arquitetos internacionais famosos e obras iconicas](/blog/arquitetos-internacionais-famosos-obras)
-- [Tendencias de decoracao 2026](/blog/tendencias-decoracao-interiores-2026)
-- [Tendencias da construcao civil 2026](/blog/tendencias-construcao-civil-2026)
+- [Arquitetos internacionais famosos e obras icônicas](/blog/arquitetos-internacionais-famosos-obras)
+- [Tendências de decoração 2026](/blog/tendencias-decoracao-interiores-2026)
+- [Tendências da construção civil 2026](/blog/tendencias-construcao-civil-2026)
 

@@ -6,6 +6,13 @@
 - Validar conversao de leitura para clique e lead.
 - Definir se o gargalo esta em distribuicao, mensagem ou fluxo.
 
+## Mensagem obrigatoria da operacao
+
+- `SINAPI`, `CUB/SINDUSCON` e demais bases entram como referencia.
+- `ICCRI` e a camada proprietaria WG que conecta custo, categorias, servicos e composicoes.
+- `EVF` deve ser apresentado como leitura inicial da obra, com etapas operacionais, prazo estimado e direcao de execucao.
+- Corretor nao envia apenas um numero: envia um material que ajuda o cliente a entender custo e caminho da obra.
+
 ## Meta operacional
 
 - 10 corretores ativos na semana.
@@ -59,6 +66,18 @@
 - Se abrem e nao clicam: problema de copy/CTA.
 - Se clicam e nao convertem: problema de fluxo comercial.
 - Se convertem: escalar imediatamente.
+
+## Ajuste de copy recomendado
+
+- Evitar:
+  - `indice por m2`
+  - `calculadora de reforma`
+  - `so custo estimado`
+- Preferir:
+  - `leitura inicial da obra`
+  - `etapas operacionais`
+  - `direcao para decisao`
+  - `custo, prazo e caminho da execucao`
 
 ## Cadencia diaria (15 min)
 

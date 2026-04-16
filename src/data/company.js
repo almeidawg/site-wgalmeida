@@ -17,6 +17,9 @@ export const COMPANY = {
   phone:        '+55 (11) 98465-0002',
   phoneRaw:     '+5511984650002',
   whatsapp:     'https://wa.me/5511984650002',
+  ceoPhone:     '+55 (11) 99179-2291',
+  ceoPhoneRaw:  '+5511991792291',
+  ceoWhatsapp:  'https://wa.me/5511991792291',
   email:        'contato@wgalmeida.com.br',
   address:      'São Paulo, SP — Brasil',
   instagram:    'https://www.instagram.com/wgalmeida.arq',
@@ -51,4 +54,29 @@ export const EASYREALSTATE_PRECOS = {
   free:        { label: 'Gratuito', price: 'R$ 0' },
   proCorretor: { label: 'Pro Corretor', price: 'R$ 49' },
   imobiliaria: { label: 'Imobiliária', price: 'R$ 149' },
+}
+
+export const WG_PRODUCT_MESSAGES = {
+  wgExperienceCore:
+    'A complexidade, a lógica, as regras e a automação trabalham por trás. Na frente, a experiência precisa ser objetiva, intuitiva e útil para decidir e executar.',
+  wgAutomationPromise:
+    'A tecnologia WG existe para reduzir atrito, automatizar rotinas, organizar informação e facilitar o dia a dia de quem vende, aprova, especifica, executa ou investe.',
+  obraeasyPromise:
+    'O ObraEasy organiza a obra por etapas operacionais reais: o que começa antes, o que depende de medição, o que precisa de aprovação e o que pode ser produzido em paralelo.',
+  obraeasyB2B:
+    'O ObraEasy conecta viabilidade, etapas operacionais, execução e financeiro real para reduzir achismo em retrofit, reforma e implantação de maior ticket.',
+  obraeasyBenchmarks:
+    'SINAPI, CUB/SINDUSCON e FipeZap entram como referência. O diferencial WG está em transformar mercado, orçamento e obra real em leitura acionável para decisão.',
+  iccriPositioning:
+    'O ICCRI é o motor proprietário da WG Almeida para conectar categorias, serviços, composições e leitura operacional da obra.',
+  marketReferences:
+    'SINAPI, CUB/SINDUSCON, FipeZAP e outras bases entram como referência. A organização da experiência segue a metodologia operacional WG Almeida.',
+  easyRealStateB2B:
+    'O Easy Real State conecta valor atual, fechamento real e potencial pós-obra no mesmo fluxo para apoiar decisões imobiliárias de maior ticket.',
+  easyRealStateConfidence:
+    'A leitura do ativo não precisa parecer absoluta para gerar valor. Ela pode estar em fase experimental, assistida ou já defensável, conforme a força da base real daquele objetivo.',
+  easyRealStateBenchmarks:
+    'A lapidação do motor considera referências nacionais e internacionais de AVM, fechamento real e valuation, mas a vantagem WG está na conexão entre mercado, obra e captura de valor.',
+  obraeasyCapture:
+    'No ecossistema WG, a obra deixa de ser só custo. Ela passa a mostrar quanto da tese do ativo já está sendo protegida, validada ou destravada pela execução real.',
 }

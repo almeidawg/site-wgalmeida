@@ -148,12 +148,12 @@
   "seo": {
     "home": {
       "title": "Arquitectura, Ingeniería y Muebles a Medida de Alto Nivel en Sao Paulo",
-      "description": "Ecosistema integrado de arquitectura, ingeniería y muebles a medida de alto nivel. Sistema turn key premium en Sao Paulo: Brooklin, Itaim, Jardins, Vila Nova Conceicao. 15 anos de excelencia.",
+      "description": "Ecosistema integrado de arquitectura, ingeniería y muebles a medida de alto nivel. Sistema turn key premium en Sao Paulo: Brooklin, Itaim, Jardins y Vila Nova Conceicao.",
       "keywords": "arquitectura alto nivel sao paulo, ingenieria turn key, muebles a medida, obras premium brooklin, reforma apartamento itaim, arquitecto jardins, constructora premium sp"
     },
     "about": {
       "title": "Sobre Nosotros - Historia y Valores",
-      "description": "Conozca la historia, la mision, la vision y los valores del Grupo WG Almeida. 15 anos integrando arquitectura, ingenieria y Carpintería a Medida de alto nivel en Sao Paulo.",
+      "description": "Conozca la historia, la mision, la vision y los valores del Grupo WG Almeida. Operación integrada en arquitectura, ingeniería y Carpintería a Medida de alto nivel en Sao Paulo.",
       "keywords": "sobre wg almeida, historia del grupo, valores empresa arquitectura, mision vision constructora sao paulo"
     },
     "process": {
@@ -178,7 +178,7 @@
     },
     "testimonials": {
       "title": "Testimonios - Opiniones de Clientes",
-      "description": "Vea las opiniones reales de nuestros clientes en Google. 15 anos construyendo suenos con excelencia en arquitectura, ingenieria y Carpintería a Medida. Nota 5.0 en Google.",
+      "description": "Vea las opiniones reales de nuestros clientes en Google sobre arquitectura, ingeniería y Carpintería a Medida de alto nivel en Sao Paulo.",
       "keywords": "WG Almeida opiniones, testimonios clientes arquitectura, reviews ingenieria Sao Paulo, evaluacion google constructora"
     },
     "contact": {
@@ -1753,7 +1753,7 @@
     "stages": {
       "whoWeAre": {
         "kicker": "Quienes Somos",
-        "line1": "Hace 15 anos construyendo",
+        "line1": "Construyendo",
         "line2": "suenos con excelencia."
       },
       "ecosystem": {
@@ -1910,7 +1910,7 @@
     },
     "success": {
       "title": "Solicitud <span>Enviada!</span>",
-      "description": "Gracias por tu interes! Nuestro equipo se pondra en contacto en hasta <strong>48 horas</strong> para iniciar tu proyecto.",
+      "description": "Gracias por tu interes. Nuestro equipo hara el analisis inicial de tu solicitud y seguira el contacto para iniciar tu proyecto.",
       "instagram": "Sigue en Instagram",
       "website": "Visita nuestro sitio",
       "backToStart": "Volver al inicio"

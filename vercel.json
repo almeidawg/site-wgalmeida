@@ -174,16 +174,6 @@
       "permanent": true
     },
     {
-      "source": "/wnomas",
-      "destination": "/wnomasvinho",
-      "permanent": true
-    },
-    {
-      "source": "/wnomas/:path*",
-      "destination": "/wnomasvinho/:path*",
-      "permanent": true
-    },
-    {
       "source": "/parceiros",
       "destination": "https://obraeasy.wgalmeida.com.br/landing/corretor",
       "permanent": false
@@ -302,11 +292,59 @@
       "destination": "/estilos/:slug/index.html"
     },
     {
+      "source": "/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
+      "source": "/images/:path*",
+      "destination": "/images/:path*"
+    },
+    {
       "source": "/videos/:path*",
       "destination": "/videos/:path*"
     },
     {
-      "source": "/(.*)",
+      "source": "/fonts/:path*",
+      "destination": "/fonts/:path*"
+    },
+    {
+      "source": "/data/:path*",
+      "destination": "/data/:path*"
+    },
+    {
+      "source": "/Logos/:path*",
+      "destination": "/Logos/:path*"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/robots.txt"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/sitemap-index.xml",
+      "destination": "/sitemap-index.xml"
+    },
+    {
+      "source": "/video-sitemap.xml",
+      "destination": "/video-sitemap.xml"
+    },
+    {
+      "source": "/sw.js",
+      "destination": "/sw.js"
+    },
+    {
+      "source": "/manifest.json",
+      "destination": "/manifest.json"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.png"
+    },
+    {
+      "source": "/:path((?!api/|assets/|images/|videos/|fonts/|data/|Logos/|.*\\..*).*)",
       "destination": "/index.html"
     }
   ],

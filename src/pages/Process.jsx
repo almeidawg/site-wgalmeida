@@ -31,7 +31,7 @@ const TIMELINE_CONTENT = {
     selectorKicker: 'Planejamento inteligente',
     selectorTitle: 'Veja a obra ganhar ritmo antes mesmo do primeiro passo.',
     selectorSubtitle:
-      'A experiência abaixo traduz nossa metodologia em uma leitura simples: tipo de projeto, faixa de metragem, estimativas de duração e sequência de execução.',
+      'A experiência abaixo traduz a metodologia WG em leitura guiada: tipo de projeto, faixa de metragem, estimativas locais, ICCRI e Etapas WG organizadas para facilitar decisão e execução, sem sobrecarregar o usuário com a lógica de bastidor.',
     reform: 'Reforma',
     build: 'Construção',
     areaLabel: 'Metragem estimada',
@@ -43,7 +43,7 @@ const TIMELINE_CONTENT = {
     stagePanelLabel: 'Detalhamento da etapa',
     estimatedDataLabel: 'Leitura estimativa',
     estimatedDataText:
-      'Os tempos desta tela são estimativas orientativas, calculadas localmente a partir da metodologia WG Almeida. Eles não representam leitura live do WG Easy e variam conforme metragem, escopo, disponibilidade das equipes, nível de definição do cliente e dinâmica da obra.',
+      'Os tempos desta tela são estimativas orientativas, calculadas localmente a partir da metodologia WG Almeida, com leitura editorial baseada em ICCRI e Etapas WG. A inteligência e a lógica trabalham por trás para simplificar a leitura, mas esta página não representa motor live do WG Easy e os tempos variam conforme metragem, escopo, disponibilidade das equipes, nível de definição do cliente e dinâmica da obra.',
     durationUnit: 'semanas',
     areaUnit: 'm²',
     ctaTitle: 'Quer transformar essa estimativa em um cronograma real para o seu imóvel?',
@@ -321,8 +321,8 @@ function areaProfile(area, projectType) {
 }
 
 const Process = () => {
-  const { t, i18n } = useTranslation();
-  const copy = TIMELINE_CONTENT[i18n.language?.startsWith('pt') ? 'pt' : 'pt'];
+  const { t } = useTranslation();
+  const copy = TIMELINE_CONTENT.pt;
   const [projectType, setProjectType] = useState('reform');
   const [area, setArea] = useState(160);
   const [leadName, setLeadName] = useState('');
@@ -786,10 +786,10 @@ const Process = () => {
                       <ArrowRight className="h-4 w-4" />
                     </a>
                     <Link
-                      to="/obraeasy"
+                      to="/solicite-proposta"
                       className="inline-flex items-center justify-center rounded-full border border-black/10 bg-black/[0.02] px-6 py-3 text-sm text-wg-black transition-colors hover:bg-black/[0.04] font-light"
                     >
-                      Iniciar EVF
+                      Avançar para EVF assistido
                     </Link>
                   </div>
 
@@ -903,16 +903,16 @@ const Process = () => {
               <div className="bg-wg-gray-light rounded-2xl p-8">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white p-6 rounded-xl shadow-sm">
-                    <div className="text-3xl font-inter font-light text-wg-blue mb-2">98%</div>
-                    <p className="text-sm text-wg-gray font-light">{t('processPage.engineering.stats.0')}</p>
+                    <div className="text-3xl font-inter font-light text-wg-blue mb-2">ICCRI</div>
+                    <p className="text-sm text-wg-gray font-light">Base técnica de categorias, serviços, composições e lógica de execução.</p>
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-sm">
-                    <div className="text-3xl font-inter font-light text-wg-blue mb-2">100%</div>
-                    <p className="text-sm text-wg-gray font-light">{t('processPage.engineering.stats.1')}</p>
+                    <div className="text-3xl font-inter font-light text-wg-blue mb-2">Etapas WG</div>
+                    <p className="text-sm text-wg-gray font-light">Sequência operacional para orientar briefing, aprovações, compras, produção e obra.</p>
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-sm">
-                    <div className="text-3xl font-inter font-light text-wg-blue mb-2">14+</div>
-                    <p className="text-sm text-wg-gray font-light">{t('processPage.engineering.stats.2')}</p>
+                    <div className="text-3xl font-inter font-light text-wg-blue mb-2">Leitura guiada</div>
+                    <p className="text-sm text-wg-gray font-light">Camada editorial para visualizar ritmo, frentes e dependências antes do cronograma real.</p>
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-sm">
                     <div className="flex items-center gap-2 mb-2">

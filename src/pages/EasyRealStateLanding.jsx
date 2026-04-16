@@ -7,58 +7,58 @@ import {
   Shield, BarChart3, Building2, Phone, Zap, Calculator, Link2
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { COMPANY, EASYREALSTATE_PRECOS, PRODUCT_URLS } from '@/data/company';
+import { COMPANY, EASYREALSTATE_PRECOS, PRODUCT_URLS, WG_PRODUCT_MESSAGES } from '@/data/company';
 
 const EasyRealStateLanding = () => {
   const pageUrl = `${PRODUCT_URLS.site}/easy-real-state`
 
   const planos = [
     {
-      label: 'Gratuito',
+      label: 'Cálculo Público',
       price: 'R$ 0',
-      period: '/sempre',
-      desc: '3 avaliações por mês',
+      period: '/entrada',
+      desc: 'Para validar a metodologia',
       cor: '#60a5fa',
       destaque: false,
       features: [
-        '3 cálculos de m²/mês',
-        'Dados reais de mercado',
+        'AVM público em São Paulo',
         'Link para compartilhar',
+        'Sem cartão e sem login',
       ],
-      cta: 'Começar grátis',
+      cta: 'Abrir cálculo',
       href: `${PRODUCT_URLS.easyrealstate}/calculo`,
     },
     {
-      label: 'Pro Corretor',
-      price: 'R$ 49',
-      period: '/mês',
-      desc: 'Para corretores autônomos',
+      label: 'Trial Assistido',
+      price: '7 dias',
+      period: '/ativação',
+      desc: 'Para validar aderência com apoio da equipe',
       cor: '#f97316',
       destaque: true,
       features: [
-        'Avaliações ilimitadas',
-        'Histórico de análises',
-        'Link personalizado para cliente',
-        'Integração com ObraEasy (EVF)',
-        'Relatório em PDF',
+        'Cadastro validado pela equipe',
+        'Acesso inicial ao núcleo do produto',
+        'Onboarding assistido',
+        'Leitura de casos reais de captação',
         'Suporte por WhatsApp',
+        'Sem cartão de crédito',
       ],
-      cta: 'Assinar Pro',
-      href: `${PRODUCT_URLS.easyrealstate}/calculo`,
+      cta: 'Solicitar trial',
+      href: `${PRODUCT_URLS.easyrealstate}/cadastro`,
     },
     {
-      label: 'Imobiliária',
+      label: 'Site + Sistema',
       price: EASYREALSTATE_PRECOS.imobiliaria.price,
-      period: '/mês',
-      desc: 'Para times e imobiliárias',
+      period: '',
+      desc: 'Para operação imobiliária completa',
       cor: '#a855f7',
       destaque: false,
       features: [
-        'Tudo do Pro',
-        'Múltiplos corretores',
-        'White-label (sua marca)',
-        'Dashboard com métricas',
-        'API de integração',
+        'Site imobiliário com sua marca',
+        'Sistema EasyRealState no mesmo fluxo',
+        'Estrutura para time comercial',
+        'Projeto e implantação consultiva',
+        'White-label por tenant',
         'Suporte prioritário',
       ],
       cta: 'Falar com consultor',
@@ -69,8 +69,8 @@ const EasyRealStateLanding = () => {
   const funcionalidades = [
     {
       icon: Calculator,
-      titulo: 'Calculadora de Valor de Mercado',
-      desc: 'Preço por m² por bairro em São Paulo, baseado em transações reais (FipeZAP, DataZAP, QuintoAndar). Atualizado continuamente.',
+      titulo: 'AVM comercial com leitura real',
+      desc: 'Preço por m² com transações reais, regras de micro-mercado e fatores comerciais do imóvel, sem exigir leitura técnica pesada do usuário.',
     },
     {
       icon: MapPin,
@@ -79,23 +79,23 @@ const EasyRealStateLanding = () => {
     },
     {
       icon: Link2,
-      titulo: 'Link de Reforma Integrado',
-      desc: 'Após o cálculo do valor, seu cliente vê o custo estimado de reforma via ObraEasy. Dois estudos em um · na mesma conversa.',
+      titulo: 'Link compartilhável de avaliação',
+      desc: 'O corretor consegue enviar a leitura ao cliente sem reescrever argumento manualmente, com a lógica pesada já organizada por trás.',
     },
     {
       icon: BarChart3,
-      titulo: 'Relatório Profissional',
-      desc: 'PDF pronto para enviar ao cliente. Valor estimado, faixa mínima e máxima, bairro, tipologia e fonte dos dados.',
+      titulo: 'Faixa e contexto de mercado',
+      desc: 'Não é um número solto. O resultado mostra faixa estimada, contexto do bairro e leitura auxiliar de oferta de forma objetiva e acionável.',
     },
     {
       icon: Shield,
       titulo: 'Dados Verificados',
-      desc: 'Fontes: FipeZAP, DataZAP, QuintoAndar e base própria de 53+ transações reais em SP. Metodologia transparente.',
+      desc: 'Fontes: transações reais, comparáveis de mercado e metodologia operacional revisada. Leitura transparente da origem dos dados.',
     },
     {
       icon: TrendingUp,
-      titulo: 'Histórico e Pipeline',
-      desc: 'Salve todas as análises e acompanhe o histórico de cada cliente e imóvel. Seu CRM de avaliação imobiliária.',
+      titulo: 'Núcleo operacional em evolução',
+      desc: 'Leads, imóveis, agenda e pipeline já aparecem no produto e evoluem para a operação comercial completa.',
     },
   ]
 
@@ -119,12 +119,12 @@ const EasyRealStateLanding = () => {
     {
       numero: '03',
       titulo: 'Envie para seu cliente',
-      desc: 'Link público ou PDF profissional com sua marca. Credibilidade técnica na proposta.',
+      desc: 'Link público com faixa estimada e leitura comercial do imóvel. Credibilidade técnica na proposta.',
     },
     {
       numero: '04',
-      titulo: 'Ofereça o estudo de reforma',
-      desc: 'Com um clique, seu cliente acessa o ObraEasy e descobre quanto custa reformar o imóvel.',
+      titulo: 'Evolua para o próximo passo',
+      desc: 'Quando fizer sentido, o ecossistema conecta AVM, ICCRI, EVF e estudo de reforma no mesmo raciocínio comercial.',
     },
   ]
 
@@ -133,27 +133,27 @@ const EasyRealStateLanding = () => {
     {
       titulo: 'Somente o Sistema',
       subtitulo: 'EasyRealState SaaS',
-      desc: 'Acesse a calculadora de valor de mercado e gerencie suas avaliações. Ideal para quem já tem site próprio ou não precisa de presença digital nova.',
+      desc: 'Use o AVM público e solicite o trial assistido para validar a aderência da experiência antes de estruturar a operação completa.',
       itens: [
-        'Calculadora de m² com dados reais',
-        'Histórico e gestão de análises',
+        'AVM público com dados reais',
+        'Trial assistido com a equipe',
         'Link de compartilhamento',
-        'Integração com ObraEasy',
-        'Planos a partir de R$0',
+        'Base para evolução operacional',
+        'Entrada sem cartão',
       ],
-      cta: 'Criar conta grátis',
-      href: `${PRODUCT_URLS.easyrealstate}/calculo`,
+      cta: 'Solicitar trial',
+      href: `${PRODUCT_URLS.easyrealstate}/cadastro`,
       destaque: false,
     },
     {
       titulo: 'Site + Sistema',
       subtitulo: 'Solução completa personalizada',
-      desc: 'Site imobiliário profissional com catálogo de imóveis, área do corretor, CRM completo e o sistema EasyRealState integrado. Projeto desenvolvido pela WG BuildTech.',
+      desc: 'Site imobiliário profissional com catálogo, operação comercial e a leitura Easy Real State conectada ao ecossistema WG. Projeto consultivo da WG BuildTech.',
       itens: [
         'Site institucional com sua marca',
         'Catálogo de imóveis exclusivos',
         'Área do corretor parceiro (login)',
-        'CRM completo (leads, pipeline, comissões)',
+        'Operação comercial estruturada',
         'Sistema EasyRealState integrado',
         'Suporte e manutenção inclusos',
       ],
@@ -167,8 +167,8 @@ const EasyRealStateLanding = () => {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'EasyRealState · Calculadora de Valor Imobiliário',
-    description:
-      'Plataforma para corretores e imobiliárias calcular o valor de mercado de imóveis em São Paulo. Dados reais de FipeZAP, DataZAP e QuintoAndar. Integração com estudo de reforma via ObraEasy.',
+        description:
+      'Experiência digital para corretores e imobiliárias lerem o valor de mercado de imóveis em São Paulo com base transacional, leitura comercial e trial assistido.',
     url: pageUrl,
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
@@ -184,7 +184,7 @@ const EasyRealStateLanding = () => {
       <SEO
         pathname="/easy-real-state"
         title="EasyRealState · Calculadora de Valor de Imóvel para Corretores"
-        description="Calcule o valor de mercado de imóveis em São Paulo com dados reais. Para corretores e imobiliárias. Integrado com estudo de reforma ObraEasy. Grátis para começar."
+        description="Use o EasyRealState para ler valor de mercado com base real em São Paulo. AVM comercial, link compartilhável e trial assistido para corretores e imobiliárias."
         keywords="calculadora valor imóvel, preço m² são paulo, avaliação imobiliária, ferramenta corretor, software imobiliário, EasyRealState, quanto vale meu imóvel"
         url={pageUrl}
         schema={schema}
@@ -213,7 +213,7 @@ const EasyRealStateLanding = () => {
               transition={{ duration: 0.7, delay: 0.08 }}
               className="wg-page-hero-kicker text-wg-orange"
             >
-              Para Corretores e Imobiliárias
+              B2B para corretores, imobiliárias e decisores de investimento
             </motion.span>
 
             <motion.h1
@@ -222,7 +222,7 @@ const EasyRealStateLanding = () => {
               transition={{ duration: 0.8, delay: 0.18 }}
               className="wg-page-hero-title"
             >
-              Quanto vale o imóvel <span className="text-wg-orange">do seu cliente?</span>
+              Valor atual, fechamento real e <span className="text-wg-orange">captura de valor</span> na mesma leitura.
             </motion.h1>
 
             <motion.p
@@ -231,7 +231,7 @@ const EasyRealStateLanding = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="wg-page-hero-subtitle max-w-3xl"
             >
-              Calculadora de valor de mercado por m² com dados reais de São Paulo. Apresente avaliações profissionais em segundos e ainda mostre o custo de reforma.
+              O Easy Real State cruza AVM, ITBI, contexto de mercado e potencial pós-obra para apoiar decisões imobiliárias de maior complexidade e ticket.
             </motion.p>
 
             <motion.p
@@ -240,7 +240,25 @@ const EasyRealStateLanding = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="wg-page-hero-body max-w-3xl"
             >
-              Dados: FipeZAP · DataZAP · QuintoAndar · 53+ transações reais em SP.
+              {WG_PRODUCT_MESSAGES.easyRealStateB2B}
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.48 }}
+              className="wg-page-hero-body max-w-3xl"
+            >
+              {WG_PRODUCT_MESSAGES.wgExperienceCore}
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.54 }}
+              className="wg-page-hero-body max-w-3xl"
+            >
+              {WG_PRODUCT_MESSAGES.easyRealStateConfidence}
             </motion.p>
 
             <motion.div
@@ -252,23 +270,58 @@ const EasyRealStateLanding = () => {
               <a href={`${PRODUCT_URLS.easyrealstate}/calculo`} target="_blank" rel="noopener noreferrer">
                 <Button className="btn-apple text-base px-6 py-3">
                   <Calculator className="mr-2 w-4 h-4" />
-                  Calcular agora · é grátis
+                  Ver metodologia em ação
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
-              <a href={`tel:${COMPANY.phoneRaw}`} className="inline-flex items-center justify-center rounded-2xl border border-white/45 bg-white/5 px-6 py-3 text-sm text-white transition-colors hover:bg-white hover:text-wg-black">
-                Quero site + sistema
+              <a href={COMPANY.ceoWhatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-2xl border border-white/45 bg-white/5 px-6 py-3 text-sm text-white transition-colors hover:bg-white hover:text-wg-black">
+                Fale com o CEO
               </a>
             </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.62 }}
               className="text-xs text-white/40"
             >
-              Grátis para começar · Sem cartão de crédito
+              AVM · ITBI · potencial pós-obra · tese experimental, assistida ou defensável conforme a base real do caso
             </motion.p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding-tight-top bg-white">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-2xl border border-orange-100 bg-orange-50 p-6">
+              <span className="text-xs tracking-widest uppercase text-orange-700 block mb-2">Camada 1</span>
+              <h3 className="text-xl font-inter text-wg-black mb-2">AVM · valor atual</h3>
+              <p className="text-sm text-wg-gray font-light">
+                Preço por m², comparáveis, contexto de bairro e score de confiança.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-sky-100 bg-sky-50 p-6">
+              <span className="text-xs tracking-widest uppercase text-sky-700 block mb-2">Camada 2</span>
+              <h3 className="text-xl font-inter text-wg-black mb-2">ITBI · fechamento real</h3>
+              <p className="text-sm text-wg-gray font-light">
+                Ticket real, liquidez e faixa observada de fechamento no bairro ou CEP.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-6">
+              <span className="text-xs tracking-widest uppercase text-emerald-700 block mb-2">Camada 3</span>
+              <h3 className="text-xl font-inter text-wg-black mb-2">Pós-obra · captura</h3>
+              <p className="text-sm text-wg-gray font-light">
+                Potencial pós-obra com base em custo real, escopo real e inteligência operacional WG.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-fuchsia-100 bg-fuchsia-50 p-6">
+              <span className="text-xs tracking-widest uppercase text-fuchsia-700 block mb-2">Camada 4</span>
+              <h3 className="text-xl font-inter text-wg-black mb-2">Confiança da tese</h3>
+              <p className="text-sm text-wg-gray font-light">
+                A leitura não precisa fingir certeza. O motor indica quando a tese ainda é experimental, quando já está assistida por base real e quando começa a ficar defensável.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -277,9 +330,9 @@ const EasyRealStateLanding = () => {
       <section className="section-padding-tight-top bg-wg-gray-light">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Duas formas de usar</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Duas formas de contratar</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
-              Só o sistema ou a solução completa
+              Validação assistida ou operação imobiliária completa
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -321,9 +374,9 @@ const EasyRealStateLanding = () => {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Como funciona</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Mecanismo de decisão</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
-              Do valor do imóvel ao custo da reforma · em um clique
+              Do valor do ativo ao potencial de captura
             </h2>
           </motion.div>
           <div className="max-w-4xl mx-auto space-y-6">
@@ -352,7 +405,7 @@ const EasyRealStateLanding = () => {
       <section className="section-padding bg-wg-gray-light">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Recursos da plataforma</span>
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Recursos da experiência</span>
             <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black">
               Tudo que um corretor precisa para fechar mais negócios
             </h2>
@@ -366,6 +419,38 @@ const EasyRealStateLanding = () => {
                 <p className="text-wg-gray font-light text-sm leading-relaxed">{f.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto text-center mb-10">
+            <span className="text-wg-orange text-sm tracking-widest uppercase mb-4 block">Base metodológica</span>
+            <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black mb-4">
+              Desenvolvido com leitura de mercado nacional e internacional
+            </h2>
+            <p className="text-wg-gray font-light leading-relaxed">
+              {WG_PRODUCT_MESSAGES.easyRealStateBenchmarks}
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="rounded-2xl bg-wg-gray-light p-6">
+              <h3 className="text-lg font-inter text-wg-black mb-3">Referências brasileiras</h3>
+              <ul className="space-y-2 text-sm text-wg-gray font-light">
+                <li>• Loft Dados</li>
+                <li>• FipeZap</li>
+                <li>• DataZAP</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl bg-wg-gray-light p-6">
+              <h3 className="text-lg font-inter text-wg-black mb-3">Referências internacionais</h3>
+              <ul className="space-y-2 text-sm text-wg-gray font-light">
+                <li>• Zillow Zestimate</li>
+                <li>• HouseCanary</li>
+                <li>• Redfin</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -439,23 +524,22 @@ const EasyRealStateLanding = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto">
             <Zap className="w-12 h-12 mx-auto mb-6 text-wg-orange" />
             <h2 className="text-3xl md:text-4xl font-inter font-light mb-4">
-              Feche mais negócios com dados reais
+              Se o ativo pede decisão séria, a leitura também precisa ser séria
             </h2>
             <p className="text-white/70 mb-10 text-lg leading-relaxed">
-              Apresente avaliações profissionais aos seus clientes e ainda mostre o custo de
-              reforma do imóvel · tudo em uma só ferramenta.
+              Use o Easy Real State para defender valor atual, fechamento real e potencial pós-obra com muito mais clareza comercial e técnica.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`${PRODUCT_URLS.easyrealstate}/calculo`} target="_blank" rel="noopener noreferrer">
                 <Button className="btn-apple text-lg px-8 py-4">
                   <Zap className="mr-2 w-5 h-5" />
-                  Calcular agora · grátis
+                  Ver metodologia em ação
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
-              <a href={`tel:${COMPANY.phoneRaw}`} className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
+              <a href={`tel:${COMPANY.ceoPhoneRaw}`} className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
                 <Phone className="w-5 h-5" />
-                {COMPANY.phone}
+                Fale com o CEO · {COMPANY.ceoPhone}
               </a>
             </div>
           </motion.div>

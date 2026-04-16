@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import SEO from '@/components/SEO';
 import { SCHEMAS } from '@/data/schemaConfig';
 import { normalizeUnsplashImageUrl } from '@/lib/unsplash';
+import SafeImage from '@/components/SafeImage';
+import { withBasePath } from '@/utils/assetPaths';
 
 const ProductsList = lazy(() => import('@/components/ProductsList'));
 
@@ -13,6 +15,7 @@ const STORE_HERO_IMAGE = normalizeUnsplashImageUrl('https://images.unsplash.com/
   height: 1080,
   quality: 80,
 });
+const STORE_HERO_FALLBACK = withBasePath('/images/banners/MARCENARIA.webp');
 
 const Store = () => {
   const { t } = useTranslation();
@@ -30,10 +33,11 @@ const Store = () => {
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
           {/* Imagem de luminárias/decoração */}
-          <img
+          <SafeImage
             className="w-full h-full object-cover"
             alt={t('storePage.hero.imageAlt')}
             src={STORE_HERO_IMAGE}
+            fallbackSrc={STORE_HERO_FALLBACK}
             width="1920"
             height="1080"
             decoding="async"

@@ -22,6 +22,8 @@ featured: false
 
 Projetos premium exigem linguagem tecnica clara. As normas NBR 6492 e NBR 10068 padronizam a representacao grafica e o formato das pranchas, garantindo entendimento preciso entre cliente, equipe e orgaos de aprovacao.
 
+Na pratica, isso nao serve apenas para "desenhar certo". Serve para reduzir ambiguidades justamente nas fases em que uma decisao mal representada vira atraso, retrabalho ou compra errada.
+
 ---
 
 ## NBR 6492: representacao de projetos de arquitetura
@@ -59,12 +61,13 @@ Essa padronizacao facilita reproducao, arquivo e leitura por qualquer profission
 - **Mais clareza** para aprovacoes em orgaos oficiais
 - **Menos retrabalho** durante a execucao
 - **Mais previsibilidade** no cronograma
+- **Mais seguranca** para medicoes, detalhamento e producoes paralelas
 
 ---
 
 ## Conclusao
 
-Normas tecnicas nao sao burocracia. Sao o alicerce da excelencia operacional. Um projeto bem representado reduz riscos e eleva a qualidade da entrega.
+Normas tecnicas nao sao burocracia. Sao o alicerce da excelencia operacional. Um projeto bem representado reduz riscos e eleva a qualidade da entrega porque ajuda a obra a seguir a mesma leitura do projeto.
 
 ## Proximo passo
 

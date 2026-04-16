@@ -1,5 +1,5 @@
 ---
-title: "Tabela de Precos de Reforma 2026 — ICCRI: O Indice de Referencia para Obras em Sao Paulo"
+title: "Tabela de Preços de Reforma 2026 — ICCRI: O índice de referência para obras em São Paulo"
 slug: "tabela-precos-reforma-2026-iccri"
 excerpt: "A primeira tabela de referencia de precos de reforma para o Alto Padrao em SP: quanto custa reformar por m2 em 2026, categorizado por tipo de servico, padrao e bairro. Referencia tecnica Grupo WG Almeida."
 image: "/images/banners/foto-obra-2.jpg"
@@ -10,17 +10,17 @@ featured: true
 tags: ["tabela precos reforma 2026", "quanto custa reforma m2", "preco reforma apartamento SP", "ICCRI", "indice reforma", "custo obra", "reforma alto padrao", "m2 reforma 2026"]
 ---
 
-# Tabela de Precos de Reforma 2026 — ICCRI
+# Tabela de Preços de Reforma 2026 — ICCRI
 
 O mercado de reformas no Brasil sofre de um problema crônico: a ausência de um índice de referência confiável, transparente e atualizado. Clientes não sabem se o orçamento que receberam é justo. Arquitetos precisam justificar cada linha para o cliente. Engenheiros não têm base comparativa para precificar com precisão. Isso gera insegurança em todos os lados da negociação.
 
-O ICCRI — Índice de Custo da Construção e Reforma Inteligente foi desenvolvido pelo Grupo WG Almeida a partir de 15 anos de dados reais de obra em São Paulo. É a nossa contribuição para normalizar a precificação do setor.
+O ICCRI — Índice de Custo da Construção e Reforma Inteligente foi desenvolvido pelo Grupo WG Almeida a partir de 15 anos de dados reais de obra em São Paulo. Ele nao e so uma tabela de preco: e a camada proprietaria que conecta categorias, servicos, composições e leitura operacional da obra.
 
-## Resposta Direta (ICCRI 2026)
+## Resposta direta (ICCRI 2026)
 
 Em São Paulo, o custo de reforma em 2026 varia de **R$ 900 a R$ 5.500+ por m²**, dependendo do padrão de acabamento, escopo técnico e localização. Em projetos de alto padrão, a faixa prática costuma ficar entre **R$ 3.000 e R$ 5.500 por m²** na reforma civil, com adicionais de marcenaria e infraestrutura.
 
-Use esta tabela como referência de validação de orçamento e, em seguida, rode a simulação nas ferramentas para obter um cenário aplicado ao seu imóvel.
+Use esta tabela como referência de validacao de orcamento e, em seguida, rode a simulacao nas ferramentas para obter um cenario aplicado ao seu imovel.
 
 👉 **[Calcule seu custo agora](https://obraeasy.wgalmeida.com.br/evf4)** com base no ICCRI.
 
@@ -28,21 +28,31 @@ Use esta tabela como referência de validação de orçamento e, em seguida, rod
 
 ## O que é o ICCRI?
 
-O ICCRI é uma tabela de referência técnica para precificação de serviços de reforma e construção, com base em:
+O ICCRI e uma referencia tecnica para precificacao de servicos de reforma e construcao, mas o valor real dele esta em organizar a leitura da obra para tomada de decisao. As bases de mercado entram como referencia; a metodologia WG organiza a experiencia.
+
+Ele se apoia em:
 
 - Custo real de execução — dados de projetos entregues entre 2020 e 2026
 - Fator de localização — ajuste por bairro em São Paulo
-- Fator de complexidade — padrão econômico, médio, alto e luxo
+- Fator de complexidade — faixas Essencial, Equilibrado, Superior e Exclusivo
 - Fator de mão de obra — diferenciação entre equipes genéricas e especialistas certificados
-- Índice de atualização — revisado trimestralmente com INCC e CUB-SP
+- Indice de atualizacao — revisado trimestralmente com INCC e CUB-SP
+
+Na pratica, isso permite sair da pergunta `quanto custa por m2?` e ir para perguntas mais uteis:
+
+- o que comeca antes?
+- o que depende de medicao?
+- o que precisa de aprovacao?
+- o que entra em producao paralela?
+- o que so instala no fechamento?
 
 ---
 
-## Tabela de Precos de Reforma por Categoria — 2026
+## Tabela de Preços de Reforma por Categoria — 2026
 
 ### Reforma Civil Completa (por m²)
 
-| Padrão | Econômico | Médio | Alto Padrão | Luxo/Custom |
+| Padrão | Essencial | Equilibrado | Superior | Exclusivo |
 |--------|-----------|-------|-------------|-------------|
 | Custo base/m² | R$ 900–1.400 | R$ 1.600–2.500 | R$ 3.000–5.500 | R$ 6.000+ |
 | Prazo médio (60m²) | 90–120 dias | 75–100 dias | 60–90 dias | 45–75 dias |
@@ -54,17 +64,17 @@ O que inclui: demolição, alvenaria, regularização, revestimentos, pintura, i
 
 ### Marcenaria Sob Medida (por m² linear)
 
-| Padrão | Econômico | Médio | Alto Padrão | Luxo/Custom |
+| Padrão | Essencial | Equilibrado | Superior | Exclusivo |
 |--------|-----------|-------|-------------|-------------|
 | Custo/m² linear | R$ 500–900 | R$ 1.100–2.000 | R$ 2.800–6.000 | Customizado |
 | Material base | MDF simples | MDF BP Premium | MDF/Madeira maciça | Madeira nobre + detalhes |
-| Ferragens | Básico | Semi-premium | Blum / Häfele | Importado premium |
+| Ferragens | Essencial | Equilibrado | Blum / Häfele | Importado premium |
 
 ---
 
 ### Infraestrutura — Elétrica e Hidráulica (por m²)
 
-| Serviço | Econômico | Médio | Alto Padrão |
+| Serviço | Essencial | Equilibrado | Exclusivo |
 |---------|-----------|-------|-------------|
 | Elétrica completa/m² | R$ 280–450 | R$ 550–900 | R$ 1.100–1.800 |
 | Hidráulica completa/m² | R$ 200–380 | R$ 480–750 | R$ 900–1.500 |
@@ -72,7 +82,7 @@ O que inclui: demolição, alvenaria, regularização, revestimentos, pintura, i
 
 ---
 
-## Fatores de Ajuste — Como o ICCRI Funciona na Prática
+## Fatores de Ajuste — Como o ICCRI funciona na prática
 
 ### Fator Localização (Multiplicador sobre preço base)
 
@@ -122,13 +132,13 @@ Este é o diferencial mais negligenciado do mercado. A diferença entre uma equi
 
 ### Apartamento 60m² — Reforma Completa
 
-Padrão Econômico
+Faixa Essencial
 - Civil: R$ 1.200/m² × 60 = R$ 72.000
 - Marcenaria básica: R$ 700/m² × 15m = R$ 10.500
 - Elétrica + hidráulica: R$ 700/m² × 60 = R$ 42.000
 - Total estimado: R$ 115.000–140.000
 
-Alto Padrão (ex: Itaim Bibi)
+Faixa Superior (ex: Itaim Bibi)
 - Civil: R$ 4.000/m² × 60 × fator localização 1,15 = R$ 276.000
 - Marcenaria: R$ 4.200/m² × 20m = R$ 84.000
 - Elétrica + hidráulica + automação: R$ 2.000/m² × 60 = R$ 120.000
@@ -136,20 +146,20 @@ Alto Padrão (ex: Itaim Bibi)
 
 ---
 
-## Como Usar Esta Tabela Corretamente
+## Como usar esta tabela corretamente
 
-Esta tabela é uma referência de mercado, não um orçamento. Para obter um orçamento real:
+Esta tabela e uma referencia de mercado, nao um orcamento. Para obter um orcamento real:
 
 1. Levantamento técnico em visita — sem visita ao imóvel, qualquer número é chute
 2. Memorial descritivo — especificação exata de materiais e acabamentos
 3. Compatibilização de projetos — confrontar projeto arquitetônico, estrutural, elétrico e hidráulico antes de iniciar
 4. Cronograma físico-financeiro — liberação de verbas por etapas, com marcos de entrega definidos
 
-O [ObraEasy](/obraeasy) foi desenvolvido exatamente para tornar esse processo transparente: você acompanha cada etapa em tempo real, com fotos do diário de obra, alertas de desvio e aprovação de pagamentos por fase.
+O [ObraEasy](/obraeasy) foi desenvolvido exatamente para tornar esse processo transparente: voce acompanha cada etapa em tempo real, com fotos do diario de obra, alertas de desvio e aprovacao de pagamentos por fase. O sistema usa referencias de mercado, mas organiza a obra pela logica operacional WG.
 
 ---
 
-## Aplicacao Pratica por Perfil (ICCRI + Ferramentas)
+## Aplicação prática por perfil (ICCRI + Ferramentas)
 
 ### Cliente Final
 
@@ -157,7 +167,7 @@ O [ObraEasy](/obraeasy) foi desenvolvido exatamente para tornar esse processo tr
 - [Conhecer a plataforma ObraEasy](/obraeasy)
 - [Solicitar proposta tecnica com levantamento](/solicite-proposta)
 
-### Corretor e Imobiliaria
+### Corretor e imobiliária
 
 - [Calcular valor com AVM EasyRealState](https://easyrealstate.wgalmeida.com.br/calculo)
 - [Conhecer o EasyRealState](/easy-real-state)
@@ -171,7 +181,7 @@ O [ObraEasy](/obraeasy) foi desenvolvido exatamente para tornar esse processo tr
 
 ---
 
-## Veja Tambem (ICCRI + Ferramentas)
+## Veja Também (ICCRI + Ferramentas)
 
 - [ICCRI · Indice oficial WG Almeida](/iccri)
 - [Custo de reforma por m2 em Sao Paulo](/blog/custo-reforma-m2-sao-paulo)
@@ -188,7 +198,7 @@ O [ObraEasy](/obraeasy) foi desenvolvido exatamente para tornar esse processo tr
 
 ---
 
-## Perguntas Frequentes sobre Precos de Reforma
+## Perguntas Frequentes sobre Preços de Reforma
 
 Posso usar esses valores para fechar contrato?
 Não diretamente. Use como referência para validar orçamentos recebidos. Valores 30%+ abaixo da tabela merecem investigação — podem indicar omissão de escopo, material inferior ou mão de obra desqualificada.
@@ -201,11 +211,13 @@ Onde encontro o orçamento completo para meu projeto?
 
 ---
 
-## Conclusão: Normalização como Estratégia de Confiança
+## Conclusão: normalização como estratégia de confiança
 
 O setor de reformas e construção civil perde negócios todos os dias por falta de transparência na precificação. Clientes com medo do preço imprevisível adiam decisões ou escolhem mal.
 
-O ICCRI é o começo de uma conversa diferente: onde o preço tem fundamento técnico, o cliente entende o que está pagando e o prestador é remunerado de forma justa pela qualidade que entrega.
+O ICCRI e o comeco de uma conversa diferente: onde o preco tem fundamento tecnico, o cliente entende o que esta pagando e o prestador e remunerado de forma justa pela qualidade que entrega.
+
+Mas a diferenca competitiva nao esta apenas em publicar uma faixa de valor. Ela aparece quando custo, prazo, categoria, servico e etapa operacional passam a conversar no mesmo sistema.
 
 Esta é a base do que construímos no Grupo WG Almeida.
 

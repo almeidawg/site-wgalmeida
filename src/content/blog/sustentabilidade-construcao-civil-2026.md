@@ -17,6 +17,8 @@ featured: false
 
 Se voce quer construir com menor custo operacional e menos desperdicio, estas 15 praticas de sustentabilidade ajudam a melhorar desempenho da obra sem perder qualidade de entrega.
 
+Mas sustentabilidade boa nao e uma lista de produtos verdes soltos. Ela precisa entrar na decisao de projeto, na escolha de sistema construtivo, na compra e na operacao futura do imovel.
+
 ## Por Que Construir de Forma Sustentável?
 
 ### Benefícios Ambientais
@@ -67,6 +69,8 @@ Vantagens:
 - Isolamento térmico superior
 - Encaixes (menos argamassa)
 - Economia 40% vs tijolo comum
+
+Mesmo quando o material parece vantajoso, a decisao correta depende de disponibilidade local, equipe capacitada e compatibilidade com o metodo da obra.
 
 ### Tinta Ecológica
 Características:
@@ -160,6 +164,8 @@ Como:
 - Separação para reciclagem
 - Doar materiais bons retirados
 
+Ou seja: reduzir residuos tambem depende de governanca operacional, nao so de boa vontade.
+
 Custos:
 - Caçamba tradicional: R$ 250-400
 - Separação para reciclagem: +R$ 100
@@ -225,6 +231,8 @@ Como fazer:
 - Portas vazadas
 
 Resultado: Reduz 40-60% uso de ar condicionado
+
+Quando essas decisoes entram cedo no projeto, elas reduzem custo de operacao futura sem obrigar o cliente a compensar com tecnologia depois.
 
 ### Proteção Solar
 

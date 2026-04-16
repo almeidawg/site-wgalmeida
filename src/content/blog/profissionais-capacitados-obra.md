@@ -26,6 +26,8 @@ Um projeto excepcional pode se tornar um pesadelo se executado por profissionais
 
 Este artigo apresenta os profissionais essenciais em uma obra, suas funções, qualificações necessárias e como identificar bons profissionais.
 
+Mas o ponto central nao e apenas ter "bons nomes" no time. E ter cada profissional entrando na hora certa, com interface clara entre projeto, suprimentos, execucao e validacao.
+
 ---
 
 ## Por Que Profissionais Capacitados São Essenciais?
@@ -39,6 +41,7 @@ Obra com profissionais capacitados:
 ✅ Segurança garantida
 ✅ Resultado conforme projeto
 ✅ Durabilidade
+✅ Menos choque entre frentes e menos retrabalho por sequencia errada
 
 Obra com profissionais não capacitados:
 ❌ Atrasos constantes
@@ -56,6 +59,8 @@ Segundo estudo CBIC (Câmara Brasileira da Indústria da Construção):
 - 35% do custo de retrabalho é por execução incorreta
 
 Investir em profissionais capacitados economiza até 25% do custo total da obra.
+
+Na pratica, essa economia aumenta quando o time trabalha com metodo. Equipe boa sem governanca ainda pode gerar atraso, remobilizacao e compra fora de hora.
 
 ---
 
@@ -117,6 +122,7 @@ Líder operacional que executa e coordena no dia a dia.
 - Organização do canteiro
 - Relatórios para engenheiro
 - Resolução de problemas operacionais
+- Liberacao de frentes na sequencia correta
 
 #### Qualificações Necessárias
 ✅ Mínimo 5 anos de experiência
@@ -135,6 +141,7 @@ Sinais positivos:
 - Organização
 - Proatividade em resolver problemas
 - Respeito pela equipe
+- Entende dependencia entre obra civil, instalacoes e acabamentos
 
 Sinais de alerta:
 - Não tem portfólio

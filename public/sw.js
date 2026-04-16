@@ -1,10 +1,10 @@
 /**
  * Service Worker - Grupo WG Almeida
  * PWA com cache estrategico para performance
- * v3 - rotacao de cache para liberar bundles/editorial atualizados
+ * v4 - hardening contra cache de HTML em URLs de assets/imagens
  */
 
-const CACHE_VERSION = "v3-2026-04-09-editorial";
+const CACHE_VERSION = "v4-2026-04-15-static-guard";
 const STATIC_CACHE = `wgalmeida-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `wgalmeida-dynamic-${CACHE_VERSION}`;
 
@@ -102,8 +102,8 @@ async function cacheFirst(request) {
 
   try {
     const response = await fetch(request);
-    // Só cacheia respostas OK e do tipo basic (mesmo domínio)
-    if (response.ok && response.type === "basic") {
+    // Nunca cachear HTML em URL de asset estatico.
+    if (isCacheableStaticResponse(request, response)) {
       const cache = await caches.open(STATIC_CACHE);
       try {
         await cache.put(request, response.clone());
@@ -122,8 +122,8 @@ async function cacheFirst(request) {
 async function networkFirst(request) {
   try {
     const response = await fetch(request);
-    // Só cacheia respostas OK (200) e tipo basic
-    if (response.ok && response.status === 200 && response.type === "basic") {
+    // Só cacheia navegacao/paginas quando a resposta e realmente HTML.
+    if (isCacheableNavigationResponse(request, response)) {
       const cache = await caches.open(DYNAMIC_CACHE);
       try {
         await cache.put(request, response.clone());
@@ -151,8 +151,8 @@ async function staleWhileRevalidate(request) {
 
   const fetchPromise = fetch(request)
     .then(async (response) => {
-      // Só cacheia respostas OK e tipo basic
-      if (response.ok && response.type === "basic") {
+      // Nunca cachear HTML quando a URL esperada e de imagem.
+      if (isCacheableImageResponse(request, response)) {
         try {
           await cache.put(request, response.clone());
         } catch (e) {
@@ -164,4 +164,32 @@ async function staleWhileRevalidate(request) {
     .catch(() => cached);
 
   return cached || fetchPromise;
+}
+
+function getContentType(response) {
+  return response.headers.get("content-type") || "";
+}
+
+function isBasicOkResponse(response) {
+  return response.ok && response.status === 200 && response.type === "basic";
+}
+
+function isCacheableStaticResponse(request, response) {
+  const contentType = getContentType(response);
+  return isBasicOkResponse(response)
+    && !contentType.includes("text/html")
+    && !request.url.endsWith("/index.html");
+}
+
+function isCacheableNavigationResponse(request, response) {
+  const contentType = getContentType(response);
+  return isBasicOkResponse(response)
+    && request.mode === "navigate"
+    && contentType.includes("text/html");
+}
+
+function isCacheableImageResponse(request, response) {
+  const contentType = getContentType(response);
+  return isBasicOkResponse(response)
+    && (contentType.startsWith("image/") || request.destination === "image");
 }
