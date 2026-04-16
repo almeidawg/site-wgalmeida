@@ -140,21 +140,25 @@ const InteractivePreview = ({ colors = [], styles = [] }) => {
     [isDragging, handleSliderMove]
   );
 
+  const handleEndDrag = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
   useEffect(() => {
     if (isDragging) {
       window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('mouseup', () => setIsDragging(false));
+      window.addEventListener('mouseup', handleEndDrag);
       window.addEventListener('touchmove', handleTouchMove);
-      window.addEventListener('touchend', () => setIsDragging(false));
+      window.addEventListener('touchend', handleEndDrag);
     }
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', () => setIsDragging(false));
+      window.removeEventListener('mouseup', handleEndDrag);
       window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('touchend', () => setIsDragging(false));
+      window.removeEventListener('touchend', handleEndDrag);
     };
-  }, [isDragging, handleMouseMove, handleTouchMove]);
+  }, [isDragging, handleMouseMove, handleTouchMove, handleEndDrag]);
 
   const handlePrevRoom = () => {
     const currentIndex = DEMO_ROOMS.findIndex((r) => r.id === selectedRoom.id);
