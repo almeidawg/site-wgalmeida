@@ -28,6 +28,9 @@ Este AGENTS deve ser usado em conjunto com:
 - urls.ts: centralizado em `src/data/company.js`
 
 ## AUDIT
+- `npm run verify:fast`
+- `npm run verify:full`
+- `npm run verify:deploy`
 - `npm run check:imports`
 - `npm run audit:consistency`
 - `npm run audit:consistency:strict`
@@ -63,6 +66,17 @@ Este AGENTS deve ser usado em conjunto com:
 - Quando houver diferenca entre benchmark externo e motor interno, registrar a diferenca e explicitar a natureza da fonte em vez de misturar os dados.
 - Revisoes de blog que envolvam AVM, EVF, ROI, valorizacao, prazo, faixa ou precisao devem consultar a auditoria editorial central do EasyRealState.
 
+## GIT / CI / DEPLOY
+- `main` e branch protegida. Nao fazer push direto para `main`.
+- Fluxo obrigatorio: criar branch curta por bloco, commitar, abrir PR contra `main`, aguardar `build-and-test` e `deploy-gate-final`, mesclar e acompanhar pipeline da `main`.
+- Checks obrigatorios de protecao da `main`:
+  - `build-and-test`
+  - `deploy-gate-final`
+- SonarCloud pode aparecer como check externo nao bloqueante enquanto nao houver baseline oficial aprovado.
+- Deploy de producao e feito pela integracao Git da Vercel. Nao tratar job placeholder de GitHub Actions como fonte canonica de deploy.
+- Antes de push/PR, preferir `npm run verify:full`. Para fechamento de deploy com SEO, usar `npm run verify:deploy`.
+- Se um push direto para `main` falhar com `GH006`, nao alterar protecao para contornar: abrir PR e seguir o fluxo protegido.
+
 ## ROLLBACK
 - Deploy: rollback pelo painel Vercel.
 - Codigo: reverter commit e rerodar validacoes obrigatorias.
@@ -77,5 +91,5 @@ Site institucional e camada de aquisicao do ecossistema WG, integrado com produt
 3. Definir alteracao por bloco.
 4. Implementar sem duplicar fonte de dados.
 5. Em blog/i18n, validar `pt-BR`, `en` e `es` em listagem + detalhe e checar header responsivo.
-6. Rodar check/imports + audit strict + build.
+6. Rodar `npm run verify:full` antes de PR/deploy.
 7. Registrar evidencias no `RETURN-POINT.md`.

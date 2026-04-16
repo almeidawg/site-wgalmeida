@@ -3179,3 +3179,72 @@ site-wgalmeida/
 
 - Modulo `moodboard` com fluxo Cloudinary mais resiliente.
 - Proximo passo: commit/PR/deploy deste bloco e, em seguida, aprofundar UX/funcionalidade do moodboard se necessario.
+
+## 2026-04-16 - governanca: Git, CI e regras de deploy
+
+### Contexto
+
+- A tentativa de push direto para `main` falhou corretamente com `GH006`, pois a branch e protegida.
+- A protecao atual da `main` exige:
+  - `build-and-test`
+  - `deploy-gate-final`
+- SonarCloud aparece como check externo nao bloqueante enquanto nao houver baseline oficial.
+- O deploy real de producao e feito pela integracao Git da Vercel.
+
+### Acao executada
+
+- Atualizado `ci.yml`:
+  - Node do CI principal de `20.x` para `22`;
+  - `actions/checkout` para `v5`;
+  - `actions/setup-node` para `v5`;
+  - `codecov/codecov-action` para `v5`;
+  - `actions/upload-artifact` para `v6`;
+  - adicionadas permissoes minimas `contents: read`;
+  - adicionada concorrencia para cancelar runs obsoletos no mesmo ref;
+  - removido job `deploy` placeholder para evitar confusao com o deploy real da Vercel.
+- Atualizado `deploy-gate.yml`:
+  - Node 22 mantido;
+  - actions atualizadas para `checkout@v5` e `setup-node@v5`;
+  - adicionado `permissions: contents: read`;
+  - adicionado `concurrency`;
+  - gate agora roda `npm run verify:full`.
+- Atualizado `package.json`:
+  - criado `verify:fast`;
+  - criado `verify:full`;
+  - criado `verify:deploy`;
+  - `prepush` alinhado ao conjunto completo de lint/imports/auditorias/testes/build.
+- Atualizado `AGENTS.md` local:
+  - fluxo obrigatorio `branch -> commit -> PR -> checks -> merge -> acompanhar pipeline/main`;
+  - proibicao explicita de push direto para `main`;
+  - orientacao para tratar `GH006` abrindo PR, nao alterando protecao;
+  - registro de SonarCloud como nao bloqueante ate baseline oficial;
+  - Vercel definida como fonte canonica de deploy.
+
+### Validacao
+
+- Confirmadas tags oficiais via GitHub API:
+  - `actions/checkout@v5`
+  - `actions/setup-node@v5`
+  - `actions/upload-artifact@v6`
+  - `codecov/codecov-action@v5`
+- `npm run verify:full` -> OK
+  - lint OK
+  - imports OK
+  - auditoria consistencia OK
+  - auditoria consistencia strict OK
+  - testes: `35 passed`
+  - audit public claims strict OK
+  - build OK
+- `npm run prepush` -> OK
+  - lint OK
+  - imports OK
+  - auditoria consistencia OK
+  - auditoria consistencia strict OK
+  - testes: `35 passed`
+  - audit public claims strict OK
+  - build OK
+
+### Status para retomada
+
+- Governanca Git/CI ajustada sem enfraquecer a protecao da `main`.
+- Proximo passo: commit/PR/deploy deste bloco de governanca.
