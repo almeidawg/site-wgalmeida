@@ -116,6 +116,20 @@ const BLOG_SECTION_TARGETS = Object.fromEntries(
   })
 );
 
+// Returns the estimated H2 section title that a context slot would target.
+// context1 → lead (first section); context2-4 → evenly distributed like buildSectionImageInsertions.
+const estimateContextSlotSection = (slug, slotName, totalContextFilled = 4) => {
+  const sections = BLOG_SECTION_TARGETS[slug] || [];
+  if (sections.length === 0) return null;
+  const idx = CONTEXT_SLOT_NAMES.indexOf(slotName); // 0-3
+  if (idx < 0) return null;
+  if (idx === 0) return sections[0] || null; // lead → first section
+  // Remaining slots (idx 1-3) distributed among sections like buildSectionImageInsertions
+  const remainingCount = Math.max(1, totalContextFilled - 1);
+  const targetIdx = Math.round((idx * sections.length) / (remainingCount + 1)) - 1;
+  return sections[Math.max(0, Math.min(sections.length - 1, targetIdx))] || null;
+};
+
 const readLocalUploads = () => {
   if (typeof window === 'undefined') return {};
 
@@ -1508,7 +1522,7 @@ const AdminBlogEditorial = () => {
               const recordInputValue = urlInputBySlug?.[record.slug] || '';
               const recordInputError = urlErrorBySlug?.[record.slug] || '';
               const panelOpen = Boolean(openSearchPanelBySlug[record.slug]);
-              const panelQuery = searchQueryBySlug[record.slug] || record.slots?.[0]?.mainQuery || '';
+              const panelQuery = searchQueryBySlug[record.slug] ?? record.slots?.[0]?.mainQuery ?? '';
               const panelResult = searchResultsBySlug[record.slug] || { loading: false, photos: [], error: '' };
               const filledCount = recordTargetSlots.filter((s) => Boolean(slotStatesByName[s]?.previewUrl || slotStatesByName[s]?.publicId)).length;
               const totalSlots = recordTargetSlots.length;
@@ -1653,6 +1667,7 @@ const AdminBlogEditorial = () => {
                           const hasOvr = Boolean(uploads?.[record.slug]?.[slotName] || unsplashSelections?.[record.slug]?.[slotName]);
                           const slotKey = `${record.slug}:${slotName}`;
                           const isDropTarget = dragImagePayload && dragOverSlot === slotKey;
+                          const estimatedSection = estimateContextSlotSection(record.slug, slotName, filledCount || 4);
                           return (
                             <div
                               key={slotName}
@@ -1664,8 +1679,21 @@ const AdminBlogEditorial = () => {
                               {s?.previewUrl ? (
                                 <img src={s.previewUrl} alt={slotName} className="h-16 w-full object-cover" loading="lazy" />
                               ) : (
-                                <div className="flex h-16 items-center justify-center bg-[#F8F6F2]">
-                                  <span className="text-[8px] uppercase tracking-[0.08em] text-[#C5C0BA]">{isDropTarget ? '↓' : getSlotLabel(slotName)}</span>
+                                <div className="flex h-16 flex-col items-center justify-center gap-0.5 bg-[#F8F6F2] px-1">
+                                  <span className="text-[8px] uppercase tracking-[0.08em] text-[#C5C0BA]">
+                                    {isDropTarget ? '↓ Soltar' : getSlotLabel(slotName)}
+                                  </span>
+                                  {estimatedSection && !isDropTarget && (
+                                    <span className="line-clamp-2 text-center text-[7px] leading-tight text-[#B89E73]" title={estimatedSection.title}>
+                                      {estimatedSection.title}
+                                    </span>
+                                  )}
+                                </div>
+                              )}
+                              {/* Section label overlay on filled slots */}
+                              {s?.previewUrl && estimatedSection && (
+                                <div className="pointer-events-none absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-1 pb-0.5 pt-2">
+                                  <span className="line-clamp-1 text-[7px] leading-tight text-white/80">{estimatedSection.title}</span>
                                 </div>
                               )}
                               {isDropTarget && <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[#B89E73]/25" />}
