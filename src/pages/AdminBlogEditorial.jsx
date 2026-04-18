@@ -18,6 +18,8 @@ import {
   AlertCircle,
   ArrowLeft,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
   ChevronDown,
   ChevronUp,
   Copy,
@@ -186,6 +188,36 @@ const buildUnsplashSearchUrl = (query) =>
 
 const buildGoogleImageSearchUrl = (query) =>
   `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(query)}`;
+
+const buildGoogleDriveSearchUrl = (query) =>
+  `https://drive.google.com/drive/search?q=${encodeURIComponent(query)}`;
+
+const buildSearchSourceCards = (query, searchTerms = []) => {
+  const normalizedQuery = String(query || '').trim();
+  const normalizedTerms = [...new Set(searchTerms.filter(Boolean).map((term) => String(term).trim()).filter(Boolean))];
+  const variants = [normalizedQuery, ...normalizedTerms].filter(Boolean).slice(0, 4);
+
+  return variants.flatMap((term, index) => ([
+    {
+      id: `unsplash-${index}-${term}`,
+      label: 'Unsplash',
+      hint: term,
+      href: buildUnsplashSearchUrl(term),
+    },
+    {
+      id: `google-${index}-${term}`,
+      label: 'Google Imagens',
+      hint: term,
+      href: buildGoogleImageSearchUrl(term),
+    },
+    {
+      id: `drive-${index}-${term}`,
+      label: 'Google Drive',
+      hint: term,
+      href: buildGoogleDriveSearchUrl(term),
+    },
+  ]));
+};
 
 const buildUnsplashPhotoPageUrl = (photoId) =>
   photoId ? `https://unsplash.com/photos/${encodeURIComponent(photoId)}` : '';
@@ -656,6 +688,9 @@ const AdminBlogEditorial = () => {
   const cloudName = getCloudinaryEditorialCloudName();
   const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'wg_unsigned';
   const googleImageSearchApiKey = import.meta.env.VITE_GOOGLE_IMAGE_SEARCH_API_KEY || '';
+  const didHydrateSyncState = useRef(false);
+  const syncTimerRef = useRef(null);
+  const searchRailRefs = useRef({});
 
   useEffect(() => {
     setUploads(readLocalUploads());
@@ -1062,6 +1097,12 @@ const AdminBlogEditorial = () => {
       }
       return { ...current, [slug]: !isOpen };
     });
+  };
+
+  const scrollSearchRail = (slug, direction = 1) => {
+    const rail = searchRailRefs.current?.[slug];
+    if (!rail) return;
+    rail.scrollBy({ left: direction * 320, behavior: 'smooth' });
   };
 
   const runInlineUnsplashSearch = async (slug) => {
@@ -1524,8 +1565,10 @@ const AdminBlogEditorial = () => {
               const panelOpen = Boolean(openSearchPanelBySlug[record.slug]);
               const panelQuery = searchQueryBySlug[record.slug] ?? record.slots?.[0]?.mainQuery ?? '';
               const panelResult = searchResultsBySlug[record.slug] || { loading: false, photos: [], error: '' };
+              const searchSourceCards = buildSearchSourceCards(panelQuery || record.title, record.slots?.[0]?.searchTerms || []);
               const filledCount = recordTargetSlots.filter((s) => Boolean(slotStatesByName[s]?.previewUrl || slotStatesByName[s]?.publicId)).length;
               const totalSlots = recordTargetSlots.length;
+              const usesGenericBanner = typeof record.currentImage === 'string' && record.currentImage.startsWith('/images/banners/');
 
               const isDragging = dragSlug === record.slug;
               const isDragOver = dragOverSlug === record.slug;
@@ -1564,6 +1607,11 @@ const AdminBlogEditorial = () => {
                         </span>
                         {record.coverage.ready && (
                           <span className="rounded-full bg-[#EEF4EF] px-2.5 py-0.5 text-[10px] uppercase tracking-[0.14em] text-[#2E7D5A]">✓ Pronto</span>
+                        )}
+                        {usesGenericBanner && (
+                          <span className="rounded-full bg-wg-orange/10 px-2.5 py-0.5 text-[10px] uppercase tracking-[0.14em] text-wg-orange">
+                            Banner generico atual
+                          </span>
                         )}
                       </div>
                       <h2 className="text-lg font-semibold tracking-[-0.02em] text-[#1E2A3A]">{record.title}</h2>
@@ -1744,12 +1792,12 @@ const AdminBlogEditorial = () => {
                     </div>
                   )}
 
-                  {/* Unsplash search panel */}
+                  {/* Unified search panel */}
                   <div className="border-b border-[#EEE8DD]">
                     <button type="button" onClick={() => toggleSearchPanel(record.slug, record.slots?.[0]?.mainQuery || record.title)} className="flex w-full items-center justify-between gap-3 px-5 py-3 text-left transition hover:bg-[#FAFAF8]">
                       <div className="flex items-center gap-2">
                         <Search className="h-4 w-4 text-[#7A5B2F]" />
-                        <span className="text-sm font-medium text-[#1E2A3A]">Buscar no Unsplash</span>
+                        <span className="text-sm font-medium text-[#1E2A3A]">Buscar imagens</span>
                         {panelResult.photos.length > 0 && !panelOpen && (
                           <span className="rounded-full bg-[#EEF4EF] px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-[#2E7D5A]">
                             {panelResult.photos.length} foto{panelResult.photos.length !== 1 ? 's' : ''}
@@ -1770,7 +1818,7 @@ const AdminBlogEditorial = () => {
                             className="w-full rounded-xl border border-[#D7D1C5] bg-white px-4 py-2 text-sm text-[#1E2A3A] outline-none focus:border-[#B89E73]"
                           />
                           <Button type="button" onClick={() => runInlineUnsplashSearch(record.slug)} disabled={panelResult.loading || !panelQuery.trim()} className="shrink-0 bg-[#1E2A3A] text-sm text-white hover:bg-[#24354C] disabled:opacity-50">
-                            {panelResult.loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Search className="mr-2 h-4 w-4" />}Buscar
+                            {panelResult.loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Search className="mr-2 h-4 w-4" />}Unsplash
                           </Button>
                         </div>
 
@@ -1784,12 +1832,70 @@ const AdminBlogEditorial = () => {
                           </div>
                         )}
 
+                        {searchSourceCards.length > 0 && (
+                          <div className="mt-3 rounded-2xl border border-black/10 bg-[#FAFBFB] p-3">
+                            <div className="flex items-center justify-between gap-3">
+                              <div>
+                                <p className="text-[10px] uppercase tracking-[0.18em] text-[#7C7C7C]">Busca expandida</p>
+                                <p className="text-xs text-[#5B6470]">Abra pesquisas paralelas no Google Imagens e Google Drive sem sair da mesma curadoria.</p>
+                              </div>
+                              <div className="hidden items-center gap-1 sm:flex">
+                                <button
+                                  type="button"
+                                  onClick={() => scrollSearchRail(record.slug, -1)}
+                                  className="rounded-full border border-black/10 bg-white p-1.5 text-[#5B6470] transition hover:border-wg-orange hover:text-wg-orange"
+                                  aria-label="Ver buscas anteriores"
+                                >
+                                  <ChevronLeft className="h-4 w-4" />
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => scrollSearchRail(record.slug, 1)}
+                                  className="rounded-full border border-black/10 bg-white p-1.5 text-[#5B6470] transition hover:border-wg-orange hover:text-wg-orange"
+                                  aria-label="Ver mais buscas"
+                                >
+                                  <ChevronRight className="h-4 w-4" />
+                                </button>
+                              </div>
+                            </div>
+                            <div
+                              ref={(node) => {
+                                if (node) {
+                                  searchRailRefs.current[record.slug] = node;
+                                } else if (searchRailRefs.current[record.slug]) {
+                                  delete searchRailRefs.current[record.slug];
+                                }
+                              }}
+                              className="mt-3 flex gap-2 overflow-x-auto pb-1"
+                            >
+                              {searchSourceCards.map((sourceCard) => (
+                                <a
+                                  key={sourceCard.id}
+                                  href={sourceCard.href}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="group flex min-w-[210px] shrink-0 flex-col rounded-2xl border border-black/10 bg-white p-3 transition hover:border-wg-orange hover:shadow-sm"
+                                >
+                                  <div className="flex items-center justify-between gap-2">
+                                    <span className="text-xs font-semibold text-[#1E2A3A]">{sourceCard.label}</span>
+                                    <ExternalLink className="h-3.5 w-3.5 text-[#9B9791] transition group-hover:text-wg-orange" />
+                                  </div>
+                                  <p className="mt-2 line-clamp-2 text-sm text-[#3F4752]">{sourceCard.hint}</p>
+                                  <span className="mt-2 inline-flex w-fit rounded-full bg-[#F5F6F7] px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-[#7C7C7C]">
+                                    Abrir busca
+                                  </span>
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
                         {panelResult.error && <p className="mt-3 text-xs text-[#A24A4A]">{panelResult.error}</p>}
 
                         {panelResult.photos.length > 0 && (
                           <>
                             <p className="mt-2 text-[10px] text-[#9B9791]">Clique para atribuir • <span className="text-[#B89E73]">Arraste direto para o slot acima</span></p>
-                            <div className="mt-2 grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-5">
+                            <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
                               {panelResult.photos.map((photo) => {
                                 const isBeingDragged = dragImagePayload?.source === 'unsplash' && dragImagePayload?.photo?.id === photo.id;
                                 return (
@@ -1798,9 +1904,9 @@ const AdminBlogEditorial = () => {
                                     draggable
                                     onDragStart={(e) => startImageDrag(e, { source: 'unsplash', photo, recordSlug: record.slug })}
                                     onDragEnd={endImageDrag}
-                                    className={`group relative cursor-grab overflow-hidden rounded-xl border border-[#DED7CA] bg-white active:cursor-grabbing transition-opacity ${isBeingDragged ? 'opacity-40' : ''}`}
+                                    className={`group relative min-w-[176px] shrink-0 cursor-grab overflow-hidden rounded-xl border border-[#DED7CA] bg-white active:cursor-grabbing transition-opacity ${isBeingDragged ? 'opacity-40' : ''}`}
                                   >
-                                    <img src={photo.urls.small} alt={photo.alt || ''} className="h-20 w-full object-cover" loading="lazy" />
+                                    <img src={photo.urls.small} alt={photo.alt || ''} className="h-24 w-full object-cover" loading="lazy" />
                                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-black/60 opacity-0 transition-opacity group-hover:opacity-100">
                                       {primarySlotNames.map((slotName) => (
                                         <button key={`assign-${photo.id}-${slotName}`} type="button" onClick={() => assignUnsplashPhotoToSlot(record, slotName, photo)} className="rounded-lg bg-white/95 px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-[#1E2A3A] hover:bg-white transition">
@@ -1818,7 +1924,10 @@ const AdminBlogEditorial = () => {
                                         </button>
                                       )}
                                     </div>
-                                    <p className="truncate px-1.5 py-0.5 text-[9px] text-[#7C7C7C]">{photo.photographer}</p>
+                                    <div className="space-y-1 px-2 py-1.5">
+                                      <p className="truncate text-[10px] font-medium text-[#3F4752]">{photo.photographer}</p>
+                                      <p className="line-clamp-2 text-[10px] leading-snug text-[#7C7C7C]">{photo.alt || photo.description || 'Resultado editorial para curadoria'}</p>
+                                    </div>
                                   </div>
                                 );
                               })}

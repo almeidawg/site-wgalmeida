@@ -12,7 +12,7 @@ const STAGE_LABELS = {
 
 const STAGE_COLOR = {
   exploracao: 'bg-wg-orange/10 text-wg-orange',
-  decisao: 'bg-amber-100 text-amber-700',
+  decisao: 'bg-wg-blue/10 text-wg-blue',
   acao: 'bg-green-100 text-green-700',
 }
 
@@ -73,13 +73,13 @@ export default function NextBestActionPanel() {
 
       {/* Content */}
       <div className="flex-1 min-w-0">
-        <span className={`inline-block text-[10px] font-medium px-2 py-0.5 rounded-full mb-1 ${stageClass}`}>
+        <span className={`inline-block rounded-full px-2.5 py-1 text-[10px] font-light uppercase tracking-[0.14em] ${stageClass}`}>
           {stageLabel}
         </span>
         <CTALink
           href={href}
           external={external}
-          className="flex items-center gap-1.5 text-sm font-semibold text-wg-black hover:text-wg-orange transition-colors truncate"
+          className="flex items-center gap-1.5 text-sm font-light text-wg-black hover:text-wg-orange transition-colors truncate"
         >
           {label}
           <Icon className="w-3.5 h-3.5 shrink-0" />
