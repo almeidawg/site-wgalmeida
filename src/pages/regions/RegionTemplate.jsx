@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from '@/lib/motion-lite';
-import { ArrowRight, Building2, Hammer, Ruler, MapPin, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Building2, Hammer, Ruler, MapPin, CheckCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import SEO, { schemas } from '@/components/SEO';
 import { buildUnsplashSrcSet, normalizeUnsplashImageUrl } from '@/lib/unsplash';
 import SafeImage from '@/components/SafeImage';
 import { withBasePath } from '@/utils/assetPaths';
+import SmartCTA from '@/components/SmartCTA';
 
 const RegionTemplate = ({
   regionKey,
@@ -264,25 +264,7 @@ const RegionTemplate = ({
             <p className="text-wg-gray mb-8 font-light">
               {resolvedCta?.description || t('regions.defaults.ctaDescription')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contato">
-                <Button
-                  variant="ghost"
-                  className="inline-flex min-w-[220px] items-center justify-center gap-2 rounded-2xl border border-wg-orange/20 bg-wg-orange px-6 py-3 font-light text-white shadow-[0_10px_24px_rgba(242,92,38,0.18)] transition-all hover:-translate-y-px hover:bg-[#e3521f] hover:text-white hover:shadow-[0_14px_28px_rgba(242,92,38,0.24)]"
-                >
-                  {t('regions.defaults.ctaPrimary')}
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <Link to="/projetos">
-                <Button
-                  variant="ghost"
-                  className="inline-flex min-w-[220px] items-center justify-center rounded-2xl border border-wg-orange/30 bg-white px-6 py-3 font-light text-wg-black shadow-[0_10px_24px_rgba(15,15,15,0.08)] transition-all hover:-translate-y-px hover:border-wg-orange hover:bg-white hover:text-wg-orange"
-                >
-                  {t('regions.defaults.ctaSecondary')}
-                </Button>
-              </Link>
-            </div>
+            <SmartCTA showSecondary className="justify-center" />
           </motion.div>
         </div>
       </section>
