@@ -49,7 +49,6 @@ const Blog = lazy(() => import('@/pages/Blog'))
 const FAQ = lazy(() => import('@/pages/FAQ'))
 const Moodboard = lazy(() => import('@/pages/Moodboard'))
 const MoodboardShare = lazy(() => import('@/pages/MoodboardShare'))
-const MoodboardGenerator = lazy(() => import('@/pages/MoodboardGenerator'))
 const RoomVisualizer = lazy(() => import('@/pages/RoomVisualizer'))
 const RevistaEstilos = lazy(() => import('@/pages/RevistaEstilos'))
 const EstiloDetail = lazy(() => import('@/pages/EstiloDetail'))
@@ -279,11 +278,8 @@ function App() {
               {/* Moodboard & Room Visualizer */}
               <Route path="/moodboard" element={<Moodboard />} />
               <Route path="/moodboard/share" element={<MoodboardShare />} />
-              <Route path="/moodboard-generator" element={<MoodboardGenerator />} />
-              <Route
-                path="/gerador-moodboard"
-                element={<Navigate to="/moodboard-generator" replace />}
-              />
+              <Route path="/moodboard-generator" element={<Navigate to="/moodboard" replace />} />
+              <Route path="/gerador-moodboard" element={<Navigate to="/moodboard" replace />} />
               <Route path="/room-visualizer" element={<RoomVisualizer />} />
               <Route path="/tools" element={<Navigate to="/buildtech" replace />} />
               <Route
