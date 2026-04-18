@@ -67,6 +67,14 @@ quanto-custa-reforma-apartamento-100m2, quanto-tempo-leva-reforma-completa-alto-
 quanto-valoriza-apartamento-apos-reforma, tabela-precos-reforma-2026-iccri,
 custo-marcenaria-planejada, arquitetos-brasileiros-famosos-legado, marcas-luxo-internacionais-moveis-design
 
+### Sync editorial publicado
+- `api/editorial-overrides.js` grava `src/data/blogImageOverrides.generated.js` a partir das seleções do admin
+- `AdminBlogEditorial.jsx` agora detecta disponibilidade do endpoint, sincroniza automaticamente as mudanças e oferece botão manual `Publicar seleções`
+- `src/lib/editorialOverrides.js` consolida a serialização de uploads/Unsplash para formato consumido pelo blog publicado
+- validação local confirmada com teste controlado de escrita/restauração do arquivo de overrides
+- painel de busca do admin agora unifica curadoria com `Unsplash` inline e atalhos laterais para `Google Imagens` e `Google Drive`
+- cards de resultados foram estreitados e convertidos para trilho horizontal com navegação lateral, acelerando a revisão de mais imagens por slug
+- o card do conteúdo agora sinaliza quando a publicação ainda está usando `banner genérico atual`
 ### Próximos candidatos para PHASE1
 - `marcas-luxo-nacionais-moveis-decoracao` — tem unsplashManifest entry, falta sectionTitle + PHASE1
 - `custo-reforma-apartamento-alto-padrao-sp`
@@ -109,3 +117,6 @@ src/
 - **SVGs de estilos** 4–5MB comprimidos (japandi, boho, glam) — candidatos a WebP/AVIF
 - **marcas-luxo-nacionais-moveis-decoracao** ainda não no PHASE1
 - **estagio "acao"** pode ser incrementado com trigger no submit do OrcadorInteligente
+- **sync editorial em Vite puro** depende de endpoint `/api`; fluxo completo local com API requer ambiente que sirva `api/` ou deploy/Vercel
+- **sync editorial em Vite puro** depende de endpoint `/api`; fluxo completo local com API requer ambiente que sirva `api/` ou deploy/Vercel
+- **curadoria unificada de imagens para todas as páginas públicas** ainda não existe como manifest único; hoje o fluxo publicado cobre blog + guias de estilo + extras no admin editorial
