@@ -1443,7 +1443,7 @@ Responda como consultor experiente:
                                   <p className="text-xs text-gray-400">leads</p>
                                 </div>
                                 {!ch.noSpend && !ch.hasData && (
-                                  <span className="text-xs bg-amber-100 text-amber-600 px-1.5 py-0.5 rounded">
+                                  <span className="text-xs rounded bg-wg-orange/12 px-1.5 py-0.5 text-wg-orange">
                                     sem token
                                   </span>
                                 )}
@@ -2531,7 +2531,7 @@ Responda como consultor experiente:
                 </div>
 
                 {/* Aviso de segurança */}
-                <div className="flex gap-2 p-3 bg-amber-50 border border-amber-100 rounded-xl text-xs text-amber-700">
+                <div className="flex gap-2 rounded-xl border border-wg-orange/20 bg-wg-orange/8 p-3 text-xs text-[#8A4B16]">
                   <span>⚠️</span>
                   <span>
                     Os dados são salvos apenas no <strong>localStorage deste navegador</strong> e
@@ -2560,10 +2560,10 @@ Responda como consultor experiente:
             )}
           </motion.div>
 
-          <div className="rounded-3xl border border-[#E7DCCA] bg-gradient-to-br from-[#FBF7EF] via-white to-[#F4EBDD] p-6 shadow-sm">
+          <div className="rounded-3xl border border-black/10 bg-gradient-to-br from-[#FAFBFB] via-white to-[#F3F5F7] p-6 shadow-sm">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="space-y-3">
-                <span className="inline-flex rounded-full bg-[#E8E0D1] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[#7A5B2F]">
+                <span className="inline-flex rounded-full bg-wg-orange/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-wg-orange">
                   Curadoria editorial
                 </span>
                 <div>
@@ -2578,25 +2578,25 @@ Responda como consultor experiente:
               </div>
 
               <div className="grid grid-cols-2 gap-3 lg:min-w-[320px]">
-                <div className="rounded-2xl border border-[#D7D1C5] bg-white/80 p-4">
+                <div className="rounded-2xl border border-black/10 bg-white/90 p-4">
                   <p className="text-xs uppercase tracking-[0.16em] text-[#7C7C7C]">Posts</p>
                   <p className="mt-2 text-2xl font-semibold text-[#1E2A3A]">
                     {BLOG_EDITORIAL_SUMMARY.total}
                   </p>
                 </div>
-                <div className="rounded-2xl border border-[#D7D1C5] bg-[#F1F8F4] p-4">
+                <div className="rounded-2xl border border-black/10 bg-[#F1F8F4] p-4">
                   <p className="text-xs uppercase tracking-[0.16em] text-[#5E7F63]">Prontos</p>
                   <p className="mt-2 text-2xl font-semibold text-[#244A35]">
                     {BLOG_EDITORIAL_SUMMARY.ready}
                   </p>
                 </div>
-                <div className="rounded-2xl border border-[#D7D1C5] bg-[#FFF8EC] p-4">
-                  <p className="text-xs uppercase tracking-[0.16em] text-[#A36B12]">Pendentes</p>
-                  <p className="mt-2 text-2xl font-semibold text-[#7A5415]">
+                <div className="rounded-2xl border border-black/10 bg-[#FFF4EC] p-4">
+                  <p className="text-xs uppercase tracking-[0.16em] text-wg-orange">Pendentes</p>
+                  <p className="mt-2 text-2xl font-semibold text-[#8A4B16]">
                     {BLOG_EDITORIAL_SUMMARY.pending}
                   </p>
                 </div>
-                <div className="rounded-2xl border border-[#D7D1C5] bg-[#FFF2F2] p-4">
+                <div className="rounded-2xl border border-black/10 bg-[#FFF2F2] p-4">
                   <p className="text-xs uppercase tracking-[0.16em] text-[#A24A4A]">Texto pesado</p>
                   <p className="mt-2 text-2xl font-semibold text-[#7B2D2D]">
                     {BLOG_EDITORIAL_SUMMARY.needsCopyNormalization}
@@ -2605,11 +2605,11 @@ Responda como consultor experiente:
               </div>
             </div>
 
-            <div className="mt-5 flex flex-col gap-3 border-t border-[#E7DCCA] pt-5 md:flex-row md:items-center md:justify-between">
+            <div className="mt-5 flex flex-col gap-3 border-t border-black/10 pt-5 md:flex-row md:items-center md:justify-between">
               <p className="text-sm leading-6 text-[#5B6470]">
                 Use o painel para abrir Unsplash e Google Imagens com a query pronta, subir cada slot
                 no Cloudinary e copiar o bloco consolidado para
-                <code className="mx-1 rounded bg-white px-1.5 py-0.5 text-xs text-[#7A5B2F]">
+                <code className="mx-1 rounded bg-white px-1.5 py-0.5 text-xs text-wg-orange">
                   src/data/blogImageManifest.js
                 </code>
                 .

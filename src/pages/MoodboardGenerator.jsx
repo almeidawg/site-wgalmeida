@@ -129,6 +129,8 @@ const buildMaterialReason = (styleTitle, materialTitle) =>
 const getPhotoLabel = (photo, fallback) =>
   photo?.alt_description || photo?.description || fallback
 
+const sectionIconClass = 'flex h-10 w-10 items-center justify-center rounded-2xl bg-wg-black text-white'
+
 const StyleSelectionCard = ({ style, selected, onSelect }) => (
   <button
     type="button"
@@ -619,7 +621,7 @@ export default function MoodboardGenerator() {
               </Link>
             </div>
 
-            <div className="space-y-8 rounded-[2rem] bg-white p-8 shadow-lg">
+            <div className="space-y-8 rounded-[2rem] border border-black/6 bg-white p-8 shadow-[0_22px_60px_rgba(20,20,20,0.06)]">
               <div>
                 <label className="mb-2 block text-sm text-gray-700">Nome do Cliente *</label>
                 <input
@@ -633,9 +635,9 @@ export default function MoodboardGenerator() {
 
               <section className="space-y-5">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-wg-orange/10 text-wg-orange">
-                    <Sparkles className="h-5 w-5" />
-                  </div>
+                      <div className={sectionIconClass}>
+                        <Sparkles className="h-5 w-5" />
+                      </div>
                   <div>
                     <h2 className="text-xl text-gray-900">1. Escolha o que parece certo</h2>
                     <p className="text-sm text-gray-600">
@@ -658,11 +660,11 @@ export default function MoodboardGenerator() {
 
               {selectedStyleEntry && (
                 <>
-                  <section className="rounded-[1.7rem] border border-black/5 bg-gray-50 p-6">
+                  <section className="rounded-[1.7rem] border border-black/6 bg-[#F8F7F4] p-6">
                     <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">
                       <div>
                         <p className="mb-2 text-xs uppercase tracking-[0.22em] text-gray-500">Estilo identificado</p>
-                        <h3 className="text-2xl text-gray-900">{selectedStyleEntry.title}</h3>
+                        <h3 className="text-[1.7rem] font-light tracking-tight text-gray-900">{selectedStyleEntry.title}</h3>
                         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600">
                           {selectedStyleEntry.excerpt}
                         </p>
@@ -695,7 +697,7 @@ export default function MoodboardGenerator() {
 
                   <section className="space-y-5">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-black text-white">
+                      <div className={sectionIconClass}>
                         <SwatchBook className="h-5 w-5" />
                       </div>
                       <div>
@@ -721,9 +723,9 @@ export default function MoodboardGenerator() {
                   <section className="space-y-5">
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-black text-white">
-                          <ImagePlus className="h-5 w-5" />
-                        </div>
+                      <div className={sectionIconClass}>
+                        <ImagePlus className="h-5 w-5" />
+                      </div>
                         <div>
                           <h2 className="text-xl text-gray-900">2A. Referencias vivas com Unsplash</h2>
                           <p className="text-sm text-gray-600">
@@ -743,7 +745,7 @@ export default function MoodboardGenerator() {
                     </div>
 
                     {referencesError && (
-                      <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+                      <div className="rounded-2xl border border-wg-orange/18 bg-wg-orange/8 px-4 py-3 text-sm text-[#8A4A2A]">
                         {referencesError}
                       </div>
                     )}
@@ -807,7 +809,7 @@ export default function MoodboardGenerator() {
 
                   <section className="space-y-5">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-wg-orange/10 text-wg-orange">
+                      <div className={sectionIconClass}>
                         <Palette className="h-5 w-5" />
                       </div>
                       <div>
@@ -829,7 +831,7 @@ export default function MoodboardGenerator() {
                         <button
                           type="button"
                           onClick={addColorToPalette}
-                          className="rounded-lg bg-wg-orange px-4 py-2 text-white transition-colors hover:bg-orange-600"
+                          className="rounded-lg bg-wg-orange px-4 py-2 text-white transition-colors hover:bg-[#DB4E1E]"
                         >
                           Adicionar cor
                         </button>
@@ -871,7 +873,7 @@ export default function MoodboardGenerator() {
 
                   <section className="space-y-5">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-black text-white">
+                      <div className={sectionIconClass}>
                         <Eye className="h-5 w-5" />
                       </div>
                       <div>
@@ -898,7 +900,7 @@ export default function MoodboardGenerator() {
                 </>
               )}
 
-              <section className="grid grid-cols-1 gap-4 rounded-[1.5rem] border border-black/5 bg-gray-50 p-5 md:grid-cols-2">
+              <section className="grid grid-cols-1 gap-4 rounded-[1.5rem] border border-black/6 bg-[#F8F7F4] p-5 md:grid-cols-2">
                 <div>
                   <label className="mb-2 block text-sm text-gray-700">Tamanho da Página</label>
                   <select
@@ -948,7 +950,7 @@ export default function MoodboardGenerator() {
                 type="button"
                 onClick={handleGenerate}
                 disabled={isGenerating}
-                className="w-full rounded-xl bg-wg-orange py-4 text-lg text-white transition-colors hover:bg-orange-600 disabled:cursor-not-allowed disabled:bg-gray-400"
+                className="w-full rounded-xl bg-wg-orange py-4 text-base font-light text-white transition-colors hover:bg-[#DB4E1E] disabled:cursor-not-allowed disabled:bg-gray-400"
               >
                 {isGenerating ? `Gerando... ${progress}%` : 'Gerar apresentação de moodboard'}
               </button>
@@ -959,7 +961,7 @@ export default function MoodboardGenerator() {
             <div className="mb-6 flex items-center justify-between">
               <button
                 onClick={() => setShowPreview(false)}
-                className="flex items-center gap-2 rounded-lg bg-gray-600 px-4 py-2 text-white transition-colors hover:bg-gray-700"
+                className="flex items-center gap-2 rounded-lg bg-[#3A4047] px-4 py-2 text-white transition-colors hover:bg-[#2C3137]"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Voltar
@@ -974,7 +976,7 @@ export default function MoodboardGenerator() {
                 </button>
                 <button
                   onClick={handleExportPDF}
-                  className="flex items-center gap-2 rounded-lg bg-wg-orange px-6 py-3 text-white transition-colors hover:bg-orange-600"
+                  className="flex items-center gap-2 rounded-lg bg-wg-orange px-6 py-3 text-white transition-colors hover:bg-[#DB4E1E]"
                 >
                   <Download className="h-5 w-5" />
                   Exportar PDF

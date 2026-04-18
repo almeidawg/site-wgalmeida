@@ -59,9 +59,9 @@ const MoodboardShare = () => {
           noindex
         />
 
-        <section className="min-h-screen bg-[linear-gradient(180deg,#f4efe7_0%,#fcfaf7_100%)] hero-under-header">
+        <section className="hero-under-header min-h-screen bg-[linear-gradient(180deg,#F3F5F7_0%,#FBFBFA_46%,#F4F1EC_100%)]">
           <div className="container-custom py-10 md:py-14">
-            <div className="overflow-hidden rounded-[34px] border border-[#e6ded2] bg-[#181716] text-white shadow-[0_35px_90px_rgba(23,24,25,0.16)]">
+            <div className="overflow-hidden rounded-[34px] border border-black/6 bg-[#181A1D] text-white shadow-[0_35px_90px_rgba(23,24,25,0.16)]">
               <div className="relative min-h-[520px] overflow-hidden px-6 py-8 md:px-10 md:py-10">
                 {shareData.cover?.imageUrl ? (
                   <img
@@ -83,8 +83,8 @@ const MoodboardShare = () => {
                   </div>
 
                   <div className="max-w-4xl">
-                    <p className="text-[11px] uppercase tracking-[0.34em] text-[#f2b13a]">Direcao visual personalizada</p>
-                    <h1 className="mt-4 font-playfair text-4xl font-medium leading-[0.98] md:text-6xl">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-wg-orange">Direcao visual personalizada</p>
+                    <h1 className="mt-4 font-playfair text-4xl font-light leading-[0.98] md:text-5xl">
                       {shareData.clientName || 'Cliente WG Almeida'}
                     </h1>
                     <p className="mt-5 text-xl font-light text-white/82 md:text-2xl">
@@ -142,26 +142,26 @@ const MoodboardShare = () => {
                 </div>
               </div>
 
-              <div className="grid gap-8 bg-[#fcfaf7] px-6 py-8 text-[#1d1d1b] md:px-10 md:py-10">
+              <div className="grid gap-8 bg-[#FAFBFB] px-6 py-8 text-[#1d1d1b] md:px-10 md:py-10">
                 {!!shareData.environments?.length && (
                   <div>
                     <div className="mb-5 flex items-center justify-between gap-4">
                       <div>
-                        <p className="text-[11px] uppercase tracking-[0.22em] text-[#8b7760]">Ambientes-chave</p>
-                        <h2 className="mt-2 font-playfair text-3xl">Leituras espaciais</h2>
+                        <p className="text-[11px] uppercase tracking-[0.22em] text-wg-gray">Ambientes-chave</p>
+                        <h2 className="mt-2 font-playfair text-[2rem] font-light">Leituras espaciais</h2>
                       </div>
                     </div>
                     <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                       {shareData.environments.map((environment) => (
-                        <article key={environment.id} className="overflow-hidden rounded-[26px] border border-[#e7ded2] bg-white shadow-[0_16px_45px_rgba(24,23,22,0.06)]">
+                        <article key={environment.id} className="overflow-hidden rounded-[26px] border border-black/6 bg-white shadow-[0_16px_45px_rgba(24,23,22,0.06)]">
                           {environment.imageUrl ? (
                             <img src={environment.imageUrl} alt={environment.title} className="h-56 w-full object-cover" />
                           ) : null}
                           <div className="space-y-3 p-5">
-                            <p className="text-[11px] uppercase tracking-[0.22em] text-[#8b7760]">{environment.caption || 'Ambiente'}</p>
-                            <h3 className="text-xl">{environment.title}</h3>
+                            <p className="text-[11px] uppercase tracking-[0.22em] text-wg-gray">{environment.caption || 'Ambiente'}</p>
+                            <h3 className="text-xl font-light">{environment.title}</h3>
                             <p className="text-sm leading-7 text-[#59544d]">{environment.description}</p>
-                            <p className="rounded-2xl bg-[#f5efe8] px-4 py-3 text-sm leading-7 text-[#3e3a34]">
+                            <p className="rounded-2xl bg-[#F3F5F7] px-4 py-3 text-sm leading-7 text-[#3e3a34]">
                               {environment.rationale}
                             </p>
                           </div>
@@ -173,22 +173,22 @@ const MoodboardShare = () => {
 
                 {!!shareData.materials?.length && (
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.22em] text-[#8b7760]">Materiais e acabamentos</p>
-                    <h2 className="mt-2 font-playfair text-3xl">Camadas para formar a experiencia</h2>
+                    <p className="text-[11px] uppercase tracking-[0.22em] text-wg-gray">Materiais e acabamentos</p>
+                    <h2 className="mt-2 font-playfair text-[2rem] font-light">Camadas para formar a experiencia</h2>
                     <div className="mt-5 grid gap-5">
                       {shareData.materials.map((material) => (
-                        <article key={material.id} className="rounded-[28px] border border-[#e7ded2] bg-white p-5 shadow-[0_16px_45px_rgba(24,23,22,0.05)]">
+                        <article key={material.id} className="rounded-[28px] border border-black/6 bg-white p-5 shadow-[0_16px_45px_rgba(24,23,22,0.05)]">
                           <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
                             <div>
-                              <p className="text-[11px] uppercase tracking-[0.22em] text-[#8b7760]">{material.title}</p>
+                              <p className="text-[11px] uppercase tracking-[0.22em] text-wg-gray">{material.title}</p>
                               <p className="mt-3 text-sm leading-7 text-[#59544d]">{material.description}</p>
-                              <p className="mt-4 rounded-2xl bg-[#171716] px-4 py-4 text-sm leading-7 text-white/82">
+                              <p className="mt-4 rounded-2xl bg-[#171A1D] px-4 py-4 text-sm leading-7 text-white/82">
                                 {material.rationale}
                               </p>
                             </div>
                             <div className="grid gap-3 sm:grid-cols-2">
                               {material.images?.slice(0, 4).map((image, index) => (
-                                <div key={`${material.id}-${index}`} className="overflow-hidden rounded-[22px] bg-[#f4efe7]">
+                                <div key={`${material.id}-${index}`} className="overflow-hidden rounded-[22px] bg-[#F3F5F7]">
                                   <img src={image.imageUrl} alt={image.caption || material.title} className="h-40 w-full object-cover" />
                                 </div>
                               ))}
@@ -201,12 +201,12 @@ const MoodboardShare = () => {
                 )}
 
                 <div className="grid gap-5 lg:grid-cols-[0.82fr_1.18fr]">
-                  <div className="rounded-[28px] border border-[#e7ded2] bg-white p-6 shadow-[0_16px_45px_rgba(24,23,22,0.05)]">
-                    <p className="text-[11px] uppercase tracking-[0.22em] text-[#8b7760]">Compartilhar</p>
+                  <div className="rounded-[28px] border border-black/6 bg-white p-6 shadow-[0_16px_45px_rgba(24,23,22,0.05)]">
+                    <p className="text-[11px] uppercase tracking-[0.22em] text-wg-gray">Compartilhar</p>
                     <div className="mt-5 flex flex-wrap gap-3">
                       <button
                         onClick={handleCopy}
-                        className="inline-flex items-center gap-2 rounded-full border border-[#d8d0c5] px-5 py-3 text-sm text-wg-black"
+                        className="inline-flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm text-wg-black"
                       >
                         <Copy className="h-4 w-4" />
                         {copied ? 'Link copiado' : 'Copiar link'}
@@ -215,7 +215,7 @@ const MoodboardShare = () => {
                         href={`https://wa.me/?text=${encodeURIComponent(`Confira este guia de estilo WG Almeida:\n${currentUrl}`)}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-[#d8d0c5] px-5 py-3 text-sm text-wg-black"
+                        className="inline-flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm text-wg-black"
                       >
                         <Share2 className="h-4 w-4" />
                         Recompartilhar
@@ -223,9 +223,9 @@ const MoodboardShare = () => {
                     </div>
                   </div>
 
-                  <div className="rounded-[28px] border border-[#e7ded2] bg-[#181716] p-6 text-white shadow-[0_16px_45px_rgba(24,23,22,0.08)]">
+                  <div className="rounded-[28px] border border-black/6 bg-[#181A1D] p-6 text-white shadow-[0_16px_45px_rgba(24,23,22,0.08)]">
                     <p className="text-[11px] uppercase tracking-[0.22em] text-white/55">Proximo passo</p>
-                    <h2 className="mt-3 font-playfair text-3xl">Transformar inspiracao em decisao real</h2>
+                    <h2 className="mt-3 font-playfair text-[2rem] font-light">Transformar inspiracao em decisao real</h2>
                     <p className="mt-4 text-sm leading-7 text-white/72">
                       O guia ja organiza direcao visual, atmosfera e materiais. A etapa seguinte e transformar essa leitura em briefing, especificacao, proposta e execucao.
                     </p>
@@ -265,9 +265,9 @@ const MoodboardShare = () => {
           description="Confira uma prévia compartilhada de transformação de ambiente criada pela WG Almeida."
           noindex
         />
-        <section className="min-h-screen bg-[#F7F3EE] hero-under-header flex items-center">
+        <section className="hero-under-header flex min-h-screen items-center bg-[#F3F5F7]">
           <div className="container-custom max-w-3xl text-center py-24">
-            <h1 className="text-4xl md:text-5xl font-light text-wg-black mb-6">
+            <h1 className="mb-6 text-4xl font-light tracking-tight text-wg-black md:text-5xl">
               Link de moodboard inválido ou expirado
             </h1>
             <p className="text-lg text-[#5B5B5B] leading-relaxed mb-10">
@@ -283,7 +283,7 @@ const MoodboardShare = () => {
               </Link>
               <Link
                 to="/solicite-proposta"
-                className="inline-flex items-center gap-3 rounded-full border border-[#D7D0C7] px-7 py-3 text-wg-black font-light"
+                className="inline-flex items-center gap-3 rounded-full border border-black/10 px-7 py-3 text-wg-black font-light"
               >
                 Solicitar proposta
               </Link>
@@ -313,30 +313,30 @@ const MoodboardShare = () => {
         noindex
       />
 
-      <section className="hero-under-header min-h-screen bg-[radial-gradient(circle_at_top,_rgba(245,159,11,0.12),_transparent_42%),linear-gradient(180deg,#F7F3EE_0%,#FFFDF9_44%,#F4F1EA_100%)]">
+      <section className="hero-under-header min-h-screen bg-[radial-gradient(circle_at_top,_rgba(242,92,38,0.08),_transparent_42%),linear-gradient(180deg,#F3F5F7_0%,#FBFBFA_44%,#F2EFEA_100%)]">
         <div className="container-custom py-16 md:py-20">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              className="overflow-hidden rounded-[28px] border border-[#E5DED4] bg-white shadow-[0_26px_70px_rgba(26,26,26,0.10)]"
+              className="overflow-hidden rounded-[28px] border border-black/6 bg-white shadow-[0_26px_70px_rgba(26,26,26,0.10)]"
             >
-              <div className="flex items-center justify-between border-b border-[#ECE7DF] px-5 py-4">
+              <div className="flex items-center justify-between border-b border-black/6 px-5 py-4">
                 <div>
-                  <p className="text-[11px] uppercase tracking-[0.24em] text-[#7A746B]">
+                  <p className="text-[11px] uppercase tracking-[0.24em] text-wg-gray">
                     Transformação compartilhada
                   </p>
-                  <h1 className="mt-2 text-[30px] md:text-[38px] leading-tight font-light text-wg-black">
+                  <h1 className="mt-2 text-[30px] font-light leading-tight tracking-tight text-wg-black md:text-[36px]">
                     {shareData.imageName}
                   </h1>
                 </div>
-                <span className="rounded-full border border-[#E4DBCF] px-4 py-2 text-[12px] uppercase tracking-[0.18em] text-[#7A746B]">
+                <span className="rounded-full border border-black/8 px-4 py-2 text-[12px] uppercase tracking-[0.18em] text-wg-gray">
                   WG AI Moodboard
                 </span>
               </div>
 
               <div className="p-4 md:p-6">
-                <div className="overflow-hidden rounded-[24px] bg-[#F5F0E9]">
+                <div className="overflow-hidden rounded-[24px] bg-[#F1F3F5]">
                   <img
                     src={shareData.transformedUrl}
                     alt={`Transformação de ambiente ${shareData.imageName}`}
@@ -346,8 +346,8 @@ const MoodboardShare = () => {
                 </div>
 
                 <div className="mt-6 grid gap-4 md:grid-cols-2">
-                  <div className="rounded-[22px] border border-[#ECE4D8] bg-[#FAF8F3] p-5">
-                    <p className="text-[11px] uppercase tracking-[0.22em] text-[#7A746B]">Paleta aplicada</p>
+                  <div className="rounded-[22px] border border-black/6 bg-[#FAFBFB] p-5">
+                    <p className="text-[11px] uppercase tracking-[0.22em] text-wg-gray">Paleta aplicada</p>
                     <div className="mt-4 flex flex-wrap gap-3">
                       {(shareData.availableColors || []).slice(0, 6).map((color) => (
                         <span key={color} className="flex flex-col items-center gap-2">
@@ -358,14 +358,14 @@ const MoodboardShare = () => {
                     </div>
                   </div>
 
-                  <div className="rounded-[22px] border border-[#ECE4D8] bg-[#FAF8F3] p-5">
-                    <p className="text-[11px] uppercase tracking-[0.22em] text-[#7A746B]">Elementos trabalhados</p>
+                  <div className="rounded-[22px] border border-black/6 bg-[#FAFBFB] p-5">
+                    <p className="text-[11px] uppercase tracking-[0.22em] text-wg-gray">Elementos trabalhados</p>
                     <div className="mt-4 space-y-3">
                       {colorEntries.length > 0 ? colorEntries.map(([element, color]) => (
                         <div key={element} className="flex items-center justify-between rounded-full bg-white px-4 py-2">
                           <span className="text-sm text-wg-black capitalize">{element.replace(/-/g, ' ')}</span>
                           <span className="inline-flex items-center gap-2 text-sm text-[#5B5B5B]">
-                            <span className="h-4 w-4 rounded-full border border-[#D7D0C7]" style={{ backgroundColor: color }} />
+                            <span className="h-4 w-4 rounded-full border border-black/10" style={{ backgroundColor: color }} />
                             {color}
                           </span>
                         </div>
@@ -386,9 +386,9 @@ const MoodboardShare = () => {
               transition={{ delay: 0.08 }}
               className="space-y-5"
             >
-              <div className="rounded-[28px] border border-[#E5DED4] bg-[#1F1E1C] p-7 text-white shadow-[0_22px_58px_rgba(26,26,26,0.16)]">
+              <div className="rounded-[28px] border border-black/6 bg-[#1A1D21] p-7 text-white shadow-[0_22px_58px_rgba(26,26,26,0.16)]">
                 <p className="text-[11px] uppercase tracking-[0.22em] text-white/60">Próximo passo</p>
-                <h2 className="mt-3 text-[30px] leading-tight font-light">
+                <h2 className="mt-3 text-[28px] font-light leading-tight tracking-tight">
                   Transforme esta prévia em material executivo e contratação
                 </h2>
                 <p className="mt-4 text-[15px] leading-[1.7] text-white/74">
@@ -414,8 +414,8 @@ const MoodboardShare = () => {
                 </div>
               </div>
 
-              <div className="rounded-[24px] border border-[#E5DED4] bg-white p-6">
-                <p className="text-[11px] uppercase tracking-[0.22em] text-[#7A746B]">O que esta landing resolve</p>
+              <div className="rounded-[24px] border border-black/6 bg-white p-6">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-wg-gray">O que esta landing resolve</p>
                 <div className="mt-5 space-y-4">
                   {[
                     'Substitui o link cru do Cloudinary por uma apresentação de marca.',
@@ -430,24 +430,24 @@ const MoodboardShare = () => {
                 </div>
               </div>
 
-              <div className="rounded-[24px] border border-[#E5DED4] bg-white p-6">
+              <div className="rounded-[24px] border border-black/6 bg-white p-6">
                 <div className="flex items-center gap-3">
                   <Palette className="h-5 w-5 text-wg-orange" />
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-[#7A746B]">
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-wg-gray">
                     Compartilhamento e continuidade
                   </p>
                 </div>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <button
                     onClick={handleCopy}
-                    className="inline-flex items-center gap-2 rounded-full border border-[#D8D0C5] px-5 py-3 text-sm text-wg-black"
+                    className="inline-flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm text-wg-black"
                   >
                     <Copy className="h-4 w-4" />
                     {copied ? 'Link copiado' : 'Copiar landing'}
                   </button>
                   <Link
                     to="/moodboard"
-                    className="inline-flex items-center gap-2 rounded-full border border-[#D8D0C5] px-5 py-3 text-sm text-wg-black"
+                    className="inline-flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm text-wg-black"
                   >
                     <ImageIcon className="h-4 w-4" />
                     Criar nova versão
@@ -456,7 +456,7 @@ const MoodboardShare = () => {
                     href={`https://wa.me/?text=${encodeURIComponent(`Confira esta transformação de ambiente da WG Almeida:\n${currentUrl}`)}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-[#D8D0C5] px-5 py-3 text-sm text-wg-black"
+                    className="inline-flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm text-wg-black"
                   >
                     <Share2 className="h-4 w-4" />
                     Recompartilhar

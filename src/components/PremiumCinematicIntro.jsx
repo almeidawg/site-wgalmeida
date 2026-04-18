@@ -421,7 +421,7 @@ const EmotionalText = ({ lines, show }) => (
             initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ delay: i * 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-white text-3xl md:text-5xl lg:text-6xl font-light leading-tight"
+            className="text-white text-3xl md:text-5xl lg:text-5xl font-light leading-tight"
             style={{ fontFamily: '"Playfair Display", serif' }}
           >
             {line}
@@ -600,7 +600,7 @@ const NucleoHighlight = ({ nucleo, desc, color, show }) => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4"
+          className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide mb-4"
           style={{
             fontFamily: 'Inter, sans-serif',
             color: color,
@@ -752,7 +752,7 @@ const ImpactFinal = ({ lines, show }) => (
               duration: 0.8,
               ease: [0.22, 1, 0.36, 1]
             }}
-            className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-wide"
+            className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-wide"
             style={{
               fontFamily: 'Inter, sans-serif',
               color: i === lines.length - 1 ? WG_COLORS.orange : 'white',
@@ -1208,7 +1208,7 @@ const PremiumCinematicIntro = ({ onComplete }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-wide mb-2 sm:mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide mb-2 sm:mb-4"
               style={{ color: WG_COLORS.green, fontFamily: 'Inter, sans-serif' }}
             >
               {t('premiumIntro.stages.architecture.title')}
@@ -1243,7 +1243,7 @@ const PremiumCinematicIntro = ({ onComplete }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-wide mb-2 sm:mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide mb-2 sm:mb-4"
               style={{ color: WG_COLORS.blue, fontFamily: 'Inter, sans-serif' }}
             >
               {t('premiumIntro.stages.engineering.title')}
@@ -1278,7 +1278,7 @@ const PremiumCinematicIntro = ({ onComplete }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-wide mb-2 sm:mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide mb-2 sm:mb-4"
               style={{ color: WG_COLORS.brown, fontFamily: 'Inter, sans-serif' }}
             >
               {t('premiumIntro.stages.carpentry.title')}
@@ -1407,7 +1407,7 @@ const PremiumCinematicIntro = ({ onComplete }) => {
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight"
+              className="text-white text-xl sm:text-2xl md:text-4xl lg:text-4xl xl:text-5xl font-medium leading-tight"
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
               {t('premiumIntro.stages.impact.line1')}
@@ -1416,7 +1416,7 @@ const PremiumCinematicIntro = ({ onComplete }) => {
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-medium mt-1 sm:mt-2 leading-tight"
+              className="text-xl sm:text-2xl md:text-4xl lg:text-4xl xl:text-5xl font-medium mt-1 sm:mt-2 leading-tight"
               style={{ fontFamily: 'Inter, sans-serif', color: WG_COLORS.orange }}
             >
               {t('premiumIntro.stages.impact.line2')}

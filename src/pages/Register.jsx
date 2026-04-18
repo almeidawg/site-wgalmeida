@@ -178,7 +178,7 @@ const Register = () => {
                     password.length > 0
                       ? passwordValidation.isStrong
                         ? 'border-green-500'
-                        : 'border-yellow-500'
+                        : 'border-wg-orange'
                       : 'border-gray-300'
                   }`}
                   placeholder={t('registerPage.passwordPlaceholder')}
