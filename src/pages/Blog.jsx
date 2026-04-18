@@ -465,6 +465,7 @@ const PHASE1_EDITORIAL_ROLLOUT_SLUGS = new Set([
   'quanto-valoriza-apartamento-apos-reforma',
   'evf-estudo-viabilidade-financeira',
   'tabela-precos-reforma-2026-iccri',
+  'marcas-luxo-internacionais-moveis-design',
 ]);
 
 const HIDE_READER_CARD_SLUGS = new Set([]);
