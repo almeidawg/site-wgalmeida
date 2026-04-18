@@ -514,8 +514,15 @@ const buildBlogManifestSnippet = (record, uploads) => {
 
 const buildStyleManifestSnippet = (record, uploads) => {
   const coverState = getEffectiveSlotState(record, { slot: 'cover' }, uploads);
-  if (!coverState.publicId) return '';
-  return `  ${JSON.stringify(record.slug)}: ${JSON.stringify(coverState.publicId)},`;
+  if (coverState.publicId) {
+    return `  ${JSON.stringify(record.slug)}: ${JSON.stringify(coverState.publicId)},`;
+  }
+  const remoteValue = buildManifestRemoteValue(coverState);
+  if (remoteValue) {
+    const json = JSON.stringify(remoteValue, null, 2).replace(/\n/g, '\n  ');
+    return `  ${JSON.stringify(record.slug)}: ${json},`;
+  }
+  return '';
 };
 
 const getTwoSlotStatus = (record, uploads) => {
