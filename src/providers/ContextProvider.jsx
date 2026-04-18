@@ -1,23 +1,17 @@
 import { createContext, useContext, useState, useEffect } from 'react'
+import { DEFAULT_USER_CONTEXT, normalizeUserContext } from '@/lib/userContext'
 
 const WGContext = createContext(null)
 
 const STORAGE_KEY = 'wg_context_v1'
 
-const DEFAULT_CONTEXT = {
-  interesse: null,
-  estagio: 'exploracao',
-  paginas: [],
-  origem: null,
-}
-
 export function ContextProvider({ children }) {
-  const [context, setContext] = useState(DEFAULT_CONTEXT)
+  const [context, setContext] = useState(DEFAULT_USER_CONTEXT)
 
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved) setContext(JSON.parse(saved))
+      if (saved) setContext(normalizeUserContext(JSON.parse(saved)))
     } catch {
       // ignore
     }
@@ -25,7 +19,7 @@ export function ContextProvider({ children }) {
 
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(context))
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(normalizeUserContext(context)))
     } catch {
       // ignore
     }
