@@ -11,6 +11,7 @@ import { buildImageQuery, searchUnsplashImages } from '@/lib/unsplash'
 import { styleCatalog } from '@/utils/styleCatalog'
 import { buildMoodboardShareUrl } from '@/utils/moodboardShare'
 import { buildStyleEditorialSearchPlan } from '@/lib/styleEditorialSearchProfile'
+import { useWGContext } from '@/providers/ContextProvider'
 import {
   ArrowLeft,
   Briefcase,
@@ -202,6 +203,7 @@ const SelectionChip = ({ active, onClick, title, description, accent = 'orange' 
 }
 
 export default function MoodboardGenerator() {
+  const { setContext } = useWGContext() || {}
   const [clientName, setClientName] = useState('')
   const [selectedStyle, setSelectedStyle] = useState('')
   const [selectedStyleSlug, setSelectedStyleSlug] = useState('')
@@ -239,6 +241,24 @@ export default function MoodboardGenerator() {
     setCustomColor(nextPalette[0] || '#F25C26')
     setSelectedMaterials((prev) => uniq([...getSuggestedMaterialIds(style), ...prev]))
     setSelectedEnvironments((prev) => uniq([...getSuggestedEnvironmentIds(style), ...prev]))
+    setContext?.((prev) => ({
+      ...prev,
+      interesse: 'design',
+      tipoImovel: prev?.tipoImovel || 'interiores',
+      origem: prev?.origem || '/moodboard',
+      estagio: prev?.estagio === 'acao' ? 'acao' : 'decisao',
+      signals: {
+        ...(prev?.signals || {}),
+        usedMoodboard: true,
+      },
+      recommendedAction: {
+        label: 'Gerar guia de estilo',
+        href: '/moodboard',
+        intent: 'design',
+        stage: 'decisao',
+      },
+      updatedAt: new Date().toISOString(),
+    }))
   }
 
   const loadLiveReferences = async (styleEntry) => {
@@ -335,7 +355,7 @@ export default function MoodboardGenerator() {
       cover: null,
       environments: [],
       materials: [],
-      ctaUrl: '/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=moodboard',
+      ctaUrl: '/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=moodboard&intent=design&stage=acao&source=site',
     }
 
     try {
@@ -465,6 +485,24 @@ export default function MoodboardGenerator() {
     setProgress(100)
     setIsGenerating(false)
     setShowPreview(true)
+    setContext?.((prev) => ({
+      ...prev,
+      interesse: 'design',
+      tipoImovel: prev?.tipoImovel || 'interiores',
+      origem: prev?.origem || '/moodboard',
+      estagio: 'acao',
+      signals: {
+        ...(prev?.signals || {}),
+        usedMoodboard: true,
+      },
+      recommendedAction: {
+        label: 'Levar para projeto',
+        href: '/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=moodboard&intent=design&stage=acao',
+        intent: 'design',
+        stage: 'acao',
+      },
+      updatedAt: new Date().toISOString(),
+    }))
   }
 
   const handleExportPDF = async () => {
@@ -489,6 +527,19 @@ export default function MoodboardGenerator() {
       alert('Gere a apresentacao antes de abrir a pagina publica.')
       return
     }
+
+    setContext?.((prev) => ({
+      ...prev,
+      interesse: 'design',
+      tipoImovel: prev?.tipoImovel || 'interiores',
+      origem: prev?.origem || '/moodboard',
+      estagio: 'acao',
+      signals: {
+        ...(prev?.signals || {}),
+        usedMoodboard: true,
+      },
+      updatedAt: new Date().toISOString(),
+    }))
 
     const url = buildMoodboardShareUrl(generatedGuide)
     if (!url) {

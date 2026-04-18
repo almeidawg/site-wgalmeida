@@ -1,6 +1,82 @@
 # RETURN-POINT — site-wgalmeida
 **Atualizado:** 18/04/2026
 
+## Sessão 18/04/2026 — agentes obrigatórios do site inteligente e moodboard profissional reforçados ✅
+
+### O que foi feito
+
+- `src/lib/userContext.js`
+  - criado contrato canonico do contexto do usuario:
+    - `interesse`
+    - `tipoImovel`
+    - `faixaValor`
+    - `estagio`
+    - `origem`
+    - `paginas`
+    - `signals`
+    - `recommendedAction`
+- `src/providers/ContextProvider.jsx`
+  - persistencia passou a normalizar o contexto salvo antes de ler/gravar
+- `src/lib/decisionEngine.js`
+  - motor evoluido para:
+    - inferir `interesse` por rota e historico
+    - inferir `tipoImovel`
+    - classificar `estagio`
+    - calcular `score` de confianca
+    - decidir CTA por interesse + estagio
+    - manter fallback manual via WhatsApp
+  - integrações reforçadas com:
+    - `ObraEasy`
+    - `Easy Real State`
+    - `Solicite Proposta`
+- `src/components/ContextTracker.jsx`
+  - agora captura rota + query string
+  - passa a registrar sinais de jornada:
+    - proposta
+    - moodboard
+    - investimento
+    - ObraEasy
+    - Easy Real State
+  - salva `recommendedAction` no contexto
+- `src/components/SmartCTA.jsx`
+  - CTA ficou mais profissional:
+    - mostra motivo da recomendacao
+    - mostra estagio e confianca
+    - preserva CTA principal
+    - preserva CTA secundario
+    - adiciona caminho manual obrigatorio
+- `src/pages/MoodboardGenerator.jsx`
+  - selecao de estilo e geracao do guia agora alimentam o contexto global
+  - o moodboard promove a jornada de `design` para `decisao` e depois `acao`
+  - CTA do guia publico passou a carregar `context`, `intent`, `stage` e `source`
+- `src/__tests__/decisionEngine.test.js`
+  - adicionado teste unitario para o motor de decisao
+- `docs/AGENTES-OBRIGATORIOS-SITE-E-MOODBOARD.md`
+  - documentados os agentes obrigatorios do site inteligente, integracoes WG e gestao editorial por slot
+
+### Validacao executada
+
+- `npm run lint` -> OK
+- `npm run test:run -- src/__tests__/decisionEngine.test.js` -> OK (`6 passed`)
+- `npm run build` -> OK
+
+### Leitura real do estado
+
+- Camada 1 e 2 ja existiam e continuam ativas
+- Camadas 3, 4 e 5 deixaram de estar apenas descritas e passaram a ter reforco operacional no nucleo:
+  - personalizacao por estagio/contexto
+  - integracao real com produtos WG
+  - next best action com score e fallback manual
+- o bloco de `gestao editorial por slot` ja estava funcional no admin; agora tambem ficou formalizado como regra obrigatoria do projeto
+
+### Proximo bloco recomendado
+
+- aplicar o `SmartCTA` reforcado nas paginas institucionais mais criticas alem do blog/home onde fizer sentido
+- levar o contexto salvo do site para captura/persistencia externa quando a trilha de backend estiver pronta
+- se o admin editorial virar produto operacional isolado, extrair o estado de slot para um modulo dedicado reutilizavel
+
+---
+
 ## Sessão 18/04/2026 — Site Inteligente Camadas 1 e 2 — PR #15 aberto ✅
 
 ### O que foi feito
