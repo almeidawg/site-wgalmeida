@@ -10,6 +10,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSearchParams } from 'react-router-dom'
 import { COMPANY } from '@/data/company';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 // Animações elegantes
 const fadeInUp = {
@@ -18,6 +19,8 @@ const fadeInUp = {
   viewport: { once: true },
   transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
 }
+
+const CONTACT_HERO_IMAGE = getPublicPageImageSrc('contact', '/images/banners/FALECONOSCO.webp')
 
 const Contact = () => {
   const { toast } = useToast()
@@ -140,7 +143,7 @@ const Contact = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt={t('contactPage.hero.imageAlt')}
-            src="/images/banners/FALECONOSCO.webp"
+            src={CONTACT_HERO_IMAGE}
             width="1920"
             height="1080"
             loading="eager"

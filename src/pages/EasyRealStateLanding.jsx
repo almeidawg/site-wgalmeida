@@ -8,8 +8,10 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { COMPANY, EASYREALSTATE_PRECOS, PRODUCT_URLS, WG_PRODUCT_MESSAGES } from '@/data/company';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 const EasyRealStateLanding = () => {
+  const easyRealStateHeroImage = getPublicPageImageSrc('easyRealState', '/images/banners/ARQ.webp')
   const pageUrl = `${PRODUCT_URLS.site}/easy-real-state`
   const primaryCtaClass = 'inline-flex min-h-[52px] w-full items-center justify-center rounded-2xl bg-wg-orange px-6 py-3 text-sm font-light text-white shadow-sm transition-all duration-300 hover:bg-wg-orange/90 sm:w-auto'
   const secondaryCtaClass = 'inline-flex min-h-[52px] w-full items-center justify-center rounded-2xl border border-white/45 bg-white/5 px-6 py-3 text-sm font-light text-white transition-all duration-300 hover:bg-white hover:text-wg-black sm:w-auto'
@@ -212,7 +214,7 @@ const EasyRealStateLanding = () => {
         >
           <div
             className="absolute inset-0 bg-cover bg-center opacity-25"
-            style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
+            style={{ backgroundImage: `url(${withBasePath(easyRealStateHeroImage)})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-wg-black/90 via-wg-black/70 to-wg-black" />
         </motion.div>

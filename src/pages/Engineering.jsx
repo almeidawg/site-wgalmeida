@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
 import { WG_PRODUCT_MESSAGES } from '@/data/company';
 import { normalizeUnsplashImageUrl } from '@/lib/unsplash';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 // Animações elegantes
 const fadeInUp = {
@@ -21,6 +22,7 @@ const ENGINEERING_COMMITMENT_IMAGE = normalizeUnsplashImageUrl('https://images.u
   height: 900,
   quality: 80,
 });
+const ENGINEERING_HERO_IMAGE = getPublicPageImageSrc('engineering', '/images/banners/ENGENHARIA.webp');
 
 const Engineering = () => {
   const { t } = useTranslation();
@@ -83,7 +85,7 @@ const Engineering = () => {
           <img
             className="w-full h-full object-cover"
             alt={t('engineeringPage.hero.imageAlt')}
-            src="/images/banners/ENGENHARIA.webp"
+            src={ENGINEERING_HERO_IMAGE}
             srcSet="/images/banners/ENGENHARIA-640.webp 640w, /images/banners/ENGENHARIA-960-opt.webp 960w, /images/banners/ENGENHARIA-1280.webp 1280w, /images/banners/ENGENHARIA.webp 1920w"
             sizes="100vw"
             width="1920"

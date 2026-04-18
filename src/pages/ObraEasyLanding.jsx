@@ -7,8 +7,10 @@ import {
   Shield, FileText, BarChart3, Building2, Phone, Zap, Layers3, Landmark
 } from 'lucide-react'
 import { COMPANY, OBRAEASY_PRECOS, PRODUCT_URLS, WG_PRODUCT_MESSAGES } from '@/data/company'
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 const ObraEasyLanding = () => {
+  const obraEasyHeroImage = getPublicPageImageSrc('obraEasy', '/images/banners/ARQ.webp')
   const pageUrl = `${PRODUCT_URLS.site}/obraeasy`
 
   const planos = [
@@ -233,7 +235,7 @@ const ObraEasyLanding = () => {
         >
           <div
             className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
+            style={{ backgroundImage: `url(${withBasePath(obraEasyHeroImage)})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-wg-black/90 via-wg-black/70 to-wg-black" />
         </motion.div>

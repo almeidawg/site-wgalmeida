@@ -18,6 +18,9 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { COMPANY, WG_PRODUCT_MESSAGES } from '@/data/company';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
+
+const OBRA_TURN_KEY_HERO_IMAGE = getPublicPageImageSrc('obraTurnKey', withBasePath('/images/banners/ARQ.webp'));
 
 const ObraTurnKey = () => {
   const pageUrl = 'https://wgalmeida.com.br/obra-turn-key';
@@ -179,7 +182,7 @@ const ObraTurnKey = () => {
       <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
+          style={{ backgroundImage: `url(${OBRA_TURN_KEY_HERO_IMAGE})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 

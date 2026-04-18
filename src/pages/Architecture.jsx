@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
 import { WG_PRODUCT_MESSAGES } from '@/data/company';
 import { PROJECT_SERVICE_HIGHLIGHTS } from '@/utils/cloudinaryProjectPortfolio';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 // Animações elegantes
 const fadeInUp = {
@@ -16,6 +17,8 @@ const fadeInUp = {
   viewport: { once: true },
   transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
 };
+
+const ARCHITECTURE_HERO_IMAGE = getPublicPageImageSrc('architecture', '/images/banners/ARQ.webp');
 
 const Architecture = () => {
   const { t } = useTranslation();
@@ -61,7 +64,7 @@ const Architecture = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt={t('architecturePage.hero.imageAlt')}
-            src="/images/banners/ARQ.webp"
+            src={ARCHITECTURE_HERO_IMAGE}
             width="1920"
             height="1080"
             loading="eager"

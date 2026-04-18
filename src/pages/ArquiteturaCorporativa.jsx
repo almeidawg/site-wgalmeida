@@ -17,6 +17,9 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { COMPANY } from '@/data/company';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
+
+const CORPORATE_HERO_IMAGE = getPublicPageImageSrc('arquiteturaCorporativa', withBasePath('/images/banners/ARQ.webp'));
 
 const ArquiteturaCorporativa = () => {
   const pageUrl = 'https://wgalmeida.com.br/arquitetura-corporativa';
@@ -137,8 +140,8 @@ const ArquiteturaCorporativa = () => {
       <section className="wg-page-hero hero-under-header bg-wg-black">
         <img
           className="absolute inset-0 h-full w-full object-cover opacity-30"
-          src={withBasePath('/images/banners/ARQ.webp')}
-          srcSet={`${withBasePath('/images/banners/ARQ.webp')} 1920w`}
+          src={CORPORATE_HERO_IMAGE}
+          srcSet={`${CORPORATE_HERO_IMAGE} 1920w`}
           sizes="100vw"
           alt="Arquitetura corporativa e espaços comerciais"
           width="1920"

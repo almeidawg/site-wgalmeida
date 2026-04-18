@@ -4,6 +4,7 @@ import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import './faq.css';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 const FAQ_CLUSTERS = [
   {
@@ -156,6 +157,7 @@ const FAQ_CLUSTERS = [
 ];
 
 const flattenFaqs = (clusters) => clusters.flatMap((cluster) => cluster.items);
+const FAQ_HERO_IMAGE = getPublicPageImageSrc('faq', '/images/banners/ARQ.webp');
 
 export default function FAQPage() {
   const [activeIndex, setActiveIndex] = useState('estrategia-0');
@@ -195,7 +197,7 @@ export default function FAQPage() {
             <ResponsiveWebpImage
               className="w-full h-full object-cover"
               alt="Perguntas frequentes estratégicas WG Almeida"
-              src="/images/banners/ARQ.webp"
+              src={FAQ_HERO_IMAGE}
               width="1920"
               height="1080"
               loading="eager"

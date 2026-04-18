@@ -15,6 +15,9 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { COMPANY, WG_PRODUCT_MESSAGES } from '@/data/company';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
+
+const VILA_NOVA_HERO_IMAGE = getPublicPageImageSrc('arquiteturaInterioresVilaNovaConceicao', withBasePath('/images/banners/ARQ.webp'));
 
 const ArquiteturaInterioresVilaNovaConceicao = () => {
   const pageUrl = 'https://wgalmeida.com.br/arquitetura-interiores-vila-nova-conceicao';
@@ -118,7 +121,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
       <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
+          style={{ backgroundImage: `url(${VILA_NOVA_HERO_IMAGE})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 

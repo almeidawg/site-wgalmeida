@@ -11,8 +11,10 @@ import { Button } from '@/components/ui/button';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
 import { withBasePath } from '@/utils/assetPaths';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 const BRAND_LOGO_SRC = withBasePath('/images/logo-192.webp');
+const A_MARCA_HERO_IMAGE = getPublicPageImageSrc('aMarca', withBasePath('/images/banners/ARQ.webp'));
 
 const AMarca = () => {
   const { t } = useTranslation();
@@ -42,7 +44,7 @@ const AMarca = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt="Marca WG Almeida - Arquitetura, Engenharia e Marcenaria Premium"
-            src="/images/banners/ARQ.webp"
+            src={A_MARCA_HERO_IMAGE}
             width="1920"
             height="1080"
             loading="eager"

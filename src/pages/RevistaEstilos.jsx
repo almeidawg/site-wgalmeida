@@ -14,6 +14,9 @@ import {
 import { styleCatalog } from '@/utils/styleCatalog';
 import { withBasePath } from '@/utils/assetPaths';
 import { getStyleImageUrl } from '@/data/styleImageManifest';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
+
+const STYLE_MAGAZINE_HERO_IMAGE = getPublicPageImageSrc('revistaEstilos', withBasePath('/images/banners/MARCENARIA.webp'));
 
 // Component for Style Card
 const StyleCard = ({ estilo, index }) => {
@@ -152,7 +155,7 @@ const RevistaEstilos = () => {
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
           <ResponsiveWebpImage
-            src={withBasePath('/images/banners/MARCENARIA.webp')}
+            src={STYLE_MAGAZINE_HERO_IMAGE}
             alt="Revista de Estilos"
             className="w-full h-full object-cover"
             loading="eager"
