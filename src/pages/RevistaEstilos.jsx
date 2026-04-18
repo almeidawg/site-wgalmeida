@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { styleCatalog } from '@/utils/styleCatalog';
 import { withBasePath } from '@/utils/assetPaths';
+import { getStyleImageUrl } from '@/data/styleImageManifest';
 
 // Component for Style Card
 const StyleCard = ({ estilo, index }) => {
@@ -32,7 +33,7 @@ const StyleCard = ({ estilo, index }) => {
         {/* Image */}
         <div className="relative h-full min-h-[400px] overflow-hidden">
           <ResponsiveWebpImage
-            src={estilo.image}
+            src={getStyleImageUrl({ slug: estilo.slug, variant: 'card' }) || estilo.image}
             alt={estilo.title}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             loading={index < 2 ? "eager" : "lazy"}

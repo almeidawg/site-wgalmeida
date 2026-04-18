@@ -20,6 +20,7 @@ import {
   BookOpen,
 } from 'lucide-react';
 import { styleCatalog } from '@/utils/styleCatalog';
+import { getStyleImageUrl } from '@/data/styleImageManifest';
 
 const slugifyHeading = (text) => text
   .toString().toLowerCase().normalize('NFD')
@@ -215,6 +216,8 @@ const EstiloDetail = () => {
     );
   }
 
+  const heroImg = getStyleImageUrl({ slug: estilo.slug, variant: 'hero' }) || estilo.image;
+  const cardImg = getStyleImageUrl({ slug: estilo.slug, variant: 'card' }) || estilo.image;
   const contentBody = estilo.content.replace(/^\s*#\s+.*(?:\r?\n)+/, '').trim();
   const articleUrl = `https://wgalmeida.com.br/estilos/${estilo.slug}`;
   const tocHeadings = extractTocHeadings(contentBody);
@@ -229,7 +232,7 @@ const EstiloDetail = () => {
         title={`${estilo.title} - Guia Completo de Estilo | WG Almeida`}
         description={estilo.excerpt}
         url={articleUrl}
-        image={`https://wgalmeida.com.br${estilo.image}`}
+        image={heroImg?.startsWith('http') ? heroImg : `https://wgalmeida.com.br${heroImg}`}
         keywords={`${estilo.title.toLowerCase()}, estilo decoracao, design interiores, decoracao ${estilo.title.toLowerCase()}, ambientes ${estilo.title.toLowerCase()}`}
         schema={{
           "@context": "https://schema.org",
@@ -237,7 +240,7 @@ const EstiloDetail = () => {
           headline: `${estilo.title} - Guia Completo de Estilo`,
           description: estilo.excerpt,
           url: articleUrl,
-          image: `https://wgalmeida.com.br${estilo.image}`,
+          image: heroImg?.startsWith('http') ? heroImg : `https://wgalmeida.com.br${heroImg}`,
           author: {
             "@type": "Organization",
             name: "Grupo WG Almeida",
@@ -262,7 +265,7 @@ const EstiloDetail = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <ResponsiveWebpImage
-            src={estilo.image}
+            src={heroImg}
             alt={estilo.title}
             className="w-full h-full object-cover"
             loading="eager"
@@ -344,7 +347,7 @@ const EstiloDetail = () => {
             <div className="grid grid-cols-1 md:grid-cols-[200px_1fr]">
               <div className="relative h-40 md:h-full">
                 <ResponsiveWebpImage
-                  src={estilo.image}
+                  src={cardImg}
                   alt={estilo.title}
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -518,7 +521,7 @@ const EstiloDetail = () => {
                     className="group block relative h-80 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all"
                   >
                     <ResponsiveWebpImage
-                      src={otherEstilo.image}
+                      src={getStyleImageUrl({ slug: otherEstilo.slug, variant: 'card' }) || otherEstilo.image}
                       alt={otherEstilo.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
