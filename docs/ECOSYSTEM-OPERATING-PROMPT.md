@@ -32,7 +32,7 @@ Padrao unico para operar e evoluir o ecossistema WG com o mesmo metodo:
   - pasta de apoio Ollama: `C:\Users\Administrador\WG-Ollama\`
 - Pasta Documentos:
   - principal de projetos: `C:\Users\Atendimento\Documents\`
-  - workspace WG atual: `...\_WG_ALMEIDA_GROUPO\...`
+  - workspace WG atual: `...\_GRUPO_WG_ALMEIDA\...`
 
 ## Prompt mestre (copiar e usar)
 

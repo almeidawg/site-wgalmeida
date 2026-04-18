@@ -6,7 +6,7 @@
   "validation_depth": "MAX",
   "rule_principal": "NAO_TRATAR_RUNTIME_COMO_ERRO",
   "governance_execution": {
-    "script_path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+    "script_path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
     "status": "OK_WITH_RUNTIME_ATTENTION",
     "summary": {
       "ok": 5,
@@ -18,13 +18,13 @@
       "status": "OK",
       "behavior": "dynamic_expected_file",
       "related_files": [
-        "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\STATUS-PROJETOS.md"
+        "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\STATUS-PROJETOS.md"
       ]
     },
     "artifacts": {
-      "script_stdout_log": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida\\docs\\audits\\full-system-audit-2026-04-09\\governance-script-output.log",
-      "governance_json": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-193406.json",
-      "governance_md": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-193406.md"
+      "script_stdout_log": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida\\docs\\audits\\full-system-audit-2026-04-09\\governance-script-output.log",
+      "governance_json": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-193406.json",
+      "governance_md": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-193406.md"
     }
   },
   "attention_analysis": {

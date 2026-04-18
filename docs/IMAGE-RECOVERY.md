@@ -6,7 +6,7 @@ Mapear onde estao os assets visuais do site WG Almeida, quais fontes paralelas a
 
 Projeto runtime canonico:
 
-- `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\_Grupo_WG_Almeida\site-wgalmeida\site-wgalmeida`
+- `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\_Grupo_WG_Almeida\site-wgalmeida\site-wgalmeida`
 
 ## Reservatorios de assets localizados
 
@@ -154,7 +154,7 @@ O runtime atual nao esta em um repositorio Git ativo.
 
 Existe copia arquivada em:
 
-- `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\99_ARQUIVO_MORTO\site-wgalmeida-descartadas-20260406`
+- `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\99_ARQUIVO_MORTO\site-wgalmeida-descartadas-20260406`
 
 Achado principal:
 

@@ -3,8 +3,8 @@
 ## Heranca obrigatoria WG
 Este AGENTS deve ser usado em conjunto com:
 - C:\Users\Atendimento\AGENTS.md
-- C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\IA-START-HERE-WG.md
-- C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\AGENTS-BOAS-PRATICAS-WG.md
+- C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\IA-START-HERE-WG.md
+- C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\AGENTS-BOAS-PRATICAS-WG.md
 
 ## PROJETO
 - Nome: site-wgalmeida

@@ -65,7 +65,7 @@
       "classification": "WARNING",
       "impact": "Pode quebrar automacoes que dependam de paths hardcoded sem normalizacao.",
       "evidence": [
-        "Nao existe C:\\Users\\Atendimento\\Documents_WG_ALMEIDA_GROUPO",
+        "Nao existe C:\\Users\\Atendimento\\Documents_GRUPO_WG_ALMEIDA",
         "Nao existe C:\\Users\\Atendimento\\Documents_WG_build.tech",
         "Nao existe C:\\Users\\Atendimento.codex"
       ],

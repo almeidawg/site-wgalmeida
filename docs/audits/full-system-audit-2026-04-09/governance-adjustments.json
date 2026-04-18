@@ -5,12 +5,12 @@
     "status": "IMPLEMENTED_AND_VALIDATED",
     "implemented_at": "2026-04-09T20:00:57-03:00",
     "scripts_updated": [
-      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
-      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-enforce-estrutura.ps1"
+      "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+      "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_AUTOMACAO\\02_SCRIPTS\\wg-enforce-estrutura.ps1"
     ],
     "validation_outputs": [
-      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-200057.json",
-      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\estrutura-enforce-20260409-200057.json"
+      "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-200057.json",
+      "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\estrutura-enforce-20260409-200057.json"
     ]
   },
   "objective": "Ajustar governanca para awareness de runtime sem tratar atividade legitima como erro.",
@@ -32,19 +32,19 @@
   ],
   "protection_rules": [
     {
-      "target": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\wgeasy-dev*.log",
+      "target": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\wgeasy-dev*.log",
       "action": "protect_when_runtime_active"
     },
     {
-      "target": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\backend-start*.log",
+      "target": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\backend-start*.log",
       "action": "protect_when_runtime_active"
     },
     {
-      "target": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\WG_AUTOMATION",
+      "target": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_AUTOMACAO\\WG_AUTOMATION",
       "action": "protect_runtime_zone"
     },
     {
-      "target": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_SaaS\\WGEasy",
+      "target": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_SaaS\\WGEasy",
       "action": "protect_runtime_zone"
     }
   ],

@@ -84,6 +84,6 @@ Projeto identificado automaticamente. Revise o propósito manualmente para refle
 
 ## Referências rápidas
 
-- Raiz funcional: `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\_Grupo_WG_Almeida\site-wgalmeida\site-wgalmeida`
+- Raiz funcional: `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\_Grupo_WG_Almeida\site-wgalmeida\site-wgalmeida`
 - Stack detectada: Vite, React, TypeScript, Supabase, Tailwind CSS, Vercel, WebSocket
 - Gerado em: 2026-04-14T23:46:06.385Z
