@@ -786,7 +786,7 @@ const Process = () => {
                       <ArrowRight className="h-4 w-4" />
                     </a>
                     <Link
-                      to="/solicite-proposta"
+                      to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=process"
                       className="inline-flex items-center justify-center rounded-full border border-black/10 bg-black/[0.02] px-6 py-3 text-sm text-wg-black transition-colors hover:bg-black/[0.04] font-light"
                     >
                       Avançar para EVF assistido
@@ -947,7 +947,7 @@ const Process = () => {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
-                to="/solicite-proposta"
+                to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=process"
                 className="wg-btn-pill-primary"
               >
                 {copy.ctaPrimary}

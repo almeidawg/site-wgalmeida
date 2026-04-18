@@ -14,7 +14,7 @@ import {
   Phone,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { COMPANY } from '@/data/company';
+import { COMPANY, WG_PRODUCT_MESSAGES } from '@/data/company';
 
 const ArquiteturaInterioresVilaNovaConceicao = () => {
   const pageUrl = 'https://wgalmeida.com.br/arquitetura-interiores-vila-nova-conceicao';
@@ -142,7 +142,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
               sofisticação e personalidade. Do conceito à entrega completa Turn Key.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/solicite-proposta">
+              <Link to="/solicite-proposta?context=vila-nova">
                 <Button className="btn-apple">
                   Solicitar Orçamento VNC
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -331,6 +331,59 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
         </div>
       </section>
 
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-[2rem] border border-black/5 bg-gradient-to-br from-white via-white to-wg-gray-light p-8 md:p-10"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start">
+              <div>
+                <span className="text-wg-orange text-sm tracking-[0.2em] uppercase mb-4 block">
+                  Add-on de experiencia visual
+                </span>
+                <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black mb-4">
+                  Para interiores premium, a aprovacao estetica pode comecar antes do projeto fechar
+                </h2>
+                <div className="space-y-3 text-wg-gray leading-relaxed">
+                  <p>{WG_PRODUCT_MESSAGES.wgExperienceSystem}</p>
+                  <p>
+                    Essa camada ajuda a consolidar linguagem, curadoria e sensacao do ambiente antes de aprofundar layout, materiais e definicoes executivas.
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                {[
+                  'Briefing mais preciso para clientes de alto padrao e familias que decidem em conjunto.',
+                  'Mais seguranca para curadoria de materiais, marcenaria e ambientacao.',
+                  'Ponte direta entre inspiracao, conceito e proposta comercial assistida.',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-black/5 bg-white p-4 shadow-[0_18px_48px_rgba(30,24,20,0.05)]">
+                    <CheckCircle className="w-5 h-5 text-wg-orange flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-wg-gray font-light leading-relaxed">{item}</p>
+                  </div>
+                ))}
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <Link to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=vila-nova">
+                    <Button className="btn-apple">
+                      Adicionar experiencia visual
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
+                  <Link to="/moodboard">
+                    <Button className="btn-hero-outline text-wg-black border-black/10 hover:bg-black/5">
+                      Ver moodboard aplicado
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Final */}
       <section className="section-padding bg-gradient-to-br from-wg-black to-wg-black/90 text-white">
         <div className="container-custom text-center">
@@ -347,7 +400,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
               Receba um orçamento personalizado e descubra como criamos ambientes únicos com arquitetura de interiores de excelência.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/solicite-proposta">
+              <Link to="/solicite-proposta?context=vila-nova">
                 <Button className="btn-apple">
                   Solicitar Orçamento Grátis
                   <ArrowRight className="ml-2 w-5 h-5" />

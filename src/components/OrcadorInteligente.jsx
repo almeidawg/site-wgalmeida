@@ -4,7 +4,20 @@ import { motion, AnimatePresence } from '@/lib/motion-lite';
 import { ArrowRight, ArrowLeft, CheckCircle2, Building2, Ruler, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/customSupabaseClient';
 
-const OrcadorInteligente = () => {
+const SERVICE_OPTIONS = [
+  'Obra Turn Key (Completa)',
+  'Apenas Projeto de Interiores',
+  'Apenas Marcenaria Sob Medida',
+  'Consultoria Técnica',
+  'Sistema de Experiência Visual',
+];
+
+const OrcadorInteligente = ({
+  initialService = '',
+  initialPropertyType = '',
+  sourceContext = '',
+  introLabel = '',
+}) => {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -12,9 +25,9 @@ const OrcadorInteligente = () => {
     nome: '',
     telefone: '',
     email: '',
-    tipoImovel: '',
+    tipoImovel: initialPropertyType,
     metragem: '',
-    servico: '',
+    servico: initialService,
     prazo: '',
   });
 
@@ -34,6 +47,7 @@ const OrcadorInteligente = () => {
         tipoImovel: formData.tipoImovel,
         metragem: formData.metragem,
         prazo: formData.prazo,
+        origem: sourceContext || 'site-wgalmeida',
       };
 
       const { error: contactError } = await supabase.from('contacts').insert([{
@@ -41,7 +55,7 @@ const OrcadorInteligente = () => {
         email: formData.email,
         phone: formData.telefone,
         subject: `Orçamento Inteligente: ${formData.servico}`,
-        message: `Imóvel: ${formData.tipoImovel} | Metragem: ${formData.metragem}m² | Prazo: ${formData.prazo}`,
+        message: `Imóvel: ${formData.tipoImovel} | Metragem: ${formData.metragem}m² | Prazo: ${formData.prazo} | Origem: ${sourceContext || 'site-wgalmeida'}`,
       }]);
 
       if (contactError) {
@@ -91,7 +105,7 @@ const OrcadorInteligente = () => {
         </div>
         <h3 className="mb-4 text-3xl font-light text-wg-black">Orçamento Solicitado!</h3>
         <p className="mb-8 text-lg text-wg-gray">
-          Nossa inteligência artificial já recebeu seus dados. A Liz e nosso time técnico prepararão um pré-orçamento em breve.
+          Nossa inteligência já recebeu seus dados. A Liz e nosso time técnico prepararão o próximo passo com base no seu contexto e no serviço selecionado.
         </p>
         <Link
           to="/"
@@ -111,6 +125,11 @@ const OrcadorInteligente = () => {
       {renderStepIndicator()}
 
       <form onSubmit={handleSubmit} className="relative z-10">
+        {introLabel ? (
+          <div className="mb-6 rounded-[1.6rem] border border-wg-orange/15 bg-[#faf4ef] px-5 py-4 text-sm text-wg-orange-text">
+            {introLabel}
+          </div>
+        ) : null}
         <AnimatePresence mode="wait">
           {step === 1 && (
             <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
@@ -150,7 +169,7 @@ const OrcadorInteligente = () => {
             <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
               <h3 className="mb-6 text-center text-2xl font-light text-wg-orange-text md:text-[2rem]">Qual serviço você precisa?</h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                {['Obra Turn Key (Completa)', 'Apenas Projeto de Interiores', 'Apenas Marcenaria Sob Medida', 'Consultoria Técnica'].map((srv) => (
+                {SERVICE_OPTIONS.map((srv) => (
                   <button
                     key={srv}
                     type="button"

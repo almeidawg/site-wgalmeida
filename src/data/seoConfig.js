@@ -121,7 +121,7 @@ export const SEO_CONFIG = {
   "/solicite-proposta": page(
     "/solicite-proposta",
     "Solicite Proposta | Grupo WG Almeida",
-    "Solicite sua proposta para arquitetura, engenharia e marcenaria."
+    "Solicite sua proposta para arquitetura, engenharia, marcenaria e sistema de experiencia visual aplicado a briefing, prevenda e execucao."
   ),
   "/obra-turn-key": page(
     "/obra-turn-key",
@@ -151,7 +151,7 @@ export const SEO_CONFIG = {
   "/buildtech": page(
     "/buildtech",
     "WG Build.tech | Consultoria de IA e Tecnologia para Construção",
-    "Liderança mundial em arquitetura e tecnologia. Conheça as soluções de IA e o ecossistema WG Easy para o mercado imobiliário."
+    "Conheca a frente WG BuildTech para sistemas inteligentes, automacao e experiencia visual aplicada a construcao, retrofit e mercado imobiliario."
   ),
   "/easylocker": page(
     "/easylocker",
@@ -175,18 +175,18 @@ export const SEO_CONFIG = {
   ),
   "/moodboard": page(
     "/moodboard",
-    "Moodboard | Crie sua Visao de Design de Interiores | WG Almeida",
-    "Crie seu moodboard de design de interiores. Selecione cores, estilos e referencias para visualizar sua visao de decoracao."
+    "Moodboard | Sistema de Experiencia Visual | WG Almeida",
+    "Organize estilo, referencias e decisoes visuais em uma jornada de alinhamento estetico pronta para briefing, proposta e projeto."
   ),
   "/moodboard-generator": page(
     "/moodboard-generator",
     "Gerador de Moodboard Profissional | WG Almeida",
-    "Gere moodboards profissionais de design de interiores com imagens curadas por ambiente, material e paleta de cores."
+    "Monte apresentacoes de moodboard e transforme referencias em uma experiencia visual clara para clientes, corretores e profissionais."
   ),
   "/room-visualizer": page(
     "/room-visualizer",
     "Visualizador de Ambientes com IA | WG Almeida",
-    "Visualize seu ambiente reformado com inteligencia artificial. Envie uma foto e veja o resultado com o estilo que voce escolheu."
+    "Visualize cenarios de reforma com IA e use a leitura visual como apoio para alinhamento, proposta e proximo passo comercial."
   ),
 };
 

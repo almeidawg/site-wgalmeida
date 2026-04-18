@@ -1,7 +1,6 @@
 import { buildWgImageSearchPayload } from '@/lib/wgVisualSearchProfile';
 
-const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY || '';
-const UNSPLASH_API_URL = 'https://api.unsplash.com';
+const UNSPLASH_PROXY_URL = '/api/unsplash-search';
 
 export interface UnsplashImage {
   id: string;
@@ -9,8 +8,16 @@ export interface UnsplashImage {
     regular: string;
     full: string;
     raw: string;
+    thumb?: string;
+    small?: string;
   };
   alt_description: string;
+  description?: string;
+  photographer?: string;
+  photographerUsername?: string;
+  profileUrl?: string;
+  unsplashPage?: string;
+  downloadLocation?: string;
   user: {
     name: string;
     links: {
@@ -25,11 +32,6 @@ interface SearchParams {
   color?: string;
   perPage?: number;
 }
-
-const buildAuthHeaders = () => ({
-  Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}`,
-  'Accept-Version': 'v1',
-});
 
 interface UnsplashTransformOptions {
   width?: number;
@@ -102,34 +104,47 @@ export async function searchUnsplashImages({
   color,
   perPage = 10,
 }: SearchParams): Promise<UnsplashImage[]> {
-  if (!UNSPLASH_ACCESS_KEY) {
-    console.warn('Unsplash access key is missing. Configure VITE_UNSPLASH_ACCESS_KEY to enable image search.');
-    return [];
-  }
-
   try {
     const params = new URLSearchParams({
       query,
       orientation,
       per_page: perPage.toString(),
-      content_filter: 'high',
-      order_by: 'relevant',
     });
 
     if (color) {
       params.append('color', color);
     }
 
-    const response = await fetch(`${UNSPLASH_API_URL}/search/photos?${params}`, {
-      headers: buildAuthHeaders(),
-    });
+    const response = await fetch(`${UNSPLASH_PROXY_URL}?${params}`);
 
     if (!response.ok) {
       throw new Error(`Unsplash API error: ${response.statusText}`);
     }
 
     const data = await response.json();
-    return data.results || [];
+    return (data.photos || []).map((photo: any) => ({
+      id: photo.id,
+      urls: {
+        regular: photo.urls?.regular || '',
+        full: photo.urls?.full || '',
+        raw: photo.urls?.raw || '',
+        thumb: photo.urls?.thumb || '',
+        small: photo.urls?.small || '',
+      },
+      alt_description: photo.alt || photo.description || '',
+      description: photo.description || photo.alt || '',
+      photographer: photo.photographer || '',
+      photographerUsername: photo.photographerUsername || '',
+      profileUrl: photo.profileUrl || '',
+      unsplashPage: photo.unsplashPage || '',
+      downloadLocation: photo.downloadLocation || '',
+      user: {
+        name: photo.photographer || '',
+        links: {
+          html: photo.profileUrl || '',
+        },
+      },
+    }));
   } catch (error) {
     console.error('Error fetching from Unsplash:', error);
     return [];
@@ -140,29 +155,13 @@ export async function getRandomImage(
   query: string,
   orientation?: 'landscape' | 'portrait'
 ): Promise<UnsplashImage | null> {
-  if (!UNSPLASH_ACCESS_KEY) {
-    console.warn('Unsplash access key is missing. Configure VITE_UNSPLASH_ACCESS_KEY to enable image search.');
-    return null;
-  }
-
   try {
-    const params = new URLSearchParams({
+    const [firstImage] = await searchUnsplashImages({
       query,
+      orientation: orientation || 'landscape',
+      perPage: 1,
     });
-
-    if (orientation) {
-      params.append('orientation', orientation);
-    }
-
-    const response = await fetch(`${UNSPLASH_API_URL}/photos/random?${params}`, {
-      headers: buildAuthHeaders(),
-    });
-
-    if (!response.ok) {
-      throw new Error(`Unsplash API error: ${response.statusText}`);
-    }
-
-    return await response.json();
+    return firstImage || null;
   } catch (error) {
     console.error('Error fetching random image from Unsplash:', error);
     return null;

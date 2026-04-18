@@ -1,5 +1,261 @@
 # RETURN-POINT — site-wgalmeida
-**Atualizado:** 17/04/2026
+**Atualizado:** 18/04/2026
+
+## Sessão 18/04/2026 — moodboard com pagina publica de guia + proxy Unsplash ✅
+
+### O que foi feito
+
+- `src/lib/unsplash.ts`
+  - removido o acesso direto client-side com `VITE_UNSPLASH_ACCESS_KEY`
+  - `searchUnsplashImages` agora usa o proxy `/api/unsplash-search`
+  - resultados passaram a voltar normalizados com:
+    - `photographer`
+    - `profileUrl`
+    - `unsplashPage`
+    - `downloadLocation`
+- `src/pages/MoodboardGenerator.jsx`
+  - a geracao deixou de montar apenas um mapa simples de URLs
+  - agora monta um `guide payload` estruturado com:
+    - estilo
+    - paleta
+    - capa
+    - ambientes
+    - materiais
+    - rationale por bloco
+  - adicionada acao `Pagina publica` na etapa de preview
+  - a saida compartilhavel agora reaproveita `/moodboard/share`
+- `src/pages/MoodboardShare.jsx`
+  - a rota passou a suportar payload `kind: style-guide`
+  - agora consegue abrir uma landing publica de guia de estilo com:
+    - hero editorial
+    - paleta
+    - ambientes
+    - materiais
+    - CTA para WhatsApp e proposta
+    - copiar link / imprimir
+- `src/components/moodboard-generator/CoverPage.jsx`
+  - capa refeita com linguagem editorial da marca
+  - removido tom de template antigo
+- `src/components/moodboard-generator/EnvironmentPage.jsx`
+  - pagina de ambiente refeita com leitura mais premium e bloco de rationale
+- `src/components/moodboard-generator/MaterialPage.jsx`
+  - pagina de materiais refeita com composicao mais editorial e bloco de direcionamento
+
+### Resultado
+
+- a ferramenta agora gera:
+  - preview interno
+  - PDF
+  - pagina publica em HTML compartilhavel
+- a arquitetura de imagens ficou mais correta:
+  - chave da Unsplash nao fica mais exposta no browser
+  - a estrutura da busca passou a seguir o endpoint server-side ja existente
+- a apresentacao final ficou mais coerente com a proposta da WG Almeida e menos parecida com template generico
+
+### Validação executada
+
+- `npm run check:imports` -> OK
+- `npm run lint` -> OK
+- `npm run build` -> OK
+
+## Sessão 18/04/2026 — mudança da jornada do moodboard para seleção visual guiada ✅
+
+### O que foi feito
+
+- `src/pages/MoodboardGenerator.jsx`
+  - a ferramenta deixou de começar por dropdown de estilo
+  - agora a entrada principal acontece por `seleção visual por imagem`
+  - ao escolher uma referência, o sistema:
+    - identifica o estilo dominante
+    - aplica paleta inicial automática
+    - sugere estilos relacionados
+    - abre camadas de materiais e ambientes coerentes
+  - a jornada passou a seguir a lógica:
+    - imagem
+    - refinamento de estilo
+    - paleta
+    - tecidos, revestimentos, acabamentos e peças decorativas
+    - ambientes
+    - geração do documento
+- `src/lib/moodboard-constants.js`
+  - ampliadas as categorias de materiais para refletir melhor a formação do documento:
+    - `revestimentos-naturais`
+    - `acabamentos-premium`
+    - `iluminacao-decorativa`
+    - `objetos-decorativos`
+    - `tapetes-texturas`
+
+### Critério aplicado
+
+- o cliente não precisa saber o nome técnico do estilo
+- a reação visual vem primeiro
+- a automação com Unsplash continua como motor de geração, mas agora orientada por uma jornada mais próxima do comportamento real do cliente
+
+### Validação executada
+
+- `npm run check:imports` -> OK
+- `npm run lint` -> OK
+- `npm run build` -> OK
+
+## Sessão 18/04/2026 — formalização do add-on de experiência visual nas páginas de serviço ✅
+
+### O que foi feito
+
+- `src/pages/Architecture.jsx`
+  - adicionada seção formal do add-on como camada de onboarding e alinhamento estético
+  - CTA dedicado para proposta com contexto `architecture`
+- `src/pages/Engineering.jsx`
+  - adicionada seção de experiência visual conectando decisão estética à lógica de execução
+  - CTA dedicado para proposta com contexto `engineering`
+- `src/pages/Carpentry.jsx`
+  - adicionada seção do add-on para aprovação visual antes de medição, desenho executivo e produção
+  - CTA dedicado para proposta com contexto `carpentry`
+- `src/pages/ObraTurnKey.jsx`
+  - adicionada seção do add-on dentro da jornada turn key
+  - CTAs finais passaram a levar contexto `turnkey` para a proposta
+- `src/pages/ArquiteturaInterioresVilaNovaConceicao.jsx`
+  - integração do add-on na página premium de interiores
+  - CTAs finais passaram a levar contexto `vila-nova`
+- `src/pages/SoliciteProposta.jsx`
+  - mapeados novos contextos de entrada das páginas de serviço
+- `src/data/seoConfig.js`
+  - SEO atualizado para refletir o reposicionamento da frente como experiência visual aplicada
+- `src/data/schemaConfig.js`
+  - schema ampliado com serviço formal `Sistema de Experiencia Visual`
+  - `SoftwareApplication` passou a apontar para URLs de proposta contextualizadas
+
+### Resultado
+
+- a oferta deixou de existir apenas nas ferramentas e no orçamento
+- agora ela aparece como add-on formal dentro das frentes de:
+  - arquitetura
+  - engenharia
+  - marcenaria
+  - turn key
+  - interiores premium
+- o site passa a vender a frente como camada complementar real de projeto, pré-venda e alinhamento
+
+## Sessão 17/04/2026 — aprovação pública da frente moodboard como sistema de experiência ✅
+
+### O que foi feito
+
+- `src/pages/Moodboard.jsx`
+  - hero reposicionado para vender a frente como `sistema de experiência estética`
+  - adicionados blocos de valor para:
+    - perfil estético
+    - base para composição
+    - compartilhamento claro
+    - prontidão para briefing/projeto
+  - adicionada seção de jornada explicando a transição de inspiração para decisão visual
+- `src/pages/MoodboardGenerator.jsx`
+  - página reposicionada como `sistema de moodboard profissional`
+  - narrativa ajustada para uso por clientes finais, profissionais e operação comercial
+  - CTA principal ajustado para `Gerar apresentação de moodboard`
+- `src/pages/RoomVisualizer.jsx`
+  - hero e SEO reposicionados para `decisão visual com IA`
+  - etapa apresentada como camada de visualização da jornada, não apenas ferramenta isolada
+  - passos renomeados para leitura mais estratégica da experiência
+- `src/pages/BuildTech.jsx`
+  - bloco BuildTech alinhado à tese de sistemas agentic e experiência inteligente
+  - adicionados cards de enquadramento por público:
+    - clientes finais
+    - corretores e parceiros
+    - profissionais
+- `src/pages/Home.jsx`
+  - bloco de moodboard da home ajustado para vender direção estética e jornada de decisão
+
+### Critério aplicado
+
+- a rodada foi de `aprovação de posicionamento no site`
+- sem prometer no público recursos sociais/profissionais ainda não implementados
+- foco em narrativa, enquadramento comercial e coerência com a marca canônica:
+  - menos ferramenta solta
+  - mais sistema de decisão visual
+  - mais ponte para projeto, venda e execução
+
+### Validação executada
+
+- `npm run check:imports` -> OK
+- `npm run lint` -> OK
+- `npm run build` -> OK
+
+### Próximo bloco lógico
+
+- transformar essa frente em `add-on` dos projetos e jornadas comerciais
+- decidir onde a experiência entra como:
+  - etapa de onboarding
+  - diferencial de pré-venda
+  - entregável para clientes/profissionais
+- depois disso, aprofundar UX/funcionalidade real conforme a priorização do produto
+
+## Sessão 18/04/2026 — fechamento end-to-end do add-on comercial de experiência visual ✅
+
+### O que foi feito
+
+- `src/data/company.js`
+  - adicionadas mensagens SSoT para a frente:
+    - `wgExperienceSystem`
+    - `wgExperienceAddon`
+    - `wgExperienceConversion`
+- `src/components/OrcadorInteligente.jsx`
+  - o orçador passou a aceitar:
+    - `initialService`
+    - `initialPropertyType`
+    - `sourceContext`
+    - `introLabel`
+  - adicionada opção de serviço:
+    - `Sistema de Experiência Visual`
+  - a origem/contexto agora entra também no payload/mensagem do lead
+- `src/pages/SoliciteProposta.jsx`
+  - a página agora interpreta query params de contexto e serviço
+  - adicionados cards de enquadramento comercial da frente
+  - o orçador agora pode chegar pré-configurado conforme a origem da jornada
+- `src/pages/Moodboard.jsx`
+  - CTA secundário conectado à proposta com contexto `moodboard`
+- `src/pages/MoodboardGenerator.jsx`
+  - adicionados CTAs para:
+    - estruturar como add-on
+    - navegar para BuildTech
+- `src/pages/RoomVisualizer.jsx`
+  - adicionados CTAs para levar a visualização para proposta e para a frente BuildTech
+- `src/pages/BuildTech.jsx`
+  - CTAs principais conectados à proposta com contexto `buildtech`
+- `src/pages/Home.jsx`
+  - bloco de moodboard ganhou CTA de conversão para projeto/proposta
+- `src/pages/Process.jsx`
+  - CTAs ajustados para levar a experiência para proposta com contexto `process`
+
+### Resultado
+
+- a frente deixou de ser apenas uma narrativa aprovada
+- agora existe trilha comercial ponta a ponta:
+  - descoberta
+  - posicionamento
+  - contexto de entrada
+  - pré-seleção de serviço
+  - captura orientada no orçamento
+- o site já consegue tratar essa frente como `add-on` para:
+  - pré-venda
+  - briefing
+  - alinhamento visual
+  - entrada de projeto
+
+### Validação executada
+
+- `npm run check:imports` -> OK
+- `npm run lint` -> OK
+- `npm run build` -> OK
+
+### Próximo bloco lógico
+
+- decidir onde transformar isso em oferta formal no ecossistema:
+  - upsell de arquitetura/interiores
+  - entrada para corretores/imobiliárias
+  - add-on de onboarding em projetos turn key
+- se a frente virar produto operacional real, o próximo passo é evoluir:
+  - persistência de contexto por usuário
+  - comentários/colaboração reais
+  - briefing estruturado para profissionais
 
 ## Sessão 17/04/2026 — Admin blog-editorial: busca ao vivo Unsplash + wgVisualSearchProfile expandido ✅
 

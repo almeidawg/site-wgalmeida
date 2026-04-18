@@ -931,31 +931,39 @@ const Home = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="wg-heading-display text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
-                Crie seu <span className="text-wg-orange">Moodboard</span> e visualize suas cores no ambiente
+                Crie seu <span className="text-wg-orange">Moodboard</span> e organize a direção estética do projeto
               </h2>
 
               <p className="text-lg text-white/70 leading-relaxed mb-8 font-light">
-                Selecione paletas de cores, escolha estilos de decoração e veja como ficam aplicados em ambientes reais. Transforme paredes, sofás, cortinas e muito mais.
+                Escolha estilos, paletas e referências para sair da inspiração solta e entrar em uma jornada mais clara de decisão visual, alinhamento e execução.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 text-white/80">
                   <CheckCircle2 className="w-5 h-5 text-wg-orange" />
-                  <span className="text-sm">10 paletas de cores</span>
+                  <span className="text-sm">Descoberta guiada de estilo</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/80">
                   <CheckCircle2 className="w-5 h-5 text-wg-orange" />
-                  <span className="text-sm">12 estilos de decoração</span>
+                  <span className="text-sm">Base para visualização e briefing</span>
                 </div>
               </div>
 
-              <Link to="/moodboard">
-                <Button className="wg-btn-pill-primary">
-                  <Palette className="w-5 h-5 mr-2" />
-                  Criar Meu Moodboard
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
+              <div className="flex flex-wrap gap-3">
+                <Link to="/moodboard">
+                  <Button className="wg-btn-pill-primary">
+                    <Palette className="w-5 h-5 mr-2" />
+                    Criar Meu Moodboard
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link
+                  to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=moodboard"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white transition-colors hover:bg-white/10"
+                >
+                  Levar para projeto
+                </Link>
+              </div>
             </motion.div>
 
             {/* Interactive Color Transformer */}

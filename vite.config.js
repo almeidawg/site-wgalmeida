@@ -21,6 +21,7 @@ import inlineEditPlugin from "./plugins/visual-editor/vite-plugin-react-inline-e
 import editModeDevPlugin from "./plugins/visual-editor/vite-plugin-edit-mode.js";
 import iframeRouteRestorationPlugin from "./plugins/vite-plugin-iframe-route-restoration.js";
 import selectionModePlugin from "./plugins/selection-mode/vite-plugin-selection-mode.js";
+import apiDevPlugin from "./plugins/vite-plugin-api-dev.js";
 // Plugin para tratar .md como raw string (necessário no Vite 8/rolldown)
 const mdRawPlugin = {
   name: 'md-raw',
@@ -321,6 +322,7 @@ export default defineConfig({
   base: appBasePath,
   customLogger: logger,
   plugins: [
+    ...(isDev ? [apiDevPlugin()] : []),
     ...(isDev && enableEditorDevPlugins
       ? [
           inlineEditPlugin(),

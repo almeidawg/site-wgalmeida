@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
-import { Wrench, ClipboardCheck, Zap, Award, ArrowRight } from 'lucide-react';
+import { Wrench, ClipboardCheck, Zap, Award, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
@@ -372,6 +372,55 @@ const Engineering = () => {
               </motion.div>
             </motion.div>
           </div>
+
+          <motion.div
+            {...fadeInUp}
+            className="mt-20 rounded-3xl border border-wg-blue/15 bg-gradient-to-br from-wg-blue to-wg-black text-white p-8 md:p-10"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
+              <div>
+                <span className="text-white/65 font-light tracking-[0.2em] uppercase text-sm mb-4 block">
+                  Add-on de experiencia visual
+                </span>
+                <h3 className="text-2xl md:text-3xl font-inter font-light tracking-tight mb-4">
+                  Engenharia ganha velocidade quando a decisao visual chega mais organizada
+                </h3>
+                <div className="space-y-3 text-white/75 leading-relaxed">
+                  <p>{WG_PRODUCT_MESSAGES.wgExperienceConversion}</p>
+                  <p>
+                    Em engenharia, essa camada ajuda a consolidar referencias, reduzir revisoes tardias e conectar expectativa visual com compras, medicao e liberacao de frente.
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                {[
+                  'Antecipacao de escolhas que normalmente travam obra ou geram retrabalho.',
+                  'Briefing mais claro para compatibilizacao, aprovacoes e sequencia executiva.',
+                  'Entrada assistida para prevenda, retrofit ou reforma de ticket mais alto.',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <Sparkles className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-white/80 font-light leading-relaxed">{item}</p>
+                  </div>
+                ))}
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <Link
+                    to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=engineering"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-wg-blue rounded-lg hover:bg-white/90 transition-colors duration-300"
+                  >
+                    <span>Levar para proposta</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    to="/room-visualizer"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/15 text-white rounded-lg hover:bg-white/5 transition-colors duration-300"
+                  >
+                    Ver visualizacao assistida
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </>

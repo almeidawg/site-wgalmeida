@@ -79,4 +79,10 @@ export const WG_PRODUCT_MESSAGES = {
     'A lapidação do motor considera referências nacionais e internacionais de AVM, fechamento real e valuation, mas a vantagem WG está na conexão entre mercado, obra e captura de valor.',
   obraeasyCapture:
     'No ecossistema WG, a obra deixa de ser só custo. Ela passa a mostrar quanto da tese do ativo já está sendo protegida, validada ou destravada pela execução real.',
+  wgExperienceSystem:
+    'O sistema de experiência WG transforma referências, estilo, briefing e contexto em uma jornada mais clara de decisão visual, alinhamento e execução.',
+  wgExperienceAddon:
+    'Como add-on, essa frente pode entrar antes do projeto, durante a pré-venda ou como camada de alinhamento entre cliente, corretor, arquiteto e equipe.',
+  wgExperienceConversion:
+    'A função dessa camada não é gerar mais uma ferramenta. É reduzir indecisão, organizar preferências e aproximar inspiração de proposta, projeto e obra real.',
 }

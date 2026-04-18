@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
-import { Hammer, Package, Ruler, ArrowRight } from 'lucide-react';
+import { Hammer, Package, Ruler, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
@@ -279,6 +279,55 @@ const Carpentry = () => {
               </motion.div>
             </motion.div>
           </div>
+
+          <motion.div
+            {...fadeInUp}
+            className="mt-20 rounded-3xl border border-wg-brown/15 bg-wg-black text-white p-8 md:p-10"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
+              <div>
+                <span className="text-white/60 font-light tracking-[0.2em] uppercase text-sm mb-4 block">
+                  Add-on de experiencia visual
+                </span>
+                <h3 className="text-2xl md:text-3xl font-inter font-light tracking-tight mb-4">
+                  Marcenaria performa melhor quando a aprovacao visual acontece antes da producao
+                </h3>
+                <div className="space-y-3 text-white/75 leading-relaxed">
+                  <p>{WG_PRODUCT_MESSAGES.wgExperienceAddon}</p>
+                  <p>
+                    A camada de experiencia visual ajuda a organizar linguagem, atmosfera e uso antes de medicao final, desenho executivo e fabricacao sob medida.
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                {[
+                  'Aprova materiais, acabamentos e sensacao do conjunto com menos ruído.',
+                  'Melhora alinhamento entre cliente, arquiteto e equipe de producao.',
+                  'Cria base mais clara para detalhamento, montagem e entrega final.',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <Sparkles className="w-5 h-5 text-wg-brown flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-white/80 font-light leading-relaxed">{item}</p>
+                  </div>
+                ))}
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <Link
+                    to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=carpentry"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-wg-brown text-white rounded-lg hover:bg-wg-brown/90 transition-colors duration-300"
+                  >
+                    <span>Adicionar ao escopo</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    to="/moodboard-generator"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/15 text-white rounded-lg hover:bg-white/5 transition-colors duration-300"
+                  >
+                    Montar moodboard
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </>
