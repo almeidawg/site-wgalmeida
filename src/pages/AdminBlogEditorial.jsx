@@ -22,13 +22,14 @@ import {
   ChevronUp,
   Copy,
   ExternalLink,
+  GripVertical,
   ImagePlus,
   Loader2,
   Search,
   Trash2,
   X,
 } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const rawBlogPosts = import.meta.glob('/src/content/blog/*.md', { as: 'raw', eager: true });
@@ -36,6 +37,7 @@ const rawBlogPosts = import.meta.glob('/src/content/blog/*.md', { as: 'raw', eag
 const STORAGE_KEY = 'wg_blog_editorial_uploads_v1';
 const UNSPLASH_STORAGE_KEY = 'wg_blog_editorial_unsplash_v1';
 const EXTERNAL_IMAGES_STORAGE_KEY = 'wg_blog_editorial_external_images_v1';
+const PINNED_ORDER_KEY = 'wg_editorial_pinned_order_v1';
 const CLOUDINARY_WIDGET_SRC = 'https://upload-widget.cloudinary.com/latest/global/all.js';
 const CONTEXT_SLOT_NAMES = ['context1', 'context2', 'context3', 'context4'];
 const SLOT_LABELS = {
@@ -627,6 +629,11 @@ const AdminBlogEditorial = () => {
   const [openSearchPanelBySlug, setOpenSearchPanelBySlug] = useState({});
   const [searchQueryBySlug, setSearchQueryBySlug] = useState({});
   const [searchResultsBySlug, setSearchResultsBySlug] = useState({});
+  const [pinnedOrder, setPinnedOrder] = useState(() => {
+    try { return JSON.parse(localStorage.getItem(PINNED_ORDER_KEY) || '[]'); } catch { return []; }
+  });
+  const [dragSlug, setDragSlug] = useState(null);
+  const [dragOverSlug, setDragOverSlug] = useState(null);
 
   const cloudName = getCloudinaryEditorialCloudName();
   const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'wg_unsigned';
@@ -960,6 +967,38 @@ const AdminBlogEditorial = () => {
     }
   };
 
+  const handleDragStart = (e, slug) => {
+    setDragSlug(slug);
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', slug);
+  };
+
+  const handleDragOver = (e, slug) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    if (slug !== dragSlug) setDragOverSlug(slug);
+  };
+
+  const handleDrop = (e, targetSlug) => {
+    e.preventDefault();
+    if (!dragSlug || dragSlug === targetSlug) { setDragSlug(null); setDragOverSlug(null); return; }
+    const currentSlugs = sortedFilteredQueueRef.current.map((r) => r.slug);
+    const fromIdx = currentSlugs.indexOf(dragSlug);
+    const toIdx = currentSlugs.indexOf(targetSlug);
+    if (fromIdx === -1 || toIdx === -1) { setDragSlug(null); setDragOverSlug(null); return; }
+    const next = [...currentSlugs];
+    next.splice(fromIdx, 1);
+    next.splice(toIdx, 0, dragSlug);
+    setPinnedOrder(next);
+    localStorage.setItem(PINNED_ORDER_KEY, JSON.stringify(next));
+    setDragSlug(null);
+    setDragOverSlug(null);
+  };
+
+  const handleDragEnd = () => { setDragSlug(null); setDragOverSlug(null); };
+
+  const resetPinnedOrder = () => { setPinnedOrder([]); localStorage.removeItem(PINNED_ORDER_KEY); };
+
   const toggleSearchPanel = (slug, defaultQuery = '') => {
     setOpenSearchPanelBySlug((current) => {
       const isOpen = Boolean(current[slug]);
@@ -1246,6 +1285,20 @@ const AdminBlogEditorial = () => {
     return matchesSearch && matchesCategory && matchesContentType && matchesStatus;
   });
 
+  const sortedFilteredQueue = pinnedOrder.length > 0
+    ? [...filteredQueue].sort((a, b) => {
+        const ai = pinnedOrder.indexOf(a.slug);
+        const bi = pinnedOrder.indexOf(b.slug);
+        if (ai === -1 && bi === -1) return 0;
+        if (ai === -1) return 1;
+        if (bi === -1) return -1;
+        return ai - bi;
+      })
+    : filteredQueue;
+
+  const sortedFilteredQueueRef = useRef(sortedFilteredQueue);
+  sortedFilteredQueueRef.current = sortedFilteredQueue;
+
   const hasActiveFilters = Boolean(
     searchTerm ||
     categoryFilter !== 'todos' ||
@@ -1352,6 +1405,9 @@ const AdminBlogEditorial = () => {
                 {hasActiveFilters && (
                   <Button variant="outline" onClick={resetQueueFilters} className="border-[#D7D1C5] bg-white text-xs text-[#1E2A3A] hover:bg-[#F7F3EB]">Limpar filtros</Button>
                 )}
+                {pinnedOrder.length > 0 && (
+                  <Button variant="outline" onClick={resetPinnedOrder} className="border-[#D7D1C5] bg-white text-xs text-[#7A5B2F] hover:bg-[#F7F3EB]">↺ Resetar ordem</Button>
+                )}
                 <Button variant="outline" onClick={clearAllLocalEditorialData} className="border-[#D7D1C5] bg-white text-xs text-[#1E2A3A] hover:bg-[#F7F3EB]">Limpar sessão</Button>
                 <Button variant="outline" onClick={() => setCompactMode((v) => !v)} className="border-[#D7D1C5] bg-white text-xs text-[#1E2A3A] hover:bg-[#F7F3EB]">{compactMode ? 'Detalhado' : 'Compacto'}</Button>
               </div>
@@ -1367,7 +1423,7 @@ const AdminBlogEditorial = () => {
               </div>
             )}
 
-            {filteredQueue.map((record) => {
+            {sortedFilteredQueue.map((record) => {
               const primarySlotNames = getPrimarySlotNames(record);
               const recordTargetSlots = record.kind === 'blog' ? ['hero', 'card', ...CONTEXT_SLOT_NAMES] : ['cover'];
               const slotStatesByName = Object.fromEntries(
@@ -1382,12 +1438,29 @@ const AdminBlogEditorial = () => {
               const filledCount = recordTargetSlots.filter((s) => Boolean(slotStatesByName[s]?.previewUrl || slotStatesByName[s]?.publicId)).length;
               const totalSlots = recordTargetSlots.length;
 
+              const isDragging = dragSlug === record.slug;
+              const isDragOver = dragOverSlug === record.slug;
+
               return (
-                <article key={record.slug} className="overflow-hidden rounded-[24px] border border-[#D7D1C5] bg-white shadow-sm">
+                <article
+                  key={record.slug}
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, record.slug)}
+                  onDragOver={(e) => handleDragOver(e, record.slug)}
+                  onDrop={(e) => handleDrop(e, record.slug)}
+                  onDragEnd={handleDragEnd}
+                  className={`overflow-hidden rounded-[24px] border bg-white shadow-sm transition-all duration-150 ${
+                    isDragging ? 'opacity-40 scale-[0.98] border-[#B89E73]' : isDragOver ? 'border-[#7A5B2F] ring-2 ring-[#B89E73]/40' : 'border-[#D7D1C5]'
+                  }`}
+                >
 
                   {/* Card header */}
                   <div className="flex flex-col gap-3 border-b border-[#EEE8DD] p-4 lg:flex-row lg:items-start lg:justify-between md:p-5">
                     <div className="min-w-0 space-y-1.5">
+                      {/* Drag handle */}
+                      <div className="mb-1 -ml-1 flex cursor-grab items-center gap-1 text-[#C5C0BA] active:cursor-grabbing" title="Arrastar para reordenar">
+                        <GripVertical className="h-4 w-4" />
+                      </div>
                       <div className="flex flex-wrap items-center gap-1.5">
                         <span className={`rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-[0.14em] ${record.kind === 'style' ? 'bg-[#EEF4EF] text-[#2E7D5A]' : 'bg-[#E8E0D1] text-[#7A5B2F]'}`}>
                           {record.kindLabel}
