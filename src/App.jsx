@@ -5,7 +5,9 @@ import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-do
 import ProtectedRoute from '@/components/auth/ProtectedRoute'
 import { AuthProvider } from '@/contexts/SupabaseAuthContext'
 import { Loader2 } from 'lucide-react'
-import { PRODUCT_URLS } from '@/data/company';
+import { PRODUCT_URLS } from '@/data/company'
+import { ContextProvider } from '@/providers/ContextProvider'
+import ContextTracker from '@/components/ContextTracker'
 
 // Lazy load pages
 const Home = lazy(() => import('@/pages/Home'))
@@ -226,7 +228,9 @@ function App() {
     )
 
   return (
+    <ContextProvider>
     <AuthProvider autoInit={shouldInitAuth}>
+      <ContextTracker />
       <RouteScrollManager />
       <div
         className="min-h-screen flex flex-col bg-white"
@@ -376,6 +380,7 @@ function App() {
         {!isStandaloneRoute && <Footer />}
       </div>
     </AuthProvider>
+    </ContextProvider>
   )
 }
 
