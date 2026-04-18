@@ -8,6 +8,7 @@ import { Loader2 } from 'lucide-react'
 import { PRODUCT_URLS } from '@/data/company'
 import { ContextProvider } from '@/providers/ContextProvider'
 import ContextTracker from '@/components/ContextTracker'
+import NextBestActionPanel from '@/components/NextBestActionPanel'
 
 // Lazy load pages
 const Home = lazy(() => import('@/pages/Home'))
@@ -231,6 +232,7 @@ function App() {
     <ContextProvider>
     <AuthProvider autoInit={shouldInitAuth}>
       <ContextTracker />
+      <NextBestActionPanel />
       <RouteScrollManager />
       <div
         className="min-h-screen flex flex-col bg-white"

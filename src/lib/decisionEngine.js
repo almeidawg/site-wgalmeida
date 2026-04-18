@@ -76,14 +76,52 @@ export function inferIntentFromHistory(paginas = []) {
   for (const [intent, score] of Object.entries(counts)) {
     if (score > bestScore) { bestScore = score; best = intent }
   }
-  return best
+  return { intent: best, score: bestScore }
 }
 
 export function getNextBestAction(context = {}, pathname = '') {
   const { interesse, paginas = [] } = context
   const fromPath = inferIntentFromPath(pathname)
-  const fromHistory = inferIntentFromHistory(paginas)
+  const { intent: fromHistory, score: historyScore } = inferIntentFromHistory(paginas)
   const resolved = interesse || fromPath || fromHistory || 'default'
   const actions = getActions()
   return { ...actions[resolved] || actions.default, intent: resolved }
+}
+
+// Camada 5 — Next Best Action score: quão certo estamos da intenção e do estágio
+export function getNBAScore(context = {}, pathname = '') {
+  const { interesse, paginas = [], estagio = 'exploracao' } = context
+  const fromPath = inferIntentFromPath(pathname)
+  const { intent: fromHistory, score: historyScore } = inferIntentFromHistory(paginas)
+
+  let confidence = 0
+
+  // Interesse explícito (user escolheu) = alta confiança
+  if (interesse) confidence += 40
+
+  // Rota atual sinaliza intenção = confiança adicional
+  if (fromPath) confidence += 20
+
+  // Histórico: cada página de intenção consistente soma
+  confidence += Math.min(historyScore * 8, 30)
+
+  // Estágio avança a confiança
+  if (estagio === 'decisao') confidence += 5
+  if (estagio === 'acao') confidence += 10
+
+  // Total máx 100
+  return Math.min(confidence, 100)
+}
+
+// Retorna o estágio inferido a partir do comportamento
+export function inferStage(context = {}) {
+  const { paginas = [], estagio } = context
+  if (estagio && estagio !== 'exploracao') return estagio
+
+  const { score: historyScore } = inferIntentFromHistory(paginas)
+  const totalPages = paginas.length
+
+  if (totalPages >= 5 || historyScore >= 3) return 'decisao'
+  if (totalPages >= 2 || historyScore >= 1) return 'exploracao'
+  return 'exploracao'
 }
