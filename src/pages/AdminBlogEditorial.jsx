@@ -634,6 +634,10 @@ const AdminBlogEditorial = () => {
   });
   const [dragSlug, setDragSlug] = useState(null);
   const [dragOverSlug, setDragOverSlug] = useState(null);
+  // Image drag: { photo, source: 'unsplash'|'extra', extraImage?, recordSlug }
+  const [dragImagePayload, setDragImagePayload] = useState(null);
+  // key = `${recordSlug}:${slotName}` when hovering a slot drop zone
+  const [dragOverSlot, setDragOverSlot] = useState(null);
 
   const cloudName = getCloudinaryEditorialCloudName();
   const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'wg_unsigned';
@@ -998,6 +1002,43 @@ const AdminBlogEditorial = () => {
   const handleDragEnd = () => { setDragSlug(null); setDragOverSlug(null); };
 
   const resetPinnedOrder = () => { setPinnedOrder([]); localStorage.removeItem(PINNED_ORDER_KEY); };
+
+  // ── Image drag-to-slot ────────────────────────────────────────────
+  const startImageDrag = (e, payload) => {
+    e.stopPropagation(); // don't trigger card drag
+    setDragImagePayload(payload);
+    e.dataTransfer.effectAllowed = 'copy';
+    e.dataTransfer.setData('text/plain', payload.photo?.id || payload.extraImage?.id || '');
+  };
+
+  const handleSlotDragOver = (e, recordSlug, slotName) => {
+    if (!dragImagePayload) return;
+    e.preventDefault();
+    e.stopPropagation();
+    e.dataTransfer.dropEffect = 'copy';
+    setDragOverSlot(`${recordSlug}:${slotName}`);
+  };
+
+  const handleSlotDrop = (e, record, slotName) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragOverSlot(null);
+    if (!dragImagePayload) return;
+    const { source, photo, extraImage } = dragImagePayload;
+    if (source === 'unsplash' && photo) {
+      assignUnsplashPhotoToSlot(record, slotName, photo);
+    } else if (source === 'extra' && extraImage) {
+      assignExternalImageToSlot(record, slotName, extraImage);
+    }
+    setDragImagePayload(null);
+  };
+
+  const handleSlotDragLeave = (e) => {
+    // only clear if leaving the slot element itself, not a child
+    if (!e.currentTarget.contains(e.relatedTarget)) setDragOverSlot(null);
+  };
+
+  const endImageDrag = () => { setDragImagePayload(null); setDragOverSlot(null); };
 
   const toggleSearchPanel = (slug, defaultQuery = '') => {
     setOpenSearchPanelBySlug((current) => {
@@ -1444,10 +1485,10 @@ const AdminBlogEditorial = () => {
               return (
                 <article
                   key={record.slug}
-                  draggable
+                  draggable={!dragImagePayload}
                   onDragStart={(e) => handleDragStart(e, record.slug)}
-                  onDragOver={(e) => handleDragOver(e, record.slug)}
-                  onDrop={(e) => handleDrop(e, record.slug)}
+                  onDragOver={(e) => { if (dragImagePayload) return; handleDragOver(e, record.slug); }}
+                  onDrop={(e) => { if (dragImagePayload) return; handleDrop(e, record.slug); }}
                   onDragEnd={handleDragEnd}
                   className={`overflow-hidden rounded-[24px] border bg-white shadow-sm transition-all duration-150 ${
                     isDragging ? 'opacity-40 scale-[0.98] border-[#B89E73]' : isDragOver ? 'border-[#7A5B2F] ring-2 ring-[#B89E73]/40' : 'border-[#D7D1C5]'
@@ -1505,15 +1546,26 @@ const AdminBlogEditorial = () => {
                       const mainSlot = primarySlotNames[0];
                       const mainState = slotStatesByName[mainSlot];
                       const hasOverride = Boolean(uploads?.[record.slug]?.[mainSlot] || unsplashSelections?.[record.slug]?.[mainSlot]);
+                      const slotKey = `${record.slug}:${mainSlot}`;
+                      const isDropTarget = dragImagePayload && dragOverSlot === slotKey;
                       return (
-                        <div className="relative border-r border-[#EEE8DD]">
+                        <div
+                          className={`relative border-r border-[#EEE8DD] transition-all duration-100 ${isDropTarget ? 'ring-2 ring-inset ring-[#B89E73] brightness-95' : ''}`}
+                          onDragOver={(e) => handleSlotDragOver(e, record.slug, mainSlot)}
+                          onDrop={(e) => handleSlotDrop(e, record, mainSlot)}
+                          onDragLeave={handleSlotDragLeave}
+                        >
                           {mainState?.previewUrl ? (
                             <img src={mainState.previewUrl} alt={`${record.title} - ${getSlotLabel(mainSlot)}`} className={`w-full object-cover ${record.kind === 'blog' ? 'h-32' : 'h-24'}`} loading="lazy" />
                           ) : (
                             <div className={`flex items-center justify-center bg-[#F4F2EC] ${record.kind === 'blog' ? 'h-32' : 'h-24'}`}>
-                              <div className="text-center"><ImagePlus className="mx-auto h-5 w-5 text-[#C5C0BA]" /><p className="mt-0.5 text-[9px] uppercase tracking-[0.1em] text-[#C5C0BA]">Sem imagem</p></div>
+                              <div className="text-center">
+                                <ImagePlus className="mx-auto h-5 w-5 text-[#C5C0BA]" />
+                                <p className="mt-0.5 text-[9px] uppercase tracking-[0.1em] text-[#C5C0BA]">{isDropTarget ? 'Soltar aqui' : 'Sem imagem'}</p>
+                              </div>
                             </div>
                           )}
+                          {isDropTarget && <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[#B89E73]/20"><span className="rounded-lg bg-white/90 px-3 py-1 text-xs font-medium text-[#7A5B2F]">Soltar → {getSlotLabel(mainSlot)}</span></div>}
                           <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between bg-gradient-to-t from-black/50 to-transparent px-2 pb-1 pt-3">
                             <span className="text-[9px] uppercase tracking-[0.12em] text-white/80">{getSlotLabel(mainSlot)}</span>
                             {hasOverride && (
@@ -1530,15 +1582,23 @@ const AdminBlogEditorial = () => {
                     {record.kind === 'blog' && (() => {
                       const cardState = slotStatesByName['card'];
                       const hasOverride = Boolean(uploads?.[record.slug]?.['card'] || unsplashSelections?.[record.slug]?.['card']);
+                      const slotKey = `${record.slug}:card`;
+                      const isDropTarget = dragImagePayload && dragOverSlot === slotKey;
                       return (
-                        <div className="relative border-r border-[#EEE8DD]">
+                        <div
+                          className={`relative border-r border-[#EEE8DD] transition-all duration-100 ${isDropTarget ? 'ring-2 ring-inset ring-[#B89E73] brightness-95' : ''}`}
+                          onDragOver={(e) => handleSlotDragOver(e, record.slug, 'card')}
+                          onDrop={(e) => handleSlotDrop(e, record, 'card')}
+                          onDragLeave={handleSlotDragLeave}
+                        >
                           {cardState?.previewUrl ? (
                             <img src={cardState.previewUrl} alt={`${record.title} - Card`} className="h-32 w-full object-cover" loading="lazy" />
                           ) : (
                             <div className="flex h-32 items-center justify-center bg-[#F4F2EC]">
-                              <ImagePlus className="h-5 w-5 text-[#C5C0BA]" />
+                              {isDropTarget ? <span className="text-xs text-[#7A5B2F]">Soltar aqui</span> : <ImagePlus className="h-5 w-5 text-[#C5C0BA]" />}
                             </div>
                           )}
+                          {isDropTarget && <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[#B89E73]/20"><span className="rounded-lg bg-white/90 px-3 py-1 text-xs font-medium text-[#7A5B2F]">Soltar → Card</span></div>}
                           <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between bg-gradient-to-t from-black/50 to-transparent px-2 pb-1 pt-3">
                             <span className="text-[9px] uppercase tracking-[0.12em] text-white/80">Card</span>
                             {hasOverride && (
@@ -1557,15 +1617,24 @@ const AdminBlogEditorial = () => {
                         {CONTEXT_SLOT_NAMES.map((slotName, idx) => {
                           const s = slotStatesByName[slotName];
                           const hasOvr = Boolean(uploads?.[record.slug]?.[slotName] || unsplashSelections?.[record.slug]?.[slotName]);
+                          const slotKey = `${record.slug}:${slotName}`;
+                          const isDropTarget = dragImagePayload && dragOverSlot === slotKey;
                           return (
-                            <div key={slotName} className={`relative ${idx % 2 === 0 ? 'border-r border-[#EEE8DD]' : ''} ${idx < 2 ? 'border-b border-[#EEE8DD]' : ''}`}>
+                            <div
+                              key={slotName}
+                              className={`relative transition-all duration-100 ${idx % 2 === 0 ? 'border-r border-[#EEE8DD]' : ''} ${idx < 2 ? 'border-b border-[#EEE8DD]' : ''} ${isDropTarget ? 'ring-2 ring-inset ring-[#B89E73] brightness-95' : ''}`}
+                              onDragOver={(e) => handleSlotDragOver(e, record.slug, slotName)}
+                              onDrop={(e) => handleSlotDrop(e, record, slotName)}
+                              onDragLeave={handleSlotDragLeave}
+                            >
                               {s?.previewUrl ? (
                                 <img src={s.previewUrl} alt={slotName} className="h-16 w-full object-cover" loading="lazy" />
                               ) : (
                                 <div className="flex h-16 items-center justify-center bg-[#F8F6F2]">
-                                  <span className="text-[8px] uppercase tracking-[0.08em] text-[#C5C0BA]">{getSlotLabel(slotName)}</span>
+                                  <span className="text-[8px] uppercase tracking-[0.08em] text-[#C5C0BA]">{isDropTarget ? '↓' : getSlotLabel(slotName)}</span>
                                 </div>
                               )}
+                              {isDropTarget && <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[#B89E73]/25" />}
                               {hasOvr && (
                                 <button type="button" onClick={() => { clearLocalUpload(record.slug, slotName); clearLocalUnsplashSelection(record.slug, slotName); }} className="absolute right-0.5 top-0.5 rounded-full bg-white/80 p-0.5 text-[#7B2D2D] hover:bg-white">
                                   <X className="h-2.5 w-2.5" />
@@ -1581,26 +1650,35 @@ const AdminBlogEditorial = () => {
                   {/* Extra images strip */}
                   {recordExtraImages.length > 0 && (
                     <div className="flex gap-2 overflow-x-auto border-b border-[#EEE8DD] px-4 py-2.5">
-                      {recordExtraImages.map((image) => (
-                        <div key={image.id} className="relative shrink-0 overflow-hidden rounded-lg border border-[#DED7CA] bg-white">
-                          <a href={image.pageUrl || image.src} target="_blank" rel="noreferrer">
-                            <img src={image.src} alt="Extra" className="h-12 w-16 object-cover" loading="lazy" />
-                          </a>
-                          <div className="grid border-t border-[#EFE8DC]" style={{ gridTemplateColumns: `repeat(${primarySlotNames.length}, 1fr)` }}>
-                            {primarySlotNames.map((slotName) => {
-                              const isActive = uploads?.[record.slug]?.[slotName]?.src === image.src;
-                              return (
-                                <button key={`${image.id}-${slotName}`} type="button" onClick={() => assignExternalImageToSlot(record, slotName, image)} className={`px-1 py-0.5 text-[9px] uppercase tracking-[0.08em] transition ${isActive ? 'bg-[#EEF4EF] text-[#2E7D5A]' : 'bg-white text-[#5B6470] hover:bg-[#F7F3EB]'}`}>
-                                  {getSlotLabel(slotName)}
-                                </button>
-                              );
-                            })}
+                      {recordExtraImages.map((image) => {
+                        const isBeingDragged = dragImagePayload?.source === 'extra' && dragImagePayload?.extraImage?.id === image.id;
+                        return (
+                          <div
+                            key={image.id}
+                            draggable
+                            onDragStart={(e) => startImageDrag(e, { source: 'extra', extraImage: image, recordSlug: record.slug })}
+                            onDragEnd={endImageDrag}
+                            className={`relative shrink-0 cursor-grab overflow-hidden rounded-lg border border-[#DED7CA] bg-white active:cursor-grabbing transition-opacity ${isBeingDragged ? 'opacity-40' : ''}`}
+                          >
+                            <a href={image.pageUrl || image.src} target="_blank" rel="noreferrer" onClick={(e) => { if (dragImagePayload) e.preventDefault(); }}>
+                              <img src={image.src} alt="Extra" className="h-12 w-16 object-cover" loading="lazy" />
+                            </a>
+                            <div className="grid border-t border-[#EFE8DC]" style={{ gridTemplateColumns: `repeat(${primarySlotNames.length}, 1fr)` }}>
+                              {primarySlotNames.map((slotName) => {
+                                const isActive = uploads?.[record.slug]?.[slotName]?.src === image.src;
+                                return (
+                                  <button key={`${image.id}-${slotName}`} type="button" onClick={() => assignExternalImageToSlot(record, slotName, image)} className={`px-1 py-0.5 text-[9px] uppercase tracking-[0.08em] transition ${isActive ? 'bg-[#EEF4EF] text-[#2E7D5A]' : 'bg-white text-[#5B6470] hover:bg-[#F7F3EB]'}`}>
+                                    {getSlotLabel(slotName)}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                            <button type="button" onClick={() => removeExternalImage(record.slug, image.id)} className="absolute right-0.5 top-0.5 rounded-full bg-white/80 p-0.5 text-[#7B2D2D]">
+                              <X className="h-2.5 w-2.5" />
+                            </button>
                           </div>
-                          <button type="button" onClick={() => removeExternalImage(record.slug, image.id)} className="absolute right-0.5 top-0.5 rounded-full bg-white/80 p-0.5 text-[#7B2D2D]">
-                            <X className="h-2.5 w-2.5" />
-                          </button>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   )}
 
@@ -1647,31 +1725,43 @@ const AdminBlogEditorial = () => {
                         {panelResult.error && <p className="mt-3 text-xs text-[#A24A4A]">{panelResult.error}</p>}
 
                         {panelResult.photos.length > 0 && (
-                          <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-5">
-                            {panelResult.photos.map((photo) => (
-                              <div key={`${record.slug}-${photo.id}`} className="group relative overflow-hidden rounded-xl border border-[#DED7CA] bg-white">
-                                <img src={photo.urls.small} alt={photo.alt || ''} className="h-20 w-full object-cover" loading="lazy" />
-                                <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-black/60 opacity-0 transition-opacity group-hover:opacity-100">
-                                  {primarySlotNames.map((slotName) => (
-                                    <button key={`assign-${photo.id}-${slotName}`} type="button" onClick={() => assignUnsplashPhotoToSlot(record, slotName, photo)} className="rounded-lg bg-white/95 px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-[#1E2A3A] hover:bg-white transition">
-                                      → {getSlotLabel(slotName)}
-                                    </button>
-                                  ))}
-                                  {record.kind === 'blog' && (
-                                    <button type="button" onClick={() => {
-                                      if ((externalImages?.[record.slug] || []).some((img) => img.unsplashPhotoId === photo.id)) return;
-                                      const nextImages = { ...externalImages, [record.slug]: [...(externalImages?.[record.slug] || []), { id: `${Date.now()}-${photo.id}`, src: `${photo.urls.raw}&auto=format&fit=crop&w=720&h=480&q=80`, source: 'unsplash', unsplashPhotoId: photo.id, pageUrl: photo.unsplashPage, originalUrl: photo.unsplashPage, addedAt: new Date().toISOString() }] };
-                                      setExternalImages(nextImages);
-                                      writeLocalExternalImages(nextImages);
-                                    }} className="rounded-lg bg-[#E8E0D1]/95 px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-[#7A5B2F] hover:bg-[#E8E0D1] transition">
-                                      + Extra
-                                    </button>
-                                  )}
-                                </div>
-                                <p className="truncate px-1.5 py-0.5 text-[9px] text-[#7C7C7C]">{photo.photographer}</p>
-                              </div>
-                            ))}
-                          </div>
+                          <>
+                            <p className="mt-2 text-[10px] text-[#9B9791]">Clique para atribuir • <span className="text-[#B89E73]">Arraste direto para o slot acima</span></p>
+                            <div className="mt-2 grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-5">
+                              {panelResult.photos.map((photo) => {
+                                const isBeingDragged = dragImagePayload?.source === 'unsplash' && dragImagePayload?.photo?.id === photo.id;
+                                return (
+                                  <div
+                                    key={`${record.slug}-${photo.id}`}
+                                    draggable
+                                    onDragStart={(e) => startImageDrag(e, { source: 'unsplash', photo, recordSlug: record.slug })}
+                                    onDragEnd={endImageDrag}
+                                    className={`group relative cursor-grab overflow-hidden rounded-xl border border-[#DED7CA] bg-white active:cursor-grabbing transition-opacity ${isBeingDragged ? 'opacity-40' : ''}`}
+                                  >
+                                    <img src={photo.urls.small} alt={photo.alt || ''} className="h-20 w-full object-cover" loading="lazy" />
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-black/60 opacity-0 transition-opacity group-hover:opacity-100">
+                                      {primarySlotNames.map((slotName) => (
+                                        <button key={`assign-${photo.id}-${slotName}`} type="button" onClick={() => assignUnsplashPhotoToSlot(record, slotName, photo)} className="rounded-lg bg-white/95 px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-[#1E2A3A] hover:bg-white transition">
+                                          → {getSlotLabel(slotName)}
+                                        </button>
+                                      ))}
+                                      {record.kind === 'blog' && (
+                                        <button type="button" onClick={() => {
+                                          if ((externalImages?.[record.slug] || []).some((img) => img.unsplashPhotoId === photo.id)) return;
+                                          const nextImages = { ...externalImages, [record.slug]: [...(externalImages?.[record.slug] || []), { id: `${Date.now()}-${photo.id}`, src: `${photo.urls.raw}&auto=format&fit=crop&w=720&h=480&q=80`, source: 'unsplash', unsplashPhotoId: photo.id, pageUrl: photo.unsplashPage, originalUrl: photo.unsplashPage, addedAt: new Date().toISOString() }] };
+                                          setExternalImages(nextImages);
+                                          writeLocalExternalImages(nextImages);
+                                        }} className="rounded-lg bg-[#E8E0D1]/95 px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-[#7A5B2F] hover:bg-[#E8E0D1] transition">
+                                          + Extra
+                                        </button>
+                                      )}
+                                    </div>
+                                    <p className="truncate px-1.5 py-0.5 text-[9px] text-[#7C7C7C]">{photo.photographer}</p>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </>
                         )}
 
                         {panelResult.photos.length === 0 && !panelResult.loading && !panelResult.error && panelQuery.trim() && (
