@@ -1,6 +1,6 @@
 import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
-import { ArrowRight, CheckCircle2, Copy, Image as ImageIcon, Palette, Share2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Copy, Image as ImageIcon, Palette, Printer, Share2 } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { decodeMoodboardSharePayload } from '@/utils/moodboardShare';
@@ -28,6 +28,233 @@ const MoodboardShare = () => {
       setCopied(false);
     }
   };
+
+  const handlePrint = () => {
+    if (typeof window !== 'undefined') {
+      window.print();
+    }
+  };
+
+  if (shareData?.kind === 'style-guide') {
+    const whatsappText = encodeURIComponent(
+      `Olá, quero avançar com este guia de estilo WG Almeida: ${currentUrl}`
+    );
+
+    return (
+      <>
+        <SEO
+          pathname="/moodboard/share"
+          title={`Guia de estilo | ${shareData.clientName || 'WG Almeida'}`}
+          description="Guia de estilo publico com direcao visual, paleta, ambientes e materiais curados pela WG Almeida."
+          og={{
+            image: shareData.cover?.imageUrl,
+            title: `Guia de estilo | ${shareData.clientName || 'WG Almeida'}`,
+            description: 'Documento visual publico com direcao estetica, materiais e proximos passos.',
+          }}
+          twitter={{
+            image: shareData.cover?.imageUrl,
+            title: `Guia de estilo | ${shareData.clientName || 'WG Almeida'}`,
+            description: 'Documento visual publico com direcao estetica, materiais e proximos passos.',
+          }}
+          noindex
+        />
+
+        <section className="min-h-screen bg-[linear-gradient(180deg,#f4efe7_0%,#fcfaf7_100%)] hero-under-header">
+          <div className="container-custom py-10 md:py-14">
+            <div className="overflow-hidden rounded-[34px] border border-[#e6ded2] bg-[#181716] text-white shadow-[0_35px_90px_rgba(23,24,25,0.16)]">
+              <div className="relative min-h-[520px] overflow-hidden px-6 py-8 md:px-10 md:py-10">
+                {shareData.cover?.imageUrl ? (
+                  <img
+                    src={shareData.cover.imageUrl}
+                    alt={shareData.cover.caption || shareData.styleTitle}
+                    className="absolute inset-0 h-full w-full object-cover opacity-40"
+                  />
+                ) : null}
+                <div className="absolute inset-0 bg-[linear-gradient(130deg,rgba(10,10,11,0.92)_0%,rgba(10,10,11,0.72)_42%,rgba(10,10,11,0.22)_100%)]" />
+
+                <div className="relative z-10 flex h-full min-h-[440px] flex-col justify-between">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <span className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-white/72">
+                      WG Almeida
+                    </span>
+                    <span className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-white/72">
+                      Guia de estilo publico
+                    </span>
+                  </div>
+
+                  <div className="max-w-4xl">
+                    <p className="text-[11px] uppercase tracking-[0.34em] text-[#f2b13a]">Direcao visual personalizada</p>
+                    <h1 className="mt-4 font-playfair text-4xl font-medium leading-[0.98] md:text-6xl">
+                      {shareData.clientName || 'Cliente WG Almeida'}
+                    </h1>
+                    <p className="mt-5 text-xl font-light text-white/82 md:text-2xl">
+                      {shareData.styleTitle || 'Direcao estetica definida'}
+                    </p>
+                    {shareData.styleDescription ? (
+                      <p className="mt-5 max-w-2xl text-[15px] leading-8 text-white/72">
+                        {shareData.styleDescription}
+                      </p>
+                    ) : null}
+
+                    {!!shareData.colorPalette?.length && (
+                      <div className="mt-8 flex flex-wrap gap-3">
+                        {shareData.colorPalette.slice(0, 5).map((color) => (
+                          <div key={color} className="text-center">
+                            <div
+                              className="h-14 w-14 rounded-2xl border border-white/35 shadow-[0_14px_30px_rgba(0,0,0,0.18)]"
+                              style={{ backgroundColor: color }}
+                            />
+                            <span className="mt-2 block text-[10px] uppercase tracking-[0.15em] text-white/68">
+                              {color}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex flex-wrap items-end justify-between gap-6">
+                    <div className="max-w-xl">
+                      <p className="text-[11px] uppercase tracking-[0.22em] text-white/52">Leitura da curadoria</p>
+                      <p className="mt-2 text-sm leading-7 text-white/72">
+                        Este material organiza imagem, paleta, atmosfera, acabamentos e referencias de ambiente para reduzir indecisao e alinhar os proximos passos do projeto.
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      <a
+                        href={`${WHATSAPP_URL}?text=${whatsappText}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-wg-orange px-5 py-3 text-sm text-white"
+                      >
+                        Avancar com a WG
+                        <ArrowRight className="h-4 w-4" />
+                      </a>
+                      <button
+                        onClick={handlePrint}
+                        className="inline-flex items-center gap-2 rounded-full border border-white/16 px-5 py-3 text-sm text-white"
+                      >
+                        <Printer className="h-4 w-4" />
+                        Imprimir
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid gap-8 bg-[#fcfaf7] px-6 py-8 text-[#1d1d1b] md:px-10 md:py-10">
+                {!!shareData.environments?.length && (
+                  <div>
+                    <div className="mb-5 flex items-center justify-between gap-4">
+                      <div>
+                        <p className="text-[11px] uppercase tracking-[0.22em] text-[#8b7760]">Ambientes-chave</p>
+                        <h2 className="mt-2 font-playfair text-3xl">Leituras espaciais</h2>
+                      </div>
+                    </div>
+                    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                      {shareData.environments.map((environment) => (
+                        <article key={environment.id} className="overflow-hidden rounded-[26px] border border-[#e7ded2] bg-white shadow-[0_16px_45px_rgba(24,23,22,0.06)]">
+                          {environment.imageUrl ? (
+                            <img src={environment.imageUrl} alt={environment.title} className="h-56 w-full object-cover" />
+                          ) : null}
+                          <div className="space-y-3 p-5">
+                            <p className="text-[11px] uppercase tracking-[0.22em] text-[#8b7760]">{environment.caption || 'Ambiente'}</p>
+                            <h3 className="text-xl">{environment.title}</h3>
+                            <p className="text-sm leading-7 text-[#59544d]">{environment.description}</p>
+                            <p className="rounded-2xl bg-[#f5efe8] px-4 py-3 text-sm leading-7 text-[#3e3a34]">
+                              {environment.rationale}
+                            </p>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {!!shareData.materials?.length && (
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.22em] text-[#8b7760]">Materiais e acabamentos</p>
+                    <h2 className="mt-2 font-playfair text-3xl">Camadas para formar a experiencia</h2>
+                    <div className="mt-5 grid gap-5">
+                      {shareData.materials.map((material) => (
+                        <article key={material.id} className="rounded-[28px] border border-[#e7ded2] bg-white p-5 shadow-[0_16px_45px_rgba(24,23,22,0.05)]">
+                          <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+                            <div>
+                              <p className="text-[11px] uppercase tracking-[0.22em] text-[#8b7760]">{material.title}</p>
+                              <p className="mt-3 text-sm leading-7 text-[#59544d]">{material.description}</p>
+                              <p className="mt-4 rounded-2xl bg-[#171716] px-4 py-4 text-sm leading-7 text-white/82">
+                                {material.rationale}
+                              </p>
+                            </div>
+                            <div className="grid gap-3 sm:grid-cols-2">
+                              {material.images?.slice(0, 4).map((image, index) => (
+                                <div key={`${material.id}-${index}`} className="overflow-hidden rounded-[22px] bg-[#f4efe7]">
+                                  <img src={image.imageUrl} alt={image.caption || material.title} className="h-40 w-full object-cover" />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="grid gap-5 lg:grid-cols-[0.82fr_1.18fr]">
+                  <div className="rounded-[28px] border border-[#e7ded2] bg-white p-6 shadow-[0_16px_45px_rgba(24,23,22,0.05)]">
+                    <p className="text-[11px] uppercase tracking-[0.22em] text-[#8b7760]">Compartilhar</p>
+                    <div className="mt-5 flex flex-wrap gap-3">
+                      <button
+                        onClick={handleCopy}
+                        className="inline-flex items-center gap-2 rounded-full border border-[#d8d0c5] px-5 py-3 text-sm text-wg-black"
+                      >
+                        <Copy className="h-4 w-4" />
+                        {copied ? 'Link copiado' : 'Copiar link'}
+                      </button>
+                      <a
+                        href={`https://wa.me/?text=${encodeURIComponent(`Confira este guia de estilo WG Almeida:\n${currentUrl}`)}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-[#d8d0c5] px-5 py-3 text-sm text-wg-black"
+                      >
+                        <Share2 className="h-4 w-4" />
+                        Recompartilhar
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="rounded-[28px] border border-[#e7ded2] bg-[#181716] p-6 text-white shadow-[0_16px_45px_rgba(24,23,22,0.08)]">
+                    <p className="text-[11px] uppercase tracking-[0.22em] text-white/55">Proximo passo</p>
+                    <h2 className="mt-3 font-playfair text-3xl">Transformar inspiracao em decisao real</h2>
+                    <p className="mt-4 text-sm leading-7 text-white/72">
+                      O guia ja organiza direcao visual, atmosfera e materiais. A etapa seguinte e transformar essa leitura em briefing, especificacao, proposta e execucao.
+                    </p>
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      <a
+                        href={`${WHATSAPP_URL}?text=${whatsappText}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-wg-orange px-5 py-3 text-sm text-white"
+                      >
+                        Falar com a WG
+                        <ArrowRight className="h-4 w-4" />
+                      </a>
+                      <Link
+                        to="/solicite-proposta"
+                        className="inline-flex items-center gap-2 rounded-full border border-white/16 px-5 py-3 text-sm text-white"
+                      >
+                        Solicitar proposta
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </>
+    );
+  }
 
   if (!shareData?.transformedUrl) {
     return (

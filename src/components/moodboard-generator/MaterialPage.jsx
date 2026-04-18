@@ -1,39 +1,43 @@
-// Material page template for moodboard
 import React from 'react';
 
 export default function MaterialPage({
   title,
   description,
   images = [],
-  pageNumber
+  pageNumber,
+  rationale = '',
 }) {
   return (
-    <div className="moodboard-page material-page" style={{
-      width: '100%',
-      height: '100%',
-      position: 'relative',
-      backgroundColor: '#ffffff',
-      display: 'flex'
-    }}>
-      {/* Left Side - Material Images Grid (60%) */}
-      <div style={{
-        width: '60%',
+    <div
+      className="moodboard-page material-page"
+      style={{
+        width: '100%',
         height: '100%',
         position: 'relative',
-        padding: '2rem',
+        backgroundColor: '#fcfbf8',
         display: 'grid',
-        gridTemplateColumns: images.length <= 2 ? '1fr' : 'repeat(2, 1fr)',
-        gap: '1.5rem',
-        backgroundColor: '#f8f8f8'
-      }}>
+        gridTemplateColumns: '1.05fr 0.95fr',
+      }}
+    >
+      <div
+        style={{
+          padding: '2rem',
+          display: 'grid',
+          gridTemplateColumns: images.length <= 1 ? '1fr' : 'repeat(2, 1fr)',
+          gridAutoRows: 'minmax(0, 1fr)',
+          gap: '1.2rem',
+          background: '#f2ede7',
+        }}
+      >
         {images.slice(0, 4).map((imageUrl, index) => (
           <div
             key={index}
             style={{
               position: 'relative',
               overflow: 'hidden',
-              borderRadius: '8px',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+              borderRadius: '22px',
+              boxShadow: '0 16px 38px rgba(23,24,25,0.08)',
+              minHeight: 0,
             }}
           >
             <img
@@ -43,7 +47,7 @@ export default function MaterialPage({
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: 'center'
+                objectPosition: 'center',
               }}
               crossOrigin="anonymous"
             />
@@ -51,64 +55,87 @@ export default function MaterialPage({
         ))}
       </div>
 
-      {/* Right Side - Content (40%) */}
-      <div style={{
-        width: '40%',
-        height: '100%',
-        padding: '3rem 2rem',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        backgroundColor: '#ffffff'
-      }}>
-        {/* Title */}
-        <h2 style={{
-          fontFamily: '"Dancing Script", cursive',
-          fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
-          color: '#F25C26',
-          marginBottom: '2rem',
-          lineHeight: 1.2,
-          fontWeight: 400
-        }}>
-          {title}
-        </h2>
+      <div
+        style={{
+          padding: '2.5rem 2.3rem',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}
+      >
+        <div>
+          <p
+            style={{
+              margin: 0,
+              fontSize: '0.72rem',
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              color: '#8b7760',
+            }}
+          >
+            Materiais e acabamentos
+          </p>
+          <h2
+            style={{
+              margin: '1rem 0 0',
+              fontFamily: '"Playfair Display", Georgia, serif',
+              fontSize: '2.15rem',
+              lineHeight: 1.08,
+              color: '#171819',
+              fontWeight: 500,
+            }}
+          >
+            {title}
+          </h2>
+          <p
+            style={{
+              margin: '1.1rem 0 0',
+              fontSize: '1rem',
+              lineHeight: 1.72,
+              color: '#5d5850',
+            }}
+          >
+            {description}
+          </p>
+        </div>
 
-        {/* Description */}
-        <p style={{
-          fontFamily: 'system-ui, sans-serif',
-          fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
-          color: '#666666',
-          lineHeight: 1.8,
-          marginBottom: '2rem'
-        }}>
-          {description}
-        </p>
+        <div style={{ marginTop: '1.5rem' }}>
+          <div
+            style={{
+              borderRadius: '24px',
+              background: '#171819',
+              padding: '1.35rem 1.4rem',
+              color: '#f6f0e8',
+            }}
+          >
+            <p
+              style={{
+                margin: 0,
+                fontSize: '0.7rem',
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                color: 'rgba(246,240,232,0.56)',
+              }}
+            >
+              Direcionamento
+            </p>
+            <p style={{ margin: '0.65rem 0 0', fontSize: '0.94rem', lineHeight: 1.7 }}>
+              {rationale || 'Priorizar textura, leitura tatil e combinacao coerente com a atmosfera escolhida.'}
+            </p>
+          </div>
+        </div>
 
-        {/* Footer */}
-        <div style={{
-          marginTop: 'auto',
-          paddingTop: '2rem',
-          borderTop: '1px solid #e5e5e5'
-        }}>
-          <div style={{
+        <div
+          style={{
             display: 'flex',
             justifyContent: 'space-between',
-            alignItems: 'center'
-          }}>
-            <span style={{
-              fontSize: '0.85rem',
-              color: '#333333',
-              fontWeight: 500
-            }}>
-              www.wgalmeida.com.br
-            </span>
-            <span style={{
-              fontSize: '0.85rem',
-              color: '#666666'
-            }}>
-              Page | {pageNumber.toString().padStart(2, '0')}
-            </span>
-          </div>
+            alignItems: 'center',
+            borderTop: '1px solid rgba(23,24,25,0.08)',
+            paddingTop: '1.35rem',
+          }}
+        >
+          <span style={{ fontSize: '0.82rem', color: '#3f3a33', fontWeight: 500 }}>www.wgalmeida.com.br</span>
+          <span style={{ fontSize: '0.82rem', color: '#7b756d' }}>Pag. {pageNumber.toString().padStart(2, '0')}</span>
         </div>
       </div>
     </div>

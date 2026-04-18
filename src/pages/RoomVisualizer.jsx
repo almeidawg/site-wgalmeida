@@ -10,7 +10,7 @@ import { RoomVisualizerProvider, useRoomVisualizer } from '@/contexts/RoomVisual
 import { useAuth } from '@/contexts/SupabaseAuthContext'
 import { motion } from '@/lib/motion-lite'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Lock, Wand2 } from 'lucide-react'
+import { ArrowLeft, Lock, Sparkles, Users, Wand2 } from 'lucide-react'
 
 const RoomVisualizerContent = () => {
   const { user } = useAuth()
@@ -161,9 +161,9 @@ const RoomVisualizerContent = () => {
     <div className="min-h-screen bg-gray-50">
       <SEO
         pathname="/room-visualizer"
-        title="Visualizador de Ambientes com IA | WG Almeida"
-        description="Use inteligência artificial para visualizar seu ambiente com as cores e estilos do seu moodboard. Veja como ficará antes de executar!"
-        keywords="visualizador ambientes ia, decoracao inteligencia artificial, antes depois reforma, visualizacao 3d decoracao"
+        title="Visualizador de Ambientes | Decisão Visual com IA | WG Almeida"
+        description="Aplique a direção do seu moodboard em um ambiente real e reduza a distância entre inspiração, alinhamento e execução."
+        keywords="visualizador ambientes ia, decisao visual, ambiente com moodboard, simulacao decoracao, visualizacao ambiente reforma"
       />
 
       {/* Hero Section */}
@@ -176,16 +176,62 @@ const RoomVisualizerContent = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-wg-orange/20 rounded-full text-wg-orange mb-6">
               <Wand2 className="w-5 h-5" />
-              <span className="text-sm font-medium">Powered by AI</span>
+              <span className="text-sm font-medium">Camada de visualização da jornada</span>
             </div>
             <h1 className="text-4xl md:text-5xl mb-4">
-              Visualizador de <span className="text-wg-orange">Ambientes</span>
+              Visualizador de <span className="text-wg-orange">ambientes</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Envie uma foto do seu espaço e veja como ele ficará com as cores e estilos do seu
-              moodboard. Tecnologia de IA fotorrealista.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Use a direção estética do seu moodboard para testar decisões no espaço real,
+              alinhar expectativas e avançar com mais segurança para projeto, venda ou execução.
             </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=room"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm text-wg-black transition-colors hover:bg-gray-100"
+              >
+                Levar visualização para proposta
+              </Link>
+              <Link
+                to="/buildtech"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white transition-colors hover:bg-white/10"
+              >
+                Ver frente BuildTech
+              </Link>
+            </div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              {
+                icon: Sparkles,
+                title: 'Menos abstração',
+                text: 'Ajuda o usuário a sair da dúvida entre referência bonita e decisão aplicável.',
+              },
+              {
+                icon: Users,
+                title: 'Mais alinhamento',
+                text: 'Cria uma base mais objetiva para conversar com cliente, parceiro ou equipe.',
+              },
+              {
+                icon: Wand2,
+                title: 'Próximo passo claro',
+                text: 'A visualização deixa a jornada pronta para refinamento, especificação ou contratação.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-gray-200 bg-gray-50 p-5">
+                <div className="w-11 h-11 rounded-xl bg-wg-orange/10 text-wg-orange flex items-center justify-center mb-4">
+                  <item.icon className="w-5 h-5" />
+                </div>
+                <h2 className="text-lg text-gray-900 mb-2">{item.title}</h2>
+                <p className="text-sm leading-relaxed text-gray-600">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -195,10 +241,10 @@ const RoomVisualizerContent = () => {
           {/* Steps Indicator */}
           <div className="flex items-center justify-center gap-4 mb-12">
             {[
-              { num: 1, label: 'Importar Moodboard' },
-              { num: 2, label: 'Enviar Foto' },
-              { num: 3, label: 'Selecionar Ambiente' },
-              { num: 4, label: 'Gerar Visualização' },
+              { num: 1, label: 'Importar direção visual' },
+              { num: 2, label: 'Enviar foto real' },
+              { num: 3, label: 'Definir ambiente' },
+              { num: 4, label: 'Visualizar cenário' },
             ].map((step, i) => (
               <div key={step.num} className="flex items-center">
                 <div
@@ -308,8 +354,8 @@ const RoomVisualizer = () => {
           </div>
           <h2 className="text-2xl text-gray-800 mb-4">Acesso Exclusivo</h2>
           <p className="text-gray-600 mb-6">
-            O Visualizador de Ambientes IA é uma ferramenta exclusiva para clientes cadastrados.
-            Faça login ou crie sua conta gratuita para acessar.
+            O visualizador faz parte da experiência avançada de decisão estética da WG Almeida.
+            Faça login ou crie sua conta para acessar a etapa de visualização aplicada.
           </p>
           <div className="space-y-3">
             <Link

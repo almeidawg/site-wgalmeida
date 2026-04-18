@@ -150,6 +150,36 @@ export const MATERIAL_DATA = {
     description: 'Seleção de tecidos para estofados, cortinas e almofadas.',
     searchQuery: 'fabric texture upholstery linen velvet'
   },
+  'revestimentos-naturais': {
+    id: 'revestimentos-naturais',
+    title: 'Revestimentos Naturais',
+    description: 'Porcelanatos, pedras e superfícies com leitura mais orgânica e sofisticada.',
+    searchQuery: 'natural wall cladding stone travertine porcelain texture interior'
+  },
+  'acabamentos-premium': {
+    id: 'acabamentos-premium',
+    title: 'Acabamentos Premium',
+    description: 'Metais, ferragens e detalhes finais que elevam a percepção de qualidade.',
+    searchQuery: 'luxury finish hardware faucet handle interior details'
+  },
+  'iluminacao-decorativa': {
+    id: 'iluminacao-decorativa',
+    title: 'Iluminação Decorativa',
+    description: 'Pendentes, arandelas e luminárias que ajudam a definir atmosfera.',
+    searchQuery: 'decorative lighting pendant wall lamp luxury interior'
+  },
+  'objetos-decorativos': {
+    id: 'objetos-decorativos',
+    title: 'Peças Decorativas',
+    description: 'Objetos, arte e acessórios para completar a narrativa do ambiente.',
+    searchQuery: 'decor objects styling luxury interior coffee table accessories'
+  },
+  'tapetes-texturas': {
+    id: 'tapetes-texturas',
+    title: 'Tapetes e Texturas',
+    description: 'Camadas de textura para trazer conforto visual e leitura sensorial.',
+    searchQuery: 'luxury rug texture textile layered interior'
+  },
   'paleta-neutra': {
     id: 'paleta-neutra',
     title: 'Paleta Neutra',
