@@ -6,12 +6,15 @@ import OrcadorInteligente from '@/components/OrcadorInteligente';
 import { useTranslation } from 'react-i18next';
 import { Sparkles, Users, Briefcase } from 'lucide-react';
 import { WG_PRODUCT_MESSAGES } from '@/data/company';
+import { useWGContext } from '@/providers/ContextProvider';
 
 const SoliciteProposta = () => {
   const [searchParams] = useSearchParams();
   const { t } = useTranslation();
+  const { context: wgContext } = useWGContext() || { context: {} };
   const requestedService = searchParams.get('service') || '';
   const requestedContext = searchParams.get('context') || '';
+  const requestedIntent = searchParams.get('intent') || '';
   const requestedPropertyType = searchParams.get('propertyType') || '';
 
   const contextCopy = {
@@ -26,9 +29,20 @@ const SoliciteProposta = () => {
     'vila-nova': 'Você chegou por uma página de interiores premium. Podemos transformar essa leitura estética em briefing, curadoria e proposta assistida.',
   };
 
+  const intentCopy = {
+    obra: 'Você demonstrou interesse em obra e reforma. Vamos dimensionar o seu projeto com custo, prazo e proposta técnica detalhada.',
+    marcenaria: 'Você demonstrou interesse em marcenaria sob medida. Podemos iniciar com um briefing visual e partir para medição e proposta.',
+    design: 'Você demonstrou interesse em experiência visual e design. Vamos usar seu guia de estilo como ponto de partida para o projeto.',
+    investimento: 'Você demonstrou interesse em análise de investimento. Podemos estruturar o EVF, AVM e custo de obra em uma única proposta.',
+  };
+
   const introLabel = requestedContext
     ? contextCopy[requestedContext] || WG_PRODUCT_MESSAGES.wgExperienceAddon
-    : '';
+    : requestedIntent && intentCopy[requestedIntent]
+      ? intentCopy[requestedIntent]
+      : wgContext?.interesse && !requestedContext && intentCopy[wgContext.interesse]
+        ? intentCopy[wgContext.interesse]
+        : '';
 
   return (
     <>

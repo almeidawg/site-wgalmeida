@@ -39,6 +39,7 @@ import ICCRILinksBlock from '@/components/ICCRILinksBlock';
 import LizAssistant from '@/components/LizAssistant';
 import SmartCTA from '@/components/SmartCTA';
 import { AnimatedBorder } from '@/components/AnimatedStrokes';
+import { useWGContext } from '@/providers/ContextProvider';
 import { normalizeLanguageTag } from '@/i18n';
 
 const rawPostsByLocale = {
@@ -959,8 +960,17 @@ const RelatedProducts = ({ category }) => {
   );
 };
 
+const INTEREST_CATEGORIES = {
+  obra: ['arquitetura', 'engenharia', 'dicas'],
+  marcenaria: ['marcenaria', 'dicas', 'tendencias'],
+  design: ['design', 'tendencias', 'arquitetura'],
+  investimento: ['tecnologia', 'engenharia', 'dicas'],
+};
+
 const Blog = () => {
   const { t, i18n } = useTranslation();
+  const { context: wgContext } = useWGContext() || { context: {} };
+  const userInteresse = wgContext?.interesse || null;
   const activeLocale = normalizeLanguageTag(i18n.resolvedLanguage || i18n.language);
   const localizedArticles = useMemo(
     () => parseArticleCollection(rawPostsByLocale[activeLocale] || {}, t),
@@ -1935,6 +1945,35 @@ const Blog = () => {
 
             {/* Seção de Produtos Relacionados */}
             <RelatedProducts category={artigoAtual.category} />
+
+            {/* Artigos sugeridos por interesse do usuário (Camada 3) */}
+            {(() => {
+              const preferredCats = userInteresse ? INTEREST_CATEGORIES[userInteresse] : null;
+              const suggestions = preferredCats
+                ? artigos
+                    .filter((a) => a.slug !== artigoAtual.slug && preferredCats.includes(a.category))
+                    .slice(0, 3)
+                : artigos.filter((a) => a.slug !== artigoAtual.slug && a.category === artigoAtual.category).slice(0, 3);
+              if (suggestions.length === 0) return null;
+              return (
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <p className="text-sm font-light text-wg-gray mb-4 uppercase tracking-wider">
+                    {userInteresse ? 'Você também pode se interessar' : 'Mais artigos'}
+                  </p>
+                  <div className="flex flex-col gap-3">
+                    {suggestions.map((a) => (
+                      <Link key={a.slug} to={`/blog/${a.slug}`} className="group flex items-start gap-3 rounded-lg border border-gray-100 p-3 hover:border-wg-orange/30 transition-colors">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-light text-wg-black group-hover:text-wg-orange transition-colors line-clamp-2">{a.title}</p>
+                          <p className="text-xs text-wg-gray font-light mt-0.5">{a.category}</p>
+                        </div>
+                        <ArrowRight className="w-4 h-4 text-wg-gray shrink-0 mt-0.5 group-hover:text-wg-orange transition-colors" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* Smart CTA — próximo passo contextualizado */}
             <div className="mt-12 pt-8 border-t border-gray-200">

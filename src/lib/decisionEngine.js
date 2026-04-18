@@ -1,3 +1,5 @@
+import { PRODUCT_URLS } from '@/data/company'
+
 const ROUTE_INTENT_MAP = [
   { match: ['/arquitetura', '/construtora', '/obra-turn-key', '/reforma-apartamento'], interesse: 'obra' },
   { match: ['/engenharia'], interesse: 'obra' },
@@ -10,33 +12,51 @@ const ROUTE_INTENT_MAP = [
   { match: ['/blog/evf', '/blog/tabela-precos', '/blog/iccri', '/blog/valoriza'], interesse: 'investimento' },
 ]
 
-const ACTIONS = {
+// Camada 4: destinos integrados ObraEasy / EasyRealState / site
+const getActions = () => ({
   obra: {
     label: 'Simular custo da obra',
     href: '/solicite-proposta?service=Orçamento+de+Obra&intent=obra',
-    secondary: { label: 'Ver ObraEasy', href: '/obraeasy' },
+    secondary: {
+      label: 'Abrir no ObraEasy',
+      href: `${PRODUCT_URLS.obraeasy}?source=site&intent=obra`,
+      external: true,
+    },
   },
   marcenaria: {
     label: 'Orçar marcenaria sob medida',
     href: '/solicite-proposta?service=Marcenaria&intent=marcenaria',
-    secondary: null,
+    secondary: {
+      label: 'Ver portfólio',
+      href: '/marcenaria',
+      external: false,
+    },
   },
   design: {
     label: 'Criar meu guia de estilo',
     href: '/moodboard',
-    secondary: { label: 'Levar para projeto', href: '/solicite-proposta?context=moodboard&intent=design' },
+    secondary: {
+      label: 'Levar para projeto',
+      href: '/solicite-proposta?context=moodboard&intent=design',
+      external: false,
+    },
   },
   investimento: {
     label: 'Ver viabilidade do investimento',
-    href: '/solicite-proposta?service=Análise+de+Viabilidade&intent=investimento',
-    secondary: null,
+    href: `${PRODUCT_URLS.obraeasy}/evf4?source=site&intent=investimento`,
+    external: true,
+    secondary: {
+      label: 'Ver ICCRI 2026',
+      href: '/iccri',
+      external: false,
+    },
   },
   default: {
     label: 'Começar meu projeto',
     href: '/solicite-proposta',
     secondary: null,
   },
-}
+})
 
 export function inferIntentFromPath(pathname = '') {
   for (const { match, interesse } of ROUTE_INTENT_MAP) {
@@ -64,5 +84,6 @@ export function getNextBestAction(context = {}, pathname = '') {
   const fromPath = inferIntentFromPath(pathname)
   const fromHistory = inferIntentFromHistory(paginas)
   const resolved = interesse || fromPath || fromHistory || 'default'
-  return { ...ACTIONS[resolved] || ACTIONS.default, intent: resolved }
+  const actions = getActions()
+  return { ...actions[resolved] || actions.default, intent: resolved }
 }
