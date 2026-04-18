@@ -1,6 +1,35 @@
 # RETURN-POINT — site-wgalmeida
 **Atualizado:** 18/04/2026
 
+## Sessão 18/04/2026 — Site Inteligente Camadas 1 e 2 — PR #15 aberto ✅
+
+### O que foi feito
+
+- `src/providers/ContextProvider.jsx` — contexto do usuário persistido em localStorage (interesse, estágio, páginas)
+- `src/lib/decisionEngine.js` — motor de decisão: rota → intenção → CTA recomendado (obra/marcenaria/design/investimento)
+- `src/hooks/useNextBestAction.js` — hook React que combina contexto salvo com rota atual
+- `src/components/ContextTracker.jsx` — detecta intenção por rota e acumula histórico automaticamente
+- `src/components/SmartCTA.jsx` — CTA contextualizado que substitui botões genéricos
+- `src/App.jsx` — ContextProvider + ContextTracker ativos em todas as rotas
+- `src/pages/Blog.jsx` — SmartCTA adicionado ao fim de cada artigo ("Próximo passo")
+- `src/data/blogImageManifest.js` + `Blog.jsx` — marcas-luxo-internacionais-moveis-design no layout editorial completo
+- PR #14 mergeado (admin editorial UX redesign + moodboard + add-on experiência visual)
+- PR #15 aberto (Site Inteligente + blog editorial)
+
+### Estado atual
+- Branch ativa: `feat/site-inteligente-camada1`
+- PR #15 aguardando CI e merge para main
+- Próximo: merge PR #15, depois implementar Camada 3 (personalização de textos/CTAs baseada no contexto)
+
+### Camadas implementadas
+- ✅ Camada 1: CTAs guiados por rota (SmartCTA + decisionEngine)
+- ✅ Camada 2: Contexto do usuário (ContextProvider + ContextTracker)
+- ⏳ Camada 3: Personalização de conteúdo baseada no contexto
+- ⏳ Camada 4: Integração com sistemas (ObraEasy, EasyRealState)
+- ⏳ Camada 5: Next Best Action (motor completo)
+
+---
+
 ## Sessão 18/04/2026 — moodboard com pagina publica de guia + proxy Unsplash ✅
 
 ### O que foi feito
