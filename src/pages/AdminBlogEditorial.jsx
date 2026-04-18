@@ -18,12 +18,15 @@ import {
   AlertCircle,
   ArrowLeft,
   CheckCircle2,
+  ChevronDown,
+  ChevronUp,
   Copy,
   ExternalLink,
   ImagePlus,
   Loader2,
   Search,
   Trash2,
+  X,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -614,6 +617,9 @@ const AdminBlogEditorial = () => {
   });
   const [automationRunning, setAutomationRunning] = useState(false);
   const [automationOutput, setAutomationOutput] = useState('');
+  const [openSearchPanelBySlug, setOpenSearchPanelBySlug] = useState({});
+  const [searchQueryBySlug, setSearchQueryBySlug] = useState({});
+  const [searchResultsBySlug, setSearchResultsBySlug] = useState({});
 
   const cloudName = getCloudinaryEditorialCloudName();
   const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'wg_unsigned';
@@ -944,6 +950,65 @@ const AdminBlogEditorial = () => {
       } else if (!cardCurrent) {
         updateUnsplashSelection(record.slug, 'card', 'id', resolved.unsplashPhotoId);
       }
+    }
+  };
+
+  const toggleSearchPanel = (slug, defaultQuery = '') => {
+    setOpenSearchPanelBySlug((current) => {
+      const isOpen = Boolean(current[slug]);
+      if (!isOpen && !searchQueryBySlug[slug] && defaultQuery) {
+        setSearchQueryBySlug((prev) => ({ ...prev, [slug]: defaultQuery }));
+      }
+      return { ...current, [slug]: !isOpen };
+    });
+  };
+
+  const runInlineUnsplashSearch = async (slug) => {
+    const query = searchQueryBySlug[slug] || '';
+    if (!query.trim()) return;
+
+    setSearchResultsBySlug((current) => ({
+      ...current,
+      [slug]: { loading: true, photos: [], error: '', query },
+    }));
+
+    try {
+      const params = new URLSearchParams({ query: query.trim(), orientation: 'landscape', per_page: '9' });
+      const response = await fetch(`/api/unsplash-search?${params.toString()}`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        setSearchResultsBySlug((current) => ({
+          ...current,
+          [slug]: { loading: false, photos: [], error: data?.error || 'Erro ao buscar imagens.', query },
+        }));
+        return;
+      }
+
+      setSearchResultsBySlug((current) => ({
+        ...current,
+        [slug]: { loading: false, photos: data.photos || [], error: '', query },
+      }));
+    } catch {
+      setSearchResultsBySlug((current) => ({
+        ...current,
+        [slug]: { loading: false, photos: [], error: 'Falha de rede ao buscar imagens.', query },
+      }));
+    }
+  };
+
+  const assignUnsplashPhotoToSlot = (record, slotName, photo) => {
+    const thumbUrl = `${photo.urls.raw}&auto=format&fit=crop&w=720&h=480&q=80`;
+    saveExternalSlotOverride(record, slotName, {
+      src: thumbUrl,
+      source: 'unsplash',
+      unsplashPhotoId: photo.id,
+      pageUrl: photo.unsplashPage,
+      originalUrl: photo.unsplashPage,
+    });
+    if (slotName === 'hero' || slotName === 'card') {
+      updateUnsplashSelection(record.slug, slotName, 'id', photo.id);
+      updateUnsplashSelection(record.slug, slotName, 'alt', photo.alt || photo.description || '');
     }
   };
 
@@ -1902,6 +1967,165 @@ const AdminBlogEditorial = () => {
                     ))}
                   </div>
                 </div>
+
+                {(() => {
+                  const panelOpen = Boolean(openSearchPanelBySlug[record.slug]);
+                  const panelQuery = searchQueryBySlug[record.slug] || record.slots?.[0]?.mainQuery || '';
+                  const panelResult = searchResultsBySlug[record.slug] || { loading: false, photos: [], error: '' };
+                  const primarySlots = getPrimarySlotNames(record);
+                  return (
+                    <div className="mt-4 rounded-2xl border border-[#E3DDCF] bg-[#F5F2EC]">
+                      <button
+                        type="button"
+                        onClick={() => toggleSearchPanel(record.slug, record.slots?.[0]?.mainQuery || record.title)}
+                        className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left transition hover:bg-[#EDE8DE] rounded-2xl"
+                      >
+                        <div className="flex items-center gap-2">
+                          <Search className="h-4 w-4 text-[#7A5B2F]" />
+                          <span className="text-sm font-medium text-[#1E2A3A]">Buscar imagens no Unsplash</span>
+                          {panelResult.photos.length > 0 && !panelOpen && (
+                            <span className="rounded-full bg-[#EEF4EF] px-2 py-0.5 text-[10px] uppercase tracking-[0.14em] text-[#2E7D5A]">
+                              {panelResult.photos.length} resultado{panelResult.photos.length !== 1 ? 's' : ''}
+                            </span>
+                          )}
+                        </div>
+                        {panelOpen ? (
+                          <ChevronUp className="h-4 w-4 text-[#7C7C7C]" />
+                        ) : (
+                          <ChevronDown className="h-4 w-4 text-[#7C7C7C]" />
+                        )}
+                      </button>
+
+                      {panelOpen && (
+                        <div className="border-t border-[#E3DDCF] px-4 pb-4 pt-3">
+                          <div className="flex flex-col gap-2 sm:flex-row">
+                            <input
+                              value={panelQuery}
+                              onChange={(event) =>
+                                setSearchQueryBySlug((current) => ({ ...current, [record.slug]: event.target.value }))
+                              }
+                              onKeyDown={(event) => {
+                                if (event.key === 'Enter') {
+                                  event.preventDefault();
+                                  runInlineUnsplashSearch(record.slug);
+                                }
+                              }}
+                              placeholder="Ex.: minimalist interior, paris architecture, japandi bedroom..."
+                              className="w-full rounded-xl border border-[#D7D1C5] bg-white px-4 py-2.5 text-sm text-[#1E2A3A] outline-none transition focus:border-[#B89E73]"
+                            />
+                            <Button
+                              type="button"
+                              onClick={() => runInlineUnsplashSearch(record.slug)}
+                              disabled={panelResult.loading || !panelQuery.trim()}
+                              className="shrink-0 bg-[#1E2A3A] text-white hover:bg-[#24354C] disabled:opacity-50"
+                            >
+                              {panelResult.loading ? (
+                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                              ) : (
+                                <Search className="mr-2 h-4 w-4" />
+                              )}
+                              Buscar
+                            </Button>
+                          </div>
+
+                          {record.slots?.length > 0 && (
+                            <div className="mt-2 flex flex-wrap gap-2">
+                              {[...new Set([
+                                record.slots[0]?.mainQuery,
+                                ...((record.slots[0]?.searchTerms || []).slice(0, 3)),
+                              ].filter(Boolean))].map((term) => (
+                                <button
+                                  key={`suggest-${record.slug}-${term}`}
+                                  type="button"
+                                  onClick={() => {
+                                    setSearchQueryBySlug((current) => ({ ...current, [record.slug]: term }));
+                                  }}
+                                  className="rounded-full border border-[#DED7CA] bg-white px-3 py-1 text-xs text-[#5B6470] transition hover:border-[#B89E73] hover:text-[#7A5B2F]"
+                                >
+                                  {term}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+
+                          {panelResult.error && (
+                            <p className="mt-3 text-xs text-[#A24A4A]">{panelResult.error}</p>
+                          )}
+
+                          {panelResult.photos.length > 0 && (
+                            <div className="mt-4 grid grid-cols-3 gap-2">
+                              {panelResult.photos.map((photo) => (
+                                <div
+                                  key={`unsplash-result-${record.slug}-${photo.id}`}
+                                  className="group relative overflow-hidden rounded-xl border border-[#DED7CA] bg-white"
+                                >
+                                  <img
+                                    src={photo.urls.small}
+                                    alt={photo.alt || photo.description || 'Unsplash photo'}
+                                    className="h-24 w-full object-cover"
+                                    loading="lazy"
+                                  />
+                                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-black/60 opacity-0 transition-opacity group-hover:opacity-100">
+                                    {primarySlots.map((slotName) => (
+                                      <button
+                                        key={`assign-${photo.id}-${slotName}`}
+                                        type="button"
+                                        onClick={() => assignUnsplashPhotoToSlot(record, slotName, photo)}
+                                        className="rounded-lg bg-white/95 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-[#1E2A3A] transition hover:bg-white"
+                                      >
+                                        → {getSlotLabel(slotName)}
+                                      </button>
+                                    ))}
+                                    {record.kind === 'blog' && (
+                                      <button
+                                        type="button"
+                                        onClick={() => {
+                                          const image = {
+                                            id: `${Date.now()}-${photo.id}`,
+                                            src: `${photo.urls.raw}&auto=format&fit=crop&w=720&h=480&q=80`,
+                                            source: 'unsplash',
+                                            unsplashPhotoId: photo.id,
+                                            pageUrl: photo.unsplashPage,
+                                            originalUrl: photo.unsplashPage,
+                                            addedAt: new Date().toISOString(),
+                                          };
+                                          const existing = externalImages?.[record.slug] || [];
+                                          const alreadyAdded = existing.some((img) => img.unsplashPhotoId === photo.id);
+                                          if (alreadyAdded) return;
+                                          const nextImages = { ...externalImages, [record.slug]: [...existing, image] };
+                                          setExternalImages(nextImages);
+                                          writeLocalExternalImages(nextImages);
+                                        }}
+                                        className="rounded-lg bg-[#E8E0D1]/95 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-[#7A5B2F] transition hover:bg-[#E8E0D1]"
+                                      >
+                                        + Extra
+                                      </button>
+                                    )}
+                                  </div>
+                                  <a
+                                    href={photo.unsplashPage}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="block truncate px-2 py-1 text-[10px] text-[#7C7C7C] hover:text-[#1E2A3A]"
+                                    title={photo.photographer}
+                                  >
+                                    {photo.photographer}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+
+                          {panelResult.photos.length === 0 && !panelResult.loading && !panelResult.error && panelQuery.trim() && (
+                            <p className="mt-3 text-xs text-[#7C7C7C]">
+                              Nenhum resultado. Tente uma query diferente.
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
 
                 {!compactMode && record.editorial.snippet && (
                   <div className="mt-5 rounded-2xl border border-[#E3DDCF] bg-[#FBF8F2] p-4">
