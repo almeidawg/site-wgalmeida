@@ -75,6 +75,13 @@ custo-marcenaria-planejada, arquitetos-brasileiros-famosos-legado, marcas-luxo-i
 - painel de busca do admin agora unifica curadoria com `Unsplash` inline e atalhos laterais para `Google Imagens` e `Google Drive`
 - cards de resultados foram estreitados e convertidos para trilho horizontal com navegação lateral, acelerando a revisão de mais imagens por slug
 - o card do conteúdo agora sinaliza quando a publicação ainda está usando `banner genérico atual`
+
+### Catálogo publicado de páginas públicas
+- `src/data/publicPageImageCatalog.js` centraliza imagens principais de páginas públicas institucionais, serviços, landings e produtos
+- `src/data/publicPageImageOverrides.generated.js` abre a base de overrides publicados para páginas públicas
+- `AdminBlogEditorial.jsx` agora incorpora registros `kind: 'page'`, permitindo filtrar `Páginas` na mesma fila de curadoria
+- páginas públicas críticas já passaram a ler do catálogo central: `BuildTech`, `Carpentry`, `Contact`, `EasyRealStateLanding`, `ObraEasyLanding`, `Process` e `Testimonials`
+
 ### Próximos candidatos para PHASE1
 - `marcas-luxo-nacionais-moveis-decoracao` — tem unsplashManifest entry, falta sectionTitle + PHASE1
 - `custo-reforma-apartamento-alto-padrao-sp`
@@ -95,6 +102,8 @@ src/
   lib/userContext.js                   — STAGE_RANK, DEFAULT_USER_CONTEXT, promoteStage
   __tests__/decisionEngine.test.js     — 41 testes unitários (vitest)
   data/blogImageManifest.js            — context[] com sectionTitle para PHASE1
+  data/publicPageImageCatalog.js       — catálogo central de imagens publicadas das páginas públicas
+  data/publicPageImageOverrides.generated.js — base para overrides publicados de páginas públicas
   pages/regions/RegionTemplate.jsx     — SmartCTA inteligente nas 14 páginas de bairro
   docs/AGENTES-OBRIGATORIOS-SITE-E-MOODBOARD.md — contrato de arquitetura
 ```
@@ -118,5 +127,4 @@ src/
 - **marcas-luxo-nacionais-moveis-decoracao** ainda não no PHASE1
 - **estagio "acao"** pode ser incrementado com trigger no submit do OrcadorInteligente
 - **sync editorial em Vite puro** depende de endpoint `/api`; fluxo completo local com API requer ambiente que sirva `api/` ou deploy/Vercel
-- **sync editorial em Vite puro** depende de endpoint `/api`; fluxo completo local com API requer ambiente que sirva `api/` ou deploy/Vercel
-- **curadoria unificada de imagens para todas as páginas públicas** ainda não existe como manifest único; hoje o fluxo publicado cobre blog + guias de estilo + extras no admin editorial
+- **curadoria unificada de imagens para todas as páginas públicas** começou pelo catálogo central e pela fila `kind: 'page'`, mas ainda falta expandir a leitura do catálogo para mais páginas e concluir automação de publicação via admin

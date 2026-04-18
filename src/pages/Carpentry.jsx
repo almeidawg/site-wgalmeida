@@ -4,6 +4,7 @@ import { motion } from '@/lib/motion-lite';
 import { Hammer, Package, Ruler, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
 import { WG_PRODUCT_MESSAGES } from '@/data/company';
@@ -16,6 +17,8 @@ const fadeInUp = {
   viewport: { once: true },
   transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
 };
+
+const CARPENTRY_HERO_IMAGE = getPublicPageImageSrc('carpentry', '/images/banners/MARCENARIA.webp');
 
 const Carpentry = () => {
   const { t } = useTranslation();
@@ -61,7 +64,7 @@ const Carpentry = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt={t('carpentryPage.hero.imageAlt')}
-            src="/images/banners/MARCENARIA.webp"
+            src={CARPENTRY_HERO_IMAGE}
             width="1920"
             height="1080"
             loading="eager"

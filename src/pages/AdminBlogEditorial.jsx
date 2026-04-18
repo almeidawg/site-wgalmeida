@@ -5,6 +5,7 @@ import { getBlogImageAsset, getBlogManifestEntry, resolveBlogPublicId } from '@/
 import blogUnsplashSelection from '@/data/blogUnsplashSelection.json';
 import editorialSearchReport from '../../editorial-search-report.latest.json';
 import editorialHealthReport from '../../editorial-health-status.latest.json';
+import { PUBLIC_PAGE_IMAGE_CATALOG, getPublicPageImageAsset } from '@/data/publicPageImageCatalog';
 import styleCatalog from '@/utils/styleCatalog';
 import STYLE_IMAGE_MANIFEST from '@/data/styleImageManifest';
 import { parseFrontmatter } from '@/utils/frontmatter';
@@ -65,6 +66,12 @@ const CATEGORY_LABELS = {
   tecnologia: 'Tecnologia',
   tendencias: 'Tendências',
   dicas: 'Dicas',
+  institucional: 'Institucional',
+  servicos: 'Serviços',
+  produto: 'Produto',
+  portfolio: 'Portfólio',
+  landing: 'Landing',
+  conteudo: 'Conteúdo',
 };
 
 const normalizeCategoryKey = (value = '') => String(value)
@@ -86,7 +93,7 @@ const getSlotVariant = (slotName = '') => {
   return 'card';
 };
 const getPrimarySlotNames = (record) => (
-  record.kind === 'style' ? ['cover'] : ['hero', 'card']
+  record.kind === 'style' ? ['cover'] : record.kind === 'page' ? ['hero'] : ['hero', 'card']
 );
 
 const slugifyHeading = (text = '') => String(text)
@@ -437,6 +444,8 @@ const getEffectiveSlotState = (record, slot, uploads) => {
     ? (
       record.kind === 'style'
         ? null
+        : record.kind === 'page'
+          ? getPublicPageImageAsset(record.slug)
         : isContextSlot(slot.slot)
           ? contextAsset
           : getBlogImageAsset({
@@ -573,6 +582,15 @@ const buildStyleManifestSnippet = (record, uploads) => {
   return '';
 };
 
+const buildPageManifestSnippet = (record, uploads) => {
+  const heroState = getEffectiveSlotState(record, { slot: 'hero' }, uploads);
+  const pageValue = heroState.publicId
+    ? { source: 'cloudinary', publicId: heroState.publicId, alt: heroState.alt || '', page: heroState.pageUrl || '', caption: heroState.caption || '' }
+    : buildManifestRemoteValue(heroState);
+  if (!pageValue) return '';
+  return `${JSON.stringify(record.slug)}: {\n  hero: ${JSON.stringify(pageValue, null, 2).replace(/\n/g, '\n  ')}\n},`;
+};
+
 const getTwoSlotStatus = (record, uploads) => {
   const primarySlots = getPrimarySlotNames(record);
   const heroState = getEffectiveSlotState(record, { slot: primarySlots[0] }, uploads);
@@ -594,6 +612,8 @@ const getTwoSlotStatus = (record, uploads) => {
     ready: primaryReady,
     snippet: record.kind === 'style'
       ? buildStyleManifestSnippet(record, uploads)
+      : record.kind === 'page'
+        ? buildPageManifestSnippet(record, uploads)
       : buildBlogManifestSnippet(record, uploads),
   };
 };
@@ -628,6 +648,7 @@ const getEditorialCoverageStatus = (record, uploads, unsplashSelections) => {
         ? 'unsplash'
         : null;
   const ready = Boolean(heroSource && cardSource);
+  const isSingleSlotRecord = getPrimarySlotNames(record).length === 1;
   const sourceSet = new Set([heroSource, cardSource].filter(Boolean));
   const sourceNameByType = {
     cloudinary: 'Cloudinary',
@@ -641,7 +662,7 @@ const getEditorialCoverageStatus = (record, uploads, unsplashSelections) => {
   return {
     editorial,
     unsplash,
-    ready,
+    ready: isSingleSlotRecord ? Boolean(heroSource) : ready,
     heroSource,
     cardSource,
     label: sourceLabel,
@@ -1298,6 +1319,41 @@ const AdminBlogEditorial = () => {
     };
   });
 
+  const pageQueue = Object.entries(PUBLIC_PAGE_IMAGE_CATALOG).map(([pageKey, page]) => ({
+    slug: pageKey,
+    title: page.title,
+    category: page.category,
+    kind: 'page',
+    currentImage: page.image,
+    boldCount: 0,
+    inlineImageCount: 0,
+    needsCopyNormalization: false,
+    status: {
+      hasFrontmatterImage: Boolean(page.image),
+      hasInlineImages: false,
+      hasManifestEntry: Boolean(getPublicPageImageAsset(pageKey)),
+      isVariantEntry: false,
+      hasCloudinaryHero: Boolean(getPublicPageImageAsset(pageKey)?.publicId),
+      hasCloudinaryCard: false,
+      hasLocalHero: false,
+      hasLocalCard: false,
+      readyForTwoSlotEditorial: Boolean(getPublicPageImageAsset(pageKey)),
+    },
+    slots: [
+      {
+        slot: 'hero',
+        mainQuery: page.mainQuery,
+        searchTerms: page.searchTerms || [],
+        searchQuery: page.mainQuery,
+        intent: `imagem principal publicada para ${page.title}`,
+        targetLocalFile: '',
+        targetCloudinaryId: `editorial/pages/${pageKey}/hero`,
+        orientation: 'landscape',
+      },
+    ],
+    routePath: page.routePath,
+  }));
+
   const combinedQueue = [
     ...editorialQueue.map((record) => ({
       ...record,
@@ -1318,6 +1374,7 @@ const AdminBlogEditorial = () => {
       ],
     })),
     ...styleQueue,
+    ...pageQueue,
   ];
 
   const queueWithStatus = combinedQueue.map((record) => {
@@ -1332,7 +1389,7 @@ const AdminBlogEditorial = () => {
     return {
       ...record,
       categoryKey,
-      kindLabel: record.kind === 'style' ? 'Guia de Estilo' : 'Blog',
+      kindLabel: record.kind === 'style' ? 'Guia de Estilo' : record.kind === 'page' ? 'Página' : 'Blog',
       categoryLabel: getCategoryLabel(record.category),
       editorial: coverage.editorial,
       unsplash: coverage.unsplash,
@@ -1349,6 +1406,7 @@ const AdminBlogEditorial = () => {
     needsCopyNormalization: queueWithStatus.filter((record) => record.needsCopyNormalization).length,
     blog: queueWithStatus.filter((record) => record.kind === 'blog').length,
     styles: queueWithStatus.filter((record) => record.kind === 'style').length,
+    pages: queueWithStatus.filter((record) => record.kind === 'page').length,
   };
   const searchSummary = editorialSearchReport?.summary || {};
   const editorialHealthSummary = editorialHealthReport?.summary || {};
@@ -1520,6 +1578,7 @@ const AdminBlogEditorial = () => {
                   <option value="todos">Tudo</option>
                   <option value="blog">Blog</option>
                   <option value="style">Estilos</option>
+                  <option value="page">Páginas</option>
                 </select>
               </label>
               <label className="flex flex-col gap-1 text-xs text-[#5B6470]">

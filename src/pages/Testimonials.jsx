@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 import { useTranslation } from 'react-i18next';
 import { GOOGLE_WRITE_REVIEW_URL } from '@/constants/googleReviews';
 import useGoogleReviews from '@/hooks/useGoogleReviews';
@@ -12,6 +13,7 @@ import { BrandRating } from '@/components/BrandStar';
 import { COMPANY } from '@/data/company';
 
 const GOOGLE_MAPS_URL = 'https://maps.google.com/?q=WG+Almeida+Arquitetura+São+Paulo';
+const TESTIMONIALS_HERO_IMAGE = getPublicPageImageSrc('testimonials', '/images/banners/DEPOIMENTOS.webp');
 
 // Animações elegantes
 const fadeInUp = {
@@ -77,7 +79,7 @@ const Testimonials = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt={t('testimonialsPage.hero.imageAlt')}
-            src="/images/banners/DEPOIMENTOS.webp"
+            src={TESTIMONIALS_HERO_IMAGE}
             width="1920"
             height="1080"
             loading="eager"
