@@ -4,12 +4,12 @@
  * v4 - hardening contra cache de HTML em URLs de assets/imagens
  */
 
-const CACHE_VERSION = "v4-2026-04-15-static-guard";
+const CACHE_VERSION = "v4-2026-04-18-brand-icon";
 const STATIC_CACHE = `wgalmeida-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `wgalmeida-dynamic-${CACHE_VERSION}`;
 
 // Recursos estáticos críticos para cache imediato
-const STATIC_ASSETS = ["/", "/manifest.json", "/favicon.png"];
+const STATIC_ASSETS = ["/", "/manifest.json", "/favicon.png", "/images/icone.webp"];
 
 // Instalar Service Worker
 self.addEventListener("install", (event) => {
