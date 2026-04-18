@@ -38,6 +38,8 @@ import { buildUnsplashSrcSet, normalizeUnsplashImageUrl } from '@/lib/unsplash';
 import { withBasePath } from '@/utils/assetPaths';
 import { trackCtaClick } from '@/lib/analytics';
 import { PRODUCT_URLS } from '@/data/company';
+import { useWGContext } from '@/providers/ContextProvider';
+import SmartCTA from '@/components/SmartCTA';
 
 const editorialScale = {
   kicker: 'text-[11px] font-light uppercase tracking-[0.18em]',
@@ -77,10 +79,57 @@ const ENGINEERING_BANNER_SRCSET = [
   `${ENGINEERING_BANNER_SRC} 1920w`,
 ].join(', ');
 
+const HERO_COPY_BY_INTEREST = {
+  obra: {
+    eyebrow: 'Execução de alto padrão · São Paulo',
+    support: 'Planejamos e executamos sua obra com gestão integrada, do projeto ao acabamento final, com previsibilidade de custo e prazo.',
+    ctaPrimary: 'Simular custo da obra',
+    ctaPrimaryHref: '/solicite-proposta?service=Orçamento+de+Obra&intent=obra',
+    ctaSecondary: 'Como funciona',
+    ctaSecondaryHref: '/processo',
+  },
+  marcenaria: {
+    eyebrow: 'Marcenaria sob medida · São Paulo',
+    support: 'Projetamos e produzimos marcenaria de alto padrão com aprovação visual antes de medição, garantindo precisão e alinhamento total.',
+    ctaPrimary: 'Orçar marcenaria',
+    ctaPrimaryHref: '/solicite-proposta?service=Marcenaria&intent=marcenaria',
+    ctaSecondary: 'Ver marcenaria',
+    ctaSecondaryHref: '/marcenaria',
+  },
+  design: {
+    eyebrow: 'Experiência visual · São Paulo',
+    support: 'Transformamos sua inspiração em guia de estilo, briefing e proposta. Do moodboard ao projeto executado, com coerência visual do início ao fim.',
+    ctaPrimary: 'Criar meu guia de estilo',
+    ctaPrimaryHref: '/moodboard',
+    ctaSecondary: 'Levar para projeto',
+    ctaSecondaryHref: '/solicite-proposta?context=moodboard&intent=design',
+  },
+  investimento: {
+    eyebrow: 'Análise de viabilidade · São Paulo',
+    support: 'Avaliamos o potencial do seu imóvel com dados reais de mercado, custo de obra e margem esperada, antes de qualquer decisão.',
+    ctaPrimary: 'Ver viabilidade do investimento',
+    ctaPrimaryHref: '/solicite-proposta?service=Análise+de+Viabilidade&intent=investimento',
+    ctaSecondary: 'Ver ICCRI 2026',
+    ctaSecondaryHref: '/iccri',
+  },
+};
+
+const NUCLEOS_ORDER_BY_INTEREST = {
+  obra: ['arquitetura', 'engenharia', 'marcenaria', 'buildtech', 'easylocker'],
+  marcenaria: ['marcenaria', 'arquitetura', 'engenharia', 'buildtech', 'easylocker'],
+  design: ['arquitetura', 'marcenaria', 'engenharia', 'buildtech', 'easylocker'],
+  investimento: ['engenharia', 'arquitetura', 'marcenaria', 'buildtech', 'easylocker'],
+};
+
 const Home = () => {
   const { t, i18n } = useTranslation();
-  const heroEyebrow = t('home.hero.eyebrow', { defaultValue: 'Grupo WG Almeida · São Paulo' });
-  const heroSupport = t('home.hero.support', {
+  const { context: wgContext } = useWGContext() || { context: {} };
+  const userInteresse = wgContext?.interesse || null;
+  const isReturning = (wgContext?.paginas?.length || 0) >= 3;
+
+  const personalized = userInteresse ? HERO_COPY_BY_INTEREST[userInteresse] : null;
+  const heroEyebrow = personalized?.eyebrow || t('home.hero.eyebrow', { defaultValue: 'Grupo WG Almeida · São Paulo' });
+  const heroSupport = personalized?.support || t('home.hero.support', {
     defaultValue:
       'Planejamos, executamos e entregamos espaços de alto padrão, do conceito ao último detalhe, sob um único padrão de gestão.',
   });
@@ -252,9 +301,10 @@ const Home = () => {
     estatisticas.horasProjetando
   ]);
 
-  // Unidades (antes "Serviços")
-  const nucleos = [
+  // Unidades (antes "Serviços") — ordem personalizada por interesse detectado
+  const nucleosBase = [
     {
+      key: 'arquitetura',
       title: t('home.units.architecture.title'),
       path: '/arquitetura',
       icon: Ruler,
@@ -263,6 +313,7 @@ const Home = () => {
       color: 'wg-green',
     },
     {
+      key: 'engenharia',
       title: t('home.units.engineering.title'),
       path: '/engenharia',
       icon: Building2,
@@ -271,6 +322,7 @@ const Home = () => {
       color: 'wg-blue',
     },
     {
+      key: 'marcenaria',
       title: t('home.units.carpentry.title'),
       path: '/marcenaria',
       icon: Hammer,
@@ -279,6 +331,7 @@ const Home = () => {
       color: 'wg-brown',
     },
     {
+      key: 'buildtech',
       title: 'WG Build Tech',
       path: '/buildtech',
       icon: Monitor,
@@ -287,6 +340,7 @@ const Home = () => {
       color: 'wg-blue',
     },
     {
+      key: 'easylocker',
       title: 'WG EasyLocker',
       path: '/easylocker',
       icon: Lock,
@@ -295,6 +349,15 @@ const Home = () => {
       color: 'wg-orange',
     },
   ];
+
+  const nucleoOrder = userInteresse ? NUCLEOS_ORDER_BY_INTEREST[userInteresse] : null;
+  const nucleos = nucleoOrder
+    ? [...nucleosBase].sort((a, b) => {
+        const ai = nucleoOrder.indexOf(a.key);
+        const bi = nucleoOrder.indexOf(b.key);
+        return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+      })
+    : nucleosBase;
 
   // Etapas do processo / Metodologia
   const metodologia = [
@@ -386,29 +449,66 @@ const Home = () => {
             {heroSupport}
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTAs — personalizados se interesse detectado, padrão caso contrário */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: showIntro ? 0 : 1, y: showIntro ? 30 : 0 }}
             transition={{ duration: 1, delay: showIntro ? 0 : 1.35 }}
             className="home-hero-actions"
           >
-            <Link to="/sobre">
-              <Button size="sm" className="home-hero-button home-hero-button-primary !h-auto !px-5 !py-2.5 md:!px-6">
-                {t('home.hero.ctaPrimary')}
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-            <Link to="/processo">
-              <Button size="sm" className="home-hero-button home-hero-button-secondary !h-auto !px-5 !py-2.5 md:!px-6">
-                {t('home.hero.ctaSecondary')}
-              </Button>
-            </Link>
+            {personalized ? (
+              <>
+                <Link to={personalized.ctaPrimaryHref}>
+                  <Button size="sm" className="home-hero-button home-hero-button-primary !h-auto !px-5 !py-2.5 md:!px-6">
+                    {personalized.ctaPrimary}
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link to={personalized.ctaSecondaryHref}>
+                  <Button size="sm" className="home-hero-button home-hero-button-secondary !h-auto !px-5 !py-2.5 md:!px-6">
+                    {personalized.ctaSecondary}
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/sobre">
+                  <Button size="sm" className="home-hero-button home-hero-button-primary !h-auto !px-5 !py-2.5 md:!px-6">
+                    {t('home.hero.ctaPrimary')}
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link to="/processo">
+                  <Button size="sm" className="home-hero-button home-hero-button-secondary !h-auto !px-5 !py-2.5 md:!px-6">
+                    {t('home.hero.ctaSecondary')}
+                  </Button>
+                </Link>
+              </>
+            )}
           </motion.div>
           </div>
           </div>
         </div>
       </section>
+
+      {/* ========== BANNER DE RETORNO INTELIGENTE (Camada 3) ========== */}
+      {isReturning && userInteresse && personalized && (
+        <div className="bg-wg-black border-b border-white/10 py-3 px-4">
+          <div className="container-custom flex flex-wrap items-center justify-between gap-3">
+            <p className="text-white/70 text-sm font-light">
+              Continuando sua jornada de <span className="text-wg-orange font-normal">{
+                { obra: 'obra e reforma', marcenaria: 'marcenaria sob medida', design: 'experiência visual', investimento: 'análise de investimento' }[userInteresse]
+              }</span>
+            </p>
+            <Link
+              to={personalized.ctaPrimaryHref}
+              className="inline-flex items-center gap-1.5 rounded-full bg-wg-orange/90 px-4 py-1.5 text-xs text-white hover:bg-wg-orange transition-colors"
+            >
+              {personalized.ctaPrimary} <ArrowRight className="w-3 h-3" />
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* ========== BLOCO DE NÚMEROS / RESULTADOS - DINÂMICO ========== */}
       <section ref={statsSectionRef} className="py-6 bg-wg-gray-light">
