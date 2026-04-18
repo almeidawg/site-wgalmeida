@@ -1,5 +1,45 @@
 # RETURN-POINT — site-wgalmeida
-**Atualizado:** 12/04/2026 — SSoT 100% limpo, audit OK
+**Atualizado:** 17/04/2026
+
+## Sessão 17/04/2026 — Admin blog-editorial: busca ao vivo Unsplash + wgVisualSearchProfile expandido ✅
+
+### O que foi feito
+
+#### 1. `/api/unsplash-search.js` — novo endpoint serverless
+- Proxeia a API Unsplash server-side (chave `UNSPLASH_ACCESS_KEY` nunca exposta no browser)
+- Parâmetros: `query`, `orientation`, `per_page`, `page`
+- Rate limit: 20 req/min por IP via `_requestGuard.js`
+- Retorna: `photos[]` com id, urls, alt, photographer, unsplashPage, downloadLocation
+
+#### 2. `src/pages/AdminBlogEditorial.jsx` — painel de busca ao vivo
+- Novo botão "Buscar imagens no Unsplash" expansível em cada card de post
+- Grid 3×3 de thumbnails com hover: botões "→ Hero", "→ Card" (1 clique para atribuir)
+- Botão "+ Extra" para adicionar à galeria de extras sem atribuir a slot primário
+- Query editável + chips de sugestão automática gerados do `mainQuery` e `searchTerms` do slot
+- Pressionar Enter na query executa a busca
+- Novos ícones: `ChevronDown`, `ChevronUp`, `X` importados do lucide-react
+- Novos estados: `openSearchPanelBySlug`, `searchQueryBySlug`, `searchResultsBySlug`
+- Novas funções: `toggleSearchPanel`, `runInlineUnsplashSearch`, `assignUnsplashPhotoToSlot`
+
+#### 3. `src/lib/wgVisualSearchProfile.js` — TOKEN_MAP, INTENT_RULES e SEARCH_LIBRARY expandidos
+- **Países/cidades novos:** Itália, Japão, Tóquio, Kyoto, Alemanha, Berlim, Dinamarca, Copenhague, Suécia, Estocolmo, Noruega, Finlândia, Suíça, Viena, Nova York, Miami, Sydney, Dubai, Singapura
+- **Arquitetos e referências:** Niemeyer, Le Corbusier, Zaha Hadid, Gehry, Tadao Ando, Renzo Piano, Koolhaas, Foster, Herzog, Calatrava, Mies, Bauhaus, Eames
+- **Estilos novos:** Wabi-sabi, Industrial, Brutalismo, Art Deco, Mid-century, Tropical, Mediterrâneo, Contemporâneo, Boho
+- **Materiais:** Concreto, madeira, mármore, vidro, aço, cerâmica, tijolo, pedra, linho, veludo, couro
+- **Sustentabilidade:** Biofilia, LEED, Ecohouse, Passivhaus, Solar
+- **Novos intents:** `sustainability` e `reference` com SEARCH_LIBRARY dedicado
+- `LOCATION_TOKENS` expandido com todas as novas cidades/países
+
+### Validação executada
+- `npm run check:imports` → OK
+- `npm run audit:consistency:strict` → OK
+- `npm run build` → OK (2201 módulos, 158 rotas, sem erros)
+
+### Próximo passo
+- Configurar `UNSPLASH_ACCESS_KEY` no Vercel → Settings → Environment Variables
+- Fazer deploy: `npm run build && vercel --prod --yes`
+
+---
 
 ## Sessão 15/04/2026 — landings centrais alinhadas ao canon de experiência inteligente ✅
 
@@ -241,7 +281,7 @@
 
 ## Fonte institucional obrigatória antes de alterar conteúdo
 
-- `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\00_CORE\05_MARCA_E_MARKETING\_I`
+- `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\00_CORE\05_MARCA_E_MARKETING\_I`
 
 ---
 
@@ -456,7 +496,7 @@
 ## Como rodar local
 
 ```bash
-cd "C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/01_APPS/02_BUILDTECH/04_OPERACIONAL/02_20260310_Projetos/02_20260310_Desenvolvimento/_Grupo_WG_Almeida/site-wgalmeida/site-wgalmeida"
+cd "C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/01_APPS/02_BUILDTECH/04_OPERACIONAL/02_20260310_Projetos/02_20260310_Desenvolvimento/_Grupo_WG_Almeida/site-wgalmeida/site-wgalmeida"
 npm run build
 npx serve -s dist -l 3010
 # Acesse: http://localhost:3010
@@ -917,11 +957,11 @@ site-wgalmeida/
   - conflito detectado na porta `5173` (cloudflared + ngrok em paralelo)
   - logs críticos espalhados em `%TEMP%` (drift operacional)
 - documentação e base canônica criadas em:
-  - `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\Operacao-Tuneis-PM2\RUNBOOK-OPERACAO-INFRA-TUNEIS-PM2.md`
-  - `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\Operacao-Tuneis-PM2\TUNEIS-ATIVOS.json`
-  - `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\Operacao-Tuneis-PM2\PORTAS-RESERVADAS.md`
+  - `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\Operacao-Tuneis-PM2\RUNBOOK-OPERACAO-INFRA-TUNEIS-PM2.md`
+  - `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\Operacao-Tuneis-PM2\TUNEIS-ATIVOS.json`
+  - `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\Operacao-Tuneis-PM2\PORTAS-RESERVADAS.md`
 - `README` de infraestrutura atualizado para apontar o novo padrão:
-  - `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\README.md`
+  - `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\07_20260310_Infraestrutura\README.md`
 - manifesto inicial já registrado com túneis e riscos abertos (status real da sessão)
 
 ### Próximo passo recomendado

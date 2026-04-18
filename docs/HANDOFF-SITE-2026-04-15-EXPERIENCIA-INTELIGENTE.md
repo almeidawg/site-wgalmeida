@@ -3,12 +3,12 @@
 ## Prompt para a outra sessão
 
 Leia obrigatoriamente:
-1. `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\IA-START-HERE-WG.md`
-2. `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\AGENTS-BOAS-PRATICAS-WG.md`
-3. `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\22_20260310_Biblioteca\knowledge\processos\manifesto-ecossistema-wg-inteligencia-simples.md`
-4. `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\22_20260310_Biblioteca\knowledge\processos\diretriz-produto-wg-experiencia-inteligente.md`
-5. `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\_Grupo_WG_Almeida\site-wgalmeida\site-wgalmeida\RETURN-POINT.md`
-6. `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\_Grupo_WG_Almeida\site-wgalmeida\site-wgalmeida\docs\HANDOFF-SITE-2026-04-15-EXPERIENCIA-INTELIGENTE.md`
+1. `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\IA-START-HERE-WG.md`
+2. `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\AGENTS-BOAS-PRATICAS-WG.md`
+3. `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\22_20260310_Biblioteca\knowledge\processos\manifesto-ecossistema-wg-inteligencia-simples.md`
+4. `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\22_20260310_Biblioteca\knowledge\processos\diretriz-produto-wg-experiencia-inteligente.md`
+5. `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\_Grupo_WG_Almeida\site-wgalmeida\site-wgalmeida\RETURN-POINT.md`
+6. `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\_Grupo_WG_Almeida\site-wgalmeida\site-wgalmeida\docs\HANDOFF-SITE-2026-04-15-EXPERIENCIA-INTELIGENTE.md`
 
 Depois continue no `site-wgalmeida` com alteração cirúrgica nas páginas:
 - `src/pages/ConstrutoraAltoPadraoSP.jsx`
@@ -69,7 +69,7 @@ Registrar o fechamento no `RETURN-POINT.md`.
 ## Comando rápido para abrir este handoff
 
 ```powershell
-notepad "C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\_Grupo_WG_Almeida\site-wgalmeida\site-wgalmeida\docs\HANDOFF-SITE-2026-04-15-EXPERIENCIA-INTELIGENTE.md"
+notepad "C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\_Grupo_WG_Almeida\site-wgalmeida\site-wgalmeida\docs\HANDOFF-SITE-2026-04-15-EXPERIENCIA-INTELIGENTE.md"
 ```
 
 ## Planejamento do rollout para todas as páginas com leitura semelhante

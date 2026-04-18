@@ -16,7 +16,7 @@ Este documento existe para eliminar ambiguidade sobre:
 ### ObraEasy
 
 - Pasta oficial para desenvolvimento local:
-  `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\03_SaaS\ObraEasy`
+  `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\03_SaaS\ObraEasy`
 - Remote Git identificado:
   `https://github.com/almeidawg/obra-easy.git`
 - Estrutura real encontrada:
@@ -31,7 +31,7 @@ Este documento existe para eliminar ambiguidade sobre:
 ### EasyRealState
 
 - Pasta oficial para desenvolvimento local:
-  `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\04_20260310_Prod\easy-realstate`
+  `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\04_20260310_Prod\easy-realstate`
 - Remote Git identificado:
   `https://github.com/almeidawg/easyrealstate.git`
 - Estrutura real encontrada:
@@ -49,7 +49,7 @@ Este documento existe para eliminar ambiguidade sobre:
 ### EasyRealState piloto e documentacao
 
 - Pasta:
-  `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\03_SaaS\clientes\001_Capadocia-Brokers\EasyRealState_Piloto_20260331`
+  `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\03_SaaS\clientes\001_Capadocia-Brokers\EasyRealState_Piloto_20260331`
 - Uso correto:
   - referencia de produto
   - piloto
@@ -92,13 +92,13 @@ Quando a conversa mencionar os projetos abaixo, assumir estas pastas por padrao:
 
 Usar:
 
-`C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\03_SaaS\ObraEasy`
+`C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\03_SaaS\ObraEasy`
 
 ### "EasyRealState"
 
 Usar:
 
-`C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\04_20260310_Prod\easy-realstate`
+`C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\04_20260310_Prod\easy-realstate`
 
 Se aparecer outra pasta com o mesmo nome, validar antes de editar.
 
@@ -109,7 +109,7 @@ Se aparecer outra pasta com o mesmo nome, validar antes de editar.
 Backend:
 
 ```powershell
-cd C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\03_SaaS\ObraEasy\backend
+cd C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\03_SaaS\ObraEasy\backend
 npm install
 copy .env.example .env
 npm run check:env
@@ -119,7 +119,7 @@ npm run dev
 Frontend:
 
 ```powershell
-cd C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\03_SaaS\ObraEasy\frontend
+cd C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\02_20260310_Desenvolvimento\03_SaaS\ObraEasy\frontend
 npm install
 copy .env.example .env
 npm run dev
@@ -140,7 +140,7 @@ curl http://localhost:3010/iccri/stats
 ### EasyRealState
 
 ```powershell
-cd C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\04_20260310_Prod\easy-realstate
+cd C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\04_20260310_Prod\easy-realstate
 npm install
 copy .env.local.example .env.local
 npm run dev
@@ -187,7 +187,7 @@ Antes de iniciar outra instancia do `EasyRealState`, verificar se ja existe um `
 Se quiser iniciar manualmente em uma porta nova:
 
 ```powershell
-cd C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\04_20260310_Prod\easy-realstate
+cd C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\01_APPS\02_BUILDTECH\04_OPERACIONAL\02_20260310_Projetos\04_20260310_Prod\easy-realstate
 npm run dev -- --port 4100
 ```
 

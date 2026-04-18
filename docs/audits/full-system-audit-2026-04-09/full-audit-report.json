@@ -6,32 +6,32 @@
     "dry_run": true,
     "auto_fix": false,
     "validation_depth": "MAX",
-    "workspace_scope": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida"
+    "workspace_scope": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida"
   },
   "scan_paths": {
     "requested": [
-      "C:\\Users\\Atendimento\\Documents_WG_ALMEIDA_GROUPO\\",
+      "C:\\Users\\Atendimento\\Documents_GRUPO_WG_ALMEIDA\\",
       "C:\\Users\\Atendimento\\Documents_WG_build.tech\\",
       "C:\\WG-Server\\",
       "C:\\Users\\Atendimento.codex\\",
       "C:\\IA\\"
     ],
     "normalized_existing": [
-      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\",
+      "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\",
       "C:\\Users\\Atendimento\\Documents\\_WG_build.tech\\",
       "C:\\WG-Server\\",
       "C:\\Users\\Atendimento\\.codex\\",
       "C:\\IA\\"
     ],
     "nonexistent_requested_literals": [
-      "C:\\Users\\Atendimento\\Documents_WG_ALMEIDA_GROUPO\\",
+      "C:\\Users\\Atendimento\\Documents_GRUPO_WG_ALMEIDA\\",
       "C:\\Users\\Atendimento\\Documents_WG_build.tech\\",
       "C:\\Users\\Atendimento.codex\\"
     ]
   },
   "governance": {
     "status": "HEALTHY_WITH_RUNTIME_EXCEPTIONS",
-    "script": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+    "script": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
     "result": {
       "ok": 5,
       "atencao": 1,
@@ -39,16 +39,16 @@
     },
     "baseline_drift": "OK",
     "status_projetos_present": true,
-    "status_projetos_path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\STATUS-PROJETOS.md",
+    "status_projetos_path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\STATUS-PROJETOS.md",
     "interpretation": "A unica atencao encontrada decorre de logs mistos na raiz, com separacao validada entre runtime ativo e limpeza segura.",
     "remediation": {
       "status": "IMPLEMENTED_AND_VALIDATED",
       "updated_scripts": [
-        "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
-        "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-enforce-estrutura.ps1"
+        "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+        "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_AUTOMACAO\\02_SCRIPTS\\wg-enforce-estrutura.ps1"
       ],
-      "latest_governance_report": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-200057.json",
-      "latest_enforce_report": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\estrutura-enforce-20260409-200057.json"
+      "latest_governance_report": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-200057.json",
+      "latest_enforce_report": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\estrutura-enforce-20260409-200057.json"
     }
   },
   "mcp_ia": {
@@ -71,7 +71,7 @@
     }
   },
   "automations": {
-    "root": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO",
+    "root": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_AUTOMACAO",
     "health": "ACTIVE",
     "evidence": [
       "WG_AUTOMATION presente e atualizado no dia da auditoria",
@@ -101,7 +101,7 @@
     "status": "PARTIALLY_REMEDIATED",
     "safe_gitignore_updates": [
       "C:\\IA\\.gitignore",
-      "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\.gitignore"
+      "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\.gitignore"
     ],
     "remediation_effect": {
       "C:\\IA": {
@@ -135,14 +135,14 @@
         }
       },
       {
-        "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\next-app",
+        "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\next-app",
         "branch": "main",
         "dirty": true,
         "change_count": 1,
         "remote": null
       },
       {
-        "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida",
+        "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida",
         "branch": "main",
         "dirty": true,
         "change_count": 262,
@@ -162,7 +162,7 @@
         }
       },
       {
-        "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy",
+        "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy",
         "branch": "main",
         "dirty": true,
         "change_count": 48,
@@ -179,14 +179,14 @@
         }
       },
       {
-        "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\WGEasy",
+        "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\WGEasy",
         "branch": "main",
         "dirty": false,
         "change_count": 0,
         "remote": "https://github.com/almeidawg/wgeasy.git"
       },
       {
-        "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\04_20260310_Prod\\easy-realstate",
+        "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\04_20260310_Prod\\easy-realstate",
         "branch": "main",
         "dirty": true,
         "change_count": 20,

@@ -23,15 +23,15 @@
     }
   },
   "governance_integration": {
-    "config_path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\04_GOVERNANCA\\Controle_de_Versoes\\governance-checks.config.json",
-    "alerts_script": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
-    "latest_alerts_report": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-210434.json",
+    "config_path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\04_GOVERNANCA\\Controle_de_Versoes\\governance-checks.config.json",
+    "alerts_script": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_AUTOMACAO\\02_SCRIPTS\\wg-governanca-alertas.ps1",
+    "latest_alerts_report": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\_README_ONBOARDING\\LOGS\\GOVERNANCA\\governanca-alertas-20260409-210434.json",
     "qa_visibility": "ENABLED"
   },
   "projects": [
     {
       "project": "ObraEasy Backend",
-      "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend",
+      "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend",
       "app_type": "backend",
       "baseline": "backend_minimum",
       "execution_traceable": true,
@@ -43,44 +43,44 @@
           "status": "PASS",
           "timestamp": "2026-04-09T23:57:41.001Z",
           "duration_ms": 682,
-          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\build.json"
+          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\build.json"
         },
         "lint": {
           "status": "PASS",
           "timestamp": "2026-04-09T23:57:50.169Z",
           "duration_ms": 902,
-          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\lint.json"
+          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\lint.json"
         },
         "check:env": {
           "status": "PASS",
           "timestamp": "2026-04-09T23:58:47.531Z",
           "duration_ms": 500,
-          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\check-env.json"
+          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\check-env.json"
         },
         "smoke": {
           "status": "PASS",
           "timestamp": "2026-04-09T23:58:35.604Z",
           "duration_ms": 1047,
-          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\smoke.json"
+          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\smoke.json"
         },
         "test": {
           "status": "PASS",
           "timestamp": "2026-04-09T23:59:50.867Z",
           "duration_ms": 1335,
-          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\test.json"
+          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\test.json"
         },
         "validate": {
           "status": "PASS",
           "timestamp": "2026-04-10T00:03:00.559Z",
           "duration_ms": 2133,
-          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\validate.json"
+          "evidence_file": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\backend\\qa-logs\\validate.json"
         }
       },
       "governance_evidence": "governanca-alertas classificou o projeto como [COMPLIANT] com 5/5 gates obrigatorios frescos"
     },
     {
       "project": "WGEasy Backend",
-      "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\WGEasy\\backend",
+      "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\WGEasy\\backend",
       "app_type": "backend",
       "baseline": "backend_minimum",
       "execution_traceable": false,
@@ -106,7 +106,7 @@
     },
     {
       "project": "ObraEasy Frontend",
-      "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\frontend",
+      "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\ObraEasy\\frontend",
       "app_type": "frontend",
       "baseline": "frontend_minimum",
       "execution_traceable": false,
@@ -127,7 +127,7 @@
     },
     {
       "project": "WGEasy Frontend",
-      "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\WGEasy\\wgeasy\\frontend",
+      "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\03_SaaS\\WGEasy\\wgeasy\\frontend",
       "app_type": "frontend",
       "baseline": "frontend_minimum",
       "execution_traceable": false,
@@ -148,7 +148,7 @@
     },
     {
       "project": "Site WG Almeida",
-      "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida",
+      "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\01_APPS\\02_BUILDTECH\\04_OPERACIONAL\\02_20260310_Projetos\\02_20260310_Desenvolvimento\\_Grupo_WG_Almeida\\site-wgalmeida\\site-wgalmeida",
       "app_type": "frontend",
       "baseline": "frontend_minimum",
       "execution_traceable": false,
@@ -169,7 +169,7 @@
     },
     {
       "project": "Liz WhatsApp",
-      "path": "C:\\Users\\Atendimento\\Documents\\_WG_ALMEIDA_GROUPO\\03_AUTOMACAO\\Liz_Assistente_WhatsApp",
+      "path": "C:\\Users\\Atendimento\\Documents\\_GRUPO_WG_ALMEIDA\\03_AUTOMACAO\\Liz_Assistente_WhatsApp",
       "app_type": "automation",
       "baseline": "automation_minimum",
       "execution_traceable": false,

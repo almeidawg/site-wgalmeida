@@ -18,7 +18,7 @@ Ele existe para apontar para a origem correta e evitar que qualquer IA reinvente
 
 Pasta oficial:
 
-- `C:\Users\Atendimento\Documents\_WG_ALMEIDA_GROUPO\00_CORE\05_MARCA_E_MARKETING\_I`
+- `C:\Users\Atendimento\Documents\_GRUPO_WG_ALMEIDA\00_CORE\05_MARCA_E_MARKETING\_I`
 
 Regra:
 
@@ -29,22 +29,22 @@ Regra:
 
 ### Pasta principal
 
-- [05_MARCA_E_MARKETING\_I](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I)
+- [05_MARCA_E_MARKETING\_I](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I)
 
 ### Subpastas mais importantes
 
-- [20260218 - Business Plan](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Business%20Plan)
-- [20260218 - Instagram SEO 2026](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026)
-- [20260218 - Institucional e Manual da Marca](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Institucional%20e%20Manual%20da%20Marca)
-- [20260218 - Liz Modelo Wg](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Liz%20Modelo%20Wg)
-- [Logos](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/Logos)
+- [20260218 - Business Plan](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Business%20Plan)
+- [20260218 - Instagram SEO 2026](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026)
+- [20260218 - Institucional e Manual da Marca](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Institucional%20e%20Manual%20da%20Marca)
+- [20260218 - Liz Modelo Wg](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Liz%20Modelo%20Wg)
+- [Logos](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/Logos)
 
 ### Arquivos soltos relevantes
 
-- [20250111ManualdeIdentidadeVisual.pdf](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20250111ManualdeIdentidadeVisual.pdf)
-- [Empreitada Global _ Grupo WG Almeida _ 2026.pdf](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/Empreitada%20Global%20_%20Grupo%20WG%20Almeida%20_%202026.pdf)
-- [InstitucionalWGAlmeoidaTemp2026.pdf](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/InstitucionalWGAlmeoidaTemp2026.pdf)
-- [Storytelling William Almeida.docx](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/Storytelling%20William%20Almeida.docx)
+- [20250111ManualdeIdentidadeVisual.pdf](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20250111ManualdeIdentidadeVisual.pdf)
+- [Empreitada Global _ Grupo WG Almeida _ 2026.pdf](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/Empreitada%20Global%20_%20Grupo%20WG%20Almeida%20_%202026.pdf)
+- [InstitucionalWGAlmeoidaTemp2026.pdf](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/InstitucionalWGAlmeoidaTemp2026.pdf)
+- [Storytelling William Almeida.docx](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/Storytelling%20William%20Almeida.docx)
 
 ## Mapa de uso por tipo de alteracao
 
@@ -52,9 +52,9 @@ Regra:
 
 Consultar primeiro:
 
-- [Propósito, Missão, Visão e Valores _ Grupo WG Almeida _ 2026.pdf](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Institucional%20e%20Manual%20da%20Marca/Prop%C3%B3sito,%20Miss%C3%A3o,%20Vis%C3%A3o%20e%20Valores%20_%20Grupo%20WG%20Almeida%20_%202026.pdf)
-- [20250111 - Manual de Identidade Visual _ Grupo WG Almeida (1).pdf](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Institucional%20e%20Manual%20da%20Marca/20250111%20-%20Manual%20de%20Identidade%20Visual%20_%20Grupo%20WG%20Almeida%20(1).pdf)
-- [APRESENTAÇÃO INSTITUCIONAL _ GRUPO WG ALMEIDA .pdf](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Institucional%20e%20Manual%20da%20Marca/APRESENTA%C3%87%C3%83O%20INSTITUCIONAL%20_%20GRUPO%20WG%20ALMEIDA%20.pdf)
+- [Propósito, Missão, Visão e Valores _ Grupo WG Almeida _ 2026.pdf](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Institucional%20e%20Manual%20da%20Marca/Prop%C3%B3sito,%20Miss%C3%A3o,%20Vis%C3%A3o%20e%20Valores%20_%20Grupo%20WG%20Almeida%20_%202026.pdf)
+- [20250111 - Manual de Identidade Visual _ Grupo WG Almeida (1).pdf](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Institucional%20e%20Manual%20da%20Marca/20250111%20-%20Manual%20de%20Identidade%20Visual%20_%20Grupo%20WG%20Almeida%20(1).pdf)
+- [APRESENTAÇÃO INSTITUCIONAL _ GRUPO WG ALMEIDA .pdf](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Institucional%20e%20Manual%20da%20Marca/APRESENTA%C3%87%C3%83O%20INSTITUCIONAL%20_%20GRUPO%20WG%20ALMEIDA%20.pdf)
 
 Uso:
 
@@ -68,9 +68,9 @@ Uso:
 
 Consultar primeiro:
 
-- [Business Plan.docx](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Business%20Plan/Business%20Plan.docx)
-- [Business Plan Grupo WG Almeida _ 2026 _ 14 Anos _.pdf](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Institucional%20e%20Manual%20da%20Marca/Business%20Plan%20Grupo%20WG%20Almeida%20_%202026%20_%2014%20Anos%20_.pdf)
-- [Empreitada Global _ Grupo WG Almeida _ 2026.pdf](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/Empreitada%20Global%20_%20Grupo%20WG%20Almeida%20_%202026.pdf)
+- [Business Plan.docx](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Business%20Plan/Business%20Plan.docx)
+- [Business Plan Grupo WG Almeida _ 2026 _ 14 Anos _.pdf](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Institucional%20e%20Manual%20da%20Marca/Business%20Plan%20Grupo%20WG%20Almeida%20_%202026%20_%2014%20Anos%20_.pdf)
+- [Empreitada Global _ Grupo WG Almeida _ 2026.pdf](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/Empreitada%20Global%20_%20Grupo%20WG%20Almeida%20_%202026.pdf)
 
 Achados principais no Business Plan:
 
@@ -91,8 +91,8 @@ Uso:
 
 Consultar primeiro:
 
-- [Storytelling William Almeida.docx](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/Storytelling%20William%20Almeida.docx)
-- [Apresentação Pessoal William - Para Arquitetos.docx](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/Apresenta%C3%A7%C3%A3o%20Pessoal%20William%20-%20Para%20Arquitetos.docx)
+- [Storytelling William Almeida.docx](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/Storytelling%20William%20Almeida.docx)
+- [Apresentação Pessoal William - Para Arquitetos.docx](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/Apresenta%C3%A7%C3%A3o%20Pessoal%20William%20-%20Para%20Arquitetos.docx)
 
 Achados principais no storytelling:
 
@@ -114,13 +114,13 @@ Uso:
 
 Consultar primeiro:
 
-- [00_RESUMO_EXECUTIVO.md](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/00_RESUMO_EXECUTIVO.md)
-- [01_ESTRATEGIA_SEO_INSTAGRAM.md](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/01_ESTRATEGIA_SEO_INSTAGRAM.md)
-- [02_LEGENDAS_PRONTAS_30_DIAS.md](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/02_LEGENDAS_PRONTAS_30_DIAS.md)
-- [03_CALENDARIO_JANEIRO_2026.md](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/03_CALENDARIO_JANEIRO_2026.md)
-- [04_GUIA_DESTAQUES_STORIES.md](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/04_GUIA_DESTAQUES_STORIES.md)
-- [05_ROTEIROS_REELS.md](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/05_ROTEIROS_REELS.md)
-- [06_BANCO_DE_HASHTAGS.md](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/06_BANCO_DE_HASHTAGS.md)
+- [00_RESUMO_EXECUTIVO.md](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/00_RESUMO_EXECUTIVO.md)
+- [01_ESTRATEGIA_SEO_INSTAGRAM.md](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/01_ESTRATEGIA_SEO_INSTAGRAM.md)
+- [02_LEGENDAS_PRONTAS_30_DIAS.md](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/02_LEGENDAS_PRONTAS_30_DIAS.md)
+- [03_CALENDARIO_JANEIRO_2026.md](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/03_CALENDARIO_JANEIRO_2026.md)
+- [04_GUIA_DESTAQUES_STORIES.md](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/04_GUIA_DESTAQUES_STORIES.md)
+- [05_ROTEIROS_REELS.md](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/05_ROTEIROS_REELS.md)
+- [06_BANCO_DE_HASHTAGS.md](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Instagram%20SEO%202026/06_BANCO_DE_HASHTAGS.md)
 
 Achados principais:
 
@@ -140,7 +140,7 @@ Uso:
 
 Consultar primeiro:
 
-- [20260218 - Liz Modelo Wg](/C:/Users/Atendimento/Documents/_WG_ALMEIDA_GROUPO/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Liz%20Modelo%20Wg)
+- [20260218 - Liz Modelo Wg](/C:/Users/Atendimento/Documents/_GRUPO_WG_ALMEIDA/00_CORE/05_MARCA_E_MARKETING/_I/20260218%20-%20Liz%20Modelo%20Wg)
 
 Uso:
 
