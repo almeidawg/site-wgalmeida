@@ -37,6 +37,7 @@ import {
 } from '@/data/blogImageManifest';
 import ICCRILinksBlock from '@/components/ICCRILinksBlock';
 import LizAssistant from '@/components/LizAssistant';
+import SmartCTA from '@/components/SmartCTA';
 import { AnimatedBorder } from '@/components/AnimatedStrokes';
 import { normalizeLanguageTag } from '@/i18n';
 
@@ -464,6 +465,7 @@ const PHASE1_EDITORIAL_ROLLOUT_SLUGS = new Set([
   'quanto-valoriza-apartamento-apos-reforma',
   'evf-estudo-viabilidade-financeira',
   'tabela-precos-reforma-2026-iccri',
+  'marcas-luxo-internacionais-moveis-design',
 ]);
 
 const HIDE_READER_CARD_SLUGS = new Set([]);
@@ -1934,7 +1936,13 @@ const Blog = () => {
             {/* Seção de Produtos Relacionados */}
             <RelatedProducts category={artigoAtual.category} />
 
-            <div className="mt-12">
+            {/* Smart CTA — próximo passo contextualizado */}
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <p className="text-sm font-light text-wg-gray mb-4 uppercase tracking-wider">Próximo passo</p>
+              <SmartCTA showSecondary />
+            </div>
+
+            <div className="mt-8">
               <Link to="/blog" className="inline-flex items-center gap-2 font-light text-wg-blue">
                 {t('blogPage.backToBlog')} <ArrowRight className="w-4 h-4" />
               </Link>
