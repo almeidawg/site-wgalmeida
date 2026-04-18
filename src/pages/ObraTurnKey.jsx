@@ -17,7 +17,7 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { COMPANY } from '@/data/company';
+import { COMPANY, WG_PRODUCT_MESSAGES } from '@/data/company';
 
 const ObraTurnKey = () => {
   const pageUrl = 'https://wgalmeida.com.br/obra-turn-key';
@@ -405,6 +405,61 @@ const ObraTurnKey = () => {
         </div>
       </section>
 
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-[2rem] border border-black/5 bg-wg-black text-white p-8 md:p-10"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
+              <div>
+                <span className="text-white/60 text-sm tracking-[0.2em] uppercase mb-4 block">
+                  Add-on de experiencia visual
+                </span>
+                <h2 className="text-3xl md:text-4xl font-inter font-light mb-4">
+                  O turn key pode entrar com uma camada extra de alinhamento antes da obra apertar
+                </h2>
+                <div className="space-y-3 text-white/75 leading-relaxed">
+                  <p>
+                    {WG_PRODUCT_MESSAGES.wgExperienceSystem}
+                  </p>
+                  <p>
+                    Em jornadas turn key, ela funciona como etapa de onboarding, prevenda consultiva ou validacao estetica antes de compras, definicoes finais e execucao integrada.
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                {[
+                  'Mais clareza de expectativa antes de cronograma, compras e compatibilizacao.',
+                  'Menos retrabalho entre conceito, visualizacao, marcenaria e obra.',
+                  'Uma proposta comercial mais forte para clientes que ainda estao decidindo atmosfera e linguagem do projeto.',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <CheckCircle className="w-5 h-5 text-wg-orange flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-white/80 font-light leading-relaxed">{item}</p>
+                  </div>
+                ))}
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <Link to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=turnkey">
+                    <Button className="btn-apple">
+                      Incluir add-on visual
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
+                  <Link to="/moodboard">
+                    <Button className="btn-hero-outline">
+                      Ver jornada visual
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Final */}
       <section className="section-padding bg-gradient-to-br from-wg-black to-wg-black/90 text-white">
         <div className="container-custom text-center">
@@ -421,7 +476,7 @@ const ObraTurnKey = () => {
               Descubra como o modelo Turn Key transforma sua reforma em uma experiência mais fluida, guiada e previsível.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/solicite-proposta">
+              <Link to="/solicite-proposta?context=turnkey">
                 <Button className="btn-apple">
                   Solicitar proposta turn key
                   <ArrowRight className="ml-2 w-5 h-5" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '@/components/SEO';
 import { motion } from '@/lib/motion-lite';
-import { Bot, Cpu, Zap, BarChart, ArrowRight, ShieldCheck, Rocket, LayoutDashboard } from 'lucide-react';
+import { Bot, Cpu, Zap, BarChart, ArrowRight, ShieldCheck, Rocket, LayoutDashboard, Sparkles, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
@@ -20,8 +20,8 @@ const BuildTech = () => {
   const services = [
     {
       icon: Bot,
-      title: "Consultoria de IA para Construção",
-      description: "Implementação estratégica de Inteligência Artificial para otimizar processos de projeto, orçamento e gestão de obras.",
+      title: "Sistemas Agentic para Experiência",
+      description: "Camadas inteligentes para transformar preferências, briefing e contexto em decisões mais claras e acionáveis.",
     },
     {
       icon: LayoutDashboard,
@@ -31,7 +31,7 @@ const BuildTech = () => {
     {
       icon: Cpu,
       title: "Automação de Workflow",
-      description: "Elimine tarefas repetitivas e conecte seu canteiro de obras ao escritório com dados em tempo real.",
+      description: "Conecte pré-venda, atendimento, projeto e operação em jornadas mais fluidas e menos manuais.",
     },
     {
       icon: BarChart,
@@ -99,7 +99,7 @@ const BuildTech = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="wg-page-hero-subtitle max-w-3xl"
             >
-              Transformamos o canteiro de obras em um ecossistema inteligente orientado por dados e IA.
+              Transformamos operação, atendimento e decisão em um ecossistema inteligente orientado por dados, contexto e automação útil.
             </motion.p>
 
             <motion.div
@@ -109,7 +109,7 @@ const BuildTech = () => {
               className="wg-page-hero-actions"
             >
               <Link
-                to="/solicite-proposta"
+                to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=buildtech"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white/12 px-6 py-3 text-sm text-white transition-colors hover:bg-white/20"
               >
                 Falar com Especialista
@@ -147,6 +147,37 @@ const BuildTech = () => {
             ))}
           </div>
 
+          <motion.div
+            {...fadeInUp}
+            className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4"
+          >
+            {[
+              {
+                icon: Sparkles,
+                title: 'Para clientes finais',
+                text: 'Experiências que reduzem indecisão e aproximam inspiração de uma escolha concreta.',
+              },
+              {
+                icon: Users,
+                title: 'Para corretores e parceiros',
+                text: 'Ferramentas de pré-venda e alinhamento visual que elevam percepção de valor e conversão.',
+              },
+              {
+                icon: LayoutDashboard,
+                title: 'Para profissionais',
+                text: 'Materiais e fluxos mais organizados para briefing, apresentação e continuidade do projeto.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <div className="w-10 h-10 rounded-xl bg-wg-orange/15 text-wg-orange flex items-center justify-center mb-4">
+                  <item.icon className="w-5 h-5" />
+                </div>
+                <h2 className="text-xl font-light mb-2">{item.title}</h2>
+                <p className="text-white/65 text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </motion.div>
+
           {/* Destaque WG Easy */}
           <motion.div
             {...fadeInUp}
@@ -169,7 +200,7 @@ const BuildTech = () => {
                 </li>
               </ul>
               <Link
-                to="/solicite-proposta"
+                to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=buildtech"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 rounded-lg hover:bg-white/10 transition-all"
               >
                 Solicitar Demonstração

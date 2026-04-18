@@ -9,6 +9,7 @@ const SERVICE_ARCH_ID = `${BASE_URL}/servicos/arquitetura#service`;
 const SERVICE_ENG_ID = `${BASE_URL}/servicos/engenharia#service`;
 const SERVICE_WOOD_ID = `${BASE_URL}/servicos/marcenaria#service`;
 const SERVICE_TURNKEY_ID = `${BASE_URL}/servicos/turn-key#service`;
+const SERVICE_EXPERIENCE_ID = `${BASE_URL}/servicos/experiencia-visual#service`;
 const APP_BUILDTECH_ID = `${BASE_URL}/buildtech#softwareapplication`;
 const APP_MOODBOARD_ID = `${BASE_URL}/moodboard-generator#softwareapplication`;
 const APP_ROOM_ID = `${BASE_URL}/room-visualizer#softwareapplication`;
@@ -56,6 +57,7 @@ export const SCHEMAS = {
       { "@id": SERVICE_ENG_ID },
       { "@id": SERVICE_WOOD_ID },
       { "@id": SERVICE_TURNKEY_ID },
+      { "@id": SERVICE_EXPERIENCE_ID },
     ],
   },
 
@@ -105,7 +107,7 @@ export const SCHEMAS = {
       price: "0",
       priceCurrency: "BRL",
       availability: "https://schema.org/InStock",
-      url: `${BASE_URL}/solicite-proposta`,
+      url: `${BASE_URL}/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=buildtech`,
     },
   },
 
@@ -118,6 +120,13 @@ export const SCHEMAS = {
     operatingSystem: "Web",
     url: `${BASE_URL}/moodboard-generator`,
     provider: { "@id": ORG_ID },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+      url: `${BASE_URL}/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=moodboard`,
+    },
   },
 
   softwareRoomVisualizer: {
@@ -129,6 +138,13 @@ export const SCHEMAS = {
     operatingSystem: "Web",
     url: `${BASE_URL}/room-visualizer`,
     provider: { "@id": ORG_ID },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+      url: `${BASE_URL}/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=room`,
+    },
   },
 
   knowledgeGraph: {
@@ -150,6 +166,7 @@ export const SCHEMAS = {
           { "@id": SERVICE_ENG_ID },
           { "@id": SERVICE_WOOD_ID },
           { "@id": SERVICE_TURNKEY_ID },
+          { "@id": SERVICE_EXPERIENCE_ID },
         ],
       },
       {
@@ -190,6 +207,14 @@ export const SCHEMAS = {
         name: "Obra Turn Key",
         serviceType: "Execucao turn key",
         url: `${BASE_URL}/obra-turn-key`,
+        provider: { "@id": ORG_ID },
+      },
+      {
+        "@type": "Service",
+        "@id": SERVICE_EXPERIENCE_ID,
+        name: "Sistema de Experiencia Visual",
+        serviceType: "Experiencia visual aplicada a projeto e prevenda",
+        url: `${BASE_URL}/moodboard`,
         provider: { "@id": ORG_ID },
       },
       {
@@ -270,6 +295,11 @@ export const SCHEMAS = {
     "Marcenaria Sob Medida em Sao Paulo",
     "Marcenaria premium integrada ao projeto arquitetonico.",
     `${BASE_URL}/marcenaria`
+  ),
+  serviceExperienceVisual: service(
+    "Sistema de Experiencia Visual em Sao Paulo",
+    "Camada de alinhamento visual e decisao estetica para briefing, prevenda, projeto e obra.",
+    `${BASE_URL}/moodboard`
   ),
 
   breadcrumbHome: breadcrumb([{ name: "Home", url: `${BASE_URL}/` }]),
