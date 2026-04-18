@@ -1060,26 +1060,60 @@ const AdminBlogEditorial = () => {
     }));
 
     try {
-      const params = new URLSearchParams({ query: query.trim(), orientation: 'landscape', per_page: '9' });
-      const response = await fetch(`/api/unsplash-search?${params.toString()}`);
-      const data = await response.json();
+      let photos = [];
 
-      if (!response.ok) {
-        setSearchResultsBySlug((current) => ({
-          ...current,
-          [slug]: { loading: false, photos: [], error: data?.error || 'Erro ao buscar imagens.', query },
+      // In dev mode, call Unsplash directly (proxy /api/ is not served by Vite dev server).
+      // In production, use the server-side proxy which adds rate limiting.
+      if (import.meta.env.DEV) {
+        const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
+        if (!accessKey) throw new Error('VITE_UNSPLASH_ACCESS_KEY não configurada no .env');
+        const url = new URL('https://api.unsplash.com/search/photos');
+        url.searchParams.set('query', query.trim());
+        url.searchParams.set('orientation', 'landscape');
+        url.searchParams.set('per_page', '9');
+        url.searchParams.set('content_filter', 'high');
+        url.searchParams.set('order_by', 'relevant');
+        const res = await fetch(url.toString(), {
+          headers: { Authorization: `Client-ID ${accessKey}`, 'Accept-Version': 'v1' },
+        });
+        if (!res.ok) throw new Error(`Unsplash ${res.status}`);
+        const data = await res.json();
+        photos = (data.results || []).map((p) => ({
+          id: p.id,
+          description: p.description || p.alt_description || '',
+          alt: p.alt_description || p.description || '',
+          photographer: p.user?.name || '',
+          photographerUsername: p.user?.username || '',
+          profileUrl: p.user?.links?.html || '',
+          unsplashPage: p.links?.html || '',
+          downloadLocation: p.links?.download_location || '',
+          urls: { raw: p.urls?.raw || '', full: p.urls?.full || '', regular: p.urls?.regular || '', small: p.urls?.small || '', thumb: p.urls?.thumb || '' },
+          color: p.color || '',
+          width: p.width || 0,
+          height: p.height || 0,
         }));
-        return;
+      } else {
+        const params = new URLSearchParams({ query: query.trim(), orientation: 'landscape', per_page: '9' });
+        const response = await fetch(`/api/unsplash-search?${params.toString()}`);
+        const data = await response.json();
+        if (!response.ok) {
+          setSearchResultsBySlug((current) => ({
+            ...current,
+            [slug]: { loading: false, photos: [], error: data?.error || 'Erro ao buscar imagens.', query },
+          }));
+          return;
+        }
+        photos = data.photos || [];
       }
 
       setSearchResultsBySlug((current) => ({
         ...current,
-        [slug]: { loading: false, photos: data.photos || [], error: '', query },
+        [slug]: { loading: false, photos, error: '', query },
       }));
-    } catch {
+    } catch (err) {
       setSearchResultsBySlug((current) => ({
         ...current,
-        [slug]: { loading: false, photos: [], error: 'Falha de rede ao buscar imagens.', query },
+        [slug]: { loading: false, photos: [], error: err?.message || 'Falha de rede ao buscar imagens.', query },
       }));
     }
   };
