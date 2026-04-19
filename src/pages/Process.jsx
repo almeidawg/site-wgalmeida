@@ -20,6 +20,7 @@ import {
   Users,
 } from 'lucide-react';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
 
@@ -276,6 +277,8 @@ const TIMELINE_CONTENT = {
   },
 };
 
+const PROCESS_HERO_IMAGE = getPublicPageImageSrc('process', '/images/banners/PROCESSOS.webp');
+
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
@@ -400,7 +403,7 @@ const Process = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt={t('processPage.hero.imageAlt')}
-            src="/images/banners/PROCESSOS.webp"
+            src={PROCESS_HERO_IMAGE}
             width="1920"
             height="1080"
             loading="eager"

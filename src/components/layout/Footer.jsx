@@ -59,7 +59,7 @@ const Footer = () => {
                 Arquitetura Corporativa
               </Link>
               <Link to="/construtora-alto-padrao-sp" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm font-light" style={{ fontWeight: 300 }}>
-                Construtora Alto Padrao SP
+                Construtora Alto Padrão SP
               </Link>
               <Link to="/reforma-apartamento-itaim" className="block text-gray-400 hover:text-wg-orange transition-colors text-sm font-light" style={{ fontWeight: 300 }}>
                 Reforma Apartamento Itaim

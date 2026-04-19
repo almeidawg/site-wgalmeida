@@ -4,6 +4,7 @@ import { motion } from '@/lib/motion-lite';
 import { Bot, Cpu, Zap, BarChart, ArrowRight, ShieldCheck, Rocket, LayoutDashboard, Sparkles, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
 
@@ -13,6 +14,8 @@ const fadeInUp = {
   viewport: { once: true },
   transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
 };
+
+const BUILDTECH_HERO_IMAGE = getPublicPageImageSrc('buildtech', '/images/banners/PROCESSOS.webp');
 
 const BuildTech = () => {
   const { t } = useTranslation();
@@ -66,7 +69,7 @@ const BuildTech = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt="Tecnologia WG Build.tech"
-            src="/images/banners/PROCESSOS.webp" 
+            src={BUILDTECH_HERO_IMAGE}
             width="1920"
             height="1080"
           />

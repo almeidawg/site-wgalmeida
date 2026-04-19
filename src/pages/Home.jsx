@@ -458,31 +458,31 @@ const Home = () => {
           >
             {personalized ? (
               <>
-                <Link to={personalized.ctaPrimaryHref}>
-                  <Button size="sm" className="home-hero-button home-hero-button-primary !h-auto !px-5 !py-2.5 md:!px-6">
+                <Button asChild size="sm" className="home-hero-button home-hero-button-primary !h-auto !px-5 !py-2.5 md:!px-6">
+                  <Link to={personalized.ctaPrimaryHref}>
                     {personalized.ctaPrimary}
                     <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <Link to={personalized.ctaSecondaryHref}>
-                  <Button size="sm" className="home-hero-button home-hero-button-secondary !h-auto !px-5 !py-2.5 md:!px-6">
+                  </Link>
+                </Button>
+                <Button asChild size="sm" className="home-hero-button home-hero-button-secondary !h-auto !px-5 !py-2.5 md:!px-6">
+                  <Link to={personalized.ctaSecondaryHref}>
                     {personalized.ctaSecondary}
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </>
             ) : (
               <>
-                <Link to="/sobre">
-                  <Button size="sm" className="home-hero-button home-hero-button-primary !h-auto !px-5 !py-2.5 md:!px-6">
+                <Button asChild size="sm" className="home-hero-button home-hero-button-primary !h-auto !px-5 !py-2.5 md:!px-6">
+                  <Link to="/sobre">
                     {t('home.hero.ctaPrimary')}
                     <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <Link to="/processo">
-                  <Button size="sm" className="home-hero-button home-hero-button-secondary !h-auto !px-5 !py-2.5 md:!px-6">
+                  </Link>
+                </Button>
+                <Button asChild size="sm" className="home-hero-button home-hero-button-secondary !h-auto !px-5 !py-2.5 md:!px-6">
+                  <Link to="/processo">
                     {t('home.hero.ctaSecondary')}
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </>
             )}
           </motion.div>
@@ -1050,13 +1050,13 @@ const Home = () => {
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <Link to="/moodboard">
-                  <Button className="wg-btn-pill-primary">
+                <Button asChild className="wg-btn-pill-primary">
+                  <Link to="/moodboard">
                     <Palette className="w-5 h-5 mr-2" />
                     Criar Meu Moodboard
                     <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
                 <Link
                   to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=moodboard"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white transition-colors hover:bg-white/10"

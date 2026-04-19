@@ -7,8 +7,10 @@ import {
   Shield, FileText, BarChart3, Building2, Phone, Zap, Layers3, Landmark
 } from 'lucide-react'
 import { COMPANY, OBRAEASY_PRECOS, PRODUCT_URLS, WG_PRODUCT_MESSAGES } from '@/data/company'
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 const ObraEasyLanding = () => {
+  const obraEasyHeroImage = getPublicPageImageSrc('obraEasy', '/images/banners/ARQ.webp')
   const pageUrl = `${PRODUCT_URLS.site}/obraeasy`
 
   const planos = [
@@ -233,7 +235,7 @@ const ObraEasyLanding = () => {
         >
           <div
             className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
+            style={{ backgroundImage: `url(${withBasePath(obraEasyHeroImage)})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-wg-black/90 via-wg-black/70 to-wg-black" />
         </motion.div>
@@ -300,18 +302,18 @@ const ObraEasyLanding = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="wg-page-hero-actions"
             >
-              <a href={`${PRODUCT_URLS.obraeasy}/evf4`} target="_blank" rel="noopener noreferrer">
-                <Button className="btn-apple text-base px-6 py-3">
+              <Button asChild className="btn-apple text-base px-6 py-3">
+                <a href={`${PRODUCT_URLS.obraeasy}/evf4`} target="_blank" rel="noopener noreferrer">
                   <Calculator className="mr-2 w-4 h-4" />
                   Ver metodologia em ação
                   <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </a>
-              <a href={COMPANY.ceoWhatsapp} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-wg-black transition-all rounded-2xl px-6 py-3 text-sm">
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="border-white/35 bg-white/5 px-6 py-3 text-sm text-white hover:border-white hover:bg-white hover:text-wg-black">
+                <a href={COMPANY.ceoWhatsapp} target="_blank" rel="noopener noreferrer">
                   Fale com o CEO
-                </Button>
-              </a>
+                </a>
+              </Button>
             </motion.div>
 
             <motion.p
@@ -409,13 +411,13 @@ const ObraEasyLanding = () => {
             ))}
           </div>
           <div className="text-center mt-10">
-            <a href={`${PRODUCT_URLS.obraeasy}/evf4`} target="_blank" rel="noopener noreferrer">
-              <Button className="btn-apple">
+            <Button asChild className="btn-apple">
+              <a href={`${PRODUCT_URLS.obraeasy}/evf4`} target="_blank" rel="noopener noreferrer">
                 <Zap className="mr-2 w-5 h-5" />
                 Testar agora · é grátis
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -475,11 +477,11 @@ const ObraEasyLanding = () => {
                     </li>
                   ))}
                 </ul>
-                <a href={plano.href} target="_blank" rel="noopener noreferrer">
-                  <Button className={`w-full rounded-2xl py-3 ${plano.destaque ? 'bg-wg-orange text-white hover:bg-wg-orange/90' : 'bg-wg-gray-light text-wg-black hover:bg-wg-gray-light/80'}`}>
+                <Button asChild className={`w-full rounded-2xl py-3 ${plano.destaque ? 'bg-wg-orange text-white hover:bg-wg-orange/90' : 'bg-wg-gray-light text-wg-black hover:bg-wg-gray-light/80'}`}>
+                  <a href={plano.href} target="_blank" rel="noopener noreferrer">
                     {plano.cta}
-                  </Button>
-                </a>
+                  </a>
+                </Button>
               </motion.div>
             ))}
           </div>
@@ -550,12 +552,12 @@ const ObraEasyLanding = () => {
               Se a sua operação vende retrofit, reforma, implantação ou obra de maior ticket, a conversa certa não é só orçamento. É previsibilidade, método e execução controlada.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={`${PRODUCT_URLS.obraeasy}/cadastro`} target="_blank" rel="noopener noreferrer">
-                <Button className="btn-apple text-lg px-8 py-4">
+              <Button asChild className="btn-apple text-lg px-8 py-4">
+                <a href={`${PRODUCT_URLS.obraeasy}/cadastro`} target="_blank" rel="noopener noreferrer">
                   Solicitar ativação
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </a>
+                </a>
+              </Button>
               <a href={COMPANY.ceoWhatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-4 border-2 border-white text-white rounded-2xl hover:bg-white hover:text-wg-black transition-all text-lg">
                 <Phone className="w-5 h-5" />
                 Fale com o CEO · {COMPANY.ceoPhone}

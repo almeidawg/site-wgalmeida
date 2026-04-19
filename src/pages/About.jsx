@@ -6,6 +6,7 @@ import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { Trans, useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
 import { withBasePath } from '@/utils/assetPaths';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 const valueStyles = {
   'wg-orange': {
@@ -49,6 +50,7 @@ const staggerContainer = {
 };
 
 const ABOUT_FALLBACK_SRC = withBasePath('/images/banners/SOBRE.webp');
+const ABOUT_HERO_IMAGE = getPublicPageImageSrc('about', ABOUT_FALLBACK_SRC);
 const ABOUT_WILLIAM_IMAGE_SRC = withBasePath('/images/about/william-almeida-1200.webp');
 const ABOUT_WILLIAM_IMAGE_SRCSET = `${ABOUT_WILLIAM_IMAGE_SRC} 1200w`;
 
@@ -107,7 +109,7 @@ const About = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt={t('aboutPage.hero.imageAlt')}
-            src="/images/banners/SOBRE.webp"
+            src={ABOUT_HERO_IMAGE}
             width="1920"
             height="1080"
             loading="eager"

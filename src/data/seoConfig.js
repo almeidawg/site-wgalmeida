@@ -49,99 +49,99 @@ export const SEO_CONFIG = {
   ),
   "/arquitetura": page(
     "/arquitetura",
-    "Arquitetura Residencial e Corporativa em Sao Paulo | Grupo WG Almeida",
-    "Projetos de arquitetura residencial e corporativa em Sao Paulo com conceito autoral, detalhamento tecnico e entrega integrada.",
+    "Arquitetura Residencial e Corporativa em São Paulo | Grupo WG Almeida",
+    "Projetos de arquitetura residencial e corporativa em São Paulo com conceito autoral, detalhamento técnico e entrega integrada.",
     `${BASE_URL}/og-arquitetura-1200x630.jpg`
   ),
   "/engenharia": page(
     "/engenharia",
-    "Engenharia e Gerenciamento de Obras em Sao Paulo | Turn Key WG Almeida",
-    "Engenharia com planejamento, compatibilizacao e gerenciamento de obras em Sao Paulo para reduzir atrasos, retrabalho e risco de custo.",
+    "Engenharia e Gerenciamento de Obras em São Paulo | Turn Key WG Almeida",
+    "Engenharia com planejamento, compatibilização e gerenciamento de obras em São Paulo para reduzir atrasos, retrabalho e risco de custo.",
     `${BASE_URL}/og-engenharia-1200x630.jpg`
   ),
   "/marcenaria": page(
     "/marcenaria",
-    "Marcenaria Sob Medida e Moveis Planejados em Sao Paulo | Grupo WG Almeida",
-    "Marcenaria sob medida e moveis planejados com projeto tecnico, acabamento premium e instalacao integrada para residencias e corporativo.",
+    "Marcenaria Sob Medida e Móveis Planejados em São Paulo | Grupo WG Almeida",
+    "Marcenaria sob medida e móveis planejados com projeto técnico, acabamento premium e instalação integrada para residências e corporativo.",
     `${BASE_URL}/og-marcenaria-1200x630.jpg`
   ),
   "/projetos": page(
     "/projetos",
-    "Projetos de Arquitetura e Reformas em Sao Paulo | Portfolio WG Almeida",
-    "Veja projetos residenciais e corporativos executados pela WG Almeida em Sao Paulo, com arquitetura autoral, engenharia e marcenaria integradas.",
+    "Projetos de Arquitetura e Reformas em São Paulo | Portfólio WG Almeida",
+    "Veja projetos residenciais e corporativos executados pela WG Almeida em São Paulo, com arquitetura autoral, engenharia e marcenaria integradas.",
     `${BASE_URL}/og-projetos-1200x630.jpg`
   ),
   "/processo": page(
     "/processo",
     "Processo | Grupo WG Almeida",
-    "Conheca o processo integrado do Grupo WG Almeida.",
+    "Conheça o processo integrado do Grupo WG Almeida.",
     `${BASE_URL}/og-processo-1200x630.jpg`
   ),
   "/depoimentos": page(
     "/depoimentos",
     "Depoimentos | Grupo WG Almeida",
-    "Avaliacoes e resultados de clientes do Grupo WG Almeida.",
+    "Avaliações e resultados de clientes do Grupo WG Almeida.",
     `${BASE_URL}/og-sobre-1200x630.jpg`
   ),
   "/contato": page(
     "/contato",
-    "Contato WG Almeida | Solicite Orcamento de Arquitetura e Reforma",
-    "Fale com a equipe WG Almeida para solicitar orcamento de arquitetura, engenharia e marcenaria em Sao Paulo.",
+    "Contato WG Almeida | Solicite Orçamento de Arquitetura e Reforma",
+    "Fale com a equipe WG Almeida para solicitar orçamento de arquitetura, engenharia e marcenaria em São Paulo.",
     `${BASE_URL}/og-home-1200x630.jpg`
   ),
   "/store": page(
     "/store",
-    "Loja de Decoracao e Design Premium | Grupo WG Almeida",
-    "Compre produtos de decoracao e design premium com curadoria WG Almeida para ambientes residenciais e corporativos.",
+    "Loja de Decoração e Design Premium | Grupo WG Almeida",
+    "Compre produtos de decoração e design premium com curadoria WG Almeida para ambientes residenciais e corporativos.",
     `${BASE_URL}/og-loja-1200x630.jpg`
   ),
   "/blog": page(
     "/blog",
     "Blog | Grupo WG Almeida",
-    "Conteudos sobre arquitetura, engenharia, marcenaria e obras.",
+    "Conteúdos sobre arquitetura, engenharia, marcenaria e obras.",
     `${BASE_URL}/og-home-1200x630.jpg`
   ),
   "/iccri": page(
     "/iccri",
-    "ICCRI 2026 | Indice de Custo de Construcao e Reforma Inteligente",
-    "Indice proprietario da WG Almeida para estimar custo de reforma por m2 com base em dados reais de obras e variacao de mercado.",
+    "ICCRI 2026 | Índice de Custo de Construção e Reforma Inteligente",
+    "Índice proprietário da WG Almeida para estimar custo de reforma por m2 com base em dados reais de obras e variação de mercado.",
     `${BASE_URL}/og-engenharia-1200x630.jpg`
   ),
   "/iccri-para-imobiliarias": page(
     "/iccri-para-imobiliarias",
     "ICCRI para Imobiliarias, Corretores e Bancos | WG Almeida",
-    "Use o ICCRI como referencia tecnica para precificacao, analise de viabilidade e apoio comercial no mercado imobiliario.",
+    "Use o ICCRI como referência técnica para precificação, análise de viabilidade e apoio comercial no mercado imobiliário.",
     `${BASE_URL}/og-engenharia-1200x630.jpg`
   ),
   "/faq": page(
     "/faq",
     "FAQ | Grupo WG Almeida",
-    "Perguntas frequentes sobre o processo e servicos."
+    "Perguntas frequentes sobre o processo e serviços."
   ),
   "/solicite-proposta": page(
     "/solicite-proposta",
     "Solicite Proposta | Grupo WG Almeida",
-    "Solicite sua proposta para arquitetura, engenharia, marcenaria e sistema de experiencia visual aplicado a briefing, prevenda e execucao."
+    "Solicite sua proposta para arquitetura, engenharia, marcenaria e sistema de experiência visual aplicado a briefing, pré-venda e execução."
   ),
   "/obra-turn-key": page(
     "/obra-turn-key",
     "Obra Turn Key SP | Grupo WG Almeida",
-    "Sistema Turn Key premium com projeto, execucao e entrega integrados."
+    "Sistema Turn Key premium com projeto, execução e entrega integrados."
   ),
   "/arquitetura-corporativa": page(
     "/arquitetura-corporativa",
     "Arquitetura Corporativa SP | Grupo WG Almeida",
-    "Projetos corporativos e comerciais em Sao Paulo com metodo Turn Key."
+    "Projetos corporativos e comerciais em São Paulo com método Turn Key."
   ),
   "/construtora-alto-padrao-sp": page(
     "/construtora-alto-padrao-sp",
-    "Construtora Alto Padrao SP | Grupo WG Almeida",
-    "Construtora e executora premium em Sao Paulo para obras de alto padrao."
+    "Construtora Alto Padrão SP | Grupo WG Almeida",
+    "Construtora e executora premium em São Paulo para obras de alto padrão."
   ),
   "/reforma-apartamento-sp": page(
     "/reforma-apartamento-sp",
     "Reforma de Apartamento SP | Grupo WG Almeida",
-    "Reformas completas de apartamentos em Sao Paulo com execucao integrada."
+    "Reformas completas de apartamentos em São Paulo com execução integrada."
   ),
   "/reforma-apartamento-itaim": page(
     "/reforma-apartamento-itaim",
@@ -151,7 +151,7 @@ export const SEO_CONFIG = {
   "/buildtech": page(
     "/buildtech",
     "WG Build.tech | Consultoria de IA e Tecnologia para Construção",
-    "Conheca a frente WG BuildTech para sistemas inteligentes, automacao e experiencia visual aplicada a construcao, retrofit e mercado imobiliario."
+    "Conheça a frente WG BuildTech para sistemas inteligentes, automação e experiência visual aplicada à construção, retrofit e mercado imobiliário."
   ),
   "/easylocker": page(
     "/easylocker",
@@ -170,13 +170,13 @@ export const SEO_CONFIG = {
   ),
   "/revista-estilos": page(
     "/revista-estilos",
-    "Revista de Estilos | Descubra seu Estilo de Decoracao | WG Almeida",
-    "Explore estilos de decoracao: Minimalismo, Classico, Moderno, Vintage, Tropical, Boho e mais. Descubra qual estilo combina com voce."
+    "Revista de Estilos | Descubra seu Estilo de Decoração | WG Almeida",
+    "Explore estilos de decoração: Minimalismo, Clássico, Moderno, Vintage, Tropical, Boho e mais. Descubra qual estilo combina com você."
   ),
   "/moodboard": page(
     "/moodboard",
-    "Moodboard | Sistema de Experiencia Visual | WG Almeida",
-    "Organize estilo, referencias e decisoes visuais em uma jornada de alinhamento estetico pronta para briefing, proposta e projeto."
+    "Moodboard | Sistema de Experiência Visual | WG Almeida",
+    "Organize estilo, referências e decisões visuais em uma jornada de alinhamento estético pronta para briefing, proposta e projeto."
   ),
   "/moodboard-generator": page(
     "/moodboard-generator",

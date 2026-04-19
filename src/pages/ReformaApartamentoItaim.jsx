@@ -16,6 +16,9 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { COMPANY } from '@/data/company';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
+
+const ITAIM_HERO_IMAGE = getPublicPageImageSrc('reformaApartamentoItaim', withBasePath('/images/banners/PROJETOS.webp'));
 
 const ReformaApartamentoItaim = () => {
   const pageUrl = 'https://wgalmeida.com.br/reforma-apartamento-itaim';
@@ -128,7 +131,7 @@ const ReformaApartamentoItaim = () => {
       <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: `url(${withBasePath('/images/banners/PROJETOS.webp')})` }}
+          style={{ backgroundImage: `url(${ITAIM_HERO_IMAGE})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 

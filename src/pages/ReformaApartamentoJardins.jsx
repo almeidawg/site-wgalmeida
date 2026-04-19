@@ -15,6 +15,9 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { COMPANY } from '@/data/company';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
+
+const JARDINS_HERO_IMAGE = getPublicPageImageSrc('reformaApartamentoJardins', withBasePath('/images/banners/PROJETOS.webp'));
 
 const ReformaApartamentoJardins = () => {
   const pageUrl = 'https://wgalmeida.com.br/reforma-apartamento-jardins';
@@ -110,7 +113,7 @@ const ReformaApartamentoJardins = () => {
       <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: `url(${withBasePath('/images/banners/PROJETOS.webp')})` }}
+          style={{ backgroundImage: `url(${JARDINS_HERO_IMAGE})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 

@@ -11,6 +11,12 @@
   "lang": "pt-BR",
   "icons": [
     {
+      "src": "/images/icone.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
       "src": "/favicon.png",
       "sizes": "32x32",
       "type": "image/png"

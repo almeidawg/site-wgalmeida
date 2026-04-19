@@ -475,9 +475,9 @@ const buildIccriDatasetSchema = ({ articleUrl, datePublished }) => ({
   '@context': 'https://schema.org',
   '@type': 'Dataset',
   '@id': `${articleUrl}#dataset-iccri-2026`,
-  name: 'ICCRI 2026 - Indice de Custo da Construcao e Reforma Inteligente',
+  name: 'ICCRI 2026 - Índice de Custo da Construção e Reforma Inteligente',
   description:
-    'Tabela de referencia tecnica do Grupo WG Almeida para custo de reforma e construcao em Sao Paulo, com faixas por padrao, categoria de servico e fatores de ajuste.',
+    'Tabela de referência técnica do Grupo WG Almeida para custo de reforma e construção em São Paulo, com faixas por padrão, categoria de serviço e fatores de ajuste.',
   url: articleUrl,
   creator: {
     '@type': 'Organization',
@@ -497,14 +497,14 @@ const buildIccriDatasetSchema = ({ articleUrl, datePublished }) => ({
   temporalCoverage: '2020/2026',
   spatialCoverage: {
     '@type': 'City',
-    name: 'Sao Paulo',
+    name: 'São Paulo',
   },
   keywords: [
     'ICCRI',
     'custo de reforma 2026',
-    'preco m2 reforma',
-    'tabela de custos construcao civil',
-    'Sao Paulo',
+    'preço m2 reforma',
+    'tabela de custos construção civil',
+    'São Paulo',
   ],
   variableMeasured: [
     { '@type': 'PropertyValue', name: 'custo_base_m2_reforma_civil' },

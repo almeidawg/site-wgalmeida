@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { SCHEMAS } from '@/data/schemaConfig';
 import { WG_PRODUCT_MESSAGES } from '@/data/company';
 import { normalizeUnsplashImageUrl } from '@/lib/unsplash';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 // Animações elegantes
 const fadeInUp = {
@@ -21,6 +22,7 @@ const ENGINEERING_COMMITMENT_IMAGE = normalizeUnsplashImageUrl('https://images.u
   height: 900,
   quality: 80,
 });
+const ENGINEERING_HERO_IMAGE = getPublicPageImageSrc('engineering', '/images/banners/ENGENHARIA.webp');
 
 const Engineering = () => {
   const { t } = useTranslation();
@@ -83,7 +85,7 @@ const Engineering = () => {
           <img
             className="w-full h-full object-cover"
             alt={t('engineeringPage.hero.imageAlt')}
-            src="/images/banners/ENGENHARIA.webp"
+            src={ENGINEERING_HERO_IMAGE}
             srcSet="/images/banners/ENGENHARIA-640.webp 640w, /images/banners/ENGENHARIA-960-opt.webp 960w, /images/banners/ENGENHARIA-1280.webp 1280w, /images/banners/ENGENHARIA.webp 1920w"
             sizes="100vw"
             width="1920"
@@ -208,17 +210,17 @@ const Engineering = () => {
           >
             <div className="max-w-4xl">
               <span className="text-wg-blue font-light tracking-[0.2em] uppercase text-sm mb-4 block">
-                Logica de Obra
+                Lógica de Obra
               </span>
               <h2 className="text-2xl md:text-3xl font-inter font-light text-wg-black tracking-tight mb-4">
-                Engenharia forte nao e so execucao. E sequencia, liberacao e controle de frente
+                Engenharia forte não é só execução. É sequência, liberação e controle de frente
               </h2>
               <div className="space-y-3 text-wg-gray leading-relaxed">
                 <p>
                   {WG_PRODUCT_MESSAGES.obraeasyPromise}
                 </p>
                 <p>
-                  Em campo, isso significa liberar a obra no momento certo, testar antes de fechar, acionar compras criticas com antecedencia e coordenar as frentes que vao para producao paralela.
+                  Em campo, isso significa liberar a obra no momento certo, testar antes de fechar, acionar compras críticas com antecedência e coordenar as frentes que vão para produção paralela.
                 </p>
                 <p>
                   {WG_PRODUCT_MESSAGES.iccriPositioning}
@@ -332,7 +334,7 @@ const Engineering = () => {
               >
                 <Link
                   to="/contato"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-wg-blue text-white rounded-lg hover:bg-wg-blue/90 transition-colors duration-300 group"
+                  className="btn-primary group"
                 >
                   <span>{t('engineeringPage.cta')}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -380,23 +382,23 @@ const Engineering = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
               <div>
                 <span className="text-white/65 font-light tracking-[0.2em] uppercase text-sm mb-4 block">
-                  Add-on de experiencia visual
+                  Add-on de experiência visual
                 </span>
                 <h3 className="text-2xl md:text-3xl font-inter font-light tracking-tight mb-4">
-                  Engenharia ganha velocidade quando a decisao visual chega mais organizada
+                  Engenharia ganha velocidade quando a decisão visual chega mais organizada
                 </h3>
                 <div className="space-y-3 text-white/75 leading-relaxed">
                   <p>{WG_PRODUCT_MESSAGES.wgExperienceConversion}</p>
                   <p>
-                    Em engenharia, essa camada ajuda a consolidar referencias, reduzir revisoes tardias e conectar expectativa visual com compras, medicao e liberacao de frente.
+                    Em engenharia, essa camada ajuda a consolidar referências, reduzir revisões tardias e conectar expectativa visual com compras, medição e liberação de frente.
                   </p>
                 </div>
               </div>
               <div className="space-y-4">
                 {[
-                  'Antecipacao de escolhas que normalmente travam obra ou geram retrabalho.',
-                  'Briefing mais claro para compatibilizacao, aprovacoes e sequencia executiva.',
-                  'Entrada assistida para prevenda, retrofit ou reforma de ticket mais alto.',
+                  'Antecipação de escolhas que normalmente travam obra ou geram retrabalho.',
+                  'Briefing mais claro para compatibilização, aprovações e sequência executiva.',
+                  'Entrada assistida para pré-venda, retrofit ou reforma de ticket mais alto.',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                     <Sparkles className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
@@ -406,7 +408,7 @@ const Engineering = () => {
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <Link
                     to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=engineering"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-wg-blue rounded-lg hover:bg-white/90 transition-colors duration-300"
+                    className="btn-primary"
                   >
                     <span>Levar para proposta</span>
                     <ArrowRight className="w-4 h-4" />
@@ -415,7 +417,7 @@ const Engineering = () => {
                     to="/room-visualizer"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/15 text-white rounded-lg hover:bg-white/5 transition-colors duration-300"
                   >
-                    Ver visualizacao assistida
+                    Ver visualização assistida
                   </Link>
                 </div>
               </div>

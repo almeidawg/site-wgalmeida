@@ -18,6 +18,9 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { COMPANY, WG_PRODUCT_MESSAGES } from '@/data/company';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
+
+const OBRA_TURN_KEY_HERO_IMAGE = getPublicPageImageSrc('obraTurnKey', withBasePath('/images/banners/ARQ.webp'));
 
 const ObraTurnKey = () => {
   const pageUrl = 'https://wgalmeida.com.br/obra-turn-key';
@@ -179,7 +182,7 @@ const ObraTurnKey = () => {
       <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
+          style={{ backgroundImage: `url(${OBRA_TURN_KEY_HERO_IMAGE})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 
@@ -203,17 +206,17 @@ const ObraTurnKey = () => {
               No ecossistema WG, isso também significa transformar a obra em prova operacional da tese: menos ruído, mais controle e mais clareza sobre o valor que está sendo protegido ou destravado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/solicite-proposta">
-                <Button className="btn-apple">
+              <Button asChild className="btn-apple">
+                <Link to="/solicite-proposta">
                   Solicitar proposta turn key
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <Link to="/projetos">
-                <Button className="btn-hero-outline">
+                </Link>
+              </Button>
+              <Button asChild className="btn-hero-outline">
+                <Link to="/projetos">
                   Ver projetos turn key
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -416,7 +419,7 @@ const ObraTurnKey = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
               <div>
                 <span className="text-white/60 text-sm tracking-[0.2em] uppercase mb-4 block">
-                  Add-on de experiencia visual
+                  Add-on de experiência visual
                 </span>
                 <h2 className="text-3xl md:text-4xl font-inter font-light mb-4">
                   O turn key pode entrar com uma camada extra de alinhamento antes da obra apertar
@@ -426,15 +429,15 @@ const ObraTurnKey = () => {
                     {WG_PRODUCT_MESSAGES.wgExperienceSystem}
                   </p>
                   <p>
-                    Em jornadas turn key, ela funciona como etapa de onboarding, prevenda consultiva ou validacao estetica antes de compras, definicoes finais e execucao integrada.
+                    Em jornadas turn key, ela funciona como etapa de onboarding, pré-venda consultiva ou validação estética antes de compras, definições finais e execução integrada.
                   </p>
                 </div>
               </div>
               <div className="space-y-4">
                 {[
                   'Mais clareza de expectativa antes de cronograma, compras e compatibilizacao.',
-                  'Menos retrabalho entre conceito, visualizacao, marcenaria e obra.',
-                  'Uma proposta comercial mais forte para clientes que ainda estao decidindo atmosfera e linguagem do projeto.',
+                  'Menos retrabalho entre conceito, visualização, marcenaria e obra.',
+                  'Uma proposta comercial mais forte para clientes que ainda estão decidindo a atmosfera e a linguagem do projeto.',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                     <CheckCircle className="w-5 h-5 text-wg-orange flex-shrink-0 mt-0.5" />
@@ -442,17 +445,17 @@ const ObraTurnKey = () => {
                   </div>
                 ))}
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <Link to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=turnkey">
-                    <Button className="btn-apple">
+                  <Button asChild className="btn-apple">
+                    <Link to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=turnkey">
                       Incluir add-on visual
                       <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                  </Link>
-                  <Link to="/moodboard">
-                    <Button className="btn-hero-outline">
+                    </Link>
+                  </Button>
+                  <Button asChild className="btn-hero-outline">
+                    <Link to="/moodboard">
                       Ver jornada visual
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -476,12 +479,12 @@ const ObraTurnKey = () => {
               Descubra como o modelo Turn Key transforma sua reforma em uma experiência mais fluida, guiada e previsível.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/solicite-proposta?context=turnkey">
-                <Button className="btn-apple">
+              <Button asChild className="btn-apple">
+                <Link to="/solicite-proposta?context=turnkey">
                   Solicitar proposta turn key
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
               <a href={`tel:${COMPANY.phoneRaw}`} className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
                 {COMPANY.phone}

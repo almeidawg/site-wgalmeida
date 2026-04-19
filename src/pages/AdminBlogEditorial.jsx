@@ -5,6 +5,7 @@ import { getBlogImageAsset, getBlogManifestEntry, resolveBlogPublicId } from '@/
 import blogUnsplashSelection from '@/data/blogUnsplashSelection.json';
 import editorialSearchReport from '../../editorial-search-report.latest.json';
 import editorialHealthReport from '../../editorial-health-status.latest.json';
+import { PUBLIC_PAGE_IMAGE_CATALOG, getPublicPageImageAsset } from '@/data/publicPageImageCatalog';
 import styleCatalog from '@/utils/styleCatalog';
 import STYLE_IMAGE_MANIFEST from '@/data/styleImageManifest';
 import { parseFrontmatter } from '@/utils/frontmatter';
@@ -65,6 +66,12 @@ const CATEGORY_LABELS = {
   tecnologia: 'Tecnologia',
   tendencias: 'Tendências',
   dicas: 'Dicas',
+  institucional: 'Institucional',
+  servicos: 'Serviços',
+  produto: 'Produto',
+  portfolio: 'Portfólio',
+  landing: 'Landing',
+  conteudo: 'Conteúdo',
 };
 
 const normalizeCategoryKey = (value = '') => String(value)
@@ -86,7 +93,11 @@ const getSlotVariant = (slotName = '') => {
   return 'card';
 };
 const getPrimarySlotNames = (record) => (
-  record.kind === 'style' ? ['cover'] : ['hero', 'card']
+  record.kind === 'style' ? ['cover'] : record.kind === 'page' ? ['hero'] : ['hero', 'card']
+);
+
+const supportsEditorialSyncApi = () => (
+  typeof window !== 'undefined' && !window.location.port
 );
 
 const slugifyHeading = (text = '') => String(text)
@@ -437,6 +448,8 @@ const getEffectiveSlotState = (record, slot, uploads) => {
     ? (
       record.kind === 'style'
         ? null
+        : record.kind === 'page'
+          ? getPublicPageImageAsset(record.slug)
         : isContextSlot(slot.slot)
           ? contextAsset
           : getBlogImageAsset({
@@ -573,6 +586,15 @@ const buildStyleManifestSnippet = (record, uploads) => {
   return '';
 };
 
+const buildPageManifestSnippet = (record, uploads) => {
+  const heroState = getEffectiveSlotState(record, { slot: 'hero' }, uploads);
+  const pageValue = heroState.publicId
+    ? { source: 'cloudinary', publicId: heroState.publicId, alt: heroState.alt || '', page: heroState.pageUrl || '', caption: heroState.caption || '' }
+    : buildManifestRemoteValue(heroState);
+  if (!pageValue) return '';
+  return `${JSON.stringify(record.slug)}: {\n  hero: ${JSON.stringify(pageValue, null, 2).replace(/\n/g, '\n  ')}\n},`;
+};
+
 const getTwoSlotStatus = (record, uploads) => {
   const primarySlots = getPrimarySlotNames(record);
   const heroState = getEffectiveSlotState(record, { slot: primarySlots[0] }, uploads);
@@ -594,6 +616,8 @@ const getTwoSlotStatus = (record, uploads) => {
     ready: primaryReady,
     snippet: record.kind === 'style'
       ? buildStyleManifestSnippet(record, uploads)
+      : record.kind === 'page'
+        ? buildPageManifestSnippet(record, uploads)
       : buildBlogManifestSnippet(record, uploads),
   };
 };
@@ -628,6 +652,7 @@ const getEditorialCoverageStatus = (record, uploads, unsplashSelections) => {
         ? 'unsplash'
         : null;
   const ready = Boolean(heroSource && cardSource);
+  const isSingleSlotRecord = getPrimarySlotNames(record).length === 1;
   const sourceSet = new Set([heroSource, cardSource].filter(Boolean));
   const sourceNameByType = {
     cloudinary: 'Cloudinary',
@@ -641,7 +666,7 @@ const getEditorialCoverageStatus = (record, uploads, unsplashSelections) => {
   return {
     editorial,
     unsplash,
-    ready,
+    ready: isSingleSlotRecord ? Boolean(heroSource) : ready,
     heroSource,
     cardSource,
     label: sourceLabel,
@@ -672,6 +697,14 @@ const AdminBlogEditorial = () => {
   });
   const [automationRunning, setAutomationRunning] = useState(false);
   const [automationOutput, setAutomationOutput] = useState('');
+  const [publicationSyncStatus, setPublicationSyncStatus] = useState({
+    loading: true,
+    enabled: false,
+    syncing: false,
+    error: '',
+    notes: '',
+    lastSyncedAt: '',
+  });
   const [openSearchPanelBySlug, setOpenSearchPanelBySlug] = useState({});
   const [searchQueryBySlug, setSearchQueryBySlug] = useState({});
   const [searchResultsBySlug, setSearchResultsBySlug] = useState({});
@@ -696,6 +729,56 @@ const AdminBlogEditorial = () => {
     setUploads(readLocalUploads());
     setUnsplashSelections(readLocalUnsplashSelections());
     setExternalImages(readLocalExternalImages());
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadSyncStatus = async () => {
+      if (!supportsEditorialSyncApi()) {
+        if (cancelled) return;
+        setPublicationSyncStatus({
+          loading: false,
+          enabled: false,
+          syncing: false,
+          error: '',
+          notes: 'Publicação automática indisponível no Vite local. Funciona no deploy com API.',
+          lastSyncedAt: '',
+        });
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/editorial-overrides');
+        const data = await response.json();
+
+        if (cancelled) return;
+
+        setPublicationSyncStatus({
+          loading: false,
+          enabled: Boolean(response.ok && data?.enabled !== false),
+          syncing: false,
+          error: response.ok ? '' : (data?.error || 'Não foi possível validar a publicação automática.'),
+          notes: data?.notes || 'Publicação automática pronta.',
+          lastSyncedAt: '',
+        });
+      } catch {
+        if (cancelled) return;
+        setPublicationSyncStatus({
+          loading: false,
+          enabled: false,
+          syncing: false,
+          error: '',
+          notes: 'Publicação automática indisponível neste ambiente.',
+          lastSyncedAt: '',
+        });
+      }
+    };
+
+    loadSyncStatus();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(() => {
@@ -823,6 +906,53 @@ const AdminBlogEditorial = () => {
       setAutomationOutput('');
     } finally {
       setAutomationRunning(false);
+    }
+  };
+
+  const syncEditorialPublishing = async ({ silent = false } = {}) => {
+    if (!supportsEditorialSyncApi()) return;
+
+    if (!silent) {
+      setPublicationSyncStatus((current) => ({
+        ...current,
+        syncing: true,
+        error: '',
+      }));
+    }
+
+    try {
+      const response = await fetch('/api/editorial-overrides', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          uploads,
+          managedBlogSlugs: queueWithStatus.filter((record) => record.kind === 'blog').map((record) => record.slug),
+          managedPageSlugs: queueWithStatus.filter((record) => record.kind === 'page').map((record) => record.slug),
+          source: 'admin-editorial-ui',
+        }),
+      });
+      const data = await response.json();
+
+      setPublicationSyncStatus((current) => ({
+        ...current,
+        loading: false,
+        enabled: response.ok,
+        syncing: false,
+        error: response.ok ? '' : (data?.error || 'Falha ao sincronizar publicação.'),
+        notes: response.ok
+          ? `Publicado: ${data?.blog?.synced || 0} blogs e ${data?.pages?.synced || 0} páginas.`
+          : current.notes,
+        lastSyncedAt: response.ok ? data?.generatedAt || new Date().toISOString() : current.lastSyncedAt,
+      }));
+    } catch {
+      setPublicationSyncStatus((current) => ({
+        ...current,
+        loading: false,
+        syncing: false,
+        error: 'Falha de rede ao publicar os overrides.',
+      }));
     }
   };
 
@@ -1215,7 +1345,9 @@ const AdminBlogEditorial = () => {
         prepareUploadParams: (cb) => {
           const folder = record.kind === 'style'
             ? 'editorial/estilos'
-            : `editorial/blog/${record.slug}`;
+            : record.kind === 'page'
+              ? `editorial/pages/${record.slug}`
+              : `editorial/blog/${record.slug}`;
           const tags = [
             'editorial-visual',
             `${record.kind}:${record.slug}`,
@@ -1224,7 +1356,7 @@ const AdminBlogEditorial = () => {
           ];
           cb({
             folder,
-            publicId: slot.slot === 'cover' ? record.slug : slot.slot,
+            publicId: record.kind === 'style' ? record.slug : slot.slot,
             tags,
             context: `record=${record.slug}|kind=${record.kind}|slot=${slot.slot}`,
             uploadPreset,
@@ -1298,6 +1430,41 @@ const AdminBlogEditorial = () => {
     };
   });
 
+  const pageQueue = Object.entries(PUBLIC_PAGE_IMAGE_CATALOG).map(([pageKey, page]) => ({
+    slug: pageKey,
+    title: page.title,
+    category: page.category,
+    kind: 'page',
+    currentImage: page.image,
+    boldCount: 0,
+    inlineImageCount: 0,
+    needsCopyNormalization: false,
+    status: {
+      hasFrontmatterImage: Boolean(page.image),
+      hasInlineImages: false,
+      hasManifestEntry: Boolean(getPublicPageImageAsset(pageKey)),
+      isVariantEntry: false,
+      hasCloudinaryHero: Boolean(getPublicPageImageAsset(pageKey)?.publicId),
+      hasCloudinaryCard: false,
+      hasLocalHero: false,
+      hasLocalCard: false,
+      readyForTwoSlotEditorial: Boolean(getPublicPageImageAsset(pageKey)),
+    },
+    slots: [
+      {
+        slot: 'hero',
+        mainQuery: page.mainQuery,
+        searchTerms: page.searchTerms || [],
+        searchQuery: page.mainQuery,
+        intent: `imagem principal publicada para ${page.title}`,
+        targetLocalFile: '',
+        targetCloudinaryId: `editorial/pages/${pageKey}/hero`,
+        orientation: 'landscape',
+      },
+    ],
+    routePath: page.routePath,
+  }));
+
   const combinedQueue = [
     ...editorialQueue.map((record) => ({
       ...record,
@@ -1318,6 +1485,7 @@ const AdminBlogEditorial = () => {
       ],
     })),
     ...styleQueue,
+    ...pageQueue,
   ];
 
   const queueWithStatus = combinedQueue.map((record) => {
@@ -1332,7 +1500,7 @@ const AdminBlogEditorial = () => {
     return {
       ...record,
       categoryKey,
-      kindLabel: record.kind === 'style' ? 'Guia de Estilo' : 'Blog',
+      kindLabel: record.kind === 'style' ? 'Guia de Estilo' : record.kind === 'page' ? 'Página' : 'Blog',
       categoryLabel: getCategoryLabel(record.category),
       editorial: coverage.editorial,
       unsplash: coverage.unsplash,
@@ -1349,6 +1517,7 @@ const AdminBlogEditorial = () => {
     needsCopyNormalization: queueWithStatus.filter((record) => record.needsCopyNormalization).length,
     blog: queueWithStatus.filter((record) => record.kind === 'blog').length,
     styles: queueWithStatus.filter((record) => record.kind === 'style').length,
+    pages: queueWithStatus.filter((record) => record.kind === 'page').length,
   };
   const searchSummary = editorialSearchReport?.summary || {};
   const editorialHealthSummary = editorialHealthReport?.summary || {};
@@ -1387,6 +1556,12 @@ const AdminBlogEditorial = () => {
 
   const styleManifestSnippet = queueWithStatus
     .filter((record) => record.kind === 'style')
+    .map((record) => record.editorial.snippet)
+    .filter(Boolean)
+    .join('\n');
+
+  const pageManifestSnippet = queueWithStatus
+    .filter((record) => record.kind === 'page')
     .map((record) => record.editorial.snippet)
     .filter(Boolean)
     .join('\n');
@@ -1442,6 +1617,28 @@ const AdminBlogEditorial = () => {
     setContentTypeFilter('todos');
     setStatusFilter('todos');
   };
+
+  useEffect(() => {
+    if (publicationSyncStatus.loading || !publicationSyncStatus.enabled) return undefined;
+    if (!didHydrateSyncState.current) {
+      didHydrateSyncState.current = true;
+      return undefined;
+    }
+
+    if (syncTimerRef.current) {
+      window.clearTimeout(syncTimerRef.current);
+    }
+
+    syncTimerRef.current = window.setTimeout(() => {
+      syncEditorialPublishing({ silent: true });
+    }, 1200);
+
+    return () => {
+      if (syncTimerRef.current) {
+        window.clearTimeout(syncTimerRef.current);
+      }
+    };
+  }, [uploads, publicationSyncStatus.loading, publicationSyncStatus.enabled]);
 
   return (
     <>
@@ -1520,6 +1717,7 @@ const AdminBlogEditorial = () => {
                   <option value="todos">Tudo</option>
                   <option value="blog">Blog</option>
                   <option value="style">Estilos</option>
+                  <option value="page">Páginas</option>
                 </select>
               </label>
               <label className="flex flex-col gap-1 text-xs text-[#5B6470]">
@@ -2106,10 +2304,11 @@ const AdminBlogEditorial = () => {
             </summary>
             <div className="space-y-5 border-t border-[#EEE8DD] p-5">
               {/* Manifests */}
-              <div className="grid gap-4 lg:grid-cols-3">
+              <div className="grid gap-4 lg:grid-cols-4">
                 {[
                   { key: 'manifest-snippet', label: 'Blog manifest', snippet: manifestSnippet, dest: 'src/data/blogImageManifest.js' },
                   { key: 'style-manifest-snippet', label: 'Styles manifest', snippet: styleManifestSnippet, dest: 'src/data/styleImageManifest.js' },
+                  { key: 'page-manifest-snippet', label: 'Pages manifest', snippet: pageManifestSnippet, dest: 'src/data/publicPageImageOverrides.generated.js' },
                   { key: 'unsplash-selection-snippet', label: 'Unsplash JSON', snippet: unsplashManifestSnippet, dest: 'src/data/blogUnsplashSelection.json' },
                 ].map(({ key, label, snippet, dest }) => (
                   <div key={key}>
@@ -2123,6 +2322,32 @@ const AdminBlogEditorial = () => {
                     <p className="mt-1 text-[10px] text-[#9B9791]">→ {dest}</p>
                   </div>
                 ))}
+              </div>
+
+              <div className="rounded-2xl border border-[#E3DDCF] bg-white p-4">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-[#1E2A3A]">Publicação real do admin</p>
+                    <p className="text-xs text-[#5B6470]">
+                      {publicationSyncStatus.loading
+                        ? 'Verificando endpoint...'
+                        : publicationSyncStatus.error || publicationSyncStatus.notes || 'Pronto.'}
+                    </p>
+                    {publicationSyncStatus.lastSyncedAt && (
+                      <p className="mt-0.5 text-[11px] text-[#7A5B2F]">
+                        Última sincronização: {new Date(publicationSyncStatus.lastSyncedAt).toLocaleString('pt-BR')}
+                      </p>
+                    )}
+                  </div>
+                  <Button
+                    onClick={() => syncEditorialPublishing()}
+                    disabled={publicationSyncStatus.loading || publicationSyncStatus.syncing || !publicationSyncStatus.enabled}
+                    className="bg-[#1E2A3A] text-sm text-white hover:bg-[#24354C]"
+                  >
+                    {publicationSyncStatus.syncing ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <CheckCircle2 className="mr-2 h-4 w-4" />}
+                    Publicar overrides
+                  </Button>
+                </div>
               </div>
 
               {/* Automation */}

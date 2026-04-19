@@ -8,7 +8,7 @@
     <video:video>
       <video:thumbnail_loc>https://wgalmeida.com.br/images/hero-poster-1280.webp</video:thumbnail_loc>
       <video:title>Grupo WG Almeida - Arquitetura, Engenharia e Marcenaria Premium</video:title>
-      <video:description>Video institucional do Grupo WG Almeida apresentando projetos de arquitetura de alto padrao, engenharia turn key e marcenaria sob medida em Sao Paulo.</video:description>
+      <video:description>Vídeo institucional do Grupo WG Almeida apresentando projetos de arquitetura de alto padrão, engenharia turn key e marcenaria sob medida em São Paulo.</video:description>
       <video:content_loc>https://res.cloudinary.com/dwukfmgrd/video/upload/f_auto/q_auto:good/vc_auto/so_0/ar_16:9/c_fill/g_auto/w_1920/h6zftberxzqzf4mqpyyr</video:content_loc>
       <video:duration>45</video:duration>
       <video:publication_date>2026-01-15T00:00:00+00:00</video:publication_date>
@@ -17,8 +17,8 @@
       <video:tag>arquitetura</video:tag>
       <video:tag>engenharia</video:tag>
       <video:tag>marcenaria</video:tag>
-      <video:tag>alto padrao</video:tag>
-      <video:tag>sao paulo</video:tag>
+      <video:tag>alto padrão</video:tag>
+      <video:tag>são paulo</video:tag>
       <video:tag>turn key</video:tag>
       <video:category>Architecture</video:category>
       <video:uploader info="https://wgalmeida.com.br/sobre">Grupo WG Almeida</video:uploader>
@@ -30,15 +30,15 @@
     <loc>https://wgalmeida.com.br/sobre</loc>
     <video:video>
       <video:thumbnail_loc>https://wgalmeida.com.br/images/hero-poster-1280.webp</video:thumbnail_loc>
-      <video:title>Sobre o Grupo WG Almeida - Nossa Historia</video:title>
-      <video:description>Conheca a trajetoria do Grupo WG Almeida, sua operacao integrada e a abordagem de arquitetura, engenharia e marcenaria de alto padrao em Sao Paulo.</video:description>
+      <video:title>Sobre o Grupo WG Almeida - Nossa História</video:title>
+      <video:description>Conheça a trajetória do Grupo WG Almeida, sua operação integrada e a abordagem de arquitetura, engenharia e marcenaria de alto padrão em São Paulo.</video:description>
       <video:content_loc>https://res.cloudinary.com/dwukfmgrd/video/upload/f_auto/q_auto:good/vc_auto/so_0/ar_16:9/c_fill/g_auto/w_1920/h6zftberxzqzf4mqpyyr</video:content_loc>
       <video:duration>120</video:duration>
       <video:publication_date>2026-01-15T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
-      <video:tag>sobre nos</video:tag>
-      <video:tag>historia</video:tag>
+      <video:tag>sobre nós</video:tag>
+      <video:tag>história</video:tag>
       <video:tag>arquitetura</video:tag>
       <video:tag>WG Almeida</video:tag>
       <video:category>Architecture</video:category>
@@ -52,7 +52,7 @@
     <video:video>
       <video:thumbnail_loc>https://wgalmeida.com.br/images/hero-poster-640.webp</video:thumbnail_loc>
       <video:title>WG Almeida - Arquitetura Premium SP (Mobile)</video:title>
-      <video:description>Video institucional otimizado para dispositivos moveis do Grupo WG Almeida. Arquitetura, engenharia e marcenaria de alto padrao em Sao Paulo.</video:description>
+      <video:description>Vídeo institucional otimizado para dispositivos móveis do Grupo WG Almeida. Arquitetura, engenharia e marcenaria de alto padrão em São Paulo.</video:description>
       <video:content_loc>https://res.cloudinary.com/dwukfmgrd/video/upload/f_auto/q_auto:good/vc_auto/so_0/ar_16:9/c_fill/g_auto/w_1280/h6zftberxzqzf4mqpyyr</video:content_loc>
       <video:duration>45</video:duration>
       <video:publication_date>2026-01-15T00:00:00+00:00</video:publication_date>

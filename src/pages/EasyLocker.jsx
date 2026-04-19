@@ -5,6 +5,7 @@ import { Box, Smartphone, Truck, ShieldCheck, CheckCircle2, ArrowRight } from 'l
 import { Link } from 'react-router-dom';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
 import { useTranslation } from 'react-i18next';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -12,6 +13,8 @@ const fadeInUp = {
   viewport: { once: true },
   transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
 };
+
+const EASY_LOCKER_HERO_IMAGE = getPublicPageImageSrc('easyLocker', '/images/banners/MARCENARIA.webp');
 
 const EasyLocker = () => {
   const { t } = useTranslation();
@@ -58,7 +61,7 @@ const EasyLocker = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt="Easy Locker Armários Inteligentes"
-            src="/images/banners/MARCENARIA.webp"
+            src={EASY_LOCKER_HERO_IMAGE}
             width="1920"
             height="1080"
           />

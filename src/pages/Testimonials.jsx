@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ResponsiveWebpImage from '@/components/ResponsiveWebpImage';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog';
 import { useTranslation } from 'react-i18next';
 import { GOOGLE_WRITE_REVIEW_URL } from '@/constants/googleReviews';
 import useGoogleReviews from '@/hooks/useGoogleReviews';
@@ -12,6 +13,7 @@ import { BrandRating } from '@/components/BrandStar';
 import { COMPANY } from '@/data/company';
 
 const GOOGLE_MAPS_URL = 'https://maps.google.com/?q=WG+Almeida+Arquitetura+São+Paulo';
+const TESTIMONIALS_HERO_IMAGE = getPublicPageImageSrc('testimonials', '/images/banners/DEPOIMENTOS.webp');
 
 // Animações elegantes
 const fadeInUp = {
@@ -52,7 +54,7 @@ const Testimonials = () => {
           email: COMPANY.email,
           address: {
             "@type": "PostalAddress",
-            addressLocality: "Sao Paulo",
+            addressLocality: "São Paulo",
             addressRegion: "SP",
             addressCountry: "BR",
           },
@@ -77,7 +79,7 @@ const Testimonials = () => {
           <ResponsiveWebpImage
             className="w-full h-full object-cover"
             alt={t('testimonialsPage.hero.imageAlt')}
-            src="/images/banners/DEPOIMENTOS.webp"
+            src={TESTIMONIALS_HERO_IMAGE}
             width="1920"
             height="1080"
             loading="eager"
@@ -191,29 +193,30 @@ const Testimonials = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href={GOOGLE_MAPS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button className="btn-apple text-base px-8 py-4 w-full sm:w-auto">
+                <Button asChild className="btn-apple text-base px-8 py-4 w-full sm:w-auto">
+                  <a
+                    href={GOOGLE_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <MapPin className="w-5 h-5 mr-2" />
                     {t('testimonialsPage.google.ctaMaps')}
-                  </Button>
-                </a>
-                <a
-                  href={GOOGLE_WRITE_REVIEW_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full border-wg-orange text-base text-wg-orange hover:border-wg-orange hover:bg-wg-orange hover:text-white sm:w-auto"
                 >
-                  <Button
-                    variant="outline"
-                    className="text-base px-8 py-4 border-2 border-wg-orange text-wg-orange hover:bg-wg-orange hover:text-white transition-colors w-full sm:w-auto"
+                  <a
+                    href={GOOGLE_WRITE_REVIEW_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {t('testimonialsPage.google.ctaReview')}
                     <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
-                </a>
+                  </a>
+                </Button>
               </div>
             </motion.div>
 
@@ -309,19 +312,20 @@ const Testimonials = () => {
               {t('testimonialsPage.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={whatsappUrl}>
-                <Button className="btn-apple text-lg px-8 py-4">
+              <Button asChild className="btn-apple text-lg px-8 py-4">
+                <a href={whatsappUrl}>
                   {t('testimonialsPage.cta.whatsapp')}
-                </Button>
-              </a>
-              <Link to="/contato">
-                <Button
-                  variant="outline"
-                  className="text-lg px-8 py-4 border border-white/40 text-white bg-white/5 hover:bg-white/15 transition-all"
-                >
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-white/35 bg-white/5 text-lg text-white hover:border-white hover:bg-white hover:text-wg-black"
+              >
+                <Link to="/contato">
                   {t('testimonialsPage.cta.message')}
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </div>

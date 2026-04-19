@@ -5,6 +5,9 @@ import { withBasePath } from '@/utils/assetPaths'
 import { ArrowRight, CheckCircle, Clock, DollarSign, Home, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { COMPANY } from '@/data/company';
+import { getPublicPageImageSrc } from '@/data/publicPageImageCatalog'
+
+const REFORMA_SP_HERO_IMAGE = getPublicPageImageSrc('reformaApartamentoSP', withBasePath('/images/banners/ARQ.webp'))
 
 const ReformaApartamentoSP = () => {
   const pageUrl = 'https://wgalmeida.com.br/reforma-apartamento-sp'
@@ -135,7 +138,7 @@ const ReformaApartamentoSP = () => {
       <section className="wg-page-hero hero-under-header bg-wg-black">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: `url(${withBasePath('/images/banners/ARQ.webp')})` }}
+          style={{ backgroundImage: `url(${REFORMA_SP_HERO_IMAGE})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wg-black/80 via-wg-black/60 to-wg-black" />
 

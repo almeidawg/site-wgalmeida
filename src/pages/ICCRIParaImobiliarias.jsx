@@ -24,8 +24,8 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'ICCRI para Imobiliarias',
-    serviceType: 'Analise tecnica de custo de reforma e viabilidade imobiliaria',
+    name: 'ICCRI para Imobiliárias',
+    serviceType: 'Análise técnica de custo de reforma e viabilidade imobiliária',
     provider: {
       '@type': 'Organization',
       '@id': 'https://wgalmeida.com.br/#organization',
@@ -48,8 +48,8 @@ export default function ICCRIParaImobiliarias() {
     <>
       <SEO
         pathname="/iccri-para-imobiliarias"
-        title="ICCRI para Imobiliarias, Corretores e Bancos | WG Almeida"
-        description="Use o ICCRI como referencia tecnica para precificacao, estudo de reforma, AVM e tomada de decisao no mercado imobiliario."
+        title="ICCRI para Imobiliárias, Corretores e Bancos | WG Almeida"
+        description="Use o ICCRI como referência técnica para precificação, estudo de reforma, AVM e tomada de decisão no mercado imobiliário."
         keywords="iccri para imobiliarias, calculadora preco m2 corretor, avm, obraeasy, estudo de viabilidade de reforma"
         url={PAGE_URL}
         schema={schema}
@@ -63,7 +63,7 @@ export default function ICCRIParaImobiliarias() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            ICCRI para imobiliarias, corretores, bancos e construtoras
+            ICCRI para imobiliárias, corretores, bancos e construtoras
           </motion.h1>
           <motion.p
             className="max-w-4xl text-lg text-white/80"
@@ -71,8 +71,8 @@ export default function ICCRIParaImobiliarias() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            Transforme custo de reforma em decisao comercial com metodo tecnico. O ICCRI conecta
-            dados reais de obra, simulacao de viabilidade, leitura operacional e potencial de valorizacao.
+            Transforme custo de reforma em decisão comercial com método técnico. O ICCRI conecta
+            dados reais de obra, simulação de viabilidade, leitura operacional e potencial de valorização.
           </motion.p>
           <motion.p
             className="mt-4 max-w-4xl text-base text-white/65"
@@ -80,9 +80,9 @@ export default function ICCRIParaImobiliarias() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.18 }}
           >
-            No ecossistema WG, isso ajuda a separar quando a tese ainda esta em fase experimental,
-            quando ja pode ser conduzida de forma assistida e quando comeca a ficar mais defensavel
-            com base real de mercado, obra e execucao.
+            No ecossistema WG, isso ajuda a separar quando a tese ainda está em fase experimental,
+            quando já pode ser conduzida de forma assistida e quando começa a ficar mais defensável
+            com base real de mercado, obra e execução.
           </motion.p>
         </div>
       </section>
@@ -92,30 +92,30 @@ export default function ICCRIParaImobiliarias() {
           <article className="lg:col-span-8 space-y-8">
             <div className="rounded-2xl border border-gray-200 bg-white p-6">
               <h2 className="text-2xl font-inter font-light text-wg-black mb-3">
-                Como usar o ICCRI na operacao comercial
+                Como usar o ICCRI na operação comercial
               </h2>
               <p className="text-wg-gray leading-relaxed mb-5">
                 Use o ICCRI para criar previsibilidade em propostas, leitura de margem e argumento
-                de venda baseado em dados. O foco e reduzir incerteza no momento de decisao e traduzir a complexidade da obra em uma leitura mais didatica.
+                de venda baseado em dados. O foco é reduzir incerteza no momento de decisão e traduzir a complexidade da obra em uma leitura mais didática.
               </p>
               <ul className="space-y-3 text-[#334155]">
                 <li className="flex items-start gap-2">
                   <LineChart className="mt-0.5 h-4 w-4 text-wg-blue" />
-                  Precificacao tecnica por padrao e faixa de reforma.
+                  Precificação técnica por padrão e faixa de reforma.
                 </li>
                 <li className="flex items-start gap-2">
                   <Users className="mt-0.5 h-4 w-4 text-wg-blue" />
-                  Conversa consultiva com cliente final baseada em cenarios.
+                  Conversa consultiva com cliente final baseada em cenários.
                 </li>
                 <li className="flex items-start gap-2">
                   <Landmark className="mt-0.5 h-4 w-4 text-wg-blue" />
-                  Apoio a bancos e credito com leitura objetiva de investimento.
+                  Apoio a bancos e crédito com leitura objetiva de investimento.
                 </li>
               </ul>
               <p className="mt-5 text-sm leading-relaxed text-wg-gray">
-                O papel do ICCRI aqui nao e prometer certeza artificial. Ele ajuda a organizar custo,
+                O papel do ICCRI aqui não é prometer certeza artificial. Ele ajuda a organizar custo,
                 etapas e escopo para que a tese do ativo possa evoluir com mais clareza para uma leitura
-                experimental, assistida ou mais defensavel conforme a base real cresce.
+                experimental, assistida ou mais defensável conforme a base real cresce.
               </p>
             </div>
 
@@ -126,7 +126,7 @@ export default function ICCRIParaImobiliarias() {
               <ol className="list-decimal space-y-2 pl-5 text-[#334155]">
                 <li>Use o ICCRI para estimativa inicial e leitura das etapas operacionais da obra.</li>
                 <li>Valide viabilidade com EVF no Obra Easy.</li>
-                <li>Projete valorizacao com AVM para orientar a decisao.</li>
+                <li>Projete valorização com AVM para orientar a decisão.</li>
                 <li>Encaminhe o cliente para proposta executiva integrada.</li>
               </ol>
 
@@ -134,7 +134,7 @@ export default function ICCRIParaImobiliarias() {
                 {WG_PRODUCT_MESSAGES.marketReferences}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-wg-gray">
-                Quando conectado ao Easy Real State e ao ObraEasy, o ICCRI deixa de ser so referencia
+                Quando conectado ao Easy Real State e ao ObraEasy, o ICCRI deixa de ser só referência
                 de custo e passa a apoiar a defesa da captura de valor com base em fechamento real,
                 custo executado e leitura operacional da obra.
               </p>
@@ -189,11 +189,11 @@ export default function ICCRIParaImobiliarias() {
               <div className="space-y-3 text-sm text-wg-gray">
                 <p className="flex items-start gap-2">
                   <Building2 className="mt-0.5 h-4 w-4 text-wg-blue" />
-                  Imobiliarias e corretores de alto padrao.
+                  Imobiliárias e corretores de alto padrão.
                 </p>
                 <p className="flex items-start gap-2">
                   <Landmark className="mt-0.5 h-4 w-4 text-wg-blue" />
-                  Bancos e instituicoes com analise de credito imobiliario.
+                  Bancos e instituições com análise de crédito imobiliário.
                 </p>
                 <p className="flex items-start gap-2">
                   <Users className="mt-0.5 h-4 w-4 text-wg-blue" />
@@ -207,7 +207,7 @@ export default function ICCRIParaImobiliarias() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link className="text-wg-blue hover:underline" to="/iccri">
-                    Ver indice ICCRI completo
+                    Ver índice ICCRI completo
                   </Link>
                 </li>
                 <li>
@@ -217,7 +217,7 @@ export default function ICCRIParaImobiliarias() {
                 </li>
                 <li>
                   <Link className="text-wg-blue hover:underline" to="/blog/calculadora-preco-m2-corretores-imobiliarias">
-                    Conteudo para corretores e imobiliarias
+                    Conteúdo para corretores e imobiliárias
                   </Link>
                 </li>
               </ul>
