@@ -6,6 +6,7 @@
 - padronização do sistema de botões concluída em `src/components/ui/button.jsx` e `src/index.css`
 - classe faltante `wg-btn-pill-outline-dark` criada e validada
 - CTAs públicos críticos convergiram para o mesmo padrão de raio, borda, peso e hover
+- segunda onda concluída em metadados públicos, schema e sitemap de vídeo para remover português degradado e alinhar experiência visual dos botões outline
 - revisão editorial aplicada em páginas públicas com maior exposição:
   - `Architecture.jsx`
   - `Engineering.jsx`
@@ -15,6 +16,7 @@
   - `ICCRI.jsx`
   - `ICCRIParaImobiliarias.jsx`
 - camada de SEO textual corrigida em `src/data/seoConfig.js`
+- `schemaConfig.js`, `Blog.jsx`, `Testimonials.jsx`, `ObraEasyLanding.jsx` e `public/video-sitemap.xml` revisados para consistência de idioma, localidade e padrão visual
 - `public/sitemap.xml` regenerado após a build
 
 ### Validação executada

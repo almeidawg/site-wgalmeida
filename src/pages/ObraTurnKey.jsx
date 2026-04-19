@@ -206,17 +206,17 @@ const ObraTurnKey = () => {
               No ecossistema WG, isso também significa transformar a obra em prova operacional da tese: menos ruído, mais controle e mais clareza sobre o valor que está sendo protegido ou destravado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/solicite-proposta">
-                <Button className="btn-apple">
+              <Button asChild className="btn-apple">
+                <Link to="/solicite-proposta">
                   Solicitar proposta turn key
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <Link to="/projetos">
-                <Button className="btn-hero-outline">
+                </Link>
+              </Button>
+              <Button asChild className="btn-hero-outline">
+                <Link to="/projetos">
                   Ver projetos turn key
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -445,17 +445,17 @@ const ObraTurnKey = () => {
                   </div>
                 ))}
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <Link to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=turnkey">
-                    <Button className="btn-apple">
+                  <Button asChild className="btn-apple">
+                    <Link to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=turnkey">
                       Incluir add-on visual
                       <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                  </Link>
-                  <Link to="/moodboard">
-                    <Button className="btn-hero-outline">
+                    </Link>
+                  </Button>
+                  <Button asChild className="btn-hero-outline">
+                    <Link to="/moodboard">
                       Ver jornada visual
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -479,12 +479,12 @@ const ObraTurnKey = () => {
               Descubra como o modelo Turn Key transforma sua reforma em uma experiência mais fluida, guiada e previsível.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/solicite-proposta?context=turnkey">
-                <Button className="btn-apple">
+              <Button asChild className="btn-apple">
+                <Link to="/solicite-proposta?context=turnkey">
                   Solicitar proposta turn key
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
               <a href={`tel:${COMPANY.phoneRaw}`} className="btn-hero-outline">
                 <Phone className="w-5 h-5" />
                 {COMPANY.phone}

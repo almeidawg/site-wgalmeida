@@ -36,7 +36,7 @@ const service = (name, description, url) => ({
   },
   areaServed: {
     "@type": "City",
-    name: "Sao Paulo",
+    name: "São Paulo",
   },
 });
 
@@ -71,10 +71,11 @@ export const SCHEMAS = {
     worksFor: { "@id": ORG_ID },
     knowsAbout: [
       "Arquitetura de alto padrao",
+      "Arquitetura de alto padrão",
       "Engenharia de obras",
       "Marcenaria sob medida",
-      "Gestao de obras turn key",
-      "Tecnologia aplicada a construcao",
+      "Gestão de obras turn key",
+      "Tecnologia aplicada à construção",
     ],
   },
 
@@ -158,7 +159,7 @@ export const SCHEMAS = {
         logo: `${BASE_URL}/images/logo-96.webp`,
         email: COMPANY.email,
         telephone: COMPANY.phoneRaw,
-        areaServed: { "@type": "City", name: "Sao Paulo" },
+        areaServed: { "@type": "City", name: "São Paulo" },
         founder: { "@id": PERSON_WILLIAM_ID },
         hasPart: [{ "@id": APP_BUILDTECH_ID }, { "@id": APP_MOODBOARD_ID }, { "@id": APP_ROOM_ID }],
         makesOffer: [
@@ -180,7 +181,7 @@ export const SCHEMAS = {
       {
         "@type": "Service",
         "@id": SERVICE_ARCH_ID,
-        name: "Arquitetura de Alto Padrao",
+        name: "Arquitetura de Alto Padrão",
         serviceType: "Arquitetura",
         url: `${BASE_URL}/arquitetura`,
         provider: { "@id": ORG_ID },
@@ -212,8 +213,8 @@ export const SCHEMAS = {
       {
         "@type": "Service",
         "@id": SERVICE_EXPERIENCE_ID,
-        name: "Sistema de Experiencia Visual",
-        serviceType: "Experiencia visual aplicada a projeto e prevenda",
+        name: "Sistema de Experiência Visual",
+        serviceType: "Experiência visual aplicada a projeto e pré-venda",
         url: `${BASE_URL}/moodboard`,
         provider: { "@id": ORG_ID },
       },
@@ -271,34 +272,34 @@ export const SCHEMAS = {
     email: COMPANY.email,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Sao Paulo",
+      addressLocality: "São Paulo",
       addressRegion: "SP",
       addressCountry: "BR",
     },
     areaServed: {
       "@type": "City",
-      name: "Sao Paulo",
+      name: "São Paulo",
     },
   },
 
   serviceArchitecture: service(
-    "Arquitetura de Alto Padrao em Sao Paulo",
-    "Projetos de arquitetura residencial e corporativa com execucao integrada.",
+    "Arquitetura de Alto Padrão em São Paulo",
+    "Projetos de arquitetura residencial e corporativa com execução integrada.",
     `${BASE_URL}/arquitetura`
   ),
   serviceEngineering: service(
-    "Engenharia Integrada em Sao Paulo",
+    "Engenharia Integrada em São Paulo",
     "Engenharia para obras com planejamento, controle e previsibilidade.",
     `${BASE_URL}/engenharia`
   ),
   serviceWoodworking: service(
-    "Marcenaria Sob Medida em Sao Paulo",
-    "Marcenaria premium integrada ao projeto arquitetonico.",
+    "Marcenaria Sob Medida em São Paulo",
+    "Marcenaria premium integrada ao projeto arquitetônico.",
     `${BASE_URL}/marcenaria`
   ),
   serviceExperienceVisual: service(
-    "Sistema de Experiencia Visual em Sao Paulo",
-    "Camada de alinhamento visual e decisao estetica para briefing, prevenda, projeto e obra.",
+    "Sistema de Experiência Visual em São Paulo",
+    "Camada de alinhamento visual e decisão estética para briefing, pré-venda, projeto e obra.",
     `${BASE_URL}/moodboard`
   ),
 
@@ -341,7 +342,7 @@ export const SCHEMAS = {
     "@type": "ContactPage",
     name: "Contato | Grupo WG Almeida",
     url: `${BASE_URL}/contato`,
-    description: "Solicite orcamento de arquitetura, engenharia e marcenaria em Sao Paulo.",
+    description: "Solicite orçamento de arquitetura, engenharia e marcenaria em São Paulo.",
     mainEntity: {
       "@type": "Organization",
       name: "Grupo WG Almeida",
@@ -356,7 +357,7 @@ export const SCHEMAS = {
       },
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Sao Paulo",
+        addressLocality: "São Paulo",
         addressRegion: "SP",
         addressCountry: "BR",
       },
@@ -374,7 +375,7 @@ export const SCHEMAS = {
     address: {
       "@type": "PostalAddress",
       streetAddress: "Rua Guararapes, 305",
-      addressLocality: "Brooklin, Sao Paulo",
+      addressLocality: "Brooklin, São Paulo",
       addressRegion: "SP",
       postalCode: "04561-000",
       addressCountry: "BR",
@@ -391,13 +392,13 @@ export const SCHEMAS = {
         "@type": "Review",
         author: { "@type": "Person", name: "William Almeida" },
         reviewRating: { "@type": "Rating", ratingValue: "5" },
-        reviewBody: "Excelente atendimento e rigor tecnico em todas as etapas da obra.",
+        reviewBody: "Excelente atendimento e rigor técnico em todas as etapas da obra.",
       },
       {
         "@type": "Review",
         author: { "@type": "Person", name: "K. S." },
         reviewRating: { "@type": "Rating", ratingValue: "5" },
-        reviewBody: "Marcenaria de altissima qualidade, integrada perfeitamente ao projeto.",
+        reviewBody: "Marcenaria de altíssima qualidade, integrada perfeitamente ao projeto.",
       }
     ]
   },
