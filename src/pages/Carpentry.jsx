@@ -192,14 +192,14 @@ const Carpentry = () => {
           >
             <div className="max-w-4xl">
               <span className="text-wg-brown font-light tracking-[0.2em] uppercase text-sm mb-4 block">
-                Producao Paralela
+                Produção Paralela
               </span>
               <h3 className="text-2xl md:text-3xl font-inter font-light text-wg-black tracking-tight mb-4">
-                Marcenaria nao entra apenas no fim. Ela precisa ser medida, aprovada e produzida no tempo certo
+                Marcenaria não entra apenas no fim. Ela precisa ser medida, aprovada e produzida no tempo certo
               </h3>
               <div className="space-y-3 text-wg-gray leading-relaxed">
                 <p>
-                  Em obras bem coordenadas, marcenaria funciona como frente de producao, com janela propria de medicao, aprovacao, fabricacao e montagem.
+                  Em obras bem coordenadas, marcenaria funciona como frente de produção, com janela própria de medição, aprovação, fabricação e montagem.
                 </p>
                 <p>
                   {WG_PRODUCT_MESSAGES.obraeasyPromise}
@@ -274,7 +274,7 @@ const Carpentry = () => {
               >
                 <Link
                   to="/contato"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-wg-brown text-white rounded-lg hover:bg-wg-brown/90 transition-colors duration-300 group"
+                  className="btn-primary group"
                 >
                   <span>{t('carpentryPage.cta')}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -290,22 +290,22 @@ const Carpentry = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
               <div>
                 <span className="text-white/60 font-light tracking-[0.2em] uppercase text-sm mb-4 block">
-                  Add-on de experiencia visual
+                  Add-on de experiência visual
                 </span>
                 <h3 className="text-2xl md:text-3xl font-inter font-light tracking-tight mb-4">
-                  Marcenaria performa melhor quando a aprovacao visual acontece antes da producao
+                  Marcenaria performa melhor quando a aprovação visual acontece antes da produção
                 </h3>
                 <div className="space-y-3 text-white/75 leading-relaxed">
                   <p>{WG_PRODUCT_MESSAGES.wgExperienceAddon}</p>
                   <p>
-                    A camada de experiencia visual ajuda a organizar linguagem, atmosfera e uso antes de medicao final, desenho executivo e fabricacao sob medida.
+                    A camada de experiência visual ajuda a organizar linguagem, atmosfera e uso antes da medição final, do desenho executivo e da fabricação sob medida.
                   </p>
                 </div>
               </div>
               <div className="space-y-4">
                 {[
                   'Aprova materiais, acabamentos e sensacao do conjunto com menos ruído.',
-                  'Melhora alinhamento entre cliente, arquiteto e equipe de producao.',
+                  'Melhora o alinhamento entre cliente, arquiteto e equipe de produção.',
                   'Cria base mais clara para detalhamento, montagem e entrega final.',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
@@ -316,7 +316,7 @@ const Carpentry = () => {
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <Link
                     to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=carpentry"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-wg-brown text-white rounded-lg hover:bg-wg-brown/90 transition-colors duration-300"
+                    className="btn-primary"
                   >
                     <span>Adicionar ao escopo</span>
                     <ArrowRight className="w-4 h-4" />

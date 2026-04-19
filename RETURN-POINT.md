@@ -1,6 +1,45 @@
 # RETURN-POINT — site-wgalmeida
 **Atualizado:** 18/04/2026
 
+## Auditoria visual/editorial — 18/04/2026
+
+- padronização do sistema de botões concluída em `src/components/ui/button.jsx` e `src/index.css`
+- classe faltante `wg-btn-pill-outline-dark` criada e validada
+- CTAs públicos críticos convergiram para o mesmo padrão de raio, borda, peso e hover
+- revisão editorial aplicada em páginas públicas com maior exposição:
+  - `Architecture.jsx`
+  - `Engineering.jsx`
+  - `Carpentry.jsx`
+  - `ArquiteturaInterioresVilaNovaConceicao.jsx`
+  - `ObraTurnKey.jsx`
+  - `ICCRI.jsx`
+  - `ICCRIParaImobiliarias.jsx`
+- camada de SEO textual corrigida em `src/data/seoConfig.js`
+- `public/sitemap.xml` regenerado após a build
+
+### Validação executada
+
+- `npm run lint` OK
+- `npm run check:imports` OK
+- `npm run audit:consistency:strict` OK
+- `npm run build` OK
+- preview local em `http://127.0.0.1:3015` OK
+- checagem visual automatizada com screenshots em:
+  - `C:\Users\Atendimento\site-wgalmeida-audit`
+- rotas auditadas no preview:
+  - `/`
+  - `/arquitetura`
+  - `/engenharia`
+  - `/marcenaria`
+  - `/processo`
+  - `/iccri`
+  - `/iccri-para-imobiliarias`
+
+### Pendência real após este bloco
+
+- ainda existe massa editorial antiga em outras páginas e conteúdos de blog com português degradado em ASCII (`Sao`, `Indice`, `Construcao`, etc.)
+- a próxima rodada certa é continuar essa limpeza nos conteúdos secundários e nos dados estruturados (`schemaConfig`, filas editoriais e blog legado)
+
 ## Estado atual
 
 ### PRs mergeados em main

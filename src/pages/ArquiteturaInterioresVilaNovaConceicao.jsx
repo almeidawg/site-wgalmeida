@@ -345,23 +345,23 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start">
               <div>
                 <span className="text-wg-orange text-sm tracking-[0.2em] uppercase mb-4 block">
-                  Add-on de experiencia visual
+                  Add-on de experiência visual
                 </span>
                 <h2 className="text-3xl md:text-4xl font-inter font-light text-wg-black mb-4">
-                  Para interiores premium, a aprovacao estetica pode comecar antes do projeto fechar
+                  Para interiores premium, a aprovação estética pode começar antes de o projeto fechar
                 </h2>
                 <div className="space-y-3 text-wg-gray leading-relaxed">
                   <p>{WG_PRODUCT_MESSAGES.wgExperienceSystem}</p>
                   <p>
-                    Essa camada ajuda a consolidar linguagem, curadoria e sensacao do ambiente antes de aprofundar layout, materiais e definicoes executivas.
+                    Essa camada ajuda a consolidar linguagem, curadoria e sensação do ambiente antes de aprofundar layout, materiais e definições executivas.
                   </p>
                 </div>
               </div>
               <div className="space-y-4">
                 {[
-                  'Briefing mais preciso para clientes de alto padrao e familias que decidem em conjunto.',
-                  'Mais seguranca para curadoria de materiais, marcenaria e ambientacao.',
-                  'Ponte direta entre inspiracao, conceito e proposta comercial assistida.',
+                  'Briefing mais preciso para clientes de alto padrão e famílias que decidem em conjunto.',
+                  'Mais segurança para curadoria de materiais, marcenaria e ambientação.',
+                  'Ponte direta entre inspiração, conceito e proposta comercial assistida.',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-2xl border border-black/5 bg-white p-4 shadow-[0_18px_48px_rgba(30,24,20,0.05)]">
                     <CheckCircle className="w-5 h-5 text-wg-orange flex-shrink-0 mt-0.5" />
@@ -371,7 +371,7 @@ const ArquiteturaInterioresVilaNovaConceicao = () => {
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <Link to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=vila-nova">
                     <Button className="btn-apple">
-                      Adicionar experiencia visual
+                      Adicionar experiência visual
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>

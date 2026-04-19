@@ -419,7 +419,7 @@ const ObraTurnKey = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
               <div>
                 <span className="text-white/60 text-sm tracking-[0.2em] uppercase mb-4 block">
-                  Add-on de experiencia visual
+                  Add-on de experiência visual
                 </span>
                 <h2 className="text-3xl md:text-4xl font-inter font-light mb-4">
                   O turn key pode entrar com uma camada extra de alinhamento antes da obra apertar
@@ -429,15 +429,15 @@ const ObraTurnKey = () => {
                     {WG_PRODUCT_MESSAGES.wgExperienceSystem}
                   </p>
                   <p>
-                    Em jornadas turn key, ela funciona como etapa de onboarding, prevenda consultiva ou validacao estetica antes de compras, definicoes finais e execucao integrada.
+                    Em jornadas turn key, ela funciona como etapa de onboarding, pré-venda consultiva ou validação estética antes de compras, definições finais e execução integrada.
                   </p>
                 </div>
               </div>
               <div className="space-y-4">
                 {[
                   'Mais clareza de expectativa antes de cronograma, compras e compatibilizacao.',
-                  'Menos retrabalho entre conceito, visualizacao, marcenaria e obra.',
-                  'Uma proposta comercial mais forte para clientes que ainda estao decidindo atmosfera e linguagem do projeto.',
+                  'Menos retrabalho entre conceito, visualização, marcenaria e obra.',
+                  'Uma proposta comercial mais forte para clientes que ainda estão decidindo a atmosfera e a linguagem do projeto.',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                     <CheckCircle className="w-5 h-5 text-wg-orange flex-shrink-0 mt-0.5" />

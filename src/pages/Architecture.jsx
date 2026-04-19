@@ -192,17 +192,17 @@ const Architecture = () => {
           >
             <div className="max-w-4xl">
               <span className="text-wg-green font-light tracking-[0.2em] uppercase text-sm mb-4 block">
-                Metodo Operacional
+                Método Operacional
               </span>
               <h3 className="text-2xl md:text-3xl font-inter font-light text-wg-black tracking-tight mb-4">
-                Arquitetura premium precisa organizar decisao antes de organizar acabamento
+                Arquitetura premium precisa organizar decisão antes de organizar acabamento
               </h3>
               <div className="space-y-3 text-wg-gray leading-relaxed">
                 <p>
                   {WG_PRODUCT_MESSAGES.obraeasyPromise}
                 </p>
                 <p>
-                  Em arquitetura, isso significa definir layout, materiais, interfaces tecnicas e frentes que dependem de aprovacao ou medicao antes de a obra pressionar prazo e custo.
+                  Em arquitetura, isso significa definir layout, materiais, interfaces técnicas e frentes que dependem de aprovação ou medição antes de a obra pressionar prazo e custo.
                 </p>
                 <p>
                   {WG_PRODUCT_MESSAGES.marketReferences}
@@ -274,7 +274,7 @@ const Architecture = () => {
               >
                 <Link
                   to="/contato"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-wg-green text-white rounded-lg hover:bg-wg-green/90 transition-colors duration-300 group"
+                  className="btn-primary group"
                 >
                   <span>{t('architecturePage.cta')}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -290,23 +290,23 @@ const Architecture = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
               <div>
                 <span className="text-white/60 font-light tracking-[0.2em] uppercase text-sm mb-4 block">
-                  Add-on de experiencia visual
+                  Add-on de experiência visual
                 </span>
                 <h3 className="text-2xl md:text-3xl font-inter font-light tracking-tight mb-4">
-                  Antes de detalhar tudo, a arquitetura pode entrar com leitura estetica guiada
+                  Antes de detalhar tudo, a arquitetura pode entrar com leitura estética guiada
                 </h3>
                 <div className="space-y-3 text-white/75 leading-relaxed">
                   <p>{WG_PRODUCT_MESSAGES.wgExperienceSystem}</p>
                   <p>
-                    Essa camada funciona bem como onboarding de projeto, prevenda consultiva ou alinhamento entre cliente, arquiteto e familia antes de fechar materiais e decisoes de maior impacto.
+                    Essa camada funciona bem como onboarding de projeto, pré-venda consultiva ou alinhamento entre cliente, arquiteto e família antes de fechar materiais e decisões de maior impacto.
                   </p>
                 </div>
               </div>
               <div className="space-y-4">
                 {[
-                  'Define estilo dominante, paleta e sensacao esperada com menos indecisao.',
-                  'Reduz retrabalho em briefing, referencias desconexas e aprovacoes subjetivas.',
-                  'Cria ponte direta entre moodboard, visualizacao e proposta assistida.',
+                  'Define estilo dominante, paleta e sensação esperada com menos indecisão.',
+                  'Reduz retrabalho em briefing, referências desconexas e aprovações subjetivas.',
+                  'Cria ponte direta entre moodboard, visualização e proposta assistida.',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                     <Sparkles className="w-5 h-5 text-wg-green flex-shrink-0 mt-0.5" />
@@ -316,14 +316,14 @@ const Architecture = () => {
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <Link
                     to="/solicite-proposta?service=Sistema%20de%20Experi%C3%AAncia%20Visual&context=architecture"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-wg-green text-white rounded-lg hover:bg-wg-green/90 transition-colors duration-300"
+                    className="btn-primary"
                   >
                     <span>Adicionar ao projeto</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/moodboard"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/15 text-white rounded-lg hover:bg-white/5 transition-colors duration-300"
+                    className="btn-hero-outline"
                   >
                     Ver a jornada visual
                   </Link>

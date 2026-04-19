@@ -233,8 +233,19 @@
   }
 
   .btn-primary {
-    @apply bg-wg-orange text-white px-6 py-3 rounded-md font-inter font-light
-           hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-inter font-light
+           transition-all duration-300 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+    min-height: 2.85rem;
+    background-color: var(--wg-orange);
+    color: #ffffff;
+    border: 1px solid rgba(242, 92, 38, 0.18);
+    box-shadow: 0 16px 34px rgba(242, 92, 38, 0.18);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    background-color: #de5423;
+    box-shadow: 0 20px 40px rgba(242, 92, 38, 0.24);
   }
 
   .section-padding {
@@ -365,10 +376,11 @@
     box-shadow: 0 25px 50px rgba(15, 15, 15, 0.12);
   }
   .btn-apple {
-    @apply text-white px-6 py-3 rounded-2xl font-light tracking-tight;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-light tracking-tight;
+    min-height: 2.85rem;
     background-color: rgb(var(--wg-apple-accent));
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(18, 18, 18, 0.08);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease,
@@ -376,15 +388,17 @@
   }
   .btn-apple:hover {
     transform: translateY(-1px);
-    box-shadow: 0 14px 28px rgba(242, 92, 38, 0.22);
+    box-shadow: 0 18px 36px rgba(242, 92, 38, 0.2);
     background-color: var(--wg-orange);
   }
   /* Botão secundário em fundo escuro -- borda branca, bg transparente */
   .btn-hero-outline {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-light transition-all;
-    border: 1px solid rgba(255,255,255,0.58);
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-light transition-all;
+    min-height: 2.85rem;
+    border: 1px solid rgba(255,255,255,0.54);
     color: #ffffff;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.04);
+    box-shadow: 0 10px 24px rgba(10, 10, 10, 0.1);
   }
   .btn-hero-outline:hover {
     background: rgba(255,255,255,0.08);
@@ -409,11 +423,26 @@
   }
 
   .wg-btn-pill-primary {
-    @apply h-auto px-6 py-2 rounded-full text-sm font-light transition-all duration-300 bg-white text-wg-black shadow-lg hover:bg-gray-100 hover:text-wg-black;
+    @apply inline-flex items-center justify-center gap-2 h-auto px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 bg-white text-wg-black hover:bg-gray-100 hover:text-wg-black;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 14px 34px rgba(15, 15, 15, 0.14);
   }
 
   .wg-btn-pill-secondary {
-    @apply h-auto px-6 py-2 rounded-full text-sm font-light transition-all duration-300 bg-wg-gray-light text-wg-gray hover:bg-gray-200 hover:text-wg-black;
+    @apply inline-flex items-center justify-center gap-2 h-auto px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 bg-wg-gray-light text-wg-gray hover:bg-gray-200 hover:text-wg-black;
+    border: 1px solid rgba(46, 46, 46, 0.06);
+  }
+
+  .wg-btn-pill-outline-dark {
+    @apply inline-flex items-center justify-center gap-2 h-auto px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 text-wg-black hover:text-wg-black;
+    border: 1px solid rgba(46, 46, 46, 0.12);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 24px rgba(20, 20, 20, 0.06);
+  }
+
+  .wg-btn-pill-outline-dark:hover {
+    background: rgba(243, 243, 243, 0.98);
+    border-color: rgba(46, 46, 46, 0.18);
   }
 
   .font-medium {
