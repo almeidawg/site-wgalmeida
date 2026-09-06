@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-06",
+  "url": "https://wgalmeida.com.br",
+  "results": [
+    {
+      "strategy": "mobile",
+      "error": "Rate limit (429). Configure PAGESPEED_API_KEY= no .env para remover limite.\n  Obtenha em: https://console.cloud.google.com/apis/library/pagespeedonline.googleapis.com",
+      "alerts": []
+    },
+    {
+      "strategy": "desktop",
+      "error": "Rate limit (429). Configure PAGESPEED_API_KEY= no .env para remover limite.\n  Obtenha em: https://console.cloud.google.com/apis/library/pagespeedonline.googleapis.com",
+      "alerts": []
+    }
+  ]
+}

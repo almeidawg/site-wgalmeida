@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-06",
+  "url": "https://wgalmeida.com.br",
+  "score": 0,
+  "checks": [
+    {
+      "name": "Sitemap XML",
+      "pass": false,
+      "detail": "Erro: HTTP 403",
+      "weight": 15
+    },
+    {
+      "name": "robots.txt",
+      "pass": false,
+      "detail": "Erro: HTTP 403",
+      "weight": 10
+    }
+  ],
+  "alerts": [
+    {
+      "level": "ALTA",
+      "check": "Sitemap XML",
+      "detail": "Erro: HTTP 403"
+    },
+    {
+      "level": "MEDIA",
+      "check": "robots.txt",
+      "detail": "Erro: HTTP 403"
+    }
+  ],
+  "fetchError": "HTTP 403"
+}
